@@ -1,0 +1,69 @@
+\documentclass[xcolor=pdftex,x11names,table]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage{colortbl}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations,arrows,shapes,backgrounds,shadows,calc}
+\usetikzlibrary{positioning}
+\usetikzlibrary{automata}
+
+\usepackage{ifthen}
+\usepackage{changepage}
+
+\usepackage{listings}
+
+\usepackage{listings}
+
+\usepackage{textcomp}
+ 
+\definecolor{gray}{gray}{0.5} 
+\lstnewenvironment{code_xml}[1][]{ 
+    \lstset
+      { 
+        language=XML,
+        inputencoding=utf8,
+        basicstyle=\ttfamily, 
+        showspaces=false,
+        showstringspaces=false,
+        showtabs=false,
+        frame=single,
+        morecomment=[s]{<!--}{-->},
+        commentstyle=\itshape\color{gray},
+        stringstyle=\color{blue},
+        keywordstyle=\color{red},
+        markfirstintag=true,
+        upquote=true
+      } 
+}{}
+
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{minipage}
+\setlength\PreviewBorder{0pt}%
+
+\begin{document}
+\pagestyle{empty}
+\enlargethispage{100cm}
+\addtolength{\textwidth}{8cm} 
+\noindent\begin{minipage}{\textwidth}
+\begin{code_xml}
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<persistence>
+  <persistence-unit name="persUnit" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>Employe</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url"  value="jdbc:mysql://localhost:3306/maBD"/>
+      <property name="javax.persistence.jdbc.driver"  value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user"  value="root"/>
+      <property name="javax.persistence.jdbc.password"  value="mysql"/>
+      <property name="eclipselink.ddl-generation"  value="create-tables"/>
+      <property name="javax.persistence.level"  value="SEVERE"/>
+    </properties>
+  </persistence-unit>
+</persistence>
+\end{code_xml}
+\end{minipage}
+\end{document}
