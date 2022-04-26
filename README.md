@@ -4,3 +4,5 @@ Cours de la ressource R2.02 Développement d'application avec une interface homm
 La version en ligne du cours est trouvable à l'adresse suivante : 
 - <https://IUTInfoAix-R202.github.io/cours/cours1/#1>
 - <https://IUTInfoAix-R202.github.io/cours/cours2/#1>
+- <https://IUTInfoAix-R202.github.io/cours/cours3/cours3.pdf>
+- <https://IUTInfoAix-R202.github.io/cours/cours4/cours4.pdf>
