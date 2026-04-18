@@ -117,19 +117,179 @@ Chaque CM approfondit les trois piliers en parallèle. Il n'y a pas "un cours su
 
 ## Ergonomie : les heuristiques de Nielsen
 
-Jakob Nielsen a identifié **10 heuristiques d'utilisabilité** (1994), toujours d'actualité. Aujourd'hui, nous en retenons deux :
+Jakob Nielsen a identifié **10 heuristiques d'utilisabilité** (1994), toujours d'actualité 30 ans plus tard. Ce sont des **principes généraux**, pas des règles rigides. Ils s'appliquent à toute interface, pas seulement au logiciel.
 
-### #1 — Visibilité de l'état du système
+Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par un exemple de la **vie courante** (pas informatique) pour montrer que ces principes sont universels.
+
+---
+
+## Nielsen #1 — Visibilité de l'état du système
 
 > Le système doit toujours informer l'utilisateur de ce qui se passe, par un feedback approprié dans un délai raisonnable.
 
-**Exemples** : barre de progression, titre de fenêtre qui reflète le document ouvert, changement de curseur pendant un chargement.
+<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
+<div style="font-size: 4rem; text-align: center; min-width: 100px;">📍</div>
+<div>
 
-### #2 — Correspondance entre le système et le monde réel
+**Dans la vie** : le plan "Vous êtes ici" dans un centre commercial. Sans lui, vous êtes perdu. Avec lui, vous savez exactement où vous êtes et comment atteindre votre destination.
 
-> Le système doit parler le langage de l'utilisateur, avec des mots, phrases et concepts familiers.
+**En IHM** : barre de progression, titre de fenêtre qui reflète le document ouvert, curseur qui change pendant un chargement.
 
-**Exemple JavaFX** : la métaphore du théâtre (Stage = scène, Scene = décor) aide à comprendre la hiérarchie d'affichage.
+</div>
+</div>
+
+---
+
+## Nielsen #2 — Correspondance avec le monde réel
+
+> Le système doit parler le langage de l'utilisateur, avec des mots et concepts familiers plutôt que du jargon technique.
+
+<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
+<div style="font-size: 4rem; text-align: center; min-width: 100px;">🔥</div>
+<div>
+
+**Dans la vie** : les boutons d'une plaque de cuisson sont disposés dans le **même arrangement** que les plaques elles-mêmes. Pas besoin de lire une notice pour savoir quel bouton contrôle quelle plaque.
+
+**En IHM** : la métaphore du théâtre dans JavaFX (Stage = scène, Scene = décor). Les noms parlent d'eux-mêmes.
+
+</div>
+</div>
+
+---
+
+## Nielsen #3 — Liberté et contrôle de l'utilisateur
+
+> Les utilisateurs font souvent des erreurs. Ils ont besoin d'une "sortie de secours" clairement identifiée.
+
+<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
+<div style="font-size: 4rem; text-align: center; min-width: 100px;">🚪</div>
+<div>
+
+**Dans la vie** : les **portes de sortie de secours** dans un bâtiment. Elles sont toujours visibles, toujours accessibles, et permettent de quitter rapidement sans procédure complexe.
+
+**En IHM** : le bouton "Annuler", le `Ctrl+Z` (undo), la croix pour fermer une fenêtre. L'utilisateur ne doit jamais se sentir piégé.
+
+</div>
+</div>
+
+---
+
+## Nielsen #4 — Cohérence et standards
+
+> L'utilisateur ne devrait pas avoir à se demander si des mots ou actions différents signifient la même chose.
+
+<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
+<div style="font-size: 4rem; text-align: center; min-width: 100px;">🏨</div>
+<div>
+
+**Dans la vie** : dans tous les hôtels du monde, la **réception est à l'entrée**. Vous ne la cherchez jamais. C'est une convention universelle.
+
+**En IHM** : le menu "Fichier" est toujours à gauche, "Enregistrer" utilise toujours la disquette, les liens sont toujours soulignés. Suivre les conventions, pas les réinventer.
+
+</div>
+</div>
+
+---
+
+## Nielsen #5 — Prévention des erreurs
+
+> Mieux vaut prévenir les erreurs que produire de bons messages d'erreur.
+
+<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
+<div style="font-size: 4rem; text-align: center; min-width: 100px;">🛡️</div>
+<div>
+
+**Dans la vie** : les **glissières de sécurité** sur les routes de montagne. Elles empêchent la voiture de tomber dans le ravin, plutôt que de mettre un panneau "Attention, ravin" en bas de la falaise.
+
+**En IHM** : griser un bouton "Supprimer" quand rien n'est sélectionné. Demander confirmation avant une action irréversible.
+
+</div>
+</div>
+
+---
+
+## Nielsen #6 — Reconnaissance plutôt que rappel
+
+> Rendre les éléments visibles. L'utilisateur ne devrait pas avoir à se souvenir d'informations d'un écran à l'autre.
+
+<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
+<div style="font-size: 4rem; text-align: center; min-width: 100px;">🏰</div>
+<div>
+
+**Dans la vie** : "Lisbonne est-elle la capitale du Portugal ?" est plus facile que "Quelle est la capitale du Portugal ?". **Reconnaître** est plus facile que **se rappeler**.
+
+**En IHM** : des menus déroulants (on reconnaît l'option) plutôt que des champs texte libres (il faut se rappeler la commande).
+
+</div>
+</div>
+
+---
+
+## Nielsen #7 — Flexibilité et efficacité
+
+> Les raccourcis, invisibles pour les novices, accélèrent l'interaction pour les experts.
+
+<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
+<div style="font-size: 4rem; text-align: center; min-width: 100px;">🗺️</div>
+<div>
+
+**Dans la vie** : un **plan de ville** montre l'itinéraire principal, mais les habitants qui connaissent le quartier prennent des raccourcis. Les deux coexistent.
+
+**En IHM** : un débutant utilise le menu "Édition → Copier", un expert tape `Ctrl+C`. L'interface sert les deux sans gêner personne.
+
+</div>
+</div>
+
+---
+
+## Nielsen #8 — Design esthétique et minimaliste
+
+> Chaque information supplémentaire dans une interface entre en compétition avec les informations utiles.
+
+<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
+<div style="font-size: 4rem; text-align: center; min-width: 100px;">🫖</div>
+<div>
+
+**Dans la vie** : une **théière ornementale** avec des décorations excessives — anse inconfortable, bec difficile à nettoyer. Le superflu nuit à la fonction. Une théière simple est plus agréable à utiliser.
+
+**En IHM** : chaque bouton, chaque texte, chaque couleur doit justifier sa présence. Ce qui n'aide pas l'utilisateur le gêne.
+
+</div>
+</div>
+
+---
+
+## Nielsen #9 — Aider à reconnaître et corriger les erreurs
+
+> Les messages d'erreur doivent être en langage clair, indiquer précisément le problème et suggérer une solution.
+
+<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
+<div style="font-size: 4rem; text-align: center; min-width: 100px;">⛔</div>
+<div>
+
+**Dans la vie** : un panneau **"Sens interdit"** sur la route. Il vous dit clairement que vous allez dans la mauvaise direction. Pas un code cryptique ("Erreur 403"), mais un message compréhensible.
+
+**En IHM** : "Le mot de passe doit contenir au moins 8 caractères" est utile. "Erreur de validation" ne l'est pas.
+
+</div>
+</div>
+
+---
+
+## Nielsen #10 — Aide et documentation
+
+> Idéalement, le système devrait être utilisable sans documentation. Mais si nécessaire, l'aide doit être facile à trouver et orientée vers la tâche.
+
+<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
+<div style="font-size: 4rem; text-align: center; min-width: 100px;">ℹ️</div>
+<div>
+
+**Dans la vie** : les **bornes d'information** dans les aéroports. Facilement repérables, placées aux endroits où on en a besoin, avec des réponses concrètes (pas un manuel de 200 pages).
+
+**En IHM** : tooltips au survol, Copilot Chat dans votre IDE, FAQ contextuelle. L'aide vient à l'utilisateur, pas l'inverse.
+
+</div>
+</div>
 
 ---
 
