@@ -267,9 +267,11 @@ Chaque exercice suit le même cycle, identique à celui d'une équipe en entrepr
 
 ## Trois interfaces, même fonctionnalité
 
+<!-- _footer: "" -->
+
 Trois applications qui font la même chose : **afficher la météo**.
 
-<div style="display: flex; gap: 1.2rem; margin-top: 1rem;">
+<div style="display: flex; gap: 1.2rem; margin: 4rem 0;">
 <div style="flex: 1; border: 2px solid #e74c3c; border-radius: 12px; overflow: hidden;">
 <div style="background: #e74c3c; color: white; padding: 0.4rem; text-align: center; font-weight: bold;">❌ Version A</div>
 <div style="padding: 1rem; background: #111; color: #0f0; font-family: monospace; font-size: 0.8rem; min-height: 100px;">
@@ -299,7 +301,11 @@ $_
 </div>
 </div>
 
+<div style="margin-top: 1.5rem;">
+
 **Question** : laquelle utiliseriez-vous au quotidien ? Pourquoi ?
+
+</div>
 
 → La différence n'est pas dans le *code*, elle est dans la **conception de l'interface**.
 
