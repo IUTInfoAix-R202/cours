@@ -81,17 +81,17 @@ Chaque transition a été motivée par une meilleure compréhension des **besoin
 ## Les trois piliers d'un cours d'IHM
 
 <div style="display: flex; justify-content: center; gap: 2rem; margin: 2rem 0;">
-<div style="background: #4a90d9; color: white; padding: 2.5rem 1.5rem; border-radius: 16px; text-align: center; flex: 1;">
+<div style="background: #4a90d9; color: white; padding: 3.5rem 1.5rem; border-radius: 16px; text-align: center; flex: 1;">
 <div style="font-size: 3.5rem;">🏗️</div>
 <div style="font-weight: bold; font-size: 1.4rem; margin-top: 0.5rem;">Architecture</div>
 <div style="font-size: 1rem; opacity: 0.9; margin-top: 0.3rem;">Comment organiser le code</div>
 </div>
-<div style="background: #27ae60; color: white; padding: 2.5rem 1.5rem; border-radius: 16px; text-align: center; flex: 1;">
+<div style="background: #27ae60; color: white; padding: 3.5rem 1.5rem; border-radius: 16px; text-align: center; flex: 1;">
 <div style="font-size: 3.5rem;">🧠</div>
 <div style="font-weight: bold; font-size: 1.4rem; margin-top: 0.5rem;">Ergonomie</div>
 <div style="font-size: 1rem; opacity: 0.9; margin-top: 0.3rem;">Comment servir l'utilisateur</div>
 </div>
-<div style="background: #e74c3c; color: white; padding: 2.5rem 1.5rem; border-radius: 16px; text-align: center; flex: 1;">
+<div style="background: #e74c3c; color: white; padding: 3.5rem 1.5rem; border-radius: 16px; text-align: center; flex: 1;">
 <div style="font-size: 3.5rem;">⚡</div>
 <div style="font-weight: bold; font-size: 1.4rem; margin-top: 0.5rem;">Événements</div>
 <div style="font-size: 1rem; opacity: 0.9; margin-top: 0.3rem;">Comment réagir aux actions</div>
@@ -117,9 +117,22 @@ Chaque CM approfondit les trois piliers en parallèle. Il n'y a pas "un cours su
 
 ## Ergonomie : les heuristiques de Nielsen
 
+<div style="display: flex; gap: 2rem; align-items: flex-start;">
+<div>
+
 Jakob Nielsen a identifié **10 heuristiques d'utilisabilité** (1994), toujours d'actualité 30 ans plus tard. Ce sont des **principes généraux**, pas des règles rigides. Ils s'appliquent à toute interface, pas seulement au logiciel.
 
 Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par un exemple de la **vie courante** (pas informatique) pour montrer que ces principes sont universels.
+
+</div>
+<div style="min-width: 200px; text-align: center;">
+
+[![Posters Nielsen](https://media.nngroup.com/media/editor/2024/03/06/10-usability-heuristics-702x395.png.400x400_q95_autocrop_crop_upscale.png)](https://www.nngroup.com/articles/ten-usability-heuristics/#poster)
+
+<small>*[Posters NN/g](https://www.nngroup.com/articles/ten-usability-heuristics/#poster)*</small>
+
+</div>
+</div>
 
 ---
 
