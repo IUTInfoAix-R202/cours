@@ -938,7 +938,7 @@ graph TD
 </div>
 </div>
 <div style="flex: 1; background: #e74c3c; color: white; padding: 1.2rem; border-radius: 12px;">
-<div style="font-size: 2rem; margin-bottom: 0.3rem;">🔘 <b>Control</b></div>
+<div style="font-size: 2rem; margin-bottom: 0.3rem;">🕹️ <b>Control</b></div>
 <div style="opacity: 0.9;">Interagir avec l'utilisateur</div>
 <div style="margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.3rem;">
 <code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">Button</code>
@@ -1541,7 +1541,7 @@ bouton.setOnAction(e -> compteur.incrementer());
 
 ---
 
-## 🔘 Les contrôles JavaFX
+## 🕹️ Les contrôles JavaFX
 
 Maintenant que vous savez **comment réagir** à un événement, voici les composants qui en **produisent**.
 
@@ -1567,7 +1567,7 @@ Les contrôles sont organisés par **type d'interaction** :
 
 ---
 
-## 🔘 Afficher : Label et ImageView
+## 🕹️ Afficher : Label et ImageView
 
 <div style="display: flex; gap: 2rem; margin-top: 1rem;">
 <div style="flex: 1;">
@@ -1600,7 +1600,7 @@ Affiche une image avec contrôle de la taille.
 
 ---
 
-## 🔘 Agir : Button, CheckBox, MenuBar
+## 🕹️ Agir : Button, CheckBox, MenuBar
 
 <div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
 <div style="flex: 1;">
@@ -1642,7 +1642,7 @@ bar.getMenus().add(fichier);
 
 ---
 
-## 🔘 Saisir : TextField, Slider
+## 🕹️ Saisir : TextField, Slider
 
 <div style="display: flex; gap: 2rem; margin-top: 1rem;">
 <div style="flex: 1;">
