@@ -2,16 +2,89 @@
 marp: true
 theme: default
 paginate: true
-header: "R2.02 — Développement d'applications avec IHM"
-footer: "IUT Aix-Marseille — BUT Informatique 1A"
+header: "R2.02 - Développement d'applications avec IHM"
+footer: "IUT Aix-Marseille - BUT Informatique 1A"
 ---
 
 <!-- _class: lead -->
 
-# CM1 — Fondations de l'IHM et première immersion JavaFX
+![w:150](https://raw.githubusercontent.com/IUTInfoAix-R510/Syllabus/main/assets/logo.png)
 
-**R2.02 — Développement d'applications avec IHM**
-IUT d'Aix-Marseille — BUT Informatique 1re année
+# CM1 - Fondations de l'IHM et première immersion JavaFX
+
+**R2.02 - Développement d'applications avec IHM**
+IUT d'Aix-Marseille - BUT Informatique 1re année
+
+---
+
+## Présentation du module R2.02
+
+**Objectif** : s'initier au développement d'une application avec une **Interface Homme-Machine** en abordant la programmation événementielle (Java + JavaFX).
+
+**Ce que vous apprendrez** :
+
+| Thème | Contenu |
+|---|---|
+| Composants graphiques | Conteneurs, contrôles, graphe de scène |
+| Modèle événementiel | Événements, listeners, bindings |
+| Architecture IHM | Séparation vue-modèle, MVC, MVVM |
+| IHM déclaratives | FXML, CSS, SceneBuilder |
+| Ergonomie | Heuristiques de Nielsen, accessibilité |
+| Persistance | JDBC, JPA, pattern DAO |
+
+---
+
+## Organisation et évaluation
+
+<style scoped> table { font-size: 0.85rem; } </style>
+
+**Intervenants** : S. Nedjar (responsable), F. Flouvat, S. Nabitz, S. Chtioui
+
+**Volume horaire** : 4 CM (6h) + TD/TP (32h) = 38h
+
+**Progression** :
+
+| CM | Thème | TP associé |
+|---|---|---|
+| CM1 | Fondations IHM + JavaFX | TP1 - Bases JavaFX |
+| CM2 | Propriétés, bindings, événements | TP2 - Properties & bindings |
+| CM3 | Architecture MVC/MVVM + FXML | TP3 - FXML |
+| CM4 | MVVM + persistance (synthèse) | TP4 - MVVM + TP5 - Persistance |
+
+**Évaluations** :
+- **CC1** : note d'évaluation de TP - coeff. 10
+- **CC2** : note de participation et d'implication - coeff. 10
+- **CC3** : réalisation d'une mini-application JavaFX sur feuille - coeff. 40
+
+---
+
+## Environnement de travail
+
+Tout le module se fait sur **GitHub Codespaces** : aucune installation locale nécessaire.
+
+<div style="display: flex; gap: 2rem; margin-top: 1rem;">
+<div style="flex: 1;">
+
+**Outils fournis dans le Codespace** :
+- Java 25 + JavaFX 25
+- Maven (via `./mvnw`)
+- Git + GitHub CLI (`gh`)
+- Copilot Chat (tuteur IA)
+- TestFX (tests d'interface)
+
+</div>
+<div style="flex: 1;">
+
+**Workflow professionnel** :
+- GitHub Classroom pour les devoirs
+- TDD baby steps (`@Disabled` → activer)
+- Branche → Pull Request → Review Copilot → Merge
+- Autograding automatique (note sur 100)
+
+</div>
+</div>
+
+> Ce workflow reproduit les pratiques de développement en entreprise.
 
 ---
 
@@ -23,13 +96,13 @@ IUT d'Aix-Marseille — BUT Informatique 1re année
 - **Comprendre** le modèle événementiel (pattern Observer, EventHandler)
 - **Appliquer** deux heuristiques d'ergonomie (Nielsen #1 et #2) pour évaluer une interface
 
-> *Niveau Bloom : Comprendre* — Ce CM pose les fondations conceptuelles. Le TP1 vous fera passer à la pratique.
+> *Niveau Bloom : Comprendre* - Ce CM pose les fondations conceptuelles. Le TP1 vous fera passer à la pratique.
 
 ---
 
 <!-- _class: lead -->
 
-# Partie 1 — Qu'est-ce qu'une IHM ?
+# Partie 1 - Qu'est-ce qu'une IHM ?
 
 ---
 
@@ -69,9 +142,9 @@ p { font-size: 0.88rem; }
 
 | Époque | Paradigme | Caractéristique |
 |---|---|---|
-| **1970** | **CLI** — Ligne de commande | Efficace mais exigeant. L'utilisateur s'adapte à la machine. |
-| **1984** | **GUI** — Interfaces graphiques | Macintosh, Windows, X11. La machine s'adapte à l'utilisateur. |
-| **2007** | **Tactile** — Smartphones | iPhone, gestes multi-touch. L'interaction devient physique. |
+| **1970** | **CLI** - Ligne de commande | Efficace mais exigeant. L'utilisateur s'adapte à la machine. |
+| **1984** | **GUI** - Interfaces graphiques | Macintosh, Windows, X11. La machine s'adapte à l'utilisateur. |
+| **2007** | **Tactile** - Smartphones | iPhone, gestes multi-touch. L'interaction devient physique. |
 | **2023** | **Spatial / IA** | Vision Pro, assistants vocaux. L'interface disparaît. |
 
 Chaque transition a été motivée par une meilleure compréhension des **besoins humains**, pas par la technologie seule.
@@ -142,7 +215,7 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ---
 
-## Nielsen #1 — Visibilité de l'état du système
+## Nielsen #1 - Visibilité de l'état du système
 
 
 > Le système doit toujours **informer l'utilisateur** de ce qui se passe, par un feedback approprié dans un délai raisonnable.
@@ -158,11 +231,11 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 </div>
 </div>
 
-**✏️ Tips** : communiquer *clairement* l'état — aucune action à conséquence sans informer l'utilisateur. Présenter le feedback le plus *vite* possible. Des interactions prévisibles créent la **confiance**.
+**✏️ Tips** : communiquer *clairement* l'état - aucune action à conséquence sans informer l'utilisateur. Présenter le feedback le plus *vite* possible. Des interactions prévisibles créent la **confiance**.
 
 ---
 
-## Nielsen #2 — Correspondance avec le monde réel
+## Nielsen #2 - Correspondance avec le monde réel
 
 
 > Le système doit parler le **langage de l'utilisateur**, avec des mots et concepts familiers plutôt que du jargon interne.
@@ -173,7 +246,7 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 **Dans la vie** : les boutons d'une **plaque de cuisson** sont disposés dans le même arrangement que les plaques. Pas besoin de notice. Le mapping physique est immédiat.
 
-**En IHM** : dire "voiture" si l'utilisateur pense "voiture", pas "automobile". Utiliser l'icône 🛒 pour un panier d'achat — c'est la même fonction que dans le monde réel.
+**En IHM** : dire "voiture" si l'utilisateur pense "voiture", pas "automobile". Utiliser l'icône 🛒 pour un panier d'achat - c'est la même fonction que dans le monde réel.
 
 </div>
 </div>
@@ -182,7 +255,7 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ---
 
-## Nielsen #3 — Liberté et contrôle de l'utilisateur
+## Nielsen #3 - Liberté et contrôle de l'utilisateur
 
 
 > Les utilisateurs font souvent des erreurs. Ils ont besoin d'une **"sortie de secours"** clairement identifiée pour quitter l'action non voulue.
@@ -202,7 +275,7 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ---
 
-## Nielsen #4 — Cohérence et standards
+## Nielsen #4 - Cohérence et standards
 
 
 > L'utilisateur ne devrait pas avoir à se demander si des mots, situations ou actions différents **signifient la même chose**.
@@ -213,7 +286,7 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 **Dans la vie** : dans tous les hôtels du monde, la **réception est à l'entrée**. Vous ne la cherchez jamais. C'est une convention universelle que chaque hôtel respecte.
 
-**En IHM** : même design system pour toute une famille de produits (*cohérence interne*). Suivre les conventions de la plateforme — menu "Fichier" à gauche, liens soulignés (*cohérence externe*).
+**En IHM** : même design system pour toute une famille de produits (*cohérence interne*). Suivre les conventions de la plateforme - menu "Fichier" à gauche, liens soulignés (*cohérence externe*).
 
 </div>
 </div>
@@ -222,7 +295,7 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ---
 
-## Nielsen #5 — Prévention des erreurs
+## Nielsen #5 - Prévention des erreurs
 
 
 > Mieux vaut **prévenir** les erreurs que produire de bons messages d'erreur.
@@ -238,11 +311,11 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 </div>
 </div>
 
-**✏️ Tips** : deux types d'erreurs — les *lapsus* (inattention) et les *erreurs* (incompréhension). Prioriser la prévention des erreurs **coûteuses** en premier.
+**✏️ Tips** : deux types d'erreurs - les *lapsus* (inattention) et les *erreurs* (incompréhension). Prioriser la prévention des erreurs **coûteuses** en premier.
 
 ---
 
-## Nielsen #6 — Reconnaissance plutôt que rappel
+## Nielsen #6 - Reconnaissance plutôt que rappel
 
 
 > Rendre les éléments visibles. L'utilisateur ne devrait pas avoir à **se souvenir** d'informations d'un écran à l'autre.
@@ -262,7 +335,7 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ---
 
-## Nielsen #7 — Flexibilité et efficacité
+## Nielsen #7 - Flexibilité et efficacité
 
 
 > Les **raccourcis**, invisibles pour les novices, accélèrent l'interaction pour les experts. Permettre la personnalisation.
@@ -282,7 +355,7 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ---
 
-## Nielsen #8 — Design esthétique et minimaliste
+## Nielsen #8 - Design esthétique et minimaliste
 
 
 > Chaque information en trop dans une interface **entre en compétition** avec les informations utiles et diminue leur visibilité.
@@ -291,7 +364,7 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 <div style="font-size: 3.5rem; text-align: center; min-width: 80px;">🫖</div>
 <div>
 
-**Dans la vie** : une **théière ornementale** — anse inconfortable, bec impossible à nettoyer. Le superflu nuit à la fonction. Une théière simple est plus agréable à utiliser.
+**Dans la vie** : une **théière ornementale** - anse inconfortable, bec impossible à nettoyer. Le superflu nuit à la fonction. Une théière simple est plus agréable à utiliser.
 
 **En IHM** : une interface surchargée augmente le coût d'interaction. Une interface organisée le réduit. Devise : **"communiquer, pas décorer"**.
 
@@ -302,7 +375,7 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ---
 
-## Nielsen #9 — Aider à reconnaître et corriger les erreurs
+## Nielsen #9 - Aider à reconnaître et corriger les erreurs
 
 
 > Les messages d'erreur doivent être en **langage clair** (pas de codes), indiquer précisément le problème et **suggérer une solution**.
@@ -313,7 +386,7 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 **Dans la vie** : un panneau **"Sens interdit"** sur la route. Il vous dit clairement que vous allez dans la mauvaise direction et vous demande de vous arrêter. Pas un code cryptique.
 
-**En IHM** : page "Pas de connexion internet" avec des étapes pour résoudre. "Aucun résultat pour 'ours en peluche' — essayez ces suggestions". Utiliser du texte rouge en gras pour attirer l'attention.
+**En IHM** : page "Pas de connexion internet" avec des étapes pour résoudre. "Aucun résultat pour 'ours en peluche' - essayez ces suggestions". Utiliser du texte rouge en gras pour attirer l'attention.
 
 </div>
 </div>
@@ -322,7 +395,7 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ---
 
-## Nielsen #10 — Aide et documentation
+## Nielsen #10 - Aide et documentation
 
 
 > Idéalement, le système **n'a pas besoin d'explication**. Mais si nécessaire, l'aide doit être facile à trouver et orientée vers la tâche.
@@ -331,9 +404,9 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 <div style="font-size: 3.5rem; text-align: center; min-width: 80px;">ℹ️</div>
 <div>
 
-**Dans la vie** : les **bornes d'information** dans les aéroports. Facilement repérables, placées où on en a besoin, avec des réponses concrètes — pas un manuel de 200 pages.
+**Dans la vie** : les **bornes d'information** dans les aéroports. Facilement repérables, placées où on en a besoin, avec des réponses concrètes - pas un manuel de 200 pages.
 
-**En IHM** : FAQ qui anticipe les questions fréquentes. Icônes ℹ️ qui révèlent un tooltip au survol (aide contextuelle). Copilot Chat dans votre IDE — l'aide vient à vous.
+**En IHM** : FAQ qui anticipe les questions fréquentes. Icônes ℹ️ qui révèlent un tooltip au survol (aide contextuelle). Copilot Chat dans votre IDE - l'aide vient à vous.
 
 </div>
 </div>
@@ -344,7 +417,7 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 <!-- _class: lead -->
 
-# Partie 2 — JavaFX : pourquoi et comment
+# Partie 2 - JavaFX : pourquoi et comment
 
 ---
 
@@ -437,7 +510,7 @@ Les CM suivants ajouteront : bindings (CM2), FXML/architecture (CM3), MVVM/persi
 
 <!-- _class: lead -->
 
-# Partie 3 — Le graphe de scène
+# Partie 3 - Le graphe de scène
 
 ---
 
@@ -534,7 +607,7 @@ Ces principes ne sont pas JavaFX-spécifiques : ils s'appliquent à **toute** co
 
 <!-- _class: lead -->
 
-# Partie 4 — Le modèle événementiel
+# Partie 4 - Le modèle événementiel
 
 ---
 
@@ -583,12 +656,12 @@ sequenceDiagram
 
 Java offre 3 façons d'écrire un écouteur. Elles produisent exactement le même résultat :
 
-### Style 1 — Classe nommée (historique, avant Java 8)
+### Style 1 - Classe nommée (historique, avant Java 8)
 ```java
 bouton.setOnAction(new MonHandler(compteur));
 ```
 
-### Style 2 — Classe anonyme (intermédiaire)
+### Style 2 - Classe anonyme (intermédiaire)
 ```java
 bouton.setOnAction(new EventHandler<ActionEvent>() {
     @Override
@@ -596,7 +669,7 @@ bouton.setOnAction(new EventHandler<ActionEvent>() {
 });
 ```
 
-### Style 3 — Lambda (moderne, recommandé)
+### Style 3 - Lambda (moderne, recommandé)
 ```java
 bouton.setOnAction(e -> compteur.incrementer());
 ```
@@ -646,12 +719,12 @@ Le TP1 met en pratique tout ce CM en **6 exercices** progressifs :
 
 | Exercice | Concept CM1 |
 |---|---|
-| 1 — Première fenêtre | Stage, `show()` |
-| 2 — Stage personnalisé | Propriétés du Stage |
-| 3 — Première Scene | Scene, BorderPane, Label |
-| 4 — Mise en page | Décomposition en conteneurs (Gestalt) |
-| 5 — Événements bouton | Pattern Observer, 3 styles de handler |
-| 6 — Palette de couleurs | Synthèse : layouts + événements + feedback |
+| 1 - Première fenêtre | Stage, `show()` |
+| 2 - Stage personnalisé | Propriétés du Stage |
+| 3 - Première Scene | Scene, BorderPane, Label |
+| 4 - Mise en page | Décomposition en conteneurs (Gestalt) |
+| 5 - Événements bouton | Pattern Observer, 3 styles de handler |
+| 6 - Palette de couleurs | Synthèse : layouts + événements + feedback |
 
 Le TP utilise le **TDD baby steps** : les tests sont livrés désactivés, vous les activez un par un. C'est une méthode professionnelle (Kent Beck, XP).
 
@@ -660,8 +733,8 @@ Le TP utilise le **TDD baby steps** : les tests sont livrés désactivés, vous 
 ## Pour aller plus loin
 
 - [JavaFX 25 API Documentation](https://openjfx.io/javadoc/25/)
-- [Jakob Nielsen — 10 Usability Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/)
+- [Jakob Nielsen - 10 Usability Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/)
 - [Gestalt Principles in UI Design](https://www.nngroup.com/articles/gestalt-proximity/)
-- [Design of Everyday Things — Don Norman](https://www.nngroup.com/books/design-everyday-things-revised/) (le livre de référence)
+- [Design of Everyday Things - Don Norman](https://www.nngroup.com/books/design-everyday-things-revised/) (le livre de référence)
 
 **Prochain CM** : propriétés, bindings et le modèle événementiel complet. Comment synchroniser automatiquement l'interface avec les données, sans écrire un seul EventHandler.
