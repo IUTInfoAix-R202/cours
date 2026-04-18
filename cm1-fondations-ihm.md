@@ -62,14 +62,21 @@ Ce cours ne porte pas uniquement sur **comment afficher un bouton** mais surtout
 
 ## Brève histoire des interfaces
 
+<!-- _footer: "" -->
+
+<style scoped>
+table { font-size: 0.85rem; }
+p { font-size: 0.9rem; }
+</style>
+
 | Époque | Paradigme | Caractéristique |
 |---|---|---|
-| **1970** | **CLI** — Ligne de commande | L'utilisateur s'adapte à la machine |
-| **1984** | **GUI** — Interfaces graphiques | La machine s'adapte à l'utilisateur |
-| **2007** | **Tactile** — Smartphones | L'interaction devient physique |
-| **2023** | **Spatial / IA** | L'interface disparaît |
+| **1970** | **CLI** — Ligne de commande | Efficace mais exigeant. L'utilisateur s'adapte à la machine. |
+| **1984** | **GUI** — Interfaces graphiques | Macintosh, Windows, X11. La machine s'adapte à l'utilisateur. |
+| **2007** | **Tactile** — Smartphones | iPhone, gestes multi-touch. L'interaction devient physique. |
+| **2023** | **Spatial / IA** | Vision Pro, assistants vocaux. L'interface disparaît. |
 
-Chaque transition a été motivée par une meilleure compréhension des **besoins humains**, pas par la technologie.
+Chaque transition a été motivée par une meilleure compréhension des **besoins humains**, pas par la technologie seule.
 
 ---
 
