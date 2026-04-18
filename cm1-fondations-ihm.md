@@ -1335,84 +1335,203 @@ Chaque principe Gestalt guide le choix du conteneur :
 
 ## ⚡ Pourquoi des événements ?
 
-Un programme console est **séquentiel** :
-```
-lire entrée → traiter → afficher résultat → fin
-```
+<!-- _footer: "" -->
+<!-- _header: "" -->
 
-Une application graphique est **réactive** :
-```
-attendre → un événement se produit → réagir → attendre à nouveau
-```
+L'utilisateur peut cliquer **n'importe où**, **à n'importe quel moment**. Le programme doit **réagir**, pas dicter l'ordre des actions.
 
-L'utilisateur peut cliquer n'importe où, à n'importe quel moment. Le programme doit **réagir**, pas dicter l'ordre des actions.
+<div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+<div style="flex: 1; background: #b0bec5; color: #333; padding: 1.2rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📟 <b>Programme console</b></div>
+<div style="opacity: 0.8; margin-bottom: 0.8rem;">Séquentiel - le programme dicte l'ordre</div>
+<div style="display: flex; gap: 0.3rem; align-items: center; flex-wrap: wrap;">
+<div style="background: rgba(0,0,0,0.15); padding: 0.3rem 0.6rem; border-radius: 6px;">lire entrée</div>
+<div>→</div>
+<div style="background: rgba(0,0,0,0.15); padding: 0.3rem 0.6rem; border-radius: 6px;">traiter</div>
+<div>→</div>
+<div style="background: rgba(0,0,0,0.15); padding: 0.3rem 0.6rem; border-radius: 6px;">afficher</div>
+<div>→</div>
+<div style="background: rgba(0,0,0,0.15); padding: 0.3rem 0.6rem; border-radius: 6px;">fin</div>
+</div>
+</div>
+<div style="flex: 1; background: #e74c3c; color: white; padding: 1.2rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🖱️ <b>Application graphique</b></div>
+<div style="opacity: 0.9; margin-bottom: 0.8rem;">Réactive - l'utilisateur décide quand et quoi</div>
+<div style="display: flex; gap: 0.3rem; align-items: center; flex-wrap: wrap;">
+<div style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">attendre</div>
+<div>→</div>
+<div style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">événement</div>
+<div>→</div>
+<div style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">réagir</div>
+<div>→</div>
+<div style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">🔄</div>
+</div>
+</div>
+</div>
 
-> C'est un changement de paradigme fondamental par rapport à la programmation que vous avez pratiquée en R1.01 et R2.01.
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1.5rem; text-align: center;">
+💡 C'est un <b>changement de paradigme</b> par rapport à la programmation que vous avez pratiquée en R1.01 et R2.01.
+</div>
 
 ---
 
 ## ⚡ Le pattern Observer
 
-Le modèle événementiel de JavaFX repose sur le **pattern Observer** (Gang of Four, 1994) :
+Le modèle événementiel repose sur une idée simple : **"quand quelque chose se passe, préviens-moi"**.
 
-```mermaid
-sequenceDiagram
-    participant U as 👤 Utilisateur
-    participant B as Button (Observable)
-    participant H as EventHandler (Observateur)
+<div style="display: flex; gap: 1rem; margin-top: 1rem; align-items: center;">
+<div style="background: #e74c3c; color: white; padding: 1.2rem; border-radius: 12px; text-align: center; flex: 1;">
+<div style="font-size: 2.5rem;">🔘</div>
+<div style="font-weight: bold; font-size: 1.2rem; margin-top: 0.3rem;">Button</div>
+<div style="opacity: 0.9; font-size: 0.85rem;">l'observable</div>
+<div style="opacity: 0.9; font-size: 0.85rem;">sait qu'on l'a cliqué</div>
+</div>
+<div style="font-size: 2.5rem; color: #ccc;">→</div>
+<div style="background: #2c3e50; color: white; padding: 1.2rem; border-radius: 12px; text-align: center; flex: 1;">
+<div style="font-size: 2.5rem;">📢</div>
+<div style="font-weight: bold; font-size: 1.2rem; margin-top: 0.3rem;">notifie</div>
+<div style="opacity: 0.9; font-size: 0.85rem;">envoie un</div>
+<div style="opacity: 0.9; font-size: 0.85rem;">ActionEvent</div>
+</div>
+<div style="font-size: 2.5rem; color: #ccc;">→</div>
+<div style="background: #4a90d9; color: white; padding: 1.2rem; border-radius: 12px; text-align: center; flex: 1;">
+<div style="font-size: 2.5rem;">⚙️</div>
+<div style="font-weight: bold; font-size: 1.2rem; margin-top: 0.3rem;">EventHandler</div>
+<div style="opacity: 0.9; font-size: 0.85rem;">l'observateur</div>
+<div style="opacity: 0.9; font-size: 0.85rem;">sait quoi faire</div>
+</div>
+</div>
 
-    Note over B,H: Enregistrement (une seule fois)
-    B->>B: setOnAction(handler)
-
-    Note over U,H: À chaque clic
-    U->>B: clic
-    B->>H: handle(ActionEvent)
-    H->>H: exécute la réaction
-```
-
-**Principe** : l'objet observé (le bouton) **ne sait pas** ce que fera l'observateur (le handler). Il se contente de le notifier. C'est une **séparation des préoccupations**.
+<div style="display: flex; gap: 1.5rem; margin-top: 1.5rem; font-size: 1.7rem;">
+<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #e74c3c;">
+Le bouton <b>ne sait pas</b> ce que fera le handler. Il se contente de le prévenir.
+</div>
+<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #4a90d9;">
+Le handler <b>ne sait pas</b> d'où vient l'événement. Il sait juste quoi faire.
+</div>
+</div>
 
 ---
 
-## ⚡ EventHandler : 3 styles d'écriture
+## ⚡ Observer : séparation des responsabilités
 
-Java offre 3 façons d'écrire un écouteur. Elles produisent exactement le même résultat :
+Le pattern Observer illustre un principe fondamental : **chaque composant a une seule responsabilité**.
 
-### Style 1 - Classe nommée (historique, avant Java 8)
+<div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+<div style="flex: 1; background: #e74c3c; color: white; padding: 1.2rem; border-radius: 12px;">
+<div style="font-size: 1.3rem; margin-bottom: 0.5rem;">🔘 <b>Le Button</b></div>
+<div>✅ Sait qu'on l'a cliqué</div>
+<div>✅ Sait notifier ses observateurs</div>
+<div style="margin-top: 0.5rem;">❌ Ne sait pas ce qui va se passer</div>
+<div>❌ Ne connaît pas le compteur</div>
+</div>
+<div style="flex: 1; background: #4a90d9; color: white; padding: 1.2rem; border-radius: 12px;">
+<div style="font-size: 1.3rem; margin-bottom: 0.5rem;">⚙️ <b>Le EventHandler</b></div>
+<div>✅ Sait quoi faire (incrémenter)</div>
+<div>✅ Sait mettre à jour le label</div>
+<div style="margin-top: 0.5rem;">❌ Ne sait pas directement d'où vient le clic</div>
+<div>❌ Ne connaît pas le bouton</div>
+</div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1.5rem; text-align: center;">
+🏗️ Cette <b>séparation des préoccupations</b> sera poussée plus loin : bindings (CM2), MVC/MVVM (CM3-CM4).
+</div>
+
+---
+
+## ⚡ EventHandler : brancher un écouteur
+
+Comment dire au bouton **quoi faire** quand on clique ? Avec `setOnAction()` :
+
+```java
+bouton.setOnAction(handler);  // handler = un objet qui implémente EventHandler
+```
+
+L'interface `EventHandler<ActionEvent>` n'a qu'**une seule méthode** : `handle(ActionEvent e)`.
+
+Java offre **3 façons** d'écrire des objets `EventHandler`. Elles produisent toutes le même résultat :
+
+<div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+<div style="flex: 1; background: #b0bec5; color: #333; padding: 0.6rem 0.8rem; border-radius: 8px; text-align: center;">
+<b>Style 1</b><br/>Classe nommée
+</div>
+<div style="flex: 1; background: #e8a838; color: white; padding: 0.6rem 0.8rem; border-radius: 8px; text-align: center;">
+<b>Style 2</b><br/>Classe anonyme
+</div>
+<div style="flex: 1; background: #27ae60; color: white; padding: 0.6rem 0.8rem; border-radius: 8px; text-align: center;">
+<b>Style 3</b><br/>Lambda ⭐
+</div>
+</div>
+
+---
+
+## ⚡ Style 1 : classe nommée (avant Java 8)
+
+<!-- _footer: "" -->
+<!-- _header: "" -->
+
+L'écouteur est une **classe dédiée** dans son propre fichier :
+
+```java
+public class MonHandler implements EventHandler<ActionEvent> {
+    private Compteur compteur;
+    public MonHandler(Compteur compteur) {
+        this.compteur = compteur;
+    }
+    @Override
+    public void handle(ActionEvent event) {
+        compteur.incrementer();
+    }
+}
+```
+
 ```java
 bouton.setOnAction(new MonHandler(compteur));
 ```
 
-### Style 2 - Classe anonyme (intermédiaire)
+Le plus **verbeux**, mais le plus **explicite**. On voit clairement que le comportement est dans une classe séparée.
+
+---
+
+## ⚡ Style 2 : classe anonyme (intermédiaire)
+
+On définit la classe **sur place**, sans lui donner de nom :
+
 ```java
 bouton.setOnAction(new EventHandler<ActionEvent>() {
     @Override
-    public void handle(ActionEvent e) { compteur.incrementer(); }
+    public void handle(ActionEvent e) {
+        compteur.incrementer();
+        label.setText(compteur.getValeur() + " clics");
+    }
 });
 ```
 
-### Style 3 - Lambda (moderne, recommandé)
+Plus compact que le style 1, mais la syntaxe reste **lourde** (beaucoup de code pour une seule action).
+
+---
+
+## ⚡ Style 3 : lambda (moderne, recommandé) ⭐
+
+La syntaxe la plus **compacte** :
+
+```java
+bouton.setOnAction(e -> {
+    compteur.incrementer();
+    label.setText(compteur.getValeur() + " clics");
+});
+```
+
+`EventHandler` est une **interface fonctionnelle** (une seule méthode abstraite) → le compilateur déduit tout. Si le corps tient en une ligne :
+
 ```java
 bouton.setOnAction(e -> compteur.incrementer());
 ```
 
-> Le style lambda est le plus courant dans du code JavaFX moderne. Vous les pratiquerez tous les trois dans le TP1 (exercice 5).
-
----
-
-## ⚡ Ce que le modèle événementiel nous apprend
-
-Le pattern Observer illustre un principe fondamental de l'architecture logicielle :
-
-> **Séparation des préoccupations** : chaque composant a une responsabilité unique.
-
-- Le **bouton** sait qu'il a été cliqué → il notifie
-- Le **handler** sait quoi faire → il agit
-- Aucun des deux ne connaît les détails de l'autre
-
-Ce principe sera étendu dans les CM suivants :
-- **CM2** : les bindings poussent ce principe plus loin (synchronisation automatique sans écrire de handler)
-- **CM3** : MVC/MVVM formalisent la séparation en couches (View, Controller, Model)
+<div style="background: #27ae60; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center;">
+⭐ C'est le style que vous utiliserez le plus souvent. Vous les pratiquerez tous les trois dans le <b>TP1 (exercice 5)</b>.
+</div>
 
 ---
 
