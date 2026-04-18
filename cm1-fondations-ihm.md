@@ -32,24 +32,30 @@ section {
 
 <p style="font-size: 0.95rem; font-style: italic; color: #555; margin-bottom: 0;">Apprendre à concevoir et développer des <b>applications avec une interface graphique</b> en Java (JavaFX), en intégrant les bonnes pratiques d'architecture et d'ergonomie.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.8rem;">
-<div style="background: #edf2fb; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #4a90d9;">
-🖼️ <b>Composants graphiques</b><br/>Conteneurs, contrôles, graphe de scène
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+<div style="background: #4a90d9; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem;">🖼️ <b>Composants graphiques</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">Conteneurs, contrôles, graphe de scène</div>
 </div>
-<div style="background: #fef3e2; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #e8a838;">
-⚡ <b>Modèle événementiel</b><br/>Événements, listeners, bindings
+<div style="background: #e8a838; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem;">⚡ <b>Modèle événementiel</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">Événements, listeners, bindings</div>
 </div>
-<div style="background: #e8f5e9; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #27ae60;">
-🏗️ <b>Architecture IHM</b><br/>MVC, MVVM, séparation vue-modèle
+<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem;">🏗️ <b>Architecture IHM</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">MVC, MVVM, séparation vue-modèle</div>
 </div>
-<div style="background: #fce4ec; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #e74c3c;">
-📄 <b>IHM déclaratives</b><br/>FXML, CSS, SceneBuilder
+<div style="background: #e74c3c; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem;">📄 <b>IHM déclaratives</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">FXML, CSS, SceneBuilder</div>
 </div>
-<div style="background: #f3e5f5; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #8e44ad;">
-🧠 <b>Ergonomie</b><br/>Heuristiques de Nielsen, accessibilité
+<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem;">🧠 <b>Ergonomie</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">Heuristiques de Nielsen, accessibilité</div>
 </div>
-<div style="background: #e0f7fa; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #00838f;">
-💾 <b>Persistance</b><br/>JDBC, JPA, pattern DAO
+<div style="background: #00838f; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem;">💾 <b>Persistance</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">JDBC, JPA, pattern DAO</div>
 </div>
 </div>
 
