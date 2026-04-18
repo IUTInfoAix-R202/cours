@@ -43,7 +43,7 @@ Considérez trois applications qui font la même chose : afficher la météo.
 
 **Question** : laquelle utiliseriez-vous au quotidien ? Pourquoi ?
 
-→ La différence n'est pas dans le *code* mais dans la **conception de l'interface**.
+→ La différence est avant le *code*, elle est dans la **conception de l'interface**.
 
 ---
 
@@ -56,24 +56,18 @@ Une bonne IHM ne se contente pas de "fonctionner". Elle doit être :
 - **Efficiente** : avec un effort minimal
 - **Satisfaisante** : l'expérience est agréable
 
-Ce cours ne porte pas sur "comment afficher un bouton" mais sur **comment concevoir une interface qui sert l'utilisateur**.
+Ce cours ne porte pas uniquement sur "comment afficher un bouton" mais surtout sur **comment concevoir une interface qui sert l'utilisateur**.
 
 ---
 
 ## Brève histoire des interfaces
 
-```mermaid
-timeline
-    title Évolution des paradigmes d'interaction
-    1970 : CLI — Ligne de commande
-         : Efficace mais exigeant
-    1984 : GUI — Interfaces graphiques
-         : Macintosh, Windows, X11
-    2007 : Tactile — Smartphones
-         : iPhone, gestes multi-touch
-    2023 : Spatial / IA
-         : Vision Pro, assistants vocaux
-```
+| Époque | Paradigme | Caractéristique |
+|---|---|---|
+| **1970** | **CLI** — Ligne de commande | Efficace mais exigeant. L'utilisateur s'adapte à la machine. |
+| **1984** | **GUI** — Interfaces graphiques | Macintosh, Windows, X11. La machine s'adapte à l'utilisateur. |
+| **2007** | **Tactile** — Smartphones | iPhone, gestes multi-touch. L'interaction devient physique. |
+| **2023** | **Spatial / IA** | Vision Pro, assistants vocaux. L'interface disparaît. |
 
 Chaque transition a été motivée par une meilleure compréhension des **besoins humains**, pas par la technologie seule.
 
@@ -81,23 +75,32 @@ Chaque transition a été motivée par une meilleure compréhension des **besoin
 
 ## Les trois piliers d'un cours d'IHM
 
-```mermaid
-graph LR
-    A["🏗️ <b>Architecture</b><br/>Comment organiser le code"] --- C["🎯 <b>IHM</b>"]
-    B["🧠 <b>Ergonomie</b><br/>Comment servir l'utilisateur"] --- C
-    D["⚡ <b>Événements</b><br/>Comment réagir aux actions"] --- C
-
-    style A fill:#4a90d9,color:white
-    style B fill:#27ae60,color:white
-    style D fill:#e74c3c,color:white
-    style C fill:#e8a838,color:white
-```
+<div style="display: flex; justify-content: center; gap: 2rem; margin: 1.5rem 0;">
+<div style="background: #4a90d9; color: white; padding: 1.2rem 1.5rem; border-radius: 12px; text-align: center; flex: 1; max-width: 220px;">
+<div style="font-size: 2rem;">🏗️</div>
+<div style="font-weight: bold; font-size: 1.1rem;">Architecture</div>
+<div style="font-size: 0.85rem; opacity: 0.9;">Comment organiser le code</div>
+</div>
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.5rem; border-radius: 12px; text-align: center; flex: 1; max-width: 220px;">
+<div style="font-size: 2rem;">🧠</div>
+<div style="font-weight: bold; font-size: 1.1rem;">Ergonomie</div>
+<div style="font-size: 0.85rem; opacity: 0.9;">Comment servir l'utilisateur</div>
+</div>
+<div style="background: #e74c3c; color: white; padding: 1.2rem 1.5rem; border-radius: 12px; text-align: center; flex: 1; max-width: 220px;">
+<div style="font-size: 2rem;">⚡</div>
+<div style="font-weight: bold; font-size: 1.1rem;">Événements</div>
+<div style="font-size: 0.85rem; opacity: 0.9;">Comment réagir aux actions</div>
+</div>
+</div>
 
 Ces trois piliers seront développés tout au long des 4 CM :
-- **CM1** : premières notions des trois piliers
-- **CM2** : événements en profondeur + bindings
-- **CM3** : architecture MVC/MVVM + ergonomie approfondie
-- **CM4** : synthèse avec MVVM + persistance
+
+| CM | Architecture | Ergonomie | Événements |
+|---|---|---|---|
+| **CM1** | Premières notions | Nielsen #1, #2 + Gestalt | Observer, EventHandler |
+| **CM2** | Source unique de vérité | Affordance, feedback | Propagation, bindings |
+| **CM3** | MVC / MVVM | Fitts, Hick, WCAG | FXML + Controller |
+| **CM4** | MVVM complet | Prévention d'erreurs | Validation réactive |
 
 ---
 
