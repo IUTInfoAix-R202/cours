@@ -120,14 +120,14 @@ Chaque CM approfondit les trois piliers en parallèle. Il n'y a pas "un cours su
 <div style="display: flex; gap: 2rem; align-items: flex-start;">
 <div>
 
-Jakob Nielsen a identifié **10 heuristiques d'utilisabilité** (1994), toujours d'actualité 30 ans plus tard. Ce sont des **principes généraux**, pas des règles rigides. Ils s'appliquent à toute interface, pas seulement au logiciel.
+Jakob Nielsen a identifié **10 heuristiques d'utilisabilité** (1994), toujours d'actualité plus de 30 ans plus tard. Ce sont des **principes généraux**, pas des règles rigides. Ils s'appliquent à toute interface, pas seulement au logiciel.
 
-Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par un exemple de la **vie courante** (pas informatique) pour montrer que ces principes sont universels.
+Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par un exemple de la **vie courante** pour montrer que ces principes sont universels.
 
 </div>
 <div style="min-width: 200px; text-align: center;">
 
-[![Posters Nielsen](https://media.nngroup.com/media/editor/2024/03/06/10-usability-heuristics-702x395.png.400x400_q95_autocrop_crop_upscale.png)](https://www.nngroup.com/articles/ten-usability-heuristics/#poster)
+[![Posters Nielsen](assets/nielsen-heuristics-summary.png)](https://www.nngroup.com/articles/ten-usability-heuristics/#poster)
 
 <small>*[Posters NN/g](https://www.nngroup.com/articles/ten-usability-heuristics/#poster)*</small>
 
