@@ -25,20 +25,30 @@ section {
 
 ---
 
-## Présentation du module R2.02
+## Le module R2.02 en un coup d'oeil
 
-**Objectif** : s'initier au développement d'une application avec une **Interface Homme-Machine** en abordant la programmation événementielle (Java + JavaFX).
+> Apprendre à concevoir et développer des **applications avec une interface graphique** en Java (JavaFX), en intégrant les bonnes pratiques d'architecture et d'ergonomie.
 
-**Ce que vous apprendrez** :
-
-| Thème | Contenu |
-|---|---|
-| Composants graphiques | Conteneurs, contrôles, graphe de scène |
-| Modèle événementiel | Événements, listeners, bindings |
-| Architecture IHM | Séparation vue-modèle, MVC, MVVM |
-| IHM déclaratives | FXML, CSS, SceneBuilder |
-| Ergonomie | Heuristiques de Nielsen, accessibilité |
-| Persistance | JDBC, JPA, pattern DAO |
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.8rem; font-size: 0.9rem;">
+<div style="background: #edf2fb; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #4a90d9;">
+🖼️ <b>Composants graphiques</b><br/>Conteneurs, contrôles, graphe de scène
+</div>
+<div style="background: #fef3e2; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #e8a838;">
+⚡ <b>Modèle événementiel</b><br/>Événements, listeners, bindings
+</div>
+<div style="background: #e8f5e9; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #27ae60;">
+🏗️ <b>Architecture IHM</b><br/>MVC, MVVM, séparation vue-modèle
+</div>
+<div style="background: #fce4ec; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #e74c3c;">
+📄 <b>IHM déclaratives</b><br/>FXML, CSS, SceneBuilder
+</div>
+<div style="background: #f3e5f5; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #8e44ad;">
+🧠 <b>Ergonomie</b><br/>Heuristiques de Nielsen, accessibilité
+</div>
+<div style="background: #e0f7fa; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #00838f;">
+💾 <b>Persistance</b><br/>JDBC, JPA, pattern DAO
+</div>
+</div>
 
 ---
 
