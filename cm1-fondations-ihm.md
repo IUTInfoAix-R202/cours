@@ -62,11 +62,9 @@ Ce cours ne porte pas uniquement sur **comment afficher un bouton** mais surtout
 
 ## Brève histoire des interfaces
 
-<!-- _footer: "" -->
-
 <style scoped>
-table { font-size: 0.85rem; }
-p { font-size: 0.9rem; }
+table { font-size: 0.82rem; }
+p { font-size: 0.88rem; }
 </style>
 
 | Époque | Paradigme | Caractéristique |
