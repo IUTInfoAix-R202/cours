@@ -677,21 +677,30 @@ table { font-size: 0.87rem; }
 
 ## 🏗️ La métaphore du théâtre : le graphe de scène
 
+<!-- _footer: "" -->
+<!-- _header: "" -->
+
+<style scoped>
+table { font-size: 0.85rem; }
+</style>
+
 En termes techniques, cette métaphore se traduit par un **arbre d'objets** :
 
 ```mermaid
-graph TD
-    ST["🖼️ <b>Stage</b><br/>la fenêtre (le théâtre)"]
-    SC["🎬 <b>Scene</b><br/>le contenu affiché (le décor)"]
-    R["📦 <b>Root Node</b><br/>le conteneur racine"]
-    N1["🏷️ Node 1"]
-    N2["🔘 Node 2"]
-    N3["📦 Node 3"]
+graph RL
+    ST["🖼️ Stage - la fenêtre <i>(le théâtre)</i>"]
+    SC["🎬 Scene - le contenu affiché <i>(le décor)</i>"]
+    R["📦 Root Node - le conteneur racine <i>(la troupe)</i>"]
+    N1["🏷️ Label - une étiquette de texte <i>(un acteur)</i>"]
+    N2["🔘 Button - un bouton <i>(un autre acteur)</i>"]
+    N3["📝 TextField - un champ de texte <i>(encore un acteur)</i>"]
 
-    ST --> SC --> R
-    R --> N1
-    R --> N2
-    R --> N3
+    SC --> ST
+    R --> SC
+     
+    N1 --> R
+    N2 --> R
+    N3 --> R
 
     style ST fill:#4a90d9,color:white
     style SC fill:#7bb563,color:white
@@ -701,9 +710,31 @@ graph TD
     style N3 fill:#b0bec5,color:#333
 ```
 
-- **Stage** = la fenêtre du système d'exploitation. On la reçoit dans `start(Stage)`.
-- **Scene** = le contenu visible. On la crée et on l'attache au Stage.
-- **Nodes** = les éléments graphiques (boutons, labels, conteneurs…), organisés en **arbre**.
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
+🌳 Un noeud ne peut avoir <b>qu'un seul parent</b>. Le graphe de scène est toujours un <b>arbre</b>, jamais un graphe cyclique.
+</div>
+
+---
+
+## 🏗️ Stage, Scene, Nodes : les trois briques
+
+<div style="display: flex; gap: 1.5rem; margin-top: 1.5rem;">
+<div style="flex: 1; background: #4a90d9; color: white; padding: 1.5rem; border-radius: 12px;">
+<div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🖼️</div>
+<div style="font-weight: bold; font-size: 1.3rem;">Stage</div>
+<div style="margin-top: 0.5rem; opacity: 0.9;">La <b>fenêtre</b> du système d'exploitation. On la reçoit en paramètre de la méthode <code>start(Stage primaryStage)</code></div>
+</div>
+<div style="flex: 1; background: #7bb563; color: white; padding: 1.5rem; border-radius: 12px;">
+<div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎬</div>
+<div style="font-weight: bold; font-size: 1.3rem;">Scene</div>
+<div style="margin-top: 0.5rem; opacity: 0.9;">Le <b>contenu</b> visible. On la crée et on l'attache au Stage en appelant la méthode <code>primaryStage.setScene()</code></div>
+</div>
+<div style="flex: 1; background: #e8a838; color: white; padding: 1.5rem; border-radius: 12px;">
+<div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📦</div>
+<div style="font-weight: bold; font-size: 1.3rem;">Nodes</div>
+<div style="margin-top: 0.5rem; opacity: 0.9;">Les <b>éléments graphiques</b> (boutons, labels, conteneurs…), organisés en un arbre qui reflète la logique de l'IHM.</div>
+</div>
+</div>
 
 ---
 
