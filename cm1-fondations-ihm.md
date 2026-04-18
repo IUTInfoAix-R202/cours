@@ -705,9 +705,9 @@ graph RL
     style ST fill:#4a90d9,color:white
     style SC fill:#7bb563,color:white
     style R fill:#e8a838,color:white
-    style N1 fill:#b0bec5,color:#333
-    style N2 fill:#b0bec5,color:#333
-    style N3 fill:#b0bec5,color:#333
+    style N1 fill:#8e44ad,color:white
+    style N2 fill:#e74c3c,color:white
+    style N3 fill:#27ae60,color:white
 ```
 
 <div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
