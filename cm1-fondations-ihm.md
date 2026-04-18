@@ -80,21 +80,21 @@ Chaque transition a été motivée par une meilleure compréhension des **besoin
 
 ## Les trois piliers d'un cours d'IHM
 
-<div style="display: flex; justify-content: center; gap: 2rem; margin: 1.5rem 0;">
-<div style="background: #4a90d9; color: white; padding: 1.2rem 1.5rem; border-radius: 12px; text-align: center; flex: 1; max-width: 220px;">
-<div style="font-size: 2rem;">🏗️</div>
-<div style="font-weight: bold; font-size: 1.1rem;">Architecture</div>
-<div style="font-size: 0.85rem; opacity: 0.9;">Comment organiser le code</div>
+<div style="display: flex; justify-content: center; gap: 2rem; margin: 2rem 0;">
+<div style="background: #4a90d9; color: white; padding: 2.5rem 1.5rem; border-radius: 16px; text-align: center; flex: 1;">
+<div style="font-size: 3.5rem;">🏗️</div>
+<div style="font-weight: bold; font-size: 1.4rem; margin-top: 0.5rem;">Architecture</div>
+<div style="font-size: 1rem; opacity: 0.9; margin-top: 0.3rem;">Comment organiser le code</div>
 </div>
-<div style="background: #27ae60; color: white; padding: 1.2rem 1.5rem; border-radius: 12px; text-align: center; flex: 1; max-width: 220px;">
-<div style="font-size: 2rem;">🧠</div>
-<div style="font-weight: bold; font-size: 1.1rem;">Ergonomie</div>
-<div style="font-size: 0.85rem; opacity: 0.9;">Comment servir l'utilisateur</div>
+<div style="background: #27ae60; color: white; padding: 2.5rem 1.5rem; border-radius: 16px; text-align: center; flex: 1;">
+<div style="font-size: 3.5rem;">🧠</div>
+<div style="font-weight: bold; font-size: 1.4rem; margin-top: 0.5rem;">Ergonomie</div>
+<div style="font-size: 1rem; opacity: 0.9; margin-top: 0.3rem;">Comment servir l'utilisateur</div>
 </div>
-<div style="background: #e74c3c; color: white; padding: 1.2rem 1.5rem; border-radius: 12px; text-align: center; flex: 1; max-width: 220px;">
-<div style="font-size: 2rem;">⚡</div>
-<div style="font-weight: bold; font-size: 1.1rem;">Événements</div>
-<div style="font-size: 0.85rem; opacity: 0.9;">Comment réagir aux actions</div>
+<div style="background: #e74c3c; color: white; padding: 2.5rem 1.5rem; border-radius: 16px; text-align: center; flex: 1;">
+<div style="font-size: 3.5rem;">⚡</div>
+<div style="font-weight: bold; font-size: 1.4rem; margin-top: 0.5rem;">Événements</div>
+<div style="font-size: 1rem; opacity: 0.9; margin-top: 0.3rem;">Comment réagir aux actions</div>
 </div>
 </div>
 
