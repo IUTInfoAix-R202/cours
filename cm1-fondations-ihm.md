@@ -664,7 +664,20 @@ table { font-size: 0.87rem; }
 
 ## 🏗️ La métaphore du théâtre
 
-JavaFX organise l'affichage comme un **spectacle** :
+<!-- _footer: "" -->
+<!-- _header: "" -->
+
+<div style="display: flex; justify-content: center; align-items: center; flex: 1;">
+
+![w:1150](assets/metaphore-theatre.svg)
+
+</div>
+
+---
+
+## 🏗️ La métaphore du théâtre : le graphe de scène
+
+En termes techniques, cette métaphore se traduit par un **arbre d'objets** :
 
 ```mermaid
 graph TD
