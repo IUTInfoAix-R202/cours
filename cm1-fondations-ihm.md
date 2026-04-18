@@ -131,7 +131,7 @@ Jakob Nielsen a identifié **10 heuristiques d'utilisabilité** (1994), toujours
 Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par un exemple de la **vie courante** pour montrer que ces principes sont universels.
 
 </div>
-<div style="min-width: 200px; text-align: center;">
+<div style="min-width: 140px; max-width: 160px; text-align: center;">
 
 [![Posters Nielsen](assets/nielsen-heuristics-summary.png)](https://www.nngroup.com/articles/ten-usability-heuristics/#poster)
 
