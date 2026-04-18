@@ -125,171 +125,211 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ## Nielsen #1 — Visibilité de l'état du système
 
-> Le système doit toujours informer l'utilisateur de ce qui se passe, par un feedback approprié dans un délai raisonnable.
+<style scoped> section { font-size: 0.88rem; } </style>
 
-<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
-<div style="font-size: 4rem; text-align: center; min-width: 100px;">📍</div>
+> Le système doit toujours **informer l'utilisateur** de ce qui se passe, par un feedback approprié dans un délai raisonnable.
+
+<div style="display: flex; gap: 2rem; align-items: flex-start; margin: 0.8rem 0;">
+<div style="font-size: 3.5rem; text-align: center; min-width: 80px;">📍</div>
 <div>
 
-**Dans la vie** : le plan "Vous êtes ici" dans un centre commercial. Sans lui, vous êtes perdu. Avec lui, vous savez exactement où vous êtes et comment atteindre votre destination.
+**Dans la vie** : le plan **"Vous êtes ici"** dans un centre commercial. Sans lui, vous êtes perdu. Avec lui, vous savez où vous êtes et où aller.
 
-**En IHM** : barre de progression, titre de fenêtre qui reflète le document ouvert, curseur qui change pendant un chargement.
+**En IHM** : barre de progression d'un checkout (étape 2/4), titre de fenêtre reflétant le document ouvert, feedback tactile quand on appuie sur un bouton de smartphone.
 
 </div>
 </div>
+
+**✏️ Tips** : communiquer *clairement* l'état — aucune action à conséquence sans informer l'utilisateur. Présenter le feedback le plus *vite* possible. Des interactions prévisibles créent la **confiance**.
 
 ---
 
 ## Nielsen #2 — Correspondance avec le monde réel
 
-> Le système doit parler le langage de l'utilisateur, avec des mots et concepts familiers plutôt que du jargon technique.
+<style scoped> section { font-size: 0.88rem; } </style>
 
-<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
-<div style="font-size: 4rem; text-align: center; min-width: 100px;">🔥</div>
+> Le système doit parler le **langage de l'utilisateur**, avec des mots et concepts familiers plutôt que du jargon interne.
+
+<div style="display: flex; gap: 2rem; align-items: flex-start; margin: 0.8rem 0;">
+<div style="font-size: 3.5rem; text-align: center; min-width: 80px;">🔥</div>
 <div>
 
-**Dans la vie** : les boutons d'une plaque de cuisson sont disposés dans le **même arrangement** que les plaques elles-mêmes. Pas besoin de lire une notice pour savoir quel bouton contrôle quelle plaque.
+**Dans la vie** : les boutons d'une **plaque de cuisson** sont disposés dans le même arrangement que les plaques. Pas besoin de notice. Le mapping physique est immédiat.
 
-**En IHM** : la métaphore du théâtre dans JavaFX (Stage = scène, Scene = décor). Les noms parlent d'eux-mêmes.
+**En IHM** : dire "voiture" si l'utilisateur pense "voiture", pas "automobile". Utiliser l'icône 🛒 pour un panier d'achat — c'est la même fonction que dans le monde réel.
 
 </div>
 </div>
+
+**✏️ Tips** : ne jamais *supposer* que votre vocabulaire est celui de vos utilisateurs. La recherche utilisateur révèle leur terminologie et leur **modèle mental**.
 
 ---
 
 ## Nielsen #3 — Liberté et contrôle de l'utilisateur
 
-> Les utilisateurs font souvent des erreurs. Ils ont besoin d'une "sortie de secours" clairement identifiée.
+<style scoped> section { font-size: 0.88rem; } </style>
 
-<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
-<div style="font-size: 4rem; text-align: center; min-width: 100px;">🚪</div>
+> Les utilisateurs font souvent des erreurs. Ils ont besoin d'une **"sortie de secours"** clairement identifiée pour quitter l'action non voulue.
+
+<div style="display: flex; gap: 2rem; align-items: flex-start; margin: 0.8rem 0;">
+<div style="font-size: 3.5rem; text-align: center; min-width: 80px;">🚪</div>
 <div>
 
-**Dans la vie** : les **portes de sortie de secours** dans un bâtiment. Elles sont toujours visibles, toujours accessibles, et permettent de quitter rapidement sans procédure complexe.
+**Dans la vie** : les **panneaux EXIT** lumineux dans les bâtiments. Toujours visibles, toujours accessibles, et ils permettent de sortir sans procédure complexe.
 
-**En IHM** : le bouton "Annuler", le `Ctrl+Z` (undo), la croix pour fermer une fenêtre. L'utilisateur ne doit jamais se sentir piégé.
+**En IHM** : `Ctrl+Z` (undo/redo), bouton "Annuler" dans une boîte de dialogue, croix pour fermer. L'utilisateur ne s'engage jamais dans un processus irréversible sans le vouloir.
 
 </div>
 </div>
+
+**✏️ Tips** : supporter *Undo* et *Redo*. Montrer clairement comment *quitter* l'interaction en cours. La sortie doit être **étiquetée** et facile à trouver.
 
 ---
 
 ## Nielsen #4 — Cohérence et standards
 
-> L'utilisateur ne devrait pas avoir à se demander si des mots ou actions différents signifient la même chose.
+<style scoped> section { font-size: 0.88rem; } </style>
 
-<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
-<div style="font-size: 4rem; text-align: center; min-width: 100px;">🏨</div>
+> L'utilisateur ne devrait pas avoir à se demander si des mots, situations ou actions différents **signifient la même chose**.
+
+<div style="display: flex; gap: 2rem; align-items: flex-start; margin: 0.8rem 0;">
+<div style="font-size: 3.5rem; text-align: center; min-width: 80px;">🏨</div>
 <div>
 
-**Dans la vie** : dans tous les hôtels du monde, la **réception est à l'entrée**. Vous ne la cherchez jamais. C'est une convention universelle.
+**Dans la vie** : dans tous les hôtels du monde, la **réception est à l'entrée**. Vous ne la cherchez jamais. C'est une convention universelle que chaque hôtel respecte.
 
-**En IHM** : le menu "Fichier" est toujours à gauche, "Enregistrer" utilise toujours la disquette, les liens sont toujours soulignés. Suivre les conventions, pas les réinventer.
+**En IHM** : même design system pour toute une famille de produits (*cohérence interne*). Suivre les conventions de la plateforme — menu "Fichier" à gauche, liens soulignés (*cohérence externe*).
 
 </div>
 </div>
+
+**✏️ Tips** : vos utilisateurs passent la majorité de leur temps sur *d'autres* produits que le vôtre (loi de Jakob). Rompre la cohérence augmente leur **charge cognitive**.
 
 ---
 
 ## Nielsen #5 — Prévention des erreurs
 
-> Mieux vaut prévenir les erreurs que produire de bons messages d'erreur.
+<style scoped> section { font-size: 0.88rem; } </style>
 
-<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
-<div style="font-size: 4rem; text-align: center; min-width: 100px;">🛡️</div>
+> Mieux vaut **prévenir** les erreurs que produire de bons messages d'erreur.
+
+<div style="display: flex; gap: 2rem; align-items: flex-start; margin: 0.8rem 0;">
+<div style="font-size: 3.5rem; text-align: center; min-width: 80px;">🛡️</div>
 <div>
 
-**Dans la vie** : les **glissières de sécurité** sur les routes de montagne. Elles empêchent la voiture de tomber dans le ravin, plutôt que de mettre un panneau "Attention, ravin" en bas de la falaise.
+**Dans la vie** : les **glissières de sécurité** sur les routes de montagne. Elles empêchent la voiture de tomber dans le ravin, plutôt que de mettre un panneau en bas de la falaise.
 
-**En IHM** : griser un bouton "Supprimer" quand rien n'est sélectionné. Demander confirmation avant une action irréversible.
+**En IHM** : page de confirmation avant paiement (relire les détails du vol). Griser les dates indisponibles dans un calendrier. Proposer des valeurs par défaut raisonnables.
 
 </div>
 </div>
+
+**✏️ Tips** : deux types d'erreurs — les *lapsus* (inattention) et les *erreurs* (incompréhension). Prioriser la prévention des erreurs **coûteuses** en premier.
 
 ---
 
 ## Nielsen #6 — Reconnaissance plutôt que rappel
 
-> Rendre les éléments visibles. L'utilisateur ne devrait pas avoir à se souvenir d'informations d'un écran à l'autre.
+<style scoped> section { font-size: 0.88rem; } </style>
 
-<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
-<div style="font-size: 4rem; text-align: center; min-width: 100px;">🏰</div>
+> Rendre les éléments visibles. L'utilisateur ne devrait pas avoir à **se souvenir** d'informations d'un écran à l'autre.
+
+<div style="display: flex; gap: 2rem; align-items: flex-start; margin: 0.8rem 0;">
+<div style="font-size: 3.5rem; text-align: center; min-width: 80px;">🏰</div>
 <div>
 
-**Dans la vie** : "Lisbonne est-elle la capitale du Portugal ?" est plus facile que "Quelle est la capitale du Portugal ?". **Reconnaître** est plus facile que **se rappeler**.
+**Dans la vie** : "Lisbonne est-elle la capitale du Portugal ?" est plus facile que "Quelle est la capitale du Portugal ?". **Reconnaître** demande moins d'effort que **se rappeler**.
 
-**En IHM** : des menus déroulants (on reconnaît l'option) plutôt que des champs texte libres (il faut se rappeler la commande).
+**En IHM** : tableaux comparatifs (on voit les différences côte à côte). Requête de recherche affichée au-dessus des résultats. Menus plutôt que lignes de commande.
 
 </div>
 </div>
+
+**✏️ Tips** : offrir l'aide **en contexte** plutôt qu'un long tutoriel à mémoriser. Réduire la quantité d'informations que l'utilisateur doit retenir.
 
 ---
 
 ## Nielsen #7 — Flexibilité et efficacité
 
-> Les raccourcis, invisibles pour les novices, accélèrent l'interaction pour les experts.
+<style scoped> section { font-size: 0.88rem; } </style>
 
-<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
-<div style="font-size: 4rem; text-align: center; min-width: 100px;">🗺️</div>
+> Les **raccourcis**, invisibles pour les novices, accélèrent l'interaction pour les experts. Permettre la personnalisation.
+
+<div style="display: flex; gap: 2rem; align-items: flex-start; margin: 0.8rem 0;">
+<div style="font-size: 3.5rem; text-align: center; min-width: 80px;">🗺️</div>
 <div>
 
-**Dans la vie** : un **plan de ville** montre l'itinéraire principal, mais les habitants qui connaissent le quartier prennent des raccourcis. Les deux coexistent.
+**Dans la vie** : un **plan de ville** montre l'itinéraire principal, mais les habitants connaissent des raccourcis. Les deux coexistent sans se gêner.
 
-**En IHM** : un débutant utilise le menu "Édition → Copier", un expert tape `Ctrl+C`. L'interface sert les deux sans gêner personne.
+**En IHM** : débutant → menu "Édition → Copier" ; expert → `Ctrl+C`. Double-tap pour "liker" sur Instagram (raccourci tactile). Personnalisation de la barre d'outils.
 
 </div>
 </div>
+
+**✏️ Tips** : proposer des *accélérateurs* (raccourcis clavier, gestes). Permettre la *personnalisation* pour que chaque utilisateur adapte l'outil à sa pratique.
 
 ---
 
 ## Nielsen #8 — Design esthétique et minimaliste
 
-> Chaque information supplémentaire dans une interface entre en compétition avec les informations utiles.
+<style scoped> section { font-size: 0.88rem; } </style>
 
-<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
-<div style="font-size: 4rem; text-align: center; min-width: 100px;">🫖</div>
+> Chaque information en trop dans une interface **entre en compétition** avec les informations utiles et diminue leur visibilité.
+
+<div style="display: flex; gap: 2rem; align-items: flex-start; margin: 0.8rem 0;">
+<div style="font-size: 3.5rem; text-align: center; min-width: 80px;">🫖</div>
 <div>
 
-**Dans la vie** : une **théière ornementale** avec des décorations excessives — anse inconfortable, bec difficile à nettoyer. Le superflu nuit à la fonction. Une théière simple est plus agréable à utiliser.
+**Dans la vie** : une **théière ornementale** — anse inconfortable, bec impossible à nettoyer. Le superflu nuit à la fonction. Une théière simple est plus agréable à utiliser.
 
-**En IHM** : chaque bouton, chaque texte, chaque couleur doit justifier sa présence. Ce qui n'aide pas l'utilisateur le gêne.
+**En IHM** : une interface surchargée augmente le coût d'interaction. Une interface organisée le réduit. Devise : **"communiquer, pas décorer"**.
 
 </div>
 </div>
+
+**✏️ Tips** : garder le contenu et le design focalisés sur l'**essentiel**. Ne pas laisser les éléments décoratifs distraire de l'information utile. *Prioriser* ce qui soutient l'objectif de l'utilisateur.
 
 ---
 
 ## Nielsen #9 — Aider à reconnaître et corriger les erreurs
 
-> Les messages d'erreur doivent être en langage clair, indiquer précisément le problème et suggérer une solution.
+<style scoped> section { font-size: 0.88rem; } </style>
 
-<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
-<div style="font-size: 4rem; text-align: center; min-width: 100px;">⛔</div>
+> Les messages d'erreur doivent être en **langage clair** (pas de codes), indiquer précisément le problème et **suggérer une solution**.
+
+<div style="display: flex; gap: 2rem; align-items: flex-start; margin: 0.8rem 0;">
+<div style="font-size: 3.5rem; text-align: center; min-width: 80px;">⛔</div>
 <div>
 
-**Dans la vie** : un panneau **"Sens interdit"** sur la route. Il vous dit clairement que vous allez dans la mauvaise direction. Pas un code cryptique ("Erreur 403"), mais un message compréhensible.
+**Dans la vie** : un panneau **"Sens interdit"** sur la route. Il vous dit clairement que vous allez dans la mauvaise direction et vous demande de vous arrêter. Pas un code cryptique.
 
-**En IHM** : "Le mot de passe doit contenir au moins 8 caractères" est utile. "Erreur de validation" ne l'est pas.
+**En IHM** : page "Pas de connexion internet" avec des étapes pour résoudre. "Aucun résultat pour 'ours en peluche' — essayez ces suggestions". Utiliser du texte rouge en gras pour attirer l'attention.
 
 </div>
 </div>
+
+**✏️ Tips** : utiliser les codes visuels traditionnels (rouge, gras). Dire ce qui s'est passé en langage *compréhensible*. Offrir un **raccourci vers la solution**.
 
 ---
 
 ## Nielsen #10 — Aide et documentation
 
-> Idéalement, le système devrait être utilisable sans documentation. Mais si nécessaire, l'aide doit être facile à trouver et orientée vers la tâche.
+<style scoped> section { font-size: 0.88rem; } </style>
 
-<div style="display: flex; gap: 2rem; align-items: center; margin: 1rem 0;">
-<div style="font-size: 4rem; text-align: center; min-width: 100px;">ℹ️</div>
+> Idéalement, le système **n'a pas besoin d'explication**. Mais si nécessaire, l'aide doit être facile à trouver et orientée vers la tâche.
+
+<div style="display: flex; gap: 2rem; align-items: flex-start; margin: 0.8rem 0;">
+<div style="font-size: 3.5rem; text-align: center; min-width: 80px;">ℹ️</div>
 <div>
 
-**Dans la vie** : les **bornes d'information** dans les aéroports. Facilement repérables, placées aux endroits où on en a besoin, avec des réponses concrètes (pas un manuel de 200 pages).
+**Dans la vie** : les **bornes d'information** dans les aéroports. Facilement repérables, placées où on en a besoin, avec des réponses concrètes — pas un manuel de 200 pages.
 
-**En IHM** : tooltips au survol, Copilot Chat dans votre IDE, FAQ contextuelle. L'aide vient à l'utilisateur, pas l'inverse.
+**En IHM** : FAQ qui anticipe les questions fréquentes. Icônes ℹ️ qui révèlent un tooltip au survol (aide contextuelle). Copilot Chat dans votre IDE — l'aide vient à vous.
 
 </div>
 </div>
+
+**✏️ Tips** : l'aide doit être facile à *chercher*. La présenter **en contexte**, au moment où l'utilisateur en a besoin. Lister des étapes *concrètes*.
 
 ---
 
