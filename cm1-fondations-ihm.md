@@ -30,7 +30,7 @@ section {
 <!-- _header: "" -->
 <!-- _footer: "" -->
 
-Apprendre à concevoir et développer des **applications avec une interface graphique** en Java (JavaFX), en intégrant les bonnes pratiques d'architecture et d'ergonomie.
+> Apprendre à concevoir et développer des **applications avec une interface graphique** en Java (JavaFX), en intégrant les bonnes pratiques d'architecture et d'ergonomie.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
 <div style="background: #4a90d9; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
