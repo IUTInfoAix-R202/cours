@@ -247,6 +247,19 @@ Chaque exercice suit le même cycle, identique à celui d'une équipe en entrepr
 
 ---
 
+## Lien avec la SAE 2.01
+
+La SAE 2.01 vous demandera de créer une **interface d'extraction et manipulation de données** pour des capteurs de détection de chauve-souris.
+
+Ce CM pose les **fondations** :
+- La fenêtre (`Stage`) qui hébergera votre application
+- Les conteneurs (`BorderPane`, `VBox`…) qui organiseront vos composants
+- Les événements qui rendront l'interface interactive
+
+Les CM suivants ajouteront : bindings (CM2), FXML/architecture (CM3), MVVM/persistance (CM4).
+
+---
+
 ## Ce que vous saurez faire après ce CM
 
 - **Expliquer** ce qu'est une IHM et pourquoi sa conception est un enjeu distinct du code
@@ -718,6 +731,9 @@ graph RL
 
 ## 🏗️ Stage, Scene, Nodes : les trois briques
 
+<!-- _footer: "" -->
+<!-- _header: "" -->
+
 <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem;">
 <div style="flex: 1; background: #4a90d9; color: white; padding: 1.5rem; border-radius: 12px;">
 <div><span style="font-size: 2.8rem; vertical-align: middle;">🖼️</span> <span style="font-weight: bold; font-size: 2rem; vertical-align: middle;">Stage</span></div>
@@ -730,6 +746,37 @@ graph RL
 <div style="flex: 1; background: #e8a838; color: white; padding: 1.5rem; border-radius: 12px;">
 <div><span style="font-size: 2.8rem; vertical-align: middle;">📦</span> <span style="font-weight: bold; font-size: 2rem; vertical-align: middle;">Nodes</span></div>
 <div style="margin-top: 0.5rem; opacity: 0.9;">Les <b>éléments graphiques</b> (boutons, labels, conteneurs…), organisés en un arbre qui reflète la logique de l'IHM.</div>
+</div>
+</div>
+
+---
+
+## 🏗️ Hello World JavaFX
+
+<!-- _footer: "" -->
+<!-- _header: "" -->
+
+L'application graphique **la plus simple possible** :
+
+```java
+public class HelloWorld extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        Label label = new Label("Bonjour, JavaFX !");
+        Scene scene = new Scene(new VBox(label), 300, 200);
+        primaryStage.setTitle("Hello World");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+}
+```
+
+<div style="display: flex; gap: 1.5rem; margin-top: 1rem; font-size: 1.6rem;">
+<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1.2rem; border-radius: 10px; border-left: 4px solid #4a90d9;">
+<b>4 lignes</b> suffisent pour afficher une fenêtre avec du texte. Tout le reste est du confort.
+</div>
+<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1.2rem; border-radius: 10px; border-left: 4px solid #e8a838;">
+On retrouve les 3 briques : <b>Stage</b> (fenêtre), <b>Scene</b> (contenu), <b>Node</b> (Label dans un VBox).
 </div>
 </div>
 
@@ -760,19 +807,6 @@ graph LR
 ```
 
 Vous n'écrivez que `start()`. JavaFX s'occupe du reste (thread graphique, boucle événementielle, fermeture).
-
----
-
-## Lien avec la SAE 2.01
-
-La SAE 2.01 vous demandera de créer une **interface d'extraction et manipulation de données** pour des capteurs de détection de chauve-souris.
-
-Ce CM pose les **fondations** :
-- La fenêtre (`Stage`) qui hébergera votre application
-- Les conteneurs (`BorderPane`, `VBox`…) qui organiseront vos composants
-- Les événements qui rendront l'interface interactive
-
-Les CM suivants ajouteront : bindings (CM2), FXML/architecture (CM3), MVVM/persistance (CM4).
 
 ---
 
