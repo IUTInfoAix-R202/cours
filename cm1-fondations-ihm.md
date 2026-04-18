@@ -267,15 +267,41 @@ Chaque exercice suit le même cycle, identique à celui d'une équipe en entrepr
 
 ## Trois interfaces, même fonctionnalité
 
-Considérez trois applications qui font la même chose : afficher la météo.
+Trois applications qui font la même chose : **afficher la météo**.
 
-| Version A | Version B | Version C |
-|---|---|---|
-| Texte brut, pas de feedback | Boutons mal placés, couleurs illisibles | Layout clair, icônes, feedback instantané |
+<div style="display: flex; gap: 1.2rem; margin-top: 1rem;">
+<div style="flex: 1; border: 2px solid #e74c3c; border-radius: 12px; overflow: hidden;">
+<div style="background: #e74c3c; color: white; padding: 0.4rem; text-align: center; font-weight: bold;">❌ Version A</div>
+<div style="padding: 1rem; background: #111; color: #0f0; font-family: monospace; font-size: 0.8rem; min-height: 100px;">
+$ meteo aix<br/>
+Temp: 22C<br/>
+Humidite: 45%<br/>
+Vent: 15km/h NW<br/>
+$_
+</div>
+</div>
+<div style="flex: 1; border: 2px solid #e8a838; border-radius: 12px; overflow: hidden;">
+<div style="background: #e8a838; color: white; padding: 0.4rem; text-align: center; font-weight: bold;">⚠️ Version B</div>
+<div style="padding: 1rem; background: #ff0; min-height: 100px;">
+<span style="color: red; font-size: 0.7rem;">METEO</span><br/>
+<button style="background: lime; border: 3px solid red; font-size: 0.6rem;">VOIR</button>
+<button style="background: blue; color: blue; font-size: 0.6rem;">???</button><br/>
+<span style="color: red; font-size: 0.7rem;">22° peut-être</span>
+</div>
+</div>
+<div style="flex: 1; border: 2px solid #27ae60; border-radius: 12px; overflow: hidden;">
+<div style="background: #27ae60; color: white; padding: 0.4rem; text-align: center; font-weight: bold;">✅ Version C</div>
+<div style="padding: 1rem; background: #f8f9fa; min-height: 100px;">
+<div style="font-size: 0.85rem; color: #333;">📍 Aix-en-Provence</div>
+<div style="font-size: 1.8rem; margin: 0.3rem 0;">☀️ 22°C</div>
+<div style="font-size: 0.75rem; color: #666;">💧 45% &nbsp; 💨 15 km/h</div>
+</div>
+</div>
+</div>
 
 **Question** : laquelle utiliseriez-vous au quotidien ? Pourquoi ?
 
-→ La différence est avant le *code*, elle est dans la **conception de l'interface**.
+→ La différence n'est pas dans le *code*, elle est dans la **conception de l'interface**.
 
 ---
 
