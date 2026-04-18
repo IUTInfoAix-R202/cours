@@ -313,37 +313,57 @@ $_
 
 ## Définition
 
-> **Interface Homme-Machine (IHM)** : le point de contact entre les capacités cognitives de l'être humain et la logique du logiciel.
+<div style="background: #2c3e50; color: white; padding: 1.2rem 1.5rem; border-radius: 12px; margin: 1rem 0; font-size: 1.15rem;">
+🎯 <b>Interface Homme-Machine (IHM)</b> : le point de contact entre les capacités cognitives de <b>l'être humain</b> et la logique du <b>logiciel</b>.
+</div>
 
 Une bonne IHM ne se contente pas de "fonctionner". Elle doit être :
-- **Efficace** : l'utilisateur atteint son objectif
-- **Efficiente** : avec un effort minimal
-- **Satisfaisante** : l'expérience est agréable
 
-Ce cours ne porte pas uniquement sur **comment afficher un bouton** mais surtout sur **comment concevoir une interface qui sert l'utilisateur**.
+<div style="display: flex; gap: 1.2rem; margin: 1rem 0;">
+<div style="flex: 1; background: #27ae60; color: white; padding: 1rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 2rem;">🎯</div>
+<div style="font-weight: bold; margin-top: 0.3rem;">Efficace</div>
+<div style="opacity: 0.9; margin-top: 0.2rem;">L'utilisateur atteint son objectif</div>
+</div>
+<div style="flex: 1; background: #4a90d9; color: white; padding: 1rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 2rem;">⚡</div>
+<div style="font-weight: bold; margin-top: 0.3rem;">Efficiente</div>
+<div style="opacity: 0.9; margin-top: 0.2rem;">Avec un effort minimal</div>
+</div>
+<div style="flex: 1; background: #e8a838; color: white; padding: 1rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 2rem;">😊</div>
+<div style="font-weight: bold; margin-top: 0.3rem;">Satisfaisante</div>
+<div style="opacity: 0.9; margin-top: 0.2rem;">L'expérience est agréable</div>
+</div>
+</div>
+
+Ce cours ne porte pas sur **comment afficher un bouton** mais sur **comment concevoir une interface qui sert l'utilisateur**.
 
 ---
 
 ## Brève histoire des interfaces
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 <style scoped>
 table { font-size: 0.82rem; }
 p { font-size: 0.88rem; }
 </style>
 
-| Époque | Paradigme | Caractéristique |
+| Époque | 🖥️ Paradigme | 💡 Caractéristique |
 |---|---|---|
-| **1970** | **CLI** - Ligne de commande | Efficace mais exigeant. L'utilisateur s'adapte à la machine. |
-| **1984** | **GUI** - Interfaces graphiques | Macintosh, Windows, X11. La machine s'adapte à l'utilisateur. |
-| **2007** | **Tactile** - Smartphones | iPhone, gestes multi-touch. L'interaction devient physique. |
-| **2023** | **Spatial / IA** | Vision Pro, assistants vocaux. L'interface disparaît. |
+| **1970** | ⌨️ **CLI** - Ligne de commande | Efficace mais exigeant. L'utilisateur s'adapte à la machine. |
+| **1984** | 🖱️ **GUI** - Interfaces graphiques | Macintosh, Windows, X11. La machine s'adapte à l'utilisateur. |
+| **2007** | 📱 **Tactile** - Smartphones | iPhone, gestes multi-touch. L'interaction devient physique. |
+| **2023** | 🤖 **Spatial / IA** | Vision Pro, assistants vocaux. L'interface disparaît. |
 
 Chaque transition a été motivée par une meilleure compréhension des **besoins humains**, pas par la technologie seule.
 
 ---
 
 ## Les trois piliers d'un cours d'IHM
-
+<!-- _header: "" -->
 <!-- _footer: "" -->
 
 <style scoped>
@@ -375,28 +395,32 @@ Ces trois piliers seront développés tout au long des 4 CM du module.
 ---
 
 ## Les trois piliers : déclinaison dans les CM
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-| CM | Architecture | Ergonomie | Événements |
+| CM | 🏗️ Architecture | 🧠 Ergonomie | ⚡ Événements |
 |---|---|---|---|
 | **CM1** | Premières notions | Nielsen #1, #2 + Gestalt | Observer, EventHandler |
 | **CM2** | Source unique de vérité | Affordance, feedback | Propagation, bindings |
 | **CM3** | MVC / MVVM | Fitts, Hick, WCAG | FXML + Controller |
 | **CM4** | MVVM complet | Prévention d'erreurs | Validation réactive |
 
-Chaque CM approfondit les trois piliers en parallèle. Il n'y a pas "un cours sur l'ergonomie" isolé : les principes de conception accompagnent chaque concept technique.
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center;">
+💡 Chaque CM approfondit les trois piliers <b>en parallèle</b>. Les principes de conception accompagnent chaque concept technique.
+</div>
 
 ---
 
-## Ergonomie : les heuristiques de Nielsen
-
-<!-- _footer: "" -->
+## 🧠 Ergonomie : les heuristiques de Nielsen
 
 <div style="display: flex; gap: 2rem; align-items: flex-start;">
 <div>
 
-Jakob Nielsen a identifié **10 heuristiques d'utilisabilité** (1994), toujours d'actualité plus de 30 ans plus tard. Ce sont des **principes généraux**, pas des règles rigides. Ils s'appliquent à toute interface, pas seulement au logiciel.
+Jakob Nielsen a identifié **10 heuristiques d'utilisabilité** 🔟 (1994), toujours d'actualité plus de 30 ans plus tard. Ce sont des **principes généraux**, pas des règles rigides. Ils s'appliquent à toute interface, pas seulement au logiciel.
 
-Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par un exemple de la **vie courante** pour montrer que ces principes sont universels.
+Chaque heuristique est illustrée par un exemple de la **vie courante** 🌍 pour montrer que ces principes sont universels.
+
+Nous allons les parcourir toutes les dix 👇.
 
 </div>
 <div style="min-width: 160px; max-width: 180px; text-align: center;">
