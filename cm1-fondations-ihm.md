@@ -720,18 +720,15 @@ graph RL
 
 <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem;">
 <div style="flex: 1; background: #4a90d9; color: white; padding: 1.5rem; border-radius: 12px;">
-<div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🖼️</div>
-<div style="font-weight: bold; font-size: 1.3rem;">Stage</div>
+<div><span style="font-size: 2.8rem; vertical-align: middle;">🖼️</span> <span style="font-weight: bold; font-size: 2rem; vertical-align: middle;">Stage</span></div>
 <div style="margin-top: 0.5rem; opacity: 0.9;">La <b>fenêtre</b> du système d'exploitation. On la reçoit en paramètre de la méthode <code>start(Stage primaryStage)</code></div>
 </div>
 <div style="flex: 1; background: #7bb563; color: white; padding: 1.5rem; border-radius: 12px;">
-<div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎬</div>
-<div style="font-weight: bold; font-size: 1.3rem;">Scene</div>
+<div><span style="font-size: 2.8rem; vertical-align: middle;">🎬</span> <span style="font-weight: bold; font-size: 2rem; vertical-align: middle;">Scene</span></div>
 <div style="margin-top: 0.5rem; opacity: 0.9;">Le <b>contenu</b> visible. On la crée et on l'attache au Stage en appelant la méthode <code>primaryStage.setScene()</code></div>
 </div>
 <div style="flex: 1; background: #e8a838; color: white; padding: 1.5rem; border-radius: 12px;">
-<div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📦</div>
-<div style="font-weight: bold; font-size: 1.3rem;">Nodes</div>
+<div><span style="font-size: 2.8rem; vertical-align: middle;">📦</span> <span style="font-weight: bold; font-size: 2rem; vertical-align: middle;">Nodes</span></div>
 <div style="margin-top: 0.5rem; opacity: 0.9;">Les <b>éléments graphiques</b> (boutons, labels, conteneurs…), organisés en un arbre qui reflète la logique de l'IHM.</div>
 </div>
 </div>
