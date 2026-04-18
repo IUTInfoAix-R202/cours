@@ -1628,7 +1628,7 @@ supprimer.setDisable(true); // grisé
 <div style="background: #ddd; color: #999; padding: 0.8rem 2rem; border-radius: 6px; text-align: center; font-weight: bold;">Supprimer (disabled)</div>
 </div>
 
-<p style="font-size: 0.85rem; color: #666; margin-top: 1rem;">Le premier bouton a un style CSS personnalisé. Le second est grisé avec <code>setDisable(true)</code>.</p>
+<p style="font-size: 1.6rem; color: #666; margin-top: 1rem;">Le premier bouton a un style CSS personnalisé. Le second est grisé avec <code>setDisable(true)</code>.</p>
 
 </div>
 </div>
@@ -1681,38 +1681,91 @@ bar.getMenus().addAll(fichier,
 
 ---
 
-## 🕹️ Saisir : TextField, Slider
+## 🕹️ Saisir : TextField
 
 <div style="display: flex; gap: 2rem; margin-top: 1rem;">
 <div style="flex: 1;">
 
-**📝 TextField** - saisie de texte
+L'utilisateur tape du texte. On récupère la valeur avec `getText()`.
 
 ```java
 TextField champ = new TextField();
 champ.setPromptText("Votre nom...");
+
+// récupérer la saisie
 String texte = champ.getText();
 ```
 
-L'utilisateur tape du texte. On récupère la valeur avec `getText()`.
+Le `promptText` est le texte grisé affiché quand le champ est vide (indication pour l'utilisateur).
 
 </div>
 <div style="flex: 1;">
 
-**🎚️ Slider** - valeur numérique
+<div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+<div>
+<div style="font-size: 0.8rem; color: #666; margin-bottom: 0.3rem;">Champ vide (prompt visible) :</div>
+<div style="background: white; border: 2px solid #ccc; border-radius: 4px; padding: 0.6rem 0.8rem; color: #999;">Votre nom...</div>
+</div>
+<div>
+<div style="font-size: 0.8rem; color: #666; margin-bottom: 0.3rem;">Champ rempli :</div>
+<div style="background: white; border: 2px solid #4a90d9; border-radius: 4px; padding: 0.6rem 0.8rem; color: #333;">Sébastien Nedjar</div>
+</div>
+</div>
+
+</div>
+</div>
+
+---
+
+## 🕹️ Saisir : Slider
+
+<div style="display: flex; gap: 2rem; margin-top: 1rem;">
+<div style="flex: 1;">
+
+L'utilisateur fait glisser un curseur pour choisir une valeur numérique.
 
 ```java
 Slider slider = new Slider(0, 100, 50);
-// min, max, valeur initiale
+// paramètres : min, max, valeur initiale
+
 double val = slider.getValue();
 ```
 
-L'utilisateur fait glisser un curseur. On récupère la valeur avec `getValue()`.
+On peut écouter les changements avec un listener sur `valueProperty()` (CM2).
+
+</div>
+<div style="flex: 1;">
+
+<div style="margin-top: 0.5rem;">
+
+<div style="font-size: 0.8rem; color: #666; margin-bottom: 0.2rem;">Valeur = 20 :</div>
+<div style="background: #eee; border-radius: 10px; height: 8px; position: relative; margin: 1.2rem 0;">
+<div style="background: #e74c3c; border-radius: 10px; height: 8px; width: 20%;"></div>
+<div style="background: #e74c3c; width: 18px; height: 18px; border-radius: 50%; position: absolute; top: -5px; left: calc(20% - 9px); border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,0.3);"></div>
+</div>
+
+<div style="font-size: 0.8rem; color: #666; margin-bottom: 0.2rem;">Valeur = 50 :</div>
+<div style="background: #eee; border-radius: 10px; height: 8px; position: relative; margin: 1.2rem 0;">
+<div style="background: #4a90d9; border-radius: 10px; height: 8px; width: 50%;"></div>
+<div style="background: #4a90d9; width: 18px; height: 18px; border-radius: 50%; position: absolute; top: -5px; left: calc(50% - 9px); border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,0.3);"></div>
+</div>
+
+<div style="font-size: 0.8rem; color: #666; margin-bottom: 0.2rem;">Valeur = 85 :</div>
+<div style="background: #eee; border-radius: 10px; height: 8px; position: relative; margin: 1.2rem 0;">
+<div style="background: #27ae60; border-radius: 10px; height: 8px; width: 85%;"></div>
+<div style="background: #27ae60; width: 18px; height: 18px; border-radius: 50%; position: absolute; top: -5px; left: calc(85% - 9px); border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,0.3);"></div>
+</div>
+
+<div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #999;">
+<span>0</span>
+<span>100</span>
+</div>
+</div>
 
 </div>
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 1.5rem; text-align: center; font-size: 0.9rem;">
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 1.5rem; text-align: center; font-size: 1.5rem;">
 💡 La liste complète est dans la <a href="https://openjfx.io/javadoc/25/javafx.controls/javafx/scene/control/package-summary.html" style="color: #4a90d9;">Javadoc javafx.scene.control</a>. Vous en découvrirez d'autres au fil des TP.
 </div>
 
@@ -1726,39 +1779,130 @@ L'utilisateur fait glisser un curseur. On récupère la valeur avec `getValue()`
 
 ## Ce que nous avons vu
 
-| Concept | Retenir |
-|---|---|
-| **IHM** | Point de contact humain-logiciel. Pas juste du code, de la conception. |
-| **Stage / Scene / Node** | Métaphore du théâtre. L'affichage est un arbre de nœuds. |
-| **Conteneurs** | Choisir le layout selon le besoin, pas selon l'habitude. |
-| **Gestalt** | Proximité et alignement guident la perception de l'utilisateur. |
-| **Événements** | Les IHM sont réactives. Le pattern Observer sépare "quoi observer" de "comment réagir". |
-| **Nielsen #1 et #2** | Visibilité de l'état + correspondance avec le monde réel. |
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem; font-size: 1.6rem;">
+<div style="background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #4a90d9;">
+<b>🖼️ Stage / 🎬 Scene / 📦 Node</b><br/>
+Métaphore du théâtre. L'affichage est un arbre de nœuds.
+</div>
+<div style="background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #e8a838;">
+<b>📦 Conteneurs</b><br/>
+Choisir le layout selon le besoin : BorderPane, VBox, HBox, GridPane.
+</div>
+<div style="background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #e74c3c;">
+<b>⚡ Événements</b><br/>
+Les IHM sont réactives. Le pattern Observer sépare "observer" de "réagir".
+</div>
+<div style="background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #e74c3c;">
+<b>🕹️ Contrôles</b><br/>
+Afficher (Label), agir (Button), saisir (TextField, Slider).
+</div>
+<div style="background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #8e44ad;">
+<b>🧠 Nielsen</b><br/>
+10 heuristiques d'utilisabilité pour concevoir des interfaces qui servent l'utilisateur.
+</div>
+<div style="background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #8e44ad;">
+<b>🧠 Gestalt</b><br/>
+Proximité, alignement, similarité, clôture : les lois de la perception visuelle.
+</div>
+</div>
 
 ---
 
 ## Lien avec le TP1
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 Le TP1 met en pratique tout ce CM en **6 exercices** progressifs :
 
-| Exercice | Concept CM1 |
-|---|---|
-| 1 - Première fenêtre | Stage, `show()` |
-| 2 - Stage personnalisé | Propriétés du Stage |
-| 3 - Première Scene | Scene, BorderPane, Label |
-| 4 - Mise en page | Décomposition en conteneurs (Gestalt) |
-| 5 - Événements bouton | Pattern Observer, 3 styles de handler |
-| 6 - Palette de couleurs | Synthèse : layouts + événements + feedback |
+<div style="display: flex; gap: 0.6rem; margin-top: 0.5rem; flex-wrap: wrap;">
+<div style="background: #4a90d9; color: white; padding: 0.6rem 1rem; border-radius: 8px; flex: 1; min-width: 45%;">
+<b>Exercice 1</b> - Première fenêtre<br/><span style="opacity: 0.9; font-size: 1.5rem;">🖼️ Stage, show()</span>
+</div>
+<div style="background: #4a90d9; color: white; padding: 0.6rem 1rem; border-radius: 8px; flex: 1; min-width: 45%;">
+<b>Exercice 2</b> - Stage personnalisé<br/><span style="opacity: 0.9; font-size: 1.5rem;">🖼️ Propriétés du Stage</span>
+</div>
+<div style="background: #e8a838; color: white; padding: 0.6rem 1rem; border-radius: 8px; flex: 1; min-width: 45%;">
+<b>Exercice 3</b> - Première Scene<br/><span style="opacity: 0.9; font-size: 1.5rem;">🎬 Scene, 🗺️ BorderPane, 🏷️ Label</span>
+</div>
+<div style="background: #e8a838; color: white; padding: 0.6rem 1rem; border-radius: 8px; flex: 1; min-width: 45%;">
+<b>Exercice 4</b> - Mise en page<br/><span style="opacity: 0.9; font-size: 1.5rem;">🗺️ 🔲 ↔ Décomposition en conteneurs</span>
+</div>
+<div style="background: #e74c3c; color: white; padding: 0.6rem 1rem; border-radius: 8px; flex: 1; min-width: 45%;">
+<b>Exercice 5</b> - Événements bouton<br/><span style="opacity: 0.9; font-size: 1.5rem;">⚡ Observer, 3 styles de handler</span>
+</div>
+<div style="background: #e74c3c; color: white; padding: 0.6rem 1rem; border-radius: 8px; flex: 1; min-width: 45%;">
+<b>Exercice 6</b> - Palette de couleurs<br/><span style="opacity: 0.9; font-size: 1.5rem;">⚡ Synthèse : layouts + événements</span>
+</div>
+</div>
 
-Le TP utilise le **TDD baby steps** : les tests sont livrés désactivés, vous les activez un par un. C'est une méthode professionnelle (Kent Beck, XP).
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 0.8rem; text-align: center; font-size: 1.7rem;">
+🧩 TDD baby steps : les tests sont livrés désactivés, vous les activez <b>un par un</b>.
+</div>
+
+---
+
+## En résumé
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+
+Une application JavaFX, c'est **3 niveaux de décision** :
+
+<div style="display: flex; gap: 1rem; margin-top: 1rem;">
+<div style="flex: 1; background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 2.5rem;">📦</div>
+<div style="font-weight: bold; font-size: 1.7rem; margin-top: 0.3rem;">Comment organiser ?</div>
+<div style="opacity: 0.9; margin-top: 0.5rem;">Conteneurs, graphe de scène, hiérarchie des classes</div>
+</div>
+<div style="flex: 1; background: #e74c3c; color: white; padding: 1.2rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 2.5rem;">⚡</div>
+<div style="font-weight: bold; font-size: 1.7rem; margin-top: 0.3rem;">Comment réagir ?</div>
+<div style="opacity: 0.9; margin-top: 0.5rem;">Événements, Observer, EventHandler, 3 styles</div>
+</div>
+<div style="flex: 1; background: #8e44ad; color: white; padding: 1.2rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 2.5rem;">🧠</div>
+<div style="font-weight: bold; font-size: 1.7rem; margin-top: 0.3rem;">Comment concevoir ?</div>
+<div style="opacity: 0.9; margin-top: 0.5rem;">Nielsen, Gestalt, l'utilisateur au centre</div>
+</div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1.5rem; text-align: center; font-size: 1.7rem;">
+Le code qui <b>fonctionne</b> ne suffit pas. Une bonne IHM est une interface qui <b>sert l'utilisateur</b>.
+</div>
 
 ---
 
 ## Pour aller plus loin
 
-- [JavaFX 25 API Documentation](https://openjfx.io/javadoc/25/)
-- [Jakob Nielsen - 10 Usability Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/)
-- [Gestalt Principles in UI Design](https://www.nngroup.com/articles/gestalt-proximity/)
-- [Design of Everyday Things - Don Norman](https://www.nngroup.com/books/design-everyday-things-revised/) (le livre de référence)
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-**Prochain CM** : propriétés, bindings et le modèle événementiel complet. Comment synchroniser automatiquement l'interface avec les données, sans écrire un seul EventHandler.
+<div style="display: flex; gap: 1.2rem; margin-top: 1rem; align-items: stretch;">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 1rem;">
+<div style="background: #4a90d9; color: white; padding: 1rem; border-radius: 10px; flex: 1;">
+<div style="font-size: 1.2rem; margin-bottom: 0.5rem;">📚 <b>Documentation</b></div>
+<div>- <a href="https://openjfx.io/javadoc/25/" style="color: #d0e2f3;">JavaFX 25 API</a></div>
+<div>- <a href="https://openjfx.io/openjfx-docs/" style="color: #d0e2f3;">OpenJFX Getting Started</a></div>
+</div>
+<div style="background: #8e44ad; color: white; padding: 1rem; border-radius: 10px; flex: 1;">
+<div style="font-size: 1.2rem; margin-bottom: 0.5rem;">🧠 <b>Ergonomie</b></div>
+<div>- <a href="https://www.nngroup.com/articles/ten-usability-heuristics/" style="color: #e1bee7;">10 Heuristics - Nielsen</a></div>
+<div>- <a href="https://www.nngroup.com/articles/gestalt-proximity/" style="color: #e1bee7;">Gestalt Principles</a></div>
+<div>- <a href="https://www.nngroup.com/books/design-everyday-things-revised/" style="color: #e1bee7;">Design of Everyday Things</a></div>
+</div>
+</div>
+<div style="flex: 1; display: flex;">
+
+<div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔮 <b>Prochain CM</b></div>
+<div>Propriétés, bindings et le modèle événementiel complet.</div>
+<div style="margin-top: 0.5rem; opacity: 0.9;">Comment synchroniser automatiquement l'interface avec les données, <b>sans écrire un seul EventHandler</b>.</div>
+</div>
+
+</div>
+</div>
