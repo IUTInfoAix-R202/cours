@@ -434,7 +434,7 @@ Nous allons les parcourir toutes les dix 👇.
 
 ---
 
-## Nielsen #1 - Visibilité de l'état du système
+## 🧠 Nielsen #1 - Visibilité de l'état du système
 
 
 > Le système doit toujours **informer l'utilisateur** de ce qui se passe, par un feedback approprié dans un délai raisonnable.
@@ -454,7 +454,7 @@ Nous allons les parcourir toutes les dix 👇.
 
 ---
 
-## Nielsen #2 - Correspondance avec le monde réel
+## 🧠 Nielsen #2 - Correspondance avec le monde réel
 
 
 > Le système doit parler le **langage de l'utilisateur**, avec des mots et concepts familiers plutôt que du jargon interne.
@@ -474,7 +474,7 @@ Nous allons les parcourir toutes les dix 👇.
 
 ---
 
-## Nielsen #3 - Liberté et contrôle de l'utilisateur
+## 🧠 Nielsen #3 - Liberté et contrôle de l'utilisateur
 
 
 > Les utilisateurs font souvent des erreurs. Ils ont besoin d'une **"sortie de secours"** clairement identifiée pour quitter l'action non voulue.
@@ -494,7 +494,7 @@ Nous allons les parcourir toutes les dix 👇.
 
 ---
 
-## Nielsen #4 - Cohérence et standards
+## 🧠 Nielsen #4 - Cohérence et standards
 
 
 > L'utilisateur ne devrait pas avoir à se demander si des mots, situations ou actions différents **signifient la même chose**.
@@ -514,7 +514,7 @@ Nous allons les parcourir toutes les dix 👇.
 
 ---
 
-## Nielsen #5 - Prévention des erreurs
+## 🧠 Nielsen #5 - Prévention des erreurs
 
 
 > Mieux vaut **prévenir** les erreurs que produire de bons messages d'erreur.
@@ -534,7 +534,7 @@ Nous allons les parcourir toutes les dix 👇.
 
 ---
 
-## Nielsen #6 - Reconnaissance plutôt que rappel
+## 🧠 Nielsen #6 - Reconnaissance plutôt que rappel
 
 
 > Rendre les éléments visibles. L'utilisateur ne devrait pas avoir à **se souvenir** d'informations d'un écran à l'autre.
@@ -554,7 +554,7 @@ Nous allons les parcourir toutes les dix 👇.
 
 ---
 
-## Nielsen #7 - Flexibilité et efficacité
+## 🧠 Nielsen #7 - Flexibilité et efficacité
 
 
 > Les **raccourcis**, invisibles pour les novices, accélèrent l'interaction pour les experts. Permettre la personnalisation.
@@ -574,7 +574,7 @@ Nous allons les parcourir toutes les dix 👇.
 
 ---
 
-## Nielsen #8 - Design esthétique et minimaliste
+## 🧠 Nielsen #8 - Design esthétique et minimaliste
 
 
 > Chaque information en trop dans une interface **entre en compétition** avec les informations utiles et diminue leur visibilité.
@@ -594,7 +594,7 @@ Nous allons les parcourir toutes les dix 👇.
 
 ---
 
-## Nielsen #9 - Aider à reconnaître et corriger les erreurs
+## 🧠 Nielsen #9 - Aider à reconnaître et corriger les erreurs
 
 
 > Les messages d'erreur doivent être en **langage clair** (pas de codes), indiquer précisément le problème et **suggérer une solution**.
@@ -614,7 +614,7 @@ Nous allons les parcourir toutes les dix 👇.
 
 ---
 
-## Nielsen #10 - Aide et documentation
+## 🧠 Nielsen #10 - Aide et documentation
 
 
 > Idéalement, le système **n'a pas besoin d'explication**. Mais si nécessaire, l'aide doit être facile à trouver et orientée vers la tâche.
@@ -640,7 +640,7 @@ Nous allons les parcourir toutes les dix 👇.
 
 ---
 
-## D'AWT à JavaFX : 25 ans d'évolution
+## 🏗️ D'AWT à JavaFX : 25 ans d'évolution
 
 | Époque | Toolkit | Caractéristique |
 |---|---|---|
@@ -654,7 +654,7 @@ Nous allons les parcourir toutes les dix 👇.
 
 ---
 
-## La métaphore du théâtre
+## 🏗️ La métaphore du théâtre
 
 JavaFX organise l'affichage comme un **spectacle** :
 
@@ -686,7 +686,7 @@ graph TD
 
 ---
 
-## Le cycle de vie d'une application
+## 🏗️ Le cycle de vie d'une application
 
 ```java
 public class MonApp extends Application {
@@ -733,7 +733,7 @@ Les CM suivants ajouteront : bindings (CM2), FXML/architecture (CM3), MVVM/persi
 
 ---
 
-## Un arbre de nœuds
+## 🏗️ Un arbre de nœuds
 
 Le **graphe de scène** (scene graph) est la structure de données centrale de JavaFX. C'est un arbre où chaque nœud est un élément graphique :
 
@@ -759,7 +759,7 @@ graph TD
 
 ---
 
-## Trois familles de nœuds
+## 🏗️ Trois familles de nœuds
 
 | Famille | Rôle | Exemples |
 |---|---|---|
@@ -772,7 +772,7 @@ Les contrôles et formes sont des **feuilles** de l'arbre (pas d'enfants).
 
 ---
 
-## Choisir le bon conteneur
+## 🏗️ Choisir le bon conteneur
 
 La question n'est pas "quel conteneur connaissez-vous ?" mais **"quel problème de mise en page avez-vous ?"** :
 
@@ -788,7 +788,7 @@ La question n'est pas "quel conteneur connaissez-vous ?" mais **"quel problème 
 
 ---
 
-## Exemple : décomposer une interface
+## 🏗️ Exemple : décomposer une interface
 
 Comment découper cette maquette en conteneurs ?
 
@@ -809,7 +809,7 @@ Comment découper cette maquette en conteneurs ?
 
 ---
 
-## Principes Gestalt et mise en page
+## 🧠 Principes Gestalt et mise en page
 
 Les **lois de la Gestalt** (psychologie de la perception) expliquent comment l'œil humain organise ce qu'il voit :
 
@@ -830,7 +830,7 @@ Ces principes ne sont pas JavaFX-spécifiques : ils s'appliquent à **toute** co
 
 ---
 
-## Pourquoi des événements ?
+## ⚡ Pourquoi des événements ?
 
 Un programme console est **séquentiel** :
 ```
@@ -848,7 +848,7 @@ L'utilisateur peut cliquer n'importe où, à n'importe quel moment. Le programme
 
 ---
 
-## Le pattern Observer
+## ⚡ Le pattern Observer
 
 Le modèle événementiel de JavaFX repose sur le **pattern Observer** (Gang of Four, 1994) :
 
@@ -871,7 +871,7 @@ sequenceDiagram
 
 ---
 
-## EventHandler : 3 styles d'écriture
+## ⚡ EventHandler : 3 styles d'écriture
 
 Java offre 3 façons d'écrire un écouteur. Elles produisent exactement le même résultat :
 
@@ -897,7 +897,7 @@ bouton.setOnAction(e -> compteur.incrementer());
 
 ---
 
-## Ce que le modèle événementiel nous apprend
+## ⚡ Ce que le modèle événementiel nous apprend
 
 Le pattern Observer illustre un principe fondamental de l'architecture logicielle :
 
