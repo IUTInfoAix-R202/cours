@@ -98,7 +98,11 @@ Chaque transition a été motivée par une meilleure compréhension des **besoin
 </div>
 </div>
 
-Ces trois piliers seront développés tout au long des 4 CM :
+Ces trois piliers seront développés tout au long des 4 CM du module.
+
+---
+
+## Les trois piliers : déclinaison dans les CM
 
 | CM | Architecture | Ergonomie | Événements |
 |---|---|---|---|
@@ -106,6 +110,8 @@ Ces trois piliers seront développés tout au long des 4 CM :
 | **CM2** | Source unique de vérité | Affordance, feedback | Propagation, bindings |
 | **CM3** | MVC / MVVM | Fitts, Hick, WCAG | FXML + Controller |
 | **CM4** | MVVM complet | Prévention d'erreurs | Validation réactive |
+
+Chaque CM approfondit les trois piliers en parallèle. Il n'y a pas "un cours sur l'ergonomie" isolé : les principes de conception accompagnent chaque concept technique.
 
 ---
 
