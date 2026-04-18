@@ -59,57 +59,191 @@ blockquote { font-size: 0.92rem; }
 
 ---
 
-## Organisation et évaluation
+## Organisation du module
 
-<style scoped> table { font-size: 0.85rem; } </style>
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-**Intervenants** : S. Nedjar (responsable), F. Flouvat, S. Nabitz, S. Chtioui
+<div style="display: flex; gap: 0.8rem; margin-top: 1rem;">
+<div style="background: #4a90d9; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
+<div style="font-size: 1.8rem; font-weight: bold;">CM1</div>
+<div style="margin-top: 0.3rem;">Fondations IHM + JavaFX</div>
+</div>
+<div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
+<div style="font-size: 1.8rem; font-weight: bold;">CM2</div>
+<div style="margin-top: 0.3rem;">Propriétés et bindings</div>
+</div>
+<div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
+<div style="font-size: 1.8rem; font-weight: bold;">CM3</div>
+<div style="margin-top: 0.3rem;">Architecture et FXML</div>
+</div>
+<div style="background: #8e44ad; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
+<div style="font-size: 1.8rem; font-weight: bold;">CM4</div>
+<div style="margin-top: 0.3rem;">MVVM + persistance</div>
+</div>
+</div>
 
-**Volume horaire** : 4 CM (6h) + TD/TP (32h) = 38h
+<div style="display: flex; gap: 0.8rem; text-align: center; font-size: 1.5rem; color: #999;">
+<div style="flex: 1;">↓</div>
+<div style="flex: 1;">↓</div>
+<div style="flex: 1;">↓</div>
+<div style="flex: 1;">↓</div>
+</div>
 
-**Progression** :
+<div style="display: flex; gap: 0.8rem;">
+<div style="background: #d0e2f3; color: #2c5f8a; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
+TP1
+</div>
+<div style="background: #fae5c0; color: #8a6a1f; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
+TP2
+</div>
+<div style="background: #c8e6c9; color: #1b5e20; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
+TP3
+</div>
+<div style="background: #e1bee7; color: #5c2473; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
+TP4 + TP5
+</div>
+</div>
 
-| CM | Thème | TP associé |
-|---|---|---|
-| CM1 | Fondations IHM + JavaFX | TP1 - Bases JavaFX |
-| CM2 | Propriétés, bindings, événements | TP2 - Properties & bindings |
-| CM3 | Architecture MVC/MVVM + FXML | TP3 - FXML |
-| CM4 | MVVM + persistance (synthèse) | TP4 - MVVM + TP5 - Persistance |
+<div style="display: flex; gap: 2rem; margin-top: 1.5rem;">
+<div style="flex: 1;">
 
-**Évaluations** :
-- **CC1** : note d'évaluation de TP - coeff. 10
-- **CC2** : note de participation et d'implication - coeff. 10
-- **CC3** : réalisation d'une mini-application JavaFX sur feuille - coeff. 40
+**👥 Intervenants**
+- S. Nedjar, F. Flouvat, 
+- S. Nabitz, S. Chtioui
+
+</div>
+<div style="flex: 1;">
+
+**⏱️ Volume horaire** : 38h
+- CM (6h) 
+- TD/TP (32h)
+
+</div>
+</div>
+
+---
+
+## Évaluation
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+Trois notes, un objectif : vérifier que vous **comprenez** ce que vous codez, pas juste que ça fonctionne.
+
+<div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+<div style="background: #4a90d9; color: white; padding: 1.8rem 1.2rem; border-radius: 12px; flex: 1; text-align: center;">
+<div style="font-size: 3.5rem; margin-bottom: 0.5rem;">📝</div>
+<div style="font-weight: bold; font-size: 1.5rem;">CC1</div>
+<div style="margin-top: 0.5rem; opacity: 0.9;">Note d'évaluation de TP</div>
+<div style="margin-top: 0.5rem; font-weight: bold; font-size: 1.2rem; background: rgba(255,255,255,0.2); border-radius: 6px; padding: 0.2rem;">coeff. 10</div>
+</div>
+<div style="background: #e8a838; color: white; padding: 1.8rem 1.2rem; border-radius: 12px; flex: 1; text-align: center;">
+<div style="font-size: 3.5rem; margin-bottom: 0.5rem;">🤝</div>
+<div style="font-weight: bold; font-size: 1.5rem;">CC2</div>
+<div style="margin-top: 0.5rem; opacity: 0.9;">Participation et implication</div>
+<div style="margin-top: 0.5rem; font-weight: bold; font-size: 1.2rem; background: rgba(255,255,255,0.2); border-radius: 6px; padding: 0.2rem;">coeff. 10</div>
+</div>
+<div style="background: #e74c3c; color: white; padding: 1.8rem 1.2rem; border-radius: 12px; flex: 1; text-align: center;">
+<div style="font-size: 3.5rem; margin-bottom: 0.5rem;">💻</div>
+<div style="font-weight: bold; font-size: 1.5rem;">CC3</div>
+<div style="margin-top: 0.5rem; opacity: 0.9;">Mini-application JavaFX sur feuille</div>
+<div style="margin-top: 0.5rem; font-weight: bold; font-size: 1.2rem; background: rgba(255,255,255,0.2); border-radius: 6px; padding: 0.2rem;">coeff. 40</div>
+</div>
+</div>
+
+<div style="display: flex; height: 1.2rem; border-radius: 8px; overflow: hidden; margin-top: 1.2rem;">
+<div style="background: #4a90d9; flex: 10; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: bold;">17%</div>
+<div style="background: #e8a838; flex: 10; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: bold;">17%</div>
+<div style="background: #e74c3c; flex: 40; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: bold;">66%</div>
+</div>
 
 ---
 
 ## Environnement de travail
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 Tout le module se fait sur **GitHub Codespaces** : aucune installation locale nécessaire.
 
-<div style="display: flex; gap: 2rem; margin-top: 1rem;">
-<div style="flex: 1;">
-
-**Outils fournis dans le Codespace** :
-- Java 25 + JavaFX 25
-- Maven (via `./mvnw`)
-- Git + GitHub CLI (`gh`)
-- Copilot Chat (tuteur IA)
-- TestFX (tests d'interface)
-
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+<div style="background: #2c3e50; color: white; padding: 1.2rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 2.5rem;">☕</div>
+<div style="font-weight: bold; margin-top: 0.3rem;">Java 25</div>
 </div>
-<div style="flex: 1;">
-
-**Workflow professionnel** :
-- GitHub Classroom pour les devoirs
-- TDD baby steps (`@Disabled` → activer)
-- Branche → Pull Request → Review Copilot → Merge
-- Autograding automatique (note sur 100)
-
+<div style="background: #2c3e50; color: white; padding: 1.2rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 2.5rem;">🎨</div>
+<div style="font-weight: bold; margin-top: 0.3rem;">JavaFX 25</div>
+</div>
+<div style="background: #2c3e50; color: white; padding: 1.2rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 2.5rem;">📦</div>
+<div style="font-weight: bold; margin-top: 0.3rem;">Maven</div>
+</div>
+<div style="background: #2c3e50; color: white; padding: 1.2rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 2.5rem;">🔀</div>
+<div style="font-weight: bold; margin-top: 0.3rem;">Git + GitHub CLI</div>
+</div>
+<div style="background: #2c3e50; color: white; padding: 1.2rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 2.5rem;">🤖</div>
+<div style="font-weight: bold; margin-top: 0.3rem;">Copilot Chat</div>
+</div>
+<div style="background: #2c3e50; color: white; padding: 1.2rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 2.5rem;">🧪</div>
+<div style="font-weight: bold; margin-top: 0.3rem;">TestFX</div>
 </div>
 </div>
 
-> Ce workflow reproduit les pratiques de développement en entreprise.
+<div style="background: #2c3e50; color: white; padding: 1.2rem 2rem; border-radius: 10px; text-align: center; margin-top: 1.5rem; font-size: 1.4rem;">
+🌐 Vous ouvrez un navigateur, vous codez. <b>Rien à installer, rien à configurer !</b>
+</div>
+
+---
+
+## Workflow professionnel
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+Chaque exercice suit le même cycle, identique à celui d'une équipe en entreprise :
+
+<div style="display: flex; margin-top: 1.5rem; align-items: center;">
+<div style="background: #4a90d9; color: white; padding: 1.2rem 1rem; border-radius: 12px; text-align: center; flex: 1;">
+<div style="font-size: 2.5rem;">🌿</div>
+<div style="font-weight: bold; font-size: 1.1rem;">Branche</div>
+</div>
+<div style="font-size: 2rem; color: #ccc; padding: 0 0.3rem;">→</div>
+<div style="background: #2c3e50; color: white; padding: 1.2rem 1rem; border-radius: 12px; text-align: center; flex: 1;">
+<div style="font-size: 2.5rem;">💻</div>
+<div style="font-weight: bold; font-size: 1.1rem;">Code + Tests</div>
+</div>
+<div style="font-size: 2rem; color: #ccc; padding: 0 0.3rem;">→</div>
+<div style="background: #e8a838; color: white; padding: 1.2rem 1rem; border-radius: 12px; text-align: center; flex: 1;">
+<div style="font-size: 2.5rem;">📬</div>
+<div style="font-weight: bold; font-size: 1.1rem;">Pull Request</div>
+</div>
+<div style="font-size: 2rem; color: #ccc; padding: 0 0.3rem;">→</div>
+<div style="background: #8e44ad; color: white; padding: 1.2rem 1rem; border-radius: 12px; text-align: center; flex: 1;">
+<div style="font-size: 2.5rem;">👀</div>
+<div style="font-weight: bold; font-size: 1.1rem;">Review</div>
+</div>
+<div style="font-size: 2rem; color: #ccc; padding: 0 0.3rem;">→</div>
+<div style="background: #27ae60; color: white; padding: 1.2rem 1rem; border-radius: 12px; text-align: center; flex: 1;">
+<div style="font-size: 2.5rem;">✅</div>
+<div style="font-weight: bold; font-size: 1.1rem;">Merge</div>
+</div>
+</div>
+
+<div style="display: flex; gap: 1.5rem; margin-top: 2rem;">
+<div style="flex: 1; background: #f0f4f8; padding: 1rem 1.2rem; border-radius: 10px; border-left: 4px solid #4a90d9;">
+<div style="font-weight: bold;">🧩 TDD baby steps</div>
+<div style="margin-top: 0.3rem;">Les tests sont livrés désactivés (<code>@Disabled</code>). Vous les activez <b>un par un</b> et implémentez le minimum pour les faire passer.</div>
+</div>
+<div style="flex: 1; background: #f0f4f8; padding: 1rem 1.2rem; border-radius: 10px; border-left: 4px solid #27ae60;">
+<div style="font-weight: bold;">📊 Autograding</div>
+<div style="margin-top: 0.3rem;">À chaque <code>push</code>, votre note est calculée automatiquement. Chaque test vert = des points en plus.</div>
+</div>
+</div>
 
 ---
 
