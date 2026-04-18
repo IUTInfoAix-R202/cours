@@ -8,9 +8,9 @@ footer: "IUT Aix-Marseille - BUT Informatique 1A"
 
 <!-- _class: lead -->
 
-![w:150](https://raw.githubusercontent.com/IUTInfoAix-R510/Syllabus/main/assets/logo.png)
+![w:320](https://raw.githubusercontent.com/IUTInfoAix-R510/Syllabus/main/assets/logo.png)
 
-# CM1 - Fondations de l'IHM et première immersion JavaFX
+# Fondations de l'IHM et première immersion JavaFX
 
 **R2.02 - Développement d'applications avec IHM**
 IUT d'Aix-Marseille - BUT Informatique 1re année
@@ -153,6 +153,8 @@ Chaque transition a été motivée par une meilleure compréhension des **besoin
 
 ## Les trois piliers d'un cours d'IHM
 
+<!-- _footer: "" -->
+
 <style scoped>
 section { display: flex; flex-direction: column; }
 section > h2 { flex: 0; }
@@ -196,6 +198,8 @@ Chaque CM approfondit les trois piliers en parallèle. Il n'y a pas "un cours su
 
 ## Ergonomie : les heuristiques de Nielsen
 
+<!-- _footer: "" -->
+
 <div style="display: flex; gap: 2rem; align-items: flex-start;">
 <div>
 
@@ -204,7 +208,7 @@ Jakob Nielsen a identifié **10 heuristiques d'utilisabilité** (1994), toujours
 Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par un exemple de la **vie courante** pour montrer que ces principes sont universels.
 
 </div>
-<div style="min-width: 140px; max-width: 160px; text-align: center;">
+<div style="min-width: 160px; max-width: 180px; text-align: center;">
 
 [![Posters Nielsen](assets/nielsen-heuristics-summary.png)](https://www.nngroup.com/articles/ten-usability-heuristics/#poster)
 
