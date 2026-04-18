@@ -27,7 +27,7 @@ section {
 
 ## Le module R2.02 en un coup d'oeil
 
-> Apprendre à concevoir et développer des **applications avec une interface graphique** en Java (JavaFX), en intégrant les bonnes pratiques d'architecture et d'ergonomie.
+<p style="font-size: 0.85rem; font-style: italic; color: #555; margin-bottom: 0;">Apprendre à concevoir et développer des <b>applications avec une interface graphique</b> en Java (JavaFX), en intégrant les bonnes pratiques d'architecture et d'ergonomie.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.8rem;">
 <div style="background: #edf2fb; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #4a90d9;">
