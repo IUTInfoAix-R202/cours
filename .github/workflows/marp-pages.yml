@@ -28,8 +28,8 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Install Marp CLI
-        run: npm install -g @marp-team/marp-cli
+      - name: Install dependencies (Marp + Kroki plugin)
+        run: npm ci
 
       - name: Build HTML slides
         run: |
@@ -38,18 +38,17 @@ jobs:
             [ -f "$f" ] || continue
             name="${f%.md}"
             echo "Building $f → _site/${name}.html"
-            marp "$f" --html --output "_site/${name}.html"
+            npx marp --config marp.config.js "$f" --output "_site/${name}.html"
           done
 
       - name: Build PDF slides
         run: |
-          # Chromium needed for PDF export
           npx playwright install --with-deps chromium
           for f in cm*.md; do
             [ -f "$f" ] || continue
             name="${f%.md}"
             echo "Building $f → _site/${name}.pdf"
-            marp "$f" --pdf --output "_site/${name}.pdf" --allow-local-files
+            npx marp --config marp.config.js "$f" --pdf --output "_site/${name}.pdf" --allow-local-files
           done
 
       - name: Generate index page
