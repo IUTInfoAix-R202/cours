@@ -784,7 +784,7 @@ La question n'est pas "quel conteneur connaissez-vous ?" mais **"quel problème 
 | Grille avec alignement | `GridPane` | lignes × colonnes |
 | Flux libre (comme du texte) | `FlowPane` | retour à la ligne automatique |
 
-> **Principe Gestalt (proximité)** : les éléments proches sont perçus comme liés. Le choix du conteneur influence directement la perception de l'utilisateur.
+> **Principe de proximité** : les éléments proches sont perçus comme liés. Le choix du conteneur influence directement la perception de l'utilisateur.
 
 ---
 
