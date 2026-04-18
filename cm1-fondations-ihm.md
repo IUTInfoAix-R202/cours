@@ -1600,31 +1600,61 @@ Affiche une image avec contrôle de la taille.
 
 ---
 
-## 🕹️ Agir : Button, CheckBox, MenuBar
+## 🕹️ Agir : Button
 
-<div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+<div style="display: flex; gap: 2rem; margin-top: 1rem;">
 <div style="flex: 1;">
 
-**🔘 Button** - déclencher une action
+Le contrôle le plus fondamental. Un clic émet un `ActionEvent`.
 
 ```java
-Button btn = new Button("Valider");
-btn.setOnAction(e -> valider());
-```
+Button valider = new Button("Valider");
+valider.setStyle(
+    "-fx-background-color: #4a90d9;"
+);
+valider.setOnAction(e -> {
+    System.out.println("Validé !");
+});
 
-L'événement `ActionEvent` est émis à chaque clic.
+Button supprimer = new Button("Supprimer");
+supprimer.setDisable(true); // grisé
+```
 
 </div>
 <div style="flex: 1;">
 
-**☑️ CheckBox** - choix binaire
+<div style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1rem;">
+<div style="background: #4a90d9; color: white; padding: 0.8rem 2rem; border-radius: 6px; text-align: center; font-weight: bold;">Valider</div>
+<div style="background: #ddd; color: #999; padding: 0.8rem 2rem; border-radius: 6px; text-align: center; font-weight: bold;">Supprimer (disabled)</div>
+</div>
+
+<p style="font-size: 0.85rem; color: #666; margin-top: 1rem;">Le premier bouton a un style CSS personnalisé. Le second est grisé avec <code>setDisable(true)</code>.</p>
+
+</div>
+</div>
+
+---
+
+## 🕹️ Agir : CheckBox et MenuBar
+
+<div style="display: flex; gap: 2rem; margin-top: 1rem;">
+<div style="flex: 1;">
+
+**☑️ CheckBox** - choix binaire (oui/non)
 
 ```java
 CheckBox cb = new CheckBox("J'accepte");
-cb.setOnAction(e ->
-    System.out.println(cb.isSelected())
-);
+cb.setOnAction(e -> {
+    if (cb.isSelected()) {
+        btnValider.setDisable(false);
+    }
+});
 ```
+
+<div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.8rem;">
+<div>☑️ <span style="font-weight: bold;">J'accepte</span> → <code>isSelected() = true</code></div>
+<div>⬜ <span>J'accepte</span> → <code>isSelected() = false</code></div>
+</div>
 
 </div>
 <div style="flex: 1;">
@@ -1634,8 +1664,17 @@ cb.setOnAction(e ->
 ```java
 MenuBar bar = new MenuBar();
 Menu fichier = new Menu("Fichier");
-bar.getMenus().add(fichier);
+fichier.getItems().add(
+    new MenuItem("Ouvrir")
+);
+bar.getMenus().addAll(fichier,
+    new Menu("Aide"));
 ```
+
+<div style="background: #e0e0e0; padding: 0.5rem; border-radius: 4px; margin-top: 0.8rem; display: flex; gap: 1.5rem;">
+<span style="font-weight: bold; padding: 0.2rem 0.5rem;">Fichier</span>
+<span style="font-weight: bold; padding: 0.2rem 0.5rem;">Aide</span>
+</div>
 
 </div>
 </div>
