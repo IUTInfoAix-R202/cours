@@ -642,15 +642,23 @@ Nous allons les parcourir toutes les dix 👇.
 
 ## 🏗️ D'AWT à JavaFX : 25 ans d'évolution
 
-| Époque | Toolkit | Caractéristique |
+<!-- _footer: "" -->
+
+<style scoped>
+table { font-size: 0.87rem; }
+</style>
+
+| Époque | 🖥️ Toolkit | 💡 Caractéristique |
 |---|---|---|
 | 1995 | **AWT** | Composants "lourds" (natifs OS). Multi-plateforme approximatif. |
 | 1998 | **Swing** | Composants "légers" (dessinés par Java). Look & Feel pluggable. |
 | 2014 | **JavaFX 8** | Scene graph, CSS, FXML, animations, bindings. Intégré au JDK. |
 | 2018 | **OpenJFX 11+** | Séparé du JDK, projet open source indépendant. |
-| 2025 | **JavaFX 25 LTS** | Version actuelle, support long terme. |
+| 2025 | **JavaFX 25 LTS** | ⭐ **Version actuelle**, support long terme. |
 
-**Pourquoi JavaFX ?** C'est le toolkit Java moderne : il intègre nativement la séparation vue/logique (FXML), le binding réactif (propriétés observables), et le styling (CSS).
+<div style="background: #4a90d9; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
+🚀 <b>Pourquoi JavaFX ?</b> Séparation vue/logique (FXML) + binding réactif (propriétés) + styling (CSS)
+</div>
 
 ---
 
