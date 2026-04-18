@@ -865,7 +865,7 @@ Dans le TP, vous n'appelez jamais `java` ni `javac` à la main. Maven s'en charg
 ./mvnw javafx:run
 ```
 
-Lance `App.java` (le menu principal) ou l'exercice en cours.
+Démarre `App.java` (le menu principal) ou l'exercice en cours.
 
 </div>
 <div style="flex: 1; background: #2c3e50; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
@@ -1074,6 +1074,8 @@ Chaque zone est **optionnelle**. Le `center` prend tout l'espace restant.
 
 ## 🏗️ VBox et HBox - empiler ou aligner
 
+<!-- _footer: "" -->
+
 Les deux conteneurs les plus simples : l'un empile **verticalement**, l'autre aligne **horizontalement**.
 
 <div style="display: flex; gap: 2rem; margin-top: 0.5rem;">
@@ -1119,6 +1121,8 @@ hbox.getChildren().addAll(
 
 ## 🏗️ GridPane - grille alignée
 
+<!-- _footer: "" -->
+
 Organise les enfants dans une **grille** avec des lignes et colonnes alignées. Idéal pour les **formulaires**.
 
 <div style="display: flex; gap: 2rem; margin-top: 0.5rem;">
@@ -1154,6 +1158,8 @@ grid.add(new TextField(),      1, 1);
 ---
 
 ## 🏗️ FlowPane - flux libre
+
+<!-- _footer: "" -->
 
 Les enfants s'enchainent et **passent à la ligne** automatiquement quand il n'y a plus de place, comme du texte.
 
@@ -1442,6 +1448,8 @@ Le pattern Observer illustre un principe fondamental : **chaque composant a une 
 
 ## ⚡ EventHandler : brancher un écouteur
 
+<!-- _footer: "" -->
+
 Comment dire au bouton **quoi faire** quand on clique ? Avec `setOnAction()` :
 
 ```java
@@ -1496,6 +1504,8 @@ Le plus **verbeux**, mais le plus **explicite**. On voit clairement que le compo
 
 ## ⚡ Style 2 : classe anonyme (intermédiaire)
 
+<!-- _footer: "" -->
+
 On définit la classe **sur place**, sans lui donner de nom :
 
 ```java
@@ -1513,6 +1523,8 @@ Plus compact que le style 1, mais la syntaxe reste **lourde** (beaucoup de code 
 ---
 
 ## ⚡ Style 3 : lambda (moderne, recommandé) ⭐
+
+<!-- _footer: "" -->
 
 La syntaxe la plus **compacte** :
 
@@ -1569,6 +1581,8 @@ Les contrôles sont organisés par **type d'interaction** :
 
 ## 🕹️ Afficher : Label et ImageView
 
+<!-- _footer: "" -->
+
 <div style="display: flex; gap: 2rem; margin-top: 1rem;">
 <div style="flex: 1;">
 
@@ -1601,6 +1615,8 @@ Affiche une image avec contrôle de la taille.
 ---
 
 ## 🕹️ Agir : Button
+
+<!-- _footer: "" -->
 
 <div style="display: flex; gap: 2rem; margin-top: 1rem;">
 <div style="flex: 1;">
@@ -1636,6 +1652,8 @@ supprimer.setDisable(true); // grisé
 ---
 
 ## 🕹️ Agir : CheckBox et MenuBar
+
+<!-- _footer: "" -->
 
 <div style="display: flex; gap: 2rem; margin-top: 1rem;">
 <div style="flex: 1;">
@@ -1683,6 +1701,8 @@ bar.getMenus().addAll(fichier,
 
 ## 🕹️ Saisir : TextField
 
+<!-- _footer: "" -->
+
 <div style="display: flex; gap: 2rem; margin-top: 1rem;">
 <div style="flex: 1;">
 
@@ -1718,6 +1738,8 @@ Le `promptText` est le texte grisé affiché quand le champ est vide (indication
 ---
 
 ## 🕹️ Saisir : Slider
+
+<!-- _footer: "" -->
 
 <div style="display: flex; gap: 2rem; margin-top: 1rem;">
 <div style="flex: 1;">
