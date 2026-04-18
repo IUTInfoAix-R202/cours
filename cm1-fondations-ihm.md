@@ -80,7 +80,13 @@ Chaque transition a été motivée par une meilleure compréhension des **besoin
 
 ## Les trois piliers d'un cours d'IHM
 
-<div style="display: flex; justify-content: center; gap: 2rem; margin: 1.5rem 0; height: 320px;">
+<style scoped>
+section { display: flex; flex-direction: column; }
+section > h2 { flex: 0; }
+section > p { flex: 0; }
+</style>
+
+<div style="display: flex; justify-content: center; gap: 2rem; flex: 1; margin-top: 1rem;">
 <div style="background: #4a90d9; color: white; padding: 2rem 1.5rem; border-radius: 16px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center;">
 <div style="font-size: 4.5rem;">🏗️</div>
 <div style="font-weight: bold; font-size: 1.6rem; margin-top: 0.8rem;">Architecture</div>
