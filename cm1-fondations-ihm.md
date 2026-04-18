@@ -30,32 +30,30 @@ section {
 <!-- _header: "" -->
 <!-- _footer: "" -->
 
+<style scoped>
+blockquote { font-size: 0.92rem; }
+</style>
+
 > Apprendre à concevoir et développer des **applications avec une interface graphique** en Java (JavaFX), en intégrant les bonnes pratiques d'architecture et d'ergonomie.
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; font-size: 1.5rem;">
 <div style="background: #4a90d9; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem;">🖼️ <b>Composants graphiques</b></div>
-<div style="opacity: 0.9; margin-top: 0.3rem;">Conteneurs, contrôles, graphe de scène</div>
+🖼️ <b>Composants graphiques</b><br/>Conteneurs, contrôles, graphe de scène
 </div>
 <div style="background: #e8a838; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem;">⚡ <b>Modèle événementiel</b></div>
-<div style="opacity: 0.9; margin-top: 0.3rem;">Événements, listeners, bindings</div>
+⚡ <b>Modèle événementiel</b><br/>Événements, listeners, bindings
 </div>
 <div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem;">🏗️ <b>Architecture IHM</b></div>
-<div style="opacity: 0.9; margin-top: 0.3rem;">MVC, MVVM, séparation vue-modèle</div>
+🏗️ <b>Architecture IHM</b><br/>MVC, MVVM, séparation vue-modèle
 </div>
 <div style="background: #e74c3c; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem;">📄 <b>IHM déclaratives</b></div>
-<div style="opacity: 0.9; margin-top: 0.3rem;">FXML, CSS, SceneBuilder</div>
+📄 <b>IHM déclaratives</b><br/>FXML, CSS, SceneBuilder
 </div>
 <div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem;">🧠 <b>Ergonomie</b></div>
-<div style="opacity: 0.9; margin-top: 0.3rem;">Heuristiques de Nielsen, accessibilité</div>
+🧠 <b>Ergonomie</b><br/>Heuristiques de Nielsen, accessibilité
 </div>
 <div style="background: #00838f; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem;">💾 <b>Persistance</b></div>
-<div style="opacity: 0.9; margin-top: 0.3rem;">JDBC, JPA, pattern DAO</div>
+💾 <b>Persistance</b><br/>JDBC, JPA, pattern DAO
 </div>
 </div>
 

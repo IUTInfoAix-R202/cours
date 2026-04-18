@@ -3,8 +3,9 @@
   "name": "cours-r202",
   "description": "R2.02 — Cours magistraux (build Marp + Kroki)",
   "scripts": {
-    "build": "marp --config marp.config.js --output _site/ cm*.md",
-    "preview": "marp --config marp.config.js --preview cm*.md"
+    "dev": "marp --config marp.config.js --server --html .",
+    "build": "marp --config marp.config.js --html --output _site/ cm*.md",
+    "preview": "marp --config marp.config.js --preview --html cm*.md"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^4",
