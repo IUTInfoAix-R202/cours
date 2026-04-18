@@ -12,7 +12,7 @@ footer: "IUT Aix-Marseille - BUT Informatique 1A"
 
 <style scoped>
 section {
-  background-image: url('https://raw.githubusercontent.com/IUTInfoAix-R510/Syllabus/main/assets/logo.png');
+  background-image: url('assets/logo-amu.png');
   background-repeat: no-repeat;
   background-position: bottom 40px center;
   background-size: 380px;
@@ -667,7 +667,7 @@ table { font-size: 0.87rem; }
 | 1998 | **Swing** | Composants "légers" (dessinés par Java). Look & Feel pluggable. |
 | 2014 | **JavaFX 8** | Scene graph, CSS, FXML, animations, bindings. Intégré au JDK. |
 | 2018 | **OpenJFX 11+** | Séparé du JDK, projet open source indépendant. |
-| 2025 | **JavaFX 25 LTS** | ⭐ **Version actuelle**, support long terme. |
+| 2025 | **JavaFX 25** | ⭐ **Version actuelle**, alignée sur Java 25. |
 
 <div style="background: #4a90d9; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
 🚀 <b>Pourquoi JavaFX ?</b> Séparation vue/logique (FXML) + binding réactif (propriétés) + styling (CSS)
@@ -844,7 +844,7 @@ graph LR
 La <b>boucle événementielle</b> attend les actions de l'utilisateur (clics, saisie...) et y réagit.
 </div>
 <div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #b0bec5;">
-<b>init()</b> et <b>stop()</b> sont optionnels. On ne les utilise très rarement en TP.
+<b>init()</b> et <b>stop()</b> sont optionnels. On les utilise très rarement en TP.
 </div>
 </div>
 
@@ -888,7 +888,7 @@ Exécute tous les tests. Les `@Disabled` sont ignorés.
 
 <!-- _class: lead -->
 
-# Partie 3 - Construire une graphe de scène
+# Partie 3 - Construire le graphe de scène
 
 ---
 
@@ -1537,7 +1537,7 @@ bouton.setOnAction(e -> compteur.incrementer());
 
 <!-- _class: lead -->
 
-# Les contrôles : le vocabulaire de l'interaction
+# Partie 5 - Les contrôles : le vocabulaire de l'interaction
 
 ---
 
@@ -1849,7 +1849,6 @@ Le TP1 met en pratique tout ce CM en **6 exercices** progressifs :
 
 <!-- _header: "" -->
 <!-- _footer: "" -->
-
 
 Une application JavaFX, c'est **3 niveaux de décision** :
 

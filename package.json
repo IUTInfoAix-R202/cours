@@ -4,7 +4,7 @@
   "description": "R2.02 — Cours magistraux (build Marp + Kroki)",
   "scripts": {
     "dev": "marp --config marp.config.js --server --html .",
-    "build": "marp --config marp.config.js --html --output _site/ cm*.md",
+    "build": "mkdir -p _site && for f in cm*.md; do npx marp --config marp.config.js --html \"$f\" --output \"_site/${f%.md}.html\"; done",
     "preview": "marp --config marp.config.js --preview --html cm*.md"
   },
   "devDependencies": {
