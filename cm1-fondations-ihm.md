@@ -29,7 +29,7 @@ section {
 
 > Apprendre à concevoir et développer des **applications avec une interface graphique** en Java (JavaFX), en intégrant les bonnes pratiques d'architecture et d'ergonomie.
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.8rem; font-size: 0.9rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.8rem;">
 <div style="background: #edf2fb; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #4a90d9;">
 🖼️ <b>Composants graphiques</b><br/>Conteneurs, contrôles, graphe de scène
 </div>
