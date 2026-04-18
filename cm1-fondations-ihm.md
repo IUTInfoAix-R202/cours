@@ -7,6 +7,8 @@ footer: "IUT Aix-Marseille - BUT Informatique 1A"
 ---
 
 <!-- _class: lead -->
+<!-- _header: "" -->
+
 <!-- _footer: "" -->
 <!-- _paginate: false -->
 
