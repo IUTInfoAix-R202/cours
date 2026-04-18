@@ -125,7 +125,6 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ## Nielsen #1 — Visibilité de l'état du système
 
-<style scoped> section { font-size: 0.88rem; } </style>
 
 > Le système doit toujours **informer l'utilisateur** de ce qui se passe, par un feedback approprié dans un délai raisonnable.
 
@@ -146,7 +145,6 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ## Nielsen #2 — Correspondance avec le monde réel
 
-<style scoped> section { font-size: 0.88rem; } </style>
 
 > Le système doit parler le **langage de l'utilisateur**, avec des mots et concepts familiers plutôt que du jargon interne.
 
@@ -167,7 +165,6 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ## Nielsen #3 — Liberté et contrôle de l'utilisateur
 
-<style scoped> section { font-size: 0.88rem; } </style>
 
 > Les utilisateurs font souvent des erreurs. Ils ont besoin d'une **"sortie de secours"** clairement identifiée pour quitter l'action non voulue.
 
@@ -188,7 +185,6 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ## Nielsen #4 — Cohérence et standards
 
-<style scoped> section { font-size: 0.88rem; } </style>
 
 > L'utilisateur ne devrait pas avoir à se demander si des mots, situations ou actions différents **signifient la même chose**.
 
@@ -209,7 +205,6 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ## Nielsen #5 — Prévention des erreurs
 
-<style scoped> section { font-size: 0.88rem; } </style>
 
 > Mieux vaut **prévenir** les erreurs que produire de bons messages d'erreur.
 
@@ -230,7 +225,6 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ## Nielsen #6 — Reconnaissance plutôt que rappel
 
-<style scoped> section { font-size: 0.88rem; } </style>
 
 > Rendre les éléments visibles. L'utilisateur ne devrait pas avoir à **se souvenir** d'informations d'un écran à l'autre.
 
@@ -251,7 +245,6 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ## Nielsen #7 — Flexibilité et efficacité
 
-<style scoped> section { font-size: 0.88rem; } </style>
 
 > Les **raccourcis**, invisibles pour les novices, accélèrent l'interaction pour les experts. Permettre la personnalisation.
 
@@ -272,7 +265,6 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ## Nielsen #8 — Design esthétique et minimaliste
 
-<style scoped> section { font-size: 0.88rem; } </style>
 
 > Chaque information en trop dans une interface **entre en compétition** avec les informations utiles et diminue leur visibilité.
 
@@ -293,7 +285,6 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ## Nielsen #9 — Aider à reconnaître et corriger les erreurs
 
-<style scoped> section { font-size: 0.88rem; } </style>
 
 > Les messages d'erreur doivent être en **langage clair** (pas de codes), indiquer précisément le problème et **suggérer une solution**.
 
@@ -314,7 +305,6 @@ Nous allons les parcourir toutes les dix. Chaque heuristique est illustrée par 
 
 ## Nielsen #10 — Aide et documentation
 
-<style scoped> section { font-size: 0.88rem; } </style>
 
 > Idéalement, le système **n'a pas besoin d'explication**. Mais si nécessaire, l'aide doit être facile à trouver et orientée vers la tâche.
 
