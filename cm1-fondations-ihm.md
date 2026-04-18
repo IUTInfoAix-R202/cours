@@ -7,13 +7,21 @@ footer: "IUT Aix-Marseille - BUT Informatique 1A"
 ---
 
 <!-- _class: lead -->
+<!-- _footer: "" -->
+<!-- _paginate: false -->
 
-![w:320](https://raw.githubusercontent.com/IUTInfoAix-R510/Syllabus/main/assets/logo.png)
+<style scoped>
+section {
+  background-image: url('https://raw.githubusercontent.com/IUTInfoAix-R510/Syllabus/main/assets/logo.png');
+  background-repeat: no-repeat;
+  background-position: bottom 40px center;
+  background-size: 380px;
+}
+</style>
 
 # Fondations de l'IHM et première immersion JavaFX
 
 **R2.02 - Développement d'applications avec IHM**
-IUT d'Aix-Marseille - BUT Informatique 1re année
 
 ---
 
