@@ -782,41 +782,120 @@ On retrouve les 3 briques : <b>Stage</b> (fenêtre), <b>Scene</b> (contenu), <b>
 
 ---
 
-## 🏗️ Le cycle de vie d'une application
+## 🏗️ Comment ça démarre ?
+
+<!-- _footer: "" -->
+<!-- _header: "" -->
+
+Le point d'entrée d'une application JavaFX :
 
 ```java
-public class MonApp extends Application {
+public class HelloWorld extends Application {
     @Override
-    public void start(Stage primaryStage) {
-        // Construire l'IHM ici
-        primaryStage.show();
+    public void start(Stage primaryStage) {/* ... construire l'IHM ...*/}
+
+    public static void main(String[] args) {
+        launch(args);  // JavaFX prend le relais ici
     }
 }
 ```
 
-JavaFX gère le cycle de vie automatiquement :
+```mermaid
+graph LR
+    A["main()"] --> B["launch()"]
+    B --> C["new HelloWorld()"]
+    C --> D["start(Stage)"]
+    D --> E["🖼️ fenêtre visible"]
+
+    style A fill:#b0bec5,color:#333
+    style B fill:#b0bec5,color:#333
+    style C fill:#e8a838,color:white
+    style D fill:#7bb563,color:white
+    style E fill:#4a90d9,color:white
+```
+
+---
+
+## 🏗️ Le cycle de vie d'une application
+<!-- _footer: "" -->
+<!-- _header: "" -->
+
+`launch()` déclenche un cycle de vie géré entièrement par JavaFX :
 
 ```mermaid
 graph LR
     A["Constructeur"] --> B["init()"]
     B --> C["start(Stage)"]
-    C --> D["... application tourne ..."]
+    C --> D["... boucle événementielle ..."]
     D --> E["stop()"]
 
+    style A fill:#b0bec5,color:#333
+    style B fill:#b0bec5,color:#333
     style C fill:#7bb563,color:white
+    style D fill:#4a90d9,color:white
+    style E fill:#b0bec5,color:#333
 ```
 
-Vous n'écrivez que `start()`. JavaFX s'occupe du reste (thread graphique, boucle événementielle, fermeture).
+<div style="display: flex; gap: 1.5rem; margin-top: 1rem; font-size: 1.6rem;">
+<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #7bb563;">
+<b>start(Stage)</b> est la seule méthode <b>obligatoire</b>. C'est là que vous construisez l'IHM.
+</div>
+<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #4a90d9;">
+La <b>boucle événementielle</b> attend les actions de l'utilisateur (clics, saisie...) et y réagit.
+</div>
+<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #b0bec5;">
+<b>init()</b> et <b>stop()</b> sont optionnels. On ne les utilise très rarement en TP.
+</div>
+</div>
+
+---
+
+## 🏗️ En pratique : lancer et tester avec Maven
+
+<!-- _footer: "" -->
+<!-- _header: "" -->
+
+Dans le TP, vous n'appelez jamais `java` ni `javac` à la main. Maven s'en charge :
+
+<div style="display: flex; gap: 1.2rem; margin-top: 1rem;">
+<div style="flex: 1; background: #2c3e50; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.6rem; margin-bottom: 0.5rem;">🚀 <b>Lancer l'application</b></div>
+
+```
+./mvnw javafx:run
+```
+
+Lance `App.java` (le menu principal) ou l'exercice en cours.
+
+</div>
+<div style="flex: 1; background: #2c3e50; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.6rem; margin-bottom: 0.5rem;">🧪 <b>Lancer les tests</b></div>
+
+```
+./mvnw test
+```
+
+Exécute tous les tests. Les `@Disabled` sont ignorés.
+
+</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center;">
+💡 Pas besoin de compiler manuellement. <b>Maven fait tout</b> : compilation, dépendances, exécution, tests.
+</div>
 
 ---
 
 <!-- _class: lead -->
 
-# Partie 3 - Le graphe de scène
+# Partie 3 - Construire une graphe de scène
 
 ---
 
 ## 🏗️ Un arbre de nœuds
+
+<!-- _footer: "" -->
+<!-- _header: "" -->
 
 Le **graphe de scène** (scene graph) est la structure de données centrale de JavaFX. C'est un arbre où chaque nœud est un élément graphique :
 
@@ -844,66 +923,407 @@ graph TD
 
 ## 🏗️ Trois familles de nœuds
 
-| Famille | Rôle | Exemples |
-|---|---|---|
-| **Pane** (conteneurs) | Organiser la mise en page | `BorderPane`, `VBox`, `HBox`, `GridPane` |
-| **Control** (contrôles) | Interagir avec l'utilisateur | `Button`, `Label`, `TextField`, `Slider` |
-| **Shape** (formes) | Dessiner des graphiques | `Circle`, `Rectangle`, `Line` |
+<!-- _footer: "" -->
+<!-- _header: "" -->
 
-Les conteneurs **contiennent** d'autres nœuds (y compris d'autres conteneurs).
-Les contrôles et formes sont des **feuilles** de l'arbre (pas d'enfants).
+<div style="display: flex; gap: 1.2rem; margin-top: 1rem;">
+<div style="flex: 1; background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px;">
+<div style="font-size: 2rem; margin-bottom: 0.3rem;">📦 <b>Pane</b></div>
+<div style="opacity: 0.9;">Organiser la mise en page</div>
+<div style="margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.3rem;">
+<code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">BorderPane</code>
+<code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">VBox</code>
+<code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">HBox</code>
+<code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">GridPane</code>
+</div>
+</div>
+<div style="flex: 1; background: #e74c3c; color: white; padding: 1.2rem; border-radius: 12px;">
+<div style="font-size: 2rem; margin-bottom: 0.3rem;">🔘 <b>Control</b></div>
+<div style="opacity: 0.9;">Interagir avec l'utilisateur</div>
+<div style="margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.3rem;">
+<code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">Button</code>
+<code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">Label</code>
+<code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">TextField</code>
+<code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">Slider</code>
+</div>
+</div>
+<div style="flex: 1; background: #c0392b; color: white; padding: 1.2rem; border-radius: 12px;">
+<div style="font-size: 2rem; margin-bottom: 0.3rem;">⭕ <b>Shape</b></div>
+<div style="opacity: 0.9;">Dessiner des formes</div>
+<div style="margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.3rem;">
+<code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">Circle</code>
+<code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">Rectangle</code>
+<code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">Line</code>
+</div>
+</div>
+</div>
+
+<div style="display: flex; gap: 1.5rem; margin-top: 1.5rem; font-size: 1.6rem;">
+<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #e8a838;">
+Les conteneurs <b>contiennent</b> d'autres nœuds (y compris d'autres conteneurs).
+</div>
+<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #e74c3c;">
+Les contrôles et formes sont des <b>feuilles</b> de l'arbre (pas d'enfants).
+</div>
+</div>
+
+---
+
+## 🏗️ La hiérarchie des classes JavaFX
+
+<!-- _footer: "" -->
+<!-- _header: "" -->
+
+<p style="font-size: 1.5rem;padding:0;margin:0;">Toutes les classes du graphe de scène héritent de <code>Node</code> :</p>
+
+```plantuml
+@startuml
+skinparam backgroundColor transparent
+skinparam defaultFontSize 14
+skinparam classAttributeIconSize 0
+skinparam classFontStyle bold
+skinparam shadowing false
+skinparam roundCorner 10
+
+skinparam class {
+    BorderColor #888
+    FontColor white
+}
+
+abstract class Node #7f8c8d
+
+abstract class Parent #34495e
+class ImageView #1a5276
+
+abstract class Shape #c0392b
+abstract class Region #b7950b
+class Group #6c3483
+
+abstract class Control #e74c3c
+abstract class Pane #e8a838
+
+class Circle #c0392b
+class Rectangle #c0392b
+class Line #c0392b
+
+class Button #e74c3c
+class Label #8e44ad
+class TextField #27ae60
+class Slider #c0392b
+class CheckBox #00838f
+
+class VBox #e8a838
+class HBox #e8a838
+class BorderPane #e8a838
+class GridPane #e8a838
+
+Node <|-- Parent
+Node <|-- Shape
+Node <|-- ImageView
+
+Parent <|-- Region
+Parent <|-- Group
+
+Region <|-- Control
+Region <|-- Pane
+
+Shape <|-- Circle
+Shape <|-- Rectangle
+Shape <|-- Line
+
+Control <|-- Button
+Control <|-- Label
+Control <|-- TextField
+Control <|-- Slider
+Control <|-- CheckBox
+
+Pane <|-- VBox
+Pane <|-- HBox
+Pane <|-- BorderPane
+Pane <|-- GridPane
+@enduml
+```
+
+---
+
+## 🏗️ BorderPane - zones distinctes
+
+Divise l'espace en **5 zones** nommées. Idéal pour les applications classiques (menu en haut, contenu au centre, barre d'état en bas).
+
+<div style="display: flex; gap: 2rem; margin-top: 0.5rem; align-items: center;">
+<div style="flex: 1;">
+
+```java
+BorderPane root = new BorderPane();
+root.setTop(menuBar);
+root.setCenter(contenu);
+root.setBottom(barreEtat);
+```
+
+Chaque zone est **optionnelle**. Le `center` prend tout l'espace restant.
+
+</div>
+<div style="flex: 1;">
+
+![Les 5 zones du BorderPane](assets/borderpane-schema.svg)
+
+</div>
+</div>
+
+---
+
+## 🏗️ VBox et HBox - empiler ou aligner
+
+Les deux conteneurs les plus simples : l'un empile **verticalement**, l'autre aligne **horizontalement**.
+
+<div style="display: flex; gap: 2rem; margin-top: 0.5rem;">
+<div style="flex: 1;">
+
+**VBox** - empilement vertical :
+
+```java
+VBox vbox = new VBox(10); // 10px d'espacement
+vbox.getChildren().addAll(
+    label, textField, button
+);
+```
+
+<div style="display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.5rem;">
+<div style="background: #8e44ad; color: white; padding: 0.3rem 2rem; border-radius: 4px; text-align: center;">🏷️ Label</div>
+<div style="background: #27ae60; color: white; padding: 0.3rem 2rem; border-radius: 4px; text-align: center;">📝 TextField</div>
+<div style="background: #e74c3c; color: white; padding: 0.3rem 2rem; border-radius: 4px; text-align: center;">🔘 Button</div>
+</div>
+
+</div>
+<div style="flex: 1;">
+
+**HBox** - alignement horizontal :
+
+```java
+HBox hbox = new HBox(10);
+hbox.getChildren().addAll(
+    bouton1, bouton2, bouton3
+);
+```
+
+<div style="display: flex; gap: 0.4rem; margin-top: 0.5rem;">
+<div style="background: #e74c3c; color: white; padding: 0.3rem 1.2rem; border-radius: 4px;">🔘 Btn 1</div>
+<div style="background: #e74c3c; color: white; padding: 0.3rem 1.2rem; border-radius: 4px;">🔘 Btn 2</div>
+<div style="background: #e74c3c; color: white; padding: 0.3rem 1.2rem; border-radius: 4px;">🔘 Btn 3</div>
+</div>
+
+</div>
+</div>
+
+---
+
+## 🏗️ GridPane - grille alignée
+
+Organise les enfants dans une **grille** avec des lignes et colonnes alignées. Idéal pour les **formulaires**.
+
+<div style="display: flex; gap: 2rem; margin-top: 0.5rem;">
+<div style="flex: 1;">
+
+```java
+GridPane grid = new GridPane();
+grid.setHgap(10);
+grid.setVgap(10);
+
+// add(node, colonne, ligne)
+grid.add(new Label("Nom :"),   0, 0);
+grid.add(new TextField(),      1, 0);
+grid.add(new Label("Email :"), 0, 1);
+grid.add(new TextField(),      1, 1);
+```
+
+</div>
+<div style="flex: 1;">
+
+<div style="display: grid; grid-template-columns: auto 1fr; gap: 0.5rem; margin-top: 1rem;">
+<div style="background: #8e44ad; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; text-align: right;">🏷️ Nom :</div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 4px;">📝 TextField</div>
+<div style="background: #8e44ad; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; text-align: right;">🏷️ Email :</div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 4px;">📝 TextField</div>
+</div>
+
+<p style="font-size: 0.8rem; color: #999; margin-top: 0.5rem;">colonne 0 (Label) / colonne 1 (TextField)</p>
+
+</div>
+</div>
+
+---
+
+## 🏗️ FlowPane - flux libre
+
+Les enfants s'enchainent et **passent à la ligne** automatiquement quand il n'y a plus de place, comme du texte.
+
+<div style="display: flex; gap: 2rem; margin-top: 0.5rem;">
+<div style="flex: 1;">
+
+```java
+FlowPane flow = new FlowPane();
+flow.setHgap(10);
+flow.setVgap(10);
+flow.getChildren().addAll(
+    new Button("Copier"),
+    new Button("Coller"),
+    new Button("Couper"),
+    new Button("Annuler"),
+    new Button("Refaire"),
+    new Button("Chercher")
+);
+```
+
+</div>
+
+<div style="flex: 1;">
+<div style="border: 2px dashed #e8a838; border-radius: 8px; padding: 0.8rem; margin-top: 0; max-width: 380px; background: rgba(232,168,56,0.08);">
+<div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+<div style="background: #e74c3c; color: white; padding: 0.4rem 1.2rem; border-radius: 4px;">🔘 Copier</div>
+<div style="background: #e74c3c; color: white; padding: 0.4rem 1.2rem; border-radius: 4px;">🔘 Coller</div>
+<div style="background: #e74c3c; color: white; padding: 0.4rem 1.2rem; border-radius: 4px;">🔘 Couper</div>
+<div style="background: #e74c3c; color: white; padding: 0.4rem 1.2rem; border-radius: 4px;">🔘 Annuler</div>
+<div style="background: #e74c3c; color: white; padding: 0.4rem 1.2rem; border-radius: 4px;">🔘 Refaire</div>
+<div style="background: #e74c3c; color: white; padding: 0.4rem 1.2rem; border-radius: 4px;">🔘 Chercher</div>
+</div>
+</div>
+
+<p style="font-size: 0.8rem; color: #999; margin-top: 0.3rem;">↑ le cadre montre la largeur du FlowPane - les boutons passent à la ligne quand ils ne rentrent plus</p>
+
+</div>
+</div>
 
 ---
 
 ## 🏗️ Choisir le bon conteneur
 
-La question n'est pas "quel conteneur connaissez-vous ?" mais **"quel problème de mise en page avez-vous ?"** :
+<!-- _footer: "" -->
+<!-- _header: "" -->
 
-| Besoin | Conteneur | Schéma |
-|---|---|---|
-| Zones distinctes (menu, contenu, barre d'état) | `BorderPane` | top / left / **center** / right / bottom |
-| Empiler verticalement | `VBox` | ↕ les enfants s'empilent |
-| Aligner horizontalement | `HBox` | ↔ les enfants se suivent |
-| Grille avec alignement | `GridPane` | lignes × colonnes |
-| Flux libre (comme du texte) | `FlowPane` | retour à la ligne automatique |
+<p style="font-size: 1.5rem;padding:0;margin:0;">
+La question n'est pas "quel conteneur connaissez-vous ?" mais <b>"quel problème de mise en page avez-vous ?"</b>
+</p>
 
-> **Principe de proximité** : les éléments proches sont perçus comme liés. Le choix du conteneur influence directement la perception de l'utilisateur.
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.8rem;font-size: 1.5rem;">
+<div style="background: #e8a838; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.2rem;"><b>🗺️ BorderPane</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">Zones distinctes : top / left / <b>center</b> / right / bottom</div>
+</div>
+<div style="background: #e8a838; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.2rem;"><b>🔲 GridPane</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">Grille avec alignement : lignes × colonnes</div>
+</div>
+<div style="background: #e8a838; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.2rem;">↕ <b>VBox</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">Empiler les enfants verticalement</div>
+</div>
+<div style="background: #e8a838; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.2rem;">↔ <b>HBox</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">Aligner les enfants horizontalement</div>
+</div>
+<div style="background: #e8a838; color: white; padding: 0.8rem 1rem; border-radius: 10px; grid-column: span 2;">
+<div style="font-size: 1.2rem;">🔄 <b>FlowPane</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">Flux libre avec retour à la ligne automatique (comme du texte)</div>
+</div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 0.8rem; text-align: center; font-size: 1.5rem;">
+🧠 <b>Principe de proximité</b> : les éléments proches sont perçus comme liés. Le choix du conteneur influence la perception de l'utilisateur.
+</div>
 
 ---
 
 ## 🏗️ Exemple : décomposer une interface
 
-Comment découper cette maquette en conteneurs ?
+Comment découper cette maquette en conteneurs de haut niveau ?
 
-```
-┌──────────────────────────┐
-│ [Fichier] [Aide]          │  ← barre de menus
-├──────────────────────────┤
-│ Nom :    [________]       │  ← formulaire en grille
-│ Email :  [________]       │
-├──────────────────────────┤
-│ [Valider]  [Annuler]      │  ← boutons alignés
-└──────────────────────────┘
-```
+<div style="display: flex; gap: 2rem; margin-top: 0.5rem;">
+<div style="flex: 1;">
 
-**Réponse** : `BorderPane` (3 zones) → `MenuBar` (top) + `GridPane` (center) + `HBox` (bottom).
+![w:500](assets/maquette-formulaire.svg)
 
-> C'est exactement ce que vous ferez dans l'exercice 4 du TP1.
+</div>
+<div style="flex: 1;">
+
+<div style="margin-top: 1rem;">
+
+🗺️ **BorderPane** (3 zones) :
+- `setTop()` → 📋 MenuBar
+- `setCenter()` → 🔲 GridPane
+- `setBottom()` → ↔ HBox
+
+</div>
+</div>
+</div>
+
+<div style="background: #4a90d9; color: white; padding: 0.6rem 1rem; border-radius: 10px; margin-top: 1.5rem; text-align: center; font-size: 1.5rem;">
+🎯 C'est exactement ce que vous ferez dans l'<b>exercice 4 du TP1</b>.
+</div>
 
 ---
 
-## 🧠 Principes Gestalt et mise en page
+## 🧠 Principes de perception visuelle (Gestalt)
 
-Les **lois de la Gestalt** (psychologie de la perception) expliquent comment l'œil humain organise ce qu'il voit :
+<!-- _footer: "" -->
+<!-- _header: "" -->
 
-| Principe | Signification | Impact sur le layout |
-|---|---|---|
-| **Proximité** | Les éléments proches sont perçus comme un groupe | Regrouper les contrôles liés dans un même conteneur |
-| **Alignement** | Les éléments alignés sont perçus comme ordonnés | Utiliser `GridPane` pour aligner labels et champs |
-| **Similarité** | Les éléments semblables sont perçus comme liés | Donner le même style aux boutons d'action |
-| **Clôture** | L'œil complète les formes ouvertes | Les bordures de `BorderPane` créent des zones visuelles |
+La **Gestalt** est un courant de psychologie de la perception (Allemagne, 1920). Il décrit comment l'œil humain **organise spontanément** ce qu'il voit.
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem;">👥 <b>Proximité</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">Les éléments proches sont perçus comme un <b>groupe</b></div>
+</div>
+<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem;">📐 <b>Alignement</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">Les éléments alignés sont perçus comme <b>ordonnés</b></div>
+</div>
+<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem;">🔗 <b>Similarité</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">Les éléments semblables sont perçus comme <b>liés</b></div>
+</div>
+<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem;">🔲 <b>Clôture</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">L'œil <b>complète</b> les formes ouvertes</div>
+</div>
+</div>
 
 Ces principes ne sont pas JavaFX-spécifiques : ils s'appliquent à **toute** conception d'interface.
+
+---
+
+## 🧠 Gestalt appliquée aux conteneurs JavaFX
+
+<!-- _footer: "" -->
+<!-- _header: "" -->
+
+Chaque principe Gestalt guide le choix du conteneur :
+
+<div style="display: flex; gap: 1.2rem; margin-top: 1rem;">
+<div style="flex: 1; background: #f0f4f8; padding: 1rem; border-radius: 10px; border-left: 4px solid #8e44ad;">
+<div style="font-weight: bold;">👥 Proximité</div>
+<div style="margin-top: 0.3rem;">Regrouper les contrôles liés dans un même conteneur (📦 VBox, ↔ HBox)</div>
+</div>
+<div style="flex: 1; background: #f0f4f8; padding: 1rem; border-radius: 10px; border-left: 4px solid #8e44ad;">
+<div style="font-weight: bold;">📐 Alignement</div>
+<div style="margin-top: 0.3rem;">Utiliser 🔲 GridPane pour aligner labels et champs de formulaire</div>
+</div>
+</div>
+
+<div style="display: flex; gap: 1.2rem; margin-top: 0.8rem;">
+<div style="flex: 1; background: #f0f4f8; padding: 1rem; border-radius: 10px; border-left: 4px solid #8e44ad;">
+<div style="font-weight: bold;">🔗 Similarité</div>
+<div style="margin-top: 0.3rem;">Donner le même style aux boutons d'action (CSS ou setStyle)</div>
+</div>
+<div style="flex: 1; background: #f0f4f8; padding: 1rem; border-radius: 10px; border-left: 4px solid #8e44ad;">
+<div style="font-weight: bold;">🔲 Clôture</div>
+<div style="margin-top: 0.3rem;">Les zones du 🗺️ BorderPane créent des frontières visuelles naturelles</div>
+</div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
+🧠 L'ergonomie n'est pas une opinion : ce sont des <b>lois de la perception</b> qui guident la conception.
+</div>
 
 ---
 
@@ -993,6 +1413,150 @@ Le pattern Observer illustre un principe fondamental de l'architecture logiciell
 Ce principe sera étendu dans les CM suivants :
 - **CM2** : les bindings poussent ce principe plus loin (synchronisation automatique sans écrire de handler)
 - **CM3** : MVC/MVVM formalisent la séparation en couches (View, Controller, Model)
+
+---
+
+<!-- _class: lead -->
+
+# Les contrôles : le vocabulaire de l'interaction
+
+---
+
+## 🔘 Les contrôles JavaFX
+
+Maintenant que vous savez **comment réagir** à un événement, voici les composants qui en **produisent**.
+
+Les contrôles sont organisés par **type d'interaction** :
+
+<div style="display: flex; gap: 1.2rem; margin-top: 1.5rem;">
+<div style="flex: 1; background: #8e44ad; color: white; padding: 1.2rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 2.5rem;">👁️</div>
+<div style="font-weight: bold; font-size: 1.3rem; margin-top: 0.3rem;">Afficher</div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">Montrer de l'information</div>
+</div>
+<div style="flex: 1; background: #e74c3c; color: white; padding: 1.2rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 2.5rem;">👆</div>
+<div style="font-weight: bold; font-size: 1.3rem; margin-top: 0.3rem;">Agir</div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">Déclencher une action</div>
+</div>
+<div style="flex: 1; background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 2.5rem;">✍️</div>
+<div style="font-weight: bold; font-size: 1.3rem; margin-top: 0.3rem;">Saisir</div>
+<div style="opacity: 0.9; margin-top: 0.3rem;">Recueillir une entrée</div>
+</div>
+</div>
+
+---
+
+## 🔘 Afficher : Label et ImageView
+
+<div style="display: flex; gap: 2rem; margin-top: 1rem;">
+<div style="flex: 1;">
+
+**🏷️ Label** - texte statique
+
+```java
+Label titre = new Label("Bienvenue !");
+titre.setStyle("-fx-font-size: 18px;");
+```
+
+Affiche du texte non modifiable. Le composant le plus simple et le plus utilisé.
+
+</div>
+<div style="flex: 1;">
+
+**🌄 ImageView** - afficher une image
+
+```java
+Image img = new Image("photo.png");
+ImageView vue = new ImageView(img);
+vue.setFitWidth(200);
+vue.setPreserveRatio(true);
+```
+
+Affiche une image avec contrôle de la taille.
+
+</div>
+</div>
+
+---
+
+## 🔘 Agir : Button, CheckBox, MenuBar
+
+<div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+<div style="flex: 1;">
+
+**🔘 Button** - déclencher une action
+
+```java
+Button btn = new Button("Valider");
+btn.setOnAction(e -> valider());
+```
+
+L'événement `ActionEvent` est émis à chaque clic.
+
+</div>
+<div style="flex: 1;">
+
+**☑️ CheckBox** - choix binaire
+
+```java
+CheckBox cb = new CheckBox("J'accepte");
+cb.setOnAction(e ->
+    System.out.println(cb.isSelected())
+);
+```
+
+</div>
+<div style="flex: 1;">
+
+**📋 MenuBar** - barre de menus
+
+```java
+MenuBar bar = new MenuBar();
+Menu fichier = new Menu("Fichier");
+bar.getMenus().add(fichier);
+```
+
+</div>
+</div>
+
+---
+
+## 🔘 Saisir : TextField, Slider
+
+<div style="display: flex; gap: 2rem; margin-top: 1rem;">
+<div style="flex: 1;">
+
+**📝 TextField** - saisie de texte
+
+```java
+TextField champ = new TextField();
+champ.setPromptText("Votre nom...");
+String texte = champ.getText();
+```
+
+L'utilisateur tape du texte. On récupère la valeur avec `getText()`.
+
+</div>
+<div style="flex: 1;">
+
+**🎚️ Slider** - valeur numérique
+
+```java
+Slider slider = new Slider(0, 100, 50);
+// min, max, valeur initiale
+double val = slider.getValue();
+```
+
+L'utilisateur fait glisser un curseur. On récupère la valeur avec `getValue()`.
+
+</div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 1.5rem; text-align: center; font-size: 0.9rem;">
+💡 La liste complète est dans la <a href="https://openjfx.io/javadoc/25/javafx.controls/javafx/scene/control/package-summary.html" style="color: #4a90d9;">Javadoc javafx.scene.control</a>. Vous en découvrirez d'autres au fil des TP.
+</div>
 
 ---
 
