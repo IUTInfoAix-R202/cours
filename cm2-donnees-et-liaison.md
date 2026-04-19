@@ -896,23 +896,41 @@ zone.setOnTouchPressed(<br/>
 
 ## 🧠 Nielsen #1 approfondi : feedback et temps de réponse
 
-**Heuristique 1** : "Le système doit toujours informer l'utilisateur de ce qui se passe."
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-Trois niveaux de temps de réponse (Jakob Nielsen, 1993) :
+<p style="font-size:1.5rem; font-style: italic; background: #f5f5f5; padding: 0.8rem 1.2rem; border-left: 4px solid #8e44ad; border-radius: 6px;">
+« Le système doit toujours informer l'utilisateur de ce qui se passe, par un retour approprié dans un délai raisonnable. »<br/>
+<span style="font-size: 1.1rem; color: #666;">Jakob Nielsen, <i>10 Usability Heuristics</i> (1994)</span>
+</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1rem;">
-<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 8px; text-align: center;">
-<div style="font-size: 1.8rem; font-weight: bold;">< 100ms</div>
-<div style="margin-top: 0.3rem;">Instantané - aucun feedback nécessaire</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
+
+<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 8px;">
+<div style="font-size: 2rem; font-weight: bold; text-align: center;">&lt; 500 ms</div>
+<div style="font-size: 1.3rem; font-weight: bold; text-align: center; margin-top: 0.3rem;">Instantané</div>
+<div style="font-size: 1.15rem; margin-top: 0.6rem;">Perçu comme une conséquence directe de l'action.</div>
+<div style="font-size: 1.05rem; font-style: italic; margin-top: 0.5rem; background: rgba(0,0,0,0.2); padding: 0.4rem; border-radius: 6px;">Clic de bouton, survol, changement de couleur, binding.</div>
 </div>
-<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 8px; text-align: center;">
-<div style="font-size: 1.8rem; font-weight: bold;">< 1s</div>
-<div style="margin-top: 0.3rem;">Acceptable - curseur "pensif" suffit</div>
+
+<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 8px;">
+<div style="font-size: 2rem; font-weight: bold; text-align: center;">&lt; 3 s</div>
+<div style="font-size: 1.3rem; font-weight: bold; text-align: center; margin-top: 0.3rem;">Acceptable</div>
+<div style="font-size: 1.15rem; margin-top: 0.6rem;">L'utilisateur reste concentré, un indicateur visuel suffit.</div>
+<div style="font-size: 1.05rem; font-style: italic; margin-top: 0.5rem; background: rgba(0,0,0,0.2); padding: 0.4rem; border-radius: 6px;">Curseur "sablier", spinner, tri d'une liste, calcul local.</div>
 </div>
-<div style="background: #e74c3c; color: white; padding: 1rem; border-radius: 8px; text-align: center;">
-<div style="font-size: 1.8rem; font-weight: bold;">> 1s</div>
-<div style="margin-top: 0.3rem;">Trop long - barre de progression obligatoire</div>
+
+<div style="background: #e74c3c; color: white; padding: 1rem; border-radius: 8px;">
+<div style="font-size: 2rem; font-weight: bold; text-align: center;">&gt; 3 s</div>
+<div style="font-size: 1.3rem; font-weight: bold; text-align: center; margin-top: 0.3rem;">Trop long</div>
+<div style="font-size: 1.15rem; margin-top: 0.6rem;">L'attention s'échappe : barre de progression <b>obligatoire</b>.</div>
+<div style="font-size: 1.05rem; font-style: italic; margin-top: 0.5rem; background: rgba(0,0,0,0.2); padding: 0.4rem; border-radius: 6px;">Export PDF, requête réseau, traitement par lot.</div>
 </div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.3rem;">
+⚡ Les <b>bindings</b> transforment la mise à jour en une <b>réaction en chaîne</b> : dès que les ingrédients (les propriétés sources) sont en présence, la propagation démarre automatiquement - sans attendre qu'un handler soit appelé.
 </div>
 
 ---
