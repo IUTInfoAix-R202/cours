@@ -548,23 +548,46 @@ Après la phase de capture, l'événement <b>remonte</b> de la cible vers la rac
 
 ## EventFilter vs EventHandler
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
-<div style="background: #fae5c0; padding: 1.2rem; border-radius: 10px; border-top: 4px solid #e8a838;">
-<div style="font-weight: bold; font-size: 1.1rem;">addEventFilter()</div>
-<div style="margin-top: 0.5rem; font-size: 0.9rem;">- Phase de capture (descente)<br/>- Enregistré sur un <b>parent</b><br/>- Peut bloquer avant la cible<br/>- Usage : validation globale, log</div>
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 0.5rem;">
+
+<div style="background: #c0392b; color: white; padding: 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.8rem; font-weight: bold; text-align: center; margin-bottom: 0.8rem;">⬇️ addEventFilter()</div>
+<div style="font-size: 1.5rem; line-height: 1.6;">
+&bull; Phase de <b>capture</b> (descente)<br/>
+&bull; Enregistré sur un <b>parent</b><br/>
+&bull; Peut <b>bloquer</b> avant la cible<br/>
+&bull; Usage : validation globale, log
 </div>
-<div style="background: #d0e2f3; padding: 1.2rem; border-radius: 10px; border-top: 4px solid #4a90d9;">
-<div style="font-weight: bold; font-size: 1.1rem;">addEventHandler()</div>
-<div style="margin-top: 0.5rem; font-size: 0.9rem;">- Phase de bulles (remontée)<br/>- Enregistré sur la cible ou un parent<br/>- Traitement normal<br/>- Usage : 99% des cas</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 6px; margin-top: 0.8rem; font-family: monospace; font-size: 1rem;">
+panneau.addEventFilter(<br/>
+&nbsp;&nbsp;MouseEvent.MOUSE_CLICKED,<br/>
+&nbsp;&nbsp;e -> e.consume());
 </div>
 </div>
 
-```java
-// Bloquer tous les clics sur un panneau entier
-panneau.addEventFilter(MouseEvent.MOUSE_CLICKED, e -> {
-    if (condition) e.consume(); // stoppe la propagation
-});
-```
+<div style="background: #1e8449; color: white; padding: 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.8rem; font-weight: bold; text-align: center; margin-bottom: 0.8rem;">⬆️ addEventHandler()</div>
+<div style="font-size: 1.5rem; line-height: 1.6;">
+&bull; Phase de <b>bubbling</b> (remontée)<br/>
+&bull; Enregistré sur la cible ou un parent<br/>
+&bull; Traitement normal<br/>
+&bull; Usage : 99% des cas ✅
+</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 6px; margin-top: 0.8rem; font-family: monospace; font-size: 1rem;">
+btn.addEventHandler(<br/>
+&nbsp;&nbsp;ActionEvent.ACTION,<br/>
+&nbsp;&nbsp;e -> traiter());&nbsp;&nbsp;<i>// ≡ setOnAction()</i>
+</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
+💡 <b>Règle pratique</b> : utilisez <code>setOnAction()</code> dans 99% des cas. Les filters sont réservés à l'interception globale (logging, validation, désactivation).
+</div>
 
 ---
 
