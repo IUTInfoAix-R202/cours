@@ -132,12 +132,16 @@ Aujourd'hui : rendre l'interface <b>réactive</b> sans écrire d'EventHandler po
 ---
 
 ## TP1 : la Palette, version naïve ❌
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.78rem; }
 </style>
 
+<p style="font-size:1.6rem">
 Dans `Palette.java` (TP1, exercice 6), mettre à jour le label demande du code répété à chaque handler :
+</p>
 
 ```java
 int[] compteurs = {0, 0, 0};
@@ -149,11 +153,12 @@ btnRouge.setOnAction(e -> {
         "Rouge: " + compteurs[0]
         + "  Vert: " + compteurs[1]
         + "  Bleu: " + compteurs[2]);
-});
-// même code dans btnVert et btnBleu...
+}); // même code dans btnVert et btnBleu...
 ```
 
-**Problèmes** : `setText()` est appelé 3 fois en copié-collé. Si on ajoute un 4e bouton, on oublie de mettre à jour. Le label n'est jamais la "source de vérité".
+<div style="background: #c0392b; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 0.8rem;">
+⚠️ <b>3 problèmes</b> : <code>setText()</code> copié-collé 3 fois - ajouter un bouton = oublier une mise à jour - le label n'est jamais la "source de vérité"
+</div>
 
 ---
 
