@@ -755,30 +755,52 @@ zone.setOnMouseDragged(e -> {<br/>
 
 ---
 
-## KeyEvent - les événements clavier
+## ⌨️ KeyEvent - les événements clavier
 
-<style scoped>
-pre { font-size: 0.82rem; }
-</style>
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-```java
-textField.setOnKeyPressed(e -> {
-    if (e.getCode() == KeyCode.ENTER) {
-        valider();
-    }
-    if (e.isControlDown() && e.getCode() == KeyCode.Z) {
-        annuler();
-    }
-});
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
 
-// KEY_TYPED : caractère Unicode final (après combinaison de touches)
-textField.setOnKeyTyped(e -> {
-    System.out.println("Caractère tapé : " + e.getCharacter());
-});
-```
+<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">🔽 setOnKeyPressed</div>
+<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">Une touche <b>physique</b> est enfoncée. Utile pour détecter les touches spéciales (Entrée, flèches, Escape). </div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.15rem;">
+tf.setOnKeyPressed(e -> {<br/>
+&nbsp;&nbsp;if (e.getCode() == KeyCode.ENTER)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;valider(); });
+</div>
+</div>
 
-`KEY_PRESSED` : la touche physique est enfoncée.
-`KEY_TYPED` : un caractère Unicode a été produit (plus adapté pour la saisie).
+<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">⌨️ setOnKeyTyped</div>
+<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">Un <b>caractère</b> Unicode a été produit (après combinaison de touches). Plus adapté pour la saisie de texte.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.15rem;">
+tf.setOnKeyTyped(e -><br/>
+&nbsp;&nbsp;afficher(e.getCharacter()));
+</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">🎹 Raccourcis</div>
+<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">Les modificateurs (<code>Ctrl</code>, <code>Shift</code>, <code>Alt</code>) se testent avec <code>isXxxDown()</code>.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.15rem;">
+if (e.isControlDown() &&<br/>
+&nbsp;&nbsp;e.getCode() == KeyCode.Z)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;annuler();
+</div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">💡 Pressed vs Typed</div>
+<div style="font-size: 1.4rem;">
+&bull; <b>PRESSED</b> : touche physique (F1, flèches, Shift seul)<br/>
+&bull; <b>TYPED</b> : caractère produit (lettres, chiffres)<br/>
+&bull; <b>RELEASED</b> : touche relâchée
+</div>
+</div>
+
+</div>
 
 ---
 
