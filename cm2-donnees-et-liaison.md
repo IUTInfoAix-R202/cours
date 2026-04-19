@@ -390,7 +390,6 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
 
 <!-- _header: "" -->
 <!-- _footer: "" -->
-<!-- _auto-scaling: false -->
 
 <style scoped>
 pre { min-height: 4rem; }
@@ -455,19 +454,47 @@ btn.setOnAction((ActionEvent e) -> {
 
 ## La propagation - phase de capture (1/2)
 
-Quand vous cliquez sur un bouton, l'événement **ne naît pas dans le bouton**. Il commence à la racine.
+<!-- _header: "" -->
+<!-- _footer: "" -->
+<p style="font-size: 1.6rem;">
+Quand vous cliquez sur un bouton, l'événement <b>ne naît pas dans le bouton</b>. Il commence à la racine de la scène et descend jusqu'à la cible.
+</p>
+<svg viewBox="0 0 1200 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; display:block; margin:0.3rem auto;">
+  <defs>
+    <marker id="capArr" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e74c3c"/></marker>
+  </defs>
 
-```
-Phase de CAPTURE (root → target)
-Scene
-  └── BorderPane          ← reçoit l'événement en premier
-        └── HBox          ← puis HBox
-              └── Button  ← enfin le Button (= target)
-```
+  <!-- Étage 1 : Scene (bord gauche) -->
+  <rect x="0" y="20" width="260" height="55" rx="10" fill="#7bb563" stroke="#5a9e45" stroke-width="2"/>
+  <text x="130" y="55" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🎬 Scene</text>
 
-- La racine peut **intercepter** l'événement avant la cible
-- Utile pour filtrer ou bloquer certains événements
-- Se configure avec `addEventFilter()`
+  <!-- Étage 2 : BorderPane -->
+  <rect x="313" y="85" width="260" height="55" rx="10" fill="#e8a838" stroke="#c87d10" stroke-width="2"/>
+  <text x="443" y="120" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🗺️ BorderPane</text>
+
+  <!-- Étage 3 : HBox -->
+  <rect x="627" y="150" width="260" height="55" rx="10" fill="#e8a838" stroke="#c87d10" stroke-width="2"/>
+  <text x="757" y="185" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">↔ HBox</text>
+
+  <!-- Étage 4 : Button (cible) (bord droit) -->
+  <rect x="940" y="205" width="260" height="55" rx="10" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="1070" y="240" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🔘 Button (cible)</text>
+
+  <!-- Flèches orthogonales (descente en L : ↓ puis →) avec annotations -->
+  <!-- De Scene vers BorderPane -->
+  <polyline points="130,75 130,112 311,112" stroke="#e74c3c" stroke-width="3" fill="none" marker-end="url(#capArr)"/>
+  <text x="145" y="102" font-family="Arial" font-size="14" fill="#c0392b" font-style="italic">1. reçoit en premier</text>
+  <!-- De BorderPane vers HBox -->
+  <polyline points="443,140 443,177 625,177" stroke="#e74c3c" stroke-width="3" fill="none" marker-end="url(#capArr)"/>
+  <text x="458" y="167" font-family="Arial" font-size="14" fill="#c0392b" font-style="italic">2. puis transmet</text>
+  <!-- De HBox vers Button -->
+  <polyline points="757,205 757,232 938,232" stroke="#e74c3c" stroke-width="3" fill="none" marker-end="url(#capArr)"/>
+  <text x="772" y="222" font-family="Arial" font-size="14" fill="#c0392b" font-style="italic">3. arrive à la cible</text>
+</svg>
+
+<div style="background: #e74c3c; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 2rem; font-size: 1.6rem;">
+⬇️ <b>Phase de CAPTURE</b> : la racine peut <b>intercepter</b> l'événement avant la cible via <code>addEventFilter()</code>. Utile pour filtrer, logger ou bloquer (<code>event.consume()</code>).
+</div>
 
 ---
 
