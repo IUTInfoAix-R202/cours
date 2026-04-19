@@ -988,21 +988,127 @@ compteur.set(compteur.get() + 1);<br/>
 
 ---
 
-## Pourquoi les propriétés ?
+## Avant les propriétés : la convention JavaBeans
 
-Le JavaBeans classique (get/set) ne permet pas de notifier les observateurs :
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-```java
-// JavaBeans classique - INOBSERVABLE
-public class Compteur {
-    private int valeur = 0;
-    public int getValeur() { return valeur; }
-    public void setValeur(int v) { valeur = v; }
-    // Personne ne sait quand valeur change !
+<p style="font-size:1.6rem">
+Depuis 1996, Java utilise la <b>convention JavaBeans</b> pour encapsuler les données d'un objet : un champ privé, un getter et un setter publics.
+</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.5rem;">
+
+<div style="background: #4a90d9; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.5rem;">📦 Le triplet classique</div>
+<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">Pour chaque donnée <code>foo</code> :</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.4rem;">
+<b>private</b> Type foo;<br/>
+<b>public</b> Type getFoo() { ... }<br/>
+<b>public</b> void setFoo(Type v) { ... }
+</div>
+<div style="font-size: 1.5rem; margin-top: 0.5rem;">Un champ, deux accesseurs.</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.5rem;">🎯 Exemple : un compteur</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.4rem;">
+<b>public class</b> Compteur {<br/>
+&nbsp;&nbsp;<b>private int</b> valeur = 0;<br/>
+&nbsp;&nbsp;<b>public int</b> getValeur() {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> valeur; }<br/>
+&nbsp;&nbsp;<b>public void</b> setValeur(<b>int</b> v) {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;valeur = v; }<br/>
 }
-```
+</div>
+</div>
 
-Pour rendre une valeur observable, JavaFX introduit les **propriétés** : des objets qui encapsulent une valeur ET maintiennent une liste d'observateurs.
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.6rem;">
+✅ Un <b>standard Java universel</b> : IDE, frameworks (Spring, JPA), sérialisation, tout en profite.
+</div>
+
+---
+
+## Les limites du modèle classique
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<p style="font-size:1.6rem">
+Pour une IHM, JavaBeans pose un problème majeur : <b>rien ne prévient</b> quand la valeur change.
+</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+
+<div style="background: #fdf2f2; color: #c0392b; padding: 1rem; border-radius: 10px; border: 2px solid #e74c3c;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🔇 Pas d'observation</div>
+<div style="font-size: 1.4rem; color: #333;">Impossible de <b>s'abonner</b> aux changements : on doit interroger régulièrement via <code>getValeur()</code> (<i>polling</i>).</div>
+</div>
+
+<div style="background: #fdf2f2; color: #c0392b; padding: 1rem; border-radius: 10px; border: 2px solid #e74c3c;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">📢 Pas de notification</div>
+<div style="font-size: 1.4rem; color: #333;">Le <code>setValeur()</code> modifie le champ en silence. L'interface ne sait pas qu'elle doit se redessiner.</div>
+</div>
+
+<div style="background: #fdf2f2; color: #c0392b; padding: 1rem; border-radius: 10px; border: 2px solid #e74c3c;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🔗 Câblage manuel</div>
+<div style="font-size: 1.4rem; color: #333;">Pour chaque dépendance UI ↔ modèle, il faut écrire un handler et appeler <code>setText()</code>. Fragile.</div>
+</div>
+
+</div>
+
+<div style="background: rgba(0,0,0,0.08); padding: 0.8rem; border-radius: 8px; margin-top: 1rem; font-family: monospace; font-size: 1.4rem; color: #222;">
+compteur.setValeur(42);<br/>
+<i>// ... et le label qui affiche la valeur ? Personne ne le met à jour.</i>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.6rem;">
+⚠️ JavaBeans décrit <b>comment stocker</b> une valeur, pas <b>comment réagir</b> à ses changements.
+</div>
+
+---
+
+## La réponse JavaFX : les propriétés observables
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<p style="font-size:1.6rem">
+JavaFX <b>étend</b> la convention JavaBeans avec une troisième méthode qui expose la propriété comme un objet <b>observable</b>.
+</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.5rem;">
+
+<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.5rem;">✨ Le triplet enrichi</div>
+<div style="font-size: 1.4rem; margin-bottom: 0.5rem;">Pour chaque propriété <code>foo</code> :</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.4rem;">
+<b>public</b> Type getFoo() { ... }<br/>
+<b>public</b> void setFoo(Type v) { ... }<br/>
+<b>public</b> Property&lt;Type&gt; <b>fooProperty</b>()<br/>
+&nbsp;&nbsp;{ ... }&nbsp;&nbsp;<i>// ← nouveau</i>
+</div>
+<div style="font-size: 1.4rem; margin-top: 0.5rem;">La propriété expose sa valeur <b>ET</b> ses observateurs.</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.5rem;">🧱 Propriété = valeur + observateurs</div>
+<div style="font-size: 1.4rem;">Une <code>Property</code> est un objet qui :</div>
+<div style="font-size: 1.4rem; margin-top: 0.4rem;">
+&bull; encapsule une <b>valeur</b> (comme un champ)<br/>
+&bull; maintient une <b>liste d'observateurs</b><br/>
+&bull; les <b>notifie</b> quand la valeur change<br/>
+&bull; peut être <b>liée</b> à d'autres propriétés
+</div>
+</div>
+
+</div>
+
+<div style="background: #1e8449; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.6rem;">
+💡 Le pattern <b>Observer</b> (vu en CM1) est <b>intégré au modèle de données</b>.
+</div>
 
 ---
 
