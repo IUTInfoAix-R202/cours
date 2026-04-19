@@ -664,18 +664,46 @@ bouton.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
 
 ## Hiérarchie des types d'événement
 
-```
-Event
-├── InputEvent
-│   ├── MouseEvent      (MOUSE_CLICKED, MOUSE_ENTERED, MOUSE_DRAGGED...)
-│   ├── KeyEvent        (KEY_PRESSED, KEY_RELEASED, KEY_TYPED)
-│   └── TouchEvent
-├── ActionEvent         (Button, MenuItem, TextField Enter)
-├── WindowEvent         (WINDOW_SHOWN, WINDOW_HIDING...)
-└── ScrollEvent
+```plantuml
+@startuml
+scale 1.5
+skinparam backgroundColor transparent
+skinparam defaultFontSize 16
+skinparam classAttributeIconSize 0
+skinparam classFontStyle bold
+skinparam shadowing false
+skinparam roundCorner 10
+
+skinparam class {
+    BorderColor #888
+    FontColor white
+}
+
+abstract class Event #7f8c8d
+
+abstract class InputEvent #34495e
+class ActionEvent #e74c3c
+class WindowEvent #1a5276
+class ScrollEvent #8e44ad
+
+class MouseEvent #e8a838
+class KeyEvent #27ae60
+class TouchEvent #00838f
+
+Event <|-- InputEvent
+Event <|-- ActionEvent
+Event <|-- WindowEvent
+Event <|-- ScrollEvent
+
+InputEvent <|-- MouseEvent
+InputEvent <|-- KeyEvent
+InputEvent <|-- TouchEvent
+@enduml
 ```
 
-Chaque type porte des données spécifiques : `MouseEvent` donne les coordonnées, `KeyEvent` donne le code de touche, etc.
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 0.5rem; text-align: center; font-size: 1.6rem;">
+💡 Chaque type porte des <b>données spécifiques</b> : <code>MouseEvent</code> → coordonnées (<code>getX()</code>, <code>getY()</code>), <code>KeyEvent</code> → code de touche (<code>getCode()</code>), <code>ActionEvent</code> → source du clic.
+</div>
 
 ---
 
