@@ -1156,6 +1156,9 @@ label.textProperty().bind(<br/>
 
 ## Exemple concret : BoutonCouleur (TP2, ex. 3)
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 <style scoped>
 pre { font-size: 0.78rem; }
 </style>
@@ -1182,15 +1185,52 @@ Grâce à `nbClicsProperty()`, n'importe quel autre composant peut observer ou s
 
 ## Les types de propriétés
 
-| Type Java | Propriété JavaFX | Implémentation concrète |
-|---|---|---|
-| `int` | `IntegerProperty` | `SimpleIntegerProperty` |
-| `double` | `DoubleProperty` | `SimpleDoubleProperty` |
-| `boolean` | `BooleanProperty` | `SimpleBooleanProperty` |
-| `String` | `StringProperty` | `SimpleStringProperty` |
-| `T` (objet) | `ObjectProperty<T>` | `SimpleObjectProperty<T>` |
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-Règle : préférer `IntegerProperty` à `ObjectProperty<Integer>` pour les nombres (évite le boxing).
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin-top: 0.6rem;">
+
+<div style="background: #1a5276; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.5rem;">🔢 IntegerProperty</div>
+<div style="font-size: 1.4rem; opacity: 0.9; margin-bottom: 0.7rem;">Encapsule un <code style="background: rgba(255,255,255,0.2); padding: 1px 4px; border-radius: 3px;">int</code></div>
+<div style="font-size: 1rem; background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 5px; font-family: monospace;">new SimpleIntegerProperty()</div>
+</div>
+
+<div style="background: #16a085; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.5rem;">📏 DoubleProperty</div>
+<div style="font-size: 1.4rem; opacity: 0.9; margin-bottom: 0.7rem;">Encapsule un <code style="background: rgba(255,255,255,0.2); padding: 1px 4px; border-radius: 3px;">double</code></div>
+<div style="font-size: 1rem; background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 5px; font-family: monospace;">new SimpleDoubleProperty()</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.5rem;">✓ BooleanProperty</div>
+<div style="font-size: 1.4rem; opacity: 0.9; margin-bottom: 0.7rem;">Encapsule un <code style="background: rgba(255,255,255,0.2); padding: 1px 4px; border-radius: 3px;">boolean</code></div>
+<div style="font-size: 1rem; background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 5px; font-family: monospace;">new SimpleBooleanProperty()</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.5rem;">🔤 StringProperty</div>
+<div style="font-size: 1.4rem; opacity: 0.9; margin-bottom: 0.7rem;">Encapsule une <code style="background: rgba(255,255,255,0.2); padding: 1px 4px; border-radius: 3px;">String</code></div>
+<div style="font-size: 1rem; background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 5px; font-family: monospace;">new SimpleStringProperty()</div>
+</div>
+
+<div style="background: #34495e; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.5rem;">📦 ObjectProperty&lt;T&gt;</div>
+<div style="font-size: 1.4rem; opacity: 0.9; margin-bottom: 0.7rem;">Encapsule n'importe quel <code style="background: rgba(255,255,255,0.2); padding: 1px 4px; border-radius: 3px;">T</code></div>
+<div style="font-size: 1rem; background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 5px; font-family: monospace;">new SimpleObjectProperty&lt;Color&gt;()</div>
+</div>
+
+<div style="background: #e67e22; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.5rem;">📜 ListProperty&lt;T&gt;</div>
+<div style="font-size: 1.4rem; opacity: 0.9; margin-bottom: 0.7rem;">Encapsule une <code style="background: rgba(255,255,255,0.2); padding: 1px 4px; border-radius: 3px;">ObservableList&lt;T&gt;</code></div>
+<div style="font-size: 1rem; background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 5px; font-family: monospace;">new SimpleListProperty&lt;String&gt;()</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 1.1rem 1.4rem; border-radius: 10px; margin-top: 1.4rem; font-size: 1.6rem;">
+💡 <strong>Règle d'or</strong> : préférer <code style="background: rgba(255,255,255,0.15); padding: 2px 6px; border-radius: 3px;">IntegerProperty</code> à <code style="background: rgba(255,255,255,0.15); padding: 2px 6px; border-radius: 3px;">ObjectProperty&lt;Integer&gt;</code> pour les nombres - évite l'auto-boxing.
+</div>
 
 ---
 
