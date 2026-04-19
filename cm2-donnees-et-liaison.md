@@ -1377,6 +1377,9 @@ Le listener reçoit <code style="background: rgba(255,255,255,0.15); padding: 1p
 
 ## InvalidationListener vs ChangeListener
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.6rem;">
 
 <div style="background: #e8a838; color: white; padding: 1.4rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
@@ -1409,11 +1412,15 @@ Le listener reçoit <code style="background: rgba(255,255,255,0.15); padding: 1p
 
 ## ReadOnlyWrapper - exposer en lecture seule
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 <style scoped>
 pre { font-size: 0.82rem; }
 </style>
-
+<p style="font-size : 1.6rem;">
 Pour qu'un composant expose une propriété sans que l'extérieur puisse l'écrire :
+</p>
 
 ```java
 private final ReadOnlyIntegerWrapper score = new ReadOnlyIntegerWrapper(0);
@@ -1429,7 +1436,9 @@ private void incrementerScore() {
 }
 ```
 
-Utile pour les propriétés calculées qu'un modèle veut exposer sans les laisser modifier de l'extérieur.
+<div style="background: #2c3e50; color: white; padding: 1rem 1.3rem; border-radius: 10px; margin-top: 1rem; font-size: 1.6rem;">
+💡 <strong>Cas d'usage typique</strong> : une propriété <em>calculée</em> qu'un modèle veut exposer à ses observateurs <strong>sans</strong> permettre de l'écrire depuis l'extérieur (score, état courant, résultat dérivé...).
+</div>
 
 ---
 
