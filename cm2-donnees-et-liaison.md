@@ -1629,17 +1629,35 @@ IP <|-- SIP
 
 ---
 
-## bind() unidirectionnel - concept
+## La liaison unidirectionnel avec bind()
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.82rem; }
 </style>
 
-Un binding unidirectionnel : la cible **suit** la source automatiquement.
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Après <code>cible.bind(source)</code>, la valeur de la cible est en permanence égale à celle de la source : toute modification de la source se propage instantanément vers la cible.</p>
 
-```
-source → cible
-```
+<div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem; margin: 0.6rem 0 1rem 0;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 1.2rem;">
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.6rem; border-radius: 10px; font-size: 1.3rem; font-weight: bold; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">📡 source</div>
+<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" style="width: 130px; height: 40px;">
+<defs>
+<marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#2c3e50"/>
+</marker>
+</defs>
+<text x="60" y="12" text-anchor="middle" fill="#2c3e50" font-size="11" font-weight="bold">valeur</text>
+<line x1="5" y1="25" x2="110" y2="25" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrb)"/>
+</svg>
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.6rem; border-radius: 10px; font-size: 1.3rem; font-weight: bold; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">🎯 cible</div>
+</div>
+<div style="font-size: 1.05rem; color: #2c3e50; margin-top: 0.3rem;">
+mise en place par <code style="background: #ecf0f1; padding: 2px 6px; border-radius: 3px; font-family: monospace;">cible.bind(source)</code>
+</div>
+</div>
 
 ```java
 IntegerProperty source = new SimpleIntegerProperty(10);
@@ -1652,7 +1670,9 @@ source.set(42);
 System.out.println(cible.get()); // 42 - mise à jour automatique
 ```
 
-Dans `LiaisonProprietes.java` (TP2, exercice 2), vous explorez ce comportement en détail.
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem;">
+💡 Dans <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">LiaisonProprietes.java</code> (TP2, exercice 2), vous explorez ce comportement en détail.
+</div>
 
 ---
 
