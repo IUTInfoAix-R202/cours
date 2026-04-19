@@ -201,19 +201,47 @@ Sans écrire un seul EventHandler, on peut synchroniser :
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem;">
 <div style="background: #f0f4f8; padding: 1.2rem; border-radius: 10px; border-left: 4px solid #4a90d9;">
-<div style="font-weight: bold; margin-bottom: 0.5rem;">⚙️ Avant (TP1)</div>
-<div style="font-size: 0.9rem;">Slider → clic → EventHandler → lire valeur → appeler setText() → appeler setStyle() → ...</div>
-<div style="margin-top: 0.5rem; color: #e74c3c; font-weight: bold;">5 lignes de code impératif</div>
+<div style="font-weight: bold; margin-bottom: 0.5rem; font-size: 1.3rem;">⚙️ Avant (TP1)</div>
+<div>Slider → clic → EventHandler → lire valeur → appeler <code>setText()</code> → appeler <code>setStyle()</code> → ...</div>
+<div style="margin-top: 0.5rem; color: #e74c3c; font-weight: bold; font-size: 1.3rem;">5 lignes de code impératif</div>
 </div>
 <div style="background: #f0fff4; padding: 1.2rem; border-radius: 10px; border-left: 4px solid #27ae60;">
-<div style="font-weight: bold; margin-bottom: 0.5rem;">✅ Après (TP2)</div>
-<div style="font-size: 0.9rem;">label.textProperty().bind(slider.valueProperty().asString())</div>
-<div style="margin-top: 0.5rem; color: #27ae60; font-weight: bold;">1 ligne déclarative</div>
+<div style="font-weight: bold; margin-bottom: 0.5rem; font-size: 1.3rem;">✅ Après (TP2)</div>
+<div><code>label.textProperty().bind(<br/>  slider.valueProperty().asString())</code></div>
+<div style="margin-top: 0.5rem; color: #27ae60; font-weight: bold; font-size: 1.3rem;">1 ligne déclarative</div>
 </div>
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 1rem 2rem; border-radius: 10px; margin-top: 1.5rem; text-align: center;">
 Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
+</div>
+
+---
+
+## La liaison de données - comment les données transitent
+
+```mermaid
+graph TB
+    subgraph Approche impérative TP1
+        direction TB
+        U1["👤 Utilisateur"] -->|clic| B1["🔘 Button"]
+        B1 -->|"EventHandler"| H1["📝 Handler"]
+        H1 -->|"setText()"| L1["🏷️ Label"]
+        H1 -->|"setStyle()"| P1["📦 Pane"]
+    end
+    subgraph Approche déclarative TP2
+        direction TB
+        U2["👤 Utilisateur"] -->|clic| B2["🔘 Button"]
+        B2 -->|"+1"| PR["⚡ IntegerProperty"]
+        PR -.->|"bind automatique"| L2["🏷️ Label"]
+        PR -.->|"bind automatique"| P2["📦 Pane"]
+    end
+    style H1 fill:#e74c3c,color:white,stroke:none
+    style PR fill:#e8a838,color:white,stroke:none
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center;">
+💡 La <b>propriété</b> devient le point central : elle stocke la donnée ET notifie automatiquement tous les composants liés.
 </div>
 
 ---
