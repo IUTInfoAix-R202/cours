@@ -132,6 +132,7 @@ Aujourd'hui : rendre l'interface <b>réactive</b> sans écrire d'EventHandler po
 ---
 
 ## TP1 : la Palette, version naïve ❌
+
 <!-- _header: "" -->
 <!-- _footer: "" -->
 
@@ -164,22 +165,33 @@ btnRouge.setOnAction(e -> {
 
 ## TP2 : la PaletteReactive, version bindings ✅
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 <style scoped>
 pre { font-size: 0.78rem; }
 </style>
 
-Dans `PaletteReactive.java` (TP2, exercice 3), un seul binding remplace les 3 setText() :
+<p style="font-size:1.6rem">
+Dans <code>PaletteReactive.java</code> (TP2, exercice 3), un seul binding remplace les 3 <code>setText()</code> :
+</p>
 
 ```java
 StringExpression texte = Bindings.concat(
     "Rouge: ", btnRouge.nbClicsProperty().asString(),
     "  Vert: ", btnVert.nbClicsProperty().asString(),
-    "  Bleu: ", btnBleu.nbClicsProperty().asString());
+    "  Bleu: ", btnBleu.nbClicsProperty().asString()
+    );
 
 labelCompteurs.textProperty().bind(texte);
 ```
 
-**Résultat** : le label se met à jour **automatiquement** à chaque clic. Aucun `setText()` dans les handlers. Ajouter un 5e bouton ? Il suffit d'allonger la concaténation.
+<div style="background: #1e8449; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 0.8rem;">
+✅ <b>Résultat</b> :<br/>
+&bull; Le label se met à jour <b>automatiquement</b> à chaque clic<br/>
+&bull; Aucun <code>setText()</code> dans les handlers<br/>
+&bull; Ajouter un bouton = allonger la concaténation
+</div>
 
 ---
 
