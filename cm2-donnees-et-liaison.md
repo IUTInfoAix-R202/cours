@@ -1112,26 +1112,45 @@ JavaFX <b>étend</b> la convention JavaBeans avec une troisième méthode qui ex
 
 ---
 
-## Le triplet JavaBeans JavaFX
+## La propriété, pierre angulaire du data binding
 
-La convention JavaFX **étend** JavaBeans avec une troisième méthode :
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1rem;">
-<div style="background: #4a90d9; color: white; padding: 1rem; border-radius: 8px; text-align: center;">
-<div style="font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">getFoo()</div>
-<div style="font-size: 0.85rem;">Lecture de la valeur brute. Hérité de JavaBeans.</div>
+<p style="font-size:1.5rem">
+Rappelez-vous la démo du début : un seul binding remplaçait trois <code>setText()</code>. Ce qui rend cette magie possible, c'est <b>précisément</b> la méthode <code>fooProperty()</code>.
+</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.5rem;">
+
+<div style="background: #4a90d9; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🎬 Ce qu'on a vu en Partie 1</div>
+<div style="font-size: 1.2rem; margin-bottom: 0.5rem;">Le code de la PaletteReactive :</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.05rem;">
+label.textProperty().bind(<br/>
+&nbsp;&nbsp;Bindings.concat(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"Rouge: ",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;btn.<b>nbClicsProperty()</b>.asString()));
 </div>
-<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 8px; text-align: center;">
-<div style="font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">setFoo()</div>
-<div style="font-size: 0.85rem;">Écriture de la valeur. Hérité de JavaBeans.</div>
+<div style="font-size: 1.1rem; margin-top: 0.5rem;">Le <code>nbClicsProperty()</code> du <code>BoutonCouleur</code> est le <b>pivot</b> de toute la réactivité.</div>
 </div>
-<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 8px; text-align: center;">
-<div style="font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">fooProperty()</div>
-<div style="font-size: 0.85rem;">Accès à l'objet Property lui-même. Nouveau en JavaFX.</div>
+
+<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🧩 Pourquoi ça fonctionne</div>
+<div style="font-size: 1.2rem;">La méthode <code>fooProperty()</code> retourne l'<b>objet Property lui-même</b>, pas sa valeur.</div>
+<div style="font-size: 1.15rem; margin-top: 0.5rem;">
+&bull; <code>getFoo()</code> → <b>une valeur figée</b> (snapshot)<br/>
+&bull; <code>fooProperty()</code> → <b>un objet vivant</b> observable :<br/>
+&nbsp;&nbsp;- on peut l'écouter (<code>addListener</code>)<br/>
+&nbsp;&nbsp;- et le lier à une autre (<code>bind</code>)
 </div>
 </div>
 
-> `fooProperty()` retourne l'objet qui peut être observé ou lié via `bind()`.
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem;">
+🔗 Partie 4 : on verra toutes les opérations possibles sur une propriété (<code>bind</code>, <code>bindBidirectional</code>, API fluente, bindings calculés).
+</div>
 
 ---
 
