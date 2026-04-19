@@ -221,39 +221,41 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
 <!-- _transition: fade -->
 
 ## La liaison de données - approche impérative ❌
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 <style scoped>h2 { view-transition-name: titre-liaison; }</style>
 
-<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:800px; display:block; margin:0.5rem auto;">
+<svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" style="width:100%; display:block; margin:0.3rem auto;">
   <defs>
     <marker id="a1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#555"/></marker>
   </defs>
-  <rect x="5" y="5" width="690" height="290" rx="12" fill="#fdf2f2" stroke="#e74c3c" stroke-width="2"/>
-  <text x="350" y="38" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#c0392b">❌ Approche impérative (TP1)</text>
-  <!-- Nœuds -->
-  <rect x="40" y="120" width="120" height="55" rx="10" fill="#f5f5f5" stroke="#ccc" stroke-width="1.5"/>
-  <text x="100" y="153" text-anchor="middle" font-family="Arial" font-size="15" fill="#333">👤 Utilisateur</text>
-  <rect x="210" y="120" width="110" height="55" rx="10" fill="#e74c3c"/>
-  <text x="265" y="153" text-anchor="middle" font-family="Arial" font-size="15" fill="white">🔘 Button</text>
-  <rect x="370" y="105" width="130" height="85" rx="10" fill="#c0392b"/>
-  <text x="435" y="138" text-anchor="middle" font-family="Arial" font-size="15" fill="white">📝 Handler</text>
-  <text x="435" y="160" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.8)">setText()</text>
-  <text x="435" y="178" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.8)">setStyle()</text>
-  <rect x="560" y="75" width="80" height="45" rx="10" fill="#8e44ad"/>
-  <text x="600" y="103" text-anchor="middle" font-family="Arial" font-size="14" fill="white">🏷️ Label</text>
-  <rect x="560" y="175" width="80" height="45" rx="10" fill="#8e44ad"/>
-  <text x="600" y="203" text-anchor="middle" font-family="Arial" font-size="14" fill="white">📦 Pane</text>
+  <rect x="5" y="5" width="890" height="210" rx="12" fill="#fdf2f2" stroke="#e74c3c" stroke-width="2"/>
+  <text x="450" y="32" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#c0392b">❌ Approche impérative (TP1)</text>
+  <!-- Nœuds - étalés sur toute la largeur -->
+  <rect x="30" y="85" width="140" height="50" rx="10" fill="#f5f5f5" stroke="#ccc" stroke-width="1.5"/>
+  <text x="100" y="115" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">👤 Utilisateur</text>
+  <rect x="250" y="85" width="130" height="50" rx="10" fill="#e74c3c"/>
+  <text x="315" y="115" text-anchor="middle" font-family="Arial" font-size="14" fill="white">🔘 Button</text>
+  <rect x="470" y="72" width="150" height="76" rx="10" fill="#c0392b"/>
+  <text x="545" y="100" text-anchor="middle" font-family="Arial" font-size="14" fill="white">📝 Handler</text>
+  <text x="545" y="120" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.8)">setText()</text>
+  <text x="545" y="136" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.8)">setStyle()</text>
+  <rect x="720" y="55" width="120" height="42" rx="10" fill="#8e44ad"/>
+  <text x="780" y="81" text-anchor="middle" font-family="Arial" font-size="13" fill="white">🏷️ Label</text>
+  <rect x="720" y="125" width="120" height="42" rx="10" fill="#8e44ad"/>
+  <text x="780" y="151" text-anchor="middle" font-family="Arial" font-size="13" fill="white">📦 Pane</text>
   <!-- Flèches -->
-  <line x1="160" y1="147" x2="208" y2="147" stroke="#555" stroke-width="2" marker-end="url(#a1)"/>
-  <text x="184" y="140" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">clic</text>
-  <line x1="320" y1="147" x2="368" y2="147" stroke="#555" stroke-width="2" marker-end="url(#a1)"/>
-  <text x="344" y="140" text-anchor="middle" font-family="Arial" font-size="10" fill="#555">EventHandler</text>
-  <line x1="500" y1="125" x2="558" y2="100" stroke="#555" stroke-width="2" marker-end="url(#a1)"/>
-  <text x="535" y="105" font-family="Arial" font-size="10" fill="#555">setText()</text>
-  <line x1="500" y1="170" x2="558" y2="195" stroke="#555" stroke-width="2" marker-end="url(#a1)"/>
-  <text x="535" y="195" font-family="Arial" font-size="10" fill="#555">setStyle()</text>
+  <line x1="170" y1="110" x2="248" y2="110" stroke="#555" stroke-width="2" marker-end="url(#a1)"/>
+  <text x="209" y="103" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">clic</text>
+  <line x1="380" y1="110" x2="468" y2="110" stroke="#555" stroke-width="2" marker-end="url(#a1)"/>
+  <text x="424" y="103" text-anchor="middle" font-family="Arial" font-size="10" fill="#555">EventHandler</text>
+  <line x1="620" y1="92" x2="718" y2="78" stroke="#555" stroke-width="2" marker-end="url(#a1)"/>
+  <text x="669" y="68" font-family="Arial" font-size="10" fill="#555">setText()</text>
+  <line x1="620" y1="130" x2="718" y2="144" stroke="#555" stroke-width="2" marker-end="url(#a1)"/>
+  <text x="669" y="160" font-family="Arial" font-size="10" fill="#555">setStyle()</text>
   <!-- Bilan -->
-  <text x="350" y="270" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#c0392b">Le handler fait TOUT manuellement</text>
+  <text x="450" y="198" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#c0392b">Le handler fait TOUT manuellement</text>
 </svg>
 
 <div style="background: #c0392b; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 0.8rem; text-align: center;">
@@ -265,40 +267,42 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
 <!-- _transition: fade -->
 
 ## La liaison de données - approche déclarative ✅
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 <style scoped>h2 { view-transition-name: titre-liaison; }</style>
 
-<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:800px; display:block; margin:0.5rem auto;">
+<svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" style="width:100%; display:block; margin:0.3rem auto;">
   <defs>
     <marker id="a2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#555"/></marker>
     <marker id="a2g" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#27ae60"/></marker>
   </defs>
-  <rect x="5" y="5" width="690" height="290" rx="12" fill="#f0faf0" stroke="#27ae60" stroke-width="2"/>
-  <text x="350" y="38" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#1e8449">✅ Approche déclarative (TP2)</text>
-  <!-- Nœuds -->
-  <rect x="40" y="120" width="120" height="55" rx="10" fill="#f5f5f5" stroke="#ccc" stroke-width="1.5"/>
-  <text x="100" y="153" text-anchor="middle" font-family="Arial" font-size="15" fill="#333">👤 Utilisateur</text>
-  <rect x="210" y="120" width="110" height="55" rx="10" fill="#e74c3c"/>
-  <text x="265" y="153" text-anchor="middle" font-family="Arial" font-size="15" fill="white">🔘 Button</text>
-  <rect x="370" y="110" width="130" height="75" rx="10" fill="#e8a838"/>
-  <text x="435" y="143" text-anchor="middle" font-family="Arial" font-size="15" fill="white">⚡ Property</text>
-  <text x="435" y="165" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.8)">nbClics</text>
-  <rect x="560" y="75" width="80" height="45" rx="10" fill="#8e44ad"/>
-  <text x="600" y="103" text-anchor="middle" font-family="Arial" font-size="14" fill="white">🏷️ Label</text>
-  <rect x="560" y="175" width="80" height="45" rx="10" fill="#8e44ad"/>
-  <text x="600" y="203" text-anchor="middle" font-family="Arial" font-size="14" fill="white">📦 Pane</text>
+  <rect x="5" y="5" width="890" height="210" rx="12" fill="#f0faf0" stroke="#27ae60" stroke-width="2"/>
+  <text x="450" y="32" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#1e8449">✅ Approche déclarative (TP2)</text>
+  <!-- Nœuds - étalés sur toute la largeur -->
+  <rect x="30" y="85" width="140" height="50" rx="10" fill="#f5f5f5" stroke="#ccc" stroke-width="1.5"/>
+  <text x="100" y="115" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">👤 Utilisateur</text>
+  <rect x="250" y="85" width="130" height="50" rx="10" fill="#e74c3c"/>
+  <text x="315" y="115" text-anchor="middle" font-family="Arial" font-size="14" fill="white">🔘 Button</text>
+  <rect x="470" y="72" width="150" height="76" rx="10" fill="#e8a838"/>
+  <text x="545" y="100" text-anchor="middle" font-family="Arial" font-size="14" fill="white">⚡ Property</text>
+  <text x="545" y="122" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.8)">nbClics</text>
+  <rect x="720" y="55" width="120" height="42" rx="10" fill="#8e44ad"/>
+  <text x="780" y="81" text-anchor="middle" font-family="Arial" font-size="13" fill="white">🏷️ Label</text>
+  <rect x="720" y="125" width="120" height="42" rx="10" fill="#8e44ad"/>
+  <text x="780" y="151" text-anchor="middle" font-family="Arial" font-size="13" fill="white">📦 Pane</text>
   <!-- Flèches pleines -->
-  <line x1="160" y1="147" x2="208" y2="147" stroke="#555" stroke-width="2" marker-end="url(#a2)"/>
-  <text x="184" y="140" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">clic</text>
-  <line x1="320" y1="147" x2="368" y2="147" stroke="#555" stroke-width="2" marker-end="url(#a2)"/>
-  <text x="344" y="140" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">+1</text>
+  <line x1="170" y1="110" x2="248" y2="110" stroke="#555" stroke-width="2" marker-end="url(#a2)"/>
+  <text x="209" y="103" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">clic</text>
+  <line x1="380" y1="110" x2="468" y2="110" stroke="#555" stroke-width="2" marker-end="url(#a2)"/>
+  <text x="424" y="103" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">+1</text>
   <!-- Flèches pointillées (bind) -->
-  <line x1="500" y1="125" x2="558" y2="100" stroke="#27ae60" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#a2g)"/>
-  <text x="535" y="105" font-family="Arial" font-size="11" fill="#27ae60" font-weight="bold">bind</text>
-  <line x1="500" y1="170" x2="558" y2="195" stroke="#27ae60" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#a2g)"/>
-  <text x="535" y="195" font-family="Arial" font-size="11" fill="#27ae60" font-weight="bold">bind</text>
+  <line x1="620" y1="92" x2="718" y2="78" stroke="#27ae60" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#a2g)"/>
+  <text x="675" y="72" font-family="Arial" font-size="11" fill="#27ae60" font-weight="bold">bind</text>
+  <line x1="620" y1="128" x2="718" y2="144" stroke="#27ae60" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#a2g)"/>
+  <text x="675" y="158" font-family="Arial" font-size="11" fill="#27ae60" font-weight="bold">bind</text>
   <!-- Bilan -->
-  <text x="350" y="270" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#1e8449">La propriété notifie AUTOMATIQUEMENT</text>
+  <text x="450" y="198" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#1e8449">La propriété notifie AUTOMATIQUEMENT</text>
 </svg>
 
 <div style="background: #1e8449; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 0.8rem; text-align: center;">
@@ -311,55 +315,59 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
 
 ## La liaison de données - comparaison
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 <style scoped>h2 { view-transition-name: titre-liaison; }</style>
 
 <div style="display: flex; gap: 0.8rem; margin-top: 0.5rem;">
 
-<svg viewBox="0 0 520 230" xmlns="http://www.w3.org/2000/svg" style="flex:1;">
+<svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg" style="flex:1;">
   <defs><marker id="a3" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#555"/></marker></defs>
-  <rect x="3" y="3" width="514" height="224" rx="10" fill="#fdf2f2" stroke="#e74c3c" stroke-width="1.5"/>
-  <text x="260" y="25" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#c0392b">❌ Impératif (TP1)</text>
-  <rect x="20" y="85" width="85" height="40" rx="7" fill="#f5f5f5" stroke="#ccc"/>
-  <text x="62" y="110" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">👤 User</text>
-  <rect x="135" y="85" width="80" height="40" rx="7" fill="#e74c3c"/>
-  <text x="175" y="110" text-anchor="middle" font-family="Arial" font-size="11" fill="white">🔘 Button</text>
-  <rect x="245" y="75" width="95" height="60" rx="7" fill="#c0392b"/>
-  <text x="292" y="100" text-anchor="middle" font-family="Arial" font-size="11" fill="white">📝 Handler</text>
-  <text x="292" y="118" text-anchor="middle" font-family="Arial" font-size="9" fill="rgba(255,255,255,0.7)">setText() / setStyle()</text>
-  <rect x="375" y="55" width="60" height="32" rx="7" fill="#8e44ad"/>
-  <text x="405" y="76" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Label</text>
-  <rect x="375" y="125" width="60" height="32" rx="7" fill="#8e44ad"/>
-  <text x="405" y="146" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Pane</text>
-  <line x1="105" y1="105" x2="133" y2="105" stroke="#555" stroke-width="1.5" marker-end="url(#a3)"/>
-  <line x1="215" y1="105" x2="243" y2="105" stroke="#555" stroke-width="1.5" marker-end="url(#a3)"/>
-  <line x1="340" y1="90" x2="373" y2="73" stroke="#555" stroke-width="1.5" marker-end="url(#a3)"/>
-  <line x1="340" y1="120" x2="373" y2="138" stroke="#555" stroke-width="1.5" marker-end="url(#a3)"/>
-  <text x="260" y="210" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#c0392b">Le handler fait tout</text>
+  <rect x="3" y="3" width="514" height="334" rx="10" fill="#fdf2f2" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="260" y="35" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#c0392b">❌ Impératif (TP1)</text>
+  <rect x="15" y="130" width="95" height="50" rx="7" fill="#f5f5f5" stroke="#ccc"/>
+  <text x="62" y="160" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">👤 User</text>
+  <rect x="150" y="130" width="90" height="50" rx="7" fill="#e74c3c"/>
+  <text x="195" y="160" text-anchor="middle" font-family="Arial" font-size="14" fill="white">🔘 Button</text>
+  <rect x="280" y="110" width="100" height="90" rx="7" fill="#c0392b"/>
+  <text x="330" y="145" text-anchor="middle" font-family="Arial" font-size="14" fill="white">📝 Handler</text>
+  <text x="330" y="167" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.7)">setText()</text>
+  <text x="330" y="184" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.7)">setStyle()</text>
+  <rect x="425" y="70" width="75" height="45" rx="7" fill="#8e44ad"/>
+  <text x="462" y="98" text-anchor="middle" font-family="Arial" font-size="14" fill="white">🏷️ Label</text>
+  <rect x="425" y="195" width="75" height="45" rx="7" fill="#8e44ad"/>
+  <text x="462" y="223" text-anchor="middle" font-family="Arial" font-size="14" fill="white">📦 Pane</text>
+  <line x1="110" y1="155" x2="148" y2="155" stroke="#555" stroke-width="1.5" marker-end="url(#a3)"/>
+  <line x1="240" y1="155" x2="278" y2="155" stroke="#555" stroke-width="1.5" marker-end="url(#a3)"/>
+  <line x1="380" y1="130" x2="423" y2="98" stroke="#555" stroke-width="1.5" marker-end="url(#a3)"/>
+  <line x1="380" y1="178" x2="423" y2="210" stroke="#555" stroke-width="1.5" marker-end="url(#a3)"/>
+  <text x="260" y="310" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#c0392b">Le handler fait tout</text>
 </svg>
 
-<svg viewBox="0 0 520 230" xmlns="http://www.w3.org/2000/svg" style="flex:1;">
+<svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg" style="flex:1;">
   <defs>
     <marker id="a4" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#555"/></marker>
     <marker id="a4g" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#27ae60"/></marker>
   </defs>
-  <rect x="3" y="3" width="514" height="224" rx="10" fill="#f0faf0" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="260" y="25" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#1e8449">✅ Déclaratif (TP2)</text>
-  <rect x="20" y="85" width="85" height="40" rx="7" fill="#f5f5f5" stroke="#ccc"/>
-  <text x="62" y="110" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">👤 User</text>
-  <rect x="135" y="85" width="80" height="40" rx="7" fill="#e74c3c"/>
-  <text x="175" y="110" text-anchor="middle" font-family="Arial" font-size="11" fill="white">🔘 Button</text>
-  <rect x="245" y="75" width="95" height="60" rx="7" fill="#e8a838"/>
-  <text x="292" y="100" text-anchor="middle" font-family="Arial" font-size="11" fill="white">⚡ Property</text>
-  <text x="292" y="118" text-anchor="middle" font-family="Arial" font-size="9" fill="rgba(255,255,255,0.7)">nbClics</text>
-  <rect x="375" y="55" width="60" height="32" rx="7" fill="#8e44ad"/>
-  <text x="405" y="76" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Label</text>
-  <rect x="375" y="125" width="60" height="32" rx="7" fill="#8e44ad"/>
-  <text x="405" y="146" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Pane</text>
-  <line x1="105" y1="105" x2="133" y2="105" stroke="#555" stroke-width="1.5" marker-end="url(#a4)"/>
-  <line x1="215" y1="105" x2="243" y2="105" stroke="#555" stroke-width="1.5" marker-end="url(#a4)"/>
-  <line x1="340" y1="90" x2="373" y2="73" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#a4g)"/>
-  <line x1="340" y1="120" x2="373" y2="138" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#a4g)"/>
-  <text x="260" y="210" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#1e8449">La propriété notifie auto.</text>
+  <rect x="3" y="3" width="514" height="334" rx="10" fill="#f0faf0" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="260" y="35" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#1e8449">✅ Déclaratif (TP2)</text>
+  <rect x="15" y="130" width="95" height="50" rx="7" fill="#f5f5f5" stroke="#ccc"/>
+  <text x="62" y="160" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">👤 User</text>
+  <rect x="150" y="130" width="90" height="50" rx="7" fill="#e74c3c"/>
+  <text x="195" y="160" text-anchor="middle" font-family="Arial" font-size="14" fill="white">🔘 Button</text>
+  <rect x="280" y="110" width="100" height="90" rx="7" fill="#e8a838"/>
+  <text x="330" y="145" text-anchor="middle" font-family="Arial" font-size="14" fill="white">⚡ Property</text>
+  <text x="330" y="167" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.7)">nbClics</text>
+  <rect x="425" y="70" width="75" height="45" rx="7" fill="#8e44ad"/>
+  <text x="462" y="98" text-anchor="middle" font-family="Arial" font-size="14" fill="white">🏷️ Label</text>
+  <rect x="425" y="195" width="75" height="45" rx="7" fill="#8e44ad"/>
+  <text x="462" y="223" text-anchor="middle" font-family="Arial" font-size="14" fill="white">📦 Pane</text>
+  <line x1="110" y1="155" x2="148" y2="155" stroke="#555" stroke-width="1.5" marker-end="url(#a4)"/>
+  <line x1="240" y1="155" x2="278" y2="155" stroke="#555" stroke-width="1.5" marker-end="url(#a4)"/>
+  <line x1="380" y1="130" x2="423" y2="98" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#a4g)"/>
+  <line x1="380" y1="178" x2="423" y2="210" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#a4g)"/>
+  <text x="260" y="310" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#1e8449">La propriété notifie auto.</text>
 </svg>
 
 </div>
