@@ -844,6 +844,56 @@ btn.addEventHandler(<br/>
 
 ---
 
+## 🌐 Les autres événements
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<p style="font-size:1.6rem">
+JavaFX propose de nombreux autres types d'événements pour couvrir tous les cas d'interaction. Vous les rencontrerez selon vos besoins.
+</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🪟 WindowEvent</div>
+<div style="font-size: 1.4rem; margin-bottom: 0.5rem;">Cycle de vie d'une fenêtre (Stage).</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.3rem;">
+stage.setOnCloseRequest(<br/>
+&nbsp;&nbsp;e -> sauvegarder());
+</div>
+<div style="font-size: 1.4rem; margin-top: 0.5rem; font-style: italic;">WINDOW_SHOWN, HIDING, CLOSE_REQUEST</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🎢 ScrollEvent</div>
+<div style="font-size: 1.4rem; margin-bottom: 0.5rem;">Molette ou trackpad à deux doigts.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.3rem;">
+zone.setOnScroll(e -><br/>
+&nbsp;&nbsp;zoomer(e.getDeltaY()));
+</div>
+<div style="font-size: 1.4rem; margin-top: 0.5rem; font-style: italic;">getDeltaX() / getDeltaY()</div>
+</div>
+
+<div style="background: #00838f; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">👆 TouchEvent</div>
+<div style="font-size: 1.4rem; margin-bottom: 0.5rem;">Écrans tactiles multi-touch.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.3rem;">
+zone.setOnTouchPressed(<br/>
+&nbsp;&nbsp;e -> traiter(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e.getTouchPoints()));
+</div>
+<div style="font-size: 1.4rem; margin-top: 0.5rem; font-style: italic;">TOUCH_PRESSED, MOVED, RELEASED</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; font-size: 1.6rem;">
+💡 Et aussi : <code>DragEvent</code> (glisser-déposer entre applications), <code>InputMethodEvent</code> (saisie de caractères composés, émojis), <code>GestureEvent</code> (pincer, pivoter, balayer).
+</div>
+
+---
+
 ## 🧠 Nielsen #1 approfondi : feedback et temps de réponse
 
 **Heuristique 1** : "Le système doit toujours informer l'utilisateur de ce qui se passe."
