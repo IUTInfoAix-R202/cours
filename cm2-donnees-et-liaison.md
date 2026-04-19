@@ -1676,29 +1676,51 @@ System.out.println(cible.get()); // 42 - mise à jour automatique
 
 ---
 
-## Propriété liée = non modifiable
+## Propriété liée = propriété non modifiable
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.82rem; }
 </style>
 
-**Contrainte importante** : une propriété liée ne peut pas être modifiée directement.
+<p style="font-size: 1.6rem; margin: 0.3rem 0 0.8rem 0;"><strong>Contrainte importante</strong> : tant qu'une propriété est liée, elle ne peut pas être modifiée directement.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.6rem;">
+
+<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">🔒 Propriété liée</div>
 
 ```java
 cible.bind(source);
-cible.set(99); // RuntimeException : "A bound value cannot be set."
+cible.set(99);
+// RuntimeException :
+// "A bound value cannot be set."
 ```
 
-Pour la délier avant de la modifier :
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">🔓 Propriété déliée</div>
 
 ```java
 cible.unbind();
-cible.set(99); // OK maintenant
+cible.set(99);
+// OK - la cible est
+// à nouveau modifiable
 ```
 
-`isBound()` permet de tester l'état avant d'agir.
+</div>
 
-> Exercice 2 du TP2 : vous observerez ce comportement avec les sorties console.
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 1rem 1.3rem; border-radius: 10px; margin-top: 1rem; font-size: 1.15rem; line-height: 1.55;">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.5rem;">💭 À retenir</div>
+<div style="margin-bottom: 0.4rem;">• <strong>Pourquoi cette contrainte ?</strong> Si un <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">set()</code> était permis, la source écraserait la valeur manuelle au prochain changement - le binding perdrait sa garantie d'égalité.</div>
+<div style="margin-bottom: 0.4rem;">• <strong>Piège</strong> : <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">cible.bind(autreSource)</code> alors que <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">cible</code> est déjà liée <strong>remplace silencieusement</strong> la liaison (pas d'erreur).</div>
+<div>• <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">isBound()</code> permet de tester l'état avant d'agir <em>(Exercice 2 du TP2)</em>.</div>
+</div>
 
 ---
 
