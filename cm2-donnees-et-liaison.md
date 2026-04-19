@@ -256,6 +256,10 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
   <text x="350" y="270" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#c0392b">Le handler fait TOUT manuellement</text>
 </svg>
 
+<div style="background: #c0392b; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 0.8rem; text-align: center;">
+⚠️ Chaque mise à jour visuelle demande du code <b>impératif</b> dans le handler. Plus l'interface est riche, plus le handler grossit.
+</div>
+
 ---
 
 <!-- _transition: fade -->
@@ -296,6 +300,10 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
   <!-- Bilan -->
   <text x="350" y="270" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#1e8449">La propriété notifie AUTOMATIQUEMENT</text>
 </svg>
+
+<div style="background: #1e8449; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 0.8rem; text-align: center;">
+✅ Ajouter un composant visuel = ajouter <b>un bind()</b>. Le handler ne change pas. La propriété est la source unique de vérité.
+</div>
 
 ---
 
