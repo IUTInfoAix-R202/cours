@@ -456,6 +456,7 @@ btn.setOnAction((ActionEvent e) -> {
 
 <!-- _header: "" -->
 <!-- _footer: "" -->
+
 <p style="font-size: 1.6rem;">
 Quand vous cliquez sur un bouton, l'événement <b>ne naît pas dans le bouton</b>. Il commence à la racine de la scène et descend jusqu'à la cible.
 </p>
@@ -498,23 +499,50 @@ Quand vous cliquez sur un bouton, l'événement <b>ne naît pas dans le bouton</
 
 ---
 
-## La propagation - phase de bulles (2/2)
+## La propagation - phase de bubbling (2/2)
 
-Après la phase de capture, l'événement **remonte** vers la racine :
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-```
-Phase de BUBBLING (target → root)
-Button  ← traitement ici d'abord
-  └── HBox
-        └── BorderPane
-              └── Scene   ← traitement ici en dernier
-```
+<p style="font-size: 1.6rem;">
+Après la phase de capture, l'événement <b>remonte</b> de la cible vers la racine : c'est la phase qui déclenche vos <code>setOnAction()</code> habituels.
+</p>
+<svg viewBox="0 0 1200 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; display:block; margin:0.3rem auto;">
+  <defs>
+    <marker id="bubArr" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#27ae60"/></marker>
+  </defs>
 
-- La cible (le bouton) est traitée en premier dans cette phase
-- Se configure avec `addEventHandler()`
-- `setOnAction()` est un raccourci pour `addEventHandler(ActionEvent.ACTION, ...)`
+  <!-- Étage 1 : Scene (bord gauche) -->
+  <rect x="0" y="20" width="260" height="55" rx="10" fill="#7bb563" stroke="#5a9e45" stroke-width="2"/>
+  <text x="130" y="55" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🎬 Scene</text>
 
-> La plupart du temps vous n'avez pas besoin de gérer la capture. `setOnAction()` suffit.
+  <!-- Étage 2 : BorderPane -->
+  <rect x="313" y="85" width="260" height="55" rx="10" fill="#e8a838" stroke="#c87d10" stroke-width="2"/>
+  <text x="443" y="120" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🗺️ BorderPane</text>
+
+  <!-- Étage 3 : HBox -->
+  <rect x="627" y="150" width="260" height="55" rx="10" fill="#e8a838" stroke="#c87d10" stroke-width="2"/>
+  <text x="757" y="185" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">↔ HBox</text>
+
+  <!-- Étage 4 : Button (cible - bord droit) -->
+  <rect x="940" y="205" width="260" height="55" rx="10" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="1070" y="240" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🔘 Button (cible)</text>
+
+  <!-- Flèches orthogonales inversées (remontée en L : ← puis ↑) avec annotations -->
+  <!-- De Button (départ bord gauche, centre vertical) vers HBox (centre horizontal, bas) -->
+  <polyline points="940,232 757,232 757,205" stroke="#27ae60" stroke-width="3" fill="none" marker-end="url(#bubArr)"/>
+  <text x="773" y="222" font-family="Arial" font-size="14" fill="#1e8449" font-style="italic">1. traitement ici</text>
+  <!-- De HBox (départ bord gauche, centre vertical) vers BorderPane (centre horizontal, bas) -->
+  <polyline points="627,177 443,177 443,140" stroke="#27ae60" stroke-width="3" fill="none" marker-end="url(#bubArr)"/>
+  <text x="459" y="167" font-family="Arial" font-size="14" fill="#1e8449" font-style="italic">2. puis remonte</text>
+  <!-- De BorderPane (départ bord gauche, centre vertical) vers Scene (centre horizontal, bas) -->
+  <polyline points="313,112 130,112 130,75" stroke="#27ae60" stroke-width="3" fill="none" marker-end="url(#bubArr)"/>
+  <text x="146" y="102" font-family="Arial" font-size="14" fill="#1e8449" font-style="italic">3. termine à la racine</text>
+</svg>
+
+<div style="background: #1e8449; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 2rem; font-size: 1.6rem;">
+⬆️ <b>Phase de BUBBLING</b> : la cible est traitée en premier. Se configure avec <code>addEventHandler()</code>. <code>setOnAction()</code> est un raccourci pour <code>addEventHandler(ActionEvent.ACTION, ...)</code>.
+</div>
 
 ---
 
