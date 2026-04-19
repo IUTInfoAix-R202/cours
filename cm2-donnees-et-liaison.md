@@ -1292,11 +1292,16 @@ void creerPropriete() {
 
 ## InvalidationListener - le listener paresseux
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 <style scoped>
 pre { font-size: 0.78rem; }
 </style>
 
-L'`InvalidationListener` est déclenché quand la propriété passe de l'état **valide** à **invalide**. Exercice 1 du TP2 :
+<p style="font-size : 1.6rem;">
+L'<code>InvalidationListener</code> est déclenché quand la propriété passe de l'état <b>valide</b> à <b>invalide</b>. Exercice 1 du TP2 :
+</p>
 
 ```java
 anIntProperty.addListener(observable ->
@@ -1309,12 +1314,12 @@ anIntProperty.setValue(5012); // PAS redéclenché (lazy : pas de get() depuis)
 
 <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 0.9rem; margin-top: 0.8rem;">
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.1rem; border-radius: 10px; font-size: 1.05rem;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.1rem; border-radius: 10px; font-size: 1.3rem;">
 <strong>💡 Règle de l'invalidation</strong><br/>
 Propriété <em>valide</em> au départ. Le premier <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">set()</code> la passe à <em>invalide</em> et déclenche le listener. Une lecture <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">get()</code> la revalide. Tant qu'elle reste invalide, les <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">set()</code> suivants sont silencieux.
 </div>
 
-<div style="background: #fff3cd; border-left: 5px solid #e8a838; padding: 0.9rem 1.1rem; border-radius: 6px; font-size: 1.05rem;">
+<div style="background: #fff3cd; border-left: 5px solid #e8a838; padding: 0.9rem 1.1rem; border-radius: 6px; font-size: 1.3rem;">
 <strong style="color: #7e5109;">🎯 Quand l'utiliser ?</strong>
 <ul style="margin: 0.3rem 0 0 0; padding-left: 1.2rem;">
 <li>Savoir <em>qu'il y a eu un changement</em>, pas lequel</li>
@@ -1329,11 +1334,16 @@ Propriété <em>valide</em> au départ. Le premier <code style="background: rgba
 
 ## ChangeListener - le listener exhaustif
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 <style scoped>
 pre { font-size: 0.78rem; }
 </style>
 
-Le `ChangeListener` reçoit **l'ancienne et la nouvelle valeur** à chaque changement. Exercice 1 du TP2 :
+<p style="font-size : 1.6rem;">
+Le <code>ChangeListener</code> reçoit <b>l'ancienne et la nouvelle valeur</b> à chaque changement. Exercice 1 du TP2 :
+</p>
 
 ```java
 anIntProperty.addListener((observable, oldValue, newValue) ->
@@ -1345,7 +1355,23 @@ anIntProperty.set(2105);      // déclenché : old=1024, new=2105
 anIntProperty.setValue(5012); // déclenché : old=2105, new=5012
 ```
 
-Contrairement à l'`InvalidationListener`, il se déclenche à **chaque changement effectif** de valeur.
+<div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 0.9rem; margin-top: 0.8rem;">
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.1rem; border-radius: 10px; font-size: 1.3rem;">
+<strong>💡 Règle du changement effectif</strong><br/>
+Le listener reçoit <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">(observable, oldValue, newValue)</code>. Pas de paresse : <strong>chaque</strong> <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">set()</code> qui modifie la valeur déclenche, indépendamment des lectures.
+</div>
+
+<div style="background: #d6eaf8; border-left: 5px solid #2980b9; padding: 0.9rem 1.1rem; border-radius: 6px; font-size: 1.3rem;">
+<strong style="color: #1b4f72;">🎯 Quand l'utiliser ?</strong>
+<ul style="margin: 0.3rem 0 0 0; padding-left: 1.2rem;">
+<li>Vous avez besoin de la <em>nouvelle</em> ou de l'<em>ancienne</em> valeur</li>
+<li>Mettre à jour l'interface (label, graphique)</li>
+<li>Logique conditionnelle sur les valeurs</li>
+</ul>
+</div>
+
+</div>
 
 ---
 
