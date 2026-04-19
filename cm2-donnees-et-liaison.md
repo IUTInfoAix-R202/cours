@@ -937,21 +937,45 @@ zone.setOnTouchPressed(<br/>
 
 ## ⚡ Les bindings comme feedback automatique
 
-Les bindings respectent automatiquement Nielsen #1 :
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
-<div style="background: #f0f4f8; padding: 1.2rem; border-radius: 10px; border-left: 4px solid #e74c3c;">
-<div style="font-weight: bold; margin-bottom: 0.5rem;">❌ Sans binding</div>
-<div style="font-size: 0.9rem;">L'utilisateur clique. Si vous oubliez un <code>setText()</code>, le label reste obsolète. Feedback absent ou incorrect.</div>
+<p style="font-size:1.5rem">
+Relier une propriété à un composant visuel, c'est <b>déléguer la responsabilité du feedback</b> au framework. Impossible d'oublier une mise à jour.
+</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.5rem;">
+
+<div style="background: #fdf2f2; color: #c0392b; padding: 1rem; border-radius: 10px; border: 2px solid #e74c3c;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">❌ Sans binding</div>
+<div style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #333;">Le développeur doit penser à <b>chaque mise à jour</b> manuellement.</div>
+<div style="background: rgba(0,0,0,0.08); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.1rem; color: #222;">
+btn.setOnAction(e -> {<br/>
+&nbsp;&nbsp;compteur++;<br/>
+&nbsp;&nbsp;label.setText("" + compteur);<br/>
+&nbsp;&nbsp;<i>// oubli possible...</i><br/>
+});
 </div>
-<div style="background: #f0fff4; padding: 1.2rem; border-radius: 10px; border-left: 4px solid #27ae60;">
-<div style="font-weight: bold; margin-bottom: 0.5rem;">✅ Avec binding</div>
-<div style="font-size: 0.9rem;">Le label est déclaré comme dépendant de la propriété. Dès que la propriété change, le label se met à jour. Toujours cohérent.</div>
-</div>
+<div style="font-size: 1.3rem; margin-top: 0.5rem; font-style: italic; color: #c0392b; font-weight: bold;">⚠️ Fragile : un oubli = l'interface peut mentir</div>
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 1rem 2rem; border-radius: 10px; margin-top: 1.5rem; text-align: center;">
-Un binding, c'est du feedback <b>garanti par construction</b>.
+<div style="background: #f0faf0; color: #1e8449; padding: 1rem; border-radius: 10px; border: 2px solid #27ae60;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">✅ Avec binding</div>
+<div style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #333;">Le lien est <b>déclaré une seule fois</b>, au démarrage (souvent dans le constructeur).</div>
+<div style="background: rgba(0,0,0,0.08); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.1rem; color: #222;">
+label.textProperty().bind(<br/>
+&nbsp;&nbsp;compteur.asString());<br/>
+<i>// puis, n'importe où :</i><br/>
+compteur.set(compteur.get() + 1);<br/>
+<i>// le label se met à jour sans y penser</i>
+</div>
+<div style="font-size: 1.3rem; margin-top: 0.5rem; font-style: italic; color: #1e8449; font-weight: bold;">✅ Robuste : le label est <b>toujours</b> à jour.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
+💡 Le binding n'est pas juste un raccourci d'écriture : c'est une <b>promesse</b> que l'interface reflétera <b>toujours</b> la réalité.
 </div>
 
 ---
