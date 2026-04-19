@@ -1724,17 +1724,55 @@ cible.set(99);
 
 ---
 
-## bindBidirectional() - concept
+## La liaison bidirectionnelle avec bindBidirectional()
 
-Le binding bidirectionnel synchronise deux propriétés dans **les deux sens** :
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
+<style scoped>
+pre { font-size: 0.6rem; }
+</style>
+
+<p style="font-size: 1.3rem; margin: 0.3rem 0 0.8rem 0;">Les deux propriétés restent <strong>modifiables</strong> et se synchronisent dans les deux sens : une modification de l'une déclenche immédiatement la mise à jour de l'autre.</p>
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem; margin: 0.6rem 0 1rem 0;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 1.2rem;">
+<div style="background: #c0392b; color: white; padding: 0.9rem 1.4rem; border-radius: 10px; font-size: 1.3rem; font-weight: bold; box-shadow: 0 3px 8px rgba(0,0,0,0.15); text-align: center;">🎚️ Slider<br/><span style="font-size: 0.9rem; font-weight: normal; opacity: 0.9;">valueProperty</span></div>
+<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" style="width: 130px; height: 40px;">
+<defs>
+<marker id="arrbi" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#2c3e50"/>
+</marker>
+<marker id="arrbis" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+<path d="M10,0 L0,5 L10,10 z" fill="#2c3e50"/>
+</marker>
+</defs>
+<text x="60" y="12" text-anchor="middle" fill="#2c3e50" font-size="11" font-weight="bold">valeur</text>
+<line x1="10" y1="25" x2="110" y2="25" stroke="#2c3e50" stroke-width="3" marker-start="url(#arrbis)" marker-end="url(#arrbi)"/>
+</svg>
+<div style="background: #c0392b; color: white; padding: 0.9rem 1.4rem; border-radius: 10px; font-size: 1.3rem; font-weight: bold; box-shadow: 0 3px 8px rgba(0,0,0,0.15); text-align: center;">⭕ Cercle<br/><span style="font-size: 0.9rem; font-weight: normal; opacity: 0.9;">radiusProperty</span></div>
+</div>
+<div style="font-size: 1.05rem; color: #2c3e50; margin-top: 0.3rem;">
+mise en place par <code style="background: #ecf0f1; padding: 2px 6px; border-radius: 3px; font-family: monospace;">slider.valueProperty().bindBidirectional(cercle.radiusProperty())</code>
+</div>
+</div>
+
+```java
+Slider slider = new Slider(0, 200, 50);
+Circle cercle = new Circle(50);
+
+slider.valueProperty().bindBidirectional(cercle.radiusProperty());
+
+cercle.setRadius(120);            // l'utilisateur tape dans le code
+System.out.println(slider.getValue()); // 120 - le slider a suivi
+
+slider.setValue(80);              // ou l'utilisateur bouge le slider
+System.out.println(cercle.getRadius()); // 80 - le cercle a suivi
 ```
-A ↔ B
-```
 
-Quand A change, B suit. Quand B change, A suit. Les deux propriétés restent modifiables directement.
-
-**Cas d'utilisation typique** : synchroniser un `Slider` et un `TextField` qui représentent la même valeur. L'utilisateur peut modifier via l'un ou l'autre.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.1rem; line-height: 1.55;">
+💡 <strong>Cas d'usage typique</strong> : synchroniser un <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">Slider</code> et un <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">TextField</code> qui représentent la même valeur. L'utilisateur peut modifier via l'un ou l'autre, les deux contrôles restent toujours cohérents.
+</div>
 
 ---
 
