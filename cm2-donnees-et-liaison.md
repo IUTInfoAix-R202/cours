@@ -124,6 +124,8 @@ Aujourd'hui : rendre l'interface <b>réactive</b> sans écrire d'EventHandler po
 ---
 
 <!-- _class: lead -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 # Partie 1 - Le problème
 
@@ -200,6 +202,8 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
 ---
 
 <!-- _class: lead -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 # Partie 2 - ⚡ Modèle événementiel complet
 
@@ -444,6 +448,8 @@ Un binding, c'est du feedback <b>garanti par construction</b>.
 ---
 
 <!-- _class: lead -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 # Partie 3 - ⚡ Propriétés JavaFX
 
@@ -738,6 +744,8 @@ C'est un <b>objet vivant</b> : il connaît sa valeur, notifie ses observateurs q
 ---
 
 <!-- _class: lead -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 # Partie 4 - 🏗️ Bindings
 
@@ -1024,6 +1032,8 @@ Un binding remplace un EventHandler + un setText()
 ---
 
 <!-- _class: lead -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 # Partie 5 - 🧠 Contrôles et affordance
 
@@ -1162,6 +1172,8 @@ Un champ non éditable dit "remplissez d'abord le champ précédent".<br/><br/>
 ---
 
 <!-- _class: lead -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 # Synthèse
 
