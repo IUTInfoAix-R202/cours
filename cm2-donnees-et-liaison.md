@@ -95,19 +95,25 @@ TP4 + TP5
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 1.5rem;">
 <div style="background: #4a90d9; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem;">🎭</div>
-<div style="font-weight: bold;">Le graphe de scène</div>
-<div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">Stage → Scene → Node.<br/>La métaphore du théâtre.</div>
+<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🎭 Le graphe de scène</div>
+<div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
+<b>Stage</b> = la fenêtre, <b>Scene</b> = le contenu, <b>Node</b> = chaque élément.<br/>
+L'arbre de nœuds organise l'interface en hiérarchie parent/enfant.
+</div>
 </div>
 <div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem;">📦</div>
-<div style="font-weight: bold;">Les conteneurs</div>
-<div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">BorderPane, VBox, HBox, GridPane. Chaque conteneur a une logique de placement.</div>
+<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">📦 Les conteneurs</div>
+<div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
+<b>BorderPane</b> (5 zones), <b>VBox/HBox</b> (empilements), <b>GridPane</b> (grille).<br/>
+Les principes Gestalt guident le choix du conteneur.
+</div>
 </div>
 <div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem;">⚡</div>
-<div style="font-weight: bold;">Les événements</div>
-<div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">Pattern Observer. EventHandler, 3 styles (classe nommée, anonyme, lambda).</div>
+<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">⚡ Les événements</div>
+<div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
+Le <b>pattern Observer</b> : le bouton notifie, le handler réagit.<br/>
+3 styles d'écriture : classe nommée, anonyme, lambda.
+</div>
 </div>
 </div>
 
