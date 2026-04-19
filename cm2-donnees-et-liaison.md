@@ -591,22 +591,74 @@ btn.addEventHandler(<br/>
 
 ---
 
-## event.consume() - stopper la propagation
+## Arrêter la propagation : event.consume()
 
-`event.consume()` indique que l'événement a été traité - il ne se propage plus.
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<p style="font-size:1.6rem">
+Un handler peut décider qu'il a <b>traité l'événement</b> : les handlers suivants sur le chemin ne seront pas appelés.
+</p>
+
+<svg viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg" style="width:100%; display:block; margin:0.3rem auto;">
+  <defs>
+    <marker id="consArr" markerWidth="7" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#27ae60"/></marker>
+    <marker id="consArrRed" markerWidth="7" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#c0392b"/></marker>
+  </defs>
+
+  <!-- Chaîne de propagation, tous les nœuds -->
+  <!-- Button : reçoit ET consume (conserve sa couleur de convention rouge) -->
+  <rect x="20" y="70" width="260" height="60" rx="10" fill="#e74c3c" stroke="#c0392b" stroke-width="3"/>
+  <text x="150" y="95" text-anchor="middle" font-family="Arial" font-size="18" fill="white" font-weight="bold">🔘 Button</text>
+  <text x="150" y="115" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.95)">handler ✅ + e.consume()</text>
+
+  <!-- HBox : jamais atteint -->
+  <rect x="400" y="70" width="200" height="60" rx="10" fill="#f0f0f0" stroke="#ccc" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="500" y="95" text-anchor="middle" font-family="Arial" font-size="18" fill="#bbb" font-weight="bold">↔ HBox</text>
+  <text x="500" y="115" text-anchor="middle" font-family="Arial" font-size="11" fill="#bbb" font-style="italic">jamais notifié</text>
+
+  <!-- BorderPane : jamais atteint -->
+  <rect x="680" y="70" width="220" height="60" rx="10" fill="#f0f0f0" stroke="#ccc" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="790" y="95" text-anchor="middle" font-family="Arial" font-size="18" fill="#bbb" font-weight="bold">🗺️ BorderPane</text>
+  <text x="790" y="115" text-anchor="middle" font-family="Arial" font-size="11" fill="#bbb" font-style="italic">jamais notifié</text>
+
+  <!-- Scene : jamais atteint -->
+  <rect x="980" y="70" width="200" height="60" rx="10" fill="#f0f0f0" stroke="#ccc" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="1080" y="95" text-anchor="middle" font-family="Arial" font-size="18" fill="#bbb" font-weight="bold">🎬 Scene</text>
+  <text x="1080" y="115" text-anchor="middle" font-family="Arial" font-size="11" fill="#bbb" font-style="italic">jamais notifié</text>
+
+  <!-- Entre Button et HBox : barre de STOP rouge -->
+  <line x1="300" y1="60" x2="380" y2="140" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
+  <line x1="380" y1="60" x2="300" y2="140" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
+  <text x="340" y="42" text-anchor="middle" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold">🛑 STOP</text>
+  <text x="340" y="175" text-anchor="middle" font-family="Arial" font-size="13" fill="#c0392b" font-style="italic">la propagation s'arrête ici</text>
+</svg>
+
+<style scoped>
+.code-card { background: #f5f5f5; border: 3px solid #1e8449; border-radius: 8px; overflow: hidden; }
+.code-card pre { margin: 0 !important; border: none !important; border-radius: 0 !important; }
+</style>
+
+<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-top: 0.8rem;">
+
+<div class="code-card">
 
 ```java
 bouton.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
     if (e.getClickCount() == 2) {
         traiterDoubleClic();
-        e.consume(); // empêche le parent de le voir aussi
+        e.consume();  // 🛑 stoppe la propagation
     }
 });
 ```
 
-**Analogie** : comme un article de journal qui a déjà été lu et archivé - les autres lecteurs ne le verront pas passer.
+</div>
 
-> Utile quand plusieurs composants parents écoutent le même type d'événement.
+<div style="background: #2c3e50; color: white; padding: 0.8rem; border-radius: 8px; font-size: 1rem;">
+💡 <b>Cas d'usage</b> : éviter qu'un parent intercepte aussi l'événement (ex. double-clic traité localement, drag-and-drop, raccourci clavier).
+</div>
+
+</div>
 
 ---
 
