@@ -388,29 +388,68 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
 
 ## Rappel : les 3 styles d'EventHandler
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+<!-- _auto-scaling: false -->
+
 <style scoped>
-pre { font-size: 0.76rem; }
+pre { min-height: 4rem; }
 </style>
 
-Trois façons d'écrire le même comportement - revus dans le TP1, exercice 5 :
+Trois façons d'écrire le même comportement, revus dans le TP1 (exercice 5) :
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+
+<div style="background: #8e44ad; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 2rem; text-align: center;">📝 Classe nommée</div>
 
 ```java
-// Style 1 : classe nommée
-class MonEcouteur implements EventHandler<ActionEvent> {
-    public void handle(ActionEvent e) { /* ... */ }
+class MonEcouteur
+  implements EventHandler<ActionEvent> {
+  public void handle(ActionEvent e) {
+    /* ... */
+  }
 }
 btn.setOnAction(new MonEcouteur());
-
-// Style 2 : classe anonyme
-btn.setOnAction(new EventHandler<ActionEvent>() {
-    public void handle(ActionEvent e) { /* ... */ }
-});
-
-// Style 3 : lambda (recommandé)
-btn.setOnAction(e -> { /* ... */ });
 ```
 
-Aujourd'hui on va plus loin : **comment les événements se propagent**, et quand utiliser `addEventHandler` vs `addEventFilter`.
+<div style="margin-top: 0.5rem; font-size: 1.5rem; text-align: center; background: rgba(255,255,255,0.2); padding: 0.3rem; border-radius: 6px;">Réutilisable, testable</div>
+</div>
+
+<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 2rem; text-align: center;">⚙️ Classe anonyme</div>
+
+
+```java
+btn.setOnAction(
+  new EventHandler<ActionEvent>() {
+    public void handle(ActionEvent e) {
+      /* ... */
+    }
+  });
+```
+
+<div style="margin-top: 0.5rem; font-size: 1.5rem; text-align: center; background: rgba(255,255,255,0.2); padding: 0.3rem; border-radius: 6px;">Inline, verbeux</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 2rem; text-align: center;">🎯 Lambda</div>
+
+```java
+// Syntaxe Java 8+ (expression lambda).
+btn.setOnAction((ActionEvent e) -> {
+  /* traitement à effectuer ... */
+});
+```
+
+<div style="margin-top: 0.5rem; font-size: 1.5rem; text-align: center; background: rgba(255,255,255,0.2); padding: 0.3rem; border-radius: 6px;">Concis, recommandé ✅</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center;">
+👉 Regardons <b>comment les <code>EventHandler</code> fonctionnent en profondeur</b> : leur parcours dans l'arbre de scène, et le mécanisme qui permet à un conteneur d'intercepter un événement avant ses enfants.
+</div>
 
 ---
 
