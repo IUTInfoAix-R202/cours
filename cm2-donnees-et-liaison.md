@@ -1483,23 +1483,73 @@ private void incrementerScore() {
 
 ---
 
-## Les propriétés SONT des observables
+## Les propriétés SONT des observables spécialisés
 
-La hiérarchie JavaFX reflète cela :
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
+<p style="font-size: 1.6rem; padding: 0; margin: 0;">La hiérarchie JavaFX reflète cette spécialisation progressive :</p>
+
+<div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.2rem; align-items: center; margin-top: 0.6rem;">
+
+<div>
+
+```plantuml
+@startuml
+skinparam backgroundColor transparent
+skinparam defaultFontSize 18
+skinparam classAttributeIconSize 0
+skinparam classFontStyle bold
+skinparam shadowing false
+skinparam roundCorner 10
+skinparam nodesep 12
+skinparam ranksep 28
+
+skinparam class {
+    BorderColor #888
+    FontColor white
+}
+
+interface "Observable" as Obs #7f8c8d
+interface "ObservableValue<T>" as OV #34495e
+interface "Property<T>" as P #1a5276
+abstract class "IntegerProperty" as IP #1a5276
+class "SimpleIntegerProperty" as SIP #27ae60
+
+Obs <|-- OV
+OV <|-- P
+P <|.. IP
+IP <|-- SIP
+@enduml
 ```
-Observable
-  └── ObservableValue<T>
-        └── ReadOnlyProperty<T>
-              └── Property<T>
-                    └── WritableValue<T>
-                          └── IntegerProperty (classe abstraite)
-                                └── SimpleIntegerProperty (implémentation)
-```
 
-- `Observable` : peut avoir des `InvalidationListener`
-- `ObservableValue<T>` : peut avoir des `ChangeListener`
-- `Property<T>` : peut être liée (`bind()`, `bindBidirectional()`)
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 0.7rem;">
+
+<div style="background: #7f8c8d; color: white; padding: 0.9rem 1.1rem; border-radius: 8px; font-size: 1.3rem;">
+<strong>Observable</strong><br/>
+<span style="font-size: 1.1rem; opacity: 0.95;">accepte des <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">InvalidationListener</code></span>
+</div>
+
+<div style="background: #34495e; color: white; padding: 0.9rem 1.1rem; border-radius: 8px; font-size: 1.3rem;">
+<strong>ObservableValue&lt;T&gt;</strong><br/>
+<span style="font-size: 1.1rem; opacity: 0.95;">ajoute <code style="background: rgba(0,0,0,0.25); padding: 1px 5px; border-radius: 3px;">ChangeListener</code> + <code style="background: rgba(0,0,0,0.25); padding: 1px 5px; border-radius: 3px;">getValue()</code></span>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 8px; font-size: 1.3rem;">
+<strong>Property&lt;T&gt;</strong><br/>
+<span style="font-size: 1.1rem; opacity: 0.95;">ajoute <code style="background: rgba(0,0,0,0.25); padding: 1px 5px; border-radius: 3px;">bind()</code>, <code style="background: rgba(0,0,0,0.25); padding: 1px 5px; border-radius: 3px;">bindBidirectional()</code></span>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 8px; font-size: 1.3rem;">
+<strong>SimpleIntegerProperty</strong><br/>
+<span style="font-size: 1.1rem; opacity: 0.95;">implémentation concrète instanciable</span>
+</div>
+
+</div>
+
+</div>
 
 ---
 
