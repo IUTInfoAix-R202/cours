@@ -1629,7 +1629,7 @@ IP <|-- SIP
 
 ---
 
-## La liaison unidirectionnel avec bind()
+## La liaison unidirectionnelle avec bind()
 
 <!-- _header: "" -->
 <!-- _footer: "" -->
@@ -1676,7 +1676,7 @@ System.out.println(cible.get()); // 42 - mise à jour automatique
 
 ---
 
-## bind() - propriété liée = non modifiable
+## Propriété liée = non modifiable
 
 <style scoped>
 pre { font-size: 0.82rem; }
