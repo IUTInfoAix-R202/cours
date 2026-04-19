@@ -1259,19 +1259,33 @@ void creerPropriete() {
 
 ## Pourquoi observer une propriété ?
 
-Deux scénarios distincts :
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
-<div style="background: #f0f4f8; padding: 1.2rem; border-radius: 10px; border-top: 4px solid #e8a838;">
-<div style="font-weight: bold; margin-bottom: 0.5rem;">Scénario 1 : réagir</div>
-<div style="font-size: 0.9rem;">Je veux exécuter du code chaque fois que la valeur change (mettre à jour un graphique, déclencher un appel réseau...).</div>
-<div style="margin-top: 0.5rem; font-weight: bold; color: #e8a838;">→ Utiliser un Listener</div>
+<p style="font-size: 1.6rem; margin-top: 0.4rem;">Une propriété observable ouvre <strong>deux usages complémentaires</strong> :</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.8rem;">
+
+<div style="background: #e8a838; color: white; padding: 1.3rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+<div style="font-size: 1.9rem; font-weight: bold; margin-bottom: 0.6rem;">⚡ Réagir</div>
+<div style="font-size: 1.2rem; line-height: 1.45; margin-bottom: 0.8rem;">Exécuter du <strong>code</strong> chaque fois que la valeur de la propriété change.</div>
+<div style="background: rgba(0,0,0,0.28); padding: 0.75rem 0.9rem; border-radius: 6px; font-size: 1.1rem; font-family: monospace; margin-bottom: 0.8rem; line-height: 1.45;">x.addListener((o, ov, nv) -><br/>&nbsp;&nbsp;log("x: " + nv));</div>
+<div style="font-size: 1.2rem; line-height: 1.55; opacity: 0.95;">📊 maj graphique<br/>🌐 appel réseau<br/>📝 logs, audit</div>
+<div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; font-size: 1.35rem; font-weight: bold; text-align: center; margin-top: 0.8rem;">→ Listener</div>
 </div>
-<div style="background: #f0fff4; padding: 1.2rem; border-radius: 10px; border-top: 4px solid #27ae60;">
-<div style="font-weight: bold; margin-bottom: 0.5rem;">Scénario 2 : synchroniser</div>
-<div style="font-size: 0.9rem;">Je veux qu'une autre propriété suive automatiquement la valeur (label qui reflète un slider, titre de fenêtre qui affiche le nombre de fichiers...).</div>
-<div style="margin-top: 0.5rem; font-weight: bold; color: #27ae60;">→ Utiliser un Binding</div>
+
+<div style="background: #27ae60; color: white; padding: 1.3rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+<div style="font-size: 1.9rem; font-weight: bold; margin-bottom: 0.6rem;">🔗 Synchroniser</div>
+<div style="font-size: 1.2rem; line-height: 1.45; margin-bottom: 0.8rem;">Maintenir une <strong>propriété</strong> cible synchronisée avec la valeur de la proriété source.</div>
+<div style="background: rgba(0,0,0,0.28); padding: 0.75rem 0.9rem; border-radius: 6px; font-size: 1.1rem; font-family: monospace; margin-bottom: 0.8rem; line-height: 1.45;">label.textProperty()<br/>&nbsp;&nbsp;.bind(x.asString());</div>
+<div style="font-size: 1.2rem; line-height: 1.55; opacity: 0.95;">🏷️ label ↔ slider<br/>🪟 titre fenêtre<br/>🎨 couleur dynamique</div>
+<div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; font-size: 1.35rem; font-weight: bold; text-align: center; margin-top: 0.8rem;">→ Binding</div>
 </div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.3rem; border-radius: 10px; margin-top: 1rem; font-size: 1.6rem; text-align: center;">
+👉 <strong>Listeners</strong> déclenchent du <em>code</em>, <strong>bindings</strong> synchronisent des <em>valeurs</em>.
 </div>
 
 ---
