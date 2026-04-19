@@ -682,13 +682,13 @@ skinparam class {
 abstract class Event #7f8c8d
 
 abstract class InputEvent #34495e
-class ActionEvent #e74c3c
-class WindowEvent #1a5276
-class ScrollEvent #8e44ad
+class "🎯 ActionEvent" as ActionEvent #e74c3c
+class "🪟 WindowEvent" as WindowEvent #1a5276
+class "🎢 ScrollEvent" as ScrollEvent #8e44ad
 
-class MouseEvent #e8a838
-class KeyEvent #27ae60
-class TouchEvent #00838f
+class "🖱️ MouseEvent" as MouseEvent #e8a838
+class "⌨️ KeyEvent" as KeyEvent #27ae60
+class "👆 TouchEvent" as TouchEvent #00838f
 
 Event <|-- InputEvent
 Event <|-- ActionEvent
@@ -804,21 +804,43 @@ if (e.isControlDown() &&<br/>
 
 ---
 
-## ActionEvent - le plus courant
+## 🎯 ActionEvent - le plus courant
 
-`ActionEvent` est déclenché par :
-- Un `Button` cliqué
-- Un `MenuItem` sélectionné
-- Un `TextField` quand on appuie sur Entrée
-- Une `CheckBox` cochée ou décochée
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-```java
-// Ces deux lignes sont équivalentes
-btn.setOnAction(e -> traiter());
-btn.addEventHandler(ActionEvent.ACTION, e -> traiter());
-```
+<p style="font-size:1.6rem">
+<code>ActionEvent</code> est l'événement <b>applicatif</b> : il signale une action utilisateur <i>sémantique</i> (clic validé, valeur choisie), indépendamment du périphérique (souris, clavier, tactile).
+</p>
 
-> Dans le TP2 et tous les TP suivants, vous utiliserez quasi exclusivement `ActionEvent` via `setOnAction()`.
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+
+<div style="background: #e74c3c; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🔘 Sources d'ActionEvent</div>
+<div style="font-size: 1.5rem;">
+&bull; <code>Button</code> cliqué<br/>
+&bull; <code>MenuItem</code> sélectionné<br/>
+&bull; <code>TextField</code> + Entrée<br/>
+&bull; <code>CheckBox</code> cochée / décochée
+</div>
+</div>
+
+<div style="background: #e74c3c; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">⚡ setOnAction() = raccourci</div>
+<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">Ces deux lignes sont <b>équivalentes</b> :</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.5rem;">
+btn.setOnAction(e -> traiter());<br/>
+btn.addEventHandler(<br/>
+&nbsp;&nbsp;ActionEvent.ACTION,<br/>
+&nbsp;&nbsp;e -> traiter());
+</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem;">
+💡 Dans le TP2 et tous les TP suivants, vous utiliserez quasi exclusivement <code>ActionEvent</code> via <code>setOnAction()</code>.
+</div>
 
 ---
 
