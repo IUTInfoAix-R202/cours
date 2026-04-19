@@ -707,28 +707,51 @@ InputEvent <|-- TouchEvent
 
 ---
 
-## MouseEvent - les événements souris
+## 🖱️ MouseEvent - les événements souris
 
-<style scoped>
-pre { font-size: 0.82rem; }
-</style>
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-```java
-zone.setOnMouseClicked(e -> {
-    System.out.println("Clic en " + e.getX() + ", " + e.getY());
-});
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
 
-zone.setOnMouseEntered(e -> zone.setStyle("-fx-background-color: yellow;"));
-zone.setOnMouseExited(e -> zone.setStyle(""));
+<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">🖱️ setOnMouseClicked</div>
+<div style="font-size: 1.3rem; margin-bottom: 0.5rem;">Déclenché sur un clic complet (press + release au même endroit).</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.2rem;">
+zone.setOnMouseClicked(e -><br/>
+&nbsp;&nbsp;afficher(e.getX(), e.getY()));
+</div>
+</div>
 
-zone.setOnMouseDragged(e -> {
-    cercle.setCenterX(e.getX());
-    cercle.setCenterY(e.getY());
-});
-```
+<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">👆 setOnMouseEntered / Exited</div>
+<div style="font-size: 1.3rem; margin-bottom: 0.5rem;">Quand la souris survole ou quitte une zone. Utile pour le feedback visuel (hover).</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.2rem;">
+zone.setOnMouseEntered(e -><br/>
+&nbsp;&nbsp;zone.setStyle("-fx-background: yellow;"));
+</div>
+</div>
 
-`e.getX()` / `e.getY()` : coordonnées **locales** au noeud.
-`e.getSceneX()` / `e.getSceneY()` : coordonnées dans la scène entière.
+<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">✋ setOnMouseDragged</div>
+<div style="font-size: 1.3rem; margin-bottom: 0.5rem;">Déplacement avec le bouton maintenu enfoncé. Base du drag-and-drop (TP2 bonus Pong).</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.2rem;">
+zone.setOnMouseDragged(e -> {<br/>
+&nbsp;&nbsp;cercle.setCenterX(e.getX());<br/>
+&nbsp;&nbsp;cercle.setCenterY(e.getY()); });
+</div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">📐 Coordonnées</div>
+<div style="font-size: 1.2rem;">
+&bull; <code>e.getX()</code> / <code>e.getY()</code> : <b>locales</b> au nœud<br/>
+&bull; <code>e.getSceneX()</code> / <code>e.getSceneY()</code> : dans la <b>Scene</b> entière<br/>
+&bull; <code>e.getScreenX()</code> / <code>e.getScreenY()</code> : à l'<b>écran</b>
+</div>
+</div>
+
+</div>
 
 ---
 
