@@ -1375,40 +1375,35 @@ Le listener reçoit <code style="background: rgba(255,255,255,0.15); padding: 1p
 
 ---
 
-## Comparaison : InvalidationListener vs ChangeListener
+## InvalidationListener vs ChangeListener
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
-<div style="background: #fae5c0; padding: 1.2rem; border-radius: 10px;">
-<div style="font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">InvalidationListener</div>
-<div style="font-size: 0.85rem;">
-✅ Plus léger (pas de calcul de la valeur)<br/>
-✅ Optimal pour les bindings internes JavaFX<br/>
-⚠️ Paresseux : ne se re-déclenche pas si la valeur n'est pas lue<br/>
-⚠️ Pas accès à l'ancienne valeur
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.6rem;">
+
+<div style="background: #e8a838; color: white; padding: 1.4rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+<div style="font-size: 2rem; font-weight: bold; margin-bottom: 0.8rem;">⚡ InvalidationListener</div>
+<div style="font-size: 1.5rem; line-height: 1.7;">
+✅ Plus léger (pas de calcul)<br/>
+✅ Optimal pour bindings internes<br/>
+⚠️ Paresseux : ne reprend qu'après un <code style="background: rgba(0,0,0,0.2); padding: 1px 6px; border-radius: 3px;">get()</code><br/>
+⚠️ Pas d'accès à <code style="background: rgba(0,0,0,0.2); padding: 1px 6px; border-radius: 3px;">oldValue</code>
 </div>
 </div>
-<div style="background: #d0e2f3; padding: 1.2rem; border-radius: 10px;">
-<div style="font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">ChangeListener</div>
-<div style="font-size: 0.85rem;">
-✅ Déclenché à chaque changement effectif<br/>
-✅ Donne oldValue et newValue<br/>
+
+<div style="background: #2980b9; color: white; padding: 1.4rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+<div style="font-size: 2rem; font-weight: bold; margin-bottom: 0.8rem;">🎯 ChangeListener</div>
+<div style="font-size: 1.5rem; line-height: 1.7;">
+✅ Déclenché à chaque changement<br/>
+✅ Donne <code style="background: rgba(0,0,0,0.2); padding: 1px 6px; border-radius: 3px;">oldValue</code> et <code style="background: rgba(0,0,0,0.2); padding: 1px 6px; border-radius: 3px;">newValue</code><br/>
 ✅ Comportement intuitif et prévisible<br/>
 ⚠️ Légèrement plus coûteux
 </div>
 </div>
+
 </div>
 
----
-
-## Quand utiliser lequel ?
-
-**Règle pratique pour le TP2 et les TP suivants** :
-
-- **ChangeListener** : dans 95% des cas, c'est celui que vous utiliserez. Comportement prévisible, accès aux deux valeurs.
-
-- **InvalidationListener** : si vous implémentez un binding personnalisé ou si les performances sont critiques (très rare en TP).
-
-> Les bindings de JavaFX utilisent l'`InvalidationListener` en interne pour être efficaces. Vous n'avez pas à y penser.
+<div style="background: #2c3e50; color: white; padding: 1.1rem 1.4rem; border-radius: 10px; margin-top: 1.3rem; font-size: 1.5rem; line-height: 1.55;">
+<strong>💡 Règle pratique</strong> : dans <strong>95% des cas</strong>, utilisez le <strong>ChangeListener</strong>. L'<code style="background: rgba(255,255,255,0.15); padding: 1px 6px; border-radius: 3px;">InvalidationListener</code> n'apparaît que pour des bindings personnalisés ou des contraintes de performance - JavaFX l'utilise en interne, vous n'avez pas à y penser.
+</div>
 
 ---
 
