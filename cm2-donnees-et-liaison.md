@@ -1444,27 +1444,41 @@ private void incrementerScore() {
 
 ## Lien avec le pattern Observer (CM1)
 
-Le système de propriétés JavaFX est une implémentation concrète du pattern Observer :
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
-<div style="background: #f0f4f8; padding: 1.2rem; border-radius: 10px;">
-<div style="font-weight: bold; margin-bottom: 0.5rem;">Pattern Observer (CM1)</div>
-<div style="font-size: 0.9rem;">
-- Subject = source observable<br/>
-- Observer = listener<br/>
-- notify() = déclencher les listeners<br/>
-- subscribe/unsubscribe = addListener/removeListener
+<p style="font-size: 1.6rem; margin-top: 0.4rem;">Le système de propriétés JavaFX est une <strong>implémentation concrète</strong> du pattern Observer :</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.8rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.3rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+<div style="font-size: 1.1rem; opacity: 0.85; margin-bottom: 0.1rem;">Général</div>
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">👁️ Pattern Observer</div>
+<div style="font-size: 1.3rem; line-height: 1.5; margin-bottom: 0.7rem;">Notifie d'un <strong>changement d'état</strong> quelconque du sujet (sans valeur imposée).</div>
+<div style="font-size: 1.4rem; line-height: 1.6;">
+• <strong>Subject</strong> = source observable<br/>
+• <strong>Observer</strong> = listener<br/>
+• <code style="background: rgba(0,0,0,0.25); padding: 1px 6px; border-radius: 3px;">notify()</code> déclenche les listeners<br/>
+• <code style="background: rgba(0,0,0,0.25); padding: 1px 6px; border-radius: 3px;">subscribe</code> / <code style="background: rgba(0,0,0,0.25); padding: 1px 6px; border-radius: 3px;">unsubscribe</code>
 </div>
 </div>
-<div style="background: #f0fff4; padding: 1.2rem; border-radius: 10px;">
-<div style="font-weight: bold; margin-bottom: 0.5rem;">Propriété JavaFX</div>
-<div style="font-size: 0.9rem;">
-- Property = subject + valeur<br/>
-- InvalidationListener / ChangeListener = observer<br/>
-- set() déclenche automatiquement<br/>
-- addListener / removeListener
+
+<div style="background: #27ae60; color: white; padding: 1.3rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+<div style="font-size: 1.1rem; opacity: 0.85; margin-bottom: 0.1rem;">Spécialisé</div>
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">📡 Propriété JavaFX</div>
+<div style="font-size: 1.3rem; line-height: 1.5; margin-bottom: 0.7rem;">Notifie d'un <strong>changement de valeur</strong> (la valeur transportée est le cœur du contrat).</div>
+<div style="font-size: 1.4rem; line-height: 1.6;">
+• <code style="background: rgba(0,0,0,0.25); padding: 1px 6px; border-radius: 3px;">Property</code> = subject + valeur<br/>
+• <code style="background: rgba(0,0,0,0.25); padding: 1px 6px; border-radius: 3px;">ChangeListener</code> = observer<br/>
+• <code style="background: rgba(0,0,0,0.25); padding: 1px 6px; border-radius: 3px;">set()</code> déclenche automatiquement<br/>
+• <code style="background: rgba(0,0,0,0.25); padding: 1px 6px; border-radius: 3px;">addListener</code> / <code style="background: rgba(0,0,0,0.25); padding: 1px 6px; border-radius: 3px;">removeListener</code>
 </div>
 </div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 1rem 1.3rem; border-radius: 10px; margin-top: 1.1rem; font-size: 1.6rem; line-height: 1.5;">
+👉 Une propriété est un <strong>Observer spécialisé pour les valeurs</strong> : là où le pattern général notifie <em>« quelque chose a changé »</em>, la propriété notifie <em>« la valeur est passée de X à Y »</em>.
 </div>
 
 ---
