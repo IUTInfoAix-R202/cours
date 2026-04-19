@@ -1553,14 +1553,70 @@ IP <|-- SIP
 
 ---
 
-## Une propriété = une valeur + des observateurs
+## La propriété, le cœur réactif de JavaFX
 
-<div style="background: #2c3e50; color: white; padding: 1.8rem 2rem; border-radius: 12px; text-align: center; font-size: 1.3rem; margin-top: 2rem;">
-Une propriété JavaFX est bien plus qu'un entier ou une chaîne.
-<br/><br/>
-C'est un <b>objet vivant</b> : il connaît sa valeur, notifie ses observateurs quand elle change, et peut se synchroniser automatiquement avec d'autres propriétés.
-<br/><br/>
-<span style="font-size: 1.5rem; font-weight: bold;">propriété = valeur + observateurs</span>
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; align-items: stretch; margin-top: 0.8rem;">
+
+<div style="display: flex; align-items: stretch; justify-content: center;">
+<svg viewBox="0 0 460 440" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%;">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#34495e"/>
+    </marker>
+    <marker id="arrg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#27ae60"/>
+    </marker>
+    <marker id="arrgs" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto">
+      <path d="M10,0 L0,5 L10,10 z" fill="#27ae60"/>
+    </marker>
+  </defs>
+
+  <!-- Property centrale -->
+  <circle cx="230" cy="220" r="100" fill="#1a5276" stroke="#0e3c5a" stroke-width="3"/>
+  <text x="230" y="200" text-anchor="middle" fill="white" font-size="22" font-weight="bold">Property</text>
+  <rect x="180" y="218" width="100" height="44" rx="6" fill="rgba(255,255,255,0.22)"/>
+  <text x="230" y="250" text-anchor="middle" fill="white" font-size="28" font-weight="bold">42</text>
+  <text x="230" y="290" text-anchor="middle" fill="white" font-size="14" opacity="0.85">value</text>
+
+  <!-- Observer 1 : Label -->
+  <line x1="166" y1="143" x2="104" y2="68" stroke="#34495e" stroke-width="2.5" marker-end="url(#arr)"/>
+  <rect x="15" y="10" width="130" height="58" rx="8" fill="#8e44ad"/>
+  <text x="80" y="36" text-anchor="middle" fill="white" font-size="18" font-weight="bold">🏷️ Label</text>
+  <text x="80" y="56" text-anchor="middle" fill="white" font-size="13" opacity="0.9">Listener</text>
+
+  <!-- Observer 2 : Logger -->
+  <line x1="294" y1="143" x2="356" y2="68" stroke="#34495e" stroke-width="2.5" marker-end="url(#arr)"/>
+  <rect x="315" y="10" width="130" height="58" rx="8" fill="#e8a838"/>
+  <text x="380" y="36" text-anchor="middle" fill="white" font-size="18" font-weight="bold">📝 Logger</text>
+  <text x="380" y="56" text-anchor="middle" fill="white" font-size="13" opacity="0.9">Listener</text>
+
+  <!-- Observer 3 : Graph -->
+  <line x1="166" y1="297" x2="104" y2="372" stroke="#34495e" stroke-width="2.5" marker-end="url(#arr)"/>
+  <rect x="15" y="372" width="130" height="58" rx="8" fill="#c0392b"/>
+  <text x="80" y="398" text-anchor="middle" fill="white" font-size="18" font-weight="bold">📊 Graph</text>
+  <text x="80" y="418" text-anchor="middle" fill="white" font-size="13" opacity="0.9">Listener</text>
+
+  <!-- Autre propriété liée (binding) -->
+  <line x1="293" y1="298" x2="353" y2="372" stroke="#27ae60" stroke-width="3" marker-start="url(#arrgs)" marker-end="url(#arrg)"/>
+  <rect x="310" y="372" width="140" height="66" rx="8" fill="#27ae60"/>
+  <text x="380" y="400" text-anchor="middle" fill="white" font-size="18" font-weight="bold">🔗 Property</text>
+  <text x="380" y="422" text-anchor="middle" fill="white" font-size="13" opacity="0.95">bindBidirectional</text>
+</svg>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 1.8rem 1.9rem; border-radius: 12px; font-size: 1.3rem; line-height: 1.6; display: flex; flex-direction: column; justify-content: center; gap: 1.2rem;">
+
+<p style="margin: 0;">Une propriété JavaFX est bien plus qu'un entier ou une chaîne.</p>
+
+<p style="margin: 0;">C'est un <b>objet vivant</b> : il connaît sa valeur, notifie ses observateurs quand elle change, et peut se synchroniser automatiquement avec d'autres propriétés.</p>
+
+<div style="background: rgba(255,255,255,0.12); padding: 1rem; border-radius: 8px; text-align: center; font-size: 1.55rem; font-weight: bold;">propriété = valeur + observateurs</div>
+
+</div>
+
 </div>
 
 ---
