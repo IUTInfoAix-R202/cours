@@ -1296,7 +1296,7 @@ void creerPropriete() {
 pre { font-size: 0.78rem; }
 </style>
 
-L'`InvalidationListener` est déclenché quand la propriété est **potentiellement invalidée**, mais ne fournit pas l'ancienne valeur. Exercice 1 du TP2 :
+L'`InvalidationListener` est déclenché quand la propriété passe de l'état **valide** à **invalide**. Exercice 1 du TP2 :
 
 ```java
 anIntProperty.addListener(observable ->
@@ -1307,7 +1307,23 @@ anIntProperty.set(2105);      // valeur différente - déclenché une fois
 anIntProperty.setValue(5012); // PAS redéclenché (lazy : pas de get() depuis)
 ```
 
-**Comportement paresseux** : si vous ne lisez pas la valeur entre deux modifications, le listener n'est déclenché qu'une fois.
+<div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 0.9rem; margin-top: 0.8rem;">
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.1rem; border-radius: 10px; font-size: 1.05rem;">
+<strong>💡 Règle de l'invalidation</strong><br/>
+Propriété <em>valide</em> au départ. Le premier <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">set()</code> la passe à <em>invalide</em> et déclenche le listener. Une lecture <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">get()</code> la revalide. Tant qu'elle reste invalide, les <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">set()</code> suivants sont silencieux.
+</div>
+
+<div style="background: #fff3cd; border-left: 5px solid #e8a838; padding: 0.9rem 1.1rem; border-radius: 6px; font-size: 1.05rem;">
+<strong style="color: #7e5109;">🎯 Quand l'utiliser ?</strong>
+<ul style="margin: 0.3rem 0 0 0; padding-left: 1.2rem;">
+<li>Savoir <em>qu'il y a eu un changement</em>, pas lequel</li>
+<li>Calculer la nouvelle valeur est coûteux</li>
+<li>Bindings internes JavaFX (optimisation)</li>
+</ul>
+</div>
+
+</div>
 
 ---
 
