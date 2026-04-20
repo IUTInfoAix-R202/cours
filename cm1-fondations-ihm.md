@@ -789,7 +789,7 @@ public class HelloWorld extends Application {
 <!-- _footer: "" -->
 <!-- _header: "" -->
 
-Le point d'entrée d'une application JavaFX :
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Le <strong>point d'entrée</strong> d'une application JavaFX :</p>
 
 ```java
 public class HelloWorld extends Application {
@@ -802,19 +802,17 @@ public class HelloWorld extends Application {
 }
 ```
 
-```mermaid
-graph LR
-    A["main()"] --> B["launch()"]
-    B --> C["new HelloWorld()"]
-    C --> D["start(Stage)"]
-    D --> E["🖼️ fenêtre visible"]
-
-    style A fill:#b0bec5,color:#333
-    style B fill:#b0bec5,color:#333
-    style C fill:#e8a838,color:white
-    style D fill:#7bb563,color:white
-    style E fill:#4a90d9,color:white
-```
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 1rem 0; gap: 0.3rem;">
+<div style="background: #b0bec5; color: #333; padding: 0.8rem 1rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold; text-align: center;">main()</div>
+<div style="flex: 1; height: 8px; background: #2c3e50; position: relative; margin: 0 12px;"><span style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); border: 12px solid transparent; border-left-color: #2c3e50; border-right: 0;"></span></div>
+<div style="background: #b0bec5; color: #333; padding: 0.8rem 1rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold; text-align: center;">launch()</div>
+<div style="flex: 1; height: 8px; background: #2c3e50; position: relative; margin: 0 12px;"><span style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); border: 12px solid transparent; border-left-color: #2c3e50; border-right: 0;"></span></div>
+<div style="background: #e8a838; color: white; padding: 0.8rem 1rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold; text-align: center;">new HelloWorld()</div>
+<div style="flex: 1; height: 8px; background: #2c3e50; position: relative; margin: 0 12px;"><span style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); border: 12px solid transparent; border-left-color: #2c3e50; border-right: 0;"></span></div>
+<div style="background: #27ae60; color: white; padding: 0.8rem 1rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold; text-align: center;">start(Stage)</div>
+<div style="flex: 1; height: 8px; background: #2c3e50; position: relative; margin: 0 12px;"><span style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); border: 12px solid transparent; border-left-color: #2c3e50; border-right: 0;"></span></div>
+<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 10px; font-size: 1.1rem; font-weight: bold; text-align: center;">🖼️ fenêtre visible</div>
+</div>
 
 ---
 
