@@ -388,17 +388,17 @@ section > p { flex: 0; }
 </style>
 
 <div style="display: flex; justify-content: center; gap: 2rem; flex: 1; margin-top: 1rem;">
-<div style="background: #4a90d9; color: white; padding: 2rem 1.5rem; border-radius: 16px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="background: #1a5276; color: white; padding: 2rem 1.5rem; border-radius: 16px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 4.5rem;">🏗️</div>
 <div style="font-weight: bold; font-size: 1.6rem; margin-top: 0.8rem;">Architecture</div>
 <div style="font-size: 1.1rem; opacity: 0.9; margin-top: 0.5rem;">Comment organiser le code</div>
 </div>
-<div style="background: #27ae60; color: white; padding: 2rem 1.5rem; border-radius: 16px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="background: #27ae60; color: white; padding: 2rem 1.5rem; border-radius: 16px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 4.5rem;">🧠</div>
 <div style="font-weight: bold; font-size: 1.6rem; margin-top: 0.8rem;">Ergonomie</div>
 <div style="font-size: 1.1rem; opacity: 0.9; margin-top: 0.5rem;">Comment servir l'utilisateur</div>
 </div>
-<div style="background: #e74c3c; color: white; padding: 2rem 1.5rem; border-radius: 16px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+<div style="background: #e8a838; color: white; padding: 2rem 1.5rem; border-radius: 16px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 4.5rem;">⚡</div>
 <div style="font-weight: bold; font-size: 1.6rem; margin-top: 0.8rem;">Événements</div>
 <div style="font-size: 1.1rem; opacity: 0.9; margin-top: 0.5rem;">Comment réagir aux actions</div>
@@ -928,10 +928,12 @@ graph TD
 <!-- _footer: "" -->
 <!-- _header: "" -->
 
-<div style="display: flex; gap: 1.2rem; margin-top: 1rem;">
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Trois rôles fondamentaux structurent tout le graphe de scène : <strong>organiser</strong>, <strong>interagir</strong>, <strong>dessiner</strong>.</p>
+
+<div style="display: flex; gap: 1.2rem; margin-top: 0.6rem;">
 <div style="flex: 1; background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px;">
-<div style="font-size: 2rem; margin-bottom: 0.3rem;">📦 <b>Pane</b></div>
-<div style="opacity: 0.9;">Organiser la mise en page</div>
+<div style="font-size: 1.6rem; margin-bottom: 0.3rem;">📦 <b>Pane</b></div>
+<div style="font-size: 1.6rem; opacity: 0.9;">Organiser la mise en page</div>
 <div style="margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.3rem;">
 <code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">BorderPane</code>
 <code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">VBox</code>
@@ -940,8 +942,8 @@ graph TD
 </div>
 </div>
 <div style="flex: 1; background: #e74c3c; color: white; padding: 1.2rem; border-radius: 12px;">
-<div style="font-size: 2rem; margin-bottom: 0.3rem;">🕹️ <b>Control</b></div>
-<div style="opacity: 0.9;">Interagir avec l'utilisateur</div>
+<div style="font-size: 1.6rem; margin-bottom: 0.3rem;">🕹️ <b>Control</b></div>
+<div style="font-size: 1.6rem; opacity: 0.9;">Interagir avec l'utilisateur</div>
 <div style="margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.3rem;">
 <code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">Button</code>
 <code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">Label</code>
@@ -950,8 +952,8 @@ graph TD
 </div>
 </div>
 <div style="flex: 1; background: #c0392b; color: white; padding: 1.2rem; border-radius: 12px;">
-<div style="font-size: 2rem; margin-bottom: 0.3rem;">⭕ <b>Shape</b></div>
-<div style="opacity: 0.9;">Dessiner des formes</div>
+<div style="font-size: 1.6rem; margin-bottom: 0.3rem;">⭕ <b>Shape</b></div>
+<div style="font-size: 1.6rem; opacity: 0.9;">Dessiner des formes</div>
 <div style="margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.3rem;">
 <code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">Circle</code>
 <code style="background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 4px;">Rectangle</code>
@@ -960,12 +962,12 @@ graph TD
 </div>
 </div>
 
-<div style="display: flex; gap: 1.5rem; margin-top: 1.5rem; font-size: 1.6rem;">
-<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #e8a838;">
-Les conteneurs <b>contiennent</b> d'autres nœuds (y compris d'autres conteneurs).
+<div style="display: flex; gap: 1.2rem; margin-top: 1.2rem;">
+<div style="flex: 1; background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; border-left: 5px solid #e8a838; font-size: 1.5rem; line-height: 1.5;">
+📦 Les <strong>conteneurs</strong> <em>contiennent</em> d'autres nœuds (y compris d'autres conteneurs).
 </div>
-<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #e74c3c;">
-Les contrôles et formes sont des <b>feuilles</b> de l'arbre (pas d'enfants).
+<div style="flex: 1; background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; border-left: 5px solid #e74c3c; font-size: 1.5rem; line-height: 1.5;">
+🍃 Les <strong>contrôles</strong> et <strong>formes</strong> sont des <em>feuilles</em> de l'arbre (pas d'enfants).
 </div>
 </div>
 
