@@ -1362,8 +1362,8 @@ Le pattern Observer illustre un principe fondamental : **chaque composant a une 
 <div style="font-size: 1.3rem; margin-bottom: 0.5rem;">⚙️ <b>Le EventHandler</b></div>
 <div>✅ Sait quoi faire (incrémenter)</div>
 <div>✅ Sait mettre à jour le label</div>
-<div style="margin-top: 0.5rem;">❌ Ne sait pas directement d'où vient le clic</div>
-<div>❌ Ne connaît pas le bouton</div>
+<div style="margin-top: 0.5rem;">❌ Ne dépend pas directement du bouton</div>
+<div>❌ Ne pilote pas le cycle de vie du contrôle</div>
 </div>
 </div>
 
