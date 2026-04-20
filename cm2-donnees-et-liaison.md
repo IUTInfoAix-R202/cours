@@ -2740,17 +2740,41 @@ section table code { font-size: 0.72rem !important; padding: 1px 4px !important;
 
 ## Pour aller plus loin
 
-**Documentation officielle JavaFX 25** :
-- [Properties and Bindings](https://openjfx.io/javadoc/25/javafx.base/javafx/beans/property/package-summary.html) - javadoc complète
-- [Using JavaFX Properties and Binding](https://docs.oracle.com/javase/8/javafx/properties-binding-tutorial/binding.htm) - tutoriel Oracle
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-**Concepts connexes** :
-- `StringConverter<T>` : convertir entre types pour bindBidirectional
-- `Bindings.createDoubleBinding()` : binding personnalisé sans sous-classer
-- `ObservableList<T>` : liste observable pour `ListView` et `TableView` (CM4)
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quelques pistes pour approfondir les propriétés et les bindings, du tutoriel officiel au code source OpenJFX.</p>
 
-**Pour les curieux** :
-- Source OpenJFX de `SimpleIntegerProperty` : voir comment `fireValueChangedEvent()` est appelé dans `set()`
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.5rem;">📚 Documentation</div>
+<div style="font-size: 1rem; line-height: 1.55;">
+<a href="https://openjfx.io/javadoc/25/javafx.base/javafx/beans/property/package-summary.html" style="color: #a0d0ff;">Properties and Bindings</a> - javadoc JavaFX 25<br/>
+<a href="https://openjfx.io/openjfx-docs/" style="color: #a0d0ff;">OpenJFX Getting Started</a> - doc officielle moderne<br/>
+<a href="https://dev.java/learn/javafx/properties/" style="color: #a0d0ff;">dev.java - JavaFX Properties</a> - portail Oracle récent<br/>
+<a href="https://fxdocs.github.io/docs/html5/" style="color: #a0d0ff;">FXDocs Community</a> - ressource communautaire complète<br/>
+🎬 <a href="https://www.youtube.com/playlist?list=PL4h6ypqTi3RR_bhBk6PtLfD83YkaJXXxw" style="color: #a0d0ff;">JavaFX Software</a> - playlist YouTube d'Almas Baim (AlmasB)
+</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 1.1rem 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.5rem;">🧵 Concepts connexes</div>
+<div style="font-size: 1.05rem; line-height: 1.6;">
+<a href="https://openjfx.io/javadoc/25/javafx.base/javafx/util/StringConverter.html" style="color: #f3d5ff;"><code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px; color: #f3d5ff;">StringConverter&lt;T&gt;</code></a> pour <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">bindBidirectional</code><br/>
+<a href="https://openjfx.io/javadoc/25/javafx.base/javafx/beans/binding/Bindings.html#createDoubleBinding(java.util.concurrent.Callable,javafx.beans.Observable...)" style="color: #f3d5ff;"><code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px; color: #f3d5ff;">Bindings.createDoubleBinding()</code></a> sans sous-classer<br/>
+<a href="https://openjfx.io/javadoc/25/javafx.base/javafx/collections/ObservableList.html" style="color: #f3d5ff;"><code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px; color: #f3d5ff;">ObservableList&lt;T&gt;</code></a> pour <a href="https://openjfx.io/javadoc/25/javafx.controls/javafx/scene/control/ListView.html" style="color: #f3d5ff;"><code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px; color: #f3d5ff;">ListView</code></a> / <a href="https://openjfx.io/javadoc/25/javafx.controls/javafx/scene/control/TableView.html" style="color: #f3d5ff;"><code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px; color: #f3d5ff;">TableView</code></a> <em>(CM4)</em>
+</div>
+</div>
+
+<div style="background: #e67e22; color: white; padding: 1.1rem 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.5rem;">🔍 Pour les curieux</div>
+<div style="font-size: 1.05rem; line-height: 1.6;">
+Source OpenJFX de <a href="https://openjfx.io/javadoc/25/javafx.base/javafx/beans/property/SimpleIntegerProperty.html" style="color: #ffe0c0;"><code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px; color: #ffe0c0;">SimpleIntegerProperty</code></a> : observez comment <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">fireValueChangedEvent()</code> est déclenché dans <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">set()</code>.
+</div>
+</div>
+
+</div>
 
 ---
 
