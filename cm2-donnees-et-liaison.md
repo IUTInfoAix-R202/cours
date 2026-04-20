@@ -124,6 +124,45 @@ Aujourd'hui : rendre l'interface <b>réactive</b> sans écrire d'EventHandler po
 
 ---
 
+## À la fin de ce CM, vous saurez...
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Expliquer</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Le mécanisme d'une <b>propriété observable</b> JavaFX et son rôle dans le data binding.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 2</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Écrire</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Des <b>bindings</b> unidirectionnels (<code>bind</code>) et bidirectionnels (<code>bindBidirectional</code>) entre propriétés.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 3</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🧠 Concevoir</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Une interface à <b>affordance automatique</b> avec <code>disableProperty().bind(...)</code>.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 4</div>
+</div>
+
+<div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">⚡ Distinguer</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Les cas où il faut un <b>binding</b> (état) de ceux où il faut un <b>handler</b> (action).</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 5</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem; text-align: center;">
+<em>Niveau Bloom : Appliquer</em> - Le TP2 vous fait pratiquer immédiatement ces quatre compétences.
+</div>
+
+---
+
 <!-- _class: lead -->
 <!-- _header: "" -->
 <!-- _footer: "" -->
@@ -383,609 +422,7 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
 <!-- _header: "" -->
 <!-- _footer: "" -->
 
-# Partie 2 - ⚡ Modèle événementiel complet
-
----
-
-## Rappel : les 3 styles d'EventHandler
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
-<style scoped>
-pre { min-height: 4rem; }
-</style>
-
-Trois façons d'écrire le même comportement, revus dans le TP1 (exercice 5) :
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1rem;">
-
-<div style="background: #8e44ad; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 2rem; text-align: center;">📝 Classe nommée</div>
-
-```java
-class MonEcouteur
-  implements EventHandler<ActionEvent> {
-  public void handle(ActionEvent e) {
-    /* ... */
-  }
-}
-btn.setOnAction(new MonEcouteur());
-```
-
-<div style="margin-top: 0.5rem; font-size: 1.5rem; text-align: center; background: rgba(255,255,255,0.2); padding: 0.3rem; border-radius: 6px;">Réutilisable, testable</div>
-</div>
-
-<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 2rem; text-align: center;">⚙️ Classe anonyme</div>
-
-
-```java
-btn.setOnAction(
-  new EventHandler<ActionEvent>() {
-    public void handle(ActionEvent e) {
-      /* ... */
-    }
-  });
-```
-
-<div style="margin-top: 0.5rem; font-size: 1.5rem; text-align: center; background: rgba(255,255,255,0.2); padding: 0.3rem; border-radius: 6px;">Inline, verbeux</div>
-</div>
-
-<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 2rem; text-align: center;">🎯 Lambda</div>
-
-```java
-// Syntaxe Java 8+ (expression lambda).
-btn.setOnAction((ActionEvent e) -> {
-  /* traitement à effectuer ... */
-});
-```
-
-<div style="margin-top: 0.5rem; font-size: 1.5rem; text-align: center; background: rgba(255,255,255,0.2); padding: 0.3rem; border-radius: 6px;">Concis, recommandé ✅</div>
-</div>
-
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center;">
-👉 Regardons <b>comment les <code>EventHandler</code> fonctionnent en profondeur</b> : leur parcours dans l'arbre de scène, et le mécanisme qui permet à un conteneur d'intercepter un événement avant ses enfants.
-</div>
-
----
-
-## La propagation - phase de capture (1/2)
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
-<p style="font-size: 1.6rem;">
-Quand vous cliquez sur un bouton, l'événement <b>ne naît pas dans le bouton</b>. Il commence à la racine de la scène et descend jusqu'à la cible.
-</p>
-<svg viewBox="0 0 1200 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; display:block; margin:0.3rem auto;">
-  <defs>
-    <marker id="capArr" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e74c3c"/></marker>
-  </defs>
-
-  <!-- Étage 1 : Scene (bord gauche) -->
-  <rect x="0" y="20" width="260" height="55" rx="10" fill="#7bb563" stroke="#5a9e45" stroke-width="2"/>
-  <text x="130" y="55" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🎬 Scene</text>
-
-  <!-- Étage 2 : BorderPane -->
-  <rect x="313" y="85" width="260" height="55" rx="10" fill="#e8a838" stroke="#c87d10" stroke-width="2"/>
-  <text x="443" y="120" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🗺️ BorderPane</text>
-
-  <!-- Étage 3 : HBox -->
-  <rect x="627" y="150" width="260" height="55" rx="10" fill="#e8a838" stroke="#c87d10" stroke-width="2"/>
-  <text x="757" y="185" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">↔ HBox</text>
-
-  <!-- Étage 4 : Button (cible) (bord droit) -->
-  <rect x="940" y="205" width="260" height="55" rx="10" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
-  <text x="1070" y="240" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🔘 Button (cible)</text>
-
-  <!-- Flèches orthogonales (descente en L : ↓ puis →) avec annotations -->
-  <!-- De Scene vers BorderPane -->
-  <polyline points="130,75 130,112 311,112" stroke="#e74c3c" stroke-width="3" fill="none" marker-end="url(#capArr)"/>
-  <text x="145" y="102" font-family="Arial" font-size="14" fill="#c0392b" font-style="italic">1. reçoit en premier</text>
-  <!-- De BorderPane vers HBox -->
-  <polyline points="443,140 443,177 625,177" stroke="#e74c3c" stroke-width="3" fill="none" marker-end="url(#capArr)"/>
-  <text x="458" y="167" font-family="Arial" font-size="14" fill="#c0392b" font-style="italic">2. puis transmet</text>
-  <!-- De HBox vers Button -->
-  <polyline points="757,205 757,232 938,232" stroke="#e74c3c" stroke-width="3" fill="none" marker-end="url(#capArr)"/>
-  <text x="772" y="222" font-family="Arial" font-size="14" fill="#c0392b" font-style="italic">3. arrive à la cible</text>
-</svg>
-
-<div style="background: #e74c3c; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 2rem; font-size: 1.6rem;">
-⬇️ <b>Phase de CAPTURE</b> : la racine peut <b>intercepter</b> l'événement avant la cible via <code>addEventFilter()</code>. Utile pour filtrer, logger ou bloquer (<code>event.consume()</code>).
-</div>
-
----
-
-## La propagation - phase de bubbling (2/2)
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
-<p style="font-size: 1.6rem;">
-Après la phase de capture, l'événement <b>remonte</b> de la cible vers la racine : c'est la phase qui déclenche vos <code>setOnAction()</code> habituels.
-</p>
-<svg viewBox="0 0 1200 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; display:block; margin:0.3rem auto;">
-  <defs>
-    <marker id="bubArr" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#27ae60"/></marker>
-  </defs>
-
-  <!-- Étage 1 : Scene (bord gauche) -->
-  <rect x="0" y="20" width="260" height="55" rx="10" fill="#7bb563" stroke="#5a9e45" stroke-width="2"/>
-  <text x="130" y="55" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🎬 Scene</text>
-
-  <!-- Étage 2 : BorderPane -->
-  <rect x="313" y="85" width="260" height="55" rx="10" fill="#e8a838" stroke="#c87d10" stroke-width="2"/>
-  <text x="443" y="120" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🗺️ BorderPane</text>
-
-  <!-- Étage 3 : HBox -->
-  <rect x="627" y="150" width="260" height="55" rx="10" fill="#e8a838" stroke="#c87d10" stroke-width="2"/>
-  <text x="757" y="185" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">↔ HBox</text>
-
-  <!-- Étage 4 : Button (cible - bord droit) -->
-  <rect x="940" y="205" width="260" height="55" rx="10" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
-  <text x="1070" y="240" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🔘 Button (cible)</text>
-
-  <!-- Flèches orthogonales inversées (remontée en L : ← puis ↑) avec annotations -->
-  <!-- De Button (départ bord gauche, centre vertical) vers HBox (centre horizontal, bas) -->
-  <polyline points="940,232 757,232 757,205" stroke="#27ae60" stroke-width="3" fill="none" marker-end="url(#bubArr)"/>
-  <text x="773" y="222" font-family="Arial" font-size="14" fill="#1e8449" font-style="italic">1. traitement ici</text>
-  <!-- De HBox (départ bord gauche, centre vertical) vers BorderPane (centre horizontal, bas) -->
-  <polyline points="627,177 443,177 443,140" stroke="#27ae60" stroke-width="3" fill="none" marker-end="url(#bubArr)"/>
-  <text x="459" y="167" font-family="Arial" font-size="14" fill="#1e8449" font-style="italic">2. puis remonte</text>
-  <!-- De BorderPane (départ bord gauche, centre vertical) vers Scene (centre horizontal, bas) -->
-  <polyline points="313,112 130,112 130,75" stroke="#27ae60" stroke-width="3" fill="none" marker-end="url(#bubArr)"/>
-  <text x="146" y="102" font-family="Arial" font-size="14" fill="#1e8449" font-style="italic">3. termine à la racine</text>
-</svg>
-
-<div style="background: #1e8449; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 2rem; font-size: 1.6rem;">
-⬆️ <b>Phase de BUBBLING</b> : la cible est traitée en premier. Se configure avec <code>addEventHandler()</code>. <code>setOnAction()</code> est un raccourci pour <code>addEventHandler(ActionEvent.ACTION, ...)</code>.
-</div>
-
----
-
-## EventFilter vs EventHandler
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 0.5rem;">
-
-<div style="background: #c0392b; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.8rem; font-weight: bold; text-align: center; margin-bottom: 0.8rem;">⬇️ addEventFilter()</div>
-<div style="font-size: 1.5rem; line-height: 1.6;">
-&bull; Phase de <b>capture</b> (descente)<br/>
-&bull; Enregistré sur un <b>parent</b><br/>
-&bull; Peut <b>bloquer</b> avant la cible<br/>
-&bull; Usage : validation globale, log
-</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 6px; margin-top: 0.8rem; font-family: monospace; font-size: 1rem;">
-panneau.addEventFilter(<br/>
-&nbsp;&nbsp;MouseEvent.MOUSE_CLICKED,<br/>
-&nbsp;&nbsp;e -> e.consume());
-</div>
-</div>
-
-<div style="background: #1e8449; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.8rem; font-weight: bold; text-align: center; margin-bottom: 0.8rem;">⬆️ addEventHandler()</div>
-<div style="font-size: 1.5rem; line-height: 1.6;">
-&bull; Phase de <b>bubbling</b> (remontée)<br/>
-&bull; Enregistré sur la cible ou un parent<br/>
-&bull; Traitement normal<br/>
-&bull; Usage : 99% des cas ✅
-</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 6px; margin-top: 0.8rem; font-family: monospace; font-size: 1rem;">
-btn.addEventHandler(<br/>
-&nbsp;&nbsp;ActionEvent.ACTION,<br/>
-&nbsp;&nbsp;e -> traiter());&nbsp;&nbsp;<i>// ≡ setOnAction()</i>
-</div>
-</div>
-
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
-💡 <b>Règle pratique</b> : utilisez <code>setOnAction()</code> dans 99% des cas. Les filters sont réservés à l'interception globale (logging, validation, désactivation).
-</div>
-
----
-
-## Arrêter la propagation : event.consume()
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
-<p style="font-size:1.6rem">
-Un handler peut décider qu'il a <b>traité l'événement</b> : les handlers suivants sur le chemin ne seront pas appelés.
-</p>
-
-<svg viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg" style="width:100%; display:block; margin:0.3rem auto;">
-  <defs>
-    <marker id="consArr" markerWidth="7" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#27ae60"/></marker>
-    <marker id="consArrRed" markerWidth="7" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#c0392b"/></marker>
-  </defs>
-
-  <!-- Chaîne de propagation, tous les nœuds -->
-  <!-- Button : reçoit ET consume (conserve sa couleur de convention rouge) -->
-  <rect x="20" y="70" width="260" height="60" rx="10" fill="#e74c3c" stroke="#c0392b" stroke-width="3"/>
-  <text x="150" y="95" text-anchor="middle" font-family="Arial" font-size="18" fill="white" font-weight="bold">🔘 Button</text>
-  <text x="150" y="115" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.95)">handler ✅ + e.consume()</text>
-
-  <!-- HBox : jamais atteint -->
-  <rect x="400" y="70" width="200" height="60" rx="10" fill="#f0f0f0" stroke="#ccc" stroke-width="2" stroke-dasharray="5,3"/>
-  <text x="500" y="95" text-anchor="middle" font-family="Arial" font-size="18" fill="#bbb" font-weight="bold">↔ HBox</text>
-  <text x="500" y="115" text-anchor="middle" font-family="Arial" font-size="11" fill="#bbb" font-style="italic">jamais notifié</text>
-
-  <!-- BorderPane : jamais atteint -->
-  <rect x="680" y="70" width="220" height="60" rx="10" fill="#f0f0f0" stroke="#ccc" stroke-width="2" stroke-dasharray="5,3"/>
-  <text x="790" y="95" text-anchor="middle" font-family="Arial" font-size="18" fill="#bbb" font-weight="bold">🗺️ BorderPane</text>
-  <text x="790" y="115" text-anchor="middle" font-family="Arial" font-size="11" fill="#bbb" font-style="italic">jamais notifié</text>
-
-  <!-- Scene : jamais atteint -->
-  <rect x="980" y="70" width="200" height="60" rx="10" fill="#f0f0f0" stroke="#ccc" stroke-width="2" stroke-dasharray="5,3"/>
-  <text x="1080" y="95" text-anchor="middle" font-family="Arial" font-size="18" fill="#bbb" font-weight="bold">🎬 Scene</text>
-  <text x="1080" y="115" text-anchor="middle" font-family="Arial" font-size="11" fill="#bbb" font-style="italic">jamais notifié</text>
-
-  <!-- Entre Button et HBox : barre de STOP rouge -->
-  <line x1="300" y1="60" x2="380" y2="140" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
-  <line x1="380" y1="60" x2="300" y2="140" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
-  <text x="340" y="42" text-anchor="middle" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold">🛑 STOP</text>
-  <text x="340" y="175" text-anchor="middle" font-family="Arial" font-size="13" fill="#c0392b" font-style="italic">la propagation s'arrête ici</text>
-</svg>
-
-<style scoped>
-.code-card { background: #f5f5f5; border: 3px solid #1e8449; border-radius: 8px; overflow: hidden; }
-.code-card pre { margin: 0 !important; border: none !important; border-radius: 0 !important; }
-</style>
-
-<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-top: 0.8rem;">
-
-<div class="code-card">
-
-```java
-bouton.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
-    if (e.getClickCount() == 2) {
-        traiterDoubleClic();
-        e.consume();  // 🛑 stoppe la propagation
-    }
-});
-```
-
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.8rem; border-radius: 8px; font-size: 1rem;">
-💡 <b>Cas d'usage</b> : éviter qu'un parent intercepte aussi l'événement (ex. double-clic traité localement, drag-and-drop, raccourci clavier).
-</div>
-
-</div>
-
----
-
-## Hiérarchie des types d'événement
-
-```plantuml
-@startuml
-scale 1.5
-skinparam backgroundColor transparent
-skinparam defaultFontSize 16
-skinparam classAttributeIconSize 0
-skinparam classFontStyle bold
-skinparam shadowing false
-skinparam roundCorner 10
-
-skinparam class {
-    BorderColor #888
-    FontColor white
-}
-
-abstract class Event #7f8c8d
-
-abstract class InputEvent #34495e
-class "🎯 ActionEvent" as ActionEvent #e74c3c
-class "🪟 WindowEvent" as WindowEvent #1a5276
-class "🎢 ScrollEvent" as ScrollEvent #8e44ad
-
-class "🖱️ MouseEvent" as MouseEvent #e8a838
-class "⌨️ KeyEvent" as KeyEvent #27ae60
-class "👆 TouchEvent" as TouchEvent #00838f
-
-Event <|-- InputEvent
-Event <|-- ActionEvent
-Event <|-- WindowEvent
-Event <|-- ScrollEvent
-
-InputEvent <|-- MouseEvent
-InputEvent <|-- KeyEvent
-InputEvent <|-- TouchEvent
-@enduml
-```
-
-<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 0.5rem; text-align: center; font-size: 1.6rem;">
-💡 Chaque type porte des <b>données spécifiques</b> : <code>MouseEvent</code> → coordonnées (<code>getX()</code>, <code>getY()</code>), <code>KeyEvent</code> → code de touche (<code>getCode()</code>), <code>ActionEvent</code> → source du clic.
-</div>
-
----
-
-## 🖱️ MouseEvent - les événements souris
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
-
-<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">🖱️ setOnMouseClicked</div>
-<div style="font-size: 1.3rem; margin-bottom: 0.5rem;">Déclenché sur un clic complet (press + release au même endroit).</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.2rem;">
-zone.setOnMouseClicked(e -><br/>
-&nbsp;&nbsp;afficher(e.getX(), e.getY()));
-</div>
-</div>
-
-<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">👆 setOnMouseEntered / Exited</div>
-<div style="font-size: 1.3rem; margin-bottom: 0.5rem;">Quand la souris survole ou quitte une zone. Utile pour le feedback visuel (hover).</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.2rem;">
-zone.setOnMouseEntered(e -><br/>
-&nbsp;&nbsp;zone.setStyle("-fx-background: yellow;"));
-</div>
-</div>
-
-<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">✋ setOnMouseDragged</div>
-<div style="font-size: 1.3rem; margin-bottom: 0.5rem;">Déplacement avec le bouton maintenu enfoncé. Base du drag-and-drop (TP2 bonus Pong).</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.2rem;">
-zone.setOnMouseDragged(e -> {<br/>
-&nbsp;&nbsp;cercle.setCenterX(e.getX());<br/>
-&nbsp;&nbsp;cercle.setCenterY(e.getY()); });
-</div>
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">📐 Coordonnées</div>
-<div style="font-size: 1.2rem;">
-&bull; <code>e.getX()</code> / <code>e.getY()</code> : <b>locales</b> au nœud<br/>
-&bull; <code>e.getSceneX()</code> / <code>e.getSceneY()</code> : dans la <b>Scene</b> entière<br/>
-&bull; <code>e.getScreenX()</code> / <code>e.getScreenY()</code> : à l'<b>écran</b>
-</div>
-</div>
-
-</div>
-
----
-
-## ⌨️ KeyEvent - les événements clavier
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
-
-<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">🔽 setOnKeyPressed</div>
-<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">Une touche <b>physique</b> est enfoncée. Utile pour détecter les touches spéciales (Entrée, flèches, Escape). </div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.15rem;">
-tf.setOnKeyPressed(e -> {<br/>
-&nbsp;&nbsp;if (e.getCode() == KeyCode.ENTER)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;valider(); });
-</div>
-</div>
-
-<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">⌨️ setOnKeyTyped</div>
-<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">Un <b>caractère</b> Unicode a été produit (après combinaison de touches). Plus adapté pour la saisie de texte.</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.15rem;">
-tf.setOnKeyTyped(e -><br/>
-&nbsp;&nbsp;afficher(e.getCharacter()));
-</div>
-</div>
-
-<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">🎹 Raccourcis</div>
-<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">Les modificateurs (<code>Ctrl</code>, <code>Shift</code>, <code>Alt</code>) se testent avec <code>isXxxDown()</code>.</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.15rem;">
-if (e.isControlDown() &&<br/>
-&nbsp;&nbsp;e.getCode() == KeyCode.Z)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;annuler();
-</div>
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">💡 Pressed vs Typed</div>
-<div style="font-size: 1.4rem;">
-&bull; <b>PRESSED</b> : touche physique (F1, flèches, Shift seul)<br/>
-&bull; <b>TYPED</b> : caractère produit (lettres, chiffres)<br/>
-&bull; <b>RELEASED</b> : touche relâchée
-</div>
-</div>
-
-</div>
-
----
-
-## 🎯 ActionEvent - le plus courant
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
-<p style="font-size:1.6rem">
-<code>ActionEvent</code> est l'événement <b>applicatif</b> : il signale une action utilisateur <i>sémantique</i> (clic validé, valeur choisie), indépendamment du périphérique (souris, clavier, tactile).
-</p>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
-
-<div style="background: #e74c3c; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🔘 Sources d'ActionEvent</div>
-<div style="font-size: 1.5rem;">
-&bull; <code>Button</code> cliqué<br/>
-&bull; <code>MenuItem</code> sélectionné<br/>
-&bull; <code>TextField</code> + Entrée<br/>
-&bull; <code>CheckBox</code> cochée / décochée
-</div>
-</div>
-
-<div style="background: #e74c3c; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">⚡ setOnAction() = raccourci</div>
-<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">Ces deux lignes sont <b>équivalentes</b> :</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.5rem;">
-btn.setOnAction(e -> traiter());<br/>
-btn.addEventHandler(<br/>
-&nbsp;&nbsp;ActionEvent.ACTION,<br/>
-&nbsp;&nbsp;e -> traiter());
-</div>
-</div>
-
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem;">
-💡 Dans le TP2 et tous les TP suivants, vous utiliserez quasi exclusivement <code>ActionEvent</code> via <code>setOnAction()</code>.
-</div>
-
----
-
-## 🌐 Les autres événements
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
-<p style="font-size:1.6rem">
-JavaFX propose de nombreux autres types d'événements pour couvrir tous les cas d'interaction. Vous les rencontrerez selon vos besoins.
-</p>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
-
-<div style="background: #1a5276; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🪟 WindowEvent</div>
-<div style="font-size: 1.4rem; margin-bottom: 0.5rem;">Cycle de vie d'une fenêtre (Stage).</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.3rem;">
-stage.setOnCloseRequest(<br/>
-&nbsp;&nbsp;e -> sauvegarder());
-</div>
-<div style="font-size: 1.4rem; margin-top: 0.5rem; font-style: italic;">WINDOW_SHOWN, HIDING, CLOSE_REQUEST</div>
-</div>
-
-<div style="background: #8e44ad; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🎢 ScrollEvent</div>
-<div style="font-size: 1.4rem; margin-bottom: 0.5rem;">Molette ou trackpad à deux doigts.</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.3rem;">
-zone.setOnScroll(e -><br/>
-&nbsp;&nbsp;zoomer(e.getDeltaY()));
-</div>
-<div style="font-size: 1.4rem; margin-top: 0.5rem; font-style: italic;">getDeltaX() / getDeltaY()</div>
-</div>
-
-<div style="background: #00838f; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">👆 TouchEvent</div>
-<div style="font-size: 1.4rem; margin-bottom: 0.5rem;">Écrans tactiles multi-touch.</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.3rem;">
-zone.setOnTouchPressed(<br/>
-&nbsp;&nbsp;e -> traiter(<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;e.getTouchPoints()));
-</div>
-<div style="font-size: 1.4rem; margin-top: 0.5rem; font-style: italic;">TOUCH_PRESSED, MOVED, RELEASED</div>
-</div>
-
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; font-size: 1.6rem;">
-💡 Et aussi : <code>DragEvent</code> (glisser-déposer entre applications), <code>InputMethodEvent</code> (saisie de caractères composés, émojis), <code>GestureEvent</code> (pincer, pivoter, balayer).
-</div>
-
----
-
-## 🧠 Nielsen #1 approfondi : feedback et temps de réponse
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
-<p style="font-size:1.5rem; font-style: italic; background: #f5f5f5; padding: 0.8rem 1.2rem; border-left: 4px solid #8e44ad; border-radius: 6px;">
-« Le système doit toujours informer l'utilisateur de ce qui se passe, par un retour approprié dans un délai raisonnable. »<br/>
-<span style="font-size: 1.1rem; color: #666;">Jakob Nielsen, <i>10 Usability Heuristics</i> (1994)</span>
-</p>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
-
-<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 8px;">
-<div style="font-size: 2rem; font-weight: bold; text-align: center;">&lt; 500 ms</div>
-<div style="font-size: 1.3rem; font-weight: bold; text-align: center; margin-top: 0.3rem;">Instantané</div>
-<div style="font-size: 1.15rem; margin-top: 0.6rem;">Perçu comme une conséquence directe de l'action.</div>
-<div style="font-size: 1.05rem; font-style: italic; margin-top: 0.5rem; background: rgba(0,0,0,0.2); padding: 0.4rem; border-radius: 6px;">Clic de bouton, survol, changement de couleur, binding.</div>
-</div>
-
-<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 8px;">
-<div style="font-size: 2rem; font-weight: bold; text-align: center;">&lt; 3 s</div>
-<div style="font-size: 1.3rem; font-weight: bold; text-align: center; margin-top: 0.3rem;">Acceptable</div>
-<div style="font-size: 1.15rem; margin-top: 0.6rem;">L'utilisateur reste concentré, un indicateur visuel suffit.</div>
-<div style="font-size: 1.05rem; font-style: italic; margin-top: 0.5rem; background: rgba(0,0,0,0.2); padding: 0.4rem; border-radius: 6px;">Curseur "sablier", spinner, tri d'une liste, calcul local.</div>
-</div>
-
-<div style="background: #e74c3c; color: white; padding: 1rem; border-radius: 8px;">
-<div style="font-size: 2rem; font-weight: bold; text-align: center;">&gt; 3 s</div>
-<div style="font-size: 1.3rem; font-weight: bold; text-align: center; margin-top: 0.3rem;">Trop long</div>
-<div style="font-size: 1.15rem; margin-top: 0.6rem;">L'attention s'échappe : barre de progression <b>obligatoire</b>.</div>
-<div style="font-size: 1.05rem; font-style: italic; margin-top: 0.5rem; background: rgba(0,0,0,0.2); padding: 0.4rem; border-radius: 6px;">Export PDF, requête réseau, traitement par lot.</div>
-</div>
-
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.3rem;">
-⚡ Les <b>bindings</b> transforment la mise à jour en une <b>réaction en chaîne</b> : dès que les ingrédients (les propriétés sources) sont en présence, la propagation démarre automatiquement - sans attendre qu'un handler soit appelé.
-</div>
-
----
-
-## ⚡ Les bindings comme feedback automatique
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
-<p style="font-size:1.5rem">
-Relier une propriété à un composant visuel, c'est <b>déléguer la responsabilité du feedback</b> au framework. Impossible d'oublier une mise à jour.
-</p>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.5rem;">
-
-<div style="background: #fdf2f2; color: #c0392b; padding: 1rem; border-radius: 10px; border: 2px solid #e74c3c;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">❌ Sans binding</div>
-<div style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #333;">Le développeur doit penser à <b>chaque mise à jour</b> manuellement.</div>
-<div style="background: rgba(0,0,0,0.08); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.1rem; color: #222;">
-btn.setOnAction(e -> {<br/>
-&nbsp;&nbsp;compteur++;<br/>
-&nbsp;&nbsp;label.setText("" + compteur);<br/>
-&nbsp;&nbsp;<i>// oubli possible...</i><br/>
-});
-</div>
-<div style="font-size: 1.3rem; margin-top: 0.5rem; font-style: italic; color: #c0392b; font-weight: bold;">⚠️ Fragile : un oubli = l'interface peut mentir</div>
-</div>
-
-<div style="background: #f0faf0; color: #1e8449; padding: 1rem; border-radius: 10px; border: 2px solid #27ae60;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">✅ Avec binding</div>
-<div style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #333;">Le lien est <b>déclaré une seule fois</b>, au démarrage (souvent dans le constructeur).</div>
-<div style="background: rgba(0,0,0,0.08); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.1rem; color: #222;">
-label.textProperty().bind(<br/>
-&nbsp;&nbsp;compteur.asString());<br/>
-<i>// puis, n'importe où :</i><br/>
-compteur.set(compteur.get() + 1);<br/>
-<i>// le label se met à jour sans y penser</i>
-</div>
-<div style="font-size: 1.3rem; margin-top: 0.5rem; font-style: italic; color: #1e8449; font-weight: bold;">✅ Robuste : le label est <b>toujours</b> à jour.</div>
-</div>
-
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
-💡 Le binding n'est pas juste un raccourci d'écriture : c'est une <b>promesse</b> que l'interface reflétera <b>toujours</b> la réalité.
-</div>
-
----
-
-<!-- _class: lead -->
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
-# Partie 3 - ⚡ Propriétés JavaFX
+# Partie 2 - ⚡ Propriétés JavaFX
 
 ---
 
@@ -1150,7 +587,7 @@ label.textProperty().bind(<br/>
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem;">
-🔗 Partie 4 : on verra toutes les opérations possibles sur une propriété (<code>bind</code>, <code>bindBidirectional</code>, API fluente, bindings calculés).
+🔗 Partie 3 : on verra toutes les opérations possibles sur une propriété (<code>bind</code>, <code>bindBidirectional</code>, API fluente, bindings calculés).
 </div>
 
 ---
@@ -1626,7 +1063,7 @@ IP <|-- SIP
 <!-- _header: "" -->
 <!-- _footer: "" -->
 
-# Partie 4 - 🏗️ Bindings
+# Partie 3 - 🏗️ Bindings
 
 ---
 
@@ -2385,7 +1822,7 @@ total.textProperty().bind(
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; line-height: 1.55;">
-🎯 Ce principe fonde le pattern <strong>MVVM</strong> (Model-View-ViewModel) que l'on étudiera en <strong>CM3</strong>. Les propriétés du modèle sont les seules sources de vérité ; la vue n'en est qu'un reflet.
+🎯 Ce principe fonde le pattern <strong>MVVM</strong> (Model-View-ViewModel) que l'on étudiera en <strong>CM4</strong>. Les propriétés du modèle sont les seules sources de vérité ; la vue n'en est qu'un reflet.
 </div>
 
 ---
@@ -2394,7 +1831,7 @@ total.textProperty().bind(
 <!-- _header: "" -->
 <!-- _footer: "" -->
 
-# Partie 5 - 🧠 Contrôles et affordance
+# Partie 4 - 🧠 Contrôles et affordance
 
 ---
 
@@ -2626,6 +2063,606 @@ pwd.editableProperty().bind(
 
 <div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; line-height: 1.5; text-align: center;">
 💡 <strong>L'affordance, c'est de l'ergonomie encodée dans le code</strong> - à pratiquer dans le TP2.
+</div>
+
+---
+
+<!-- _class: lead -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+# Partie 5 - ⚡ Modèle événementiel complet
+
+---
+
+## Rappel : les 3 styles d'EventHandler
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<style scoped>
+pre { min-height: 4rem; }
+</style>
+
+Trois façons d'écrire le même comportement, revus dans le TP1 (exercice 5) :
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+
+<div style="background: #8e44ad; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 2rem; text-align: center;">📝 Classe nommée</div>
+
+```java
+class MonEcouteur
+  implements EventHandler<ActionEvent> {
+  public void handle(ActionEvent e) {
+    /* ... */
+  }
+}
+btn.setOnAction(new MonEcouteur());
+```
+
+<div style="margin-top: 0.5rem; font-size: 1.5rem; text-align: center; background: rgba(255,255,255,0.2); padding: 0.3rem; border-radius: 6px;">Réutilisable, testable</div>
+</div>
+
+<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 2rem; text-align: center;">⚙️ Classe anonyme</div>
+
+
+```java
+btn.setOnAction(
+  new EventHandler<ActionEvent>() {
+    public void handle(ActionEvent e) {
+      /* ... */
+    }
+  });
+```
+
+<div style="margin-top: 0.5rem; font-size: 1.5rem; text-align: center; background: rgba(255,255,255,0.2); padding: 0.3rem; border-radius: 6px;">Inline, verbeux</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 2rem; text-align: center;">🎯 Lambda</div>
+
+```java
+// Syntaxe Java 8+ (expression lambda).
+btn.setOnAction((ActionEvent e) -> {
+  /* traitement à effectuer ... */
+});
+```
+
+<div style="margin-top: 0.5rem; font-size: 1.5rem; text-align: center; background: rgba(255,255,255,0.2); padding: 0.3rem; border-radius: 6px;">Concis, recommandé ✅</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center;">
+👉 Regardons <b>comment les <code>EventHandler</code> fonctionnent en profondeur</b> : leur parcours dans l'arbre de scène, et le mécanisme qui permet à un conteneur d'intercepter un événement avant ses enfants.
+</div>
+
+---
+
+## La propagation - phase de capture (1/2)
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<p style="font-size: 1.6rem;">
+Quand vous cliquez sur un bouton, l'événement <b>ne naît pas dans le bouton</b>. Il commence à la racine de la scène et descend jusqu'à la cible.
+</p>
+<svg viewBox="0 0 1200 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; display:block; margin:0.3rem auto;">
+  <defs>
+    <marker id="capArr" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#e74c3c"/></marker>
+  </defs>
+
+  <!-- Étage 1 : Scene (bord gauche) -->
+  <rect x="0" y="20" width="260" height="55" rx="10" fill="#7bb563" stroke="#5a9e45" stroke-width="2"/>
+  <text x="130" y="55" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🎬 Scene</text>
+
+  <!-- Étage 2 : BorderPane -->
+  <rect x="313" y="85" width="260" height="55" rx="10" fill="#e8a838" stroke="#c87d10" stroke-width="2"/>
+  <text x="443" y="120" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🗺️ BorderPane</text>
+
+  <!-- Étage 3 : HBox -->
+  <rect x="627" y="150" width="260" height="55" rx="10" fill="#e8a838" stroke="#c87d10" stroke-width="2"/>
+  <text x="757" y="185" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">↔ HBox</text>
+
+  <!-- Étage 4 : Button (cible) (bord droit) -->
+  <rect x="940" y="205" width="260" height="55" rx="10" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="1070" y="240" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🔘 Button (cible)</text>
+
+  <!-- Flèches orthogonales (descente en L : ↓ puis →) avec annotations -->
+  <!-- De Scene vers BorderPane -->
+  <polyline points="130,75 130,112 311,112" stroke="#e74c3c" stroke-width="3" fill="none" marker-end="url(#capArr)"/>
+  <text x="145" y="102" font-family="Arial" font-size="14" fill="#c0392b" font-style="italic">1. reçoit en premier</text>
+  <!-- De BorderPane vers HBox -->
+  <polyline points="443,140 443,177 625,177" stroke="#e74c3c" stroke-width="3" fill="none" marker-end="url(#capArr)"/>
+  <text x="458" y="167" font-family="Arial" font-size="14" fill="#c0392b" font-style="italic">2. puis transmet</text>
+  <!-- De HBox vers Button -->
+  <polyline points="757,205 757,232 938,232" stroke="#e74c3c" stroke-width="3" fill="none" marker-end="url(#capArr)"/>
+  <text x="772" y="222" font-family="Arial" font-size="14" fill="#c0392b" font-style="italic">3. arrive à la cible</text>
+</svg>
+
+<div style="background: #e74c3c; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 2rem; font-size: 1.6rem;">
+⬇️ <b>Phase de CAPTURE</b> : la racine peut <b>intercepter</b> l'événement avant la cible via <code>addEventFilter()</code>. Utile pour filtrer, logger ou bloquer (<code>event.consume()</code>).
+</div>
+
+---
+
+## La propagation - phase de bubbling (2/2)
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<p style="font-size: 1.6rem;">
+Après la phase de capture, l'événement <b>remonte</b> de la cible vers la racine : c'est la phase qui déclenche vos <code>setOnAction()</code> habituels.
+</p>
+<svg viewBox="0 0 1200 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; display:block; margin:0.3rem auto;">
+  <defs>
+    <marker id="bubArr" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#27ae60"/></marker>
+  </defs>
+
+  <!-- Étage 1 : Scene (bord gauche) -->
+  <rect x="0" y="20" width="260" height="55" rx="10" fill="#7bb563" stroke="#5a9e45" stroke-width="2"/>
+  <text x="130" y="55" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🎬 Scene</text>
+
+  <!-- Étage 2 : BorderPane -->
+  <rect x="313" y="85" width="260" height="55" rx="10" fill="#e8a838" stroke="#c87d10" stroke-width="2"/>
+  <text x="443" y="120" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🗺️ BorderPane</text>
+
+  <!-- Étage 3 : HBox -->
+  <rect x="627" y="150" width="260" height="55" rx="10" fill="#e8a838" stroke="#c87d10" stroke-width="2"/>
+  <text x="757" y="185" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">↔ HBox</text>
+
+  <!-- Étage 4 : Button (cible - bord droit) -->
+  <rect x="940" y="205" width="260" height="55" rx="10" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="1070" y="240" text-anchor="middle" font-family="Arial" font-size="20" fill="white" font-weight="bold">🔘 Button (cible)</text>
+
+  <!-- Flèches orthogonales inversées (remontée en L : ← puis ↑) avec annotations -->
+  <!-- De Button (départ bord gauche, centre vertical) vers HBox (centre horizontal, bas) -->
+  <polyline points="940,232 757,232 757,205" stroke="#27ae60" stroke-width="3" fill="none" marker-end="url(#bubArr)"/>
+  <text x="773" y="222" font-family="Arial" font-size="14" fill="#1e8449" font-style="italic">1. traitement ici</text>
+  <!-- De HBox (départ bord gauche, centre vertical) vers BorderPane (centre horizontal, bas) -->
+  <polyline points="627,177 443,177 443,140" stroke="#27ae60" stroke-width="3" fill="none" marker-end="url(#bubArr)"/>
+  <text x="459" y="167" font-family="Arial" font-size="14" fill="#1e8449" font-style="italic">2. puis remonte</text>
+  <!-- De BorderPane (départ bord gauche, centre vertical) vers Scene (centre horizontal, bas) -->
+  <polyline points="313,112 130,112 130,75" stroke="#27ae60" stroke-width="3" fill="none" marker-end="url(#bubArr)"/>
+  <text x="146" y="102" font-family="Arial" font-size="14" fill="#1e8449" font-style="italic">3. termine à la racine</text>
+</svg>
+
+<div style="background: #1e8449; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 2rem; font-size: 1.6rem;">
+⬆️ <b>Phase de BUBBLING</b> : la cible est traitée en premier. Se configure avec <code>addEventHandler()</code>. <code>setOnAction()</code> est un raccourci pour <code>addEventHandler(ActionEvent.ACTION, ...)</code>.
+</div>
+
+---
+
+## EventFilter vs EventHandler
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 0.5rem;">
+
+<div style="background: #c0392b; color: white; padding: 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.8rem; font-weight: bold; text-align: center; margin-bottom: 0.8rem;">⬇️ addEventFilter()</div>
+<div style="font-size: 1.5rem; line-height: 1.6;">
+&bull; Phase de <b>capture</b> (descente)<br/>
+&bull; Enregistré sur un <b>parent</b><br/>
+&bull; Peut <b>bloquer</b> avant la cible<br/>
+&bull; Usage : validation globale, log
+</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 6px; margin-top: 0.8rem; font-family: monospace; font-size: 1rem;">
+panneau.addEventFilter(<br/>
+&nbsp;&nbsp;MouseEvent.MOUSE_CLICKED,<br/>
+&nbsp;&nbsp;e -> e.consume());
+</div>
+</div>
+
+<div style="background: #1e8449; color: white; padding: 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.8rem; font-weight: bold; text-align: center; margin-bottom: 0.8rem;">⬆️ addEventHandler()</div>
+<div style="font-size: 1.5rem; line-height: 1.6;">
+&bull; Phase de <b>bubbling</b> (remontée)<br/>
+&bull; Enregistré sur la cible ou un parent<br/>
+&bull; Traitement normal<br/>
+&bull; Usage : 99% des cas ✅
+</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 6px; margin-top: 0.8rem; font-family: monospace; font-size: 1rem;">
+btn.addEventHandler(<br/>
+&nbsp;&nbsp;ActionEvent.ACTION,<br/>
+&nbsp;&nbsp;e -> traiter());&nbsp;&nbsp;<i>// ≡ setOnAction()</i>
+</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
+💡 <b>Règle pratique</b> : utilisez <code>setOnAction()</code> dans 99% des cas. Les filters sont réservés à l'interception globale (logging, validation, désactivation).
+</div>
+
+---
+
+## Arrêter la propagation : event.consume()
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<p style="font-size:1.6rem">
+Un handler peut décider qu'il a <b>traité l'événement</b> : les handlers suivants sur le chemin ne seront pas appelés.
+</p>
+
+<svg viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg" style="width:100%; display:block; margin:0.3rem auto;">
+  <defs>
+    <marker id="consArr" markerWidth="7" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#27ae60"/></marker>
+    <marker id="consArrRed" markerWidth="7" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#c0392b"/></marker>
+  </defs>
+
+  <!-- Chaîne de propagation, tous les nœuds -->
+  <!-- Button : reçoit ET consume (conserve sa couleur de convention rouge) -->
+  <rect x="20" y="70" width="260" height="60" rx="10" fill="#e74c3c" stroke="#c0392b" stroke-width="3"/>
+  <text x="150" y="95" text-anchor="middle" font-family="Arial" font-size="18" fill="white" font-weight="bold">🔘 Button</text>
+  <text x="150" y="115" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.95)">handler ✅ + e.consume()</text>
+
+  <!-- HBox : jamais atteint -->
+  <rect x="400" y="70" width="200" height="60" rx="10" fill="#f0f0f0" stroke="#ccc" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="500" y="95" text-anchor="middle" font-family="Arial" font-size="18" fill="#bbb" font-weight="bold">↔ HBox</text>
+  <text x="500" y="115" text-anchor="middle" font-family="Arial" font-size="11" fill="#bbb" font-style="italic">jamais notifié</text>
+
+  <!-- BorderPane : jamais atteint -->
+  <rect x="680" y="70" width="220" height="60" rx="10" fill="#f0f0f0" stroke="#ccc" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="790" y="95" text-anchor="middle" font-family="Arial" font-size="18" fill="#bbb" font-weight="bold">🗺️ BorderPane</text>
+  <text x="790" y="115" text-anchor="middle" font-family="Arial" font-size="11" fill="#bbb" font-style="italic">jamais notifié</text>
+
+  <!-- Scene : jamais atteint -->
+  <rect x="980" y="70" width="200" height="60" rx="10" fill="#f0f0f0" stroke="#ccc" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="1080" y="95" text-anchor="middle" font-family="Arial" font-size="18" fill="#bbb" font-weight="bold">🎬 Scene</text>
+  <text x="1080" y="115" text-anchor="middle" font-family="Arial" font-size="11" fill="#bbb" font-style="italic">jamais notifié</text>
+
+  <!-- Entre Button et HBox : barre de STOP rouge -->
+  <line x1="300" y1="60" x2="380" y2="140" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
+  <line x1="380" y1="60" x2="300" y2="140" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
+  <text x="340" y="42" text-anchor="middle" font-family="Arial" font-size="14" fill="#c0392b" font-weight="bold">🛑 STOP</text>
+  <text x="340" y="175" text-anchor="middle" font-family="Arial" font-size="13" fill="#c0392b" font-style="italic">la propagation s'arrête ici</text>
+</svg>
+
+<style scoped>
+.code-card { background: #f5f5f5; border: 3px solid #1e8449; border-radius: 8px; overflow: hidden; }
+.code-card pre { margin: 0 !important; border: none !important; border-radius: 0 !important; }
+</style>
+
+<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-top: 0.8rem;">
+
+<div class="code-card">
+
+```java
+bouton.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
+    if (e.getClickCount() == 2) {
+        traiterDoubleClic();
+        e.consume();  // 🛑 stoppe la propagation
+    }
+});
+```
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem; border-radius: 8px; font-size: 1rem;">
+💡 <b>Cas d'usage</b> : éviter qu'un parent intercepte aussi l'événement (ex. double-clic traité localement, drag-and-drop, raccourci clavier).
+</div>
+
+</div>
+
+---
+
+## Hiérarchie des types d'événement
+
+```plantuml
+@startuml
+scale 1.5
+skinparam backgroundColor transparent
+skinparam defaultFontSize 16
+skinparam classAttributeIconSize 0
+skinparam classFontStyle bold
+skinparam shadowing false
+skinparam roundCorner 10
+
+skinparam class {
+    BorderColor #888
+    FontColor white
+}
+
+abstract class Event #7f8c8d
+
+abstract class InputEvent #34495e
+class "🎯 ActionEvent" as ActionEvent #e74c3c
+class "🪟 WindowEvent" as WindowEvent #1a5276
+class "🎢 ScrollEvent" as ScrollEvent #8e44ad
+
+class "🖱️ MouseEvent" as MouseEvent #e8a838
+class "⌨️ KeyEvent" as KeyEvent #27ae60
+class "👆 TouchEvent" as TouchEvent #00838f
+
+Event <|-- InputEvent
+Event <|-- ActionEvent
+Event <|-- WindowEvent
+Event <|-- ScrollEvent
+
+InputEvent <|-- MouseEvent
+InputEvent <|-- KeyEvent
+InputEvent <|-- TouchEvent
+@enduml
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 0.5rem; text-align: center; font-size: 1.6rem;">
+💡 Chaque type porte des <b>données spécifiques</b> : <code>MouseEvent</code> → coordonnées (<code>getX()</code>, <code>getY()</code>), <code>KeyEvent</code> → code de touche (<code>getCode()</code>), <code>ActionEvent</code> → source du clic.
+</div>
+
+---
+
+## 🖱️ MouseEvent - les événements souris
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+
+<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">🖱️ setOnMouseClicked</div>
+<div style="font-size: 1.3rem; margin-bottom: 0.5rem;">Déclenché sur un clic complet (press + release au même endroit).</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.2rem;">
+zone.setOnMouseClicked(e -><br/>
+&nbsp;&nbsp;afficher(e.getX(), e.getY()));
+</div>
+</div>
+
+<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">👆 setOnMouseEntered / Exited</div>
+<div style="font-size: 1.3rem; margin-bottom: 0.5rem;">Quand la souris survole ou quitte une zone. Utile pour le feedback visuel (hover).</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.2rem;">
+zone.setOnMouseEntered(e -><br/>
+&nbsp;&nbsp;zone.setStyle("-fx-background: yellow;"));
+</div>
+</div>
+
+<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">✋ setOnMouseDragged</div>
+<div style="font-size: 1.3rem; margin-bottom: 0.5rem;">Déplacement avec le bouton maintenu enfoncé. Base du drag-and-drop (TP2 bonus Pong).</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.2rem;">
+zone.setOnMouseDragged(e -> {<br/>
+&nbsp;&nbsp;cercle.setCenterX(e.getX());<br/>
+&nbsp;&nbsp;cercle.setCenterY(e.getY()); });
+</div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">📐 Coordonnées</div>
+<div style="font-size: 1.2rem;">
+&bull; <code>e.getX()</code> / <code>e.getY()</code> : <b>locales</b> au nœud<br/>
+&bull; <code>e.getSceneX()</code> / <code>e.getSceneY()</code> : dans la <b>Scene</b> entière<br/>
+&bull; <code>e.getScreenX()</code> / <code>e.getScreenY()</code> : à l'<b>écran</b>
+</div>
+</div>
+
+</div>
+
+---
+
+## ⌨️ KeyEvent - les événements clavier
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+
+<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">🔽 setOnKeyPressed</div>
+<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">Une touche <b>physique</b> est enfoncée. Utile pour détecter les touches spéciales (Entrée, flèches, Escape). </div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.15rem;">
+tf.setOnKeyPressed(e -> {<br/>
+&nbsp;&nbsp;if (e.getCode() == KeyCode.ENTER)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;valider(); });
+</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">⌨️ setOnKeyTyped</div>
+<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">Un <b>caractère</b> Unicode a été produit (après combinaison de touches). Plus adapté pour la saisie de texte.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.15rem;">
+tf.setOnKeyTyped(e -><br/>
+&nbsp;&nbsp;afficher(e.getCharacter()));
+</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">🎹 Raccourcis</div>
+<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">Les modificateurs (<code>Ctrl</code>, <code>Shift</code>, <code>Alt</code>) se testent avec <code>isXxxDown()</code>.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.15rem;">
+if (e.isControlDown() &&<br/>
+&nbsp;&nbsp;e.getCode() == KeyCode.Z)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;annuler();
+</div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">💡 Pressed vs Typed</div>
+<div style="font-size: 1.4rem;">
+&bull; <b>PRESSED</b> : touche physique (F1, flèches, Shift seul)<br/>
+&bull; <b>TYPED</b> : caractère produit (lettres, chiffres)<br/>
+&bull; <b>RELEASED</b> : touche relâchée
+</div>
+</div>
+
+</div>
+
+---
+
+## 🎯 ActionEvent - le plus courant
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<p style="font-size:1.6rem">
+<code>ActionEvent</code> est l'événement <b>applicatif</b> : il signale une action utilisateur <i>sémantique</i> (clic validé, valeur choisie), indépendamment du périphérique (souris, clavier, tactile).
+</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+
+<div style="background: #e74c3c; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🔘 Sources d'ActionEvent</div>
+<div style="font-size: 1.5rem;">
+&bull; <code>Button</code> cliqué<br/>
+&bull; <code>MenuItem</code> sélectionné<br/>
+&bull; <code>TextField</code> + Entrée<br/>
+&bull; <code>CheckBox</code> cochée / décochée
+</div>
+</div>
+
+<div style="background: #e74c3c; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">⚡ setOnAction() = raccourci</div>
+<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">Ces deux lignes sont <b>équivalentes</b> :</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.5rem;">
+btn.setOnAction(e -> traiter());<br/>
+btn.addEventHandler(<br/>
+&nbsp;&nbsp;ActionEvent.ACTION,<br/>
+&nbsp;&nbsp;e -> traiter());
+</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem;">
+💡 Dans le TP2 et tous les TP suivants, vous utiliserez quasi exclusivement <code>ActionEvent</code> via <code>setOnAction()</code>.
+</div>
+
+---
+
+## 🌐 Les autres événements
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<p style="font-size:1.6rem">
+JavaFX propose de nombreux autres types d'événements pour couvrir tous les cas d'interaction. Vous les rencontrerez selon vos besoins.
+</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🪟 WindowEvent</div>
+<div style="font-size: 1.4rem; margin-bottom: 0.5rem;">Cycle de vie d'une fenêtre (Stage).</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.3rem;">
+stage.setOnCloseRequest(<br/>
+&nbsp;&nbsp;e -> sauvegarder());
+</div>
+<div style="font-size: 1.4rem; margin-top: 0.5rem; font-style: italic;">WINDOW_SHOWN, HIDING, CLOSE_REQUEST</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🎢 ScrollEvent</div>
+<div style="font-size: 1.4rem; margin-bottom: 0.5rem;">Molette ou trackpad à deux doigts.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.3rem;">
+zone.setOnScroll(e -><br/>
+&nbsp;&nbsp;zoomer(e.getDeltaY()));
+</div>
+<div style="font-size: 1.4rem; margin-top: 0.5rem; font-style: italic;">getDeltaX() / getDeltaY()</div>
+</div>
+
+<div style="background: #00838f; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">👆 TouchEvent</div>
+<div style="font-size: 1.4rem; margin-bottom: 0.5rem;">Écrans tactiles multi-touch.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.3rem;">
+zone.setOnTouchPressed(<br/>
+&nbsp;&nbsp;e -> traiter(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;e.getTouchPoints()));
+</div>
+<div style="font-size: 1.4rem; margin-top: 0.5rem; font-style: italic;">TOUCH_PRESSED, MOVED, RELEASED</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; font-size: 1.6rem;">
+💡 Et aussi : <code>DragEvent</code> (glisser-déposer entre applications), <code>InputMethodEvent</code> (saisie de caractères composés, émojis), <code>GestureEvent</code> (pincer, pivoter, balayer).
+</div>
+
+---
+
+## 🧠 Nielsen #1 approfondi : feedback et temps de réponse
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<p style="font-size:1.5rem; font-style: italic; background: #f5f5f5; padding: 0.8rem 1.2rem; border-left: 4px solid #8e44ad; border-radius: 6px;">
+« Le système doit toujours informer l'utilisateur de ce qui se passe, par un retour approprié dans un délai raisonnable. »<br/>
+<span style="font-size: 1.1rem; color: #666;">Jakob Nielsen, <i>10 Usability Heuristics</i> (1994)</span>
+</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
+
+<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 8px;">
+<div style="font-size: 2rem; font-weight: bold; text-align: center;">&lt; 500 ms</div>
+<div style="font-size: 1.3rem; font-weight: bold; text-align: center; margin-top: 0.3rem;">Instantané</div>
+<div style="font-size: 1.15rem; margin-top: 0.6rem;">Perçu comme une conséquence directe de l'action.</div>
+<div style="font-size: 1.05rem; font-style: italic; margin-top: 0.5rem; background: rgba(0,0,0,0.2); padding: 0.4rem; border-radius: 6px;">Clic de bouton, survol, changement de couleur, binding.</div>
+</div>
+
+<div style="background: #e8a838; color: white; padding: 1rem; border-radius: 8px;">
+<div style="font-size: 2rem; font-weight: bold; text-align: center;">&lt; 3 s</div>
+<div style="font-size: 1.3rem; font-weight: bold; text-align: center; margin-top: 0.3rem;">Acceptable</div>
+<div style="font-size: 1.15rem; margin-top: 0.6rem;">L'utilisateur reste concentré, un indicateur visuel suffit.</div>
+<div style="font-size: 1.05rem; font-style: italic; margin-top: 0.5rem; background: rgba(0,0,0,0.2); padding: 0.4rem; border-radius: 6px;">Curseur "sablier", spinner, tri d'une liste, calcul local.</div>
+</div>
+
+<div style="background: #e74c3c; color: white; padding: 1rem; border-radius: 8px;">
+<div style="font-size: 2rem; font-weight: bold; text-align: center;">&gt; 3 s</div>
+<div style="font-size: 1.3rem; font-weight: bold; text-align: center; margin-top: 0.3rem;">Trop long</div>
+<div style="font-size: 1.15rem; margin-top: 0.6rem;">L'attention s'échappe : barre de progression <b>obligatoire</b>.</div>
+<div style="font-size: 1.05rem; font-style: italic; margin-top: 0.5rem; background: rgba(0,0,0,0.2); padding: 0.4rem; border-radius: 6px;">Export PDF, requête réseau, traitement par lot.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.3rem;">
+⚡ Les <b>bindings</b> (Partie 3) et le <b>modèle événementiel</b> se partagent la responsabilité du feedback &lt; 500 ms : bindings pour les réactions d'état, handlers pour les actions ponctuelles et les événements bas-niveau.
+</div>
+
+---
+
+## ⚡ Bindings et handlers - deux outils complémentaires
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<p style="font-size:1.5rem">
+La <b>Partie 3</b> vous a montré les <b>bindings</b>, la <b>Partie 5</b> le <b>modèle événementiel</b>. Les deux répondent au même objectif - rendre l'IHM réactive - mais sur des territoires distincts.
+</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Bindings - pour l'état</div>
+<div style="font-size: 1.2rem; margin-bottom: 0.5rem;">Un composant visuel <b>reflète</b> une propriété du modèle. Déclaré une fois, vivant en permanence.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.1rem;">
+label.textProperty().bind(<br/>
+&nbsp;&nbsp;compteur.asString());<br/>
+<i>// puis, où que ce soit :</i><br/>
+compteur.set(compteur.get() + 1);
+</div>
+<div style="font-size: 1.3rem; margin-top: 0.5rem; font-style: italic; font-weight: bold;">Feedback continu, automatique.</div>
+</div>
+
+<div style="background: #e74c3c; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🎯 Handlers - pour l'action</div>
+<div style="font-size: 1.2rem; margin-bottom: 0.5rem;">Un <b>geste</b> utilisateur déclenche une <b>action</b> métier, ponctuelle, intentionnelle.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.1rem;">
+btn.setOnAction(<br/>
+&nbsp;&nbsp;e -> sauver());<br/>
+stage.setOnCloseRequest(<br/>
+&nbsp;&nbsp;e -> confirmer(e));
+</div>
+<div style="font-size: 1.3rem; margin-top: 0.5rem; font-style: italic; font-weight: bold;">Action ponctuelle, intentionnelle.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
+💡 <b>Règle du TP2</b> : bindings pour tout ce qui <b>reflète</b> un état, handlers pour tout ce qui <b>déclenche</b> une action. Les deux cohabitent dans la même IHM.
 </div>
 
 ---
