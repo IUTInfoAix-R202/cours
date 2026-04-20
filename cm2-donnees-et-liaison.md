@@ -2783,12 +2783,35 @@ Source OpenJFX de <a href="https://openjfx.io/javadoc/25/javafx.base/javafx/bean
 <!-- _footer: "" -->
 <!-- _paginate: false -->
 
-## À vous de jouer !
+<style scoped>
+section { text-align: center; }
+h2 { text-align: center; }
+</style>
 
-**TP2 - Propriétés, bindings et contrôles**
+# 🎯 À vous de jouer !
 
-8 exercices progressifs : des propriétés les plus simples (`ProprieteSimple`) jusqu'au formulaire de connexion avec validation complète (`FormulaireConnexion`).
+<div style="background: linear-gradient(135deg, #1a5276 0%, #27ae60 100%); color: white; padding: 2.5rem 2rem; border-radius: 16px; margin: 1.5rem auto 0 auto; max-width: 900px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
 
-> Activez les tests un par un. Chaque test vert = un concept maîtrisé.
+<div style="font-size: 2.2rem; font-weight: bold; margin-bottom: 0.4rem;">TP2 - Propriétés, bindings et contrôles</div>
+<div style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 1.8rem;">8 exercices progressifs + 2 bonus</div>
 
-`./mvnw javafx:run` pour explorer les exercices interactifs.
+<div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 1.8rem;">
+<div style="background: rgba(255,255,255,0.18); padding: 0.8rem 1.1rem; border-radius: 10px; text-align: center; font-size: 1rem; min-width: 200px;">
+<div style="opacity: 0.8; font-size: 0.9rem;">Exercice 1</div>
+<div style="font-weight: bold; font-family: monospace;">ProprieteSimple</div>
+</div>
+<div style="font-size: 1.8rem;">→</div>
+<div style="background: rgba(255,255,255,0.18); padding: 0.8rem 1.1rem; border-radius: 10px; text-align: center; font-size: 1rem; min-width: 200px;">
+<div style="opacity: 0.8; font-size: 0.9rem;">Exercice 8</div>
+<div style="font-weight: bold; font-family: monospace;">ConvertisseurTemperatures</div>
+</div>
+</div>
+
+<code style="background: rgba(0,0,0,0.35); color: #2ecc71; padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1.3rem; font-weight: bold; font-family: monospace; display: inline-block;">./mvnw javafx:run</code>
+
+<div style="margin-top: 1.8rem; font-size: 1.25rem; line-height: 1.5;">
+💡 Activez les tests un par un.<br/>
+<strong>Chaque test vert = un concept maîtrisé.</strong>
+</div>
+
+</div>
