@@ -1307,32 +1307,34 @@ Ces principes ne sont pas JavaFX-spécifiques : ils s'appliquent à **toute** co
 <!-- _footer: "" -->
 <!-- _header: "" -->
 
-Chaque principe Gestalt guide le choix du conteneur :
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Chaque principe Gestalt guide directement le <strong>choix du conteneur</strong> :</p>
 
-<div style="display: flex; gap: 1.2rem; margin-top: 1rem;">
-<div style="flex: 1; background: #f0f4f8; padding: 1rem; border-radius: 10px; border-left: 4px solid #8e44ad;">
-<div style="font-weight: bold;">👥 Proximité</div>
-<div style="margin-top: 0.3rem;">Regrouper les contrôles liés dans un même conteneur (📦 VBox, ↔ HBox)</div>
-</div>
-<div style="flex: 1; background: #f0f4f8; padding: 1rem; border-radius: 10px; border-left: 4px solid #8e44ad;">
-<div style="font-weight: bold;">📐 Alignement</div>
-<div style="margin-top: 0.3rem;">Utiliser 🔲 GridPane pour aligner labels et champs de formulaire</div>
-</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 4rem 0;">
+
+<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">👥 Proximité</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Regrouper les contrôles liés dans un même conteneur (↕ VBox, ↔ HBox).</div>
 </div>
 
-<div style="display: flex; gap: 1.2rem; margin-top: 0.8rem;">
-<div style="flex: 1; background: #f0f4f8; padding: 1rem; border-radius: 10px; border-left: 4px solid #8e44ad;">
-<div style="font-weight: bold;">🔗 Similarité</div>
-<div style="margin-top: 0.3rem;">Donner le même style aux boutons d'action (CSS ou setStyle)</div>
-</div>
-<div style="flex: 1; background: #f0f4f8; padding: 1rem; border-radius: 10px; border-left: 4px solid #8e44ad;">
-<div style="font-weight: bold;">🔲 Clôture</div>
-<div style="margin-top: 0.3rem;">Les zones du 🗺️ BorderPane créent des frontières visuelles naturelles</div>
-</div>
+<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">📐 Alignement</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Utiliser 🔲 GridPane pour aligner labels et champs de formulaire.</div>
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
-🧠 L'ergonomie n'est pas une opinion : ce sont des <b>lois de la perception</b> qui guident la conception.
+<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">🔗 Similarité</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Donner le même style aux boutons d'action (CSS ou <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">setStyle</code>).</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">🔲 Clôture</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Les zones du 🗺️ BorderPane créent des frontières visuelles naturelles.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.3rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem; line-height: 1.55;">
+🧠 L'ergonomie n'est pas une opinion : ce sont des <strong>lois de la perception</strong> qui guident la conception.
 </div>
 
 ---
