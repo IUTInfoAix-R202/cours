@@ -2081,11 +2081,22 @@ label.textProperty().bind(texte);
 
 ## Bindings.when().then().otherwise() - conditions
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 <style scoped>
-pre { font-size: 0.82rem; }
+pre { font-size: 0.75rem; }
 </style>
 
-L'expression conditionnelle en bindings : l'équivalent du `? :` ternaire, mais observable.
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">L'expression <strong>conditionnelle observable</strong> : l'équivalent du <code>? :</code> ternaire, mais qui se recalcule automatiquement quand la condition change.</p>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 0.6rem; margin: 1rem 0;">
+<div style="background: #e8a838; color: white; padding: 0.8rem 1.2rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold;">when(condition)</div>
+<div style="font-size: 1.8rem; color: #2c3e50; font-weight: bold;">→</div>
+<div style="background: #27ae60; color: white; padding: 0.8rem 1.2rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold;">.then(valeurSiVrai)</div>
+<div style="font-size: 1.8rem; color: #2c3e50; font-weight: bold;">/</div>
+<div style="background: #c0392b; color: white; padding: 0.8rem 1.2rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold;">.otherwise(valeurSiFaux)</div>
+</div>
 
 ```java
 StringExpression affichage = Bindings.when(
@@ -2099,7 +2110,9 @@ StringExpression affichage = Bindings.when(
 label.textProperty().bind(affichage);
 ```
 
-Quand aucun bouton n'a été cliqué, le label affiche "Bienvenue !". Dès le premier clic, il bascule sur les compteurs. Automatiquement.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; line-height: 1.55;">
+💡 Tant qu'aucun bouton n'est cliqué, le label affiche <em>« Bienvenue ! »</em>. Au premier clic, il bascule sur les compteurs <strong>sans aucun listener</strong>. 
+</div>
 
 ---
 
