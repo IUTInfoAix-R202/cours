@@ -2301,19 +2301,91 @@ pre { font-size: 0.9rem; }
 
 ## 🏗️ Source unique de vérité
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
-<div style="background: #fdecea; padding: 1.2rem; border-radius: 10px; border-top: 4px solid #e74c3c;">
-<div style="font-weight: bold; margin-bottom: 0.5rem;">❌ Sans propriétés</div>
-<div style="font-size: 0.9rem;">La valeur est dans un <code>int</code> local. Le label en a une copie. Le champ texte en a une autre. Les trois peuvent diverger.</div>
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">La donnée vit à <strong>un seul endroit</strong>. Tous les éléments qui l'affichent <em>dépendent</em> de cette source - ils ne peuvent pas diverger.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 3.6rem 0;">
+
+<div style="background: #c0392b; color: white; padding: 1.2rem 1.4rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.8rem;">❌ Sans propriétés</div>
+<div style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 0.8rem;">
+<div style="background: rgba(0,0,0,0.28); padding: 0.5rem 0.7rem; border-radius: 6px; font-family: monospace; font-size: 0.95rem;">label<br/><strong>42</strong></div>
+<div style="background: rgba(0,0,0,0.28); padding: 0.5rem 0.7rem; border-radius: 6px; font-family: monospace; font-size: 0.95rem;">textField<br/><strong>42</strong></div>
+<div style="background: rgba(0,0,0,0.28); padding: 0.5rem 0.7rem; border-radius: 6px; font-family: monospace; font-size: 0.95rem;">progress<br/><strong>0.42</strong></div>
 </div>
-<div style="background: #f0fff4; padding: 1.2rem; border-radius: 10px; border-top: 4px solid #27ae60;">
-<div style="font-weight: bold; margin-bottom: 0.5rem;">✅ Avec propriétés + bindings</div>
-<div style="font-size: 0.9rem;">La valeur vit dans une propriété. Le label et le champ texte <em>dépendent</em> de cette propriété. Ils ne peuvent pas diverger.</div>
-</div>
+<div style="font-size: 1.05rem; line-height: 1.5;">La valeur est <strong>dupliquée</strong>. Chaque <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">setX()</code> manuel est une source de divergence.</div>
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 1rem 2rem; border-radius: 10px; margin-top: 1.5rem; text-align: center; font-size: 1.1rem;">
-Un binding remplace un EventHandler + un setText()
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.4rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.8rem;">✅ Avec propriétés + bindings</div>
+<div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem;">
+<div style="background: rgba(0,0,0,0.35); padding: 0.6rem 1rem; border-radius: 8px; font-family: monospace; font-size: 1.05rem; font-weight: bold;">Property<br/>42</div>
+<div style="font-size: 1.5rem;">→</div>
+<div style="display: flex; flex-direction: column; gap: 0.2rem; font-family: monospace; font-size: 0.85rem;">
+<div style="background: rgba(0,0,0,0.2); padding: 2px 6px; border-radius: 4px;">label</div>
+<div style="background: rgba(0,0,0,0.2); padding: 2px 6px; border-radius: 4px;">textField</div>
+<div style="background: rgba(0,0,0,0.2); padding: 2px 6px; border-radius: 4px;">progress</div>
+</div>
+</div>
+<div style="font-size: 1.05rem; line-height: 1.5;">La valeur vit <strong>une fois</strong>. Chaque consommateur s'y <em>abonne</em> - synchronisation garantie.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 1rem 1.3rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.35rem; font-weight: bold;">
+💡 Un binding remplace un EventHandler + un setText()
+</div>
+
+---
+
+## 🏗️ De la Palette impérative à la PaletteReactive
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<style scoped>
+pre { font-size: 0.78rem; }
+</style>
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Vous avez vécu les deux versions : la <strong>Palette</strong> du TP1 et la <strong>PaletteReactive</strong> du TP2.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3.6rem 0;">
+
+<div style="background: #fdecea; padding: 1rem; border-radius: 10px; border-left: 5px solid #c0392b;">
+<div style="font-weight: bold; color: #c0392b; margin-bottom: 0.4rem; font-size: 1.15rem;">TP1 - impératif</div>
+
+```java
+int[] nbClics = {0, 0, 0};
+
+rouge.setOnAction(e -> {
+    nbClics[0]++;
+    labelRouge.setText("R: " + nbClics[0]);
+    total.setText("Total: " + somme());
+});
+```
+
+</div>
+
+<div style="background: #eaf7ee; padding: 1rem; border-radius: 10px; border-left: 5px solid #27ae60;">
+<div style="font-weight: bold; color: #1e7e34; margin-bottom: 0.4rem; font-size: 1.15rem;">TP2 - déclaratif</div>
+
+```java
+BoutonCouleur rouge = new BoutonCouleur("R");
+
+labelRouge.textProperty().bind(
+    Bindings.concat("R: ", rouge.nbClicsProperty()));
+total.textProperty().bind(
+    Bindings.concat("Total: ", totalBinding));
+```
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; line-height: 1.55;">
+🎯 Ce principe fonde le pattern <strong>MVVM</strong> (Model-View-ViewModel) que l'on étudiera en <strong>CM3</strong>. Les propriétés du modèle sont les seules sources de vérité ; la vue n'en est qu'un reflet.
 </div>
 
 ---
