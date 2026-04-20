@@ -2165,13 +2165,48 @@ okBtn.disableProperty().bind(formulaireValide.not());
 
 ---
 
+<!-- _transition: fade -->
+
 ## Low-level binding : BooleanBinding avec computeValue()
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 <style scoped>
-pre { font-size: 0.76rem; }
+pre { font-size: 0.75rem; }
+h2 { view-transition-name: titre-low-level; }
+.intro-low { view-transition-name: intro-low-level; }
+.hidden { visibility: hidden; }
 </style>
 
-Quand l'API fluente ne suffit pas, on crée un binding personnalisé :
+<p class="intro-low" style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quand la logique dépasse ce que l'API fluente peut exprimer (parcours de <code>String</code>, regex, appel externe), on descend au <strong>bas niveau</strong> avec une classe anonyme.</p>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin: 7rem 0;">
+<div style="background: #c0392b; color: white; padding: 1.2rem 1.8rem; border-radius: 12px; font-size: 1.3rem; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15);"><strong>❌ API fluente</strong><br/><span style="font-size: 1rem; opacity: 0.9;">parfois trop limitée</span></div>
+<div style="font-size: 2.5rem; color: #2c3e50; font-weight: bold;">→</div>
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.8rem; border-radius: 12px; font-size: 1.3rem; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15);"><strong>✅ BooleanBinding manuel</strong><br/><span style="font-size: 1rem; opacity: 0.9;">computeValue() custom</span></div>
+</div>
+
+<div class="hidden" style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.15rem; line-height: 1.55;">
+💡 <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">computeValue()</code> est appelé <strong>automatiquement</strong> dès que <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">pwd.textProperty()</code> change, grâce à <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">super.bind(...)</code> qui enregistre la dépendance. Oubliez ce <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">super.bind</code>, et le binding ne se met jamais à jour.
+</div>
+
+---
+
+<!-- _transition: fade -->
+
+## Low-level binding : BooleanBinding avec computeValue()
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<style scoped>
+pre { font-size: 0.75rem; }
+h2 { view-transition-name: titre-low-level; }
+.intro-low { view-transition-name: intro-low-level; }
+</style>
+
+<p class="intro-low" style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quand la logique dépasse ce que l'API fluente peut exprimer (parcours de <code>String</code>, regex, appel externe), on descend au <strong>bas niveau</strong> avec une classe anonyme.</p>
 
 ```java
 BooleanBinding motDePasseInvalide = new BooleanBinding() {
@@ -2182,15 +2217,16 @@ BooleanBinding motDePasseInvalide = new BooleanBinding() {
     @Override
     protected boolean computeValue() {
         String text = pwd.getText();
-        return text.length() < 8
-            || text.chars().noneMatch(Character::isUpperCase)
+        return text.length() < 8 || text.chars().noneMatch(Character::isUpperCase)
             || text.chars().noneMatch(Character::isDigit);
     }
 };
 okBtn.disableProperty().bind(motDePasseInvalide);
 ```
 
-`computeValue()` est appelé automatiquement quand `pwd.textProperty()` change.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.15rem; line-height: 1.55;">
+💡 <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">computeValue()</code> est appelé <strong>automatiquement</strong> dès que <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">pwd.textProperty()</code> change, grâce à <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">super.bind(...)</code> qui enregistre la dépendance. Oubliez ce <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">super.bind</code>, et le binding ne se met jamais à jour.
+</div>
 
 ---
 
