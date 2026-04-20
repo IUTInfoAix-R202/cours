@@ -2,6 +2,7 @@
 marp: true
 theme: default
 paginate: true
+math: katex
 header: "R2.02 - Développement d'applications avec IHM"
 footer: "IUT Aix-Marseille - BUT Informatique 1A"
 ---
@@ -1888,8 +1889,6 @@ label.textProperty().bind(sommeCarres.asString("a²+b² = %.0f"));
 
 ---
 
-<!-- _transition: fade -->
-
 ## API fluente : multiply, add, subtract, divide
 
 <!-- _header: "" -->
@@ -1927,13 +1926,66 @@ label.textProperty().bind(sommeCarres.asString("a²+b² = %.0f"));
 
 ---
 
-## Exemple : formule de l'aire d'un triangle (TP2, ex. 4)
+<!-- _transition: fade -->
+
+## Exemple : formule de l'aire d'un triangle
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 <style scoped>
-pre { font-size: 0.76rem; }
+h2 { view-transition-name: titre-aire-triangle; }
+.intro-aire { view-transition-name: intro-aire-triangle; }
+.formule-aire { view-transition-name: formule-aire-triangle; }
+.bandeau-aire { view-transition-name: bandeau-aire-triangle; }
 </style>
 
-Dans `AireTriangle.java`, l'aire est calculée par binding - jamais manuellement :
+<p class="intro-aire" style="font-size: 1.5rem; margin: 0.3rem 0 0.4rem 0;">Dans <code>AireTriangle.java</code>, l'aire se recalcule automatiquement à partir des 6 coordonnées - aucun <code>setArea()</code> manuel.</p>
+
+<div class="formule-aire" style="background: #f4f6f8; border-left: 5px solid #2980b9; padding: 0.3rem 0 0.1rem 0; border-radius: 6px; margin: 0.5rem 0; text-align: center; font-size: 0.75em;">
+
+$$\text{aire} = \frac{1}{2} \; \bigl|\, x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2) \,\bigr|$$
+
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 0.6rem; margin: 7.7rem 0;">
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.3rem; border-radius: 10px; font-family: monospace; font-size: 1.2rem; font-weight: bold;">x1, y1, x2, y2, x3, y3</div>
+<div style="flex: 1; height: 12px; background: #2c3e50; position: relative; margin: 0 14px;">
+<span style="position: absolute; right: -14px; top: 50%; transform: translateY(-50%); border: 14px solid transparent; border-left-color: #2c3e50; border-right: 0;"></span>
+</div>
+<div style="background: #6c3483; color: white; padding: 0.9rem 1.3rem; border-radius: 10px; font-family: monospace; font-size: 1.2rem; font-weight: bold;">determinant</div>
+<div style="flex: 1; height: 12px; background: #2c3e50; position: relative; margin: 0 14px;">
+<span style="position: absolute; right: -14px; top: 50%; transform: translateY(-50%); border: 14px solid transparent; border-left-color: #2c3e50; border-right: 0;"></span>
+</div>
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.3rem; border-radius: 10px; font-family: monospace; font-size: 1.2rem; font-weight: bold;">area</div>
+</div>
+
+<div class="bandeau-aire" style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.3rem; line-height: 1.55;">
+💡 <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">x1.set(5)</code> propage automatiquement : <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">determinant</code> se recalcule, puis <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">area</code>. Un <strong>graphe de dépendances</strong> implicite remplace tous les <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">setArea()</code> manuels.
+</div>
+
+---
+
+## Exemple : formule de l'aire d'un triangle
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<style scoped>
+pre { font-size: 0.82rem; }
+h2 { view-transition-name: titre-aire-triangle; }
+.intro-aire { view-transition-name: intro-aire-triangle; }
+.formule-aire { view-transition-name: formule-aire-triangle; }
+.bandeau-aire { view-transition-name: bandeau-aire-triangle; }
+</style>
+
+<p class="intro-aire" style="font-size: 1.5rem; margin: 0.3rem 0 0.4rem 0;">Dans <code>AireTriangle.java</code>, l'aire se recalcule automatiquement à partir des 6 coordonnées - aucun <code>setArea()</code> manuel.</p>
+
+<div class="formule-aire" style="background: #f4f6f8; border-left: 5px solid #2980b9; padding: 0.3rem 0 0.1rem 0; border-radius: 6px; margin: 0.5rem 0; text-align: center; font-size: 0.75em;">
+
+$$\text{aire} = \frac{1}{2} \; \bigl|\, x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2) \,\bigr|$$
+
+</div>
 
 ```java
 NumberBinding determinant =
@@ -1947,7 +1999,9 @@ area.bind(
         .otherwise(determinant.negate().divide(2.0)));
 ```
 
-Changer `x1.set(5)` recalcule `determinant` et `area` automatiquement. Aucun appel manuel à `setArea()`.
+<div class="bandeau-aire" style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.3rem; line-height: 1.55;">
+💡 <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">x1.set(5)</code> propage automatiquement : <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">determinant</code> se recalcule, puis <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">area</code>. Un <strong>graphe de dépendances</strong> implicite remplace tous les <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">setArea()</code> manuels.
+</div>
 
 ---
 
