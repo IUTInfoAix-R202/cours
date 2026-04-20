@@ -2640,26 +2640,35 @@ pwd.editableProperty().bind(
 
 ## Les 3 piliers revisités
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
-<div style="background: #e8a838; color: white; padding: 1.5rem 1.2rem; border-radius: 10px; text-align: center;">
-<div style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</div>
-<div style="font-weight: bold; font-size: 1.1rem;">Événements</div>
-<div style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.9;">Propagation capture/bulles. EventFilter vs EventHandler. consume().</div>
-</div>
-<div style="background: #4a90d9; color: white; padding: 1.5rem 1.2rem; border-radius: 10px; text-align: center;">
-<div style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</div>
-<div style="font-weight: bold; font-size: 1.1rem;">Propriétés</div>
-<div style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.9;">Le triplet JavaBeans+JavaFX. InvalidationListener vs ChangeListener. Pattern Observer concret.</div>
-</div>
-<div style="background: #27ae60; color: white; padding: 1.5rem 1.2rem; border-radius: 10px; text-align: center;">
-<div style="font-size: 2rem; margin-bottom: 0.5rem;">🏗️</div>
-<div style="font-weight: bold; font-size: 1.1rem;">Bindings</div>
-<div style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.9;">bind(), bindBidirectional(), API fluente, Bindings.when(), BooleanBinding personnalisé.</div>
-</div>
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Le CM2 a enrichi les trois piliers du module avec des outils concrets, utilisables dès le TP2.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin: 3.8rem 0;">
+
+<div style="background: #e8a838; color: white; padding: 1.4rem 1.2rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 2.5rem; margin-bottom: 0.4rem;">⚡</div>
+<div style="font-weight: bold; font-size: 1.4rem; margin-bottom: 0.5rem;">Événements</div>
+<div style="font-size: 1.3rem; line-height: 1.5; opacity: 0.95;">Propagation capture/bubbling, <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">EventFilter</code> vs <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">EventHandler</code>, <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">consume()</code>, hiérarchie des types.</div>
 </div>
 
-<div style="background: #f0f4f8; padding: 1rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center;">
-🧠 <b>Ergonomie</b> : affordance = états de l'interface pilotés par les données via bindings.
+<div style="background: #1a5276; color: white; padding: 1.4rem 1.2rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 2.5rem; margin-bottom: 0.4rem;">🏗️</div>
+<div style="font-weight: bold; font-size: 1.4rem; margin-bottom: 0.5rem;">Architecture</div>
+<div style="font-size: 1.3rem; line-height: 1.5; opacity: 0.95;">Propriétés observables, <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">bind()</code> / <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">bindBidirectional()</code>, API fluente, source unique de vérité.</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1.4rem 1.2rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 2.5rem; margin-bottom: 0.4rem;">🧠</div>
+<div style="font-weight: bold; font-size: 1.4rem; margin-bottom: 0.5rem;">Ergonomie</div>
+<div style="font-size: 1.3rem; line-height: 1.5; opacity: 0.95;">Feedback Nielsen, affordance de Don Norman, interface auto-explicative via <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">disableProperty</code>.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem; line-height: 1.55; text-align: center;">
+💡 Les trois piliers se rejoignent : un <strong>binding</strong> est à la fois un outil d'<strong>architecture</strong> (source unique), un <strong>événement déclaratif</strong> et un mécanisme d'<strong>ergonomie</strong> (affordance automatique).
 </div>
 
 ---
