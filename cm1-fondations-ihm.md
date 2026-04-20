@@ -629,7 +629,7 @@ table { font-size: 0.87rem; }
 | 1998 | **Swing** | Composants "légers" (dessinés par Java). Look & Feel pluggable. |
 | 2014 | **JavaFX 8** | Scene graph, CSS, FXML, animations, bindings. Intégré au JDK. |
 | 2018 | **OpenJFX 11+** | Séparé du JDK, projet open source indépendant. |
-| 2025 | **JavaFX 25** | ⭐ **Version actuelle**, alignée sur Java 25. |
+| 2025 | **JavaFX 25** | ⭐ **Version utilisée dans le module**, alignée sur Java 25. |
 
 <div style="background: #4a90d9; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
 🚀 <b>Pourquoi JavaFX ?</b> Séparation vue/logique (FXML) + binding réactif (propriétés) + styling (CSS)
