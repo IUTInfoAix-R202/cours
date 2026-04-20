@@ -2703,20 +2703,38 @@ section table code { font-size: 0.72rem !important; padding: 1px 4px !important;
 
 ## Teaser CM3 - Architecture des IHM et FXML
 
-Dans le CM3, vous apprendrez à **séparer** la vue du comportement :
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
-<div style="background: #f0f4f8; padding: 1.2rem; border-radius: 10px; border-top: 4px solid #e74c3c;">
-<div style="font-weight: bold; margin-bottom: 0.5rem;">Aujourd'hui (CM2)</div>
-<div style="font-size: 0.9rem;">La vue est construite en Java. Layout et comportement dans le même fichier.</div>
-</div>
-<div style="background: #f0fff4; padding: 1.2rem; border-radius: 10px; border-top: 4px solid #27ae60;">
-<div style="font-weight: bold; margin-bottom: 0.5rem;">CM3 : FXML + MVC</div>
-<div style="font-size: 0.9rem;">La vue est décrite en XML (FXML). Le contrôleur gère le comportement. SceneBuilder permet de dessiner la vue visuellement.</div>
-</div>
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Dans le <strong>CM3</strong>, vous apprendrez à <strong>séparer</strong> la vue du comportement : un bond architectural majeur.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.6rem;">
+
+<div style="background: #c0392b; color: white; padding: 1.2rem 1.3rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">📍 Aujourd'hui (CM2)</div>
+<div style="font-size: 1.2rem; line-height: 1.45; margin-bottom: 0.7rem;">Layout, styles et comportement cohabitent <strong>en Java</strong> dans le même fichier. Difficile à maintenir et à faire évoluer.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.55rem 0.75rem; border-radius: 6px; font-family: monospace; font-size: 0.92rem; line-height: 1.5;">VBox root = new VBox();<br/>Button btn = new Button("OK");<br/>btn.setOnAction(e -> valider());<br/>root.getChildren().add(btn);</div>
 </div>
 
-Les propriétés et bindings que vous apprenez aujourd'hui seront **la colle** entre la vue FXML et le modèle.
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.3rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">🎯 CM3 : FXML + MVC</div>
+<div style="font-size: 1.2rem; line-height: 1.45; margin-bottom: 0.7rem;">La vue en <strong>XML</strong>, un <strong>contrôleur</strong> Java pour le comportement, <strong>SceneBuilder</strong> pour dessiner.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.55rem 0.75rem; border-radius: 6px; font-family: monospace; font-size: 0.92rem; line-height: 1.5;">&lt;VBox&gt;<br/>&nbsp;&nbsp;&lt;Button text="OK"<br/>&nbsp;&nbsp;&nbsp;&nbsp;onAction="#valider"/&gt;<br/>&lt;/VBox&gt;</div>
+</div>
+
+</div>
+
+<div style="display: flex; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.9rem;">
+<div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">🏗️ MVC</div>
+<div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">📄 FXML</div>
+<div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">🎨 SceneBuilder</div>
+<div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">🔖 @FXML</div>
+<div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">🧪 Testabilité</div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.25rem; line-height: 1.55; text-align: center;">
+💡 Les <strong>propriétés</strong> et <strong>bindings</strong> appris aujourd'hui deviendront <strong>la colle</strong> entre la vue FXML et le modèle.
+</div>
 
 ---
 
