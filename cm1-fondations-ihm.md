@@ -1387,37 +1387,37 @@ L'utilisateur peut cliquer **n'importe où**, **à n'importe quel moment**. Le p
 
 ## ⚡ Le pattern Observer
 
-Le modèle événementiel repose sur une idée simple : **"quand quelque chose se passe, préviens-moi"**.
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Le modèle événementiel repose sur une idée simple : <strong>« quand quelque chose se passe, préviens-moi »</strong>.</p>
 
-<div style="display: flex; gap: 1rem; margin-top: 1rem; align-items: center;">
+<div style="display: flex; gap: 1rem; margin: 3rem 0; align-items: center;">
 <div style="background: #e74c3c; color: white; padding: 1.2rem; border-radius: 12px; text-align: center; flex: 1;">
-<div style="font-size: 2.5rem;">🔘</div>
+<div style="font-size: 2rem;">🔘</div>
 <div style="font-weight: bold; font-size: 1.2rem; margin-top: 0.3rem;">Button</div>
-<div style="opacity: 0.9; font-size: 0.85rem;">l'observable</div>
-<div style="opacity: 0.9; font-size: 0.85rem;">sait qu'on l'a cliqué</div>
+<div style="opacity: 0.9; font-size: 1.2rem;">l'observable</div>
+<div style="opacity: 0.9; font-size: 1.2rem;">sait qu'on l'a cliqué</div>
 </div>
 <div style="font-size: 2.5rem; color: #ccc;">→</div>
-<div style="background: #2c3e50; color: white; padding: 1.2rem; border-radius: 12px; text-align: center; flex: 1;">
-<div style="font-size: 2.5rem;">📢</div>
+<div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px; text-align: center; flex: 1;">
+<div style="font-size: 2rem;">📢</div>
 <div style="font-weight: bold; font-size: 1.2rem; margin-top: 0.3rem;">notifie</div>
-<div style="opacity: 0.9; font-size: 0.85rem;">envoie un</div>
-<div style="opacity: 0.9; font-size: 0.85rem;">ActionEvent</div>
+<div style="opacity: 0.9; font-size: 1.2rem;">envoie un</div>
+<div style="opacity: 0.9; font-size: 1.2rem;">ActionEvent</div>
 </div>
 <div style="font-size: 2.5rem; color: #ccc;">→</div>
 <div style="background: #4a90d9; color: white; padding: 1.2rem; border-radius: 12px; text-align: center; flex: 1;">
-<div style="font-size: 2.5rem;">⚙️</div>
+<div style="font-size: 2rem;">⚙️</div>
 <div style="font-weight: bold; font-size: 1.2rem; margin-top: 0.3rem;">EventHandler</div>
-<div style="opacity: 0.9; font-size: 0.85rem;">l'observateur</div>
-<div style="opacity: 0.9; font-size: 0.85rem;">sait quoi faire</div>
+<div style="opacity: 0.9; font-size: 1.2rem;">l'observateur</div>
+<div style="opacity: 0.9; font-size: 1.2rem;">sait quoi faire</div>
 </div>
 </div>
 
-<div style="display: flex; gap: 1.5rem; margin-top: 1.5rem; font-size: 1.7rem;">
-<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #e74c3c;">
-Le bouton <b>ne sait pas</b> ce que fera le handler. Il se contente de le prévenir.
+<div style="display: flex; gap: 1.2rem; margin-top: 1.2rem;">
+<div style="flex: 1; background: #7b2d26; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; border-left: 5px solid #e74c3c; font-size: 1.5rem; line-height: 1.5;">
+🔘 Le bouton <strong>ne sait pas</strong> ce que fera le handler. Il se contente de le prévenir.
 </div>
-<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #4a90d9;">
-Le handler <b>ne sait pas</b> d'où vient l'événement. Il sait juste quoi faire.
+<div style="flex: 1; background: #1a5276; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; border-left: 5px solid #4a90d9; font-size: 1.5rem; line-height: 1.5;">
+⚙️ Le handler <strong>ne sait pas</strong> d'où vient l'événement. Il sait juste quoi faire.
 </div>
 </div>
 
