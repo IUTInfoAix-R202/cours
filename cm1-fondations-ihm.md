@@ -987,6 +987,10 @@ Pane <|-- GridPane
 @enduml
 ```
 
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; line-height: 1.5; text-align: center;">
+💡 À retenir : <b>tout est un Node</b>, certains Nodes sont des <b>Parent</b> (ils contiennent d'autres nœuds), et les <b>layouts</b> (<code>VBox</code>, <code>HBox</code>, <code>BorderPane</code>, <code>GridPane</code>) organisent leurs enfants.
+</div>
+
 ---
 
 ## 🏗️ BorderPane - zones distinctes
