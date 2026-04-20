@@ -1344,7 +1344,7 @@ L'utilisateur peut cliquer **n'importe où**, **à n'importe quel moment**. Le p
 🔘 Le bouton <strong>ne sait pas</strong> ce que fera le handler. Il se contente de le prévenir.
 </div>
 <div style="flex: 1; background: #1a5276; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; border-left: 5px solid #4a90d9; font-size: 1.5rem; line-height: 1.5;">
-⚙️ Le handler <strong>ne sait pas</strong> d'où vient l'événement. Il sait juste quoi faire.
+⚙️ Le handler <strong>n'a pas besoin de dépendre</strong> directement du bouton. Il sait juste quoi faire.
 </div>
 </div>
 
