@@ -1993,7 +1993,7 @@ btn.setOnAction((ActionEvent e) -> {
 ## La propagation - phase de capture (1/2)
 
 <p style="font-size: 1.6rem;">
-Quand vous cliquez sur un bouton, l'événement <b>ne naît pas dans le bouton</b>. Il commence à la racine de la scène et descend jusqu'à la cible.
+Quand vous cliquez sur un bouton, <b>le traitement ne commence pas par le handler du bouton</b> : JavaFX construit d'abord un chemin de propagation depuis la racine de la scène jusqu'à la cible.
 </p>
 <svg viewBox="0 0 1200 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; display:block; margin:0.3rem auto;">
   <defs>
