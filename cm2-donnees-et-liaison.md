@@ -2543,7 +2543,7 @@ section table code { font-size: 0.72rem !important; padding: 1px 4px !important;
 |---|---|---|
 | 1 | `ProprieteSimple` | InvalidationListener, ChangeListener |
 | 2 | `LiaisonProprietes` | bind(), unbind(), isBound() |
-| 3 | `BoutonCouleur` + `PaletteReactive` | Triplet JavaBeans, Bindings.concat() |
+| 3 | `BoutonCouleur` + `PaletteReactive` | Propriété observable en lecture seule, Bindings.concat() |
 | 4 | `AireTriangle` | API fluente, Bindings.when() |
 | 5 | `CalculatriceTriangle` | Binding modèle ↔ vue (Slider → Property) |
 | 6 | `FormulaireConnexion` | BooleanBinding, disableProperty, affordance |
