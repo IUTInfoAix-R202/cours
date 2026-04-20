@@ -1782,10 +1782,10 @@ System.out.println(cercle.getRadius()); // 80 - le cercle a suivi
 <!-- _footer: "" -->
 
 <style scoped>
-pre { font-size: 0.82rem; }
+pre { font-size: 0.75rem; }
 </style>
 
-<p style="font-size: 1.25rem; margin: 0.3rem 0 0.8rem 0;">Problème : <code>TextField.textProperty()</code> est une <code>StringProperty</code>, mais <code>Slider.valueProperty()</code> est une <code>DoubleProperty</code>. Un <strong>converter</strong> fait le pont.</p>
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Problème : <code>TextField.textProperty()</code> est une <code>StringProperty</code>, mais <code>Slider.valueProperty()</code> est une <code>DoubleProperty</code>. Un <strong>convertisseur</strong> fait le pont.</p>
 
 ```java
 // Ne compile pas : types incompatibles
@@ -1799,21 +1799,21 @@ Bindings.bindBidirectional(
 ```
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 0.6rem; margin: 1rem 0;">
-<div style="background: #c0392b; color: white; padding: 1.1rem 1.4rem; border-radius: 12px; font-size: 1.3rem; font-weight: bold; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">⭕ Cercle<br/><span style="font-size: 0.95rem; font-weight: normal; opacity: 0.9;">radiusProperty</span></div>
-<svg width="110" height="56" viewBox="0 0 110 56">
-<path d="M 0 28 L 18 12 L 18 22 L 92 22 L 92 12 L 110 28 L 92 44 L 92 34 L 18 34 L 18 44 Z"
-fill="#2c3e50"/>
-</svg>
-<div style="background: #c0392b; color: white; padding: 1.1rem 1.4rem; border-radius: 12px; font-size: 1.3rem; font-weight: bold; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">🎚️ Slider<br/><span style="font-size: 0.95rem; font-weight: normal; opacity: 0.9;">valueProperty</span></div>
-<svg width="110" height="56" viewBox="0 0 110 56">
-<path d="M 0 28 L 18 12 L 18 22 L 92 22 L 92 12 L 110 28 L 92 44 L 92 34 L 18 34 L 18 44 Z"
-fill="#2c3e50"/>
-</svg>
-<div style="background: #27ae60; color: white; padding: 1.1rem 1.4rem; border-radius: 12px; font-size: 1.3rem; font-weight: bold; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">📝 TextField<br/><span style="font-size: 0.95rem; font-weight: normal; opacity: 0.9;">textProperty</span></div>
+<div style="background: #c0392b; color: white; padding: 1.4rem 2.6rem; border-radius: 14px; font-size: 1.55rem; font-weight: bold; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">⭕ Cercle<br/><span style="font-size: 1.1rem; font-weight: normal; opacity: 0.9;">radiusProperty</span></div>
+<div style="flex: 1; height: 12px; background: #2c3e50; position: relative; margin: 0 14px;">
+<span style="position: absolute; left: -14px; top: 50%; transform: translateY(-50%); border: 14px solid transparent; border-right-color: #2c3e50; border-left: 0;"></span>
+<span style="position: absolute; right: -14px; top: 50%; transform: translateY(-50%); border: 14px solid transparent; border-left-color: #2c3e50; border-right: 0;"></span>
+</div>
+<div style="background: #c0392b; color: white; padding: 1.4rem 2.6rem; border-radius: 14px; font-size: 1.55rem; font-weight: bold; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">🎚️ Slider<br/><span style="font-size: 1.1rem; font-weight: normal; opacity: 0.9;">valueProperty</span></div>
+<div style="flex: 1; height: 12px; background: #2c3e50; position: relative; margin: 0 14px;">
+<span style="position: absolute; left: -14px; top: 50%; transform: translateY(-50%); border: 14px solid transparent; border-right-color: #2c3e50; border-left: 0;"></span>
+<span style="position: absolute; right: -14px; top: 50%; transform: translateY(-50%); border: 14px solid transparent; border-left-color: #2c3e50; border-right: 0;"></span>
+</div>
+<div style="background: #27ae60; color: white; padding: 1.4rem 2.6rem; border-radius: 14px; font-size: 1.55rem; font-weight: bold; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">📝 TextField<br/><span style="font-size: 1.1rem; font-weight: normal; opacity: 0.9;">textProperty</span></div>
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.05rem; line-height: 1.55;">
-💡 Dans <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">CercleInteractif</code> (<strong>TP2, ex. 7</strong>), les trois contrôles restent synchronisés : modifier l'un propage automatiquement aux deux autres. D'autres convertisseurs existent : <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">IntegerStringConverter</code>, <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">LocalDateStringConverter</code>...
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; line-height: 1.55;">
+💡 D'autres convertisseurs existent : <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">IntegerStringConverter</code>, <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">LocalDateStringConverter</code>...
 </div>
 
 ---
