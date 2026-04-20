@@ -23,7 +23,7 @@ section {
 
 ---
 
-## Le module R2.02 en un coup d'oeil
+## Le module R2.02 en un coup d'œil
 
 <style scoped>
 blockquote { font-size: 0.92rem; }
@@ -347,7 +347,7 @@ p { font-size: 0.88rem; }
 | **1970** | ⌨️ **CLI** - Ligne de commande | Efficace mais exigeant. L'utilisateur s'adapte à la machine. |
 | **1984** | 🖱️ **GUI** - Interfaces graphiques | Macintosh, Windows, X11. La machine s'adapte à l'utilisateur. |
 | **2007** | 📱 **Tactile** - Smartphones | iPhone, gestes multi-touch. L'interaction devient physique. |
-| **2023** | 🤖 **Spatial / IA** | Vision Pro, assistants vocaux. L'interface disparaît. |
+| **2023** | 🤖 **Spatial / IA** | Vision Pro, assistants vocaux. L'interface devient plus contextuelle et immersive. |
 
 Chaque transition a été motivée par une meilleure compréhension des **besoins humains**, pas par la technologie seule.
 
@@ -689,7 +689,7 @@ table { font-size: 0.85rem; }
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
-🌳 Un noeud ne peut avoir <b>qu'un seul parent</b>. Le graphe de scène est toujours un <b>arbre</b>, jamais un graphe cyclique.
+🌳 Un nœud ne peut avoir <b>qu'un seul parent</b>. Le graphe de scène est toujours un <b>arbre</b>, jamais un graphe cyclique.
 </div>
 
 ---
