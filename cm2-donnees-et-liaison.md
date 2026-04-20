@@ -2573,12 +2573,59 @@ pwd.editableProperty().bind(
 
 ## L'affordance rend l'interface auto-explicative
 
-<div style="background: #2c3e50; color: white; padding: 1.8rem 2rem; border-radius: 12px; text-align: center; font-size: 1.2rem; margin-top: 2rem;">
-Un bouton grisé dit "pas encore" sans popup d'erreur.<br/><br/>
-Un champ non éditable dit "remplissez d'abord le champ précédent".<br/><br/>
-<span style="font-size: 1.4rem; font-weight: bold;">L'affordance, c'est de l'ergonomie encodée dans le code.</span>
-<br/><br/>
-<span style="font-size: 0.95rem; opacity: 0.8;">Vous pratiquerez cela dans l'exercice 6 du TP2.</span>
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Le même formulaire de connexion, deux expériences radicalement différentes.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.6rem;">
+
+<div style="background: #fdecea; border: 2px solid #c0392b; border-radius: 12px; padding: 1.2rem;">
+<div style="font-size: 1.3rem; font-weight: bold; color: #c0392b; margin-bottom: 0.7rem; text-align: center;">❌ Sans affordance</div>
+
+<div style="background: white; border-radius: 8px; padding: 1rem; box-shadow: inset 0 0 0 1px #ddd;">
+<div style="margin-bottom: 0.6rem;">
+<div style="font-size: 0.85rem; color: #555;">Identifiant</div>
+<div style="background: white; border: 1px solid #999; border-radius: 4px; padding: 0.4rem 0.6rem; font-family: monospace; font-size: 0.95rem; height: 1.4rem;">&nbsp;</div>
+</div>
+<div style="margin-bottom: 0.6rem;">
+<div style="font-size: 0.85rem; color: #555;">Mot de passe</div>
+<div style="background: white; border: 1px solid #999; border-radius: 4px; padding: 0.4rem 0.6rem; font-family: monospace; font-size: 0.95rem; height: 1.4rem;">&nbsp;</div>
+</div>
+<div style="text-align: right; margin-top: 0.7rem;">
+<span style="background: #3498db; color: white; padding: 0.45rem 1rem; border-radius: 5px; font-size: 0.9rem; font-weight: bold;">OK</span>
+</div>
+<div style="background: #e74c3c; color: white; border-radius: 6px; padding: 0.5rem 0.8rem; margin-top: 0.8rem; font-size: 0.85rem; text-align: center;">⚠ « Mot de passe trop court ! »</div>
+</div>
+
+<div style="margin-top: 0.7rem; font-size: 0.95rem; color: #7e2a24; line-height: 1.4;">Tout paraît autorisé, on apprend les contraintes après coup par des <strong>messages d'erreur</strong>.</div>
+</div>
+
+<div style="background: #eaf7ee; border: 2px solid #27ae60; border-radius: 12px; padding: 1.2rem;">
+<div style="font-size: 1.3rem; font-weight: bold; color: #1e7e34; margin-bottom: 0.7rem; text-align: center;">✅ Avec affordance</div>
+
+<div style="background: white; border-radius: 8px; padding: 1rem; box-shadow: inset 0 0 0 1px #ddd;">
+<div style="margin-bottom: 0.6rem;">
+<div style="font-size: 0.85rem; color: #555;">Identifiant</div>
+<div style="background: white; border: 1px solid #27ae60; border-radius: 4px; padding: 0.4rem 0.6rem; font-family: monospace; font-size: 0.95rem;">dupont</div>
+</div>
+<div style="margin-bottom: 0.6rem;">
+<div style="font-size: 0.85rem; color: #aaa;">Mot de passe</div>
+<div style="background: #f0f0f0; border: 1px solid #ccc; border-radius: 4px; padding: 0.4rem 0.6rem; font-family: monospace; font-size: 0.95rem; color: #bbb; height: 1.4rem;">🔒 verrouillé</div>
+</div>
+<div style="text-align: right; margin-top: 0.7rem;">
+<span style="background: #d5d5d5; color: #888; padding: 0.45rem 1rem; border-radius: 5px; font-size: 0.9rem; font-weight: bold;">OK</span>
+</div>
+<div style="color: #888; font-size: 0.8rem; margin-top: 0.8rem; text-align: center; font-style: italic;">(aucune popup d'erreur)</div>
+</div>
+
+<div style="margin-top: 0.7rem; font-size: 0.95rem; color: #1e4d2e; line-height: 1.4;">L'interface montre d'elle-même ce qui est <strong>possible maintenant</strong> et ce qui <strong>ne l'est pas encore</strong>.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; line-height: 1.5; text-align: center;">
+💡 <strong>L'affordance, c'est de l'ergonomie encodée dans le code</strong> - à pratiquer dans le TP2.
 </div>
 
 ---
