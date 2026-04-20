@@ -237,6 +237,9 @@ labelCompteurs.textProperty().bind(texte);
 
 ## La puissance des bindings - démonstration
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 Sans écrire un seul EventHandler, on peut synchroniser :
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem;">
@@ -676,6 +679,9 @@ Grâce à `nbClicsProperty()`, tout composant peut observer ou se lier au compte
 ---
 
 ## SimpleXxxProperty - l'implémentation concrète
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.82rem; }
@@ -2359,6 +2365,9 @@ bouton.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
 ---
 
 ## Hiérarchie des types d'événement
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 ```plantuml
 @startuml
