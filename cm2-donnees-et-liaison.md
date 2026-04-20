@@ -601,23 +601,26 @@ label.textProperty().bind(<br/>
 pre { font-size: 0.78rem; }
 </style>
 
-`BoutonCouleur` respecte exactement le triplet pour son compteur de clics :
+`BoutonCouleur` expose son compteur de clics en **lecture seule** : le seul moyen de l'incrémenter est de cliquer sur le bouton (pas de `setNbClics()` public).
 
 ```java
 public class BoutonCouleur extends Button {
     private final IntegerProperty nbClics = new SimpleIntegerProperty(0);
+    private final String couleur;
 
     public BoutonCouleur(String texte, String couleur) {
         super(texte);
+        this.couleur = couleur;
         setOnAction(e -> nbClics.set(nbClics.get() + 1));
     }
 
-    public int getNbClics()           { return nbClics.get(); }
-    public IntegerProperty nbClicsProperty() { return nbClics; }
+    public int getNbClics()                   { return nbClics.get(); }
+    public IntegerProperty nbClicsProperty()  { return nbClics; }
+    public String getCouleur()                { return couleur; }
 }
 ```
 
-Grâce à `nbClicsProperty()`, n'importe quel autre composant peut observer ou se lier au compteur.
+Grâce à `nbClicsProperty()`, tout composant peut observer ou se lier au compteur - sans jamais pouvoir l'incrémenter directement.
 
 ---
 
@@ -742,6 +745,8 @@ L'<code>InvalidationListener</code> est déclenché quand la propriété passe d
 </p>
 
 ```java
+IntegerProperty anIntProperty = new SimpleIntegerProperty(1024);
+
 anIntProperty.addListener(observable ->
     System.out.println("The observable has been invalidated."));
 
@@ -784,6 +789,8 @@ Le <code>ChangeListener</code> reçoit <b>l'ancienne et la nouvelle valeur</b> �
 </p>
 
 ```java
+IntegerProperty anIntProperty = new SimpleIntegerProperty(1024);
+
 anIntProperty.addListener((observable, oldValue, newValue) ->
     System.out.println(
         "Changed: oldValue=" + oldValue + ", newValue=" + newValue));
@@ -916,7 +923,7 @@ private void incrementerScore() {
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 1rem 1.3rem; border-radius: 10px; margin-top: 1.1rem; font-size: 1.6rem; line-height: 1.5;">
-👉 Une propriété est un <strong>Observer spécialisé pour les valeurs</strong> : là où le pattern général notifie <em>« quelque chose a changé »</em>, la propriété notifie <em>« la valeur est passée de X à Y »</em>.
+👉 Une propriété est un <strong>sujet observable spécialisé pour les valeurs</strong> (c'est le <code>ChangeListener</code> qui joue le rôle d'observer) : là où le pattern général notifie <em>« quelque chose a changé »</em>, la propriété notifie <em>« la valeur est passée de X à Y »</em>.
 </div>
 
 ---
@@ -1809,7 +1816,7 @@ rouge.setOnAction(e -> {
 <div style="font-weight: bold; color: #1e7e34; margin-bottom: 0.4rem; font-size: 1.15rem;">TP2 - déclaratif</div>
 
 ```java
-BoutonCouleur rouge = new BoutonCouleur("R");
+BoutonCouleur rouge = new BoutonCouleur("R", "red");
 
 labelRouge.textProperty().bind(
     Bindings.concat("R: ", rouge.nbClicsProperty()));
@@ -2230,7 +2237,7 @@ Après la phase de capture, l'événement <b>remonte</b> de la cible vers la rac
 </svg>
 
 <div style="background: #1e8449; color: white; padding: 0.6rem 1.5rem; border-radius: 10px; margin-top: 2rem; font-size: 1.6rem;">
-⬆️ <b>Phase de BUBBLING</b> : la cible est traitée en premier. Se configure avec <code>addEventHandler()</code>. <code>setOnAction()</code> est un raccourci pour <code>addEventHandler(ActionEvent.ACTION, ...)</code>.
+⬆️ <b>Phase de BUBBLING</b> : la cible est traitée en premier. Se configure avec <code>addEventHandler()</code> (empile les handlers) ou <code>setOnAction()</code> (un unique handler d'<code>ActionEvent</code>, qui remplace le précédent).
 </div>
 
 ---
@@ -2268,7 +2275,7 @@ panneau.addEventFilter(<br/>
 <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 6px; margin-top: 0.8rem; font-family: monospace; font-size: 1rem;">
 btn.addEventHandler(<br/>
 &nbsp;&nbsp;ActionEvent.ACTION,<br/>
-&nbsp;&nbsp;e -> traiter());&nbsp;&nbsp;<i>// ≡ setOnAction()</i>
+&nbsp;&nbsp;e -> traiter());&nbsp;&nbsp;<i>// empile (vs setOnAction qui remplace)</i>
 </div>
 </div>
 
@@ -2391,7 +2398,7 @@ InputEvent <|-- TouchEvent
 ```
 
 <div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 0.5rem; text-align: center; font-size: 1.6rem;">
-💡 Chaque type porte des <b>données spécifiques</b> : <code>MouseEvent</code> → coordonnées (<code>getX()</code>, <code>getY()</code>), <code>KeyEvent</code> → code de touche (<code>getCode()</code>), <code>ActionEvent</code> → source du clic.
+💡 Chaque type porte des <b>données spécifiques</b> : <code>MouseEvent</code> → coordonnées (<code>getX()</code>, <code>getY()</code>), <code>KeyEvent</code> → code de touche (<code>getCode()</code>), <code>ActionEvent</code> → <code>getSource()</code> / <code>getTarget()</code> de l'action sémantique (indépendante du périphérique).
 </div>
 
 ---
@@ -2515,13 +2522,16 @@ if (e.isControlDown() &&<br/>
 </div>
 
 <div style="background: #e74c3c; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">⚡ setOnAction() = raccourci</div>
-<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">Ces deux lignes sont <b>équivalentes</b> :</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.5rem;">
-btn.setOnAction(e -> traiter());<br/>
-btn.addEventHandler(<br/>
-&nbsp;&nbsp;ActionEvent.ACTION,<br/>
-&nbsp;&nbsp;e -> traiter());
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">⚡ setOnAction() vs addEventHandler()</div>
+<div style="font-size: 1.3rem; margin-bottom: 0.5rem;">Proches mais <b>pas équivalents</b> : <code>setOnAction</code> <b>remplace</b>, <code>addEventHandler</code> <b>empile</b>.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 1.2rem;">
+btn.setOnAction(e -> a());<br/>
+btn.setOnAction(e -> b());<br/>
+<i>// seul b() s'exécute</i><br/>
+<br/>
+btn.addEventHandler(ACTION, e -> a());<br/>
+btn.addEventHandler(ACTION, e -> b());<br/>
+<i>// a() puis b()</i>
 </div>
 </div>
 
