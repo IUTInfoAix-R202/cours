@@ -2499,24 +2499,48 @@ champ.textProperty().addListener(
 
 ## 🧠 Affordance - Don Norman
 
-**Affordance** : les propriétés visuelles d'un objet qui suggèrent comment l'utiliser.
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1rem; font-size: 0.9rem;">
-<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 8px; text-align: center;">
-<div style="font-size: 1.5rem; margin-bottom: 0.4rem;">🔘</div>
-<div>Un bouton en relief suggère qu'on peut appuyer dessus.</div>
-</div>
-<div style="background: #4a90d9; color: white; padding: 1rem; border-radius: 8px; text-align: center;">
-<div style="font-size: 1.5rem; margin-bottom: 0.4rem;">📝</div>
-<div>Un champ de saisie avec un curseur clignotant invite à taper.</div>
-</div>
-<div style="background: #8e44ad; color: white; padding: 1rem; border-radius: 8px; text-align: center;">
-<div style="font-size: 1.5rem; margin-bottom: 0.4rem;">🎚️</div>
-<div>Un slider avec une encoche suggère qu'on peut le faire glisser.</div>
-</div>
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;"><strong>Affordance</strong> (Don Norman, <em>The Design of Everyday Things</em>, 1988) : les propriétés perceptibles d'un objet qui <strong>suggèrent</strong> son usage sans nécessiter d'explication. Une poignée de porte <em>appelle</em> à être tournée ; un bouton en relief <em>appelle</em> à être appuyé.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6rem; margin-top: 0.8rem;">
+
+<div style="background: #e74c3c; color: white; padding: 1rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 2.2rem; margin-bottom: 0.3rem;">🔘</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Un bouton en <strong>relief</strong> dit « appuyez sur moi ».</div>
 </div>
 
-**Affordance programmatique** : désactiver un bouton communique "cette action n'est pas disponible maintenant".
+<div style="background: #27ae60; color: white; padding: 1rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 2.2rem; margin-bottom: 0.3rem;">📝</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Un champ avec <strong>curseur</strong> dit « tapez ici ».</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 2.2rem; margin-bottom: 0.3rem;">🎚️</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Un slider avec <strong>encoche</strong> dit « faites-moi glisser ».</div>
+</div>
+
+<div style="background: #00838f; color: white; padding: 1rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 2.2rem; margin-bottom: 0.3rem;">☑️</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Une case <strong>carrée</strong> dit « cochez pour activer ».</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 1rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 2.2rem; margin-bottom: 0.3rem;">📋</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Une <strong>flèche ▾</strong> dit «&nbsp;déroulez pour choisir&nbsp;».</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 2.2rem; margin-bottom: 0.3rem;">🔗</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Un texte <u>souligné</u> dit « cliquez pour naviguer ».</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem; line-height: 1.55;">
+💡 <strong>Affordance programmatique</strong> : l'état visuel d'un contrôle (grisé, cliquable, surligné...) communique <em>ce qui est possible</em> à un instant donné.
+</div>
 
 ---
 
