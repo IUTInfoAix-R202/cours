@@ -235,7 +235,7 @@ labelCompteurs.textProperty().bind(texte);
 
 ---
 
-## La puissance des bindings - demo
+## La puissance des bindings - démonstration
 
 Sans écrire un seul EventHandler, on peut synchroniser :
 
@@ -367,7 +367,7 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
   <rect x="3" y="3" width="514" height="334" rx="10" fill="#fdf2f2" stroke="#e74c3c" stroke-width="1.5"/>
   <text x="260" y="35" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#c0392b">❌ Impératif (TP1)</text>
   <rect x="15" y="130" width="95" height="50" rx="7" fill="#f5f5f5" stroke="#ccc"/>
-  <text x="62" y="160" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">👤 User</text>
+  <text x="62" y="160" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">👤 Utilisateur</text>
   <rect x="150" y="130" width="90" height="50" rx="7" fill="#e74c3c"/>
   <text x="195" y="160" text-anchor="middle" font-family="Arial" font-size="14" fill="white">🔘 Button</text>
   <rect x="280" y="110" width="100" height="90" rx="7" fill="#c0392b"/>
@@ -393,7 +393,7 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
   <rect x="3" y="3" width="514" height="334" rx="10" fill="#f0faf0" stroke="#27ae60" stroke-width="1.5"/>
   <text x="260" y="35" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#1e8449">✅ Déclaratif (TP2)</text>
   <rect x="15" y="130" width="95" height="50" rx="7" fill="#f5f5f5" stroke="#ccc"/>
-  <text x="62" y="160" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">👤 User</text>
+  <text x="62" y="160" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">👤 Utilisateur</text>
   <rect x="150" y="130" width="90" height="50" rx="7" fill="#e74c3c"/>
   <text x="195" y="160" text-anchor="middle" font-family="Arial" font-size="14" fill="white">🔘 Button</text>
   <rect x="280" y="110" width="100" height="90" rx="7" fill="#e8a838"/>
@@ -407,7 +407,7 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
   <line x1="240" y1="155" x2="278" y2="155" stroke="#555" stroke-width="1.5" marker-end="url(#a4)"/>
   <line x1="380" y1="130" x2="423" y2="98" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#a4g)"/>
   <line x1="380" y1="178" x2="423" y2="210" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#a4g)"/>
-  <text x="260" y="310" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#1e8449">La propriété notifie auto.</text>
+  <text x="260" y="310" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#1e8449">La propriété notifie automatiquement</text>
 </svg>
 
 </div>
@@ -717,7 +717,7 @@ void creerPropriete() {
 
 <div style="background: #27ae60; color: white; padding: 1.3rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
 <div style="font-size: 1.9rem; font-weight: bold; margin-bottom: 0.6rem;">🔗 Synchroniser</div>
-<div style="font-size: 1.2rem; line-height: 1.45; margin-bottom: 0.8rem;">Maintenir une <strong>propriété</strong> cible synchronisée avec la valeur de la proriété source.</div>
+<div style="font-size: 1.2rem; line-height: 1.45; margin-bottom: 0.8rem;">Maintenir une <strong>propriété</strong> cible synchronisée avec la valeur de la propriété source.</div>
 <div style="background: rgba(0,0,0,0.28); padding: 0.75rem 0.9rem; border-radius: 6px; font-size: 1.1rem; font-family: monospace; margin-bottom: 0.8rem; line-height: 1.45;">label.textProperty()<br/>&nbsp;&nbsp;.bind(x.asString());</div>
 <div style="font-size: 1.2rem; line-height: 1.55; opacity: 0.95;">🏷️ label ↔ slider<br/>🪟 titre fenêtre<br/>🎨 couleur dynamique</div>
 <div style="background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; font-size: 1.35rem; font-weight: bold; text-align: center; margin-top: 0.8rem;">→ Binding</div>
@@ -2091,7 +2091,7 @@ pwd.editableProperty().bind(
 pre { min-height: 4rem; }
 </style>
 
-Trois façons d'écrire le même comportement, revus dans le TP1 (exercice 5) :
+Trois façons d'écrire le même comportement, revues dans le TP1 (exercice 5) :
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1rem;">
 
