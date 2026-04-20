@@ -1776,53 +1776,45 @@ System.out.println(cercle.getRadius()); // 80 - le cercle a suivi
 
 ---
 
-## bindBidirectional() - exemple CercleInteractif (TP2, ex. 7)
+## Lier des types différents : NumberStringConverter
 
-<style scoped>
-pre { font-size: 0.78rem; }
-</style>
-
-Dans `CercleInteractif.java`, trois contrôles restent toujours synchronisés :
-
-```java
-// Rayon du cercle ↔ Slider (bidirectionnel)
-cercle.radiusProperty().bindBidirectional(slider.valueProperty());
-
-// Slider ↔ TextField avec conversion de type
-Bindings.bindBidirectional(
-    textField.textProperty(),
-    slider.valueProperty(),
-    new NumberStringConverter());
-
-// Initialisation : suffit d'en fixer un
-slider.setValue(150);
-```
-
-Modifier le slider déplace le cercle ET met à jour le champ. Taper dans le champ déplace le slider ET le cercle.
-
----
-
-## NumberStringConverter - lier des types différents
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.82rem; }
 </style>
 
-`bindBidirectional()` entre `StringProperty` et `DoubleProperty` requiert un convertisseur :
+<p style="font-size: 1.25rem; margin: 0.3rem 0 0.8rem 0;">Problème : <code>TextField.textProperty()</code> est une <code>StringProperty</code>, mais <code>Slider.valueProperty()</code> est une <code>DoubleProperty</code>. Un <strong>converter</strong> fait le pont.</p>
 
 ```java
-// Sans convertisseur : erreur de compilation
-// textProperty est StringProperty, valueProperty est DoubleProperty
+// Ne compile pas : types incompatibles
+textField.textProperty().bindBidirectional(slider.valueProperty());
 
-// Avec NumberStringConverter
+// Avec NumberStringConverter : le converter traduit dans les 2 sens
 Bindings.bindBidirectional(
     textField.textProperty(),
     slider.valueProperty(),
-    new NumberStringConverter()
-);
+    new NumberStringConverter());
 ```
 
-D'autres convertisseurs existent : `IntegerStringConverter`, `DateTimeStringConverter`, `LocalDateStringConverter`...
+<div style="display: flex; justify-content: center; align-items: center; gap: 0.6rem; margin: 1rem 0;">
+<div style="background: #c0392b; color: white; padding: 1.1rem 1.4rem; border-radius: 12px; font-size: 1.3rem; font-weight: bold; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">⭕ Cercle<br/><span style="font-size: 0.95rem; font-weight: normal; opacity: 0.9;">radiusProperty</span></div>
+<svg width="110" height="56" viewBox="0 0 110 56">
+<path d="M 0 28 L 18 12 L 18 22 L 92 22 L 92 12 L 110 28 L 92 44 L 92 34 L 18 34 L 18 44 Z"
+fill="#2c3e50"/>
+</svg>
+<div style="background: #c0392b; color: white; padding: 1.1rem 1.4rem; border-radius: 12px; font-size: 1.3rem; font-weight: bold; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">🎚️ Slider<br/><span style="font-size: 0.95rem; font-weight: normal; opacity: 0.9;">valueProperty</span></div>
+<svg width="110" height="56" viewBox="0 0 110 56">
+<path d="M 0 28 L 18 12 L 18 22 L 92 22 L 92 12 L 110 28 L 92 44 L 92 34 L 18 34 L 18 44 Z"
+fill="#2c3e50"/>
+</svg>
+<div style="background: #27ae60; color: white; padding: 1.1rem 1.4rem; border-radius: 12px; font-size: 1.3rem; font-weight: bold; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">📝 TextField<br/><span style="font-size: 0.95rem; font-weight: normal; opacity: 0.9;">textProperty</span></div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.05rem; line-height: 1.55;">
+💡 Dans <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">CercleInteractif</code> (<strong>TP2, ex. 7</strong>), les trois contrôles restent synchronisés : modifier l'un propage automatiquement aux deux autres. D'autres convertisseurs existent : <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">IntegerStringConverter</code>, <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">LocalDateStringConverter</code>...
+</div>
 
 ---
 
