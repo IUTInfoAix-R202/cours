@@ -2581,7 +2581,7 @@ section table code { font-size: 0.72rem !important; padding: 1px 4px !important;
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.25rem; line-height: 1.55; text-align: center;">
-💡 Les <strong>propriétés</strong> et <strong>bindings</strong> appris aujourd'hui deviendront <strong>la colle</strong> entre la vue FXML et le modèle.
+💡 Les <strong>propriétés</strong> et <strong>bindings</strong> appris aujourd'hui deviendront <strong>le mécanisme de synchronisation</strong> entre la vue FXML et le modèle.
 </div>
 
 ---
