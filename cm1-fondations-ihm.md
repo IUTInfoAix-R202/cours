@@ -389,8 +389,8 @@ Ces trois piliers seront développés tout au long des 4 CM du module.
 |---|---|---|---|
 | **CM1** | Premières notions | Nielsen #1, #2 + Gestalt | Observer, EventHandler |
 | **CM2** | Source unique de vérité | Affordance, feedback | Propagation, bindings |
-| **CM3** | MVC / MVVM | Fitts, Hick, WCAG | FXML + Controller |
-| **CM4** | MVVM complet | Prévention d'erreurs | Validation réactive |
+| **CM3** | FXML / MVC | Fitts, Hick, WCAG | FXML + Controller |
+| **CM4** | MVVM complet + persistance | Prévention d'erreurs | Validation réactive |
 
 <div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center;">
 💡 Chaque CM approfondit les trois piliers <b>en parallèle</b>. Les principes de conception accompagnent chaque concept technique.
@@ -1368,7 +1368,7 @@ Le pattern Observer illustre un principe fondamental : **chaque composant a une 
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1.5rem; text-align: center;">
-🏗️ Cette <b>séparation des préoccupations</b> sera poussée plus loin : bindings (CM2), MVC/MVVM (CM3-CM4).
+🏗️ Cette <b>séparation des préoccupations</b> sera poussée plus loin : bindings (CM2), FXML/MVC (CM3), MVVM (CM4).
 </div>
 
 ---
