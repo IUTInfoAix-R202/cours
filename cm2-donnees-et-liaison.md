@@ -2230,9 +2230,16 @@ okBtn.disableProperty().bind(motDePasseInvalide);
 
 ---
 
-## Exemple : validation login (TP2, ex. 6)
+## Exemple : validation login
 
-Dans `FormulaireConnexion.java`, tous les états sont gérés par bindings :
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<style scoped>
+pre { font-size: 0.75rem; }
+</style>
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Dans <code>FormulaireConnexion.java</code>, <strong>aucun EventHandler</strong> ne modifie les états <code>disabled</code> ou <code>editable</code> : ils se déduisent automatiquement des données saisies.</p>
 
 ```java
 // Le champ pwd n'est éditable que si userId >= 6 chars
@@ -2247,7 +2254,48 @@ cancelBtn.disableProperty().bind(
         Bindings.equal(0, userId.textProperty().length())));
 ```
 
-Aucun EventHandler ne modifie `disabled` ou `editable`. L'état de l'interface découle des données.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; line-height: 1.55;">
+💡 L'état de l'interface est une <strong>conséquence</strong> de l'état des données, jamais la conséquence d'un événement. Le modèle événementiel disparaît au profit d'un modèle <strong>déclaratif</strong>.
+</div>
+
+---
+
+## Et ça marche pour tous les types...
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<style scoped>
+pre { font-size: 0.9rem; }
+</style>
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">La technique ne se limite pas aux <code>BooleanProperty</code> : <strong>toute propriété observable</strong> peut piloter l'interface.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.9rem; margin: 2rem 0;">
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.1rem; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🔢 Numérique</div>
+<div style="font-size: 1.4rem; opacity: 0.9; margin-bottom: 0.5rem;">opacité pilotée par un slider</div>
+<div style="background: rgba(0,0,0,0.28); padding: 0.55rem 0.7rem; border-radius: 6px; font-family: monospace; font-size: 1.1rem; line-height: 1.45;">cercle.opacityProperty()<br/>&nbsp;&nbsp;.bind(slider.valueProperty()<br/>&nbsp;&nbsp;&nbsp;&nbsp;.divide(100));</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1rem 1.1rem; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🎨 Couleur / Objet</div>
+<div style="font-size: 1.4rem; opacity: 0.9; margin-bottom: 0.5rem;">remplissage conditionnel</div>
+<div style="background: rgba(0,0,0,0.28); padding: 0.55rem 0.7rem; border-radius: 6px; font-family: monospace; font-size: 1.1rem; line-height: 1.45;">cercle.fillProperty().bind(<br/>&nbsp;&nbsp;Bindings.when(active)<br/>&nbsp;&nbsp;&nbsp;&nbsp;.then(Color.RED)<br/>&nbsp;&nbsp;&nbsp;&nbsp;.otherwise(Color.GRAY));</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 1rem 1.1rem; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🔤 Texte</div>
+<div style="font-size: 1.4rem; opacity: 0.9; margin-bottom: 0.5rem;">titre de fenêtre dynamique</div>
+<div style="background: rgba(0,0,0,0.28); padding: 0.55rem 0.7rem; border-radius: 6px; font-family: monospace; font-size: 1.1rem; line-height: 1.45;">fenetre.titleProperty().bind(<br/>&nbsp;&nbsp;Bindings.concat(<br/>&nbsp;&nbsp;&nbsp;&nbsp;"Mon app - ",<br/>&nbsp;&nbsp;&nbsp;&nbsp;nbFichiers));</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; line-height: 1.55;">
+💡 <strong>Toute propriété JavaFX</strong> (d'un contrôle ou d'un modèle) peut être la cible d'un <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">bind()</code> ou <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">bindBidirectional()</code>. Le modèle déclaratif fonctionne <strong>partout</strong>.
+</div>
 
 ---
 
