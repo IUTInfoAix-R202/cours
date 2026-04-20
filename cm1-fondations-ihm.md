@@ -773,12 +773,12 @@ public class HelloWorld extends Application {
 }
 ```
 
-<div style="display: flex; gap: 1.5rem; margin-top: 1rem; font-size: 1.6rem;">
-<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1.2rem; border-radius: 10px; border-left: 4px solid #4a90d9;">
-<b>4 lignes</b> suffisent pour afficher une fenêtre avec du texte. Tout le reste est du confort.
+<div style="display: flex; gap: 1.2rem; margin-top: 1rem;">
+<div style="flex: 1; background: #1a5276; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; border-left: 5px solid #4a90d9; font-size: 1.5rem; line-height: 1.5;">
+💡 <strong>4 lignes</strong> suffisent pour afficher une fenêtre avec du texte. Tout le reste est du confort.
 </div>
-<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1.2rem; border-radius: 10px; border-left: 4px solid #e8a838;">
-On retrouve les 3 briques : <b>Stage</b> (fenêtre), <b>Scene</b> (contenu), <b>Node</b> (Label dans un VBox).
+<div style="flex: 1; background: #7a5618; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; border-left: 5px solid #e8a838; font-size: 1.5rem; line-height: 1.5;">
+🎭 On retrouve les 3 briques : <strong>Stage</strong> (fenêtre), <strong>Scene</strong> (contenu), <strong>Node</strong> (Label dans un VBox).
 </div>
 </div>
 
@@ -822,31 +822,32 @@ graph LR
 <!-- _footer: "" -->
 <!-- _header: "" -->
 
-`launch()` déclenche un cycle de vie géré entièrement par JavaFX :
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;"><code>launch()</code> déclenche un cycle de vie géré <strong>entièrement par JavaFX</strong> :</p>
 
-```mermaid
-graph LR
-    A["Constructeur"] --> B["init()"]
-    B --> C["start(Stage)"]
-    C --> D["... boucle événementielle ..."]
-    D --> E["stop()"]
-
-    style A fill:#b0bec5,color:#333
-    style B fill:#b0bec5,color:#333
-    style C fill:#7bb563,color:white
-    style D fill:#4a90d9,color:white
-    style E fill:#b0bec5,color:#333
-```
-
-<div style="display: flex; gap: 1.5rem; margin-top: 1rem; font-size: 1.6rem;">
-<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #7bb563;">
-<b>start(Stage)</b> est la seule méthode <b>obligatoire</b>. C'est là que vous construisez l'IHM.
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 4rem 0; gap: 0.3rem;">
+<div style="background: #b0bec5; color: #333; padding: 0.8rem 1rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold; text-align: center;">Constructeur</div>
+<div style="flex: 1; height: 8px; background: #2c3e50; position: relative; margin: 0 12px;"><span style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); border: 12px solid transparent; border-left-color: #2c3e50; border-right: 0;"></span></div>
+<div style="background: #b0bec5; color: #333; padding: 0.8rem 1rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold; text-align: center;">init()</div>
+<div style="flex: 1; height: 8px; background: #2c3e50; position: relative; margin: 0 12px;"><span style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); border: 12px solid transparent; border-left-color: #2c3e50; border-right: 0;"></span></div>
+<div style="background: #27ae60; color: white; padding: 0.8rem 1rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold; text-align: center;">start(Stage)</div>
+<div style="flex: 1; height: 8px; background: #2c3e50; position: relative; margin: 0 12px;"><span style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); border: 12px solid transparent; border-left-color: #2c3e50; border-right: 0;"></span></div>
+<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 10px; font-size: 1.1rem; font-weight: bold; text-align: center;">🔄 boucle</div>
+<div style="flex: 1; height: 8px; background: #2c3e50; position: relative; margin: 0 12px;"><span style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); border: 12px solid transparent; border-left-color: #2c3e50; border-right: 0;"></span></div>
+<div style="background: #b0bec5; color: #333; padding: 0.8rem 1rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold; text-align: center;">stop()</div>
 </div>
-<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #4a90d9;">
-La <b>boucle événementielle</b> attend les actions de l'utilisateur (clics, saisie...) et y réagit.
+
+<div style="display: flex; gap: 1.2rem; margin-top: 1rem;">
+<div style="flex: 1; background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.3rem;">🚀 start(Stage)</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Seule méthode <strong>obligatoire</strong>. C'est là que vous construisez l'IHM.</div>
 </div>
-<div style="flex: 1; background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #b0bec5;">
-<b>init()</b> et <b>stop()</b> sont optionnels. On les utilise très rarement en TP.
+<div style="flex: 1; background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.3rem;">🔄 Boucle événementielle</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Attend les actions de l'utilisateur (clics, saisie...) et y réagit.</div>
+</div>
+<div style="flex: 1; background: #34495e; color: white; padding: 1rem 1.2rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.3rem;">⚙️ init() / stop()</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Optionnels. Très rarement utilisés en TP.</div>
 </div>
 </div>
 
