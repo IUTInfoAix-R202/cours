@@ -3,13 +3,9 @@ marp: true
 theme: default
 paginate: true
 math: katex
-header: "R2.02 - Développement d'applications avec IHM"
-footer: "IUT Aix-Marseille - BUT Informatique 1A"
 ---
 
 <!-- _class: lead -->
-<!-- _header: "" -->
-<!-- _footer: "" -->
 <!-- _paginate: false -->
 
 <style scoped>
@@ -28,9 +24,6 @@ section {
 ---
 
 ## Où en sommes-nous ?
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <div style="display: flex; gap: 0.8rem; margin-top: 0.5rem; margin-bottom: 0.5rem; text-align: center; font-size: 2.5rem; line-height: 1;">
 <div style="flex: 1;">&nbsp;</div>
@@ -91,9 +84,6 @@ TP4 + TP5
 
 ## Rappel CM1 - Ce que vous savez déjà
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 1.5rem;">
 <div style="background: #4a90d9; color: white; padding: 1.2rem; border-radius: 10px;">
 <div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🎭 Le graphe de scène</div>
@@ -125,9 +115,6 @@ Aujourd'hui : rendre l'interface <b>réactive</b> sans écrire d'EventHandler po
 ---
 
 ## À la fin de ce CM, vous saurez...
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
 
@@ -164,17 +151,12 @@ Aujourd'hui : rendre l'interface <b>réactive</b> sans écrire d'EventHandler po
 ---
 
 <!-- _class: lead -->
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 # Partie 1 - Le problème
 
 ---
 
 ## TP1 : la Palette, version naïve ❌
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.78rem; }
@@ -205,9 +187,6 @@ btnRouge.setOnAction(e -> {
 
 ## TP2 : la PaletteReactive, version bindings ✅
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 pre { font-size: 0.78rem; }
 </style>
@@ -237,9 +216,6 @@ labelCompteurs.textProperty().bind(texte);
 
 ## La puissance des bindings - démonstration
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 Sans écrire un seul EventHandler, on peut synchroniser :
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem;">
@@ -264,8 +240,6 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
 <!-- _transition: fade -->
 
 ## La liaison de données - approche impérative ❌
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>h2 { view-transition-name: titre-liaison; }</style>
 
@@ -310,8 +284,6 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
 <!-- _transition: fade -->
 
 ## La liaison de données - approche déclarative ✅
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>h2 { view-transition-name: titre-liaison; }</style>
 
@@ -357,9 +329,6 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
 <!-- _transition: fade -->
 
 ## La liaison de données - comparaison
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>h2 { view-transition-name: titre-liaison; }</style>
 
@@ -422,17 +391,12 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
 ---
 
 <!-- _class: lead -->
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 # Partie 2 - ⚡ Propriétés JavaFX
 
 ---
 
 ## Avant les propriétés : la convention JavaBeans
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size:1.6rem">
 Depuis 1996, Java utilise la <b>convention JavaBeans</b> pour encapsuler les données d'un objet : un champ privé, un getter et un setter publics.
@@ -474,9 +438,6 @@ Depuis 1996, Java utilise la <b>convention JavaBeans</b> pour encapsuler les don
 
 ## Les limites du modèle classique
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <p style="font-size:1.6rem">
 Pour une IHM, JavaBeans pose un problème majeur : <b>rien ne prévient</b> quand la valeur change.
 </p>
@@ -512,9 +473,6 @@ compteur.setValeur(42);<br/>
 ---
 
 ## La réponse JavaFX : les propriétés observables
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size:1.6rem">
 JavaFX <b>étend</b> la convention JavaBeans avec une troisième méthode qui expose la propriété comme un objet <b>observable</b>.
@@ -555,9 +513,6 @@ JavaFX <b>étend</b> la convention JavaBeans avec une troisième méthode qui ex
 
 ## La propriété, pierre angulaire du data binding
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <p style="font-size:1.5rem">
 Rappelez-vous la démo du début : un seul binding remplaçait trois <code>setText()</code>. Ce qui rend cette magie possible, c'est <b>précisément</b> la méthode <code>fooProperty()</code>.
 </p>
@@ -597,9 +552,6 @@ label.textProperty().bind(<br/>
 
 ## Exemple concret : BoutonCouleur (TP2, ex. 3)
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 pre { font-size: 0.78rem; }
 </style>
@@ -628,9 +580,6 @@ Grâce à `nbClicsProperty()`, tout composant peut observer ou se lier au compte
 ---
 
 ## Les types de propriétés
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin-top: 0.6rem;">
 
@@ -680,9 +629,6 @@ Grâce à `nbClicsProperty()`, tout composant peut observer ou se lier au compte
 
 ## SimpleXxxProperty - l'implémentation concrète
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 pre { font-size: 0.82rem; }
 </style>
@@ -705,9 +651,6 @@ void creerPropriete() {
 ---
 
 ## Pourquoi observer une propriété ?
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size: 1.6rem; margin-top: 0.4rem;">Une propriété observable ouvre <strong>deux usages complémentaires</strong> :</p>
 
@@ -738,9 +681,6 @@ void creerPropriete() {
 ---
 
 ## InvalidationListener - le listener paresseux
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.78rem; }
@@ -782,9 +722,6 @@ Propriété <em>valide</em> au départ. Le premier <code style="background: rgba
 ---
 
 ## ChangeListener - le listener exhaustif
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.78rem; }
@@ -828,9 +765,6 @@ Le listener reçoit <code style="background: rgba(255,255,255,0.15); padding: 1p
 
 ## InvalidationListener vs ChangeListener
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.6rem;">
 
 <div style="background: #e8a838; color: white; padding: 1.4rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
@@ -863,9 +797,6 @@ Le listener reçoit <code style="background: rgba(255,255,255,0.15); padding: 1p
 
 ## ReadOnlyWrapper - exposer en lecture seule
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 pre { font-size: 0.82rem; }
 </style>
@@ -894,9 +825,6 @@ private void incrementerScore() {
 ---
 
 ## Lien avec le pattern Observer (CM1)
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size: 1.6rem; margin-top: 0.4rem;">Le système de propriétés JavaFX est une <strong>implémentation concrète</strong> du pattern Observer :</p>
 
@@ -935,9 +863,6 @@ private void incrementerScore() {
 ---
 
 ## Les propriétés SONT des observables spécialisés
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size: 1.6rem; padding: 0; margin: 0;">La hiérarchie JavaFX reflète cette spécialisation progressive :</p>
 
@@ -1006,9 +931,6 @@ IP <|-- SIP
 
 ## La propriété, le cœur réactif de JavaFX
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; align-items: stretch; margin-top: 0.8rem;">
 
 <div style="display: flex; align-items: stretch; justify-content: center;">
@@ -1073,17 +995,12 @@ IP <|-- SIP
 ---
 
 <!-- _class: lead -->
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 # Partie 3 - 🏗️ Bindings
 
 ---
 
 ## La liaison unidirectionnelle avec bind()
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.82rem; }
@@ -1129,9 +1046,6 @@ System.out.println(cible.get()); // 42 - mise à jour automatique
 
 ## Propriété liée = propriété non modifiable
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 pre { font-size: 0.82rem; }
 </style>
@@ -1176,9 +1090,6 @@ cible.set(99);
 ---
 
 ## La liaison bidirectionnelle avec bindBidirectional()
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.6rem; }
@@ -1229,9 +1140,6 @@ System.out.println(cercle.getRadius()); // 80 - le cercle a suivi
 
 ## Lier des types différents : NumberStringConverter
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 pre { font-size: 0.75rem; }
 </style>
@@ -1271,9 +1179,6 @@ Bindings.bindBidirectional(
 
 ## Créer un binding : l'API classique
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 pre { font-size: 0.75rem; }
 h2 { view-transition-name: titre-api; }
@@ -1303,9 +1208,6 @@ label.textProperty().bind(sommeCarres.asString("a²+b² = %.0f"));
 <!-- _transition: fade -->
 
 ## API statique : Bindings.multiply, add, subtract, divide
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.75rem; }
@@ -1341,9 +1243,6 @@ label.textProperty().bind(sommeCarres.asString("a²+b² = %.0f"));
 
 ## API fluente : multiply, add, subtract, divide
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 pre { font-size: 0.75rem; }
 h2 { view-transition-name: titre-api; }
@@ -1365,7 +1264,6 @@ IntegerProperty b = new SimpleIntegerProperty(4);
 // Expression composée : a*a + b*b
 NumberBinding sommeCarres = a.multiply(a).add(b.multiply(b));
 
-
 // Un label lié au résultat formaté
 label.textProperty().bind(sommeCarres.asString("a²+b² = %.0f"));
 ```
@@ -1379,9 +1277,6 @@ label.textProperty().bind(sommeCarres.asString("a²+b² = %.0f"));
 <!-- _transition: fade -->
 
 ## Exemple : formule de l'aire d'un triangle
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 h2 { view-transition-name: titre-aire-triangle; }
@@ -1417,9 +1312,6 @@ $$\text{aire} = \frac{1}{2} \; \bigl|\, x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_
 ---
 
 ## Exemple : formule de l'aire d'un triangle
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.82rem; }
@@ -1458,9 +1350,6 @@ area.bind(
 
 ## Bindings.concat() - composer du texte
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 pre { font-size: 0.75rem; }
 .hidden { visibility: hidden; }
@@ -1497,9 +1386,6 @@ label.textProperty().bind(texte);
 
 ## Bindings.concat() - composer du texte
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 pre { font-size: 0.75rem; }
 </style>
@@ -1530,9 +1416,6 @@ label.textProperty().bind(texte);
 ---
 
 ## Bindings.when().then().otherwise()
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.75rem; }
@@ -1567,9 +1450,6 @@ label.textProperty().bind(affichage);
 ---
 
 ## Conditions booléennes : comparaisons et combinaisons
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.75rem; }
@@ -1619,9 +1499,6 @@ okBtn.disableProperty().bind(formulaireValide.not());
 
 ## Low-level binding : BooleanBinding avec computeValue()
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 pre { font-size: 0.75rem; }
 h2 { view-transition-name: titre-low-level; }
@@ -1646,9 +1523,6 @@ h2 { view-transition-name: titre-low-level; }
 <!-- _transition: fade -->
 
 ## Low-level binding : BooleanBinding avec computeValue()
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.75rem; }
@@ -1682,9 +1556,6 @@ okBtn.disableProperty().bind(motDePasseInvalide);
 
 ## Exemple : validation login
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 pre { font-size: 0.75rem; }
 </style>
@@ -1711,9 +1582,6 @@ cancelBtn.disableProperty().bind(
 ---
 
 ## Et ça marche pour tous les types...
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.9rem; }
@@ -1750,9 +1618,6 @@ pre { font-size: 0.9rem; }
 ---
 
 ## 🏗️ Source unique de vérité
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">La donnée vit à <strong>un seul endroit</strong>. Tous les éléments qui l'affichent <em>dépendent</em> de cette source - ils ne peuvent pas diverger.</p>
 
@@ -1791,9 +1656,6 @@ pre { font-size: 0.9rem; }
 ---
 
 ## 🏗️ De la Palette impérative à la PaletteReactive
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.78rem; }
@@ -1841,17 +1703,12 @@ total.textProperty().bind(
 ---
 
 <!-- _class: lead -->
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 # Partie 4 - 🧠 Contrôles et affordance
 
 ---
 
 ## Taxonomie des contrôles JavaFX
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Deux grandes familles, distinguées par leur <strong>rôle</strong> dans l'interaction avec l'utilisateur.</p>
 
@@ -1890,9 +1747,6 @@ total.textProperty().bind(
 
 ## Contrôles d'affichage - propriétés clés
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 pre { font-size: 0.75rem; }
 </style>
@@ -1917,9 +1771,6 @@ barre.progressProperty().bind(slider.valueProperty().divide(100));
 ---
 
 ## Contrôles d'action et de saisie - propriétés clés
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 pre { font-size: 0.75rem; }
@@ -1948,9 +1799,6 @@ champ.textProperty().addListener(
 ---
 
 ## 🧠 Affordance - Don Norman
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;"><strong>Affordance</strong> (Don Norman, <em>The Design of Everyday Things</em>, 1988) : les propriétés perceptibles d'un objet qui <strong>suggèrent</strong> son usage sans nécessiter d'explication. Une poignée de porte <em>appelle</em> à être tournée ; un bouton en relief <em>appelle</em> à être appuyé.</p>
 
@@ -1996,9 +1844,6 @@ champ.textProperty().addListener(
 
 ## disableProperty().bind() - affordance automatique
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 pre { font-size: 0.82rem; }
 </style>
@@ -2022,9 +1867,6 @@ pwd.editableProperty().bind(
 ---
 
 ## L'affordance rend l'interface auto-explicative
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Le même formulaire de connexion, deux expériences radicalement différentes.</p>
 
@@ -2081,17 +1923,12 @@ pwd.editableProperty().bind(
 ---
 
 <!-- _class: lead -->
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 # Partie 5 - ⚡ Modèle événementiel complet
 
 ---
 
 ## Rappel : les 3 styles d'EventHandler
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 pre { min-height: 4rem; }
@@ -2119,7 +1956,6 @@ btn.setOnAction(new MonEcouteur());
 
 <div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
 <div style="font-size: 2rem; text-align: center;">⚙️ Classe anonyme</div>
-
 
 ```java
 btn.setOnAction(
@@ -2155,9 +1991,6 @@ btn.setOnAction((ActionEvent e) -> {
 ---
 
 ## La propagation - phase de capture (1/2)
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size: 1.6rem;">
 Quand vous cliquez sur un bouton, l'événement <b>ne naît pas dans le bouton</b>. Il commence à la racine de la scène et descend jusqu'à la cible.
@@ -2203,9 +2036,6 @@ Quand vous cliquez sur un bouton, l'événement <b>ne naît pas dans le bouton</
 
 ## La propagation - phase de bubbling (2/2)
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <p style="font-size: 1.6rem;">
 Après la phase de capture, l'événement <b>remonte</b> de la cible vers la racine : c'est la phase qui déclenche vos <code>setOnAction()</code> habituels.
 </p>
@@ -2250,9 +2080,6 @@ Après la phase de capture, l'événement <b>remonte</b> de la cible vers la rac
 
 ## EventFilter vs EventHandler
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 0.5rem;">
 
 <div style="background: #c0392b; color: white; padding: 1.2rem; border-radius: 10px;">
@@ -2294,9 +2121,6 @@ btn.addEventHandler(<br/>
 ---
 
 ## Arrêter la propagation : event.consume()
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size:1.6rem">
 Un handler peut décider qu'il a <b>traité l'événement</b> : les handlers suivants sur le chemin ne seront pas appelés.
@@ -2366,9 +2190,6 @@ bouton.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
 
 ## Hiérarchie des types d'événement
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 ```plantuml
 @startuml
 scale 1.5
@@ -2414,9 +2235,6 @@ InputEvent <|-- TouchEvent
 
 ## 🖱️ MouseEvent - les événements souris
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
 
 <div style="background: #e8a838; color: white; padding: 1rem; border-radius: 10px;">
@@ -2461,9 +2279,6 @@ zone.setOnMouseDragged(e -> {<br/>
 ---
 
 ## ⌨️ KeyEvent - les événements clavier
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
 
@@ -2511,9 +2326,6 @@ if (e.isControlDown() &&<br/>
 
 ## 🎯 ActionEvent - le plus courant
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <p style="font-size:1.6rem">
 <code>ActionEvent</code> est l'événement <b>applicatif</b> : il signale une action utilisateur <i>sémantique</i> (clic validé, valeur choisie), indépendamment du périphérique (souris, clavier, tactile).
 </p>
@@ -2553,9 +2365,6 @@ btn.addEventHandler(ACTION, e -> b());<br/>
 ---
 
 ## 🌐 Les autres événements
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size:1.6rem">
 JavaFX propose de nombreux autres types d'événements pour couvrir tous les cas d'interaction. Vous les rencontrerez selon vos besoins.
@@ -2604,9 +2413,6 @@ zone.setOnTouchPressed(<br/>
 
 ## 🧠 Nielsen #1 approfondi : feedback et temps de réponse
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <p style="font-size:1.5rem; font-style: italic; background: #f5f5f5; padding: 0.8rem 1.2rem; border-left: 4px solid #8e44ad; border-radius: 6px;">
 « Le système doit toujours informer l'utilisateur de ce qui se passe, par un retour approprié dans un délai raisonnable. »<br/>
 <span style="font-size: 1.1rem; color: #666;">Jakob Nielsen, <i>10 Usability Heuristics</i> (1994)</span>
@@ -2644,9 +2450,6 @@ zone.setOnTouchPressed(<br/>
 ---
 
 ## ⚡ Bindings et handlers - deux outils complémentaires
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size:1.5rem">
 La <b>Partie 3</b> vous a montré les <b>bindings</b>, la <b>Partie 5</b> le <b>modèle événementiel</b>. Les deux répondent au même objectif - rendre l'IHM réactive - mais sur des territoires distincts.
@@ -2687,17 +2490,12 @@ stage.setOnCloseRequest(<br/>
 ---
 
 <!-- _class: lead -->
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 # Synthèse
 
 ---
 
 ## Les 3 piliers revisités
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Le CM2 a enrichi les trois piliers du module avec des outils concrets, utilisables dès le TP2.</p>
 
@@ -2731,9 +2529,6 @@ stage.setOnCloseRequest(<br/>
 
 ## Lien avec le TP2 - tableau exercices et concepts
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 section table { font-size: 0.75rem !important; width: 100%; border-collapse: collapse; }
 section th { background: #1a5276 !important; color: white !important; padding: 0.3rem 0.6rem !important; text-align: left !important; font-size: 0.8rem !important; }
@@ -2758,9 +2553,6 @@ section table code { font-size: 0.72rem !important; padding: 1px 4px !important;
 ---
 
 ## Teaser CM3 - Architecture des IHM et FXML
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Dans le <strong>CM3</strong>, vous apprendrez à <strong>séparer</strong> la vue du comportement : un bond architectural majeur.</p>
 
@@ -2795,9 +2587,6 @@ section table code { font-size: 0.72rem !important; padding: 1px 4px !important;
 ---
 
 ## Pour aller plus loin
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quelques pistes pour approfondir les propriétés et les bindings, du tutoriel officiel au code source OpenJFX.</p>
 
@@ -2835,8 +2624,6 @@ Source OpenJFX de <a href="https://openjfx.io/javadoc/25/javafx.base/javafx/bean
 ---
 
 <!-- _class: lead -->
-<!-- _header: "" -->
-<!-- _footer: "" -->
 <!-- _paginate: false -->
 
 <style scoped>

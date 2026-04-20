@@ -2,14 +2,10 @@
 marp: true
 theme: default
 paginate: true
-header: "R2.02 - Développement d'applications avec IHM"
-footer: "IUT Aix-Marseille - BUT Informatique 1A"
 ---
 
 <!-- _class: lead -->
-<!-- _header: "" -->
 
-<!-- _footer: "" -->
 <!-- _paginate: false -->
 
 <style scoped>
@@ -28,9 +24,6 @@ section {
 ---
 
 ## Le module R2.02 en un coup d'oeil
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 blockquote { font-size: 0.92rem; }
@@ -62,9 +55,6 @@ blockquote { font-size: 0.92rem; }
 ---
 
 ## Organisation du module
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <div style="display: flex; gap: 0.8rem; margin-top: 1rem;">
 <div style="background: #4a90d9; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
@@ -128,9 +118,6 @@ TP4 + TP5
 
 ## Évaluation
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 Trois notes, un objectif : vérifier que vous **comprenez** ce que vous codez, pas juste que ça fonctionne.
 
 <div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
@@ -163,9 +150,6 @@ Trois notes, un objectif : vérifier que vous **comprenez** ce que vous codez, p
 ---
 
 ## Environnement de travail
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 Tout le module se fait sur **GitHub Codespaces** : aucune installation locale nécessaire.
 
@@ -203,9 +187,6 @@ Tout le module se fait sur **GitHub Codespaces** : aucune installation locale n�
 ---
 
 ## Workflow professionnel
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 Chaque exercice suit le même cycle, identique à celui d'une équipe en entreprise :
 
@@ -282,8 +263,6 @@ Les CM suivants ajouteront : bindings (CM2), FXML/architecture (CM3), MVVM/persi
 
 ## Trois interfaces, même fonctionnalité
 
-<!-- _footer: "" -->
-
 Trois applications qui font la même chose : **afficher la météo**.
 
 <div style="display: flex; gap: 1.2rem; margin: 4rem 0;">
@@ -358,9 +337,6 @@ Ce cours ne porte pas sur **comment afficher un bouton** mais sur **comment conc
 
 ## Brève histoire des interfaces
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <style scoped>
 table { font-size: 0.82rem; }
 p { font-size: 0.88rem; }
@@ -378,8 +354,6 @@ Chaque transition a été motivée par une meilleure compréhension des **besoin
 ---
 
 ## Les trois piliers d'un cours d'IHM
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <style scoped>
 section { display: flex; flex-direction: column; }
@@ -410,8 +384,6 @@ Ces trois piliers seront développés tout au long des 4 CM du module.
 ---
 
 ## Les trois piliers : déclinaison dans les CM
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 | CM | 🏗️ Architecture | 🧠 Ergonomie | ⚡ Événements |
 |---|---|---|---|
@@ -451,7 +423,6 @@ Nous allons les parcourir toutes les dix 👇.
 
 ## 🧠 Nielsen #1 - Visibilité de l'état du système
 
-
 > Le système doit toujours **informer l'utilisateur** de ce qui se passe, par un feedback approprié dans un délai raisonnable.
 
 <div style="display: flex; gap: 2rem; align-items: flex-start; margin: 0.8rem 0;">
@@ -470,7 +441,6 @@ Nous allons les parcourir toutes les dix 👇.
 ---
 
 ## 🧠 Nielsen #2 - Correspondance avec le monde réel
-
 
 > Le système doit parler le **langage de l'utilisateur**, avec des mots et concepts familiers plutôt que du jargon interne.
 
@@ -491,7 +461,6 @@ Nous allons les parcourir toutes les dix 👇.
 
 ## 🧠 Nielsen #3 - Liberté et contrôle de l'utilisateur
 
-
 > Les utilisateurs font souvent des erreurs. Ils ont besoin d'une **"sortie de secours"** clairement identifiée pour quitter l'action non voulue.
 
 <div style="display: flex; gap: 2rem; align-items: flex-start; margin: 0.8rem 0;">
@@ -510,7 +479,6 @@ Nous allons les parcourir toutes les dix 👇.
 ---
 
 ## 🧠 Nielsen #4 - Cohérence et standards
-
 
 > L'utilisateur ne devrait pas avoir à se demander si des mots, situations ou actions différents **signifient la même chose**.
 
@@ -531,7 +499,6 @@ Nous allons les parcourir toutes les dix 👇.
 
 ## 🧠 Nielsen #5 - Prévention des erreurs
 
-
 > Mieux vaut **prévenir** les erreurs que produire de bons messages d'erreur.
 
 <div style="display: flex; gap: 2rem; align-items: flex-start; margin: 0.8rem 0;">
@@ -550,7 +517,6 @@ Nous allons les parcourir toutes les dix 👇.
 ---
 
 ## 🧠 Nielsen #6 - Reconnaissance plutôt que rappel
-
 
 > Rendre les éléments visibles. L'utilisateur ne devrait pas avoir à **se souvenir** d'informations d'un écran à l'autre.
 
@@ -571,7 +537,6 @@ Nous allons les parcourir toutes les dix 👇.
 
 ## 🧠 Nielsen #7 - Flexibilité et efficacité
 
-
 > Les **raccourcis**, invisibles pour les novices, accélèrent l'interaction pour les experts. Permettre la personnalisation.
 
 <div style="display: flex; gap: 2rem; align-items: flex-start; margin: 0.8rem 0;">
@@ -590,7 +555,6 @@ Nous allons les parcourir toutes les dix 👇.
 ---
 
 ## 🧠 Nielsen #8 - Design esthétique et minimaliste
-
 
 > Chaque information en trop dans une interface **entre en compétition** avec les informations utiles et diminue leur visibilité.
 
@@ -611,7 +575,6 @@ Nous allons les parcourir toutes les dix 👇.
 
 ## 🧠 Nielsen #9 - Aider à reconnaître et corriger les erreurs
 
-
 > Les messages d'erreur doivent être en **langage clair** (pas de codes), indiquer précisément le problème et **suggérer une solution**.
 
 <div style="display: flex; gap: 2rem; align-items: flex-start; margin: 0.8rem 0;">
@@ -630,7 +593,6 @@ Nous allons les parcourir toutes les dix 👇.
 ---
 
 ## 🧠 Nielsen #10 - Aide et documentation
-
 
 > Idéalement, le système **n'a pas besoin d'explication**. Mais si nécessaire, l'aide doit être facile à trouver et orientée vers la tâche.
 
@@ -657,8 +619,6 @@ Nous allons les parcourir toutes les dix 👇.
 
 ## 🏗️ D'AWT à JavaFX : 25 ans d'évolution
 
-<!-- _footer: "" -->
-
 <style scoped>
 table { font-size: 0.87rem; }
 </style>
@@ -679,9 +639,6 @@ table { font-size: 0.87rem; }
 
 ## 🏗️ La métaphore du théâtre
 
-<!-- _footer: "" -->
-<!-- _header: "" -->
-
 <div style="display: flex; justify-content: center; align-items: center; flex: 1;">
 
 ![w:1150](assets/metaphore-theatre.svg)
@@ -691,9 +648,6 @@ table { font-size: 0.87rem; }
 ---
 
 ## 🏗️ La métaphore du théâtre : le graphe de scène
-
-<!-- _footer: "" -->
-<!-- _header: "" -->
 
 <style scoped>
 table { font-size: 0.85rem; }
@@ -742,9 +696,6 @@ table { font-size: 0.85rem; }
 
 ## 🏗️ Stage, Scene, Nodes : les trois briques
 
-<!-- _footer: "" -->
-<!-- _header: "" -->
-
 <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem;">
 <div style="flex: 1; background: #4a90d9; color: white; padding: 1.5rem; border-radius: 12px;">
 <div><span style="font-size: 2.8rem; vertical-align: middle;">🖼️</span> <span style="font-weight: bold; font-size: 2rem; vertical-align: middle;">Stage</span></div>
@@ -763,9 +714,6 @@ table { font-size: 0.85rem; }
 ---
 
 ## 🏗️ Hello World JavaFX
-
-<!-- _footer: "" -->
-<!-- _header: "" -->
 
 L'application graphique **la plus simple possible** :
 
@@ -795,9 +743,6 @@ public class HelloWorld extends Application {
 
 ## 🏗️ Comment ça démarre ?
 
-<!-- _footer: "" -->
-<!-- _header: "" -->
-
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Le <strong>point d'entrée</strong> d'une application JavaFX :</p>
 
 ```java
@@ -826,8 +771,6 @@ public class HelloWorld extends Application {
 ---
 
 ## 🏗️ Le cycle de vie d'une application
-<!-- _footer: "" -->
-<!-- _header: "" -->
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;"><code>launch()</code> déclenche un cycle de vie géré <strong>entièrement par JavaFX</strong> :</p>
 
@@ -861,9 +804,6 @@ public class HelloWorld extends Application {
 ---
 
 ## 🏗️ En pratique : lancer et tester avec Maven
-
-<!-- _footer: "" -->
-<!-- _header: "" -->
 
 Dans le TP, vous n'appelez jamais `java` ni `javac` à la main. Maven s'en charge :
 
@@ -904,9 +844,6 @@ Exécute tous les tests. Les `@Disabled` sont ignorés.
 
 ## 🏗️ Un arbre de nœuds
 
-<!-- _footer: "" -->
-<!-- _header: "" -->
-
 Le **graphe de scène** (scene graph) est la structure de données centrale de JavaFX. C'est un arbre où chaque nœud est un élément graphique :
 
 ```mermaid
@@ -932,9 +869,6 @@ graph TD
 ---
 
 ## 🏗️ Trois familles de nœuds
-
-<!-- _footer: "" -->
-<!-- _header: "" -->
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Trois rôles fondamentaux structurent tout le graphe de scène : <strong>organiser</strong>, <strong>interagir</strong>, <strong>dessiner</strong>.</p>
 
@@ -982,9 +916,6 @@ graph TD
 ---
 
 ## 🏗️ La hiérarchie des classes JavaFX
-
-<!-- _footer: "" -->
-<!-- _header: "" -->
 
 <p style="font-size: 1.5rem;padding:0;margin:0;">Toutes les classes du graphe de scène héritent de <code>Node</code> :</p>
 
@@ -1086,8 +1017,6 @@ Chaque zone est **optionnelle**. Le `center` prend tout l'espace restant.
 
 ## 🏗️ VBox et HBox - empiler ou aligner
 
-<!-- _footer: "" -->
-
 Les deux conteneurs les plus simples : l'un empile **verticalement**, l'autre aligne **horizontalement**.
 
 <div style="display: flex; gap: 2rem; margin-top: 0.5rem;">
@@ -1133,8 +1062,6 @@ hbox.getChildren().addAll(
 
 ## 🏗️ GridPane - grille alignée
 
-<!-- _footer: "" -->
-
 Organise les enfants dans une **grille** avec des lignes et colonnes alignées. Idéal pour les **formulaires**.
 
 <div style="display: flex; gap: 2rem; margin-top: 0.5rem;">
@@ -1170,8 +1097,6 @@ grid.add(new TextField(),      1, 1);
 ---
 
 ## 🏗️ FlowPane - flux libre
-
-<!-- _footer: "" -->
 
 Les enfants s'enchainent et **passent à la ligne** automatiquement quand il n'y a plus de place, comme du texte.
 
@@ -1214,9 +1139,6 @@ flow.getChildren().addAll(
 ---
 
 ## 🏗️ Choisir le bon conteneur
-
-<!-- _footer: "" -->
-<!-- _header: "" -->
 
 <p style="font-size: 1.5rem;padding:0;margin:0;">
 La question n'est pas "quel conteneur connaissez-vous ?" mais <b>"quel problème de mise en page avez-vous ?"</b>
@@ -1282,9 +1204,6 @@ Comment découper cette maquette en conteneurs de haut niveau ?
 
 ## 🧠 Principes de perception visuelle (Gestalt)
 
-<!-- _footer: "" -->
-<!-- _header: "" -->
-
 La **Gestalt** est un courant de psychologie de la perception (Allemagne, 1920). Il décrit comment l'œil humain **organise spontanément** ce qu'il voit.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
@@ -1311,9 +1230,6 @@ Ces principes ne sont pas JavaFX-spécifiques : ils s'appliquent à **toute** co
 ---
 
 ## 🧠 Gestalt appliquée aux conteneurs JavaFX
-
-<!-- _footer: "" -->
-<!-- _header: "" -->
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Chaque principe Gestalt guide directement le <strong>choix du conteneur</strong> :</p>
 
@@ -1354,9 +1270,6 @@ Ces principes ne sont pas JavaFX-spécifiques : ils s'appliquent à **toute** co
 ---
 
 ## ⚡ Pourquoi des événements ?
-
-<!-- _footer: "" -->
-<!-- _header: "" -->
 
 L'utilisateur peut cliquer **n'importe où**, **à n'importe quel moment**. Le programme doit **réagir**, pas dicter l'ordre des actions.
 
@@ -1462,8 +1375,6 @@ Le pattern Observer illustre un principe fondamental : **chaque composant a une 
 
 ## ⚡ EventHandler : brancher un écouteur
 
-<!-- _footer: "" -->
-
 Comment dire au bouton **quoi faire** quand on clique ? Avec `setOnAction()` :
 
 ```java
@@ -1490,9 +1401,6 @@ Java offre **3 façons** d'écrire des objets `EventHandler`. Elles produisent t
 
 ## ⚡ Style 1 : classe nommée (avant Java 8)
 
-<!-- _footer: "" -->
-<!-- _header: "" -->
-
 L'écouteur est une **classe dédiée** dans son propre fichier :
 
 ```java
@@ -1518,8 +1426,6 @@ Le plus **verbeux**, mais le plus **explicite**. On voit clairement que le compo
 
 ## ⚡ Style 2 : classe anonyme (intermédiaire)
 
-<!-- _footer: "" -->
-
 On définit la classe **sur place**, sans lui donner de nom :
 
 ```java
@@ -1537,8 +1443,6 @@ Plus compact que le style 1, mais la syntaxe reste **lourde** (beaucoup de code 
 ---
 
 ## ⚡ Style 3 : lambda (moderne, recommandé) ⭐
-
-<!-- _footer: "" -->
 
 La syntaxe la plus **compacte** :
 
@@ -1595,8 +1499,6 @@ Les contrôles sont organisés par **type d'interaction** :
 
 ## 🕹️ Afficher : Label et ImageView
 
-<!-- _footer: "" -->
-
 <div style="display: flex; gap: 2rem; margin-top: 1rem;">
 <div style="flex: 1;">
 
@@ -1629,8 +1531,6 @@ Affiche une image avec contrôle de la taille.
 ---
 
 ## 🕹️ Agir : Button
-
-<!-- _footer: "" -->
 
 <div style="display: flex; gap: 2rem; margin-top: 1rem;">
 <div style="flex: 1;">
@@ -1666,8 +1566,6 @@ supprimer.setDisable(true); // grisé
 ---
 
 ## 🕹️ Agir : CheckBox et MenuBar
-
-<!-- _footer: "" -->
 
 <div style="display: flex; gap: 2rem; margin-top: 1rem;">
 <div style="flex: 1;">
@@ -1715,8 +1613,6 @@ bar.getMenus().addAll(fichier,
 
 ## 🕹️ Saisir : TextField
 
-<!-- _footer: "" -->
-
 <div style="display: flex; gap: 2rem; margin-top: 1rem;">
 <div style="flex: 1;">
 
@@ -1752,8 +1648,6 @@ Le `promptText` est le texte grisé affiché quand le champ est vide (indication
 ---
 
 ## 🕹️ Saisir : Slider
-
-<!-- _footer: "" -->
 
 <div style="display: flex; gap: 2rem; margin-top: 1rem;">
 <div style="flex: 1;">
@@ -1815,9 +1709,6 @@ On peut écouter les changements avec un listener sur `valueProperty()` (CM2).
 
 ## Ce que nous avons vu
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
@@ -1856,9 +1747,6 @@ On peut écouter les changements avec un listener sur `valueProperty()` (CM2).
 
 ## Lien avec le TP1
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 Le TP1 met en pratique tout ce CM en **6 exercices** progressifs :
 
 <div style="display: flex; gap: 0.6rem; margin-top: 0.5rem; flex-wrap: wrap;">
@@ -1890,9 +1778,6 @@ Le TP1 met en pratique tout ce CM en **6 exercices** progressifs :
 
 ## En résumé
 
-<!-- _header: "" -->
-<!-- _footer: "" -->
-
 Une application JavaFX, c'est **3 niveaux de décision** :
 
 <div style="display: flex; gap: 1rem; margin-top: 1rem;">
@@ -1920,9 +1805,6 @@ Le code qui <b>fonctionne</b> ne suffit pas. Une bonne IHM est une interface qui
 ---
 
 ## Pour aller plus loin
-
-<!-- _header: "" -->
-<!-- _footer: "" -->
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quelques pistes pour approfondir avant le CM2 et pendant le TP1.</p>
 
