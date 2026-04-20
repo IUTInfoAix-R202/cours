@@ -1818,26 +1818,112 @@ Bindings.bindBidirectional(
 
 ---
 
-## API fluente : multiply, add, subtract, divide
+## Créer un binding : l'API classique
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
 
 <style scoped>
-pre { font-size: 0.82rem; }
+pre { font-size: 0.75rem; }
+h2 { view-transition-name: titre-api; }
 </style>
 
-Les propriétés numériques exposent une API fluente pour construire des expressions :
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Pour qu'un résultat se recalcule automatiquement quand <code>a</code> ou <code>b</code> change, on construit un <code>DoubleBinding</code> qui déclare <strong>explicitement ses dépendances</strong>.</p>
 
 ```java
 IntegerProperty a = new SimpleIntegerProperty(3);
 IntegerProperty b = new SimpleIntegerProperty(4);
 
-// Calcul automatique : a*a + b*b
-NumberBinding sommeCarres = a.multiply(a).add(b.multiply(b));
+// Binding manuel : on fournit le calcul ET la liste des dépendances
+DoubleBinding sommeCarres = Bindings.createDoubleBinding(
+    () -> (double) (a.get() * a.get() + b.get() * b.get()),
+    a, b);                       // ← dépendances : re-calcul si a ou b change
 
-// On peut lier un label à ce calcul
+// Un label lié au résultat
 label.textProperty().bind(sommeCarres.asString("a²+b² = %.0f"));
 ```
 
-Les opérations `multiply()`, `add()`, `subtract()`, `divide()` retournent un `NumberBinding` - pas un entier. La valeur est recalculée automatiquement quand `a` ou `b` change.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; line-height: 1.55;">
+💡 Ça fonctionne, mais c'est verbeux : lambda <strong>+</strong> liste des dépendances à maintenir à la main. Oublier une dépendance = binding qui ne se met pas à jour. Peut-on faire mieux ?
+</div>
+
+---
+
+<!-- _transition: fade -->
+
+## API statique : Bindings.multiply, add, subtract, divide
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<style scoped>
+pre { font-size: 0.75rem; }
+h2 { view-transition-name: titre-api; }
+</style>
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">La classe <code>Bindings</code> expose des <strong>méthodes statiques</strong> qui composent les opérations et déduisent seules les dépendances.</p>
+
+<div style="display: flex; justify-content: center; gap: 0.8rem; margin: 0.6rem 0 1rem 0;">
+<div style="background: #6c3483; color: white; padding: 0.6rem 1.3rem; border-radius: 10px; font-family: monospace; font-size: 1.15rem; font-weight: bold;">Bindings.multiply()</div>
+<div style="background: #6c3483; color: white; padding: 0.6rem 1.3rem; border-radius: 10px; font-family: monospace; font-size: 1.15rem; font-weight: bold;">Bindings.add()</div>
+<div style="background: #6c3483; color: white; padding: 0.6rem 1.3rem; border-radius: 10px; font-family: monospace; font-size: 1.15rem; font-weight: bold;">Bindings.subtract()</div>
+<div style="background: #6c3483; color: white; padding: 0.6rem 1.3rem; border-radius: 10px; font-family: monospace; font-size: 1.15rem; font-weight: bold;">Bindings.divide()</div>
+</div>
+
+```java
+IntegerProperty a = new SimpleIntegerProperty(3);
+IntegerProperty b = new SimpleIntegerProperty(4);
+
+// Expression en notation préfixe : dépendances déduites automatiquement
+NumberBinding sommeCarres = Bindings.add(
+    Bindings.multiply(a, a),
+    Bindings.multiply(b, b));
+
+label.textProperty().bind(sommeCarres.asString("a²+b² = %.0f"));
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; line-height: 1.55;">
+💡 Plus besoin de lister les dépendances à la main. Mais la notation préfixe imbriquée reste moins lisible qu'une expression arithmétique. Peut-on encore simplifier ?
+</div>
+
+---
+
+<!-- _transition: fade -->
+
+## API fluente : multiply, add, subtract, divide
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<style scoped>
+pre { font-size: 0.75rem; }
+h2 { view-transition-name: titre-api; }
+</style>
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Les propriétés numériques exposent une <strong>API fluente</strong> qui compose les expressions et déduit les dépendances toute seule.</p>
+
+<div style="display: flex; justify-content: center; gap: 0.8rem; margin: 0.6rem 0 1rem 0;">
+<div style="background: #1a5276; color: white; padding: 0.6rem 1.3rem; border-radius: 10px; font-family: monospace; font-size: 1.15rem; font-weight: bold;">multiply()</div>
+<div style="background: #1a5276; color: white; padding: 0.6rem 1.3rem; border-radius: 10px; font-family: monospace; font-size: 1.15rem; font-weight: bold;">add()</div>
+<div style="background: #1a5276; color: white; padding: 0.6rem 1.3rem; border-radius: 10px; font-family: monospace; font-size: 1.15rem; font-weight: bold;">subtract()</div>
+<div style="background: #1a5276; color: white; padding: 0.6rem 1.3rem; border-radius: 10px; font-family: monospace; font-size: 1.15rem; font-weight: bold;">divide()</div>
+</div>
+
+```java
+IntegerProperty a = new SimpleIntegerProperty(3);
+IntegerProperty b = new SimpleIntegerProperty(4);
+
+// Expression composée : a*a + b*b
+NumberBinding sommeCarres = a.multiply(a).add(b.multiply(b));
+
+
+// Un label lié au résultat formaté
+label.textProperty().bind(sommeCarres.asString("a²+b² = %.0f"));
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; line-height: 1.55;">
+💡 <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">multiply()</code> / <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">add()</code> / <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">subtract()</code> / <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">divide()</code> retournent un <strong>NumberBinding</strong>, pas un nombre : la valeur est <strong>recalculée automatiquement</strong> dès qu'<code>a</code> ou <code>b</code> change.
+</div>
 
 ---
 
