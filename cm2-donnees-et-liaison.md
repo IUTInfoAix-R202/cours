@@ -2005,26 +2005,78 @@ area.bind(
 
 ---
 
+<!-- _transition: fade -->
+
 ## Bindings.concat() - composer du texte
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 <style scoped>
-pre { font-size: 0.82rem; }
+pre { font-size: 0.75rem; }
+.hidden { visibility: hidden; }
 </style>
 
-`Bindings.concat()` assemble plusieurs valeurs observables en une `StringExpression` :
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;"><code>Bindings.concat()</code> assemble des <strong>littéraux</strong> et des <strong>valeurs observables</strong> en une <code>StringExpression</code> toujours synchronisée.</p>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 0.6rem; margin: 1rem 0;">
+<div style="background: #1a5276; color: white; padding: 0.8rem 1.2rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold;">"P1(", x1, ",", y1, ") P2(", x2, ",", y2, ") => aire = ", area ...</div>
+<div style="flex: 1; height: 10px; background: #2c3e50; position: relative; margin: 0 12px;">
+<span style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); border: 12px solid transparent; border-left-color: #2c3e50; border-right: 0;"></span>
+</div>
+<div style="background: #27ae60; color: white; padding: 0.8rem 1.2rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold;">StringExpression</div>
+</div>
+
+<div class="hidden">
 
 ```java
 StringExpression texte = Bindings.concat(
-    "P1(", x1, ",", y1,
-    ") P2(", x2, ",", y2,
-    ") => aire = ", area);
+    "P1(", x1, ",", y1, ") ",
+    "P2(", x2, ",", y2, ") ",
+    "=> aire = ", area);
 
 label.textProperty().bind(texte);
 ```
 
-Le label affiche toujours les valeurs courantes. Quand `x1` change, le label se met à jour sans `setText()`.
+</div>
 
-Exercice 4 du TP2 : `AireTriangle.createBinding()` utilise `Bindings.format()` pour le même résultat avec un format `printf`.
+<div class="hidden" style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; line-height: 1.55;">
+💡 Quand <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">x1</code> change, le label se met à jour <strong>sans aucun</strong> <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">setText()</code>. <br/> <strong>TP2, exercice 4</strong> : <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">AireTriangle.createBinding()</code> utilise <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">Bindings.format()</code> pour le même résultat avec un format <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">printf</code>.
+</div>
+
+---
+
+## Bindings.concat() - composer du texte
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<style scoped>
+pre { font-size: 0.75rem; }
+</style>
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;"><code>Bindings.concat()</code> assemble des <strong>littéraux</strong> et des <strong>valeurs observables</strong> en une <code>StringExpression</code> toujours synchronisée.</p>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 0.6rem; margin: 1rem 0;">
+<div style="background: #1a5276; color: white; padding: 0.8rem 1.2rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold;">"P1(", x1, ",", y1, ") P2(", x2, ",", y2, ") => aire = ", area ...</div>
+<div style="flex: 1; height: 10px; background: #2c3e50; position: relative; margin: 0 12px;">
+<span style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); border: 12px solid transparent; border-left-color: #2c3e50; border-right: 0;"></span>
+</div>
+<div style="background: #27ae60; color: white; padding: 0.8rem 1.2rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold;">StringExpression</div>
+</div>
+
+```java
+StringExpression texte = Bindings.concat(
+    "P1(", x1, ",", y1, ") ",
+    "P2(", x2, ",", y2, ") ",
+    "=> aire = ", area);
+
+label.textProperty().bind(texte);
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; line-height: 1.55;">
+💡 Quand <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">x1</code> change, le label se met à jour <strong>sans aucun</strong> <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">setText()</code>. <br/> <strong>TP2, exercice 4</strong> : <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">AireTriangle.createBinding()</code> utilise <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">Bindings.format()</code> pour le même résultat avec un format <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">printf</code>.
+</div>
 
 ---
 
