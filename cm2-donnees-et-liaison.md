@@ -2079,7 +2079,7 @@ label.textProperty().bind(texte);
 
 ---
 
-## Bindings.when().then().otherwise() - conditions
+## Bindings.when().then().otherwise()
 
 <!-- _header: "" -->
 <!-- _footer: "" -->
@@ -2112,6 +2112,55 @@ label.textProperty().bind(affichage);
 
 <div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; line-height: 1.55;">
 💡 Tant qu'aucun bouton n'est cliqué, le label affiche <em>« Bienvenue ! »</em>. Au premier clic, il bascule sur les compteurs <strong>sans aucun listener</strong>. 
+</div>
+
+---
+
+## Conditions booléennes : comparaisons et combinaisons
+
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<style scoped>
+pre { font-size: 0.75rem; }
+</style>
+
+<p style="font-size: 1.4rem; margin: 0.3rem 0 0.6rem 0;">Les <code>Property</code> exposent des méthodes qui renvoient un <code>BooleanBinding</code> - observable et composable.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 0.6rem 0 0.8rem 0;">
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.5rem;">🔍 Comparaisons</div>
+<div style="font-family: monospace; font-size: 1rem; line-height: 1.7;">
+.isEqualTo() / .isNotEqualTo()<br/>
+.greaterThan() / .lessThan()<br/>
+.greaterThanOrEqualTo() / .lessThanOrEqualTo()<br/>
+.isNull() / .isNotNull()
+</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.5rem;">🪢 Combinaisons</div>
+<div style="font-family: monospace; font-size: 1rem; line-height: 1.7;">
+.and(autreBooleanBinding)<br/>
+.or(autreBooleanBinding)<br/>
+.not()
+</div>
+</div>
+
+</div>
+
+```java
+// Formulaire rempli = nom non vide ET âge >= 18
+BooleanBinding formulaireValide =
+    nom.textProperty().isNotEmpty()
+       .and(age.valueProperty().greaterThanOrEqualTo(18));
+
+okBtn.disableProperty().bind(formulaireValide.not());
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.4rem; line-height: 1.55;">
+💡 Ces expressions booléennes alimentent tout ce qui réagit à une condition : <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">Bindings.when()</code>, <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">disableProperty().bind()</code>, <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">visibleProperty().bind()</code>...
 </div>
 
 ---
