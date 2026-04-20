@@ -1808,31 +1808,38 @@ On peut écouter les changements avec un listener sur `valueProperty()` (CM2).
 <!-- _header: "" -->
 <!-- _footer: "" -->
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem; font-size: 1.6rem;">
-<div style="background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #4a90d9;">
-<b>🖼️ Stage / 🎬 Scene / 📦 Node</b><br/>
-Métaphore du théâtre. L'affichage est un arbre de nœuds.
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.3rem;">🖼️ Stage / 🎬 Scene / Node</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Métaphore du théâtre. L'affichage est un arbre de nœuds.</div>
 </div>
-<div style="background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #e8a838;">
-<b>📦 Conteneurs</b><br/>
-Choisir le layout selon le besoin : BorderPane, VBox, HBox, GridPane.
+
+<div style="background: #e8a838; color: white; padding: 0.9rem 1.1rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.3rem;">📦 Conteneurs</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Choisir le layout selon le besoin : BorderPane, VBox, HBox, GridPane.</div>
 </div>
-<div style="background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #e74c3c;">
-<b>⚡ Événements</b><br/>
-Les IHM sont réactives. Le pattern Observer sépare "observer" de "réagir".
+
+<div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.3rem;">⚡ Événements</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Les IHM sont réactives. Le pattern Observer sépare « observer » de « réagir ».</div>
 </div>
-<div style="background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #e74c3c;">
-<b>🕹️ Contrôles</b><br/>
-Afficher (Label), agir (Button), saisir (TextField, Slider).
+
+<div style="background: #e74c3c; color: white; padding: 0.9rem 1.1rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.3rem;">🕹️ Contrôles</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Afficher (Label), agir (Button), saisir (TextField, Slider).</div>
 </div>
-<div style="background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #8e44ad;">
-<b>🧠 Nielsen</b><br/>
-10 heuristiques d'utilisabilité pour concevoir des interfaces qui servent l'utilisateur.
+
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.3rem;">🧠 Nielsen</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">10 heuristiques d'utilisabilité pour concevoir des interfaces qui servent l'utilisateur.</div>
 </div>
-<div style="background: #f0f4f8; padding: 0.8rem 1rem; border-radius: 10px; border-left: 4px solid #8e44ad;">
-<b>🧠 Gestalt</b><br/>
-Proximité, alignement, similarité, clôture : les lois de la perception visuelle.
+
+<div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.3rem;">🧠 Gestalt</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Proximité, alignement, similarité, clôture : les lois de la perception visuelle.</div>
 </div>
+
 </div>
 
 ---
