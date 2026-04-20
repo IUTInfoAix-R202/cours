@@ -249,7 +249,7 @@ Les CM suivants ajouteront : bindings (CM2), FXML/architecture (CM3), MVVM/persi
 - **Décrire** le graphe de scène JavaFX (Stage, Scene, Node) et la métaphore du théâtre
 - **Identifier** quel conteneur de layout utiliser selon le besoin
 - **Comprendre** le modèle événementiel (pattern Observer, EventHandler)
-- **Appliquer** deux heuristiques d'ergonomie (Nielsen #1 et #2) pour évaluer une interface
+- **Identifier** les 10 heuristiques d'ergonomie de Nielsen et **appliquer** #1 et #2 pour évaluer une interface
 
 > *Niveau Bloom : Comprendre* - Ce CM pose les fondations conceptuelles. Le TP1 vous fera passer à la pratique.
 
