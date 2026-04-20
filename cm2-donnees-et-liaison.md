@@ -2400,29 +2400,41 @@ total.textProperty().bind(
 
 ## Taxonomie des contrôles JavaFX
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
-<div style="background: #f0f4f8; padding: 1.2rem; border-radius: 10px;">
-<div style="font-weight: bold; margin-bottom: 0.7rem;">🏷️ Affichage (lecture seule)</div>
-<div style="font-size: 0.9rem;">
-<code>Label</code> - texte statique<br/>
-<code>ImageView</code> - image<br/>
-<code>ProgressBar</code> - progression<br/>
-<code>ProgressIndicator</code> - spinner
-</div>
-</div>
-<div style="background: #f0fff4; padding: 1.2rem; border-radius: 10px;">
-<div style="font-weight: bold; margin-bottom: 0.7rem;">🕹️ Interaction (lecture-écriture)</div>
-<div style="font-size: 0.9rem;">
-<code>Button</code> - action ponctuelle<br/>
-<code>TextField</code> / <code>PasswordField</code> - saisie texte<br/>
-<code>Slider</code> - valeur numérique continue<br/>
-<code>CheckBox</code> - option booléenne<br/>
-<code>ComboBox</code> - choix dans une liste
-</div>
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Deux grandes familles, distinguées par leur <strong>rôle</strong> dans l'interaction avec l'utilisateur.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.8rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.3rem 1.5rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.8rem;">📺 Affichage</div>
+<div style="font-size: 1.2rem; opacity: 0.85; margin-bottom: 0.7rem;">lecture seule - reflète un état</div>
+<div style="font-size: 1.2rem; line-height: 1.9;">
+🏷️ <code style="background: rgba(0,0,0,0.2); padding: 1px 6px; border-radius: 3px;">Label</code> - texte<br/>
+🌄 <code style="background: rgba(0,0,0,0.2); padding: 1px 6px; border-radius: 3px;">ImageView</code> - image<br/>
+📊 <code style="background: rgba(0,0,0,0.2); padding: 1px 6px; border-radius: 3px;">ProgressBar</code> - progression<br/>
+⏳ <code style="background: rgba(0,0,0,0.2); padding: 1px 6px; border-radius: 3px;">ProgressIndicator</code> - spinner
 </div>
 </div>
 
-> Chaque contrôle JavaFX suit le triplet JavaBeans - il expose ses états via des propriétés.
+<div style="background: #c0392b; color: white; padding: 1.3rem 1.5rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.8rem;">🕹️ Interaction</div>
+<div style="font-size: 1.2rem; opacity: 0.85; margin-bottom: 0.7rem;">lecture-écriture - l'utilisateur agit</div>
+<div style="font-size: 1.2rem; line-height: 1.9;">
+🔘 <code style="background: rgba(0,0,0,0.2); padding: 1px 6px; border-radius: 3px;">Button</code> - action ponctuelle<br/>
+📝 <code style="background: rgba(0,0,0,0.2); padding: 1px 6px; border-radius: 3px;">TextField</code> / <code style="background: rgba(0,0,0,0.2); padding: 1px 6px; border-radius: 3px;">PasswordField</code><br/>
+🎚️ <code style="background: rgba(0,0,0,0.2); padding: 1px 6px; border-radius: 3px;">Slider</code> - valeur continue<br/>
+☑️ <code style="background: rgba(0,0,0,0.2); padding: 1px 6px; border-radius: 3px;">CheckBox</code> - option booléenne<br/>
+📋 <code style="background: rgba(0,0,0,0.2); padding: 1px 6px; border-radius: 3px;">ComboBox</code> - choix dans liste
+</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem; line-height: 1.55;">
+💡 Chaque contrôle suit le <strong>triplet JavaBeans</strong> : pour chaque état, un <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">getXxx()</code>, un <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">setXxx()</code>, et un <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">xxxProperty()</code> observable.
+</div>
 
 ---
 
