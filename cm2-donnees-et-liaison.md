@@ -1937,7 +1937,7 @@ label.textProperty().bind(sommeCarres.asString("a²+b² = %.0f"));
 h2 { view-transition-name: titre-aire-triangle; }
 .intro-aire { view-transition-name: intro-aire-triangle; }
 .formule-aire { view-transition-name: formule-aire-triangle; }
-.bandeau-aire { view-transition-name: bandeau-aire-triangle; }
+.hidden { visibility: hidden; }
 </style>
 
 <p class="intro-aire" style="font-size: 1.5rem; margin: 0.3rem 0 0.4rem 0;">Dans <code>AireTriangle.java</code>, l'aire se recalcule automatiquement à partir des 6 coordonnées - aucun <code>setArea()</code> manuel.</p>
@@ -1960,7 +1960,7 @@ $$\text{aire} = \frac{1}{2} \; \bigl|\, x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.3rem; border-radius: 10px; font-family: monospace; font-size: 1.2rem; font-weight: bold;">area</div>
 </div>
 
-<div class="bandeau-aire" style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.3rem; line-height: 1.55;">
+<div class="hidden" style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.3rem; line-height: 1.55;">
 💡 <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">x1.set(5)</code> propage automatiquement : <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">determinant</code> se recalcule, puis <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">area</code>. Un <strong>graphe de dépendances</strong> implicite remplace tous les <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">setArea()</code> manuels.
 </div>
 
@@ -1976,7 +1976,6 @@ pre { font-size: 0.82rem; }
 h2 { view-transition-name: titre-aire-triangle; }
 .intro-aire { view-transition-name: intro-aire-triangle; }
 .formule-aire { view-transition-name: formule-aire-triangle; }
-.bandeau-aire { view-transition-name: bandeau-aire-triangle; }
 </style>
 
 <p class="intro-aire" style="font-size: 1.5rem; margin: 0.3rem 0 0.4rem 0;">Dans <code>AireTriangle.java</code>, l'aire se recalcule automatiquement à partir des 6 coordonnées - aucun <code>setArea()</code> manuel.</p>
@@ -1999,7 +1998,7 @@ area.bind(
         .otherwise(determinant.negate().divide(2.0)));
 ```
 
-<div class="bandeau-aire" style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.3rem; line-height: 1.55;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.3rem; line-height: 1.55;">
 💡 <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">x1.set(5)</code> propage automatiquement : <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">determinant</code> se recalcule, puis <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">area</code>. Un <strong>graphe de dépendances</strong> implicite remplace tous les <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">setArea()</code> manuels.
 </div>
 
