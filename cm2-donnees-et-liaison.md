@@ -2546,11 +2546,14 @@ champ.textProperty().addListener(
 
 ## disableProperty().bind() - affordance automatique
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 <style scoped>
 pre { font-size: 0.82rem; }
 </style>
 
-Dans `FormulaireConnexion.java` (TP2, ex. 6), l'affordance est gérée par bindings :
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Dans <code>FormulaireConnexion.java</code> (<strong>TP2, ex. 6</strong>), l'affordance est <em>calculée</em> à partir de l'état des données, jamais codée à la main.</p>
 
 ```java
 // Le bouton OK est grisé tant que le mot de passe est invalide
@@ -2562,7 +2565,9 @@ pwd.editableProperty().bind(
         userId.textProperty().length(), 6));
 ```
 
-L'utilisateur comprend immédiatement les contraintes sans lire une documentation. L'interface est **auto-explicative**.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.2rem; line-height: 1.55;">
+💡 L'utilisateur comprend immédiatement les contraintes <strong>sans lire de documentation</strong> ni recevoir de message d'erreur. L'interface est <strong>auto-explicative</strong>.
+</div>
 
 ---
 
