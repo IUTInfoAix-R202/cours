@@ -2437,7 +2437,7 @@ zone.setOnTouchPressed(<br/>
 <div style="background: #e74c3c; color: white; padding: 1rem; border-radius: 8px;">
 <div style="font-size: 2rem; font-weight: bold; text-align: center;">&gt; 3 s</div>
 <div style="font-size: 1.3rem; font-weight: bold; text-align: center; margin-top: 0.3rem;">Trop long</div>
-<div style="font-size: 1.15rem; margin-top: 0.6rem;">L'attention s'échappe : barre de progression <b>obligatoire</b>.</div>
+<div style="font-size: 1.15rem; margin-top: 0.6rem;">L'attention s'échappe : <b>indicateur de progression nécessaire</b>.</div>
 <div style="font-size: 1.05rem; font-style: italic; margin-top: 0.5rem; background: rgba(0,0,0,0.2); padding: 0.4rem; border-radius: 6px;">Export PDF, requête réseau, traitement par lot.</div>
 </div>
 
