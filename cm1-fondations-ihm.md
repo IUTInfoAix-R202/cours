@@ -699,31 +699,40 @@ table { font-size: 0.87rem; }
 table { font-size: 0.85rem; }
 </style>
 
-En termes techniques, cette métaphore se traduit par un **arbre d'objets** :
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">En termes techniques, cette métaphore se traduit par un <strong>arbre d'objets</strong> :</p>
 
-```mermaid
-graph RL
-    ST["🖼️ Stage - la fenêtre <i>(le théâtre)</i>"]
-    SC["🎬 Scene - le contenu affiché <i>(le décor)</i>"]
-    R["📦 Root Node - le conteneur racine <i>(la troupe)</i>"]
-    N1["🏷️ Label - une étiquette de texte <i>(un acteur)</i>"]
-    N2["🔘 Button - un bouton <i>(un autre acteur)</i>"]
-    N3["📝 TextField - un champ de texte <i>(encore un acteur)</i>"]
+<div style="display: flex; flex-direction: column; align-items: center; gap: 0.4rem; margin: 0.8rem 0;">
 
-    SC --> ST
-    R --> SC
-     
-    N1 --> R
-    N2 --> R
-    N3 --> R
+<div style="background: #1a5276; color: white; padding: 0.7rem 1.3rem; border-radius: 10px; font-size: 1.15rem; font-weight: bold; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">🖼️ Stage <span style="font-weight: normal; opacity: 0.85; font-style: italic;">- la fenêtre (le théâtre)</span></div>
+<svg viewBox="0 0 20 36" style="width: 20px; height: 36px;">
+<line x1="10" y1="0" x2="10" y2="28" stroke="#2c3e50" stroke-width="3"/>
+<polygon points="10,36 4,26 16,26" fill="#2c3e50"/>
+</svg>
 
-    style ST fill:#4a90d9,color:white
-    style SC fill:#7bb563,color:white
-    style R fill:#e8a838,color:white
-    style N1 fill:#8e44ad,color:white
-    style N2 fill:#e74c3c,color:white
-    style N3 fill:#27ae60,color:white
-```
+<div style="background: #27ae60; color: white; padding: 0.7rem 1.3rem; border-radius: 10px; font-size: 1.15rem; font-weight: bold; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">🎬 Scene <span style="font-weight: normal; opacity: 0.85; font-style: italic;">- le contenu affiché (le décor)</span></div>
+<svg viewBox="0 0 20 36" style="width: 20px; height: 36px;">
+<line x1="10" y1="0" x2="10" y2="28" stroke="#2c3e50" stroke-width="3"/>
+<polygon points="10,36 4,26 16,26" fill="#2c3e50"/>
+</svg>
+
+<div style="background: #e8a838; color: white; padding: 0.7rem 1.3rem; border-radius: 10px; font-size: 1.15rem; font-weight: bold; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">📦 Root Node <span style="font-weight: normal; opacity: 0.85; font-style: italic;">- le conteneur racine (la troupe)</span></div>
+
+<svg viewBox="0 0 600 50" style="width: 70%; height: 50px;" preserveAspectRatio="xMidYMid meet">
+<path d="M 300 0 L 300 15 L 100 15 L 100 40" stroke="#2c3e50" stroke-width="3" fill="none"/>
+<path d="M 300 15 L 300 40" stroke="#2c3e50" stroke-width="3" fill="none"/>
+<path d="M 300 15 L 500 15 L 500 40" stroke="#2c3e50" stroke-width="3" fill="none"/>
+<polygon points="100,50 95,40 105,40" fill="#2c3e50"/>
+<polygon points="300,50 295,40 305,40" fill="#2c3e50"/>
+<polygon points="500,50 495,40 505,40" fill="#2c3e50"/>
+</svg>
+
+<div style="display: flex; justify-content: space-between; width: 70%; gap: 0.6rem;">
+<div style="flex: 1; background: #8e44ad; color: white; padding: 0.7rem 0.9rem; border-radius: 10px; font-size: 1.05rem; font-weight: bold; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">🏷️ Label<br/><span style="font-weight: normal; opacity: 0.85; font-size: 0.9rem; font-style: italic;">un acteur</span></div>
+<div style="flex: 1; background: #e74c3c; color: white; padding: 0.7rem 0.9rem; border-radius: 10px; font-size: 1.05rem; font-weight: bold; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">🔘 Button<br/><span style="font-weight: normal; opacity: 0.85; font-size: 0.9rem; font-style: italic;">un autre acteur</span></div>
+<div style="flex: 1; background: #27ae60; color: white; padding: 0.7rem 0.9rem; border-radius: 10px; font-size: 1.05rem; font-weight: bold; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">📝 TextField<br/><span style="font-weight: normal; opacity: 0.85; font-size: 0.9rem; font-style: italic;">encore un acteur</span></div>
+</div>
+
+</div>
 
 <div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
 🌳 Un noeud ne peut avoir <b>qu'un seul parent</b>. Le graphe de scène est toujours un <b>arbre</b>, jamais un graphe cyclique.
