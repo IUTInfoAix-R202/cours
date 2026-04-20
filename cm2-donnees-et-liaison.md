@@ -2440,11 +2440,14 @@ total.textProperty().bind(
 
 ## Contrôles d'affichage - propriétés clés
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 <style scoped>
-pre { font-size: 0.82rem; }
+pre { font-size: 0.75rem; }
 </style>
 
-Les contrôles d'affichage sont des cibles naturelles pour `bind()` :
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Les contrôles d'<strong>affichage</strong> sont des <em>cibles</em> naturelles pour <code>bind()</code> - leur rôle est de refléter une donnée.</p>
 
 ```java
 Label label = new Label();
@@ -2457,17 +2460,22 @@ label.textProperty().bind(slider.valueProperty().asString("%.0f%%"));
 barre.progressProperty().bind(slider.valueProperty().divide(100));
 ```
 
-Pas de `setText()`, pas de `setProgress()`. Les contrôles sont des **vues déclaratives** sur les données.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; line-height: 1.55;">
+💡 Pas de <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">setText()</code>, pas de <code style="background: rgba(255,255,255,0.15); padding: 1px 5px; border-radius: 3px;">setProgress()</code>. Les contrôles d'affichage deviennent des <strong>vues déclaratives</strong> sur les données.
+</div>
 
 ---
 
 ## Contrôles d'action et de saisie - propriétés clés
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
 <style scoped>
-pre { font-size: 0.82rem; }
+pre { font-size: 0.75rem; }
 </style>
 
-Les contrôles interactifs exposent leurs états comme propriétés observables :
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Les contrôles <strong>interactifs</strong> sont des <em>sources</em> : ils exposent ce que saisit l'utilisateur sous forme de propriétés observables.</p>
 
 ```java
 TextField champ = new TextField();
@@ -2476,12 +2484,16 @@ CheckBox option = new CheckBox("Se souvenir de moi");
 
 // Lire l'état actuel
 String texte = champ.getText();          // = champ.textProperty().get()
-boolean coche = option.isSelected();    // = option.selectedProperty().get()
+boolean coche = option.isSelected();     // = option.selectedProperty().get()
 
 // Observer les changements
 champ.textProperty().addListener(
     (obs, old, nouveau) -> System.out.println("Saisie : " + nouveau));
 ```
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; line-height: 1.55;">
+💡 <strong>Sources</strong> (contrôles interactifs) + <strong>cibles</strong> (contrôles d'affichage) = l'IHM devient un graphe de flux de données entre propriétés observables.
+</div>
 
 ---
 
