@@ -1916,26 +1916,35 @@ Le code qui <b>fonctionne</b> ne suffit pas. Une bonne IHM est une interface qui
 <!-- _header: "" -->
 <!-- _footer: "" -->
 
-<div style="display: flex; gap: 1.2rem; margin-top: 1rem; align-items: stretch;">
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quelques pistes pour approfondir avant le CM2 et pendant le TP1.</p>
+
+<div style="display: flex; gap: 1.2rem; margin-top: 0.6rem; align-items: stretch;">
 <div style="flex: 1; display: flex; flex-direction: column; gap: 1rem;">
-<div style="background: #4a90d9; color: white; padding: 1rem; border-radius: 10px; flex: 1;">
-<div style="font-size: 1.2rem; margin-bottom: 0.5rem;">📚 <b>Documentation</b></div>
-<div>- <a href="https://openjfx.io/javadoc/25/" style="color: #d0e2f3;">JavaFX 25 API</a></div>
-<div>- <a href="https://openjfx.io/openjfx-docs/" style="color: #d0e2f3;">OpenJFX Getting Started</a></div>
+<div style="background: #1a5276; color: white; padding: 1rem; border-radius: 10px; flex: 1;">
+<div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">📚 Documentation</div>
+<div style="font-size: 1rem; line-height: 1.55;">
+<a href="https://openjfx.io/javadoc/25/" style="color: #a0d0ff;">JavaFX 25 API</a> - javadoc<br/>
+<a href="https://openjfx.io/openjfx-docs/" style="color: #a0d0ff;">OpenJFX Getting Started</a><br/>
+<a href="https://dev.java/learn/javafx/" style="color: #a0d0ff;">dev.java - JavaFX</a><br/>
+<a href="https://fxdocs.github.io/docs/html5/" style="color: #a0d0ff;">FXDocs Community</a><br/>
+🎬 <a href="https://www.youtube.com/playlist?list=PL4h6ypqTi3RR_bhBk6PtLfD83YkaJXXxw" style="color: #a0d0ff;">JavaFX Software</a> - AlmasB
+</div>
 </div>
 <div style="background: #8e44ad; color: white; padding: 1rem; border-radius: 10px; flex: 1;">
-<div style="font-size: 1.2rem; margin-bottom: 0.5rem;">🧠 <b>Ergonomie</b></div>
-<div>- <a href="https://www.nngroup.com/articles/ten-usability-heuristics/" style="color: #e1bee7;">10 Heuristics - Nielsen</a></div>
-<div>- <a href="https://www.nngroup.com/articles/gestalt-proximity/" style="color: #e1bee7;">Gestalt Principles</a></div>
-<div>- <a href="https://www.nngroup.com/books/design-everyday-things-revised/" style="color: #e1bee7;">Design of Everyday Things</a></div>
+<div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">🧠 Ergonomie</div>
+<div style="font-size: 1rem; line-height: 1.55;">
+<a href="https://www.nngroup.com/articles/ten-usability-heuristics/" style="color: #e1bee7;">10 Heuristics - Nielsen</a><br/>
+<a href="https://www.nngroup.com/articles/gestalt-proximity/" style="color: #e1bee7;">Gestalt Principles</a><br/>
+<a href="https://www.nngroup.com/books/design-everyday-things-revised/" style="color: #e1bee7;">Design of Everyday Things</a>
+</div>
 </div>
 </div>
 <div style="flex: 1; display: flex;">
 
-<div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px; flex: 1; display: flex; flex-direction: column; justify-content: center;">
-<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔮 <b>Prochain CM</b></div>
-<div>Propriétés, bindings et le modèle événementiel complet.</div>
-<div style="margin-top: 0.5rem; opacity: 0.9;">Comment synchroniser automatiquement l'interface avec les données, <b>sans écrire un seul EventHandler</b>.</div>
+<div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px; flex: 1; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🔮 Prochain CM</div>
+<div style="font-size: 1.1rem; line-height: 1.5;"><strong>Propriétés, bindings</strong> et le modèle événementiel complet.</div>
+<div style="margin-top: 0.6rem; opacity: 0.95; font-size: 1.05rem; line-height: 1.5;">Comment synchroniser automatiquement l'interface avec les données, <strong>sans écrire un seul EventHandler</strong>.</div>
 </div>
 
 </div>
