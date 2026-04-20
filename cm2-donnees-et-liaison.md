@@ -2675,6 +2675,19 @@ pwd.editableProperty().bind(
 
 ## Lien avec le TP2 - tableau exercices et concepts
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<style scoped>
+section table { font-size: 0.75rem !important; width: 100%; border-collapse: collapse; }
+section th { background: #1a5276 !important; color: white !important; padding: 0.3rem 0.6rem !important; text-align: left !important; font-size: 0.8rem !important; }
+section td { padding: 0.25rem 0.6rem !important; border-bottom: 1px solid #e0e0e0 !important; font-size: 0.75rem !important; }
+section tr:nth-child(even) td { background: #f4f6f8 !important; }
+section table code { font-size: 0.72rem !important; padding: 1px 4px !important; }
+</style>
+
+<p style="font-size: 1.5rem; margin: 0.2rem 0 0.4rem 0;">Chaque exercice du TP2 met en pratique des concepts introduits dans ce CM.</p>
+
 | Exercice | Classe | Concepts |
 |---|---|---|
 | 1 | `ProprieteSimple` | InvalidationListener, ChangeListener |
