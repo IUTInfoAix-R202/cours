@@ -1,6 +1,6 @@
-# <img src="https://raw.githubusercontent.com/IUTInfoAix-R510/Syllabus/main/assets/logo.png" alt="class logo" class="logo"/> R2.02 — Développement d'applications avec IHM
+# <img src="https://raw.githubusercontent.com/IUTInfoAix-R510/Syllabus/main/assets/logo.png" alt="class logo" class="logo"/> R2.02 - Développement d'applications avec IHM
 
-### IUT d'Aix-Marseille — Département Informatique Aix-en-Provence
+### IUT d'Aix-Marseille - Département Informatique Aix-en-Provence
 
 * **Ressource :** [R2.02](https://cache.media.enseignementsup-recherche.gouv.fr/file/SPE4-MESRI-17-6-2021/35/5/Annexe_17_INFO_BUT_annee_1_1411355.pdf)
 
@@ -18,9 +18,9 @@ Ce dépôt contient les supports des 4 cours magistraux du module R2.02 (BUT Inf
 
 | CM | Titre | Prépare | Bloom |
 |---|---|---|---|
-| [CM1](cm1-fondations-ihm.md) | Fondations de l'IHM et première immersion JavaFX | [TP1](https://github.com/IUTInfoAix-R202/tp1) — Bases JavaFX | Comprendre |
-| [CM2](cm2-donnees-et-liaison.md) | Propriétés, bindings et contrôles | [TP2](https://github.com/IUTInfoAix-R202/tp2) — Properties & bindings | Appliquer |
-| [CM3](cm3-architecture-ihm.md) | Architecture des IHM et FXML | [TP3](https://github.com/IUTInfoAix-R202/tp3) — FXML | Analyser |
+| [CM1](cm1-fondations-ihm.md) | Fondations de l'IHM et première immersion JavaFX | [TP1](https://github.com/IUTInfoAix-R202/tp1) - Bases JavaFX | Comprendre |
+| [CM2](cm2-donnees-et-liaison.md) | Propriétés, bindings et contrôles | [TP2](https://github.com/IUTInfoAix-R202/tp2) - Properties & bindings | Appliquer |
+| [CM3](cm3-architecture-ihm.md) | Architecture des IHM et FXML | [TP3](https://github.com/IUTInfoAix-R202/tp3) - FXML | Analyser |
 | [CM4](cm4-synthese.md) | MVVM, persistance et synthèse | [TP4](https://github.com/IUTInfoAix-R202/tp4) + [TP5](https://github.com/IUTInfoAix-R202/tp5) | Créer / Évaluer |
 
 ### Fil rouge
@@ -52,8 +52,8 @@ cours/
 ├── cm4-synthese.md            # CM4
 ├── assets/                    # Images et diagrammes partagés
 └── legacy/                    # Cours originaux (2022) pour référence
-    ├── cours1/                # Markdown/remark.js — bases JavaFX
-    ├── cours2/                # Markdown/remark.js — contrôles, FXML
-    ├── cours3/                # LaTeX Beamer — JDBC
-    └── cours4/                # LaTeX Beamer — JPA
+    ├── cours1/                # Markdown/remark.js - bases JavaFX
+    ├── cours2/                # Markdown/remark.js - contrôles, FXML
+    ├── cours3/                # LaTeX Beamer - JDBC
+    └── cours4/                # LaTeX Beamer - JPA
 ```

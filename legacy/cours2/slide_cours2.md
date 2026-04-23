@@ -32,20 +32,20 @@ class: center, middle
     - Feuille (*leaf*)
 ---
 # Graphe de scène
-- Les feuilles de l'arbre sont généralement constitués de composants visibles (boutons, champs texte, …) et les nœuds intermédiaires (y compris la racine) sont généralement des éléments de structuration, typiquement des conteneurs (`HBox`, `VBox`, `BorderPane`, …).
+- Les feuilles de l'arbre sont généralement constitués de composants visibles (boutons, champs texte, ...) et les nœuds intermédiaires (y compris la racine) sont généralement des éléments de structuration, typiquement des conteneurs (`HBox`, `VBox`, `BorderPane`, ...).
 
 - Tous les éléments contenus dans un graphe de scène sont des objets qui ont pour classe parente la classe `Node`. Parmi les sous-classes de `Node` on distingue différentes familles :
 
-      - Les formes primitives (*Shape*) 2D et 3D : `Line`, `Circle`, `Rectangle`, `Box`, `Cylinder`, …
+      - Les formes primitives (*Shape*) 2D et 3D : `Line`, `Circle`, `Rectangle`, `Box`, `Cylinder`, ...
 
-      - Les conteneurs (*Layout-Pane*) qui se chargent de la disposition (*layout*) des composants enfants et qui ont comme classe parente `Pane` : `AnchorPane`, `BorderPane`, `GridPane`, `HBox`, `VBox`, …
+      - Les conteneurs (*Layout-Pane*) qui se chargent de la disposition (*layout*) des composants enfants et qui ont comme classe parente `Pane` : `AnchorPane`, `BorderPane`, `GridPane`, `HBox`, `VBox`, ...
 
-      - Les composants standard (*Controls*) qui étendent la classe `Control` : `Label`, `Button`, `TextField`, `ComboBox`, …
+      - Les composants standard (*Controls*) qui étendent la classe `Control` : `Label`, `Button`, `TextField`, `ComboBox`, ...
 
-      - Les composants spécialisés qui sont dédiés à un domaine particulier (par exemple : lecteur multimédia, navigateur web, etc.) : `MediaView`, `WebView`, `ImageView`, `Canvas`, `Chart`, …
+      - Les composants spécialisés qui sont dédiés à un domaine particulier (par exemple : lecteur multimédia, navigateur web, etc.) : `MediaView`, `WebView`, `ImageView`, `Canvas`, `Chart`, ...
 
 ---
-# Composants – Controls
+# Composants - Controls
 - La librairie JavaFX offre un **ensemble de composants** (kit de développement) pour créer les interfaces utilisateurs graphiques.
 
 - Ces *composants d'interface* sont fréquemment nommés **controls** dans la documentation en anglais (parfois **widgets**).
@@ -59,13 +59,13 @@ conteneurs (layoutpanes) qui servent à disposer les composants et qui ne sont p
 - Les composants ont tous pour classe parente `Control` qui est une sous-classe de `Node`.
 
 ---
-# Composants – Controls
+# Composants - Controls
 
 - Certains composants comme `ScrollPane` ou `SplitPane` jouent, en partie, un rôle de conteneur mais, formellement, ils 
 ne font pas partie de cette famille (ils héritent de `Control` et non de `Pane`).
 
-- On fait parfois la distinction entre composants simples (labels, champs texte, boutons, …) et composants complexes (tables, arbres,
-media-player, navigateur, …).
+- On fait parfois la distinction entre composants simples (labels, champs texte, boutons, ...) et composants complexes (tables, arbres,
+media-player, navigateur, ...).
 
 - Dans ce chapitre, nous présenterons quelques composants simples et décrirons la manière de les créer et de les utiliser.
 
@@ -87,7 +87,7 @@ référence et il faut, en complément, consulter la documentation disponible.
 - Quelques propriétés communes aux composants `Labeled` :
   * `text` :  Texte affiché (`String`).
   
-  * `font` : Police de caractères (famille, style, taille, …), type `Font`.
+  * `font` : Police de caractères (famille, style, taille, ...), type `Font`.
   
   * `textFill` : Couleur du texte, uniforme ou avec gradient (type `Paint`).
   
@@ -121,11 +121,11 @@ Type énuméré `TextAlignment` (`LEFT`, `RIGHT`, `CENTER`, `JUSTIFY`).
 
   * `mnemonicParsing` : Active le parsing des mnémoniques dans le texte (le caractère qui suit le caractère '_'). Type `Boolean`.
 
-  * `textOverrun` : Comportement si le texte est trop long pour être affiché. Type énuméré `OverrunStyle` (`ELLISPSIS`, `CLIP`, …).
+  * `textOverrun` : Comportement si le texte est trop long pour être affiché. Type énuméré `OverrunStyle` (`ELLISPSIS`, `CLIP`, ...).
 
   * `labelPadding` : Définit l'espace autour du texte (et du graphique éventuel). Type `Insets`.
 
-  * `ellipsisString` : Chaîne de caractères utilisée lorsque le texte est tronqué (ellipsis). Par défaut : "…"
+  * `ellipsisString` : Chaîne de caractères utilisée lorsque le texte est tronqué (ellipsis). Par défaut : "..."
 
 ---
 # Label
@@ -215,7 +215,7 @@ qu'à un seul bouton de l'interface.
 et à l'écriture de contrôleurs qui se chargeront d'exécuter du code associé aux différents éléments actifs de l'interface.
 
 - Pour ajouter une image à un bouton (où à n'importe quel autre composant de type `Labeled`), on peut utiliser la classe 
-`ImageView` qui permet de représenter une image stockée dans une ressource locale (fichier de type gif, jpeg, png, …) ou en donnant l'URL d'une image sur un serveur web.
+`ImageView` qui permet de représenter une image stockée dans une ressource locale (fichier de type gif, jpeg, png, ...) ou en donnant l'URL d'une image sur un serveur web.
 
 - La classe `ImageView` permet également de redimensionner les images et d'en afficher qu'une partie (viewport).
 
@@ -395,7 +395,7 @@ public void start(Stage primaryStage) throws Exception {
 
 - Ce formateur est un composant de type `TextFormatter<V>` qui permet de définir :
   * Un convertisseur permettant de convertir le texte du composant en une valeur d'un autre type (par exemple un type 
-  numérique, int, double, …).
+  numérique, int, double, ...).
   * Un filtre permettant d'intercepter et de modifier les caractères saisis par l'utilisateur pendant l'édition du 
   texte (n'accepter que les chiffres par ex.).
 
@@ -585,12 +585,12 @@ disposition (classes et interfaces)
 - Au centre de l'approche déclarative, se trouvent les fichiers FXML.
 
 - Un fichier FXML est un fichier au format XML dont la syntaxe est conçue pour décrire l'interface (la vue) avec ses composants, ses
-conteneurs, sa disposition, …
+conteneurs, sa disposition, ...
 
   * Le fichier FXML décrit le "quoi" mais pas le "comment"
 
 - A l'exécution, le fichier FXML sera chargé par l'application (classe `FXMLLoader`) et un objet Java sera créé 
-(généralement la racine est un conteneur) avec les éléments que le fichier décrit (les composants, conteneurs, graphiques, …).
+(généralement la racine est un conteneur) avec les éléments que le fichier décrit (les composants, conteneurs, graphiques, ...).
   
   * Un fichier FXML constitue une forme particulière de sérialisation d'objets, utilisée spécifiquement pour décrire les interfaces
 
@@ -630,7 +630,7 @@ hiérarchique de l'interface, inspecteurs de propriétés, de layout, etc.
 disponible. Son utilisation est cependant assez intuitive, pour autant que les éléments affichés soient connus (notamment 
 les caractéristiques et propriétés principales des conteneurs et des composants).
 
-- Malgré l'outil graphique, on n'échappe donc pas à une compréhension minimale des API (composants, conteneurs, propriétés, …).
+- Malgré l'outil graphique, on n'échappe donc pas à une compréhension minimale des API (composants, conteneurs, propriétés, ...).
 
 ---
 # Interprétation des fichiers FXML 
@@ -716,7 +716,7 @@ fx:controller="SayHelloController">
 ...
 ```
 
-- **Attention** : Les attributs qui définissent les namespaces `xmlns=…` ainsi que `xmlns:fx=…` sont utilisés par 
+- **Attention** : Les attributs qui définissent les namespaces `xmlns=...` ainsi que `xmlns:fx=...` sont utilisés par 
 l'environnement JavaFX (FXMLLoader, SceneBuilder, etc.). Ils ne doivent donc pas être modifiés !
 
 ---

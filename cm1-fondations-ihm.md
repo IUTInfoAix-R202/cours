@@ -236,7 +236,7 @@ La SAE 2.01 vous demandera de créer une **interface d'extraction et manipulatio
 
 Ce CM pose les **fondations** :
 - La fenêtre (`Stage`) qui hébergera votre application
-- Les conteneurs (`BorderPane`, `VBox`…) qui organiseront vos composants
+- Les conteneurs (`BorderPane`, `VBox`...) qui organiseront vos composants
 - Les événements qui rendront l'interface interactive
 
 Les CM suivants ajouteront : bindings (CM2), FXML/architecture (CM3), MVVM/persistance (CM4).
@@ -707,7 +707,7 @@ table { font-size: 0.85rem; }
 </div>
 <div style="flex: 1; background: #e8a838; color: white; padding: 1.5rem; border-radius: 12px;">
 <div><span style="font-size: 2.8rem; vertical-align: middle;">📦</span> <span style="font-weight: bold; font-size: 2rem; vertical-align: middle;">Nodes</span></div>
-<div style="margin-top: 0.5rem; opacity: 0.9;">Les <b>éléments graphiques</b> (boutons, labels, conteneurs…), organisés en un arbre qui reflète la logique de l'IHM.</div>
+<div style="margin-top: 0.5rem; opacity: 0.9;">Les <b>éléments graphiques</b> (boutons, labels, conteneurs...), organisés en un arbre qui reflète la logique de l'IHM.</div>
 </div>
 </div>
 

@@ -23,7 +23,7 @@ en utilisant **la bibliothèque AWT** (`java.awt`).
     - Composants "légers" (lightweight) dessinés par la bibliothèque
     - Pluggable Look&Feel
     
-- **JavaFX 1** a tenté – sans grand succès – de remplacer Swing.
+- **JavaFX 1** a tenté - sans grand succès - de remplacer Swing.
 
     - Essentiellement basé sur un (nouveau) langage de script (JavaFX Script).
     - Vaine tentative pour concurrencer Flex (basé sur Flash et MXML).
@@ -75,7 +75,7 @@ développée :
     
     - Animations graphiques
     
-    - Modélisation (CAD, …)
+    - Modélisation (CAD, ...)
     
     - Applications multimédia
     
@@ -91,7 +91,7 @@ développée :
 
 - Différents composants complexes sont disponibles et permettent, avec un minimum d'effort, de créer des applications riches :
 
-    - Effets visuels (ombrages, transitions, animations, …)
+    - Effets visuels (ombrages, transitions, animations, ...)
     
     - Graphiques 2D (**charts**)
     
@@ -165,7 +165,7 @@ utilisateurs) de différentes manières :
 
     - **[JFXtras](http://jfxtras.org/)** : Projet open-source destiné à fournir aux développeurs des éléments utiles dans leur vie de tous les jours et qui manquent dans la version de base de JavaFX
 
-    - **[DataFX](https://bitbucket.org/datafx/datafx/src/default/README.md)** : Projet open-source destiné à faciliter la collaboration entre une application JavaFX et un système de gestion des données (BD, …)
+    - **[DataFX](https://bitbucket.org/datafx/datafx/src/default/README.md)** : Projet open-source destiné à faciliter la collaboration entre une application JavaFX et un système de gestion des données (BD, ...)
 
     - **[TestFX](https://github.com/TestFX)** : Librairie pour automatiser le test des applications JavaFX
     
@@ -174,7 +174,7 @@ utilisateurs) de différentes manières :
 Quelques références web utiles :
  - [Tutoriel officiel Oracle](http://docs.oracle.com/javase/8/javase-clienttechnologies.htm)
  
- - [FX-Experience](http://fxexperience.com) : Blog géré par des experts du domaine (news, demos, …)
+ - [FX-Experience](http://fxexperience.com) : Blog géré par des experts du domaine (news, demos, ...)
  
  - Autre [blog dédié](http://guigarage.com) à différentes thématiques JavaFX
  
@@ -226,7 +226,7 @@ Remarque : En français, on utilise le terme 'scène' pour parler de l'endroit o
 
 - **Scene** : Tableau ou séquence faisant intervenir les acteurs
 
-- **Nodes** : Acteurs, figurants, éléments du décor, … (éléments actifs/passifs) qui font partie de la scène en train d'être jouée.
+- **Nodes** : Acteurs, figurants, éléments du décor, ... (éléments actifs/passifs) qui font partie de la scène en train d'être jouée.
 
 ---
 # Hello World !
@@ -541,13 +541,13 @@ areaPty.bind(widthPty.multiply(heightPty));
 Un jeu d'opérations est disponible aussi bien avec la classe `Bindings` qu'avec les méthodes chaînables :
 - `min()`, `max()`
 
-- `equal()`, `notEqual()`, `lessThan()`, `lessThanOrEqual()`, …
+- `equal()`, `notEqual()`, `lessThan()`, `lessThanOrEqual()`, ...
 
-- `isNull()`, `isNotNull()`, `isEmpty()`, `isNotEmpty()`, …
+- `isNull()`, `isNotNull()`, `isEmpty()`, `isNotEmpty()`, ...
 
-- `convert()`, `concat()`, `format()`, …
+- `convert()`, `concat()`, `format()`, ...
 
-- `valueAt()`, `size()`, …
+- `valueAt()`, `size()`, ...
 
 - `when(cond).then(val1).otherwise(val2)` 
 
@@ -555,7 +555,7 @@ Un jeu d'opérations est disponible aussi bien avec la classe `Bindings` qu'avec
 ---
 # Lier des propriétés
 
-Si les opérations disponibles dans les API, dites de haut-niveau, ne permettent pas d'exprimer la relation entre les propriétés, il est possible de définir une liaison de plus bas niveau (*low-level binding*) en redéfinissant la méthode abstraite `computeValue()` d'une des classes de binding (`DoubleBinding`, `BooleanBinding`, `StringBinding`, …).
+Si les opérations disponibles dans les API, dites de haut-niveau, ne permettent pas d'exprimer la relation entre les propriétés, il est possible de définir une liaison de plus bas niveau (*low-level binding*) en redéfinissant la méthode abstraite `computeValue()` d'une des classes de binding (`DoubleBinding`, `BooleanBinding`, `StringBinding`, ...).
 
 ```java
 DoubleBinding complexBinding = new DoubleBinding() {
@@ -596,17 +596,17 @@ class: center, middle
     - Feuille (*leaf*)
 ---
 # Graphe de scène
-- Les feuilles de l'arbre sont généralement constitués de composants visibles (boutons, champs texte, …) et les nœuds intermédiaires (y compris la racine) sont généralement des éléments de structuration, typiquement des conteneurs (`HBox`, `VBox`, `BorderPane`, …).
+- Les feuilles de l'arbre sont généralement constitués de composants visibles (boutons, champs texte, ...) et les nœuds intermédiaires (y compris la racine) sont généralement des éléments de structuration, typiquement des conteneurs (`HBox`, `VBox`, `BorderPane`, ...).
 
 - Tous les éléments contenus dans un graphe de scène sont des objets qui ont pour classe parente la classe `Node`. Parmi les sous-classes de `Node` on distingue différentes familles :
 
-     - Les formes primitives (*Shape*) 2D et 3D : `Line`, `Circle`, `Rectangle`, `Box`, `Cylinder`, …
+     - Les formes primitives (*Shape*) 2D et 3D : `Line`, `Circle`, `Rectangle`, `Box`, `Cylinder`, ...
 
-     - Les conteneurs (*Layout-Pane*) qui se chargent de la disposition (*layout*) des composants enfants et qui ont comme classe parente `Pane` : `AnchorPane`, `BorderPane`, `GridPane`, `HBox`, `VBox`, …
+     - Les conteneurs (*Layout-Pane*) qui se chargent de la disposition (*layout*) des composants enfants et qui ont comme classe parente `Pane` : `AnchorPane`, `BorderPane`, `GridPane`, `HBox`, `VBox`, ...
 
-     - Les composants standard (*Controls*) qui étendent la classe `Control` : `Label`, `Button`, `TextField`, `ComboBox`, …
+     - Les composants standard (*Controls*) qui étendent la classe `Control` : `Label`, `Button`, `TextField`, `ComboBox`, ...
 
-     - Les composants spécialisés qui sont dédiés à un domaine particulier (par exemple : lecteur multimédia, navigateur web, etc.) : `MediaView`, `WebView`, `ImageView`, `Canvas`, `Chart`, …
+     - Les composants spécialisés qui sont dédiés à un domaine particulier (par exemple : lecteur multimédia, navigateur web, etc.) : `MediaView`, `WebView`, `ImageView`, `Canvas`, `Chart`, ...
 
 ---
 # Les conteneurs
@@ -714,7 +714,7 @@ public void start(Stage primaryStage) {
 
 - Un des paramètres du constructeur (de type `Orientation`) détermine s'il s'agit d'un `FlowPane` horizontal (par défaut) ou vertical.
 
-- L'ajout des composants enfants dans un conteneur `FlowPane` s'effectue en invoquant `getChildren().add(node)` ou `addAll(n, …)`
+- L'ajout des composants enfants dans un conteneur `FlowPane` s'effectue en invoquant `getChildren().add(node)` ou `addAll(n, ...)`
 
 - Quelques propriétés importantes du conteneur `FlowPane` :
     - `hgap `: Espacement horizontal entre les composants ou colonnes
@@ -791,7 +791,7 @@ public void start(Stage primaryStage) {
 <img src="slide49.png" style="position: absolute; left: 650px;  top: 7px;" >
 - Le conteneur `BorderPane` permet de placer les composants enfants dans cinq zones : `Top`, `Bottom`, `Left`, `Right` et `Center`.
 
-- Un seul objet `Node` (composant, conteneur, …) peut être placé dans chacun de ces emplacements.
+- Un seul objet `Node` (composant, conteneur, ...) peut être placé dans chacun de ces emplacements.
 
 - Les composants placés dans les zones `Top` et `Bottom` :
     - Gardent leur hauteur préférée
