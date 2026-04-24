@@ -230,9 +230,9 @@ Chaque exercice suit le même cycle, identique à celui d'une équipe en entrepr
 
 ---
 
-## Lien avec la SAE 2.01
+## Lien avec la SAÉ 2.01
 
-La SAE 2.01 vous demandera de créer une **interface d'extraction et manipulation de données** pour des capteurs de détection de chauve-souris.
+La SAÉ 2.01 vous demandera de créer une **interface d'extraction et manipulation de données** pour des capteurs de détection de chauves-souris.
 
 Ce CM pose les **fondations** :
 - La fenêtre (`Stage`) qui hébergera votre application

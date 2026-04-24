@@ -36,9 +36,9 @@ Les supports sont rédigés en **Markdown avec frontmatter [Marp](https://marp.a
 - Convertibles en slides PDF/HTML via `marp --pdf cm1-fondations-ihm.md`
 - Éditables dans VS Code avec l'extension Marp (prévisualisation en temps réel)
 
-### Lien avec la SAE 2.01
+### Lien avec la SAÉ 2.01
 
-Les compétences acquises dans les CM et TP servent à construire l'**interface d'extraction et manipulation de données** pour des capteurs de détection et identification de chauve-souris (SAE 2.01). Chaque CM fait le lien explicite avec cette application fil rouge.
+Les compétences acquises dans les CM et TP servent à construire l'**interface d'extraction et manipulation de données** pour des capteurs de détection et identification de chauves-souris (SAÉ 2.01). Chaque CM fait le lien explicite avec cette application fil rouge.
 
 ## Organisation du dépôt
 
