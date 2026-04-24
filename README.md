@@ -50,3 +50,11 @@ cours/
 ├── cm4-synthese.md            # CM4
 └── assets/                    # Images et diagrammes partagés
 ```
+
+## Licence et attributions
+
+Sauf mention contraire ci-dessous, l'ensemble du contenu de ce dépôt (textes des supports, diagrammes maison, code d'exemple) est placé sous licence [**Creative Commons CC0 1.0 Universal**](LICENSE) : réutilisation libre, sans attribution requise.
+
+**Exception — ressource tierce reproduite à des fins pédagogiques** :
+
+- `assets/nielsen-heuristics-summary.png` : poster synthèse des 10 heuristiques d'ergonomie, © [Nielsen Norman Group](https://www.nngroup.com/articles/ten-usability-heuristics/#poster). Cette image est reproduite au titre de la **courte citation à des fins d'illustration dans le cadre de l'enseignement** (art. L. 122-5 3° a du Code de la propriété intellectuelle), avec attribution explicite à l'endroit d'usage dans `cm1-fondations-ihm.md`. Elle **n'est pas couverte par la licence CC0** du dépôt. Pour toute réutilisation hors contexte pédagogique, se référer aux [conditions d'utilisation de NN/g](https://www.nngroup.com/about/).
