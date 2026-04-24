@@ -33,8 +33,17 @@ Trois thèmes traversent l'ensemble des CM :
 
 Les supports sont rédigés en **Markdown avec frontmatter [Marp](https://marp.app/)** :
 - Lisibles directement sur GitHub (Markdown standard)
-- Convertibles en slides PDF/HTML via `marp --pdf cm1-fondations-ihm.md`
 - Éditables dans VS Code avec l'extension Marp (prévisualisation en temps réel)
+
+Scripts npm disponibles après `npm ci` :
+
+| Commande | Effet |
+|---|---|
+| `npm run dev` | Serveur Marp avec hot reload |
+| `npm run build:html` | Génère les slides HTML dans `_site/` (rapide) |
+| `npm run build:all` | Pipeline complet : HTML + PDF + index + assets (mirroir du [workflow CI](.github/workflows/marp-pages.yml)) |
+
+La publication sur GitHub Pages est automatique à chaque push sur `main`.
 
 ### Lien avec la SAÉ 2.01
 
