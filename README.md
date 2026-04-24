@@ -41,7 +41,7 @@ Scripts npm disponibles après `npm ci` :
 |---|---|
 | `npm run dev` | Serveur Marp avec hot reload |
 | `npm run build:html` | Génère les slides HTML dans `_site/` (rapide) |
-| `npm run build:all` | Pipeline complet : HTML + PDF + index + assets (mirroir du [workflow CI](.github/workflows/marp-pages.yml)) |
+| `npm run build:all` | Pipeline complet : HTML + PDF + index + assets (miroir du [workflow CI](.github/workflows/marp-pages.yml)) |
 
 La publication sur GitHub Pages est automatique à chaque push sur `main`.
 

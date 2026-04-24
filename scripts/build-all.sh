@@ -1,7 +1,7 @@
 #!/bin/bash
 # Build complet du site Pages en local (HTML + PDF + index + assets).
 #
-# Mirror local du workflow .github/workflows/marp-pages.yml - permet de
+# Miroir local du workflow .github/workflows/marp-pages.yml - permet de
 # vérifier le rendu complet (y compris PDF et page d'index conditionnelle)
 # avant de pousser.
 #
