@@ -48,10 +48,5 @@ cours/
 ├── cm2-donnees-et-liaison.md  # CM2
 ├── cm3-architecture-ihm.md    # CM3
 ├── cm4-synthese.md            # CM4
-├── assets/                    # Images et diagrammes partagés
-└── legacy/                    # Cours originaux (2022) pour référence
-    ├── cours1/                # Markdown/remark.js - bases JavaFX
-    ├── cours2/                # Markdown/remark.js - contrôles, FXML
-    ├── cours3/                # LaTeX Beamer - JDBC
-    └── cours4/                # LaTeX Beamer - JPA
+└── assets/                    # Images et diagrammes partagés
 ```
