@@ -16,10 +16,10 @@ Ce dépôt contient les supports des 4 cours magistraux du module R2.02 (BUT Inf
 
 | CM | Titre | Prépare | Bloom |
 |---|---|---|---|
-| [CM1](cm1-fondations-ihm.md) | Fondations de l'IHM et première immersion JavaFX | [TP1](https://github.com/IUTInfoAix-R202/tp1) - Bases JavaFX | Comprendre |
-| [CM2](cm2-donnees-et-liaison.md) | Propriétés, bindings et contrôles | [TP2](https://github.com/IUTInfoAix-R202/tp2) - Properties & bindings | Appliquer |
-| [CM3](cm3-architecture-ihm.md) | Architecture des IHM et FXML | [TP3](https://github.com/IUTInfoAix-R202/tp3) - FXML | Analyser |
-| [CM4](cm4-synthese.md) | MVVM, persistance et synthèse | [TP4](https://github.com/IUTInfoAix-R202/tp4) + [TP5](https://github.com/IUTInfoAix-R202/tp5) | Créer / Évaluer |
+| [CM1](cm1-fondations-ihm.md) | Fondations de l'IHM et première immersion JavaFX | TP1 - Bases JavaFX | Comprendre |
+| [CM2](cm2-donnees-et-liaison.md) | Propriétés, bindings et contrôles | TP2 - Properties & bindings | Appliquer |
+| CM3 *(🔄 En cours)* | Architecture des IHM et FXML | TP3 - FXML | Analyser |
+| CM4 *(⏳ À venir)* | MVVM, persistance et synthèse | TP4 + TP5 | Créer / Évaluer |
 
 ### Fil rouge
 
@@ -44,12 +44,12 @@ Les compétences acquises dans les CM et TP servent à construire l'**interface 
 
 ```
 cours/
-├── cm1-fondations-ihm.md      # CM1
-├── cm2-donnees-et-liaison.md  # CM2
-├── cm3-architecture-ihm.md    # CM3
-├── cm4-synthese.md            # CM4
+├── cm1-fondations-ihm.md      # CM1 (publié)
+├── cm2-donnees-et-liaison.md  # CM2 (publié)
 └── assets/                    # Images et diagrammes partagés
 ```
+
+CM3 et CM4 seront ajoutés au dépôt au fil de leur rédaction. Consulter le [syllabus](https://github.com/IUTInfoAix-R202/syllabus) pour le statut courant.
 
 ## Licence et attributions
 
