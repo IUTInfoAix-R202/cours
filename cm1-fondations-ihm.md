@@ -2,6 +2,7 @@
 marp: true
 theme: default
 paginate: true
+lang: fr
 ---
 
 <!-- _class: lead -->
