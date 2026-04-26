@@ -871,34 +871,7 @@ private void incrementerScore() {
 
 <div>
 
-```plantuml
-@startuml
-skinparam backgroundColor transparent
-skinparam defaultFontSize 18
-skinparam classAttributeIconSize 0
-skinparam classFontStyle bold
-skinparam shadowing false
-skinparam roundCorner 10
-skinparam nodesep 12
-skinparam ranksep 28
-
-skinparam class {
-    BorderColor #888
-    FontColor white
-}
-
-interface "Observable" as Obs #7f8c8d
-interface "ObservableValue<T>" as OV #34495e
-interface "Property<T>" as P #1a5276
-abstract class "IntegerProperty" as IP #1a5276
-class "SimpleIntegerProperty" as SIP #27ae60
-
-Obs <|-- OV
-OV <|-- P
-P <|.. IP
-IP <|-- SIP
-@enduml
-```
+![Hiérarchie Observable > ObservableValue > Property > IntegerProperty > SimpleIntegerProperty](assets/kroki/cm2-hierarchie-observable.svg)
 
 </div>
 
@@ -2191,42 +2164,7 @@ bouton.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
 
 ## Hiérarchie des types d'événement
 
-```plantuml
-@startuml
-scale 1.5
-skinparam backgroundColor transparent
-skinparam defaultFontSize 16
-skinparam classAttributeIconSize 0
-skinparam classFontStyle bold
-skinparam shadowing false
-skinparam roundCorner 10
-
-skinparam class {
-    BorderColor #888
-    FontColor white
-}
-
-abstract class Event #7f8c8d
-
-abstract class InputEvent #34495e
-class "🎯 ActionEvent" as ActionEvent #e74c3c
-class "🪟 WindowEvent" as WindowEvent #1a5276
-class "🎢 ScrollEvent" as ScrollEvent #8e44ad
-
-class "🖱️ MouseEvent" as MouseEvent #e8a838
-class "⌨️ KeyEvent" as KeyEvent #27ae60
-class "👆 TouchEvent" as TouchEvent #00838f
-
-Event <|-- InputEvent
-Event <|-- ActionEvent
-Event <|-- WindowEvent
-Event <|-- ScrollEvent
-
-InputEvent <|-- MouseEvent
-InputEvent <|-- KeyEvent
-InputEvent <|-- TouchEvent
-@enduml
-```
+![Hiérarchie des événements JavaFX : Event > InputEvent > MouseEvent/KeyEvent/TouchEvent + ActionEvent/WindowEvent/ScrollEvent](assets/kroki/cm2-hierarchie-evenements.svg)
 
 <div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 0.5rem; text-align: center; font-size: 1.6rem;">
 💡 Chaque type porte des <b>données spécifiques</b> : <code>MouseEvent</code> → coordonnées (<code>getX()</code>, <code>getY()</code>), <code>KeyEvent</code> → code de touche (<code>getCode()</code>), <code>ActionEvent</code> → <code>getSource()</code> / <code>getTarget()</code> de l'action sémantique (indépendante du périphérique).

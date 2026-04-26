@@ -7,6 +7,7 @@
     "build": "npm run build:html",
     "build:html": "mkdir -p _site && for f in cm*.md; do npx marp --config marp.config.js --html \"$f\" --output \"_site/${f%.md}.html\"; done",
     "build:all": "bash scripts/build-all.sh",
+    "kroki:render": "bash scripts/render-kroki.sh",
     "preview": "marp --config marp.config.js --preview --html cm*.md"
   },
   "devDependencies": {

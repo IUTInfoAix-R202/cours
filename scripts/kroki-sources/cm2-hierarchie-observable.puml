@@ -1,0 +1,26 @@
+@startuml
+skinparam backgroundColor transparent
+skinparam defaultFontSize 18
+skinparam classAttributeIconSize 0
+skinparam classFontStyle bold
+skinparam shadowing false
+skinparam roundCorner 10
+skinparam nodesep 12
+skinparam ranksep 28
+
+skinparam class {
+    BorderColor #888
+    FontColor white
+}
+
+interface "Observable" as Obs #7f8c8d
+interface "ObservableValue<T>" as OV #34495e
+interface "Property<T>" as P #1a5276
+abstract class "IntegerProperty" as IP #1a5276
+class "SimpleIntegerProperty" as SIP #27ae60
+
+Obs <|-- OV
+OV <|-- P
+P <|.. IP
+IP <|-- SIP
+@enduml

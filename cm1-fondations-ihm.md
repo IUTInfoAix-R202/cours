@@ -847,23 +847,7 @@ Exécute tous les tests. Les `@Disabled` sont ignorés.
 
 Le **graphe de scène** (scene graph) est la structure de données centrale de JavaFX. C'est un arbre où chaque nœud est un élément graphique :
 
-```mermaid
-graph TD
-    SC["Scene"] --> BP["BorderPane"]
-    BP --> MB["MenuBar (top)"]
-    BP --> GP["GridPane (center)"]
-    BP --> HB["HBox (bottom)"]
-    GP --> L1["Label 'Nom'"]
-    GP --> TF1["TextField"]
-    HB --> B1["Button 'OK'"]
-    HB --> B2["Button 'Annuler'"]
-
-    style SC fill:#7bb563,color:white
-    style BP fill:#e8a838,color:white
-    style MB fill:#b0bec5,color:#333
-    style GP fill:#b0bec5,color:#333
-    style HB fill:#b0bec5,color:#333
-```
+![Graphe de scène JavaFX : arbre de nœuds Scene > BorderPane > MenuBar/GridPane/HBox](assets/kroki/cm1-graphe-scene.svg)
 
 **Règle** : un nœud ne peut avoir **qu'un seul parent**. Pas de cycle, pas de partage.
 
@@ -920,73 +904,7 @@ graph TD
 
 <p style="font-size: 1.5rem;padding:0;margin:0;">Toutes les classes du graphe de scène héritent de <code>Node</code> :</p>
 
-```plantuml
-@startuml
-skinparam backgroundColor transparent
-skinparam defaultFontSize 14
-skinparam classAttributeIconSize 0
-skinparam classFontStyle bold
-skinparam shadowing false
-skinparam roundCorner 10
-
-skinparam class {
-    BorderColor #888
-    FontColor white
-}
-
-abstract class Node #7f8c8d
-
-abstract class Parent #34495e
-class ImageView #1a5276
-
-abstract class Shape #c0392b
-abstract class Region #b7950b
-class Group #6c3483
-
-abstract class Control #e74c3c
-abstract class Pane #e8a838
-
-class Circle #c0392b
-class Rectangle #c0392b
-class Line #c0392b
-
-class Button #e74c3c
-class Label #8e44ad
-class TextField #27ae60
-class Slider #c0392b
-class CheckBox #00838f
-
-class VBox #e8a838
-class HBox #e8a838
-class BorderPane #e8a838
-class GridPane #e8a838
-
-Node <|-- Parent
-Node <|-- Shape
-Node <|-- ImageView
-
-Parent <|-- Region
-Parent <|-- Group
-
-Region <|-- Control
-Region <|-- Pane
-
-Shape <|-- Circle
-Shape <|-- Rectangle
-Shape <|-- Line
-
-Control <|-- Button
-Control <|-- Label
-Control <|-- TextField
-Control <|-- Slider
-Control <|-- CheckBox
-
-Pane <|-- VBox
-Pane <|-- HBox
-Pane <|-- BorderPane
-Pane <|-- GridPane
-@enduml
-```
+![Hiérarchie des classes JavaFX héritant de Node : Parent, Region, Pane, Control, Shape](assets/kroki/cm1-hierarchie-classes-javafx.svg)
 
 <div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; line-height: 1.5; text-align: center;">
 💡 À retenir : <b>tout est un Node</b>, certains Nodes sont des <b>Parent</b> (ils contiennent d'autres nœuds), et les <b>layouts</b> (<code>VBox</code>, <code>HBox</code>, <code>BorderPane</code>, <code>GridPane</code>) organisent leurs enfants.

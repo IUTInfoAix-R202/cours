@@ -42,8 +42,19 @@ Scripts npm disponibles après `npm ci` :
 | `npm run dev` | Serveur Marp avec hot reload |
 | `npm run build:html` | Génère les slides HTML dans `_site/` (rapide) |
 | `npm run build:all` | Pipeline complet : HTML + PDF + index + assets (miroir du [workflow CI](.github/workflows/marp-pages.yml)) |
+| `npm run kroki:render` | Régénère les SVG des diagrammes depuis `scripts/kroki-sources/` (voir ci-dessous) |
 
 La publication sur GitHub Pages est automatique à chaque push sur `main`.
+
+### Diagrammes : sources et rendu
+
+Les diagrammes UML / mermaid utilisés dans les CM sont **pré-rendus** en SVG dans `assets/kroki/` pour rendre la publication indépendante de [kroki.io](https://kroki.io) au runtime. Convention :
+
+- Source du diagramme : `scripts/kroki-sources/<slug>.{mmd,puml,dot}` (versionné)
+- Rendu SVG : `assets/kroki/<slug>.svg` (versionné, généré)
+- Référence dans le markdown : `![alt-descriptif](assets/kroki/<slug>.svg)`
+
+Pour modifier un diagramme : éditer le fichier source dans `scripts/kroki-sources/`, puis lancer `npm run kroki:render` pour régénérer le SVG correspondant. Le plugin `markdown-it-kroki` reste actif dans `marp.config.js` comme **fallback de rédaction rapide** : on peut écrire un nouveau bloc ` ```mermaid ` ou ` ```plantuml ` directement dans un CM en cours d'écriture, puis l'extraire en source dédiée une fois stabilisé.
 
 ### Lien avec la SAÉ 2.01
 
@@ -55,7 +66,14 @@ Les compétences acquises dans les CM et TP servent à construire l'**interface 
 cours/
 ├── cm1-fondations-ihm.md      # CM1 (publié)
 ├── cm2-donnees-et-liaison.md  # CM2 (publié)
-└── assets/                    # Images et diagrammes partagés
+├── assets/
+│   ├── *.svg, *.png           # images et diagrammes maison
+│   └── kroki/                 # SVG pré-rendus depuis scripts/kroki-sources/
+└── scripts/
+    ├── build-all.sh           # build local complet (mirroir du workflow CI)
+    ├── generate-index.sh      # génération de la page d'accueil _site/index.html
+    ├── render-kroki.sh        # rendu des diagrammes depuis kroki-sources/
+    └── kroki-sources/         # sources des diagrammes (.mmd, .puml)
 ```
 
 CM3 et CM4 seront ajoutés au dépôt au fil de leur rédaction. Consulter le [syllabus](https://github.com/IUTInfoAix-R202/syllabus) pour le statut courant.
