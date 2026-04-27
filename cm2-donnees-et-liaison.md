@@ -2597,3 +2597,28 @@ h2 { text-align: center; }
 </div>
 
 </div>
+
+---
+
+<!-- _class: lead -->
+
+# Des questions ?
+
+**Sébastien Nedjar**
+IUT d'Aix-Marseille - Département Informatique
+
+<div style="margin-top: 2rem; font-size: 1.1rem;">
+
+🌐 [github.com/IUTInfoAix-R202/tp](https://github.com/IUTInfoAix-R202/tp)
+
+📧 sebastien.nedjar@univ-amu.fr
+
+</div>
+
+<div style="margin-top: 2rem; background: #2c3e50; color: white; padding: 1rem 2rem; border-radius: 12px; font-size: 1.5rem;">
+<b>🎯 Dès maintenant</b> : créez une <code>StringProperty</code>, bindez-la à un <code>Label</code>, et tapez du texte dans un <code>TextField</code> lié. La synchro est instantanée, sans une ligne d'<code>EventHandler</code>. C'est ça, l'esprit JavaFX.
+</div>
+
+<div style="margin-top: 1.2rem; background: #fff8e1; border-left: 4px solid #e8a838; padding: 0.9rem 1rem; border-radius: 6px; font-size: 1rem;">
+🛠️ <b>Les bindings, c'est laisser les données conduire l'interface.</b> Ce CM2 a posé le saut de l'événementiel manuel vers le déclaratif - propriétés, bindings, validation automatique. Le TP2 va vous faire toucher cette inversion. On n'aiguise pas sa scie le jour où on doit couper la planche ; on l'aiguise la veille.
+</div>
