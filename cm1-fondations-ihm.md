@@ -142,10 +142,10 @@ Trois notes, un objectif : vérifier que vous **comprenez** ce que vous codez, p
 </div>
 </div>
 
-<div style="display: flex; height: 1.2rem; border-radius: 8px; overflow: hidden; margin-top: 1.2rem;">
-<div style="background: #4a90d9; flex: 10; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: bold;">17%</div>
-<div style="background: #e8a838; flex: 10; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: bold;">17%</div>
-<div style="background: #e74c3c; flex: 40; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: bold;">66%</div>
+<div style="display: flex; height: 2rem; border-radius: 8px; overflow: hidden; margin-top: 1.2rem;">
+<div style="background: #4a90d9; flex: 10; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem;">17%</div>
+<div style="background: #e8a838; flex: 10; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem;">17%</div>
+<div style="background: #e74c3c; flex: 40; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem;">66%</div>
 </div>
 
 ---
@@ -181,7 +181,7 @@ Tout le module se fait sur **GitHub Codespaces** : aucune installation locale n�
 </div>
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 1.2rem 2rem; border-radius: 10px; text-align: center; margin-top: 1.5rem; font-size: 1.4rem;">
+<div style="background: #2c3e50; color: white; padding: 1.2rem 2rem; border-radius: 10px; text-align: center; margin-top: 1.5rem; font-size: 1.5rem;">
 🌐 Vous ouvrez un navigateur, vous codez. <b>Rien à installer, rien à configurer !</b>
 </div>
 
@@ -191,34 +191,34 @@ Tout le module se fait sur **GitHub Codespaces** : aucune installation locale n�
 
 Chaque exercice suit le même cycle, identique à celui d'une équipe en entreprise :
 
-<div style="display: flex; margin-top: 1.5rem; align-items: center;">
+<div style="display: flex; margin: 3.5rem 0; align-items: center;">
 <div style="background: #4a90d9; color: white; padding: 1.2rem 1rem; border-radius: 12px; text-align: center; flex: 1;">
 <div style="font-size: 2.5rem;">🌿</div>
-<div style="font-weight: bold; font-size: 1.1rem;">Branche</div>
+<div style="font-weight: bold; font-size: 1.5rem;">Branche</div>
 </div>
 <div style="font-size: 2rem; color: #ccc; padding: 0 0.3rem;">→</div>
 <div style="background: #2c3e50; color: white; padding: 1.2rem 1rem; border-radius: 12px; text-align: center; flex: 1;">
 <div style="font-size: 2.5rem;">💻</div>
-<div style="font-weight: bold; font-size: 1.1rem;">Code + Tests</div>
+<div style="font-weight: bold; font-size: 1.5rem;">Code + Tests</div>
 </div>
 <div style="font-size: 2rem; color: #ccc; padding: 0 0.3rem;">→</div>
 <div style="background: #e8a838; color: white; padding: 1.2rem 1rem; border-radius: 12px; text-align: center; flex: 1;">
 <div style="font-size: 2.5rem;">📬</div>
-<div style="font-weight: bold; font-size: 1.1rem;">Pull Request</div>
+<div style="font-weight: bold; font-size: 1.5rem;">Pull Request</div>
 </div>
 <div style="font-size: 2rem; color: #ccc; padding: 0 0.3rem;">→</div>
 <div style="background: #8e44ad; color: white; padding: 1.2rem 1rem; border-radius: 12px; text-align: center; flex: 1;">
 <div style="font-size: 2.5rem;">👀</div>
-<div style="font-weight: bold; font-size: 1.1rem;">Review</div>
+<div style="font-weight: bold; font-size: 1.5rem;">Review</div>
 </div>
 <div style="font-size: 2rem; color: #ccc; padding: 0 0.3rem;">→</div>
 <div style="background: #27ae60; color: white; padding: 1.2rem 1rem; border-radius: 12px; text-align: center; flex: 1;">
 <div style="font-size: 2.5rem;">✅</div>
-<div style="font-weight: bold; font-size: 1.1rem;">Merge</div>
+<div style="font-weight: bold; font-size: 1.5rem;">Merge</div>
 </div>
 </div>
 
-<div style="display: flex; gap: 1.5rem; margin-top: 2rem;">
+<div style="display: flex; gap: 1.5rem; margin-top: 2rem; font-size: 1.5rem">
 <div style="flex: 1; background: #f0f4f8; padding: 1rem 1.2rem; border-radius: 10px; border-left: 4px solid #4a90d9;">
 <div style="font-weight: bold;">🧩 TDD baby steps</div>
 <div style="margin-top: 0.3rem;">Les tests sont livrés désactivés (<code>@Disabled</code>). Vous les activez <b>un par un</b> et implémentez le minimum pour les faire passer.</div>
@@ -308,7 +308,7 @@ $_
 
 ## Définition
 
-<div style="background: #2c3e50; color: white; padding: 1.2rem 1.5rem; border-radius: 12px; margin: 1rem 0; font-size: 1.15rem;">
+<div style="background: #2c3e50; color: white; padding: 1.2rem 1.5rem; border-radius: 12px; margin: 1rem 0; font-size: 1.5rem;">
 🎯 <b>Interface Homme-Machine (IHM)</b> : le point de contact entre les capacités cognitives de <b>l'être humain</b> et la logique du <b>logiciel</b>.
 </div>
 
@@ -339,8 +339,8 @@ Ce cours ne porte pas sur **comment afficher un bouton** mais sur **comment conc
 ## Brève histoire des interfaces
 
 <style scoped>
-table { font-size: 0.82rem; }
-p { font-size: 0.88rem; }
+table { font-size: 0.9rem; }
+p { font-size: 0.94rem; }
 </style>
 
 | Époque | 🖥️ Paradigme | 💡 Caractéristique |
@@ -354,7 +354,7 @@ Chaque transition a été motivée par une meilleure compréhension des **besoin
 
 ---
 
-## Les trois piliers d'un cours d'IHM
+## Les trois piliers du cours d'IHM
 
 <style scoped>
 section { display: flex; flex-direction: column; }
@@ -404,7 +404,7 @@ Ces trois piliers seront développés tout au long des 4 CM du module.
 <div style="display: flex; gap: 2rem; align-items: flex-start;">
 <div>
 
-Jakob Nielsen a identifié **10 heuristiques d'utilisabilité** 🔟 (1994), toujours d'actualité plus de 30 ans plus tard. Ce sont des **principes généraux**, pas des règles rigides. Ils s'appliquent à toute interface, pas seulement au logiciel.
+Jakob Nielsen a identifié **10 heuristiques d'utilisabilité** (1994), toujours d'actualité plus de 30 ans plus tard. Ce sont des **principes généraux**, pas des règles rigides. Ils s'appliquent à toute interface, pas seulement au logiciel.
 
 Chaque heuristique est illustrée par un exemple de la **vie courante** 🌍 pour montrer que ces principes sont universels.
 
@@ -430,9 +430,9 @@ Nous allons les parcourir toutes les dix 👇.
 <div style="font-size: 3.5rem; text-align: center; min-width: 80px;">📍</div>
 <div>
 
-**Dans la vie** : le plan **"Vous êtes ici"** dans un centre commercial. Sans lui, vous êtes perdu. Avec lui, vous savez où vous êtes et où aller.
+**Dans la vie** : le **"Vous êtes ici"** dans le plan d'un centre commercial. Sans lui, vous êtes perdu. Avec lui, vous savez où vous êtes et où aller.
 
-**En IHM** : barre de progression d'un checkout (étape 2/4), titre de fenêtre reflétant le document ouvert, feedback tactile quand on appuie sur un bouton de smartphone.
+**En IHM** : barre de progression d'un checkout (étape 2/4), titre de fenêtre reflétant le document ouvert, feedback tactile quand on appuie sur un bouton sur un smartphone.
 
 </div>
 </div>
@@ -621,7 +621,7 @@ Nous allons les parcourir toutes les dix 👇.
 ## 🏗️ D'AWT à JavaFX : 25 ans d'évolution
 
 <style scoped>
-table { font-size: 0.87rem; }
+table { font-size: 0.9rem; }
 </style>
 
 | Époque | 🖥️ Toolkit | 💡 Caractéristique |
@@ -1127,28 +1127,31 @@ Comment découper cette maquette en conteneurs de haut niveau ?
 
 ## 🧠 Principes de perception visuelle (Gestalt)
 
-La **Gestalt** est un courant de psychologie de la perception (Allemagne, 1920). Il décrit comment l'œil humain **organise spontanément** ce qu'il voit.
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">La <b>Gestalt</b> est un courant de psychologie de la perception (Allemagne, 1920). Il décrit comment l'œil humain <b>organise spontanément</b> ce qu'il voit.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;  margin: 4rem 0;">
 <div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
 <div style="font-size: 1.3rem;">👥 <b>Proximité</b></div>
-<div style="opacity: 0.9; margin-top: 0.3rem;">Les éléments proches sont perçus comme un <b>groupe</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem; font-size: 1.3rem;">Les éléments proches sont perçus comme un <b>groupe</b></div>
 </div>
 <div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
 <div style="font-size: 1.3rem;">📐 <b>Alignement</b></div>
-<div style="opacity: 0.9; margin-top: 0.3rem;">Les éléments alignés sont perçus comme <b>ordonnés</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem; font-size: 1.3rem;">Les éléments alignés sont perçus comme <b>ordonnés</b></div>
 </div>
 <div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
 <div style="font-size: 1.3rem;">🔗 <b>Similarité</b></div>
-<div style="opacity: 0.9; margin-top: 0.3rem;">Les éléments semblables sont perçus comme <b>liés</b></div>
+<div style="opacity: 0.9; margin-top: 0.3rem; font-size: 1.3rem;">Les éléments semblables sont perçus comme <b>liés</b></div>
 </div>
 <div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
 <div style="font-size: 1.3rem;">🔲 <b>Clôture</b></div>
-<div style="opacity: 0.9; margin-top: 0.3rem;">L'œil <b>complète</b> les formes ouvertes</div>
+<div style="opacity: 0.9; margin-top: 0.3rem; font-size: 1.3rem;">L'œil <b>complète</b> les formes ouvertes</div>
 </div>
 </div>
 
-Ces principes ne sont pas JavaFX-spécifiques : ils s'appliquent à **toute** conception d'interface.
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.3rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem; line-height: 1.55;">
+Ces principes ne sont pas JavaFX-spécifiques : ils s'appliquent à <b>toute</b> conception d'interface.
+</div>
 
 ---
 
@@ -1160,22 +1163,22 @@ Ces principes ne sont pas JavaFX-spécifiques : ils s'appliquent à **toute** co
 
 <div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
 <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">👥 Proximité</div>
-<div style="font-size: 1.1rem; line-height: 1.4;">Regrouper les contrôles liés dans un même conteneur (↕ VBox, ↔ HBox).</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Regrouper les contrôles liés dans un même conteneur (↕ VBox, ↔ HBox).</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
 <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">📐 Alignement</div>
-<div style="font-size: 1.1rem; line-height: 1.4;">Utiliser 🔲 GridPane pour aligner labels et champs de formulaire.</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Utiliser 🔲 GridPane pour aligner labels et champs de formulaire.</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
 <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">🔗 Similarité</div>
-<div style="font-size: 1.1rem; line-height: 1.4;">Donner le même style aux boutons d'action (CSS ou <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">setStyle</code>).</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Donner le même style aux boutons d'action (CSS ou <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">setStyle</code>).</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
 <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">🔲 Clôture</div>
-<div style="font-size: 1.1rem; line-height: 1.4;">Les zones du 🗺️ BorderPane créent des frontières visuelles naturelles.</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Les zones du 🗺️ BorderPane créent des frontières visuelles naturelles.</div>
 </div>
 
 </div>
@@ -1721,7 +1724,7 @@ Une application JavaFX, c'est **3 niveaux de décision** :
 </div>
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1.5rem; text-align: center; font-size: 1.7rem;">
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1.5rem; text-align: center; font-size: 1.5rem;">
 Le code qui <b>fonctionne</b> ne suffit pas. Une bonne IHM est une interface qui <b>sert l'utilisateur</b>.
 </div>
 

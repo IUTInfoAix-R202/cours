@@ -109,7 +109,7 @@ Le <b>pattern Observer</b> : le bouton notifie, le handler réagit.<br/>
 </div>
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 1.2rem 2rem; border-radius: 10px; margin-top: 1.5rem; font-size: 1.7rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 1.2rem 2rem; border-radius: 10px; margin-top: 1.5rem; font-size: 1.5rem; text-align: center;">
 Aujourd'hui : rendre l'interface <b>réactive</b> sans écrire d'EventHandler pour chaque mise à jour.
 </div>
 
@@ -431,7 +431,7 @@ Depuis 1996, Java utilise la <b>convention JavaBeans</b> pour encapsuler les don
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.6rem;">
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
 ✅ Un <b>standard Java universel</b> : IDE, frameworks (Spring, JPA), sérialisation, tout en profite.
 </div>
 
@@ -675,7 +675,7 @@ void creerPropriete() {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.3rem; border-radius: 10px; margin-top: 1rem; font-size: 1.6rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.3rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem; text-align: center;">
 👉 <strong>Listeners</strong> déclenchent du <em>code</em>, <strong>bindings</strong> synchronisent des <em>valeurs</em>.
 </div>
 
