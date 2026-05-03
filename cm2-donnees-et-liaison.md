@@ -725,11 +725,11 @@ Propriété <em>valide</em> au départ. Le premier <code style="background: rgba
 ## ChangeListener - le listener exhaustif
 
 <style scoped>
-pre { font-size: 0.78rem; }
+pre { font-size: 0.77rem; }
 </style>
 
-<p style="font-size : 1.6rem;">
-Le <code>ChangeListener</code> reçoit <b>l'ancienne et la nouvelle valeur</b> à chaque changement. Exercice 1 du TP2 :
+<p style="font-size : 1.5rem;">
+Le <code>ChangeListener</code> reçoit <b>l'ancienne et la nouvelle valeur</b> à chaque changement :
 </p>
 
 ```java
@@ -832,7 +832,6 @@ private void incrementerScore() {
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.8rem;">
 
 <div style="background: #1a5276; color: white; padding: 1.3rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-<div style="font-size: 1.1rem; opacity: 0.85; margin-bottom: 0.1rem;">Général</div>
 <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">👁️ Pattern Observer</div>
 <div style="font-size: 1.3rem; line-height: 1.5; margin-bottom: 0.7rem;">Notifie d'un <strong>changement d'état</strong> quelconque du sujet (sans valeur imposée).</div>
 <div style="font-size: 1.4rem; line-height: 1.6;">
@@ -844,7 +843,6 @@ private void incrementerScore() {
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1.3rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-<div style="font-size: 1.1rem; opacity: 0.85; margin-bottom: 0.1rem;">Spécialisé</div>
 <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">📡 Propriété JavaFX</div>
 <div style="font-size: 1.3rem; line-height: 1.5; margin-bottom: 0.7rem;">Notifie d'un <strong>changement de valeur</strong> (la valeur transportée est le cœur du contrat).</div>
 <div style="font-size: 1.4rem; line-height: 1.6;">
@@ -1623,7 +1621,7 @@ pre { font-size: 0.9rem; }
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 1rem 1.3rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.35rem; font-weight: bold;">
+<div style="background: #2c3e50; color: white; padding: 1rem 1.3rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
 💡 Un binding remplace un EventHandler + un setText()
 </div>
 
@@ -2166,7 +2164,7 @@ bouton.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
 
 ![Hiérarchie des événements JavaFX : Event > InputEvent > MouseEvent/KeyEvent/TouchEvent + ActionEvent/WindowEvent/ScrollEvent](assets/kroki/cm2-hierarchie-evenements.svg)
 
-<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 0.5rem; text-align: center; font-size: 1.6rem;">
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 0.5rem; text-align: center; font-size: 1.5rem;">
 💡 Chaque type porte des <b>données spécifiques</b> : <code>MouseEvent</code> → coordonnées (<code>getX()</code>, <code>getY()</code>), <code>KeyEvent</code> → code de touche (<code>getCode()</code>), <code>ActionEvent</code> → <code>getSource()</code> / <code>getTarget()</code> de l'action sémantique (indépendante du périphérique).
 </div>
 
@@ -2273,7 +2271,7 @@ if (e.isControlDown() &&<br/>
 
 <div style="background: #e74c3c; color: white; padding: 1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">🔘 Sources d'ActionEvent</div>
-<div style="font-size: 1.5rem;">
+<div style="font-size: 1.3rem;">
 &bull; <code>Button</code> cliqué<br/>
 &bull; <code>MenuItem</code> sélectionné<br/>
 &bull; <code>TextField</code> + Entrée<br/>
@@ -2288,7 +2286,6 @@ if (e.isControlDown() &&<br/>
 btn.setOnAction(e -> a());<br/>
 btn.setOnAction(e -> b());<br/>
 <i>// seul b() s'exécute</i><br/>
-<br/>
 btn.addEventHandler(ACTION, e -> a());<br/>
 btn.addEventHandler(ACTION, e -> b());<br/>
 <i>// a() puis b()</i>
@@ -2382,7 +2379,7 @@ zone.setOnTouchPressed(<br/>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.3rem;">
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.5rem; border-radius: 10px; margin-top: 1rem; text-align: center; font-size: 1.5rem;">
 ⚡ Les <b>bindings</b> (Partie 3) et le <b>modèle événementiel</b> se partagent la responsabilité du feedback &lt; 500 ms : bindings pour les réactions d'état, handlers pour les actions ponctuelles et les événements bas-niveau.
 </div>
 
@@ -2519,7 +2516,7 @@ section table code { font-size: 0.72rem !important; padding: 1px 4px !important;
 <div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">🧪 Testabilité</div>
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.25rem; line-height: 1.55; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; line-height: 1.55; text-align: center;">
 💡 Les <strong>propriétés</strong> et <strong>bindings</strong> appris aujourd'hui deviendront <strong>le mécanisme de synchronisation</strong> entre la vue FXML et le modèle.
 </div>
 
@@ -2619,6 +2616,6 @@ IUT d'Aix-Marseille - Département Informatique
 <b>🎯 Dès maintenant</b> : créez une <code>StringProperty</code>, bindez-la à un <code>Label</code>, et tapez du texte dans un <code>TextField</code> lié. La synchro est instantanée, sans une ligne d'<code>EventHandler</code>. C'est ça, l'esprit JavaFX.
 </div>
 
-<div style="margin-top: 1.2rem; background: #fff8e1; border-left: 4px solid #e8a838; padding: 0.9rem 1rem; border-radius: 6px; font-size: 1rem;">
+<div style="margin-top: 1.2rem; background: #fff8e1; border-left: 4px solid #e8a838; padding: 0.9rem 1rem; border-radius: 6px; font-size: 1.3rem;">
 🛠️ <b>Les bindings, c'est laisser les données conduire l'interface.</b> Ce CM2 a posé le saut de l'événementiel manuel vers le déclaratif - propriétés, bindings, validation automatique. Le TP2 va vous faire toucher cette inversion. On n'aiguise pas sa scie le jour où on doit couper la planche ; on l'aiguise la veille.
 </div>
