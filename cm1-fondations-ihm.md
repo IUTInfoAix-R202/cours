@@ -2,11 +2,11 @@
 marp: true
 theme: default
 paginate: true
+math: katex
 lang: fr
 ---
 
 <!-- _class: lead -->
-
 <!-- _paginate: false -->
 
 <style scoped>
