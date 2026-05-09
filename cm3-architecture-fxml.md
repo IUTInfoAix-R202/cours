@@ -374,7 +374,6 @@ section pre { font-size: 0.65rem !important; line-height: 1.35 !important; margi
 </div>
 
 ```xml
-<!-- FXML : on déclare la structure -->
 <VBox>
   <Label fx:id="label" text="0" styleClass="compteur"/>
   <Button text="Incrémenter" onAction="#incrementer"/>
@@ -423,7 +422,7 @@ public class CompteurApp extends Application {
 </div>
 
 <div>
-<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">Après : FXML + Controller (~10 + 6 lignes)</div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">Après — compteur.fxml (~10 lignes)</div>
 
 ```xml
 <!-- compteur.fxml -->
@@ -436,6 +435,8 @@ public class CompteurApp extends Application {
           onAction="#incrementer"/>
 </VBox>
 ```
+
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem; margin-top: 0.4rem;">Après — CompteurController.java (~6 lignes)</div>
 
 ```java
 public class CompteurController {
