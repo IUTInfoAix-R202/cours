@@ -701,19 +701,33 @@ La <b>chaîne de création</b> : l'<code>Application</code> demande au <code>FXM
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Suivons un clic utilisateur sur le bouton « +1 ». Quatre étapes, aucune ne court-circuite les autres.</p>
 
-<div style="display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 0.9rem; align-items: center; margin-top: 0.4rem;">
+<style scoped>
+.flux-row { display: flex; align-items: stretch; border-radius: 10px; overflow: hidden; margin-bottom: 0.45rem; }
+.flux-num { color: white; font-weight: bold; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; min-width: 3.2rem; padding: 0.6rem 0.8rem; }
+.flux-body { flex: 1; padding: 0.7rem 1.1rem; display: flex; align-items: center; }
+</style>
 
-<div style="background: #c0392b; color: white; padding: 0.7rem 1rem; border-radius: 50%; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">1</div>
-<div style="background: rgba(192,57,43,0.1); padding: 0.6rem 1rem; border-radius: 8px;"><b>L'utilisateur clique</b> sur le bouton dans la vue.</div>
+<div style="margin-top: 0.4rem;">
 
-<div style="background: #4a90d9; color: white; padding: 0.7rem 1rem; border-radius: 50%; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">2</div>
-<div style="background: rgba(74,144,217,0.1); padding: 0.6rem 1rem; border-radius: 8px;"><b>JavaFX route l'événement</b> vers la méthode <code>incrementer()</code> du contrôleur (lue dans <code>onAction="#incrementer"</code>).</div>
+<div class="flux-row">
+<div class="flux-num" style="background: #c0392b;">1</div>
+<div class="flux-body" style="background: rgba(192,57,43,0.12);"><span><b>L'utilisateur clique</b> sur le bouton dans la vue.</span></div>
+</div>
 
-<div style="background: #27ae60; color: white; padding: 0.7rem 1rem; border-radius: 50%; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">3</div>
-<div style="background: rgba(39,174,96,0.1); padding: 0.6rem 1rem; border-radius: 8px;"><b>Le contrôleur délègue</b> au modèle : <code>compteur.incrementer()</code>. Pas de manipulation UI ici.</div>
+<div class="flux-row">
+<div class="flux-num" style="background: #4a90d9;">2</div>
+<div class="flux-body" style="background: rgba(74,144,217,0.12);"><span><b>JavaFX route l'événement</b> vers la méthode <code>incrementer()</code> du contrôleur (lue dans <code>onAction="#incrementer"</code>).</span></div>
+</div>
 
-<div style="background: #1a5276; color: white; padding: 0.7rem 1rem; border-radius: 50%; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">4</div>
-<div style="background: rgba(26,82,118,0.1); padding: 0.6rem 1rem; border-radius: 8px;"><b>Le modèle change</b>. La <code>IntegerProperty</code> notifie ses observateurs. Le binding du <code>Label</code> met le texte à jour <em>(magie du CM2)</em>.</div>
+<div class="flux-row">
+<div class="flux-num" style="background: #27ae60;">3</div>
+<div class="flux-body" style="background: rgba(39,174,96,0.12);"><span><b>Le contrôleur délègue</b> au modèle : <code>compteur.incrementer()</code>. Pas de manipulation UI ici.</span></div>
+</div>
+
+<div class="flux-row">
+<div class="flux-num" style="background: #1a5276;">4</div>
+<div class="flux-body" style="background: rgba(26,82,118,0.12);"><span><b>Le modèle change</b>. La <code>IntegerProperty</code> notifie ses observateurs. Le binding du <code>Label</code> met le texte à jour <em>(magie du CM2)</em>.</span></div>
+</div>
 
 </div>
 
