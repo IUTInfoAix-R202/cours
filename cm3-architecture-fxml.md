@@ -2477,26 +2477,26 @@ section table code { font-size: 0.92rem !important; }
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Mutualiser les styles et les composants empêche mécaniquement la disparate.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 CSS centralisé</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Un seul <code>theme.css</code> pour toute l'app. Changer la couleur primaire = une ligne, un déploiement.</div>
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🎨 CSS centralisé</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Un seul <code>theme.css</code> pour toute l'app. Changer la couleur primaire = une ligne, un déploiement.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🧱 Composants réutilisables</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Une <code>BarreBoutonsForm</code> avec <code>[Annuler] [OK]</code> dans l'ordre standard, utilisée partout via <code>&lt;BarreBoutonsForm/&gt;</code>.</div>
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🧱 Composants réutilisables</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Une <code>BarreBoutonsForm</code> avec <code>[Annuler] [OK]</code> dans l'ordre standard, utilisée partout via <code>&lt;BarreBoutonsForm/&gt;</code>.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📄 Vues stéréotypées</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Tous les formulaires partagent le même squelette FXML : titre, champs, barre de boutons, statut.</div>
+<div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">📄 Vues stéréotypées</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Tous les formulaires partagent le même squelette FXML : titre, champs, barre de boutons, statut.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🔍 Revue facile</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Un nouveau composant qui s'éloigne du standard est immédiatement repérable dans les FXML — il « jure ».</div>
+<div style="background: #e8a838; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🔍 Revue facile</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Un nouveau composant qui s'éloigne du standard est immédiatement repérable dans les FXML - il « jure ».</div>
 </div>
 
 </div>
