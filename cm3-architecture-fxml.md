@@ -533,6 +533,8 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
 
 ## Qui parle à qui ?
 
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Suivons l'information : du clic utilisateur jusqu'à la mise à jour automatique de la vue.</p>
+
 ![Flux MVC : Utilisateur → Vue → Contrôleur → Modèle → Vue (via propriétés observables)](assets/kroki/cm3-mvc-flux.svg)
 
 <div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; line-height: 1.55;">
