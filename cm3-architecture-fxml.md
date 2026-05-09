@@ -744,23 +744,23 @@ Le contrôleur ne touche <b>jamais</b> au <code>Label</code>. C'est le binding q
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem;">
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.35rem;">🧪 Modèle testable seul</div>
-<div style="font-size: 1.2rem; line-height: 1.4;">Un test JUnit pur : pas besoin de monter <code>Application</code>, pas besoin d'<code>xvfb</code>.<br/><code style="background: rgba(0,0,0,0.25); padding: 1px 5px;">new Compteur().incrementer()</code></div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">🧪 Modèle testable seul</div>
+<div style="font-size: 1.5rem; line-height: 1.4;">Un test JUnit pur : pas besoin de monter <code>Application</code>, pas besoin d'<code>xvfb</code>.<br/><code style="background: rgba(0,0,0,0.25); padding: 1px 5px;">new Compteur().incrementer()</code></div>
 </div>
 
 <div style="background: #4a90d9; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.35rem;">🔁 Vue interchangeable</div>
-<div style="font-size: 1.2rem; line-height: 1.4;">Deux vues différentes (mobile / desktop) peuvent partager le même modèle et le même contrôleur.</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">🔁 Vue interchangeable</div>
+<div style="font-size: 1.5rem; line-height: 1.4;">Deux vues différentes (mobile / desktop) peuvent partager le même modèle et le même contrôleur.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.35rem;">👥 Travail en parallèle</div>
-<div style="font-size: 1.2rem; line-height: 1.4;">Le designer édite le FXML/CSS, le développeur écrit le contrôleur, les conflits Git sont rares.</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">👥 Travail en parallèle</div>
+<div style="font-size: 1.5rem; line-height: 1.4;">Le designer édite le FXML/CSS, le développeur écrit le contrôleur, les conflits Git sont rares.</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.35rem;">📐 Single Responsibility</div>
-<div style="font-size: 1.2rem; line-height: 1.4;">Chaque fichier a <b>une</b> raison de changer. Le code reste compréhensible quand l'application grandit.</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">📐 Single Responsibility</div>
+<div style="font-size: 1.5rem; line-height: 1.4;">Chaque fichier a <b>une</b> raison de changer. Le code reste compréhensible quand l'application grandit.</div>
 </div>
 
 </div>
