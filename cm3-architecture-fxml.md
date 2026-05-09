@@ -336,12 +336,12 @@ barre.getChildren().addAll(ok, cancel); // ← oups, ordre inversé
 
 <div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ Logique → Java</div>
-<div style="font-size: 1.5rem; line-height: 1.5;">Une classe Java « contrôleur » contient le <b>comportement</b> et orchestre les interactions.</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Une classe Java «&nbsp;contrôleur&nbsp;» contient le <b>comportement</b> et orchestre les interactions.</div>
 </div>
 
 </div>
 
-<div style="background: #27ae60; color: white; padding: 1rem 1.5rem; border-radius: 10px; margin-top: 1.2rem; font-size: 1.4rem; text-align: center; line-height: 1.55;">
+<div style="background: #27ae60; color: white; padding: 1rem 1.5rem; border-radius: 10px; margin-top: 1.2rem; font-size: 1.5rem; text-align: center; line-height: 1.55;">
 ✨ Trois fichiers, trois responsabilités, trois acteurs qui peuvent travailler en parallèle.
 </div>
 
