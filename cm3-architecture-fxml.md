@@ -1114,7 +1114,7 @@ Si vous hésitez, posez-vous la question : <em>« est-ce que ça change pendant 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Le FXML produit un graphe de scène <b>identique</b> à celui qu'on aurait obtenu en code procédural.</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
+section pre { font-size: 0.8rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
 .tree-col { display: flex; flex-direction: column; }
 .tree-ascii { background: #f5f5f5 !important; color: #2c3e50 !important; padding: 0.7rem 0.9rem !important; }
 </style>
@@ -1125,14 +1125,14 @@ section pre { font-size: 0.85rem !important; line-height: 1.4 !important; margin
 <div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 FXML source</div>
 
 ```xml
-<VBox spacing="10">
+<VBox>
   <Label fx:id="titre"
          text="Compteur"/>
-  <HBox alignment="CENTER">
+  <HBox>
     <Button text="-1"/>
     <Label fx:id="valeur"
            text="0"/>
-    <Button text="+1"/>
+    <Button text="Incrémenter"/>
   </HBox>
 </VBox>
 ```
@@ -1143,11 +1143,11 @@ section pre { font-size: 0.85rem !important; line-height: 1.4 !important; margin
 <div style="background: #1a5276; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🌳 Graphe résultant</div>
 
 <pre class="tree-ascii">VBox (root)
-├── Label "Compteur"  ← fx:id="titre"
+├── Label "Compteur"     ← fx:id="titre"
 └── HBox
     ├── Button "-1"
-    ├── Label "0"     ← fx:id="valeur"
-    └── Button "+1"</pre>
+    ├── Label "0"        ← fx:id="valeur"
+    └── Button "Incrémenter"</pre>
 
 </div>
 
