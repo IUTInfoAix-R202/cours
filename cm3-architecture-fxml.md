@@ -829,10 +829,10 @@ Si vous trouvez un <code>if</code> dans un <code>@FXML void ...()</code>, demand
 
 ## Le contrôleur reste mince
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Sa seule mission : <b>traduire</b> les événements UI en appels au modèle, et <b>connecter</b> le modèle à la vue.</p>
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Sa mission : <b>traduire</b> les événements UI en appels au modèle, et <b>connecter</b> le modèle à la vue.</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+section pre { font-size: 0.55rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
 </style>
 
 <div style="background: #27ae60; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🎮 CompteurController.java</div>
@@ -844,14 +844,12 @@ public class CompteurController {
 
   @FXML private Label label;
 
-  @FXML
-  void initialize() {
+  @FXML void initialize() {
     // Connexion vue ↔ modèle via binding (CM2)
     label.textProperty().bind(compteur.valeurProperty().asString());
   }
 
-  @FXML
-  void incrementer() {
+  @FXML void incrementer() {
     compteur.incrementer();   // délégation pure au modèle
   }
 }
@@ -867,21 +865,21 @@ Le contrôleur n'a pas de <code>if</code>, pas de calcul. Juste : <em>« j'écou
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC s'appuie sur le <b>pattern Observer</b> que vous connaissez déjà : la vue observe le modèle.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
 
-<div style="background: #4a90d9; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">CM1 — Observer naïf</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Un bouton, un <code>EventHandler</code>, un appel manuel à <code>label.setText(...)</code> dans le handler.</div>
+<div style="background: #4a90d9; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">CM1 — Observer naïf</div>
+<div style="font-size: 1.5rem; line-height: 1.4;">Un bouton, un <code>EventHandler</code>, un appel manuel à <code>label.setText(...)</code> dans le handler.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">CM2 — Observer via bindings</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Une <code>IntegerProperty</code> dans le modèle, un <code>label.textProperty().bind(...)</code> dans la vue. Plus de handler manuel.</div>
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">CM2 — Observer via bindings</div>
+<div style="font-size: 1.5rem; line-height: 1.4;">Une <code>IntegerProperty</code> dans le modèle, un <code>label.textProperty().bind(...)</code> dans la vue. Plus de handler manuel.</div>
 </div>
 
 </div>
 
-<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.4rem; text-align: center;">
+<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 🎯 <b>CM3 :</b> ces propriétés sont déclarées dans le modèle, observées dans le contrôleur, et la vue ne les voit qu'à travers les bindings du contrôleur.
 </div>
 
