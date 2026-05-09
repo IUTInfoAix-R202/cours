@@ -541,42 +541,26 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#2c3e50"/>
     </marker>
   </defs>
-
-  <!-- 👤 Utilisateur -->
   <rect x="20" y="110" width="160" height="100" rx="14" fill="#7f8c8d"/>
   <text x="100" y="155" text-anchor="middle" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">👤</text>
   <text x="100" y="185" text-anchor="middle" fill="white" font-family="sans-serif" font-size="18" font-weight="bold">Utilisateur</text>
-
-  <!-- 🖼️ Vue -->
   <rect x="250" y="110" width="180" height="100" rx="14" fill="#4a90d9"/>
   <text x="340" y="148" text-anchor="middle" fill="white" font-family="sans-serif" font-size="18" font-weight="bold">🖼️ Vue</text>
   <text x="340" y="180" text-anchor="middle" fill="white" font-family="sans-serif" font-size="14">FXML + composants</text>
-
-  <!-- 🎮 Contrôleur -->
   <rect x="500" y="110" width="180" height="100" rx="14" fill="#27ae60"/>
   <text x="590" y="148" text-anchor="middle" fill="white" font-family="sans-serif" font-size="18" font-weight="bold">🎮 Contrôleur</text>
   <text x="590" y="180" text-anchor="middle" fill="white" font-family="sans-serif" font-size="14">handler @FXML</text>
-
-  <!-- 📊 Modèle -->
   <rect x="750" y="110" width="140" height="100" rx="14" fill="#1a5276"/>
   <text x="820" y="148" text-anchor="middle" fill="white" font-family="sans-serif" font-size="18" font-weight="bold">📊 Modèle</text>
   <text x="820" y="180" text-anchor="middle" fill="white" font-family="sans-serif" font-size="14">données + logique</text>
-
-  <!-- Arrow 1 : Utilisateur → Vue -->
   <line x1="180" y1="160" x2="250" y2="160" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrow-mvc)"/>
   <text x="215" y="98" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">① clic / saisie</text>
-
-  <!-- Arrow 2 : Vue → Contrôleur -->
   <line x1="430" y1="160" x2="500" y2="160" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrow-mvc)"/>
   <text x="465" y="98" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">② événement</text>
-
-  <!-- Arrow 3 : Contrôleur → Modèle -->
   <line x1="680" y1="160" x2="750" y2="160" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrow-mvc)"/>
   <text x="715" y="98" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">③ appel métier</text>
-
-  <!-- Arrow 4 : Modèle → Vue (curve, bindings) -->
-  <text x="535" y="248" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">④ propriétés observables → bindings (auto)</text>
   <path d="M 820 215 C 820 330, 250 330, 250 215" stroke="#2c3e50" stroke-width="3" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow-mvc)"/>
+  <text x="535" y="248" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">④ propriétés observables → bindings (auto)</text>
 </svg>
 
 <div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; line-height: 1.55;">
