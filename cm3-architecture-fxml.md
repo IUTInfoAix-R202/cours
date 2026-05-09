@@ -2634,6 +2634,12 @@ Le développeur ne <b>choisit pas une couleur</b> : il choisit un <b>rôle séma
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'attribut <code>stylesheets</code> peut aussi se poser au niveau de la <code>Scene</code>, pour appliquer un thème <b>global</b>.</p>
 
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+</style>
+
+<div style="background: #7f8c8d; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🚀 App.java</div>
+
 ```java
 public void start(Stage stage) throws IOException {
   Parent root = FXMLLoader.load(getClass().getResource("/fxml/main.fxml"));
@@ -2650,21 +2656,21 @@ public void start(Stage stage) throws IOException {
 }
 ```
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem; align-items: stretch;">
 
-<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">🎨 Niveau Scene</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">Une seule fois, applique à toute l'application.</div>
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🎨 Niveau Scene</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Une seule fois, applique à toute l'application.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">🧩 Niveau FXML</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">Pour des styles spécifiques à un sous-arbre.</div>
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🧩 Niveau FXML</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Pour des styles spécifiques à un sous-arbre.</div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.55rem 1.1rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.2rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Idéal pour un <b>theme switcher</b> (clair/sombre) : on remplace la feuille au niveau <code>Scene</code> sans toucher aux FXML.
 </div>
 
