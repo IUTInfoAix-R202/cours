@@ -225,6 +225,8 @@ Tout fonctionne, mais une <b>seule classe</b> mélange déjà 4 préoccupations 
 
 ## Symptômes au-delà de 100 lignes
 
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Une fois ces préoccupations entremêlées, voici les douleurs concrètes qui apparaissent dès quelques centaines de lignes.</p>
+
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.7rem;">
 
 <div style="background: #c0392b; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
@@ -247,6 +249,10 @@ Tout fonctionne, mais une <b>seule classe</b> mélange déjà 4 préoccupations 
 <div style="font-size: 1.2rem; line-height: 1.45;">Pour réutiliser une barre d'outils dans 3 fenêtres, copier-coller. Toute évolution doit être propagée à la main.</div>
 </div>
 
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; text-align: center;">
+💡 Ces 4 symptômes partagent une seule cause : tout vit dans un seul fichier Java.
 </div>
 
 ---
