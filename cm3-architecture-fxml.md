@@ -925,7 +925,7 @@ Le contrôleur appelle <code>incrementer()</code>, pas <code>setValeur(getValeur
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC a engendré de nombreuses variantes selon le degré de découplage souhaité.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin: 2.4rem 0; align-items: stretch;">
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎯 MVC classique</div>
@@ -978,19 +978,25 @@ JavaFX + FXML implémente nativement <b>MVC</b>. Avec les bindings, on glissera 
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Un fichier FXML est un fichier XML qui décrit la structure d'une vue JavaFX.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem;">
 
-<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">📋 Le « quoi »</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Un <code>VBox</code> contenant un <code>Label</code> et un <code>Button</code>, avec un padding de 20.</div>
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">📋 Le « quoi »</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Un <code>VBox</code> contenant un <code>Label</code> et un <code>Button</code>, avec un padding de 20.</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ Pas le « comment »</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Aucune logique, aucune boucle, aucune condition. Juste la structure attendue.</div>
+<div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">⚙️ Pas le « comment »</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Aucune logique, aucune boucle, aucune condition. Juste la structure attendue.</div>
 </div>
 
 </div>
+
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+</style>
+
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem; margin-top: 0.5rem;">🖼️ vue.fxml</div>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1004,7 +1010,7 @@ JavaFX + FXML implémente nativement <b>MVC</b>. Avec les bindings, on glissera 
 </VBox>
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.25rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 À l'exécution, <code>FXMLLoader</code> instancie ces composants et reconstitue le graphe de scène.
 </div>
 
