@@ -477,7 +477,7 @@ La <b>structure</b> est dans le FXML. Le <b>comportement</b> reste en Java.
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC est l'un des plus anciens patterns architecturaux encore en usage actif.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 3fr; gap: 0.3rem 0.7rem; margin-top: 0.4rem; font-size: 1.1rem;">
+<div style="display: grid; grid-template-columns: 1fr 3fr; gap: 0.3rem 0.7rem; margin-top: 0.4rem; font-size: 1.5rem;">
 
 <div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 8px; font-weight: bold; display: flex; align-items: center; justify-content: center;">1978</div>
 <div style="background: rgba(26,82,118,0.12); padding: 0.4rem 0.9rem; border-radius: 8px;"><b>Trygve Reenskaug</b> formalise MVC chez Xerox PARC pour <b>Smalltalk-80</b>. Isoler la logique métier des effets visuels.</div>
@@ -504,23 +504,23 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
 
 ## 🏗️ Le pattern Modèle-Vue-Contrôleur
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC est né en 1978 chez Xerox PARC pour Smalltalk-80. C'est le grand-père de tous les patterns d'architecture d'IHM.</p>
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC organise l'application en trois rôles bien distincts. Chacun a son fichier, son langage, sa testabilité.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
 
 <div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📊 Modèle</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Les <b>données</b> et la <b>logique métier</b>. Aucune référence à l'IHM.<br/><em>Un compteur, un client, un panier...</em></div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">📊 Modèle</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Les <b>données</b> et la <b>logique métier</b>. Aucune référence à l'IHM.<br/><em>Un compteur, un client, un panier...</em></div>
 </div>
 
 <div style="background: #4a90d9; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🖼️ Vue</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Ce que l'utilisateur <b>voit</b>. Affiche le modèle, ne modifie rien.<br/><em>Le FXML, les composants, les styles.</em></div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🖼️ Vue</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Ce que l'utilisateur <b>voit</b>. Affiche le modèle, ne modifie rien.<br/><em>Le FXML, les composants, les styles.</em></div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎮 Contrôleur</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Reçoit les <b>actions</b> de l'utilisateur, met à jour le modèle, rafraîchit la vue.<br/><em>La classe annotée <code>@FXML</code>.</em></div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🎮 Contrôleur</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Reçoit les <b>actions</b> de l'utilisateur, met à jour le modèle, rafraîchit la vue.<br/><em>La classe annotée <code>@FXML</code>.</em></div>
 </div>
 
 </div>
