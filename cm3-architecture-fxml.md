@@ -293,21 +293,21 @@ barre.getChildren().addAll(ok, cancel); // ← oups, ordre inversé
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">La séparation reflète aussi la <b>division du travail</b> dans une vraie équipe produit.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin: 2.4rem 0;">
 
 <div style="background: #4a90d9; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 UX/UI Designer</div>
-<div style="font-size: 1.5rem; line-height: 1.5;">Édite la maquette dans Figma, livre du <b>FXML</b> + <b>CSS</b> via SceneBuilder. Ne touche pas au Java.</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 UX/UI Designer</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Édite la maquette des vues dans Figma, livre du <b>FXML</b> et une feuille de style <b>CSS</b>. Ne touche pas au code Java.</div>
 </div>
 
 <div style="background: #e67e22; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ Développeur backend</div>
-<div style="font-size: 1.5rem; line-height: 1.5;">Implémente le <b>modèle</b> métier en Java pur. Ne sait rien de JavaFX. Tests JUnit standard.</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ Dev backend</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Implémente le <b>modèle</b> métier en Java pur. Il ne sait rien de JavaFX et fait des tests JUnit standard.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.4rem;">🔌 Développeur intégrateur</div>
-<div style="font-size: 1.5rem; line-height: 1.5;">Branche les <b>contrôleurs</b> sur le modèle, écrit les bindings, gère le routage entre vues.</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🔌 Dev Frontend</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Branche les <b>contrôleurs</b> sur le modèle, écrit les bindings, gère le routage entre vues. C'est lui qui écrit les tests graphiques avec <b>TestFX</b>.</div>
 </div>
 
 </div>
