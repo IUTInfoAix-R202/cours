@@ -148,7 +148,7 @@ Aujourd'hui : <b>séparer</b> ce que l'interface affiche de ce qu'elle fait, et 
 <!-- _header: "" -->
 <!-- _footer: "" -->
 
-# Partie 1 - Le problème
+# Partie 1 - 🤔 Le problème
 
 ---
 

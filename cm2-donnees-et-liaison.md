@@ -147,7 +147,7 @@ Aujourd'hui : rendre l'interface <b>réactive</b> sans écrire d'EventHandler po
 
 <!-- _class: lead -->
 
-# Partie 1 - Le problème
+# Partie 1 - 🤔 Le problème
 
 ---
 

@@ -152,7 +152,7 @@ Aujourd'hui : combiner <b>MVC + bindings</b> pour aller vers <b>MVVM</b>, ajoute
 <!-- _header: "" -->
 <!-- _footer: "" -->
 
-# Partie 1 - Le problème
+# Partie 1 - 🤔 Le problème
 
 ---
 
