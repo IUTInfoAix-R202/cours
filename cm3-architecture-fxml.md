@@ -234,17 +234,17 @@ Tout fonctionne, mais une <b>seule classe</b> mélange déjà 4 préoccupations 
 <div style="font-size: 1.2rem; line-height: 1.45;">Un fichier de 500 lignes où tout est mélangé devient illisible. Trouver « où le bouton OK est défini » prend 5 minutes.</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
+<div style="background: #d35400; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
 <div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 Outils designer impossibles</div>
 <div style="font-size: 1.2rem; line-height: 1.45;">Aucun outil graphique ne peut éditer du Java. Le designer doit devenir développeur — ou le développeur, designer.</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
+<div style="background: #b03020; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
 <div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 Tests difficiles</div>
 <div style="font-size: 1.2rem; line-height: 1.45;">Tester la logique métier impose de monter une <code>Application</code> JavaFX entière. Pas de test unitaire pur.</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
+<div style="background: #e67e22; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
 <div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🔁 Réutilisation zéro</div>
 <div style="font-size: 1.2rem; line-height: 1.45;">Pour réutiliser une barre d'outils dans 3 fenêtres, copier-coller. Toute évolution doit être propagée à la main.</div>
 </div>
