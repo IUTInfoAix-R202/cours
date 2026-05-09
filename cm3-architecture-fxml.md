@@ -564,27 +564,27 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
 
   <!-- Arrow 1 : Utilisateur → Vue -->
   <line x1="180" y1="160" x2="250" y2="160" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrow-mvc)"/>
-  <circle cx="215" cy="100" r="18" fill="white" stroke="#2c3e50" stroke-width="2"/>
-  <text x="215" y="107" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">1</text>
-  <text x="215" y="80" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">clic / saisie</text>
+  <text x="215" y="148" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">clic / saisie</text>
+  <circle cx="215" cy="160" r="14" fill="white" stroke="#2c3e50" stroke-width="2"/>
+  <text x="215" y="166" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">1</text>
 
   <!-- Arrow 2 : Vue → Contrôleur -->
   <line x1="430" y1="160" x2="500" y2="160" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrow-mvc)"/>
-  <circle cx="465" cy="100" r="18" fill="white" stroke="#2c3e50" stroke-width="2"/>
-  <text x="465" y="107" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">2</text>
-  <text x="465" y="80" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">événement</text>
+  <text x="465" y="148" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">événement</text>
+  <circle cx="465" cy="160" r="14" fill="white" stroke="#2c3e50" stroke-width="2"/>
+  <text x="465" y="166" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">2</text>
 
   <!-- Arrow 3 : Contrôleur → Modèle -->
   <line x1="680" y1="160" x2="750" y2="160" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrow-mvc)"/>
-  <circle cx="715" cy="100" r="18" fill="white" stroke="#2c3e50" stroke-width="2"/>
-  <text x="715" y="107" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">3</text>
-  <text x="715" y="80" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">appel métier</text>
+  <text x="715" y="148" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">appel métier</text>
+  <circle cx="715" cy="160" r="14" fill="white" stroke="#2c3e50" stroke-width="2"/>
+  <text x="715" y="166" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">3</text>
 
   <!-- Arrow 4 : Modèle → Vue (curve, bindings) -->
-  <path d="M 820 210 C 820 290, 250 290, 250 210" stroke="#2c3e50" stroke-width="3" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow-mvc)"/>
-  <circle cx="535" cy="277" r="18" fill="white" stroke="#2c3e50" stroke-width="2"/>
-  <text x="535" y="284" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">4</text>
-  <text x="535" y="320" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">propriétés observables → bindings (auto)</text>
+  <path d="M 820 210 C 820 300, 250 300, 250 215" stroke="#2c3e50" stroke-width="3" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow-mvc)"/>
+  <text x="535" y="270" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">propriétés observables → bindings (auto)</text>
+  <circle cx="535" cy="285" r="14" fill="white" stroke="#2c3e50" stroke-width="2"/>
+  <text x="535" y="291" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">4</text>
 </svg>
 
 <div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; line-height: 1.55;">
