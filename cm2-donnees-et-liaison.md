@@ -117,18 +117,12 @@ Aujourd'hui : rendre l'interface <b>réactive</b> sans écrire d'EventHandler po
 
 ## À la fin de ce CM, vous saurez...
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
 
 <div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Expliquer</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Le mécanisme d'une <b>propriété observable</b> JavaFX et son rôle dans le data binding.</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 2</div>
-</div>
-
-<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Écrire</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Des <b>bindings</b> unidirectionnels (<code>bind</code>) et bidirectionnels (<code>bindBidirectional</code>) entre propriétés.</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 3</div>
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Appliquer</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">La <b>réactivité par data binding</b> : propriétés observables, <code>bind()</code>, <code>bindBidirectional()</code> et l'API fluente.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Parties 2 + 3</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
@@ -138,8 +132,8 @@ Aujourd'hui : rendre l'interface <b>réactive</b> sans écrire d'EventHandler po
 </div>
 
 <div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">⚡ Distinguer</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Les cas où il faut un <b>binding</b> (état) de ceux où il faut un <b>handler</b> (action).</div>
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">⚡ Maîtriser</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Le <b>modèle événementiel complet</b> : propagation capture/bubbling, <code>EventFilter</code> vs <code>EventHandler</code>, <code>consume()</code>.</div>
 <div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 5</div>
 </div>
 
