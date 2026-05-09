@@ -1077,11 +1077,11 @@ Chaque <b>élément XML</b> = un appel <code>new ClasseJavaFX()</code>. Chaque <
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">FXML est un langage de description, pas de programmation. Quelques règles simples pour ne pas dériver.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
-<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">✅ En FXML</div>
-<ul style="font-size: 1.1rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">✓ En FXML</div>
+<ul style="font-size: 1.3rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
 <li>La <b>structure</b> de l'arbre de scène</li>
 <li>Les <b>propriétés statiques</b> (<code>text</code>, <code>spacing</code>, <code>alignment</code>)</li>
 <li>Les <b>identifiants</b> (<code>fx:id</code>, <code>id</code>, <code>styleClass</code>)</li>
@@ -1090,9 +1090,9 @@ Chaque <b>élément XML</b> = un appel <code>new ClasseJavaFX()</code>. Chaque <
 </ul>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">❌ Hors de FXML</div>
-<ul style="font-size: 1.1rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
+<div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Hors de FXML</div>
+<ul style="font-size: 1.3rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
 <li>Toute <b>logique métier</b> (calculs, conditions)</li>
 <li>L'<b>état dynamique</b> (texte qui change au runtime)</li>
 <li>Les <b>boucles</b> et constructions répétitives</li>
@@ -1103,7 +1103,7 @@ Chaque <b>élément XML</b> = un appel <code>new ClasseJavaFX()</code>. Chaque <
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Si vous hésitez, posez-vous la question : <em>« est-ce que ça change pendant l'exécution ? »</em> Si oui → contrôleur, sinon → FXML.
 </div>
 
