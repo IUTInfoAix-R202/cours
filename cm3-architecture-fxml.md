@@ -535,7 +535,57 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Suivons l'information : du clic utilisateur jusqu'à la mise à jour automatique de la vue.</p>
 
-![Flux MVC : Utilisateur → Vue → Contrôleur → Modèle → Vue (via propriétés observables)](assets/kroki/cm3-mvc-flux.svg)
+<svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 1000px; display: block; margin: 0 auto;">
+  <defs>
+    <marker id="arrow-mvc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2c3e50"/>
+    </marker>
+  </defs>
+
+  <!-- 👤 Utilisateur -->
+  <rect x="20" y="110" width="160" height="100" rx="14" fill="#7f8c8d"/>
+  <text x="100" y="155" text-anchor="middle" fill="white" font-family="sans-serif" font-size="22" font-weight="bold">👤</text>
+  <text x="100" y="185" text-anchor="middle" fill="white" font-family="sans-serif" font-size="18" font-weight="bold">Utilisateur</text>
+
+  <!-- 🖼️ Vue -->
+  <rect x="250" y="110" width="180" height="100" rx="14" fill="#4a90d9"/>
+  <text x="340" y="148" text-anchor="middle" fill="white" font-family="sans-serif" font-size="18" font-weight="bold">🖼️ Vue</text>
+  <text x="340" y="180" text-anchor="middle" fill="white" font-family="sans-serif" font-size="14">FXML + composants</text>
+
+  <!-- 🎮 Contrôleur -->
+  <rect x="500" y="110" width="180" height="100" rx="14" fill="#27ae60"/>
+  <text x="590" y="148" text-anchor="middle" fill="white" font-family="sans-serif" font-size="18" font-weight="bold">🎮 Contrôleur</text>
+  <text x="590" y="180" text-anchor="middle" fill="white" font-family="sans-serif" font-size="14">handler @FXML</text>
+
+  <!-- 📊 Modèle -->
+  <rect x="750" y="110" width="140" height="100" rx="14" fill="#1a5276"/>
+  <text x="820" y="148" text-anchor="middle" fill="white" font-family="sans-serif" font-size="18" font-weight="bold">📊 Modèle</text>
+  <text x="820" y="180" text-anchor="middle" fill="white" font-family="sans-serif" font-size="14">données + logique</text>
+
+  <!-- Arrow 1 : Utilisateur → Vue -->
+  <line x1="180" y1="160" x2="250" y2="160" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrow-mvc)"/>
+  <circle cx="215" cy="100" r="18" fill="white" stroke="#2c3e50" stroke-width="2"/>
+  <text x="215" y="107" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">1</text>
+  <text x="215" y="80" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">clic / saisie</text>
+
+  <!-- Arrow 2 : Vue → Contrôleur -->
+  <line x1="430" y1="160" x2="500" y2="160" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrow-mvc)"/>
+  <circle cx="465" cy="100" r="18" fill="white" stroke="#2c3e50" stroke-width="2"/>
+  <text x="465" y="107" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">2</text>
+  <text x="465" y="80" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">événement</text>
+
+  <!-- Arrow 3 : Contrôleur → Modèle -->
+  <line x1="680" y1="160" x2="750" y2="160" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrow-mvc)"/>
+  <circle cx="715" cy="100" r="18" fill="white" stroke="#2c3e50" stroke-width="2"/>
+  <text x="715" y="107" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">3</text>
+  <text x="715" y="80" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">appel métier</text>
+
+  <!-- Arrow 4 : Modèle → Vue (curve, bindings) -->
+  <path d="M 820 210 Q 820 320 340 320 Q 250 320 250 210" stroke="#2c3e50" stroke-width="3" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow-mvc)"/>
+  <circle cx="580" cy="320" r="18" fill="white" stroke="#2c3e50" stroke-width="2"/>
+  <text x="580" y="327" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">4</text>
+  <text x="580" y="350" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">propriétés observables → bindings (auto)</text>
+</svg>
 
 <div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; line-height: 1.55;">
 <b>Boucle classique :</b> l'utilisateur agit sur la vue → le contrôleur traduit l'action en appel métier → le modèle change → la vue se met à jour automatiquement (via les <b>bindings</b> du CM2).
