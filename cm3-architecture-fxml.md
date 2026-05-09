@@ -260,7 +260,7 @@ Tout fonctionne, mais une <b>seule classe</b> mélange déjà 4 préoccupations 
 ## Le coût caché : la duplication
 
 <style scoped>
-section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.55rem !important; line-height: 1.35 !important; }
 </style>
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Sans séparation, la même structure se réécrit dans chaque fenêtre. Imaginez une app à 12 écrans avec une barre de boutons commune.</p>
