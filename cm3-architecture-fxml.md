@@ -2507,31 +2507,31 @@ section table code { font-size: 0.92rem !important; }
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Un <b>design system</b> est une bibliothèque vivante de composants, de couleurs, de typographies et de règles d'usage, partagée par toute une organisation.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
-<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 Couche visuelle</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Palette de couleurs (primaire, secondaire, alertes), tailles de typographie, grille d'espacements, icônes.</div>
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🎨 Couche visuelle</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Palette de couleurs (primaire, secondaire, alertes), tailles de typographie, grille d'espacements, icônes.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🧱 Composants atomiques</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Boutons, champs, sélecteurs, dialogues... Chacun avec ses variantes (primaire, secondaire, danger).</div>
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🧱 Composants atomiques</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Boutons, champs, sélecteurs, dialogues... Chacun avec ses variantes (primaire, secondaire, danger).</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">📐 Patterns d'usage</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Quand utiliser quel composant, dans quel contexte. <em>« Pour confirmer une action destructrice : bouton rouge à droite. »</em></div>
+<div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">📐 Patterns d'usage</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Quand utiliser quel composant, dans quel contexte. <em>« Pour confirmer une action destructrice : bouton rouge à droite. »</em></div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">📚 Documentation</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Guide vivant : exemples, code source, anti-patterns. Souvent un site web dédié à l'équipe produit.</div>
+<div style="background: #e8a838; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">📚 Documentation</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Guide vivant : exemples, code source, anti-patterns. Souvent un site web dédié à l'équipe produit.</div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Heuristique #4 « <em>cohérence et standards</em> » à l'échelle d'une organisation entière.
 </div>
 
