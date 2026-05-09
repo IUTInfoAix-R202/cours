@@ -24,6 +24,65 @@ section {
 
 ---
 
+## Où en sommes-nous ?
+
+<div style="display: flex; gap: 0.8rem; margin-top: 0.5rem; margin-bottom: 0.5rem; text-align: center; font-size: 2.5rem; line-height: 1;">
+<div style="flex: 1;">👇</div>
+<div style="flex: 1;">&nbsp;</div>
+<div style="flex: 1;">&nbsp;</div>
+<div style="flex: 1;">&nbsp;</div>
+</div>
+
+<div style="display: flex; gap: 0.8rem;">
+<div style="background: #4a90d9; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center; box-shadow: 0 4px 12px rgba(74,144,217,0.4);">
+<div style="font-size: 1.8rem; font-weight: bold;">CM1</div>
+<div style="margin-top: 0.3rem;">Fondations IHM + JavaFX</div>
+</div>
+<div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
+<div style="font-size: 1.8rem; font-weight: bold;">CM2</div>
+<div style="margin-top: 0.3rem;">Propriétés et bindings</div>
+</div>
+<div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
+<div style="font-size: 1.8rem; font-weight: bold;">CM3</div>
+<div style="margin-top: 0.3rem;">Architecture et FXML</div>
+</div>
+<div style="background: #8e44ad; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
+<div style="font-size: 1.8rem; font-weight: bold;">CM4</div>
+<div style="margin-top: 0.3rem;">MVVM + persistance</div>
+</div>
+</div>
+
+<div style="display: flex; gap: 0.8rem; text-align: center; font-size: 1.5rem; color: #999;">
+<div style="flex: 1;">↓</div>
+<div style="flex: 1;">↓</div>
+<div style="flex: 1;">↓</div>
+<div style="flex: 1;">↓</div>
+</div>
+
+<div style="display: flex; gap: 0.8rem;">
+<div style="background: #d0e2f3; color: #2c5f8a; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
+TP1
+</div>
+<div style="background: #fae5c0; color: #8a6a1f; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
+TP2
+</div>
+<div style="background: #c8e6c9; color: #1b5e20; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
+TP3
+</div>
+<div style="background: #e1bee7; color: #5c2473; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
+TP4 + TP5
+</div>
+</div>
+
+<div style="display: flex; gap: 0.8rem; margin-top: 0.5rem; text-align: center; font-size: 2.5rem; line-height: 1;">
+<div style="flex: 1;">👆</div>
+<div style="flex: 1;">&nbsp;</div>
+<div style="flex: 1;">&nbsp;</div>
+<div style="flex: 1;">&nbsp;</div>
+</div>
+
+---
+
 ## Le module R2.02 en un coup d'œil
 
 <style scoped>
