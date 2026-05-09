@@ -354,7 +354,7 @@ section { hyphens: auto; -webkit-hyphens: auto; }
 ## Procédural ↔ déclaratif
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 1rem 0 !important; }
+section pre { font-size: 0.65rem !important; line-height: 1.35 !important; margin: 1rem 0 !important; }
 </style>
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Le passage à FXML, c'est aussi le passage d'un style impératif à un style déclaratif.</p>
@@ -375,7 +375,7 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 
 ```xml
 <!-- FXML : on déclare la structure -->
-<VBox alignment="CENTER" spacing="10">
+<VBox>
   <Label fx:id="label" text="0" styleClass="compteur"/>
   <Button text="Incrémenter" onAction="#incrementer"/>
 </VBox>
