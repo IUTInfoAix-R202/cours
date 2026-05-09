@@ -535,7 +535,7 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Suivons l'information : du clic utilisateur jusqu'à la mise à jour automatique de la vue.</p>
 
-<svg viewBox="5 80 900 260" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 1000px; display: block; margin: 0 auto;">
+<svg viewBox="5 80 900 260" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="width: 100%; display: block; margin: 0 auto;">
   <defs>
     <marker id="arrow-mvc" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#2c3e50"/>
