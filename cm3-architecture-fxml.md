@@ -653,10 +653,47 @@ Aucun des trois fichiers ne « connaît » les détails des autres : ils communi
 
 ## Qui crée qui ?
 
-![Chaîne de création : Application → FXMLLoader → Controller / Vue / Modèle](assets/kroki/cm3-mvc-creation.svg)
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Le <code>FXMLLoader</code> est le grand chef d'orchestre : il instancie tout le monde au démarrage.</p>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-La <b>chaîne de création</b> : l'<code>Application</code> demande au <code>FXMLLoader</code>, qui instancie le contrôleur et la vue, et seul le contrôleur connaît le modèle.
+<svg viewBox="0 0 1100 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="width: 100%; display: block; margin: 0 auto;">
+  <defs>
+    <marker id="arrow-creation" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2c3e50"/>
+    </marker>
+  </defs>
+  <rect x="430" y="20" width="240" height="80" rx="14" fill="#7f8c8d"/>
+  <text x="550" y="55" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">🚀 Application</text>
+  <text x="550" y="82" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">start(Stage)</text>
+  <rect x="445" y="160" width="210" height="60" rx="14" fill="#1a5276"/>
+  <text x="550" y="197" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">🔧 FXMLLoader</text>
+  <rect x="80" y="290" width="320" height="60" rx="14" fill="#27ae60"/>
+  <text x="240" y="327" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19" font-weight="bold">🎮 CompteurController</text>
+  <rect x="700" y="280" width="350" height="80" rx="14" fill="#4a90d9"/>
+  <text x="875" y="315" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19" font-weight="bold">🖼️ Graphe de scène</text>
+  <text x="875" y="342" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">(VBox + Label + Button)</text>
+  <rect x="120" y="410" width="240" height="60" rx="14" fill="#1a5276"/>
+  <text x="240" y="447" text-anchor="middle" fill="white" font-family="sans-serif" font-size="19" font-weight="bold">📊 Compteur (Modèle)</text>
+  <line x1="520" y1="100" x2="520" y2="160" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-creation)"/>
+  <line x1="580" y1="100" x2="580" y2="160" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-creation)"/>
+  <rect x="488" y="118" width="64" height="22" rx="4" fill="#ecf0f1" stroke="#bdc3c7"/>
+  <text x="520" y="134" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">new()</text>
+  <rect x="551" y="118" width="58" height="22" rx="4" fill="#ecf0f1" stroke="#bdc3c7"/>
+  <text x="580" y="134" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">load()</text>
+  <line x1="490" y1="220" x2="320" y2="290" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-creation)"/>
+  <rect x="240" y="232" width="220" height="50" rx="4" fill="#ecf0f1" stroke="#bdc3c7"/>
+  <text x="350" y="251" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">new() (via fx:controller)</text>
+  <text x="350" y="268" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">injection @FXML + initialize()</text>
+  <line x1="630" y1="220" x2="780" y2="280" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-creation)"/>
+  <rect x="640" y="232" width="200" height="22" rx="4" fill="#ecf0f1" stroke="#bdc3c7"/>
+  <text x="740" y="248" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">new() (parsing FXML)</text>
+  <line x1="240" y1="350" x2="240" y2="410" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-creation)"/>
+  <rect x="115" y="368" width="250" height="34" rx="4" fill="#ecf0f1" stroke="#bdc3c7"/>
+  <text x="240" y="384" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">new() (constructeur)</text>
+  <text x="240" y="398" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">+ bind sur properties</text>
+</svg>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.4rem; text-align: center;">
+La <b>chaîne de création</b> : l'<code>Application</code> demande au <code>FXMLLoader</code>, qui instancie le contrôleur et la vue. Seul le contrôleur connaît le modèle.
 </div>
 
 ---
