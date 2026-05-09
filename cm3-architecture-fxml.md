@@ -1113,10 +1113,16 @@ Si vous hésitez, posez-vous la question : <em>« est-ce que ça change pendant 
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Le FXML produit un graphe de scène <b>identique</b> à celui qu'on aurait obtenu en code procédural.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
+.tree-col { display: flex; flex-direction: column; }
+.tree-ascii { background: #f5f5f5 !important; color: #2c3e50 !important; padding: 0.7rem 0.9rem !important; }
+</style>
 
-<div>
-<div style="background: #4a90d9; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">FXML source</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+
+<div class="tree-col">
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 FXML source</div>
 
 ```xml
 <VBox spacing="10">
@@ -1133,23 +1139,21 @@ Si vous hésitez, posez-vous la question : <em>« est-ce que ça change pendant 
 
 </div>
 
-<div>
-<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">Graphe résultant</div>
+<div class="tree-col">
+<div style="background: #1a5276; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🌳 Graphe résultant</div>
 
-<pre style="background: #f5f5f5; padding: 0.7rem; border-radius: 6px; font-size: 0.85rem; line-height: 1.4;">
-VBox (root)
+<pre class="tree-ascii">VBox (root)
 ├── Label "Compteur"  ← fx:id="titre"
 └── HBox
     ├── Button "-1"
     ├── Label "0"     ← fx:id="valeur"
-    └── Button "+1"
-</pre>
+    └── Button "+1"</pre>
 
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Une fois chargé, ce graphe est <b>indistinguable</b> d'un graphe créé par <code>new VBox(...)</code>. JavaFX ne sait pas d'où il vient.
 </div>
 
