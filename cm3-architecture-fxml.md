@@ -2355,26 +2355,26 @@ public class AppController {
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">SceneBuilder propose un mode <b>Preview</b> qui rend la vue à l'identique de l'exécution.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
-<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">👁️ View → Preview in Window</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Lance une fenêtre simulant le rendu réel : layout, taille, redimensionnement à la souris.</div>
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">👁️ View → Preview in Window</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Lance une fenêtre simulant le rendu réel : layout, taille, redimensionnement à la souris.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 Preview → Scene Style</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Bascule entre le thème <em>Modena</em> (par défaut), <em>Caspian</em> (héritage) et le CSS personnalisé attaché.</div>
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🎨 Preview → Scene Style</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Bascule entre le thème <em>Modena</em> (par défaut), <em>Caspian</em> (héritage) et le CSS personnalisé attaché.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🌐 Preview → Internationalization</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Charge un <code>ResourceBundle</code> et affiche immédiatement la vue traduite, sans relancer.</div>
+<div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🌐 Preview → Internationalization</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Charge un <code>ResourceBundle</code> et affiche immédiatement la vue traduite, sans relancer.</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">⚠️ Preview ≠ exécution</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Les bindings et handlers ne sont <b>pas</b> exécutés. Pour tester le comportement, lancer la vraie app.</div>
+<div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">⚠️ Preview ≠ exécution</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Les bindings et handlers ne sont <b>pas</b> exécutés. Pour tester le comportement, lancer la vraie app.</div>
 </div>
 
 </div>
