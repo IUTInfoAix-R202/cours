@@ -993,7 +993,7 @@ JavaFX + FXML implémente nativement <b>MVC</b>. Avec les bindings, on glissera 
 </div>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+section pre { font-size: 0.5rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
 </style>
 
 <div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem; margin-top: 0.5rem;">🖼️ vue.fxml</div>
@@ -1004,7 +1004,7 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
 
-<VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml">
+<VBox xmlns:fx="http://javafx.com/fxml">
   <Label text="Bonjour"/>
   <Button text="Cliquer"/>
 </VBox>
@@ -1018,14 +1018,17 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 
 ## XML → Java : la traduction
 
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Le <code>FXMLLoader</code> traduit chaque balise en appel constructeur, chaque attribut en appel à un setter.</p>
+
 <style scoped>
-section pre { font-size: 0.78rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
+.tr-col { display: flex; flex-direction: column; }
 </style>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
-<div>
-<div style="background: #4a90d9; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">FXML</div>
+<div class="tr-col">
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 FXML</div>
 
 ```xml
 <BorderPane prefHeight="80" prefWidth="250">
@@ -1043,8 +1046,8 @@ section pre { font-size: 0.78rem !important; line-height: 1.35 !important; }
 
 </div>
 
-<div>
-<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">Java équivalent</div>
+<div class="tr-col">
+<div style="background: #1a5276; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">☕ Java équivalent</div>
 
 ```java
 BorderPane root = new BorderPane();
@@ -1064,7 +1067,7 @@ root.setCenter(btn);
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Chaque <b>élément XML</b> = un appel <code>new ClasseJavaFX()</code>. Chaque <b>attribut</b> = un appel à un <code>setXxx(...)</code>.
 </div>
 
