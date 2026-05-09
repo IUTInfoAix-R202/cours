@@ -775,10 +775,15 @@ Le contrôleur ne touche <b>jamais</b> au <code>Label</code>. C'est le binding q
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quand le contrôleur grossit jusqu'à devenir une décharge, c'est qu'on n'a pas vraiment de modèle.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+<style scoped>
+section pre { font-size: 0.78rem !important; line-height: 1.35 !important; margin: 0 !important; flex: 1; }
+.fat-col { display: flex; flex-direction: column; }
+</style>
 
-<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">❌ Anti-pattern</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+
+<div class="fat-col" style="background: #c0392b; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">❌ Anti-pattern</div>
 
 ```java
 public class FormulaireController {
@@ -796,8 +801,8 @@ public class FormulaireController {
 
 </div>
 
-<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">✅ Avec un modèle</div>
+<div class="fat-col" style="background: #27ae60; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">✅ Avec un modèle</div>
 
 ```java
 public class FormulaireController {
@@ -816,7 +821,7 @@ public class FormulaireController {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.7rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 Si vous trouvez un <code>if</code> dans un <code>@FXML void ...()</code>, demandez-vous : <b>est-ce que ça appartient vraiment au contrôleur ?</b>
 </div>
 
