@@ -1195,6 +1195,14 @@ Une fois chargé, ce graphe est <b>indistinguable</b> d'un graphe créé par <co
 
 ## Charger un FXML depuis Java
 
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Trois lignes dans <code>start()</code> suffisent à transformer un FXML en fenêtre affichée.</p>
+
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+</style>
+
+<div style="background: #7f8c8d; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🚀 CompteurApp.java</div>
+
 ```java
 public class CompteurApp extends Application {
   @Override
@@ -1209,21 +1217,21 @@ public class CompteurApp extends Application {
 }
 ```
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.6rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem;">
 
-<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 8px;">
-<div style="font-size: 1.2rem; font-weight: bold;">📂 Localisation</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;"><code>getResource("/...")</code> cherche dans <code>src/main/resources</code>.</div>
+<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold;">📂 Localisation</div>
+<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;"><code>getResource("/...")</code> cherche dans <code>src/main/resources</code>.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 8px;">
-<div style="font-size: 1.2rem; font-weight: bold;">🔧 Chargement</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;"><code>FXMLLoader.load(url)</code> retourne la racine du graphe.</div>
+<div style="background: #27ae60; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold;">🔧 Chargement</div>
+<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;"><code>FXMLLoader.load(url)</code> retourne la racine du graphe.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 8px;">
-<div style="font-size: 1.2rem; font-weight: bold;">🎬 Affichage</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">On enveloppe dans une <code>Scene</code>, on l'attache au <code>Stage</code>.</div>
+<div style="background: #8e44ad; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold;">🎬 Affichage</div>
+<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;">On enveloppe dans une <code>Scene</code>, on l'attache au <code>Stage</code>.</div>
 </div>
 
 </div>
