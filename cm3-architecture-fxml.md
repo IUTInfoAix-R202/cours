@@ -2013,7 +2013,7 @@ Plus la frontière modèle/contrôleur est nette, plus le test du modèle couvre
   <text x="585" y="184" font-family="sans-serif" font-size="9" fill="#34495e">#valider</text>
 </svg>
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.2rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Library (composants disponibles), Hierarchy (structure de l'arbre), Content (rendu), Inspector (propriétés du nœud sélectionné).
 </div>
 
