@@ -1569,27 +1569,29 @@ Aucune ligne Java à modifier pour traduire l'app. Le FXML reste neutre, le bund
 
 ## id vs fx:id — ne pas confondre
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem;">
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Deux attributs au nom voisin mais aux rôles totalement différents : à ne jamais confondre.</p>
 
-<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🔖 fx:id</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Identifiant pour <b>l'injection Java</b> via <code>@FXML</code>.<br/>Attribut interne au moteur FXML.</div>
-<pre style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 4px; font-size: 0.9rem; margin-top: 0.5rem;">&lt;Label fx:id="message"/&gt;
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🔖 fx:id</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Identifiant pour <b>l'injection Java</b> via <code>@FXML</code>.<br/>Attribut interne au moteur FXML.</div>
+<pre style="background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 4px; font-size: 0.9rem; margin: 0.5rem 0 0 0; line-height: 1.4;">&lt;Label fx:id="message"/&gt;
 @FXML private Label message;</pre>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 id</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Sélecteur <b>CSS</b> pour cibler le composant dans une feuille de style.</div>
-<pre style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 4px; font-size: 0.9rem; margin-top: 0.5rem;">&lt;Label id="message"/&gt;
+<div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 id</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Sélecteur <b>CSS</b> pour cibler le composant dans une feuille de style.</div>
+<pre style="background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 4px; font-size: 0.9rem; margin: 0.5rem 0 0 0; line-height: 1.4;">&lt;Label id="message"/&gt;
 /* CSS */
 #message { -fx-font-size: 24px; }</pre>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.3rem; text-align: center;">
-On peut mettre les deux : <code>&lt;Label fx:id="message" id="message"/&gt;</code> — utile quand le nom Java sert aussi de sélecteur CSS.
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+On peut mettre les deux : <code>&lt;Label fx:id="message" id="message"/&gt;</code> - utile quand le nom Java sert aussi de sélecteur CSS.
 </div>
 
 ---
