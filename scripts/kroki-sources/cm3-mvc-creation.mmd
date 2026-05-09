@@ -1,0 +1,21 @@
+graph TD
+    App["🚀 Application<br/>start(Stage)"]
+    L["🔧 FXMLLoader"]
+    C["🎮 CompteurController"]
+    M["📊 Compteur (Modèle)"]
+    V["🖼️ Graphe de scène<br/>(VBox + Label + Button)"]
+
+    App -->|"new()"| L
+    App -->|"load()"| L
+    L -->|"new() (via fx:controller)"| C
+    L -->|"new() (parsing FXML)"| V
+    L -->|"injection @FXML"| C
+    C -->|"new() (dans le constructeur)"| M
+    L -->|"initialize()"| C
+    C -->|"bind sur properties"| M
+
+    style App fill:#7f8c8d,color:#fff
+    style L fill:#1a5276,color:#fff
+    style V fill:#4a90d9,color:#fff
+    style C fill:#27ae60,color:#fff
+    style M fill:#1a5276,color:#fff

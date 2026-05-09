@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant App as Application
+    participant FL as FXMLLoader
+    participant C as Controller
+    participant FX as FXML (XML)
+    App->>FL: load(compteur.fxml)
+    FL->>FX: parse XML
+    FL->>C: new CompteurController()
+    Note over C: constructeur exécuté<br/>champs @FXML = null
+    FL->>FX: instancie les nœuds
+    FL->>C: injection @FXML
+    Note over C: champs @FXML = nœuds
+    FL->>C: initialize()
+    Note over C: bindings, peuplement
+    FL-->>App: retourne la racine
+    App->>App: stage.setScene(new Scene(root))

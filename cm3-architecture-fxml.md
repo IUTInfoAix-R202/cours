@@ -1,0 +1,2640 @@
+---
+marp: true
+theme: default
+paginate: true
+math: katex
+lang: fr
+---
+
+<!-- _class: lead -->
+<!-- _paginate: false -->
+
+<style scoped>
+section {
+  background-image: url('assets/logo-amu.png');
+  background-repeat: no-repeat;
+  background-position: bottom 40px center;
+  background-size: 380px;
+}
+</style>
+
+# Architecture des IHM et FXML
+
+**R2.02 - Développement d'applications avec IHM**
+
+---
+
+## Où en sommes-nous ?
+
+<div style="display: flex; gap: 0.8rem; margin-top: 0.5rem; margin-bottom: 0.5rem; text-align: center; font-size: 2.5rem; line-height: 1;">
+<div style="flex: 1;">&nbsp;</div>
+<div style="flex: 1;">&nbsp;</div>
+<div style="flex: 1;">👇</div>
+<div style="flex: 1;">&nbsp;</div>
+</div>
+
+<div style="display: flex; gap: 0.8rem;">
+<div style="background: #4a90d9; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
+<div style="font-size: 1.8rem; font-weight: bold;">CM1 ✅</div>
+<div style="margin-top: 0.3rem;">Fondations IHM + JavaFX</div>
+</div>
+<div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
+<div style="font-size: 1.8rem; font-weight: bold;">CM2 ✅</div>
+<div style="margin-top: 0.3rem;">Propriétés et bindings</div>
+</div>
+<div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center; box-shadow: 0 4px 12px rgba(39,174,96,0.4);">
+<div style="font-size: 1.8rem; font-weight: bold;">CM3</div>
+<div style="margin-top: 0.3rem;">Architecture et FXML</div>
+</div>
+<div style="background: #8e44ad; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
+<div style="font-size: 1.8rem; font-weight: bold;">CM4</div>
+<div style="margin-top: 0.3rem;">MVVM + persistance</div>
+</div>
+</div>
+
+<div style="display: flex; gap: 0.8rem; text-align: center; font-size: 1.5rem; color: #999;">
+<div style="flex: 1;">↓</div>
+<div style="flex: 1;">↓</div>
+<div style="flex: 1;">↓</div>
+<div style="flex: 1;">↓</div>
+</div>
+
+<div style="display: flex; gap: 0.8rem;">
+<div style="background: #d0e2f3; color: #2c5f8a; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
+TP1 ✅
+</div>
+<div style="background: #fae5c0; color: #8a6a1f; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
+TP2 ✅
+</div>
+<div style="background: #c8e6c9; color: #1b5e20; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
+TP3
+</div>
+<div style="background: #e1bee7; color: #5c2473; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
+TP4 + TP5
+</div>
+</div>
+
+<div style="display: flex; gap: 0.8rem; margin-top: 0.5rem; text-align: center; font-size: 2.5rem; line-height: 1;">
+<div style="flex: 1;">&nbsp;</div>
+<div style="flex: 1;">&nbsp;</div>
+<div style="flex: 1;">👆</div>
+<div style="flex: 1;">&nbsp;</div>
+</div>
+
+---
+
+## Rappel CM2 - Ce que vous savez déjà
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 1.5rem;">
+<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">⚡ Propriétés observables</div>
+<div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
+<b>IntegerProperty</b>, <b>StringProperty</b>, ... encapsulent une valeur et notifient les <b>InvalidationListener</b> et <b>ChangeListener</b>.
+</div>
+</div>
+<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🏗️ Bindings</div>
+<div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
+<b>bind()</b> unidirectionnel, <b>bindBidirectional()</b>, API fluente, <b>Bindings.when()</b>, <b>Bindings.concat()</b>.
+</div>
+</div>
+<div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🧠 Affordance</div>
+<div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
+<b>disableProperty().bind(...)</b> rend l'interface auto-explicative. Le bouton sait quand il peut être cliqué.
+</div>
+</div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 1.2rem 2rem; border-radius: 10px; margin-top: 1.5rem; font-size: 1.5rem; text-align: center;">
+Aujourd'hui : <b>séparer</b> ce que l'interface affiche de ce qu'elle fait, et écrire la vue dans un fichier dédié.
+</div>
+
+---
+
+## À la fin de ce CM, vous saurez...
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Expliquer</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Le pattern <b>MVC</b> et la séparation <b>Modèle / Vue / Contrôleur</b> dans une application JavaFX.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 2</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Écrire</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Une vue en <b>FXML</b>, l'injecter via <code>@FXML</code>, et brancher des <b>handlers</b> via <code>onAction="#méthode"</code>.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 3</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Composer</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Des composants réutilisables avec <code>fx:root</code> et assembler des vues avec <code>fx:include</code>.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 4</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🧠 Garantir</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">La <b>cohérence et le respect des standards</b> (Nielsen #4) en mutualisant FXML et CSS.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 5</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem; text-align: center;">
+<em>Niveau Bloom : Analyser</em> - Le TP3 vous fait choisir <b>quoi</b> mettre en FXML et <b>quoi</b> garder en Java.
+</div>
+
+---
+
+<!-- _class: lead -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+# Partie 1 - Le problème
+
+---
+
+## TP1 + TP2 : tout est en Java
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Jusqu'à présent, layout, styles, comportement et événements cohabitent dans la même classe Java.</p>
+
+```java
+public class CompteurApp extends Application {
+  @Override
+  public void start(Stage primaryStage) {
+    Label label = new Label("0");
+    label.setStyle("-fx-font-size: 32px; -fx-text-fill: blue;");
+
+    Button bouton = new Button("Incrémenter");
+    bouton.setOnAction(e -> {
+      int valeur = Integer.parseInt(label.getText()) + 1;
+      label.setText(String.valueOf(valeur));
+    });
+
+    VBox root = new VBox(10, label, bouton);
+    root.setAlignment(Pos.CENTER);
+    root.setPadding(new Insets(20));
+
+    primaryStage.setScene(new Scene(root, 300, 200));
+    primaryStage.show();
+  }
+}
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+Tout fonctionne, mais une <b>seule classe</b> mélange déjà 4 préoccupations différentes.
+</div>
+
+---
+
+## Quatre préoccupations dans le même fichier
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
+
+<div style="background: #e8a838; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">📦 Structure</div>
+<div style="font-size: 1.15rem;">Les conteneurs et leur disposition : <code>VBox</code>, <code>setAlignment</code>, <code>setPadding</code>...</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">🎨 Style</div>
+<div style="font-size: 1.15rem;">Les couleurs, les tailles, les bordures : <code>setStyle("-fx-...")</code>.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">⚙️ Comportement</div>
+<div style="font-size: 1.15rem;">La logique métier : incrémenter, parser, mettre à jour.</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">⚡ Événements</div>
+<div style="font-size: 1.15rem;">Le câblage : qui réagit à quoi via <code>setOnAction(...)</code>.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; text-align: center;">
+💡 Quand l'application grandit, ces 4 préoccupations s'<b>entremêlent</b>. Une modif esthétique demande de relire toute la logique.
+</div>
+
+---
+
+## Symptômes au-delà de 100 lignes
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.7rem;">
+
+<div style="background: #c0392b; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">😵 Lisibilité qui s'effondre</div>
+<div style="font-size: 1.2rem; line-height: 1.45;">Un fichier de 500 lignes où tout est mélangé devient illisible. Trouver « où le bouton OK est défini » prend 5 minutes.</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 Outils designer impossibles</div>
+<div style="font-size: 1.2rem; line-height: 1.45;">Aucun outil graphique ne peut éditer du Java. Le designer doit devenir développeur — ou le développeur, designer.</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 Tests difficiles</div>
+<div style="font-size: 1.2rem; line-height: 1.45;">Tester la logique métier impose de monter une <code>Application</code> JavaFX entière. Pas de test unitaire pur.</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🔁 Réutilisation zéro</div>
+<div style="font-size: 1.2rem; line-height: 1.45;">Pour réutiliser une barre d'outils dans 3 fenêtres, copier-coller. Toute évolution doit être propagée à la main.</div>
+</div>
+
+</div>
+
+---
+
+## Le coût caché : la duplication
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Sans séparation, la même structure se réécrit dans chaque fenêtre. Imaginez une app à 12 écrans avec une barre de boutons commune.</p>
+
+```java
+// FenetreA.java
+HBox barre = new HBox(10);
+Button annuler = new Button("Annuler");
+annuler.setStyle("-fx-background-color: #ccc;");
+Button ok = new Button("OK");
+ok.setStyle("-fx-background-color: #3498db; -fx-text-fill: white;");
+barre.getChildren().addAll(annuler, ok);
+
+// FenetreB.java   ← copier-coller, légèrement modifié
+HBox barre = new HBox(8);            // ← oups, espacement différent
+Button cancel = new Button("Cancel"); // ← oups, libellé différent
+cancel.setStyle("-fx-background-color: #d3d3d3;");
+Button ok = new Button("Ok");        // ← oups, capitalisation différente
+ok.setStyle("-fx-background-color: #2980b9;");
+barre.getChildren().addAll(ok, cancel); // ← oups, ordre inversé
+```
+
+<div style="background: #c0392b; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.3rem; text-align: center;">
+À chaque copier-coller, des micro-divergences s'installent. <b>L'utilisateur</b> les remarque : « <em>tiens, ça ne marche pas pareil ici</em> ».
+</div>
+
+---
+
+## Trois acteurs, trois compétences
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">La séparation reflète aussi la <b>division du travail</b> dans une vraie équipe produit.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem;">
+
+<div style="background: #4a90d9; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 UX/UI Designer</div>
+<div style="font-size: 1.05rem; line-height: 1.5;">Édite la maquette dans Figma, livre du <b>FXML</b> + <b>CSS</b> via SceneBuilder. Ne touche pas au Java.</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ Développeur backend</div>
+<div style="font-size: 1.05rem; line-height: 1.5;">Implémente le <b>modèle</b> métier en Java pur. Ne sait rien de JavaFX. Tests JUnit standard.</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🔌 Développeur intégrateur</div>
+<div style="font-size: 1.05rem; line-height: 1.5;">Branche les <b>contrôleurs</b> sur le modèle, écrit les bindings, gère le routage entre vues.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
+💡 Sans séparation, il faut <b>une seule personne</b> qui maîtrise tout. Avec MVC, chacun travaille dans son fichier, en parallèle.
+</div>
+
+---
+
+## La solution : séparer les préoccupations
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Le principe de <b>séparation des préoccupations</b> (Edsger Dijkstra, 1974) : chaque fichier ne traite que d'<b>un</b> sujet.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+
+<div style="background: #4a90d9; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📄 Vue → FXML</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Un fichier <code>.fxml</code> décrit la <b>structure</b> : composants, conteneurs, layout.</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 Style → CSS</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Un fichier <code>.css</code> décrit l'<b>apparence</b> : couleurs, polices, espacements.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ Logique → Java</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Une classe Java « contrôleur » contient le <b>comportement</b> et orchestre les interactions.</div>
+</div>
+
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem 1.5rem; border-radius: 10px; margin-top: 1.2rem; font-size: 1.4rem; text-align: center; line-height: 1.55;">
+✨ Trois fichiers, trois responsabilités, trois personnes <em>(designer, intégrateur, dev)</em> peuvent travailler en parallèle.
+</div>
+
+---
+
+## Procédural ↔ déclaratif
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Le passage à FXML, c'est aussi le passage d'un style impératif à un style déclaratif.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.4rem;">
+
+<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ Procédural — comment</div>
+<div style="font-size: 1.05rem; line-height: 1.5;">« <em>Créer un VBox, lui mettre un padding, ajouter un Label dedans...</em> »<br/>L'ordre des instructions compte, on décrit chaque étape.</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📄 Déclaratif — quoi</div>
+<div style="font-size: 1.05rem; line-height: 1.5;">« <em>Voici un VBox qui contient un Label.</em> »<br/>On décrit le résultat final, le moteur s'occupe de l'instancier.</div>
+</div>
+
+</div>
+
+```xml
+<!-- FXML : on déclare la structure -->
+<VBox alignment="CENTER" spacing="10">
+  <Label fx:id="label" text="0" styleClass="compteur"/>
+  <Button text="Incrémenter" onAction="#incrementer"/>
+</VBox>
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+Plus court, plus visuel, et un outil graphique <em>(SceneBuilder)</em> peut l'éditer.
+</div>
+
+---
+
+## Démo : avant/après sur le compteur
+
+<style scoped>
+section pre { font-size: 0.7rem !important; line-height: 1.3 !important; }
+section code { font-size: 0.7rem !important; }
+</style>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.3rem;">
+
+<div>
+<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">Avant : tout en Java (~25 lignes)</div>
+
+```java
+public class CompteurApp extends Application {
+  public void start(Stage stage) {
+    Label label = new Label("0");
+    label.setStyle("-fx-font-size: 32px;");
+
+    Button bt = new Button("Incrémenter");
+    bt.setOnAction(e -> {
+      int v = Integer.parseInt(label.getText());
+      label.setText(String.valueOf(v + 1));
+    });
+
+    VBox root = new VBox(10, label, bt);
+    root.setAlignment(Pos.CENTER);
+    root.setPadding(new Insets(20));
+    stage.setScene(new Scene(root, 300, 200));
+    stage.show();
+  }
+}
+```
+
+</div>
+
+<div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">Après : FXML + Controller (~10 + 6 lignes)</div>
+
+```xml
+<!-- compteur.fxml -->
+<VBox alignment="CENTER" spacing="10"
+      fx:controller="CompteurController"
+      xmlns:fx="http://javafx.com/fxml">
+  <Label fx:id="label" text="0"
+         styleClass="compteur"/>
+  <Button text="Incrémenter"
+          onAction="#incrementer"/>
+</VBox>
+```
+
+```java
+public class CompteurController {
+  @FXML private Label label;
+  @FXML
+  void incrementer() {
+    int v = Integer.parseInt(label.getText());
+    label.setText(String.valueOf(v + 1));
+  }
+}
+```
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.5rem 1rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.15rem; text-align: center;">
+La <b>structure</b> est dans le FXML (lisible, éditable graphiquement). Le <b>comportement</b> reste en Java (testable, débuggable).
+</div>
+
+---
+
+<!-- _class: lead -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+# Partie 2 - 🏗️ MVC
+
+**Modèle, Vue, Contrôleur**
+
+---
+
+## 🏗️ Une histoire vieille de 50 ans
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC est l'un des plus anciens patterns architecturaux encore en usage actif.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 3fr; gap: 0.5rem 0.9rem; align-items: center; margin-top: 0.4rem;">
+
+<div style="background: #1a5276; color: white; padding: 0.7rem 1rem; border-radius: 8px; text-align: center; font-weight: bold;">1978</div>
+<div style="background: rgba(26,82,118,0.12); padding: 0.6rem 1rem; border-radius: 8px;">Trygve Reenskaug formalise MVC chez Xerox PARC pour <b>Smalltalk-80</b>. Idée originale : isoler la logique métier des effets visuels.</div>
+
+<div style="background: #1a5276; color: white; padding: 0.7rem 1rem; border-radius: 8px; text-align: center; font-weight: bold;">1996</div>
+<div style="background: rgba(26,82,118,0.12); padding: 0.6rem 1rem; border-radius: 8px;"><b>Java Swing</b> adopte une variante (model-delegate). MVC devient mainstream.</div>
+
+<div style="background: #1a5276; color: white; padding: 0.7rem 1rem; border-radius: 8px; text-align: center; font-weight: bold;">2004</div>
+<div style="background: rgba(26,82,118,0.12); padding: 0.6rem 1rem; border-radius: 8px;"><b>Ruby on Rails</b> popularise MVC pour le web. <b>ASP.NET MVC</b>, <b>Spring MVC</b> suivent.</div>
+
+<div style="background: #1a5276; color: white; padding: 0.7rem 1rem; border-radius: 8px; text-align: center; font-weight: bold;">2008</div>
+<div style="background: rgba(26,82,118,0.12); padding: 0.6rem 1rem; border-radius: 8px;"><b>JavaFX 1.0</b> sort. <b>FXML</b> arrive en 2011 et porte officiellement MVC dans l'écosystème JavaFX.</div>
+
+<div style="background: #27ae60; color: white; padding: 0.7rem 1rem; border-radius: 8px; text-align: center; font-weight: bold;">2026</div>
+<div style="background: rgba(39,174,96,0.15); padding: 0.6rem 1rem; border-radius: 8px;"><b>Aujourd'hui</b> : MVC reste la base, et ses descendants <b>MVP</b> et <b>MVVM</b> dominent dans React, Angular, Vue, JavaFX moderne...</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.25rem; text-align: center;">
+Si un pattern résiste 50 ans à toutes les modes, c'est qu'il <b>répond à un besoin fondamental</b>.
+</div>
+
+---
+
+## 🏗️ Le pattern Modèle-Vue-Contrôleur
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC est né en 1978 chez Xerox PARC pour Smalltalk-80. C'est le grand-père de tous les patterns d'architecture d'IHM.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📊 Modèle</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Les <b>données</b> et la <b>logique métier</b>. Aucune référence à l'IHM.<br/><em>Un compteur, un client, un panier...</em></div>
+</div>
+
+<div style="background: #4a90d9; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🖼️ Vue</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Ce que l'utilisateur <b>voit</b>. Affiche le modèle, ne modifie rien.<br/><em>Le FXML, les composants, les styles.</em></div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎮 Contrôleur</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Reçoit les <b>actions</b> de l'utilisateur, met à jour le modèle, rafraîchit la vue.<br/><em>La classe annotée <code>@FXML</code>.</em></div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem; text-align: center;">
+💡 Trois rôles, trois fichiers, trois testabilités indépendantes.
+</div>
+
+---
+
+## Qui parle à qui ?
+
+![Flux MVC : Utilisateur → Vue → Contrôleur → Modèle → Vue (via propriétés observables)](assets/kroki/cm3-mvc-flux.svg)
+
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; line-height: 1.55;">
+<b>Boucle classique :</b> l'utilisateur agit sur la vue → le contrôleur traduit l'action en appel métier → le modèle change → la vue se met à jour automatiquement (via les <b>bindings</b> du CM2).
+</div>
+
+---
+
+## Le compteur en MVC : trois fichiers
+
+<style scoped>
+section pre { font-size: 0.7rem !important; line-height: 1.3 !important; }
+</style>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; margin-top: 0.3rem;">
+
+<div>
+<div style="background: #1a5276; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">📊 Modèle (Compteur.java)</div>
+
+```java
+public class Compteur {
+  private final IntegerProperty
+    valeur = new SimpleIntegerProperty(0);
+
+  public IntegerProperty valeurProperty() {
+    return valeur;
+  }
+
+  public int getValeur() {
+    return valeur.get();
+  }
+
+  public void incrementer() {
+    valeur.set(valeur.get() + 1);
+  }
+}
+```
+
+</div>
+
+<div>
+<div style="background: #4a90d9; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">🖼️ Vue (compteur.fxml)</div>
+
+```xml
+<VBox alignment="CENTER"
+      spacing="10"
+      xmlns:fx=
+        "http://javafx.com/fxml"
+      fx:controller=
+        "CompteurController">
+  <Label fx:id="message"
+         styleClass="valeur"/>
+  <Button text="+1"
+          onAction=
+            "#incrementer"/>
+</VBox>
+```
+
+</div>
+
+<div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">🎮 Controller</div>
+
+```java
+public class CompteurController {
+  private final Compteur compteur
+    = new Compteur();
+
+  @FXML private Label message;
+
+  @FXML void initialize() {
+    message.textProperty().bind(
+      compteur.valeurProperty()
+              .asString());
+  }
+
+  @FXML void incrementer() {
+    compteur.incrementer();
+  }
+}
+```
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.55rem 1.1rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.2rem; text-align: center;">
+Aucun des trois fichiers ne « connaît » les détails des autres : ils communiquent par <b>contrats</b> (interface property, fx:id, méthode @FXML).
+</div>
+
+---
+
+## Qui crée qui ?
+
+![Chaîne de création : Application → FXMLLoader → Controller / Vue / Modèle](assets/kroki/cm3-mvc-creation.svg)
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.25rem; text-align: center;">
+La <b>chaîne de création</b> : l'<code>Application</code> demande au <code>FXMLLoader</code>, qui instancie le contrôleur et la vue, et seul le contrôleur connaît le modèle.
+</div>
+
+---
+
+## Le flux d'une interaction
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Suivons un clic utilisateur sur le bouton « +1 ». Quatre étapes, aucune ne court-circuite les autres.</p>
+
+<div style="display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 0.9rem; align-items: center; margin-top: 0.4rem;">
+
+<div style="background: #c0392b; color: white; padding: 0.7rem 1rem; border-radius: 50%; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">1</div>
+<div style="background: rgba(192,57,43,0.1); padding: 0.6rem 1rem; border-radius: 8px;"><b>L'utilisateur clique</b> sur le bouton dans la vue.</div>
+
+<div style="background: #4a90d9; color: white; padding: 0.7rem 1rem; border-radius: 50%; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">2</div>
+<div style="background: rgba(74,144,217,0.1); padding: 0.6rem 1rem; border-radius: 8px;"><b>JavaFX route l'événement</b> vers la méthode <code>incrementer()</code> du contrôleur (lue dans <code>onAction="#incrementer"</code>).</div>
+
+<div style="background: #27ae60; color: white; padding: 0.7rem 1rem; border-radius: 50%; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">3</div>
+<div style="background: rgba(39,174,96,0.1); padding: 0.6rem 1rem; border-radius: 8px;"><b>Le contrôleur délègue</b> au modèle : <code>compteur.incrementer()</code>. Pas de manipulation UI ici.</div>
+
+<div style="background: #1a5276; color: white; padding: 0.7rem 1rem; border-radius: 50%; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">4</div>
+<div style="background: rgba(26,82,118,0.1); padding: 0.6rem 1rem; border-radius: 8px;"><b>Le modèle change</b>. La <code>IntegerProperty</code> notifie ses observateurs. Le binding du <code>Label</code> met le texte à jour <em>(magie du CM2)</em>.</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+Le contrôleur ne touche <b>jamais</b> au <code>Label</code>. C'est le binding qui s'en charge.
+</div>
+
+---
+
+## Pourquoi cette séparation paie
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.3rem;">🧪 Modèle testable seul</div>
+<div style="font-size: 1.1rem; line-height: 1.45;">Un test JUnit pur : pas besoin de monter <code>Application</code>, pas besoin d'<code>xvfb</code>.<br/><code style="background: rgba(0,0,0,0.25); padding: 1px 5px;">new Compteur().incrementer()</code></div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.3rem;">🔁 Vue interchangeable</div>
+<div style="font-size: 1.1rem; line-height: 1.45;">Deux vues différentes (mobile / desktop) peuvent partager le même modèle et le même contrôleur.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.3rem;">👥 Travail en parallèle</div>
+<div style="font-size: 1.1rem; line-height: 1.45;">Le designer édite le FXML/CSS, le développeur écrit le contrôleur, les conflits Git sont rares.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.3rem;">📐 Single Responsibility</div>
+<div style="font-size: 1.1rem; line-height: 1.45;">Chaque fichier a <b>une</b> raison de changer. Le code reste compréhensible quand l'application grandit.</div>
+</div>
+
+</div>
+
+---
+
+## Anti-pattern : le « fat controller »
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quand le contrôleur grossit jusqu'à devenir une décharge, c'est qu'on n'a pas vraiment de modèle.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+
+<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">❌ Anti-pattern</div>
+
+```java
+public class FormulaireController {
+  @FXML void valider() {
+    // 80 lignes de logique métier ici
+    String email = champEmail.getText();
+    if (email.contains("@") && ...) {
+      double prix = ...;
+      if (clientFidele && prix > 500) prix *= 0.95;
+      // ...
+    }
+  }
+}
+```
+
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">✅ Avec un modèle</div>
+
+```java
+public class FormulaireController {
+  private Commande commande = new Commande();
+
+  @FXML void valider() {
+    commande.valider();
+  }
+}
+// Toute la logique part dans
+// la classe Commande, testable
+// sans JavaFX.
+```
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.7rem; font-size: 1.3rem; text-align: center;">
+Si vous trouvez un <code>if</code> dans un <code>@FXML void ...()</code>, demandez-vous : <b>est-ce que ça appartient vraiment au contrôleur ?</b>
+</div>
+
+---
+
+## Le contrôleur reste mince
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Sa seule mission : <b>traduire</b> les événements UI en appels au modèle, et <b>connecter</b> le modèle à la vue.</p>
+
+```java
+public class CompteurController {
+  // Référence au modèle, injectée par le code qui charge le FXML
+  private final Compteur compteur = new Compteur();
+
+  @FXML private Label label;
+
+  @FXML
+  void initialize() {
+    // Connexion vue ↔ modèle via binding (CM2)
+    label.textProperty().bind(compteur.valeurProperty().asString());
+  }
+
+  @FXML
+  void incrementer() {
+    compteur.incrementer();   // délégation pure au modèle
+  }
+}
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+Le contrôleur n'a pas de <code>if</code>, pas de calcul. Juste : <em>« j'écoute, je délègue »</em>.
+</div>
+
+---
+
+## Lien avec le CM1 — le pattern Observer
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC s'appuie sur le <b>pattern Observer</b> que vous connaissez déjà : la vue observe le modèle.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+
+<div style="background: #4a90d9; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">CM1 — Observer naïf</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Un bouton, un <code>EventHandler</code>, un appel manuel à <code>label.setText(...)</code> dans le handler.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">CM2 — Observer via bindings</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Une <code>IntegerProperty</code> dans le modèle, un <code>label.textProperty().bind(...)</code> dans la vue. Plus de handler manuel.</div>
+</div>
+
+</div>
+
+<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.4rem; text-align: center;">
+🎯 <b>CM3 :</b> ces propriétés sont déclarées dans le modèle, observées dans le contrôleur, et la vue ne les voit qu'à travers les bindings du contrôleur.
+</div>
+
+---
+
+## Encapsulation du modèle
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour que le modèle reste vraiment indépendant de la vue, il expose une <b>API publique</b> bien dessinée.</p>
+
+```java
+public class Compteur {
+  // ❌ Champ privé, mutable de l'extérieur via setValeur()...
+  // private int valeur;
+
+  // ✅ Propriété observable, lecture publique, écriture contrôlée
+  private final IntegerProperty valeur = new SimpleIntegerProperty(0);
+
+  public ReadOnlyIntegerProperty valeurProperty() {
+    return valeur;          // ← le contrôleur peut bind dessus, pas modifier
+  }
+
+  public int getValeur() {
+    return valeur.get();
+  }
+
+  public void incrementer() { // ← API métier, pas un setter générique
+    valeur.set(valeur.get() + 1);
+  }
+
+  public void reset() {
+    valeur.set(0);
+  }
+}
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.25rem; text-align: center;">
+Le contrôleur appelle <code>incrementer()</code>, pas <code>setValeur(getValeur()+1)</code>. La <b>logique reste dans le modèle</b>.
+</div>
+
+---
+
+## Variantes de MVC
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC a engendré de nombreuses variantes selon le degré de découplage souhaité.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem;">
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">MVC classique</div>
+<div style="font-size: 1.05rem; line-height: 1.5;">Vue et contrôleur peuvent référencer le modèle. Adapté à JavaFX.<br/><em>Aujourd'hui ←</em></div>
+</div>
+
+<div style="background: #7f8c8d; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">MVP — Presenter</div>
+<div style="font-size: 1.05rem; line-height: 1.5;">Le Presenter remplace le Contrôleur, la vue ne référence plus le modèle. Plus strict.</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">MVVM — ViewModel</div>
+<div style="font-size: 1.05rem; line-height: 1.5;">Un ViewModel intermédiaire expose des propriétés observables, la vue s'y bind.<br/><em>CM4 →</em></div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.4rem; text-align: center;">
+JavaFX + FXML implémente nativement <b>MVC</b>. Avec les bindings du CM2, on glissera naturellement vers <b>MVVM</b> au CM4.
+</div>
+
+---
+
+<!-- _class: lead -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+# Partie 3 - 📄 FXML
+
+**La vue déclarative**
+
+---
+
+## 📄 Qu'est-ce qu'un fichier FXML ?
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Un fichier FXML est un fichier XML qui décrit la structure d'une vue JavaFX.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">📋 Le « quoi »</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Un <code>VBox</code> contenant un <code>Label</code> et un <code>Button</code>, avec un padding de 20.</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ Pas le « comment »</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Aucune logique, aucune boucle, aucune condition. Juste la structure attendue.</div>
+</div>
+
+</div>
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml">
+  <Label text="Bonjour"/>
+  <Button text="Cliquer"/>
+</VBox>
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.25rem; text-align: center;">
+À l'exécution, <code>FXMLLoader</code> instancie ces composants et reconstitue le graphe de scène.
+</div>
+
+---
+
+## XML → Java : la traduction
+
+<style scoped>
+section pre { font-size: 0.78rem !important; line-height: 1.35 !important; }
+</style>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
+
+<div>
+<div style="background: #4a90d9; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">FXML</div>
+
+```xml
+<BorderPane prefHeight="80" prefWidth="250">
+  <top>
+    <Label text="Titre"
+           textFill="#0022cc"/>
+  </top>
+  <center>
+    <Button fx:id="btn"
+            text="OK"
+            onAction="#valider"/>
+  </center>
+</BorderPane>
+```
+
+</div>
+
+<div>
+<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">Java équivalent</div>
+
+```java
+BorderPane root = new BorderPane();
+root.setPrefHeight(80);
+root.setPrefWidth(250);
+
+Label titre = new Label("Titre");
+titre.setTextFill(Color.web("#0022cc"));
+root.setTop(titre);
+
+Button btn = new Button("OK");
+btn.setOnAction(this::valider);
+root.setCenter(btn);
+```
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+Chaque <b>élément XML</b> = un appel <code>new ClasseJavaFX()</code>. Chaque <b>attribut</b> = un appel à un <code>setXxx(...)</code>.
+</div>
+
+---
+
+## Ce qui doit (et ne doit pas) être en FXML
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">FXML est un langage de description, pas de programmation. Quelques règles simples pour ne pas dériver.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+
+<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">✅ En FXML</div>
+<ul style="font-size: 1.1rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
+<li>La <b>structure</b> de l'arbre de scène</li>
+<li>Les <b>propriétés statiques</b> (<code>text</code>, <code>spacing</code>, <code>alignment</code>)</li>
+<li>Les <b>identifiants</b> (<code>fx:id</code>, <code>id</code>, <code>styleClass</code>)</li>
+<li>Le <b>câblage</b> handler/contrôleur (<code>onAction</code>)</li>
+<li>Les <b>imports</b> et <b>ressources</b> (<code>stylesheets</code>, <code>%clé</code>)</li>
+</ul>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">❌ Hors de FXML</div>
+<ul style="font-size: 1.1rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
+<li>Toute <b>logique métier</b> (calculs, conditions)</li>
+<li>L'<b>état dynamique</b> (texte qui change au runtime)</li>
+<li>Les <b>boucles</b> et constructions répétitives</li>
+<li>Les <b>accès à des services</b> (DB, réseau)</li>
+<li>Les <b>scripts JavaScript</b> embarqués <em>(possible mais déconseillé)</em></li>
+</ul>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.3rem; text-align: center;">
+Si vous hésitez, posez-vous la question : <em>« est-ce que ça change pendant l'exécution ? »</em> Si oui → contrôleur, sinon → FXML.
+</div>
+
+---
+
+## L'arbre de scène généré
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Le FXML produit un graphe de scène <b>identique</b> à celui qu'on aurait obtenu en code procédural.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
+
+<div>
+<div style="background: #4a90d9; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">FXML source</div>
+
+```xml
+<VBox spacing="10">
+  <Label fx:id="titre"
+         text="Compteur"/>
+  <HBox alignment="CENTER">
+    <Button text="-1"/>
+    <Label fx:id="valeur"
+           text="0"/>
+    <Button text="+1"/>
+  </HBox>
+</VBox>
+```
+
+</div>
+
+<div>
+<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">Graphe résultant</div>
+
+<pre style="background: #f5f5f5; padding: 0.7rem; border-radius: 6px; font-size: 0.85rem; line-height: 1.4;">
+VBox (root)
+├── Label "Compteur"  ← fx:id="titre"
+└── HBox
+    ├── Button "-1"
+    ├── Label "0"     ← fx:id="valeur"
+    └── Button "+1"
+</pre>
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+Une fois chargé, ce graphe est <b>indistinguable</b> d'un graphe créé par <code>new VBox(...)</code>. JavaFX ne sait pas d'où il vient.
+</div>
+
+---
+
+## Le mapping est mécanique
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">Élément racine</div>
+<div style="font-size: 1.1rem; line-height: 1.5;">Une classe avec constructeur sans argument, par exemple <code>VBox</code>, <code>BorderPane</code>, <code>AnchorPane</code>.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">Attribut sur l'élément</div>
+<div style="font-size: 1.1rem; line-height: 1.5;">Un setter standard : <code>text="X"</code> → <code>setText("X")</code>, <code>spacing="10"</code> → <code>setSpacing(10)</code>.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">Élément imbriqué</div>
+<div style="font-size: 1.1rem; line-height: 1.5;">Un <code>add()</code> sur la collection enfants : un <code>&lt;Label&gt;</code> dans <code>&lt;VBox&gt;</code> appelle <code>vbox.getChildren().add(label)</code>.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">Sous-élément nommé</div>
+<div style="font-size: 1.1rem; line-height: 1.5;">Pour <code>BorderPane</code> : <code>&lt;top&gt;</code>, <code>&lt;center&gt;</code>, etc. → <code>setTop(...)</code>, <code>setCenter(...)</code>.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.7rem; font-size: 1.3rem; text-align: center;">
+👉 Si vous savez écrire le code Java équivalent, vous savez écrire le FXML.
+</div>
+
+---
+
+## Charger un FXML depuis Java
+
+```java
+public class CompteurApp extends Application {
+  @Override
+  public void start(Stage stage) throws IOException {
+    URL fxml = getClass().getResource("/fxml/compteur.fxml");
+    Parent root = FXMLLoader.load(fxml);
+
+    stage.setScene(new Scene(root, 300, 200));
+    stage.setTitle("Compteur");
+    stage.show();
+  }
+}
+```
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.6rem;">
+
+<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 8px;">
+<div style="font-size: 1.2rem; font-weight: bold;">📂 Localisation</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;"><code>getResource("/...")</code> cherche dans <code>src/main/resources</code>.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 8px;">
+<div style="font-size: 1.2rem; font-weight: bold;">🔧 Chargement</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;"><code>FXMLLoader.load(url)</code> retourne la racine du graphe.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 8px;">
+<div style="font-size: 1.2rem; font-weight: bold;">🎬 Affichage</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;">On enveloppe dans une <code>Scene</code>, on l'attache au <code>Stage</code>.</div>
+</div>
+
+</div>
+
+---
+
+## fx:id — nommer un nœud
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'attribut <code>fx:id</code> donne un nom unique à un nœud du FXML pour pouvoir le manipuler depuis Java.</p>
+
+```xml
+<VBox xmlns:fx="http://javafx.com/fxml">
+  <Label fx:id="message" text="0"/>
+  <Button fx:id="boutonOk" text="OK"/>
+</VBox>
+```
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem;">
+
+<div style="background: #4a90d9; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">⚠️ Pas tous les nœuds</div>
+<div style="font-size: 1.1rem; line-height: 1.5;">Inutile de nommer le <code>VBox</code> racine si vous ne le manipulez pas. Nommez seulement ce que le contrôleur doit toucher.</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">⚠️ Ne pas confondre avec id</div>
+<div style="font-size: 1.1rem; line-height: 1.5;"><code>fx:id</code> = nom Java pour <code>@FXML</code>.<br/><code>id</code> = sélecteur CSS pour styliser. <em>Détails plus loin.</em></div>
+</div>
+
+</div>
+
+---
+
+## @FXML — l'injection automatique
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'annotation <code>@FXML</code> dit à <code>FXMLLoader</code> : « <em>injecte le nœud nommé X dans le champ portant le même nom</em> ».</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
+
+<div>
+<div style="background: #4a90d9; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">compteur.fxml</div>
+
+```xml
+<VBox xmlns:fx=
+        "http://javafx.com/fxml"
+      fx:controller=
+        "CompteurController">
+  <Label fx:id="message"/>
+  <Button fx:id="bouton"
+          text="OK"/>
+</VBox>
+```
+
+</div>
+
+<div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">CompteurController.java</div>
+
+```java
+public class CompteurController {
+
+  @FXML
+  private Label message;
+
+  @FXML
+  private Button bouton;
+
+  // Injecté automatiquement
+  // au chargement du FXML
+}
+```
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+La règle : <b>même nom dans le FXML et dans le Java</b>. Le <code>FXMLLoader</code> fait le câblage par réflexion.
+</div>
+
+---
+
+## fx:controller — déclarer le contrôleur
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'attribut <code>fx:controller</code> sur l'élément racine indique quelle classe Java doit recevoir les injections.</p>
+
+```xml
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="fr.univ_amu.iut.exercice2.CompteurController">
+  <!-- ... -->
+</VBox>
+```
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem;">
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📦 Nom complet</div>
+<div style="font-size: 1.1rem; line-height: 1.5;">Toujours le <b>nom pleinement qualifié</b> de la classe (avec le package). FXML n'a pas de <code>import</code> Java.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ Constructeur sans args</div>
+<div style="font-size: 1.1rem; line-height: 1.5;"><code>FXMLLoader</code> instancie automatiquement le contrôleur via <code>new CompteurController()</code>.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.3rem; text-align: center;">
+Pour passer un argument au contrôleur (ex : un modèle), il faut le créer manuellement — voir la slide <em>« Accéder au contrôleur »</em>.
+</div>
+
+---
+
+## onAction — câbler un événement
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'attribut <code>onAction="#méthode"</code> dit à JavaFX : « <em>quand ce bouton est cliqué, appelle <code>méthode()</code> du contrôleur</em> ».</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
+
+<div>
+<div style="background: #e8a838; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">FXML</div>
+
+```xml
+<Button text="Incrémenter"
+        onAction="#incrementer"/>
+```
+
+</div>
+
+<div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">Controller</div>
+
+```java
+public class CompteurController {
+  @FXML
+  void incrementer() {
+    // ...
+  }
+}
+```
+
+</div>
+
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold;">🔖 Annotation @FXML</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;">Obligatoire si la méthode n'est pas <code>public</code>.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold;">📨 Signature</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;"><code>void m()</code> ou <code>void m(ActionEvent)</code>, au choix.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold;">⚡ Autres événements</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;"><code>onMouseClicked</code>, <code>onKeyPressed</code>...</div>
+</div>
+
+</div>
+
+---
+
+## initialize() — le hook après chargement
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Après injection des nœuds, <code>FXMLLoader</code> cherche une méthode <code>initialize()</code> dans le contrôleur et l'appelle.</p>
+
+```java
+public class CompteurController {
+  @FXML private Label message;
+  @FXML private ComboBox<String> langues;
+
+  private final Compteur compteur = new Compteur();
+
+  @FXML
+  void initialize() {
+    // À ce stade, message et langues sont injectés.
+    // C'est le bon moment pour binder, peupler, configurer.
+
+    message.textProperty().bind(compteur.valeurProperty().asString());
+    langues.getItems().addAll("fr", "en", "es");
+    langues.setValue("fr");
+  }
+}
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<b>Ne mettez rien dans le constructeur</b> qui touche à un champ <code>@FXML</code> : ils sont encore <code>null</code> à ce stade.
+</div>
+
+---
+
+## Cycle de vie complet
+
+![Cycle de vie du chargement FXML : load() → parse → new Controller() → injection @FXML → initialize() → retour à l'Application](assets/kroki/cm3-fxml-cycle-vie.svg)
+
+---
+
+## Bindings inline avec `${}`
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">FXML supporte une syntaxe d'expression <code>${...}</code> pour binder directement dans le XML, sans passer par le contrôleur.</p>
+
+```xml
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="MaController">
+
+  <!-- bind unidirectionnel sur la longueur du champ -->
+  <Label text="${'Caractères saisis : ' + champ.length}"/>
+
+  <TextField fx:id="champ"/>
+
+  <!-- disable le bouton si le champ est vide -->
+  <Button text="Valider" disable="${champ.text.isEmpty()}"/>
+
+</VBox>
+```
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem;">
+
+<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold;">✅ Bien pour le simple</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;">Bindings UI ↔ UI sans logique métier.</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold;">⚠️ Pas pour le complexe</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;">Pour des bindings sophistiqués <em>(Bindings.when, calculs)</em>, garder l'<code>initialize()</code>.</div>
+</div>
+
+</div>
+
+---
+
+## Internationalisation avec ResourceBundle
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">FXML supporte l'i18n nativement via la syntaxe <code>%clé</code> et un <code>ResourceBundle</code>.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
+
+<div>
+<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.05rem;">messages_fr.properties</div>
+
+```properties
+btn.ok=Valider
+btn.cancel=Annuler
+title=Connexion
+```
+
+<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.05rem; margin-top: 0.4rem;">messages_en.properties</div>
+
+```properties
+btn.ok=OK
+btn.cancel=Cancel
+title=Login
+```
+
+</div>
+
+<div>
+<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.05rem;">login.fxml</div>
+
+```xml
+<VBox xmlns:fx="...">
+  <Label text="%title"/>
+  <HBox>
+    <Button text="%btn.cancel"/>
+    <Button text="%btn.ok"/>
+  </HBox>
+</VBox>
+```
+
+<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.05rem; margin-top: 0.4rem;">App.java</div>
+
+```java
+ResourceBundle bundle = ResourceBundle
+    .getBundle("messages", Locale.FRENCH);
+loader.setResources(bundle);
+```
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.2rem; text-align: center;">
+Aucune ligne Java à modifier pour traduire l'app. Le FXML reste neutre, le bundle change selon la <code>Locale</code>.
+</div>
+
+---
+
+## id vs fx:id — ne pas confondre
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🔖 fx:id</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Identifiant pour <b>l'injection Java</b> via <code>@FXML</code>.<br/>Attribut interne au moteur FXML.</div>
+<pre style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 4px; font-size: 0.9rem; margin-top: 0.5rem;">&lt;Label fx:id="message"/&gt;
+@FXML private Label message;</pre>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 id</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Sélecteur <b>CSS</b> pour cibler le composant dans une feuille de style.</div>
+<pre style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 4px; font-size: 0.9rem; margin-top: 0.5rem;">&lt;Label id="message"/&gt;
+/* CSS */
+#message { -fx-font-size: 24px; }</pre>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.3rem; text-align: center;">
+On peut mettre les deux : <code>&lt;Label fx:id="message" id="message"/&gt;</code> — utile quand le nom Java sert aussi de sélecteur CSS.
+</div>
+
+---
+
+## Brancher une feuille CSS
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'attribut <code>stylesheets</code> sur l'élément racine du FXML applique une feuille de style à tout le sous-arbre.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
+
+<div>
+<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">compteur.fxml</div>
+
+```xml
+<VBox stylesheets="@compteur.css"
+      xmlns:fx=
+        "http://javafx.com/fxml">
+  <Label id="titre"
+         text="Compteur"/>
+  <Label fx:id="message"
+         styleClass="valeur"/>
+</VBox>
+```
+
+</div>
+
+<div>
+<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">compteur.css</div>
+
+```css
+#titre {
+  -fx-font-size: 14px;
+  -fx-text-fill: gray;
+}
+
+.valeur {
+  -fx-font-size: 36px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #4a90d9;
+}
+```
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<code>id</code> = sélecteur unique <code>#nom</code>. <code>styleClass</code> = sélecteur de classe <code>.nom</code>, réutilisable.
+</div>
+
+---
+
+## Accéder au contrôleur depuis Java
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour passer un modèle au contrôleur, on l'instancie soi-même au lieu d'utiliser <code>FXMLLoader.load()</code> statique.</p>
+
+```java
+public void start(Stage stage) throws IOException {
+  // 1. Instancier un loader (méthode d'instance, pas statique)
+  FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/compteur.fxml"));
+
+  // 2. Charger le FXML
+  Parent root = loader.load();
+
+  // 3. Récupérer l'instance du contrôleur créée par FXMLLoader
+  CompteurController controller = loader.getController();
+
+  // 4. Lui passer ce qu'il faut (modèle, services...)
+  controller.setCompteur(monCompteur);
+
+  stage.setScene(new Scene(root));
+  stage.show();
+}
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.25rem; text-align: center;">
+Le contrôleur déclaré dans <code>fx:controller</code> est instancié <b>automatiquement</b>. <code>getController()</code> permet de le récupérer.
+</div>
+
+---
+
+## Variante : injecter un contrôleur custom
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Si le contrôleur n'a pas de constructeur sans argument, on l'instancie avant le chargement avec <code>setController()</code>.</p>
+
+```java
+public void start(Stage stage) throws IOException {
+  FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/compteur.fxml"));
+
+  // Le contrôleur est créé ici, avec ses dépendances
+  loader.setController(new CompteurController(monCompteur));
+
+  Parent root = loader.load();
+  stage.setScene(new Scene(root));
+  stage.show();
+}
+```
+
+<div style="background: #c0392b; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.35rem;">
+⚠️ Si vous appelez <code>setController()</code>, <b>retirer l'attribut <code>fx:controller</code></b> du FXML (sinon erreur d'initialisation).
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.3rem; text-align: center;">
+Au CM4, on verra un mécanisme plus propre via injection de dépendances <em>(Guice)</em>.
+</div>
+
+---
+
+## Le namespace FXML
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="fr.univ_amu.iut.exemple.MonController">
+  <Label fx:id="message"/>
+</VBox>
+```
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold;">📦 Imports</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;">Les <code>&lt;?import ...?&gt;</code> permettent d'écrire <code>&lt;Label&gt;</code> au lieu du nom complet.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold;">🔧 xmlns:fx</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;">Active les attributs <code>fx:id</code>, <code>fx:controller</code>, <code>fx:include</code>...</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold;">⚠️ Ne pas modifier</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;">SceneBuilder s'appuie sur ces déclarations. Les altérer casse l'outil.</div>
+</div>
+
+</div>
+
+---
+
+## Erreurs courantes et messages
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Quatre erreurs récurrentes au début, et le message d'erreur qui les caractérise.</p>
+
+<style scoped>
+section table { font-size: 0.85rem !important; width: 100%; border-collapse: collapse; }
+section th { background: #c0392b !important; color: white !important; padding: 0.35rem 0.7rem !important; text-align: left !important; }
+section td { padding: 0.3rem 0.7rem !important; border-bottom: 1px solid #e0e0e0 !important; vertical-align: top; }
+section tr:nth-child(even) td { background: #f4f6f8 !important; }
+section table code { font-size: 0.78rem !important; }
+</style>
+
+| Symptôme | Cause | Diagnostic |
+|---|---|---|
+| `LoadException: Class not found` | Faute de frappe dans `fx:controller`, ou package oublié. | Le nom doit être pleinement qualifié : `fr.iut.MonController`. |
+| `NullPointerException` sur un champ `@FXML` | Manipuler le champ dans le **constructeur** au lieu de `initialize()`. | Les `@FXML` ne sont injectés qu'<em>après</em> le constructeur. |
+| `LoadException: Method not found` | La méthode citée dans `onAction="#m"` n'existe pas, n'est pas `@FXML`, ou a une mauvaise signature. | Doit être `void m()` ou `void m(ActionEvent)`. |
+| `LoadException: ID is already defined` | Deux nœuds avec le même `fx:id` dans le même FXML. | Renommer pour garantir l'unicité. |
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+Lisez attentivement la <b>première ligne</b> de la stack trace : le numéro de ligne dans le FXML est en général précis.
+</div>
+
+---
+
+## Exemple complet : FormulaireConnexion (TP3 ex3)
+
+<style scoped>
+section pre { font-size: 0.65rem !important; line-height: 1.3 !important; }
+</style>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.3rem;">
+
+<div>
+<div style="background: #4a90d9; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">formulaire.fxml</div>
+
+```xml
+<GridPane hgap="10" vgap="10"
+   fx:controller=
+     "FormulaireConnexionController"
+   stylesheets="@formulaire.css"
+   xmlns:fx="http://javafx.com/fxml">
+
+  <Label text="Email"
+    GridPane.rowIndex="0"
+    GridPane.columnIndex="0"/>
+  <TextField fx:id="email"
+    GridPane.rowIndex="0"
+    GridPane.columnIndex="1"/>
+
+  <Label text="Mot de passe"
+    GridPane.rowIndex="1"
+    GridPane.columnIndex="0"/>
+  <PasswordField fx:id="motDePasse"
+    GridPane.rowIndex="1"
+    GridPane.columnIndex="1"/>
+
+  <Button fx:id="valider" text="Valider"
+    onAction="#valider"
+    GridPane.rowIndex="2"
+    GridPane.columnIndex="1"/>
+
+</GridPane>
+```
+
+</div>
+
+<div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">FormulaireConnexionController.java</div>
+
+```java
+public class FormulaireConnexionController {
+
+  @FXML private TextField email;
+  @FXML private PasswordField motDePasse;
+  @FXML private Button valider;
+
+  @FXML
+  void initialize() {
+    // Affordance : bouton désactivé tant que
+    // les champs ne sont pas remplis (CM2)
+    valider.disableProperty().bind(
+      email.textProperty().isEmpty()
+        .or(motDePasse.textProperty().isEmpty())
+    );
+  }
+
+  @FXML
+  void valider() {
+    System.out.println(
+      "Connexion : " + email.getText());
+  }
+}
+```
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.55rem 1.1rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.2rem; text-align: center;">
+👉 Layout en FXML (déclaratif), affordance via binding (CM2), comportement en Java (testable).
+</div>
+
+---
+
+## 🧪 Bénéfice concret : la testabilité
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Avec MVC + FXML, on peut tester chaque couche isolément.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem;">
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📊 Test du modèle</div>
+
+```java
+@Test
+void incrementeAjouteUn() {
+  Compteur c = new Compteur();
+  c.incrementer();
+  assertEquals(1, c.getValeur());
+}
+```
+
+<div style="font-size: 1.05rem; line-height: 1.4; margin-top: 0.4rem;">Pas de JavaFX, pas de TestFX. JUnit pur.</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🖼️ Test de la vue (TestFX)</div>
+
+```java
+@Test
+void clicIncremente(FxRobot robot) {
+  robot.clickOn("#bouton");
+  Label l = robot.lookup("#message")
+                 .queryAs(Label.class);
+  assertEquals("1", l.getText());
+}
+```
+
+<div style="font-size: 1.05rem; line-height: 1.4; margin-top: 0.4rem;">Test fonctionnel via interactions UI.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.3rem; text-align: center;">
+Plus la frontière modèle/contrôleur est nette, plus le test du modèle couvre la logique <b>sans toucher à JavaFX</b>.
+</div>
+
+---
+
+<!-- _class: lead -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+# Partie 4 - 🎨 Tooling et composants
+
+**SceneBuilder, fx:root, fx:include**
+
+---
+
+## 🎨 SceneBuilder — l'éditeur graphique
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">SceneBuilder est un outil WYSIWYG qui édite des fichiers FXML par glisser-déposer.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem;">
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🖱️ Drag & drop</div>
+<div style="font-size: 1.1rem; line-height: 1.45;">Une palette de composants à gauche, la vue à dessiner au centre, un inspecteur de propriétés à droite.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📄 Sortie FXML pure</div>
+<div style="font-size: 1.1rem; line-height: 1.45;">Le fichier produit est lisible, modifiable à la main, versionnable. Pas de format propriétaire.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📦 Téléchargement séparé</div>
+<div style="font-size: 1.1rem; line-height: 1.45;">N'est pas inclus dans le JDK. Distribution Gluon : <a href="https://gluonhq.com/products/scene-builder/" style="color: #a0d0ff;">gluonhq.com/products/scene-builder</a></div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">⚠️ Pas de magie</div>
+<div style="font-size: 1.1rem; line-height: 1.45;">Connaître les composants reste indispensable : SceneBuilder ne fait qu'écrire le XML que vous auriez tapé.</div>
+</div>
+
+</div>
+
+---
+
+## SceneBuilder — l'écran type
+
+<svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 720px; display: block; margin: 0.4rem auto;">
+  <!-- Fond fenêtre -->
+  <rect x="0" y="0" width="700" height="350" fill="#ecf0f1" rx="8"/>
+
+  <!-- Barre de menu -->
+  <rect x="0" y="0" width="700" height="22" fill="#34495e" rx="8"/>
+  <text x="10" y="15" font-family="sans-serif" font-size="10" fill="white">File  Edit  View  Insert  Modify  Arrange  Preview  Window  Help</text>
+
+  <!-- Panneau gauche : palette + hierarchy -->
+  <rect x="8" y="30" width="160" height="312" fill="white" stroke="#bdc3c7" rx="4"/>
+  <text x="14" y="45" font-family="sans-serif" font-size="11" font-weight="bold" fill="#2c3e50">Library</text>
+  <text x="14" y="62" font-family="sans-serif" font-size="9" fill="#7f8c8d">▸ Containers</text>
+  <text x="14" y="76" font-family="sans-serif" font-size="9" fill="#7f8c8d">▾ Controls</text>
+  <text x="22" y="89" font-family="sans-serif" font-size="9" fill="#34495e">  Button</text>
+  <text x="22" y="101" font-family="sans-serif" font-size="9" fill="#34495e">  Label</text>
+  <text x="22" y="113" font-family="sans-serif" font-size="9" fill="#34495e">  TextField</text>
+  <text x="22" y="125" font-family="sans-serif" font-size="9" fill="#34495e">  CheckBox</text>
+  <text x="22" y="137" font-family="sans-serif" font-size="9" fill="#34495e">  ComboBox</text>
+  <text x="14" y="155" font-family="sans-serif" font-size="9" fill="#7f8c8d">▸ Menus</text>
+  <text x="14" y="169" font-family="sans-serif" font-size="9" fill="#7f8c8d">▸ Misc</text>
+
+  <line x1="8" y1="195" x2="168" y2="195" stroke="#bdc3c7"/>
+  <text x="14" y="210" font-family="sans-serif" font-size="11" font-weight="bold" fill="#2c3e50">Hierarchy</text>
+  <text x="14" y="227" font-family="sans-serif" font-size="9" fill="#34495e">▾ VBox</text>
+  <text x="22" y="240" font-family="sans-serif" font-size="9" fill="#34495e">  Label "Compteur"</text>
+  <text x="22" y="252" font-family="sans-serif" font-size="9" fill="#34495e">  Button "OK"</text>
+
+  <!-- Zone centrale : preview -->
+  <rect x="178" y="30" width="320" height="312" fill="#fafafa" stroke="#bdc3c7" rx="4"/>
+  <text x="185" y="45" font-family="sans-serif" font-size="11" font-weight="bold" fill="#2c3e50">Content</text>
+  <!-- VBox preview -->
+  <rect x="248" y="100" width="180" height="160" fill="white" stroke="#27ae60" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="255" y="120" font-family="sans-serif" font-size="14" fill="#2c3e50">Compteur</text>
+  <rect x="285" y="170" width="100" height="32" fill="#3498db" rx="4"/>
+  <text x="318" y="190" font-family="sans-serif" font-size="12" fill="white">OK</text>
+
+  <!-- Panneau droit : inspector -->
+  <rect x="510" y="30" width="180" height="312" fill="white" stroke="#bdc3c7" rx="4"/>
+  <text x="516" y="45" font-family="sans-serif" font-size="11" font-weight="bold" fill="#2c3e50">Inspector</text>
+  <text x="516" y="62" font-family="sans-serif" font-size="9" fill="#7f8c8d">▾ Properties</text>
+  <text x="524" y="76" font-family="sans-serif" font-size="9" fill="#34495e">Text:</text>
+  <rect x="555" y="68" width="125" height="14" fill="#fafafa" stroke="#bdc3c7"/>
+  <text x="558" y="78" font-family="sans-serif" font-size="9" fill="#34495e">OK</text>
+  <text x="524" y="96" font-family="sans-serif" font-size="9" fill="#34495e">Font Size:</text>
+  <rect x="569" y="88" width="111" height="14" fill="#fafafa" stroke="#bdc3c7"/>
+  <text x="572" y="98" font-family="sans-serif" font-size="9" fill="#34495e">14</text>
+  <text x="516" y="120" font-family="sans-serif" font-size="9" fill="#7f8c8d">▾ Layout</text>
+  <text x="516" y="148" font-family="sans-serif" font-size="9" fill="#7f8c8d">▾ Code</text>
+  <text x="524" y="162" font-family="sans-serif" font-size="9" fill="#34495e">fx:id:</text>
+  <rect x="556" y="154" width="124" height="14" fill="#fafafa" stroke="#bdc3c7"/>
+  <text x="559" y="164" font-family="sans-serif" font-size="9" fill="#34495e">boutonOk</text>
+  <text x="524" y="182" font-family="sans-serif" font-size="9" fill="#34495e">On Action:</text>
+  <rect x="582" y="174" width="98" height="14" fill="#fafafa" stroke="#bdc3c7"/>
+  <text x="585" y="184" font-family="sans-serif" font-size="9" fill="#34495e">#valider</text>
+</svg>
+
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.2rem; text-align: center;">
+Library (composants disponibles), Hierarchy (structure de l'arbre), Content (rendu), Inspector (propriétés du nœud sélectionné).
+</div>
+
+---
+
+## Workflow SceneBuilder ↔ IDE
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">SceneBuilder n'est pas un IDE complet : on l'utilise <b>en aller-retour</b> avec son éditeur de code habituel.</p>
+
+![Workflow : SceneBuilder ↔ fichier.fxml versionné Git, IDE/VSCode ↔ Controller.java, liens fx:controller et @FXML entre les deux](assets/kroki/cm3-workflow-scenebuilder.svg)
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem;">
+
+<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold;">🔄 Aller-retour fluide</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;">Modifier un FXML à la main, le rouvrir dans SceneBuilder : tout est préservé.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold;">🎯 Skip View</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;">SceneBuilder peut générer le squelette du contrôleur via <em>View → Show Sample Controller Skeleton</em>.</div>
+</div>
+
+</div>
+
+---
+
+## 🏗️ Composants réutilisables avec fx:root
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour créer un composant <b>autonome</b> (ex: une barre de statut), on utilise <code>fx:root</code> au lieu d'un type concret.</p>
+
+```xml
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+
+<fx:root type="javafx.scene.layout.HBox" xmlns:fx="http://javafx.com/fxml">
+  <Label fx:id="texteStatut"/>
+  <Label fx:id="dateMaj"/>
+</fx:root>
+```
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold;">🔧 fx:root</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;">Désigne la racine sans la créer. Attendu en injection.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold;">📍 type</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;">Le type de la racine pour la validation et l'auto-complétion.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold;">⚙️ Pas de fx:controller</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;">Le contrôleur ET la racine sont injectés depuis Java.</div>
+</div>
+
+</div>
+
+---
+
+## fx:root — la classe associée
+
+```java
+public class BarreStatut extends HBox {
+
+  @FXML private Label texteStatut;
+  @FXML private Label dateMaj;
+
+  public BarreStatut() {
+    FXMLLoader loader = new FXMLLoader(
+        getClass().getResource("BarreStatut.fxml"));
+    loader.setRoot(this);     // ← THIS est la racine
+    loader.setController(this); // ← THIS est aussi le contrôleur
+    try {
+      loader.load();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public void setStatut(String texte) {
+    texteStatut.setText(texte);
+    dateMaj.setText(LocalTime.now().toString());
+  }
+}
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.25rem; text-align: center;">
+La classe <b>EST</b> le composant : <code>new BarreStatut()</code> donne directement un <code>HBox</code> prêt à l'emploi.
+</div>
+
+---
+
+## Utiliser le composant comme n'importe quel autre
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
+
+<div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">En Java</div>
+
+```java
+BarreStatut statut = new BarreStatut();
+statut.setStatut("Prêt");
+
+VBox root = new VBox(
+    monContenu,
+    statut
+);
+```
+
+</div>
+
+<div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">En FXML</div>
+
+```xml
+<?import fr.iut.composants.BarreStatut?>
+
+<VBox xmlns:fx="http://javafx.com/fxml">
+  <!-- contenu principal -->
+
+  <BarreStatut fx:id="statut"/>
+</VBox>
+```
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+👉 C'est le pattern de l'<b>exercice 5 du TP3</b> (<code>BarreStatut</code>) : un composant qu'on peut poser n'importe où.
+</div>
+
+---
+
+## fx:root vs fx:include — quand utiliser quoi ?
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Deux mécanismes de composition différents, pour deux usages différents.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 12px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🧱 fx:root</div>
+<div style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 0.5rem;"><b>Composant unitaire réutilisable</b> : on définit une <b>nouvelle classe</b> qu'on utilise comme un composant JavaFX.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 5px; font-size: 0.95rem;">
+✓ <code>BarreStatut</code>, <code>SelecteurDate</code>, <code>EditeurMontant</code>...<br/>
+✓ Utilisable depuis FXML <em>ou</em> depuis Java.<br/>
+✓ Encapsulation forte.
+</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1.1rem 1.2rem; border-radius: 12px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🧩 fx:include</div>
+<div style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 0.5rem;"><b>Assemblage de vues complètes</b> : on découpe une grande vue en plusieurs FXML qu'on recolle.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 5px; font-size: 0.95rem;">
+✓ <code>entete.fxml</code> + <code>contenu.fxml</code> + <code>pied.fxml</code>...<br/>
+✓ Découpage par zone fonctionnelle.<br/>
+✓ Communication via le contrôleur parent.
+</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.7rem; font-size: 1.3rem; text-align: center;">
+Règle simple : <b>fx:root</b> si le composant a vocation à être instancié plusieurs fois. <b>fx:include</b> si c'est un morceau d'une vue spécifique.
+</div>
+
+---
+
+## fx:include — composer des vues
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour assembler une grande vue à partir de plus petites, on utilise <code>fx:include</code>.</p>
+
+```xml
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fr.iut.AppController">
+
+  <top>
+    <fx:include source="entete.fxml" fx:id="entete"/>
+  </top>
+
+  <center>
+    <fx:include source="contenu.fxml" fx:id="contenu"/>
+  </center>
+
+  <bottom>
+    <fx:include source="pied.fxml" fx:id="pied"/>
+  </bottom>
+
+</BorderPane>
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+Trois fichiers FXML, trois contrôleurs, une vue assemblée. Chaque sous-vue est testable et réutilisable.
+</div>
+
+---
+
+## Communiquer entre contrôleurs inclus
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Avec <code>fx:include fx:id="entete"</code>, FXML injecte un champ <code>enteteController</code> dans le contrôleur parent.</p>
+
+```java
+public class AppController {
+
+  // Convention : <fxId>Controller pour accéder au sous-controller
+  @FXML private EnteteController enteteController;
+  @FXML private ContenuController contenuController;
+
+  @FXML
+  void initialize() {
+    // Le parent peut orchestrer ses enfants
+    enteteController.setUtilisateur(monUtilisateur);
+
+    // Ou les abonner les uns aux autres via leurs propriétés
+    contenuController.titreProperty()
+        .bind(enteteController.titreCourantProperty());
+  }
+}
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+Le contrôleur parent <b>orchestre</b>. Les enfants ne se connaissent pas — ils communiquent <em>via</em> leur parent (loose coupling).
+</div>
+
+---
+
+## Exemple d'application composée (TP3 ex6)
+
+<style scoped>
+section pre { font-size: 0.7rem !important; line-height: 1.3 !important; }
+</style>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.3rem;">
+
+<div>
+<div style="background: #4a90d9; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">app.fxml — la coquille</div>
+
+```xml
+<BorderPane
+   fx:controller="AppController"
+   xmlns:fx="http://javafx.com/fxml">
+
+  <top>
+    <fx:include
+      source="entete.fxml"
+      fx:id="entete"/>
+  </top>
+
+  <center>
+    <fx:include
+      source="liste.fxml"
+      fx:id="liste"/>
+  </center>
+
+  <bottom>
+    <BarreStatut fx:id="statut"/>
+  </bottom>
+
+</BorderPane>
+```
+
+</div>
+
+<div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">AppController.java</div>
+
+```java
+public class AppController {
+  // Sous-controllers via convention
+  // <fxId>Controller
+  @FXML private EnteteController
+                   enteteController;
+  @FXML private ListeController
+                   listeController;
+
+  // Composant fx:root réutilisable
+  @FXML private BarreStatut statut;
+
+  @FXML void initialize() {
+    // Le parent oriente :
+    listeController.itemSelectedProperty()
+       .addListener((obs, ancien, nouveau)
+          -> statut.setStatut(
+              "Sélection : " + nouveau));
+  }
+}
+```
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.55rem 1.1rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.2rem; text-align: center;">
+👉 Trois sous-vues, un contrôleur orchestrateur, un composant <code>fx:root</code>. C'est le pattern complet du <b>TP3 exercice 6</b>.
+</div>
+
+---
+
+## Aperçu en direct dans SceneBuilder
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">SceneBuilder propose un mode <b>Preview</b> qui rend la vue à l'identique de l'exécution.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">👁️ View → Preview in Window</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Lance une fenêtre simulant le rendu réel : layout, taille, redimensionnement à la souris.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 Preview → Scene Style</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Bascule entre le thème <em>Modena</em> (par défaut), <em>Caspian</em> (héritage) et le CSS personnalisé attaché.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🌐 Preview → Internationalization</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Charge un <code>ResourceBundle</code> et affiche immédiatement la vue traduite, sans relancer.</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">⚠️ Preview ≠ exécution</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Les bindings et handlers ne sont <b>pas</b> exécutés. Pour tester le comportement, lancer la vraie app.</div>
+</div>
+
+</div>
+
+---
+
+## Récapitulatif des outils FXML
+
+<style scoped>
+section table { font-size: 0.85rem !important; width: 100%; border-collapse: collapse; }
+section th { background: #1a5276 !important; color: white !important; padding: 0.35rem 0.7rem !important; text-align: left !important; }
+section td { padding: 0.3rem 0.7rem !important; border-bottom: 1px solid #e0e0e0 !important; }
+section tr:nth-child(even) td { background: #f4f6f8 !important; }
+</style>
+
+| Mécanisme | Rôle | Exemple |
+|---|---|---|
+| `fx:id` | Nommer un nœud pour injection Java | `<Label fx:id="message"/>` |
+| `id` | Sélecteur CSS unique | `<Label id="titre"/>` |
+| `styleClass` | Sélecteur CSS de classe | `<Label styleClass="valeur"/>` |
+| `@FXML` | Marquer un champ ou méthode injectable | `@FXML private Label message;` |
+| `fx:controller` | Désigner le contrôleur de la vue | `<VBox fx:controller="fr.iut.MonController">` |
+| `onAction="#méthode"` | Câbler une action sur une méthode | `<Button onAction="#valider"/>` |
+| `initialize()` | Code après injection | `@FXML void initialize()` |
+| `fx:root` | Racine externe (composant réutilisable) | `<fx:root type="javafx.scene.layout.HBox">` |
+| `fx:include` | Inclure un autre FXML | `<fx:include source="entete.fxml" fx:id="entete"/>` |
+| `loader.getController()` | Accéder au contrôleur | `controller.setModele(...)` |
+
+---
+
+<!-- _class: lead -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+# Partie 5 - 🧠 Cohérence et standards
+
+**Heuristique de Nielsen #4**
+
+---
+
+## 🧠 Heuristique #4 — Consistency and standards
+
+<div style="background: #27ae60; color: white; padding: 1.5rem 2rem; border-radius: 12px; margin-top: 1rem; font-size: 1.5rem; line-height: 1.5; text-align: center;">
+« <em>Users should not have to wonder whether different words, situations, or actions mean the same thing. Follow platform and industry conventions.</em> »
+<div style="margin-top: 0.6rem; font-size: 1.1rem; opacity: 0.9;">— Jakob Nielsen, 1994</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.9rem;">
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✅ Cohérence interne</div>
+<div style="font-size: 1.1rem; line-height: 1.45;">Le bouton « Annuler » a la même position, la même couleur, le même comportement partout dans l'application.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✅ Standards externes</div>
+<div style="font-size: 1.1rem; line-height: 1.45;"><kbd>Ctrl+S</kbd> sauvegarde, <kbd>Ctrl+Z</kbd> annule. Une croix en haut à droite ferme. On respecte les conventions de la plateforme.</div>
+</div>
+
+</div>
+
+---
+
+## Anti-pattern : la disparate
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
+
+<div style="background: #c0392b; color: white; padding: 1.1rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">❌ Sur 3 écrans</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">
+• Écran A : <code>[ Annuler ]</code> à gauche, gris<br/>
+• Écran B : <code>[ Cancel ]</code> à droite, rouge<br/>
+• Écran C : <code>[ × Fermer ]</code> en haut, bleu
+</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1.1rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">✅ Sur 3 écrans</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">
+• Toujours <code>[ Annuler ]</code><br/>
+• Toujours en bas à droite<br/>
+• Toujours la même couleur
+</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; text-align: center;">
+💡 La disparate force l'utilisateur à <b>réapprendre</b> à chaque écran. La cohérence le laisse se concentrer sur sa tâche.
+</div>
+
+---
+
+## FXML + CSS : la cohérence à grande échelle
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Mutualiser les styles et les composants empêche mécaniquement la disparate.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 CSS centralisé</div>
+<div style="font-size: 1.1rem; line-height: 1.45;">Un seul <code>theme.css</code> pour toute l'app. Changer la couleur primaire = une ligne, un déploiement.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🧱 Composants réutilisables</div>
+<div style="font-size: 1.1rem; line-height: 1.45;">Une <code>BarreBoutonsForm</code> avec <code>[Annuler] [OK]</code> dans l'ordre standard, utilisée partout via <code>&lt;BarreBoutonsForm/&gt;</code>.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📄 Vues stéréotypées</div>
+<div style="font-size: 1.1rem; line-height: 1.45;">Tous les formulaires partagent le même squelette FXML : titre, champs, barre de boutons, statut.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🔍 Revue facile</div>
+<div style="font-size: 1.1rem; line-height: 1.45;">Un nouveau composant qui s'éloigne du standard est immédiatement repérable dans les FXML — il « jure ».</div>
+</div>
+
+</div>
+
+---
+
+## Le concept de Design System
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Un <b>design system</b> est une bibliothèque vivante de composants, de couleurs, de typographies et de règles d'usage, partagée par toute une organisation.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 Couche visuelle</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Palette de couleurs (primaire, secondaire, alertes), tailles de typographie, grille d'espacements, icônes.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🧱 Composants atomiques</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Boutons, champs, sélecteurs, dialogues... Chacun avec ses variantes (primaire, secondaire, danger).</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">📐 Patterns d'usage</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Quand utiliser quel composant, dans quel contexte. <em>« Pour confirmer une action destructrice : bouton rouge à droite. »</em></div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">📚 Documentation</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Guide vivant : exemples, code source, anti-patterns. Souvent un site web dédié à l'équipe produit.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.3rem; text-align: center;">
+Heuristique #4 « <em>cohérence et standards</em> » à l'échelle d'une organisation entière.
+</div>
+
+---
+
+## Quelques design systems célèbres
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+
+<div style="background: #4285f4; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🟦 Material Design (Google)</div>
+<div style="font-size: 1.1rem; line-height: 1.45;">Lancé en 2014 pour Android. Métaphore du papier et de l'encre. Largement adopté hors Google.<br/><a href="https://m3.material.io/" style="color: #d0e0ff;">m3.material.io</a></div>
+</div>
+
+<div style="background: #1d1d1f; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">⚪ Apple HIG</div>
+<div style="font-size: 1.1rem; line-height: 1.45;"><em>Human Interface Guidelines</em>, depuis 1987. Référence pour macOS, iOS, watchOS, visionOS.<br/><a href="https://developer.apple.com/design/human-interface-guidelines/" style="color: #d0e0ff;">developer.apple.com/design</a></div>
+</div>
+
+<div style="background: #2557a7; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🟦 Fluent (Microsoft)</div>
+<div style="font-size: 1.1rem; line-height: 1.45;">Successeur de Metro. Cohérence Windows, Office, Teams, Xbox.<br/><a href="https://fluent2.microsoft.design/" style="color: #d0e0ff;">fluent2.microsoft.design</a></div>
+</div>
+
+<div style="background: #0079bf; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🇫🇷 DSFR (État français)</div>
+<div style="font-size: 1.1rem; line-height: 1.45;"><em>Design System de l'État français</em>. Tous les sites <code>.gouv.fr</code> partagent les mêmes composants.<br/><a href="https://www.systeme-de-design.gouv.fr/" style="color: #d0e0ff;">systeme-de-design.gouv.fr</a></div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.25rem; text-align: center;">
+Tous matérialisent leurs règles dans du <b>code réutilisable</b> (CSS, composants React, fichiers Figma...).
+</div>
+
+---
+
+## Mutualiser via styleClass
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">En JavaFX, le mécanisme central pour appliquer un design system est l'attribut <code>styleClass</code> couplé à un CSS d'app.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
+
+<div>
+<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.05rem;">theme.css (un seul fichier d'app)</div>
+
+```css
+.btn-primaire {
+  -fx-background-color: #4a90d9;
+  -fx-text-fill: white;
+  -fx-padding: 8 16;
+}
+.btn-secondaire {
+  -fx-background-color: transparent;
+  -fx-border-color: #4a90d9;
+  -fx-text-fill: #4a90d9;
+}
+.btn-danger {
+  -fx-background-color: #c0392b;
+  -fx-text-fill: white;
+}
+```
+
+</div>
+
+<div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.05rem;">N'importe quel FXML</div>
+
+```xml
+<HBox spacing="10">
+  <Button text="Annuler"
+          styleClass="btn-secondaire"/>
+  <Button text="Valider"
+          styleClass="btn-primaire"/>
+</HBox>
+
+<!-- Ailleurs, action destructive -->
+<Button text="Supprimer le compte"
+        styleClass="btn-danger"/>
+```
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+Le développeur ne <b>choisit pas une couleur</b> : il choisit un <b>rôle sémantique</b> (primaire, danger). Le design system résout en couleur.
+</div>
+
+---
+
+## Une feuille CSS, plusieurs vues
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'attribut <code>stylesheets</code> peut aussi se poser au niveau de la <code>Scene</code>, pour appliquer un thème <b>global</b>.</p>
+
+```java
+public void start(Stage stage) throws IOException {
+  Parent root = FXMLLoader.load(getClass().getResource("/fxml/main.fxml"));
+
+  Scene scene = new Scene(root);
+  // Toutes les vues sous root héritent de ces feuilles
+  scene.getStylesheets().addAll(
+      getClass().getResource("/css/theme.css").toExternalForm(),
+      getClass().getResource("/css/composants.css").toExternalForm()
+  );
+
+  stage.setScene(scene);
+  stage.show();
+}
+```
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold;">🎨 Niveau Scene</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;">Une seule fois, applique à toute l'application.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold;">🧩 Niveau FXML</div>
+<div style="font-size: 1.05rem; margin-top: 0.2rem;">Pour des styles spécifiques à un sous-arbre.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.55rem 1.1rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.2rem; text-align: center;">
+Idéal pour un <b>theme switcher</b> (clair/sombre) : on remplace la feuille au niveau <code>Scene</code> sans toucher aux FXML.
+</div>
+
+---
+
+## Standards JavaFX qu'il faut respecter
+
+<style scoped>
+section table { font-size: 0.95rem !important; width: 100%; border-collapse: collapse; }
+section th { background: #27ae60 !important; color: white !important; padding: 0.4rem 0.8rem !important; text-align: left !important; }
+section td { padding: 0.35rem 0.8rem !important; border-bottom: 1px solid #e0e0e0 !important; }
+section tr:nth-child(even) td { background: #f4f6f8 !important; }
+</style>
+
+| Convention | Pratique attendue |
+|---|---|
+| 🔘 Position des boutons | `[ Annuler ]   [ OK ]` (Annuler à gauche, OK à droite — convention macOS/Windows moderne). |
+| ⌨️ Raccourcis | <kbd>Enter</kbd> = bouton primaire (OK), <kbd>Esc</kbd> = bouton secondaire (Annuler). |
+| 🏷️ Labels | Toujours à gauche du champ associé, alignés à droite dans un `GridPane`. |
+| ⚠️ Messages d'erreur | Sous le champ concerné, en rouge, avec une icône claire. |
+| ⏳ Action longue | Disable du bouton + indicateur de progression visible. |
+| 🎯 Affordance | Un bouton est toujours `disable` quand son action est invalide *(CM2)*. |
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+Ces conventions sont gravées dans la mémoire musculaire de vos utilisateurs. Les casser, c'est les ralentir.
+</div>
+
+---
+
+## La cohérence, garde-fou architectural
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'architecture MVC + FXML rend la cohérence <b>plus facile à respecter qu'à enfreindre</b>.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem;">
+
+<div style="background: #27ae60; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🧱 Hub central</div>
+<div style="font-size: 1.05rem; line-height: 1.5;">Un seul composant <code>BarreBoutonsForm</code> = un seul endroit où l'ordre est défini.</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🔁 Modification globale</div>
+<div style="font-size: 1.05rem; line-height: 1.5;">Changer une convention = une PR sur un fichier. Pas 30 PR sur 30 vues.</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📚 Doc vivante</div>
+<div style="font-size: 1.05rem; line-height: 1.5;">Le code des composants <em>est</em> la documentation des standards. Pas de drift.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.5rem; line-height: 1.55; text-align: center;">
+💡 Un dev qui veut faire « son » bouton Annuler doit consciemment <b>contourner</b> le composant standard. Ça limite les dérives.
+</div>
+
+---
+
+<!-- _class: lead -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+# Synthèse
+
+---
+
+## Les 3 piliers revisités
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Le CM3 a enrichi les trois piliers du module avec une <b>nouvelle dimension architecturale</b>.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin: 3.8rem 0;">
+
+<div style="background: #1a5276; color: white; padding: 1.4rem 1.2rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 2.5rem; margin-bottom: 0.4rem;">🏗️</div>
+<div style="font-weight: bold; font-size: 1.4rem; margin-bottom: 0.5rem;">Architecture</div>
+<div style="font-size: 1.3rem; line-height: 1.5; opacity: 0.95;">Pattern <strong>MVC</strong>, vue déclarative <strong>FXML</strong>, composants réutilisables (<code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">fx:root</code>, <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">fx:include</code>).</div>
+</div>
+
+<div style="background: #e8a838; color: white; padding: 1.4rem 1.2rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 2.5rem; margin-bottom: 0.4rem;">⚡</div>
+<div style="font-weight: bold; font-size: 1.4rem; margin-bottom: 0.5rem;">Événements</div>
+<div style="font-size: 1.3rem; line-height: 1.5; opacity: 0.95;">Câblage déclaratif via <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">onAction="#méthode"</code>, hook <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">initialize()</code> après chargement.</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1.4rem 1.2rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 2.5rem; margin-bottom: 0.4rem;">🧠</div>
+<div style="font-weight: bold; font-size: 1.4rem; margin-bottom: 0.5rem;">Ergonomie</div>
+<div style="font-size: 1.3rem; line-height: 1.5; opacity: 0.95;">Heuristique #4 de Nielsen : cohérence et standards renforcés par mutualisation FXML + CSS.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem; line-height: 1.55; text-align: center;">
+💡 Un FXML est à la fois un outil d'<strong>architecture</strong> (séparation), un <strong>câblage événementiel</strong> et un mécanisme d'<strong>ergonomie</strong> (cohérence par construction).
+</div>
+
+---
+
+## Lien avec le TP3 - tableau exercices et concepts
+
+<style scoped>
+section table { font-size: 0.78rem !important; width: 100%; border-collapse: collapse; }
+section th { background: #1a5276 !important; color: white !important; padding: 0.3rem 0.6rem !important; text-align: left !important; font-size: 0.85rem !important; }
+section td { padding: 0.25rem 0.6rem !important; border-bottom: 1px solid #e0e0e0 !important; font-size: 0.78rem !important; }
+section tr:nth-child(even) td { background: #f4f6f8 !important; }
+section table code { font-size: 0.74rem !important; padding: 1px 4px !important; }
+</style>
+
+<p style="font-size: 1.5rem; margin: 0.2rem 0 0.4rem 0;">Chaque exercice du TP3 met en pratique des concepts introduits dans ce CM.</p>
+
+| Exercice | Classe | Concepts |
+|---|---|---|
+| 1 | `PremiereVueFXML` | Premier chargement FXML, `FXMLLoader.load()` sans contrôleur |
+| 2 | `CompteurFXML` + `CompteurController` | `@FXML`, `fx:id`, `fx:controller`, `onAction` |
+| 3 | `FormulaireConnexionFXML` | Form FXML + CSS + GridPane + validation (pont CM2 affordance) |
+| 4 | `MiseEnPageFXML` | Layout complet en FXML (pont TP1 mise en page procédurale) |
+| 5 | `BarreStatut` | Composant réutilisable via `fx:root` + `setRoot/setController` |
+| 6 | `ApplicationComposee` | `fx:include`, communication via `<fxId>Controller` |
+| 7 | `OthelloController` | Capstone MVC : modèle métier + vue FXML + contrôleur |
+
+---
+
+## Teaser CM4 - MVVM, persistance et synthèse
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Dans le <strong>CM4</strong>, on combine <strong>MVC</strong> (CM3) et <strong>bindings</strong> (CM2) pour aboutir à <strong>MVVM</strong>.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.6rem;">
+
+<div style="background: #c0392b; color: white; padding: 1.2rem 1.3rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">📍 Aujourd'hui (CM3)</div>
+<div style="font-size: 1.2rem; line-height: 1.45; margin-bottom: 0.7rem;">Le contrôleur <strong>connaît</strong> la vue (champs <code>@FXML</code>) et le modèle (référence directe).</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.55rem 0.75rem; border-radius: 6px; font-family: monospace; font-size: 0.92rem; line-height: 1.5;">@FXML Label message;<br/>Compteur compteur;<br/><br/>void initialize() {<br/>&nbsp;&nbsp;message.textProperty().bind(<br/>&nbsp;&nbsp;&nbsp;&nbsp;compteur.valeurProperty()...);<br/>}</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 1.2rem 1.3rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">🎯 CM4 : MVVM</div>
+<div style="font-size: 1.2rem; line-height: 1.45; margin-bottom: 0.7rem;">Un <strong>ViewModel</strong> intermédiaire expose des propriétés. La vue s'y bind, le contrôleur disparaît presque.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.55rem 0.75rem; border-radius: 6px; font-family: monospace; font-size: 0.92rem; line-height: 1.5;">&lt;Label text="${vm.message}"/&gt;<br/>&lt;Button onAction="#vm.action"/&gt;<br/><br/>// le ViewModel orchestre<br/>// modèle ↔ propriétés UI</div>
+</div>
+
+</div>
+
+<div style="display: flex; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.9rem;">
+<div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">🏗️ MVVM</div>
+<div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">💉 Injection (Guice)</div>
+<div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">💾 JDBC / JPA</div>
+<div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">🐳 Docker</div>
+<div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">🎓 Synthèse</div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; line-height: 1.55; text-align: center;">
+💡 Le <strong>MVVM</strong> = MVC + bindings systématiques. Il rend la vue et le ViewModel <strong>indépendants</strong>, donc testables séparément sans toucher à JavaFX.
+</div>
+
+---
+
+## Pour aller plus loin
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quelques pistes pour approfondir FXML et MVC, du tutoriel officiel à la lecture du code Eclipse.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.5rem;">📚 Documentation</div>
+<div style="font-size: 1rem; line-height: 1.55;">
+<a href="https://openjfx.io/javadoc/25/javafx.fxml/javafx/fxml/doc-files/introduction_to_fxml.html" style="color: #a0d0ff;">Introduction to FXML</a> - référence officielle<br/>
+<a href="https://openjfx.io/javadoc/25/javafx.fxml/javafx/fxml/FXMLLoader.html" style="color: #a0d0ff;">FXMLLoader javadoc</a> - tous les modes de chargement<br/>
+<a href="https://gluonhq.com/products/scene-builder/" style="color: #a0d0ff;">SceneBuilder par Gluon</a> - téléchargement officiel<br/>
+🎬 <a href="https://www.youtube.com/playlist?list=PL4h6ypqTi3RR_bhBk6PtLfD83YkaJXXxw" style="color: #a0d0ff;">JavaFX Software (AlmasB)</a> - vidéos d'architecture
+</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 1.1rem 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.5rem;">🧵 Concepts connexes</div>
+<div style="font-size: 1.05rem; line-height: 1.6;">
+<a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" style="color: #f3d5ff;">MVC</a> chez Smalltalk-80, <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter" style="color: #f3d5ff;">MVP</a>, <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel" style="color: #f3d5ff;">MVVM</a><br/>
+<a href="https://www.nngroup.com/articles/ten-usability-heuristics/" style="color: #f3d5ff;">10 heuristiques de Nielsen</a><br/>
+<a href="https://martinfowler.com/eaaDev/uiArchs.html" style="color: #f3d5ff;">UI Architectures (Fowler)</a> <em>(CM4)</em>
+</div>
+</div>
+
+<div style="background: #e67e22; color: white; padding: 1.1rem 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.5rem;">🔍 Pour les curieux</div>
+<div style="font-size: 1.05rem; line-height: 1.6;">
+Source OpenJFX de <a href="https://github.com/openjdk/jfx/blob/master/modules/javafx.fxml/src/main/java/javafx/fxml/FXMLLoader.java" style="color: #ffe0c0;"><code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px; color: #ffe0c0;">FXMLLoader</code></a> : observez la logique de réflexion qui injecte les <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">@FXML</code> et appelle <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">initialize()</code>.
+</div>
+</div>
+
+</div>
+
+---
+
+<!-- _class: lead -->
+<!-- _paginate: false -->
+
+<style scoped>
+section { text-align: center; }
+h2 { text-align: center; }
+</style>
+
+# 🎯 À vous de jouer !
+
+<div style="background: linear-gradient(135deg, #1a5276 0%, #27ae60 100%); color: white; padding: 2.5rem 2rem; border-radius: 16px; margin: 1.5rem auto 0 auto; max-width: 900px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
+
+<div style="font-size: 2.2rem; font-weight: bold; margin-bottom: 0.4rem;">TP3 - FXML</div>
+<div style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 1.8rem;">7 exercices progressifs + bonus SceneBuilder</div>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 1.8rem;">
+<div style="background: rgba(255,255,255,0.18); padding: 0.8rem 1.1rem; border-radius: 10px; text-align: center; font-size: 1rem; min-width: 200px;">
+<div style="opacity: 0.8; font-size: 0.9rem;">Exercice 1</div>
+<div style="font-weight: bold; font-family: monospace;">PremiereVueFXML</div>
+</div>
+<div style="font-size: 1.8rem;">→</div>
+<div style="background: rgba(255,255,255,0.18); padding: 0.8rem 1.1rem; border-radius: 10px; text-align: center; font-size: 1rem; min-width: 200px;">
+<div style="opacity: 0.8; font-size: 0.9rem;">Exercice 7</div>
+<div style="font-weight: bold; font-family: monospace;">Othello (capstone MVC)</div>
+</div>
+</div>
+
+<code style="background: rgba(0,0,0,0.35); color: #2ecc71; padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1.3rem; font-weight: bold; font-family: monospace; display: inline-block;">./mvnw javafx:run</code>
+
+<div style="margin-top: 1.8rem; font-size: 1.25rem; line-height: 1.5;">
+💡 Activez les tests un par un.<br/>
+<strong>Chaque vue FXML = un découpage MVC à concevoir.</strong>
+</div>
+
+</div>
+
+---
+
+<!-- _class: lead -->
+
+# Des questions ?
+
+**Sébastien Nedjar**
+IUT d'Aix-Marseille - Département Informatique
+
+<div style="margin-top: 2rem; font-size: 1.1rem;">
+
+🌐 [github.com/IUTInfoAix-R202](https://github.com/IUTInfoAix-R202)
+
+📧 sebastien.nedjar@univ-amu.fr
+
+</div>
+
+<div style="margin-top: 2rem; background: #2c3e50; color: white; padding: 1rem 2rem; border-radius: 12px; font-size: 1.5rem;">
+🎯 Prochain rendez-vous : <strong>CM4 - MVVM, persistance et synthèse</strong>
+</div>

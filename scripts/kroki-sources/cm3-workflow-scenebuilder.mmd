@@ -1,0 +1,15 @@
+graph LR
+    SB["🎨 SceneBuilder<br/>édite la structure visuelle"]
+    FXML["📄 fichier.fxml<br/>(versionné Git)"]
+    IDE["💻 IDE / VSCode<br/>écrit le contrôleur"]
+    JAVA["☕ Controller.java"]
+
+    SB <-->|"sauvegarde / rouverture"| FXML
+    IDE <-->|"édition"| JAVA
+    FXML -.->|"fx:controller=..."| JAVA
+    JAVA -.->|"@FXML private ..."| FXML
+
+    style SB fill:#4a90d9,color:#fff
+    style FXML fill:#1a5276,color:#fff
+    style IDE fill:#27ae60,color:#fff
+    style JAVA fill:#27ae60,color:#fff

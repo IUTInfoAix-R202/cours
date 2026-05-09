@@ -1,0 +1,9 @@
+graph LR
+    U([👤 Utilisateur]) -->|"clic, saisie"| V[🖼️ Vue<br/>FXML + composants]
+    V -->|"événement"| C[🎮 Contrôleur<br/>handler @FXML]
+    C -->|"appelle métier"| M[📊 Modèle<br/>données + logique]
+    M -->|"propriétés observables"| V
+    style U fill:#7f8c8d,color:#fff
+    style V fill:#4a90d9,color:#fff
+    style C fill:#27ae60,color:#fff
+    style M fill:#1a5276,color:#fff
