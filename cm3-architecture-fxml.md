@@ -229,7 +229,7 @@ Tout fonctionne, mais une <b>seule classe</b> mélange déjà 4 préoccupations 
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.7rem;">
 
-<div style="background: #c0392b; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
+<div style="background: #6e1a1a; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
 <div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">😵 Lisibilité qui s'effondre</div>
 <div style="font-size: 1.2rem; line-height: 1.45;">Un fichier de 500 lignes où tout est mélangé devient illisible. Trouver « où le bouton OK est défini » prend 5 minutes.</div>
 </div>
