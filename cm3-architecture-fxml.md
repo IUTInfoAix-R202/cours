@@ -116,24 +116,18 @@ Aujourd'hui : <b>séparer</b> ce que l'interface affiche de ce qu'elle fait, et 
 
 ## À la fin de ce CM, vous saurez...
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
 
 <div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Expliquer</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Le pattern <b>MVC</b> et la séparation <b>Modèle / Vue / Contrôleur</b> dans une application JavaFX.</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 2</div>
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Concevoir</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Une architecture <b>MVC</b> où la vue est écrite en <b>FXML</b>, le contrôleur reste mince, et les composants se réutilisent (<code>fx:root</code>, <code>fx:include</code>).</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Parties 2 + 3 + 4</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Écrire</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Une vue en <b>FXML</b>, l'injecter via <code>@FXML</code>, et brancher des <b>handlers</b> via <code>onAction="#méthode"</code>.</div>
+<div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">⚡ Câbler</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Les interactions de la vue au contrôleur de manière déclarative : <code>@FXML</code>, <code>onAction="#méthode"</code>, hook <code>initialize()</code>.</div>
 <div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 3</div>
-</div>
-
-<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Composer</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Des composants réutilisables avec <code>fx:root</code> et assembler des vues avec <code>fx:include</code>.</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 4</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
