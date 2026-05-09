@@ -87,7 +87,7 @@ TP4 + TP5
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 1.5rem;">
 <div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: bold;">🏗️ Réactivité et binding</div>
+<div style="font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: bold;">🏗️ Réactivité</div>
 <div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
 Les <b>propriétés observables</b> et les <b>bindings</b> propagent automatiquement les changements de valeur.
 
@@ -101,7 +101,7 @@ La <b>mise à jour automatique de l'apparence</b> de l'IHM rend l'interface <b>a
 </div>
 </div>
 <div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: bold;">⚡ Modèle événementiel</div>
+<div style="font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: bold;">⚡ Événements</div>
 <div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
 Propagation <b>capture/bubbling</b>, <b>EventFilter</b> vs <b>EventHandler</b>, <code>consume()</code> pour arrêter la propagation.
 </div>
