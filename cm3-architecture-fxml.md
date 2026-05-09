@@ -928,24 +928,38 @@ Le contrôleur appelle <code>incrementer()</code>, pas <code>setValeur(getValeur
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🎯 MVC classique</div>
-<div style="font-size: 1.4rem; line-height: 1.4;">Vue et contrôleur peuvent référencer le modèle. Adapté à JavaFX.<br/><em>👈 Aujourd'hui</em></div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎯 MVC classique</div>
+<div style="font-size: 1.25rem; line-height: 1.45;">
+Vue et contrôleur référencent <b>directement</b> le modèle.<br/>
+Le contrôleur orchestre, le modèle notifie ses observateurs.<br/>
+Adopté par <b>JavaFX/FXML</b>, Spring MVC, Ruby on Rails.<br/>
+<em>👈 Aujourd'hui</em>
+</div>
 </div>
 
 <div style="background: #7f8c8d; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🎤 MVP - Presenter</div>
-<div style="font-size: 1.4rem; line-height: 1.4;">Le Presenter remplace le Contrôleur, la vue ne référence plus le modèle. Plus strict.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎤 MVP - Presenter</div>
+<div style="font-size: 1.25rem; line-height: 1.45;">
+Le <b>Presenter</b> remplace le contrôleur, plus strict.<br/>
+La vue ne référence plus le modèle : elle expose une interface que le presenter pilote.<br/>
+Historique : Swing, Android pré-Jetpack.
+</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🔮 MVVM - ViewModel</div>
-<div style="font-size: 1.4rem; line-height: 1.4;">Un ViewModel intermédiaire expose des propriétés observables, la vue s'y bind.<br/><em>CM4 👉</em></div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🔮 MVVM - ViewModel</div>
+<div style="font-size: 1.25rem; line-height: 1.45;">
+Un <b>ViewModel</b> intermédiaire expose des propriétés observables.<br/>
+La vue s'y bind, plus de code de synchronisation manuel.<br/>
+Né dans WPF, popularisé par Vue.js, Android Jetpack.<br/>
+<em>CM4 👉</em>
+</div>
 </div>
 
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
-JavaFX + FXML implémente nativement <b>MVC</b>. Avec les bindings du CM2, on glissera naturellement vers <b>MVVM</b> au CM4.
+JavaFX + FXML implémente nativement <b>MVC</b>. Avec les bindings, on glissera naturellement vers <b>MVVM</b> au CM4.
 </div>
 
 ---
