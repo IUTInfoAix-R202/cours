@@ -320,6 +320,10 @@ barre.getChildren().addAll(ok, cancel); // ← oups, ordre inversé
 
 ## La solution : séparer les préoccupations
 
+<style scoped>
+section { hyphens: auto; -webkit-hyphens: auto; }
+</style>
+
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Le principe de <b>séparation des préoccupations</b> (Edsger Dijkstra, 1974) : chaque fichier ne traite que d'<b>un</b> sujet.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
