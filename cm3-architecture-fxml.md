@@ -1765,11 +1765,11 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Quatre erreurs récurrentes au début, et le message d'erreur qui les caractérise.</p>
 
 <style scoped>
-section table { font-size: 0.85rem !important; width: 100%; border-collapse: collapse; }
-section th { background: #c0392b !important; color: white !important; padding: 0.35rem 0.7rem !important; text-align: left !important; }
-section td { padding: 0.3rem 0.7rem !important; border-bottom: 1px solid #e0e0e0 !important; vertical-align: top; }
+section table { font-size: 1rem !important; width: 100%; border-collapse: collapse; }
+section th { background: #c0392b !important; color: white !important; padding: 0.45rem 0.8rem !important; text-align: left !important; font-size: 1.15rem !important; }
+section td { padding: 0.4rem 0.8rem !important; border-bottom: 1px solid #e0e0e0 !important; vertical-align: top; }
 section tr:nth-child(even) td { background: #f4f6f8 !important; }
-section table code { font-size: 0.78rem !important; }
+section table code { font-size: 0.92rem !important; }
 </style>
 
 | Symptôme | Cause | Diagnostic |
@@ -1779,7 +1779,7 @@ section table code { font-size: 0.78rem !important; }
 | `LoadException: Method not found` | La méthode citée dans `onAction="#m"` n'existe pas, n'est pas `@FXML`, ou a une mauvaise signature. | Doit être `void m()` ou `void m(ActionEvent)`. |
 | `LoadException: ID is already defined` | Deux nœuds avec le même `fx:id` dans le même FXML. | Renommer pour garantir l'unicité. |
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Lisez attentivement la <b>première ligne</b> de la stack trace : le numéro de ligne dans le FXML est en général précis.
 </div>
 
