@@ -87,21 +87,21 @@ TP4 + TP5
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 1.5rem;">
 <div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🏗️ Propriétés observables</div>
+<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🏗️ Réactivité par data binding</div>
 <div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
-<b>IntegerProperty</b>, <b>StringProperty</b>, ... encapsulent une valeur et notifient les <b>InvalidationListener</b> et <b>ChangeListener</b>.
-</div>
-</div>
-<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🏗️ Bindings</div>
-<div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
-<b>bind()</b> unidirectionnel, <b>bindBidirectional()</b>, API fluente, <b>Bindings.when()</b>, <b>Bindings.concat()</b>.
+Les <b>propriétés observables</b> et les <b>bindings</b> (<code>bind()</code>, <code>bindBidirectional()</code>, API fluente) propagent automatiquement les changements de valeur.
 </div>
 </div>
 <div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 10px;">
 <div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🧠 Affordance</div>
 <div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
 <b>disableProperty().bind(...)</b> rend l'interface auto-explicative. Le bouton sait quand il peut être cliqué.
+</div>
+</div>
+<div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">⚡ Modèle événementiel</div>
+<div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
+Propagation <b>capture/bubbling</b>, <b>EventFilter</b> vs <b>EventHandler</b>, <code>consume()</code> pour arrêter la propagation.
 </div>
 </div>
 </div>
