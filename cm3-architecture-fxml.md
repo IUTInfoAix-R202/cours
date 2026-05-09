@@ -155,7 +155,7 @@ Aujourd'hui : <b>séparer</b> ce que l'interface affiche de ce qu'elle fait, et 
 ## TP1 + TP2 : tout est en Java
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
 </style>
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Jusqu'à présent, layout, styles, comportement et événements cohabitent dans la même classe Java.</p>
