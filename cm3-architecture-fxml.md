@@ -559,8 +559,8 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
   <text x="465" y="98" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">② événement</text>
   <line x1="680" y1="160" x2="750" y2="160" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrow-mvc)"/>
   <text x="715" y="98" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">③ appel métier</text>
-  <path d="M 820 215 C 820 330, 250 330, 250 215" stroke="#2c3e50" stroke-width="3" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow-mvc)"/>
-  <text x="535" y="248" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">④ propriétés observables → bindings (auto)</text>
+  <path d="M 820 210 C 820 330, 340 330, 340 210" stroke="#2c3e50" stroke-width="3" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow-mvc)"/>
+  <text x="580" y="248" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">④ propriétés observables → bindings (auto)</text>
 </svg>
 
 <div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; line-height: 1.55;">
