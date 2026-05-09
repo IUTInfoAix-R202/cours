@@ -2084,6 +2084,14 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 
 ## fx:root — la classe associée
 
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Le composant est sa propre classe : il se charge lui-même son FXML dans son constructeur.</p>
+
+<style scoped>
+section pre { font-size: 0.8rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+</style>
+
+<div style="background: #27ae60; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🎮 BarreStatut.java</div>
+
 ```java
 public class BarreStatut extends HBox {
 
@@ -2109,7 +2117,7 @@ public class BarreStatut extends HBox {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.25rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 La classe <b>EST</b> le composant : <code>new BarreStatut()</code> donne directement un <code>HBox</code> prêt à l'emploi.
 </div>
 
