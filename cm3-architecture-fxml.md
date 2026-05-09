@@ -330,17 +330,17 @@ section { hyphens: auto; -webkit-hyphens: auto; }
 
 <div style="background: #4a90d9; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">📄 Vue → FXML</div>
-<div style="font-size: 1.5rem; line-height: 1.5;">Un fichier <code>.fxml</code> décrit la <b>structure</b> : composants, conteneurs, layout.</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Le fichier <code>.fxml</code> décrit la <b>structure</b> de la vue : les composants, les conteneurs, le layout.</div>
 </div>
 
 <div style="background: #e67e22; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 Style → CSS</div>
-<div style="font-size: 1.5rem; line-height: 1.5;">Un fichier <code>.css</code> décrit l'<b>apparence</b> : couleurs, polices, espacements.</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Le fichier <code>.css</code> décrit l'<b>apparence</b> esthétique de chaque élément visible : les couleurs, les polices, les espacements.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ Logique → Java</div>
-<div style="font-size: 1.5rem; line-height: 1.5;">Un <b>contrôleur</b> Java décrit le <b>comportement</b> : interactions, calculs, validations.</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Le <b>contrôleur</b> Java décrit le <b>comportement</b> de la vue : les interactions, les calculs, les validations.</div>
 </div>
 
 </div>
