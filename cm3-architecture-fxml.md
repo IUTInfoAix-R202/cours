@@ -194,23 +194,23 @@ Tout fonctionne, mais une <b>seule classe</b> mélange déjà 4 préoccupations 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
 
 <div style="background: #e8a838; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">📦 Structure</div>
-<div style="font-size: 1.15rem;">Les conteneurs et leur disposition : <code>VBox</code>, <code>setAlignment</code>, <code>setPadding</code>...</div>
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.3rem;">📦 Structure</div>
+<div style="font-size: 1.5rem;">Les conteneurs et leur disposition : <code>VBox</code>, <code>setAlignment</code>, <code>setPadding</code>...</div>
 </div>
 
 <div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">🎨 Style</div>
-<div style="font-size: 1.15rem;">Les couleurs, les tailles, les bordures : <code>setStyle("-fx-...")</code>.</div>
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.3rem;">🎨 Style</div>
+<div style="font-size: 1.5rem;">Les couleurs, les tailles, les bordures : <code>setStyle("-fx-...")</code>.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">⚙️ Comportement</div>
-<div style="font-size: 1.15rem;">La logique métier : incrémenter, parser, mettre à jour.</div>
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.3rem;">⚙️ Comportement</div>
+<div style="font-size: 1.5rem;">La logique métier : incrémenter, parser, mettre à jour.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">⚡ Événements</div>
-<div style="font-size: 1.15rem;">Le câblage : qui réagit à quoi via <code>setOnAction(...)</code>.</div>
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.3rem;">⚡ Événements</div>
+<div style="font-size: 1.5rem;">Le câblage : qui réagit à quoi via <code>setOnAction(...)</code>.</div>
 </div>
 
 </div>
