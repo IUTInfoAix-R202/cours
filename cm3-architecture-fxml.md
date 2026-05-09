@@ -1129,7 +1129,7 @@ section pre { font-size: 0.8rem !important; line-height: 1.4 !important; margin:
   <Label fx:id="titre"
          text="Compteur"/>
   <HBox>
-    <Button text="-1"/>
+    <Button text="Décrémenter"/>
     <Label fx:id="valeur"
            text="0"/>
     <Button text="Incrémenter"/>
@@ -1145,7 +1145,7 @@ section pre { font-size: 0.8rem !important; line-height: 1.4 !important; margin:
 <pre class="tree-ascii">VBox (root)
 ├── Label "Compteur"     ← fx:id="titre"
 └── HBox
-    ├── Button "-1"
+    ├── Button "Décrémenter"
     ├── Label "0"        ← fx:id="valeur"
     └── Button "Incrémenter"</pre>
 
@@ -1161,31 +1161,33 @@ Une fois chargé, ce graphe est <b>indistinguable</b> d'un graphe créé par <co
 
 ## Le mapping est mécanique
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem;">
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Quatre règles de traduction qui couvrent tous les cas de figure du FXML.</p>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">Élément racine</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Une classe avec constructeur sans argument, par exemple <code>VBox</code>, <code>BorderPane</code>, <code>AnchorPane</code>.</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🌳 Élément racine</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Une classe avec constructeur sans argument : <code>VBox</code>, <code>BorderPane</code>, <code>AnchorPane</code>.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">Attribut sur l'élément</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Un setter standard : <code>text="X"</code> → <code>setText("X")</code>, <code>spacing="10"</code> → <code>setSpacing(10)</code>.</div>
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">⚙️ Attribut sur l'élément</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Un setter standard : <code>text="X"</code> → <code>setText("X")</code>, <code>spacing="10"</code> → <code>setSpacing(10)</code>.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">Élément imbriqué</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Un <code>add()</code> sur la collection enfants : un <code>&lt;Label&gt;</code> dans <code>&lt;VBox&gt;</code> appelle <code>vbox.getChildren().add(label)</code>.</div>
+<div style="background: #e8a838; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">📦 Élément imbriqué</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Un <code>add()</code> sur la collection enfants : <code>&lt;Label&gt;</code> dans <code>&lt;VBox&gt;</code> → <code>vbox.getChildren().add(label)</code>.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">Sous-élément nommé</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Pour <code>BorderPane</code> : <code>&lt;top&gt;</code>, <code>&lt;center&gt;</code>, etc. → <code>setTop(...)</code>, <code>setCenter(...)</code>.</div>
+<div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🏷️ Sous-élément nommé</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Pour <code>BorderPane</code> : <code>&lt;top&gt;</code>, <code>&lt;center&gt;</code>… → <code>setTop(...)</code>, <code>setCenter(...)</code>.</div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.7rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 👉 Si vous savez écrire le code Java équivalent, vous savez écrire le FXML.
 </div>
 
