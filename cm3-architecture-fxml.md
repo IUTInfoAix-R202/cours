@@ -2678,23 +2678,26 @@ Idéal pour un <b>theme switcher</b> (clair/sombre) : on remplace la feuille au 
 
 ## Standards JavaFX qu'il faut respecter
 
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Six conventions de plateforme à internaliser dès le TP3 : elles font partie du contrat utilisateur.</p>
+
 <style scoped>
-section table { font-size: 0.95rem !important; width: 100%; border-collapse: collapse; }
-section th { background: #27ae60 !important; color: white !important; padding: 0.4rem 0.8rem !important; text-align: left !important; }
-section td { padding: 0.35rem 0.8rem !important; border-bottom: 1px solid #e0e0e0 !important; }
+section table { font-size: 1.1rem !important; width: 100%; border-collapse: collapse; }
+section th { background: #27ae60 !important; color: white !important; padding: 0.5rem 0.9rem !important; text-align: left !important; font-size: 1.2rem !important; }
+section td { padding: 0.45rem 0.9rem !important; border-bottom: 1px solid #e0e0e0 !important; }
 section tr:nth-child(even) td { background: #f4f6f8 !important; }
+section table code { font-size: 1rem !important; }
 </style>
 
 | Convention | Pratique attendue |
 |---|---|
-| 🔘 Position des boutons | `[ Annuler ]   [ OK ]` (Annuler à gauche, OK à droite — convention macOS/Windows moderne). |
+| 🔘 Position des boutons | `[ Annuler ]   [ OK ]` (Annuler à gauche, OK à droite - convention macOS/Windows moderne). |
 | ⌨️ Raccourcis | <kbd>Enter</kbd> = bouton primaire (OK), <kbd>Esc</kbd> = bouton secondaire (Annuler). |
 | 🏷️ Labels | Toujours à gauche du champ associé, alignés à droite dans un `GridPane`. |
 | ⚠️ Messages d'erreur | Sous le champ concerné, en rouge, avec une icône claire. |
 | ⏳ Action longue | Disable du bouton + indicateur de progression visible. |
 | 🎯 Affordance | Un bouton est toujours `disable` quand son action est invalide *(CM2)*. |
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Ces conventions sont gravées dans la mémoire musculaire de vos utilisateurs. Les casser, c'est les ralentir.
 </div>
 
