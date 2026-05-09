@@ -2834,11 +2834,11 @@ section table code { font-size: 0.92rem !important; padding: 1px 4px !important;
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quelques pistes pour approfondir FXML et MVC, du tutoriel officiel à la lecture du code Eclipse.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem; align-items: stretch;">
 
-<div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.5rem;">📚 Documentation</div>
-<div style="font-size: 1rem; line-height: 1.55;">
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📚 Documentation</div>
+<div style="font-size: 1.2rem; line-height: 1.5;">
 <a href="https://openjfx.io/javadoc/25/javafx.fxml/javafx/fxml/doc-files/introduction_to_fxml.html" style="color: #a0d0ff;">Introduction to FXML</a> - référence officielle<br/>
 <a href="https://openjfx.io/javadoc/25/javafx.fxml/javafx/fxml/FXMLLoader.html" style="color: #a0d0ff;">FXMLLoader javadoc</a> - tous les modes de chargement<br/>
 <a href="https://gluonhq.com/products/scene-builder/" style="color: #a0d0ff;">SceneBuilder par Gluon</a> - téléchargement officiel<br/>
@@ -2846,18 +2846,18 @@ section table code { font-size: 0.92rem !important; padding: 1px 4px !important;
 </div>
 </div>
 
-<div style="background: #8e44ad; color: white; padding: 1.1rem 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.5rem;">🧵 Concepts connexes</div>
-<div style="font-size: 1.05rem; line-height: 1.6;">
+<div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🧵 Concepts connexes</div>
+<div style="font-size: 1.2rem; line-height: 1.5;">
 <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" style="color: #f3d5ff;">MVC</a> chez Smalltalk-80, <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter" style="color: #f3d5ff;">MVP</a>, <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel" style="color: #f3d5ff;">MVVM</a><br/>
 <a href="https://www.nngroup.com/articles/ten-usability-heuristics/" style="color: #f3d5ff;">10 heuristiques de Nielsen</a><br/>
 <a href="https://martinfowler.com/eaaDev/uiArchs.html" style="color: #f3d5ff;">UI Architectures (Fowler)</a> <em>(CM4)</em>
 </div>
 </div>
 
-<div style="background: #e67e22; color: white; padding: 1.1rem 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.5rem;">🔍 Pour les curieux</div>
-<div style="font-size: 1.05rem; line-height: 1.6;">
+<div style="background: #e67e22; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🔍 Pour les curieux</div>
+<div style="font-size: 1.2rem; line-height: 1.5;">
 Source OpenJFX de <a href="https://github.com/openjdk/jfx/blob/master/modules/javafx.fxml/src/main/java/javafx/fxml/FXMLLoader.java" style="color: #ffe0c0;"><code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px; color: #ffe0c0;">FXMLLoader</code></a> : observez la logique de réflexion qui injecte les <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">@FXML</code> et appelle <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">initialize()</code>.
 </div>
 </div>
