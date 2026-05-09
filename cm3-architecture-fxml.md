@@ -1275,10 +1275,15 @@ section pre { font-size: 0.9rem !important; line-height: 1.4 !important; margin:
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'annotation <code>@FXML</code> dit à <code>FXMLLoader</code> : « <em>injecte le nœud nommé X dans le champ portant le même nom</em> ».</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
+.inj-col { display: flex; flex-direction: column; }
+</style>
 
-<div>
-<div style="background: #4a90d9; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">compteur.fxml</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+
+<div class="inj-col">
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 compteur.fxml</div>
 
 ```xml
 <VBox xmlns:fx=
@@ -1293,8 +1298,8 @@ section pre { font-size: 0.9rem !important; line-height: 1.4 !important; margin:
 
 </div>
 
-<div>
-<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">CompteurController.java</div>
+<div class="inj-col">
+<div style="background: #27ae60; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🎮 CompteurController.java</div>
 
 ```java
 public class CompteurController {
@@ -1314,7 +1319,7 @@ public class CompteurController {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 La règle : <b>même nom dans le FXML et dans le Java</b>. Le <code>FXMLLoader</code> fait le câblage par réflexion.
 </div>
 
