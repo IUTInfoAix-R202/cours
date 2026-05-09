@@ -865,22 +865,27 @@ Le contrôleur n'a pas de <code>if</code>, pas de calcul. Juste : <em>« j'écou
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC s'appuie sur le <b>pattern Observer</b> que vous connaissez déjà : la vue observe le modèle.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
 <div style="background: #4a90d9; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">CM1 — Observer naïf</div>
-<div style="font-size: 1.5rem; line-height: 1.4;">Un bouton, un <code>EventHandler</code>, un appel manuel à <code>label.setText(...)</code> dans le handler.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">CM1 — Observer naïf</div>
+<div style="font-size: 1.25rem; line-height: 1.4;">Un bouton, un <code>EventHandler</code>, un appel manuel à <code>label.setText(...)</code> dans le handler.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">CM2 — Observer via bindings</div>
-<div style="font-size: 1.5rem; line-height: 1.4;">Une <code>IntegerProperty</code> dans le modèle, un <code>label.textProperty().bind(...)</code> dans la vue. Plus de handler manuel.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">CM2 — Observer via bindings</div>
+<div style="font-size: 1.25rem; line-height: 1.4;">Une <code>IntegerProperty</code> dans le modèle, un <code>label.textProperty().bind(...)</code> dans la vue. Plus de handler manuel.</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🎯 CM3 — Observer via MVC</div>
+<div style="font-size: 1.25rem; line-height: 1.4;">Propriétés déclarées dans le modèle, observées dans le contrôleur, vue connectée par bindings.</div>
 </div>
 
 </div>
 
-<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
-🎯 <b>CM3 :</b> ces propriétés sont déclarées dans le modèle, observées dans le contrôleur, et la vue ne les voit qu'à travers les bindings du contrôleur.
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
+À chaque CM, le pattern Observer s'enrichit : du handler manuel jusqu'à la séparation MVC complète.
 </div>
 
 ---
