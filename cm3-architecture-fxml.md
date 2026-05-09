@@ -87,15 +87,17 @@ TP4 + TP5
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 1.5rem;">
 <div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🏗️ Réactivité par data binding</div>
+<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🏗️ Réactivité et binding</div>
 <div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
-Les <b>propriétés observables</b> et les <b>bindings</b> (<code>bind()</code>, <code>bindBidirectional()</code>, API fluente) propagent automatiquement les changements de valeur.
+Les <b>propriétés observables</b> et les <b>bindings</b> propagent automatiquement les changements de valeur.
+
+<em>Aujourd'hui : déclarer ces flux <b>en même temps</b> que la structure de l'interface.</em>
 </div>
 </div>
 <div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 10px;">
 <div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🧠 Affordance</div>
 <div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
-La <b>mise à jour automatique de l'apparence</b> de l'IHM (par exemple via <code>disableProperty().bind(...)</code>) rend l'interface <b>auto-explicative</b>.
+La <b>mise à jour automatique de l'apparence</b> de l'IHM rend l'interface <b>auto-explicative</b> en rendant visible ce qui est possible et ce qui ne l'est pas.
 </div>
 </div>
 <div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 10px;">
