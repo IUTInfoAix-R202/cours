@@ -367,7 +367,7 @@ section pre { font-size: 0.65rem !important; line-height: 1.35 !important; margi
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">📄 Déclaratif — quoi</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">📄 Déclaratif - quoi</div>
 <div style="font-size: 1.4rem; line-height: 1.5;">« <em>Voici un VBox qui contient un Label et un bouton dont le texte est "Incrémenter".</em> »<br/>On décrit le résultat final, le moteur s'occupe de l'instancier.</div>
 </div>
 
@@ -390,8 +390,8 @@ Le FXML est à la fois plus court, plus visuel, et comme c'est un document, un o
 ## Démo : avant/après sur le compteur
 
 <style scoped>
-section pre { font-size: 0.7rem !important; line-height: 1.3 !important; }
-section code { font-size: 0.7rem !important; }
+section pre { font-size: 0.6rem !important; line-height: 1.3 !important; border-radius: 0 0 6px 6px !important; margin: 0 !important; }
+section code { font-size: 0.6rem !important; }
 </style>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.3rem;">
