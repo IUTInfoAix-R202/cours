@@ -894,12 +894,18 @@ Le contrôleur n'a pas de <code>if</code>, pas de calcul. Juste : <em>« j'écou
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour que le modèle reste vraiment indépendant de la vue, il expose une <b>API publique</b> bien dessinée.</p>
 
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+</style>
+
+<div style="background: #1a5276; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📊 Compteur.java</div>
+
 ```java
 public class Compteur {
-  // ❌ Champ privé, mutable de l'extérieur via setValeur()...
+  // ✗ Champ privé, mutable de l'extérieur via setValeur()...
   // private int valeur;
 
-  // ✅ Propriété observable, lecture publique, écriture contrôlée
+  // ✓ Propriété observable, lecture publique, écriture contrôlée
   private final IntegerProperty valeur = new SimpleIntegerProperty(0);
 
   public ReadOnlyIntegerProperty valeurProperty() {
@@ -920,7 +926,7 @@ public class Compteur {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.25rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Le contrôleur appelle <code>incrementer()</code>, pas <code>setValeur(getValeur()+1)</code>. La <b>logique reste dans le modèle</b>.
 </div>
 
