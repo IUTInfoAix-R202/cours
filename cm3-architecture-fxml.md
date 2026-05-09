@@ -326,7 +326,7 @@ section { hyphens: auto; -webkit-hyphens: auto; }
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Le principe de <b>séparation des préoccupations</b> (Edsger Dijkstra, 1974) : chaque fichier ne traite que d'<b>un</b> sujet.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin: 2.5rem 0;">
 
 <div style="background: #4a90d9; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">📄 Vue → FXML</div>
@@ -353,18 +353,22 @@ section { hyphens: auto; -webkit-hyphens: auto; }
 
 ## Procédural ↔ déclaratif
 
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 1rem 0 !important; }
+</style>
+
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Le passage à FXML, c'est aussi le passage d'un style impératif à un style déclaratif.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0.4rem 0 0.8rem 0;">
 
 <div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ Procédural — comment</div>
-<div style="font-size: 1.05rem; line-height: 1.5;">« <em>Créer un VBox, lui mettre un padding, ajouter un Label dedans...</em> »<br/>L'ordre des instructions compte, on décrit chaque étape.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ Procédural — comment</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">« <em>Créer un VBox, lui mettre un padding, ajouter un Label dedans...</em> »<br/>L'ordre des instructions compte, on décrit chaque étape.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📄 Déclaratif — quoi</div>
-<div style="font-size: 1.05rem; line-height: 1.5;">« <em>Voici un VBox qui contient un Label.</em> »<br/>On décrit le résultat final, le moteur s'occupe de l'instancier.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">📄 Déclaratif — quoi</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">« <em>Voici un VBox qui contient un Label.</em> »<br/>On décrit le résultat final, le moteur s'occupe de l'instancier.</div>
 </div>
 
 </div>
@@ -377,7 +381,7 @@ section { hyphens: auto; -webkit-hyphens: auto; }
 </VBox>
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Plus court, plus visuel, et un outil graphique <em>(SceneBuilder)</em> peut l'éditer.
 </div>
 
