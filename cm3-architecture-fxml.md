@@ -783,7 +783,7 @@ section pre { font-size: 0.78rem !important; line-height: 1.35 !important; margi
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
 <div class="fat-col" style="background: #c0392b; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">❌ Anti-pattern</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Anti-pattern</div>
 
 ```java
 public class FormulaireController {
@@ -802,7 +802,7 @@ public class FormulaireController {
 </div>
 
 <div class="fat-col" style="background: #27ae60; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">✅ Avec un modèle</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">✓ Avec un modèle</div>
 
 ```java
 public class FormulaireController {
