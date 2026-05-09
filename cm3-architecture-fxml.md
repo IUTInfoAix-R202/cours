@@ -2443,20 +2443,22 @@ section table code { font-size: 0.92rem !important; }
 
 ## Anti-pattern : la disparate
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Trois écrans, trois variations du même bouton : l'utilisateur doit deviner à chaque fois.</p>
 
-<div style="background: #c0392b; color: white; padding: 1.1rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">❌ Sur 3 écrans</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+
+<div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">✗ Sur 3 écrans</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">
 • Écran A : <code>[ Annuler ]</code> à gauche, gris<br/>
 • Écran B : <code>[ Cancel ]</code> à droite, rouge<br/>
 • Écran C : <code>[ × Fermer ]</code> en haut, bleu
 </div>
 </div>
 
-<div style="background: #27ae60; color: white; padding: 1.1rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">✅ Sur 3 écrans</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">✓ Sur 3 écrans</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">
 • Toujours <code>[ Annuler ]</code><br/>
 • Toujours en bas à droite<br/>
 • Toujours la même couleur
@@ -2465,7 +2467,7 @@ section table code { font-size: 0.92rem !important; }
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 💡 La disparate force l'utilisateur à <b>réapprendre</b> à chaque écran. La cohérence le laisse se concentrer sur sa tâche.
 </div>
 
