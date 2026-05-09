@@ -1080,8 +1080,8 @@ Chaque <b>élément XML</b> = un appel <code>new ClasseJavaFX()</code>. Chaque <
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">✓ En FXML</div>
-<ul style="font-size: 1.3rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">✓ En FXML</div>
+<ul style="font-size: 1.5rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
 <li>La <b>structure</b> de l'arbre de scène</li>
 <li>Les <b>propriétés statiques</b> (<code>text</code>, <code>spacing</code>, <code>alignment</code>)</li>
 <li>Les <b>identifiants</b> (<code>fx:id</code>, <code>id</code>, <code>styleClass</code>)</li>
@@ -1091,8 +1091,8 @@ Chaque <b>élément XML</b> = un appel <code>new ClasseJavaFX()</code>. Chaque <
 </div>
 
 <div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Hors de FXML</div>
-<ul style="font-size: 1.3rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Hors de FXML</div>
+<ul style="font-size: 1.5rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
 <li>Toute <b>logique métier</b> (calculs, conditions)</li>
 <li>L'<b>état dynamique</b> (texte qui change au runtime)</li>
 <li>Les <b>boucles</b> et constructions répétitives</li>
