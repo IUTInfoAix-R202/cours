@@ -581,10 +581,10 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
   <text x="715" y="80" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">appel métier</text>
 
   <!-- Arrow 4 : Modèle → Vue (curve, bindings) -->
-  <path d="M 820 210 Q 820 320 340 320 Q 250 320 250 210" stroke="#2c3e50" stroke-width="3" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow-mvc)"/>
-  <circle cx="580" cy="320" r="18" fill="white" stroke="#2c3e50" stroke-width="2"/>
-  <text x="580" y="327" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">4</text>
-  <text x="580" y="350" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">propriétés observables → bindings (auto)</text>
+  <path d="M 820 210 C 820 290, 250 290, 250 210" stroke="#2c3e50" stroke-width="3" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow-mvc)"/>
+  <circle cx="535" cy="277" r="18" fill="white" stroke="#2c3e50" stroke-width="2"/>
+  <text x="535" y="284" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">4</text>
+  <text x="535" y="320" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">propriétés observables → bindings (auto)</text>
 </svg>
 
 <div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; line-height: 1.55;">
