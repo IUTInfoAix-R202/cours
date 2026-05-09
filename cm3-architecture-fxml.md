@@ -424,22 +424,20 @@ public class CompteurApp extends Application {
 <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
 
 <div>
-<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">Après — compteur.fxml (~10 lignes)</div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">Après - compteur.fxml (~10 lignes)</div>
 
 ```xml
 <VBox fx:controller="CompteurController"
       xmlns:fx="http://javafx.com/fxml">
-  <Label fx:id="label" text="0"
-         styleClass="compteur"/>
-  <Button text="Incrémenter"
-          onAction="#incrementer"/>
+  <Label fx:id="label" text="0" styleClass="compteur"/>
+  <Button text="Incrémenter" onAction="#incrementer"/>
 </VBox>
 ```
 
 </div>
 
 <div>
-<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">Après — CompteurController.java (~6 lignes)</div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">Après - CompteurController.java (~6 lignes)</div>
 
 ```java
 public class CompteurController {
