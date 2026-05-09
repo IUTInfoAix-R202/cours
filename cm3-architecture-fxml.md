@@ -87,7 +87,7 @@ TP4 + TP5
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 1.5rem;">
 <div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🏗️ Réactivité et binding</div>
+<div style="font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: bold;">🏗️ Réactivité et binding</div>
 <div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
 Les <b>propriétés observables</b> et les <b>bindings</b> propagent automatiquement les changements de valeur.
 
@@ -95,13 +95,13 @@ Les <b>propriétés observables</b> et les <b>bindings</b> propagent automatique
 </div>
 </div>
 <div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🧠 Affordance</div>
+<div style="font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: bold;">🧠 Affordance</div>
 <div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
 La <b>mise à jour automatique de l'apparence</b> de l'IHM rend l'interface <b>auto-explicative</b> en rendant visible ce qui est possible et ce qui ne l'est pas.
 </div>
 </div>
 <div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">⚡ Modèle événementiel</div>
+<div style="font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: bold;">⚡ Modèle événementiel</div>
 <div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
 Propagation <b>capture/bubbling</b>, <b>EventFilter</b> vs <b>EventHandler</b>, <code>consume()</code> pour arrêter la propagation.
 </div>
@@ -120,19 +120,19 @@ Aujourd'hui : <b>séparer</b> ce que l'interface affiche de ce qu'elle fait, et 
 
 <div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Concevoir</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Une architecture <b>MVC</b> où la vue est écrite en <b>FXML</b>, le contrôleur reste mince, et les composants se réutilisent (<code>fx:root</code>, <code>fx:include</code>).</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Une architecture <b>MVC</b> où la vue est écrite en <b>FXML</b>, le contrôleur reste mince, et les composants se réutilisent (<code>fx:root</code>, <code>fx:include</code>).</div>
 <div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Parties 2 + 3 + 4</div>
 </div>
 
 <div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">⚡ Câbler</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Les interactions de la vue au contrôleur de manière déclarative : <code>@FXML</code>, <code>onAction="#méthode"</code>, hook <code>initialize()</code>.</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Les interactions de la vue au contrôleur de manière déclarative : <code>@FXML</code>, <code>onAction="#méthode"</code>, hook <code>initialize()</code>.</div>
 <div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 3</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🧠 Garantir</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">La <b>cohérence et le respect des standards</b> (Nielsen #4) en mutualisant FXML et CSS.</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">La <b>cohérence et le respect des standards</b> (Nielsen #4) en mutualisant FXML et CSS.</div>
 <div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 5</div>
 </div>
 

@@ -87,21 +87,21 @@ TP4 + TP5
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 1.5rem;">
 <div style="background: #4a90d9; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🎭 Le graphe de scène</div>
+<div style="font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: bold;">🎭 Le graphe de scène</div>
 <div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
 <b>Stage</b> = la fenêtre, <b>Scene</b> = le contenu, <b>Node</b> = chaque élément.<br/>
 L'arbre de nœuds organise l'interface en hiérarchie parent/enfant.
 </div>
 </div>
 <div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">📦 Les conteneurs</div>
+<div style="font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: bold;">📦 Les conteneurs</div>
 <div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
 <b>BorderPane</b> (5 zones), <b>VBox/HBox</b> (empilements), <b>GridPane</b> (grille).<br/>
 Les principes Gestalt guident le choix du conteneur.
 </div>
 </div>
 <div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">⚡ Les événements</div>
+<div style="font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: bold;">⚡ Les événements</div>
 <div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
 Le <b>pattern Observer</b> : le bouton notifie, le handler réagit.<br/>
 3 styles d'écriture : classe nommée, anonyme, lambda.
@@ -121,19 +121,19 @@ Aujourd'hui : rendre l'interface <b>réactive</b> sans écrire d'EventHandler po
 
 <div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Appliquer</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">La <b>réactivité par data binding</b> : propriétés observables, <code>bind()</code>, <code>bindBidirectional()</code> et l'API fluente.</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">La <b>réactivité par data binding</b> : propriétés observables, <code>bind()</code>, <code>bindBidirectional()</code> et l'API fluente.</div>
 <div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Parties 2 + 3</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🧠 Concevoir</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Une interface à <b>affordance automatique</b> avec <code>disableProperty().bind(...)</code>.</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Une interface à <b>affordance automatique</b> avec <code>disableProperty().bind(...)</code>.</div>
 <div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 4</div>
 </div>
 
 <div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">⚡ Maîtriser</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Le <b>modèle événementiel complet</b> : propagation capture/bubbling, <code>EventFilter</code> vs <code>EventHandler</code>, <code>consume()</code>.</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Le <b>modèle événementiel complet</b> : propagation capture/bubbling, <code>EventFilter</code> vs <code>EventHandler</code>, <code>consume()</code>.</div>
 <div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 5</div>
 </div>
 
