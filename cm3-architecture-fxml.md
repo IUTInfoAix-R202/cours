@@ -776,14 +776,14 @@ Le contrôleur ne touche <b>jamais</b> au <code>Label</code>. C'est le binding q
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quand le contrôleur grossit jusqu'à devenir une décharge, c'est qu'on n'a pas vraiment de modèle.</p>
 
 <style scoped>
-section pre { font-size: 0.78rem !important; line-height: 1.35 !important; margin: 0 !important; flex: 1; }
+section pre { font-size: 0.78rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
 .fat-col { display: flex; flex-direction: column; }
 </style>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
-<div class="fat-col" style="background: #c0392b; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Anti-pattern</div>
+<div class="fat-col">
+<div style="background: #c0392b; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">✗ Anti-pattern</div>
 
 ```java
 public class FormulaireController {
@@ -801,8 +801,8 @@ public class FormulaireController {
 
 </div>
 
-<div class="fat-col" style="background: #27ae60; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">✓ Avec un modèle</div>
+<div class="fat-col">
+<div style="background: #27ae60; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">✓ Avec un modèle</div>
 
 ```java
 public class FormulaireController {
