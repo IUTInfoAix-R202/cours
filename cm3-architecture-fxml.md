@@ -868,12 +868,12 @@ Le contrôleur n'a pas de <code>if</code>, pas de calcul. Juste : <em>« j'écou
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
 <div style="background: #4a90d9; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">CM1 — Observer naïf</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">⚡ CM1 — Observer naïf</div>
 <div style="font-size: 1.25rem; line-height: 1.4;">Un bouton, un <code>EventHandler</code>, un appel manuel à <code>label.setText(...)</code> dans le handler.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">CM2 — Observer via bindings</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🔗 CM2 — Observer via bindings</div>
 <div style="font-size: 1.25rem; line-height: 1.4;">Une <code>IntegerProperty</code> dans le modèle, un <code>label.textProperty().bind(...)</code> dans la vue. Plus de handler manuel.</div>
 </div>
 
