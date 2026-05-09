@@ -340,7 +340,7 @@ section { hyphens: auto; -webkit-hyphens: auto; }
 
 <div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ Logique → Java</div>
-<div style="font-size: 1.5rem; line-height: 1.5;">Une classe Java «&nbsp;contrôleur&nbsp;» contient le <b>comportement</b> et orchestre les interactions.</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Un <b>contrôleur</b> Java décrit le <b>comportement</b> : interactions, calculs, validations.</div>
 </div>
 
 </div>
