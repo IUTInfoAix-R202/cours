@@ -686,9 +686,9 @@ Aucun des trois fichiers ne « connaît » les détails des autres : ils communi
   <text x="740" y="200" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">new() (parsing FXML)</text>
   <rect x="450" y="320" width="240" height="55" rx="14" fill="#1a5276"/>
   <text x="570" y="355" text-anchor="middle" fill="white" font-family="sans-serif" font-size="18" font-weight="bold">📊 Compteur (Modèle)</text>
-  <line x1="290" y1="295" x2="490" y2="320" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-creation)"/>
-  <rect x="290" y="298" width="195" height="22" rx="4" fill="#ecf0f1" stroke="#bdc3c7"/>
-  <text x="387" y="314" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">new() + bind sur properties</text>
+  <polyline points="240,295 240,347 450,347" fill="none" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-creation)"/>
+  <rect x="250" y="336" width="190" height="22" rx="4" fill="#ecf0f1" stroke="#bdc3c7"/>
+  <text x="345" y="352" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">new() + bind sur properties</text>
 </svg>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.4rem; text-align: center;">
