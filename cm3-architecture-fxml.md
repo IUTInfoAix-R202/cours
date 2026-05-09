@@ -2539,31 +2539,33 @@ Heuristique #4 « <em>cohérence et standards</em> » à l'échelle d'une organi
 
 ## Quelques design systems célèbres
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Quatre exemples emblématiques pour situer le concept dans le paysage industriel.</p>
 
-<div style="background: #4285f4; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🟦 Material Design (Google)</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Lancé en 2014 pour Android. Métaphore du papier et de l'encre. Largement adopté hors Google.<br/><a href="https://m3.material.io/" style="color: #d0e0ff;">m3.material.io</a></div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+
+<div style="background: #4285f4; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🟦 Material Design (Google)</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Lancé en 2014 pour Android. Métaphore du papier et de l'encre. Largement adopté hors Google.<br/><a href="https://m3.material.io/" style="color: #d0e0ff;">m3.material.io</a></div>
 </div>
 
-<div style="background: #1d1d1f; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">⚪ Apple HIG</div>
-<div style="font-size: 1.1rem; line-height: 1.45;"><em>Human Interface Guidelines</em>, depuis 1987. Référence pour macOS, iOS, watchOS, visionOS.<br/><a href="https://developer.apple.com/design/human-interface-guidelines/" style="color: #d0e0ff;">developer.apple.com/design</a></div>
+<div style="background: #1d1d1f; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">⚪ Apple HIG</div>
+<div style="font-size: 1.3rem; line-height: 1.4;"><em>Human Interface Guidelines</em>, depuis 1987. Référence pour macOS, iOS, watchOS, visionOS.<br/><a href="https://developer.apple.com/design/human-interface-guidelines/" style="color: #d0e0ff;">developer.apple.com/design</a></div>
 </div>
 
-<div style="background: #2557a7; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🟦 Fluent (Microsoft)</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Successeur de Metro. Cohérence Windows, Office, Teams, Xbox.<br/><a href="https://fluent2.microsoft.design/" style="color: #d0e0ff;">fluent2.microsoft.design</a></div>
+<div style="background: #2557a7; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🟦 Fluent (Microsoft)</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Successeur de Metro. Cohérence Windows, Office, Teams, Xbox.<br/><a href="https://fluent2.microsoft.design/" style="color: #d0e0ff;">fluent2.microsoft.design</a></div>
 </div>
 
-<div style="background: #0079bf; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🇫🇷 DSFR (État français)</div>
-<div style="font-size: 1.1rem; line-height: 1.45;"><em>Design System de l'État français</em>. Tous les sites <code>.gouv.fr</code> partagent les mêmes composants.<br/><a href="https://www.systeme-de-design.gouv.fr/" style="color: #d0e0ff;">systeme-de-design.gouv.fr</a></div>
+<div style="background: #0079bf; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🇫🇷 DSFR (État français)</div>
+<div style="font-size: 1.3rem; line-height: 1.4;"><em>Design System de l'État français</em>. Tous les sites <code>.gouv.fr</code> partagent les mêmes composants.<br/><a href="https://www.systeme-de-design.gouv.fr/" style="color: #d0e0ff;">systeme-de-design.gouv.fr</a></div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.25rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Tous matérialisent leurs règles dans du <b>code réutilisable</b> (CSS, composants React, fichiers Figma...).
 </div>
 
