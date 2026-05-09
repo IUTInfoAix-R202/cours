@@ -1424,6 +1424,12 @@ public class CompteurController {
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Après injection des nœuds, <code>FXMLLoader</code> cherche une méthode <code>initialize()</code> dans le contrôleur et l'appelle.</p>
 
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+</style>
+
+<div style="background: #27ae60; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🎮 CompteurController.java</div>
+
 ```java
 public class CompteurController {
   @FXML private Label message;
@@ -1443,7 +1449,7 @@ public class CompteurController {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 <b>Ne mettez rien dans le constructeur</b> qui touche à un champ <code>@FXML</code> : ils sont encore <code>null</code> à ce stade.
 </div>
 
