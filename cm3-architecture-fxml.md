@@ -1471,6 +1471,12 @@ Le constructeur du contrôleur s'exécute <b>avant</b> l'injection ; <code>initi
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">FXML supporte une syntaxe d'expression <code>${...}</code> pour binder directement dans le XML, sans passer par le contrôleur.</p>
 
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+</style>
+
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 vue.fxml</div>
+
 ```xml
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="MaController">
 
@@ -1485,16 +1491,16 @@ Le constructeur du contrôleur s'exécute <b>avant</b> l'injection ; <code>initi
 </VBox>
 ```
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem; align-items: stretch;">
 
-<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">✅ Bien pour le simple</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">Bindings UI ↔ UI sans logique métier.</div>
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">✓ Bien pour le simple</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Bindings UI ↔ UI sans logique métier.</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">⚠️ Pas pour le complexe</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">Pour des bindings sophistiqués <em>(Bindings.when, calculs)</em>, garder l'<code>initialize()</code>.</div>
+<div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">⚠️ Pas pour le complexe</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Pour des bindings sophistiqués <em>(Bindings.when, calculs)</em>, garder l'<code>initialize()</code>.</div>
 </div>
 
 </div>
