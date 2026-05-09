@@ -895,37 +895,28 @@ Le contrôleur n'a pas de <code>if</code>, pas de calcul. Juste : <em>« j'écou
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour que le modèle reste indépendant de la vue, il expose une <b>API publique contrôlée</b> : lectures observables et méthodes métier, pas de setter générique.</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+section pre { font-size: 0.55rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
 </style>
 
 <div style="background: #1a5276; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📊 Compteur.java</div>
 
 ```java
 public class Compteur {
-
   // ✓ Propriété observable, lecture publique, écriture contrôlée
-  private final IntegerProperty valeur = new SimpleIntegerProperty(0);
+  private IntegerProperty valeur = new SimpleIntegerProperty(0);
 
-  public ReadOnlyIntegerProperty valeurProperty() {
-    return valeur;          // ← le contrôleur peut bind dessus, pas modifier
-  }
-
-  public int getValeur() {
-    return valeur.get();
-  }
-
-  public void incrementer() { // ← API métier, pas un setter générique
-    valeur.set(valeur.get() + 1);
-  }
-
-  public void reset() {
-    valeur.set(0);
-  }
+  public ReadOnlyIntegerProperty valeurProperty() { return valeur;}
+  // ← le contrôleur peut bind dessus, pas modifier
+  public int getValeur() { return valeur.get();}
+  
+  public void incrementer() { valeur.set(valeur.get() + 1);}
+  // ← API métier, pas un setter générique
+  public void reset() { valeur.set(0);}
 }
 ```
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-Le contrôleur appelle <code>incrementer()</code>, pas <code>setValeur(getValeur()+1)</code>. La <b>logique reste dans le modèle</b>.
+Le contrôleur appelle <code>incrementer()</code>, pas <code>setValeur(getValeur()+1)</code>. La <b>logique métier reste dans le modèle</b>.
 </div>
 
 ---
@@ -934,26 +925,26 @@ Le contrôleur appelle <code>incrementer()</code>, pas <code>setValeur(getValeur
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC a engendré de nombreuses variantes selon le degré de découplage souhaité.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">MVC classique</div>
-<div style="font-size: 1.05rem; line-height: 1.5;">Vue et contrôleur peuvent référencer le modèle. Adapté à JavaFX.<br/><em>Aujourd'hui ←</em></div>
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🎯 MVC classique</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Vue et contrôleur peuvent référencer le modèle. Adapté à JavaFX.<br/><em>← Aujourd'hui</em></div>
 </div>
 
-<div style="background: #7f8c8d; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">MVP — Presenter</div>
-<div style="font-size: 1.05rem; line-height: 1.5;">Le Presenter remplace le Contrôleur, la vue ne référence plus le modèle. Plus strict.</div>
+<div style="background: #7f8c8d; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🎤 MVP - Presenter</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Le Presenter remplace le Contrôleur, la vue ne référence plus le modèle. Plus strict.</div>
 </div>
 
-<div style="background: #8e44ad; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">MVVM — ViewModel</div>
-<div style="font-size: 1.05rem; line-height: 1.5;">Un ViewModel intermédiaire expose des propriétés observables, la vue s'y bind.<br/><em>CM4 →</em></div>
+<div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🔮 MVVM - ViewModel</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Un ViewModel intermédiaire expose des propriétés observables, la vue s'y bind.<br/><em>CM4 →</em></div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.4rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 JavaFX + FXML implémente nativement <b>MVC</b>. Avec les bindings du CM2, on glissera naturellement vers <b>MVVM</b> au CM4.
 </div>
 
