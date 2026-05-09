@@ -1719,6 +1719,14 @@ Au CM4, on verra un mécanisme plus propre via injection de dépendances <em>(Gu
 
 ## Le namespace FXML
 
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Les déclarations en tête de fichier FXML : pas de magie, juste du XML structuré.</p>
+
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+</style>
+
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 vue.fxml</div>
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.VBox?>
@@ -1731,21 +1739,21 @@ Au CM4, on verra un mécanisme plus propre via injection de dépendances <em>(Gu
 </VBox>
 ```
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem;">
 
-<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">📦 Imports</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">Les <code>&lt;?import ...?&gt;</code> permettent d'écrire <code>&lt;Label&gt;</code> au lieu du nom complet.</div>
+<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold;">📦 Imports</div>
+<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;">Les <code>&lt;?import ...?&gt;</code> permettent d'écrire <code>&lt;Label&gt;</code> au lieu du nom complet.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">🔧 xmlns:fx</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">Active les attributs <code>fx:id</code>, <code>fx:controller</code>, <code>fx:include</code>...</div>
+<div style="background: #27ae60; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold;">🔧 xmlns:fx</div>
+<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;">Active les attributs <code>fx:id</code>, <code>fx:controller</code>, <code>fx:include</code>...</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">⚠️ Ne pas modifier</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">SceneBuilder s'appuie sur ces déclarations. Les altérer casse l'outil.</div>
+<div style="background: #c0392b; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold;">⚠️ Ne pas modifier</div>
+<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;">SceneBuilder s'appuie sur ces déclarations. Les altérer casse l'outil.</div>
 </div>
 
 </div>
