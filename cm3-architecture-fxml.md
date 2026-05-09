@@ -510,17 +510,17 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
 
 <div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">📊 Modèle</div>
-<div style="font-size: 1.5rem; line-height: 1.5;">Les <b>données</b> et la <b>logique métier</b>. Aucune référence à l'IHM.<br/><em>Un compteur, un client, un panier...</em></div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Les <b>données</b> et la <b>logique métier</b>. <b>Aucune référence à JavaFX</b> : du Java pur, testable en JUnit standard.<br/><em>Un compteur, un client, un capteur de chauve-souris...</em></div>
 </div>
 
 <div style="background: #4a90d9; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🖼️ Vue</div>
-<div style="font-size: 1.5rem; line-height: 1.5;">Ce que l'utilisateur <b>voit</b>. Affiche le modèle, ne modifie rien.<br/><em>Le FXML, les composants, les styles.</em></div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Ce que l'utilisateur <b>voit et touche</b>. Décrit structure et apparence, <b>aucune logique métier</b>. Modifiable dans <b>SceneBuilder</b>.<br/><em>Le FXML, les CSS, les composants JavaFX.</em></div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🎮 Contrôleur</div>
-<div style="font-size: 1.5rem; line-height: 1.5;">Reçoit les <b>actions</b> de l'utilisateur, met à jour le modèle, rafraîchit la vue.<br/><em>La classe annotée <code>@FXML</code>.</em></div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Le <b>chef d'orchestre</b> : reçoit les actions, délègue au modèle, met à jour la vue via bindings. Reste <b>mince</b>.<br/><em>La classe annotée <code>@FXML</code>.</em></div>
 </div>
 
 </div>
