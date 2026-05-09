@@ -477,21 +477,21 @@ La <b>structure</b> est dans le FXML. Le <b>comportement</b> reste en Java.
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC est l'un des plus anciens patterns architecturaux encore en usage actif.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 3fr; gap: 0.3rem 0.7rem; align-items: center; margin-top: 0.4rem; font-size: 1.1rem;">
+<div style="display: grid; grid-template-columns: 1fr 3fr; gap: 0.3rem 0.7rem; margin-top: 0.4rem; font-size: 1.1rem;">
 
-<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 8px; text-align: center; font-weight: bold;">1978</div>
+<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 8px; font-weight: bold; display: flex; align-items: center; justify-content: center;">1978</div>
 <div style="background: rgba(26,82,118,0.12); padding: 0.4rem 0.9rem; border-radius: 8px;"><b>Trygve Reenskaug</b> formalise MVC chez Xerox PARC pour <b>Smalltalk-80</b>. Isoler la logique métier des effets visuels.</div>
 
-<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 8px; text-align: center; font-weight: bold;">1996</div>
+<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 8px; font-weight: bold; display: flex; align-items: center; justify-content: center;">1996</div>
 <div style="background: rgba(26,82,118,0.12); padding: 0.4rem 0.9rem; border-radius: 8px;"><b>Java Swing</b> adopte une variante (model-delegate). MVC devient mainstream.</div>
 
-<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 8px; text-align: center; font-weight: bold;">2004</div>
+<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 8px; font-weight: bold; display: flex; align-items: center; justify-content: center;">2004</div>
 <div style="background: rgba(26,82,118,0.12); padding: 0.4rem 0.9rem; border-radius: 8px;"><b>Ruby on Rails</b> popularise MVC pour le web. <b>ASP.NET MVC</b>, <b>Spring MVC</b> suivent.</div>
 
-<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 8px; text-align: center; font-weight: bold;">2008</div>
+<div style="background: #1a5276; color: white; padding: 0.4rem 0.8rem; border-radius: 8px; font-weight: bold; display: flex; align-items: center; justify-content: center;">2008</div>
 <div style="background: rgba(26,82,118,0.12); padding: 0.4rem 0.9rem; border-radius: 8px;"><b>JavaFX 1.0</b> sort. <b>FXML</b> arrive en 2011 et porte MVC dans l'écosystème JavaFX.</div>
 
-<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 8px; text-align: center; font-weight: bold;">2026</div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 8px; font-weight: bold; display: flex; align-items: center; justify-content: center;">2026</div>
 <div style="background: rgba(39,174,96,0.15); padding: 0.4rem 0.9rem; border-radius: 8px;"><b>Aujourd'hui</b> : MVC reste la base ; <b>MVP</b> et <b>MVVM</b> dominent dans React, Angular, Vue, JavaFX moderne...</div>
 
 </div>
