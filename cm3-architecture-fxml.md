@@ -572,12 +572,13 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
 ## Le compteur en MVC : trois fichiers
 
 <style scoped>
-section pre { font-size: 0.7rem !important; line-height: 1.3 !important; }
+section pre { font-size: 0.7rem !important; line-height: 1.3 !important; margin: 0 !important; flex: 1; }
+.mvc-col { display: flex; flex-direction: column; }
 </style>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; margin-top: 0.3rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; margin-top: 0.3rem; align-items: stretch;">
 
-<div>
+<div class="mvc-col">
 <div style="background: #1a5276; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">📊 Modèle (Compteur.java)</div>
 
 ```java
@@ -601,7 +602,7 @@ public class Compteur {
 
 </div>
 
-<div>
+<div class="mvc-col">
 <div style="background: #4a90d9; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">🖼️ Vue (compteur.fxml)</div>
 
 ```xml
@@ -621,7 +622,7 @@ public class Compteur {
 
 </div>
 
-<div>
+<div class="mvc-col">
 <div style="background: #27ae60; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">🎮 Controller</div>
 
 ```java
