@@ -929,7 +929,7 @@ Le contrôleur appelle <code>incrementer()</code>, pas <code>setValeur(getValeur
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🎯 MVC classique</div>
-<div style="font-size: 1.4rem; line-height: 1.4;">Vue et contrôleur peuvent référencer le modèle. Adapté à JavaFX.<br/><em>← Aujourd'hui</em></div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Vue et contrôleur peuvent référencer le modèle. Adapté à JavaFX.<br/><em>👈 Aujourd'hui</em></div>
 </div>
 
 <div style="background: #7f8c8d; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
@@ -939,7 +939,7 @@ Le contrôleur appelle <code>incrementer()</code>, pas <code>setValeur(getValeur
 
 <div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🔮 MVVM - ViewModel</div>
-<div style="font-size: 1.4rem; line-height: 1.4;">Un ViewModel intermédiaire expose des propriétés observables, la vue s'y bind.<br/><em>CM4 →</em></div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Un ViewModel intermédiaire expose des propriétés observables, la vue s'y bind.<br/><em>CM4 👉</em></div>
 </div>
 
 </div>
