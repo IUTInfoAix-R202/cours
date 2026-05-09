@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant App as Application
+    participant DS as DataSource (pool)
+    participant CO as Connection
+    participant PS as PreparedStatement
+    participant RS as ResultSet
+    participant DB as PostgreSQL
+
+    App->>DS: getConnection()
+    DS->>CO: prête une connexion
+    App->>CO: prepareStatement(sql)
+    CO-->>PS: créé
+    App->>PS: setX(1, valeur)
+    App->>PS: executeQuery()
+    PS->>DB: SELECT ...
+    DB-->>RS: lignes résultat
+    App->>RS: while (rs.next()) { ... }
+    Note over App: try-with-resources<br/>ferme RS, PS, CO automatiquement
+    RS->>RS: close()
+    PS->>PS: close()
+    CO->>DS: rendue au pool

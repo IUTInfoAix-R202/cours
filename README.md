@@ -18,8 +18,8 @@ Ce dépôt contient les supports des 4 cours magistraux du module R2.02 (BUT Inf
 |---|---|---|---|
 | [CM1](cm1-fondations-ihm.md) | Fondations de l'IHM et première immersion JavaFX | TP1 - Bases JavaFX | Comprendre |
 | [CM2](cm2-donnees-et-liaison.md) | Propriétés, bindings et contrôles | TP2 - Properties & bindings | Appliquer |
-| CM3 *(🔄 En cours)* | Architecture des IHM et FXML | TP3 - FXML | Analyser |
-| CM4 *(⏳ À venir)* | MVVM, persistance et synthèse | TP4 + TP5 | Créer / Évaluer |
+| [CM3](cm3-architecture-fxml.md) | Architecture des IHM et FXML | TP3 - FXML | Analyser |
+| [CM4](cm4-mvvm-persistance.md) | MVVM, persistance et synthèse | TP4 + TP5 | Créer / Évaluer |
 
 ### Fil rouge
 
@@ -42,7 +42,9 @@ Scripts npm disponibles après `npm ci` :
 | `npm run dev` | Serveur Marp avec hot reload |
 | `npm run build:html` | Génère les slides HTML dans `_site/` (rapide) |
 | `npm run build:all` | Pipeline complet : HTML + PDF + index + assets (miroir du [workflow CI](.github/workflows/marp-pages.yml)) |
+| `npm run kroki:up` | Lance le container Kroki local (voir `docker-compose.yml`) |
 | `npm run kroki:render` | Régénère les SVG des diagrammes depuis `scripts/kroki-sources/` (voir ci-dessous) |
+| `npm run kroki:down` | Arrête le container Kroki local |
 
 La publication sur GitHub Pages est automatique à chaque push sur `main`.
 
@@ -56,6 +58,8 @@ Les diagrammes UML / mermaid utilisés dans les CM sont **pré-rendus** en SVG d
 
 Pour modifier un diagramme : éditer le fichier source dans `scripts/kroki-sources/`, puis lancer `npm run kroki:render` pour régénérer le SVG correspondant. Le plugin `markdown-it-kroki` reste actif dans `marp.config.js` comme **fallback de rédaction rapide** : on peut écrire un nouveau bloc ` ```mermaid ` ou ` ```plantuml ` directement dans un CM en cours d'écriture, puis l'extraire en source dédiée une fois stabilisé.
 
+Le rendu utilise un **container Kroki local** (`docker-compose.yml`) plutôt que le service public [kroki.io](https://kroki.io), pour éviter les pannes intermittentes du backend Mermaid public et garantir un build hors ligne. Démarrage en une fois : `npm run kroki:up`. Le `KROKI_URL` par défaut pointe sur `http://localhost:8000` ; pour réutiliser ponctuellement le service public, lancer `KROKI_URL=https://kroki.io npm run kroki:render`.
+
 ### Lien avec la SAÉ 2.01
 
 Les compétences acquises dans les CM et TP servent à construire l'**interface d'extraction et manipulation de données** pour des capteurs de détection et identification de chauves-souris (SAÉ 2.01). Chaque CM fait le lien explicite avec cette application fil rouge.
@@ -66,6 +70,9 @@ Les compétences acquises dans les CM et TP servent à construire l'**interface 
 cours/
 ├── cm1-fondations-ihm.md      # CM1 (publié)
 ├── cm2-donnees-et-liaison.md  # CM2 (publié)
+├── cm3-architecture-fxml.md   # CM3 (publié)
+├── cm4-mvvm-persistance.md    # CM4 (publié)
+├── docker-compose.yml         # stack Kroki locale (mermaid + plantuml)
 ├── assets/
 │   ├── *.svg, *.png           # images et diagrammes maison
 │   └── kroki/                 # SVG pré-rendus depuis scripts/kroki-sources/
@@ -76,7 +83,7 @@ cours/
     └── kroki-sources/         # sources des diagrammes (.mmd, .puml)
 ```
 
-CM3 et CM4 seront ajoutés au dépôt au fil de leur rédaction. Consulter le [syllabus](https://github.com/IUTInfoAix-R202/syllabus) pour le statut courant.
+Les 4 CM sont publiés. Consulter le [syllabus](https://github.com/IUTInfoAix-R202/syllabus) pour le statut courant des TP correspondants.
 
 ## Licence et attributions
 

@@ -1,0 +1,23 @@
+graph TB
+    V[🖼️ Vue<br/>FXML + CSS]
+    C[🎮 Controller<br/>câblage @FXML]
+    VM[🎯 ViewModel<br/>propriétés + commandes]
+    S[⚙️ Service<br/>logique métier]
+    DAO[💾 DAO<br/>UtilisateurDao]
+    JDBC[🔌 JDBC<br/>Connection / PreparedStatement]
+    DB[(🐳 PostgreSQL<br/>Docker)]
+
+    V -->|"bind"| C
+    C -->|"@Inject"| VM
+    VM -->|"@Inject"| S
+    S -->|"@Inject"| DAO
+    DAO -->|"DataSource"| JDBC
+    JDBC -->|"TCP/IP"| DB
+
+    style V fill:#4a90d9,color:#fff
+    style C fill:#27ae60,color:#fff
+    style VM fill:#8e44ad,color:#fff
+    style S fill:#1a5276,color:#fff
+    style DAO fill:#1a5276,color:#fff
+    style JDBC fill:#c0392b,color:#fff
+    style DB fill:#34495e,color:#fff

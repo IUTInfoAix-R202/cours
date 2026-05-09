@@ -1,0 +1,10 @@
+graph LR
+    U([👤 Utilisateur]) -->|"clic, saisie"| V[🖼️ Vue<br/>FXML + Controller mince]
+    V -->|"bind/bindBidirectional"| VM[🎯 ViewModel<br/>propriétés + commandes]
+    VM -->|"appelle métier"| M[📊 Modèle<br/>logique pure]
+    M -->|"propriétés observables"| VM
+    VM -->|"propriétés UI"| V
+    style U fill:#7f8c8d,color:#fff
+    style V fill:#4a90d9,color:#fff
+    style VM fill:#8e44ad,color:#fff
+    style M fill:#1a5276,color:#fff
