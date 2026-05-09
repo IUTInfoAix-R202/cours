@@ -2420,21 +2420,21 @@ section table code { font-size: 0.92rem !important; }
 
 ## 🧠 Heuristique #4 — Consistency and standards
 
-<div style="background: #27ae60; color: white; padding: 1.5rem 2rem; border-radius: 12px; margin-top: 1rem; font-size: 1.5rem; line-height: 1.5; text-align: center;">
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.6rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; line-height: 1.5; text-align: center;">
 « <em>Users should not have to wonder whether different words, situations, or actions mean the same thing. Follow platform and industry conventions.</em> »
-<div style="margin-top: 0.6rem; font-size: 1.1rem; opacity: 0.9;">— Jakob Nielsen, 1994</div>
+<div style="margin-top: 0.5rem; font-size: 1.2rem; opacity: 0.9;">- Jakob Nielsen, 1994</div>
 </div>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.9rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.6rem; align-items: stretch;">
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✅ Cohérence interne</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Le bouton « Annuler » a la même position, la même couleur, le même comportement partout dans l'application.</div>
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">✓ Cohérence interne</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Le bouton « Annuler » a la même position, la même couleur, le même comportement partout dans l'application.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✅ Standards externes</div>
-<div style="font-size: 1.1rem; line-height: 1.45;"><kbd>Ctrl+S</kbd> sauvegarde, <kbd>Ctrl+Z</kbd> annule. Une croix en haut à droite ferme. On respecte les conventions de la plateforme.</div>
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">✓ Standards externes</div>
+<div style="font-size: 1.4rem; line-height: 1.4;"><kbd>Ctrl+S</kbd> sauvegarde, <kbd>Ctrl+Z</kbd> annule. Une croix en haut à droite ferme. On respecte les conventions de la plateforme.</div>
 </div>
 
 </div>
