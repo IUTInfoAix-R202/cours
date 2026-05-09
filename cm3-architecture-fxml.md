@@ -1929,7 +1929,7 @@ Plus la frontière modèle/contrôleur est nette, plus le test du modèle couvre
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">SceneBuilder est un outil WYSIWYG qui édite des fichiers FXML par glisser-déposer.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🖱️ Drag & drop</div>
@@ -1946,9 +1946,9 @@ Plus la frontière modèle/contrôleur est nette, plus le test du modèle couvre
 <div style="font-size: 1.3rem; line-height: 1.4;">N'est pas inclus dans le JDK. Distribution Gluon : <a href="https://gluonhq.com/products/scene-builder/" style="color: #f5d97a;">gluonhq.com/products/scene-builder</a></div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">⚠️ Pas de magie</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Connaître les composants reste indispensable : SceneBuilder ne fait qu'écrire le XML que vous auriez tapé.</div>
+<div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">⚠️ Pas de magie</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Connaître les composants reste indispensable : SceneBuilder ne fait qu'écrire le XML que vous auriez tapé.</div>
 </div>
 
 </div>
