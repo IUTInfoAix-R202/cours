@@ -218,7 +218,7 @@ Tout fonctionne, mais une <b>seule classe</b> mélange déjà 4 préoccupations 
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; text-align: center;">
-💡 Quand l'application grandit, ces 4 préoccupations s'<b>entremêlent</b>. Une modif esthétique demande de relire toute la logique.
+💡 Quand l'application grandit, ces 4 préoccupations s'<b>entremêlent</b>. Une modification esthétique mineure demande de relire toute la logique.
 </div>
 
 ---
