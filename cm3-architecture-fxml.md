@@ -2210,6 +2210,12 @@ Règle simple : <b>fx:root</b> si le composant a vocation à être instancié pl
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour assembler une grande vue à partir de plus petites, on utilise <code>fx:include</code>.</p>
 
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+</style>
+
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 app.fxml</div>
+
 ```xml
 <?import javafx.scene.layout.BorderPane?>
 
@@ -2231,7 +2237,7 @@ Règle simple : <b>fx:root</b> si le composant a vocation à être instancié pl
 </BorderPane>
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Trois fichiers FXML, trois contrôleurs, une vue assemblée. Chaque sous-vue est testable et réutilisable.
 </div>
 
