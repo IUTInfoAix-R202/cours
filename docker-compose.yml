@@ -1,0 +1,35 @@
+# Kroki local pour pré-rendre les diagrammes Mermaid / PlantUML / Graphviz
+# en SVG dans assets/kroki/, sans dépendre du service public kroki.io
+# (parfois sujet à 504 sur le backend mermaid).
+#
+# Usage :
+#   npm run kroki:up      # démarre les containers en arrière-plan
+#   npm run kroki:render  # POST chaque source vers http://localhost:8000
+#   npm run kroki:down    # arrête les containers
+#
+# Le container "core" est l'orchestrateur Kroki ; il délègue chaque type
+# de diagramme à un container compagnon. On n'embarque ici que mermaid
+# et plantuml (les seuls types utilisés dans les CM). Pour ajouter
+# graphviz, blockdiag, etc., voir la doc officielle.
+
+services:
+  core:
+    image: yuzutech/kroki:latest
+    container_name: r202-cours-kroki
+    ports:
+      - "8000:8000"
+    environment:
+      - KROKI_MERMAID_HOST=mermaid
+      - KROKI_BLOCKDIAG_HOST=blockdiag
+      - KROKI_BPMN_HOST=bpmn
+      - KROKI_EXCALIDRAW_HOST=excalidraw
+    depends_on:
+      - mermaid
+    restart: unless-stopped
+
+  mermaid:
+    image: yuzutech/kroki-mermaid:latest
+    container_name: r202-cours-kroki-mermaid
+    expose:
+      - "8002"
+    restart: unless-stopped
