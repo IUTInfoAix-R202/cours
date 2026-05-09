@@ -702,9 +702,9 @@ La <b>chaîne de création</b> : l'<code>Application</code> demande au <code>FXM
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Suivons un clic utilisateur sur le bouton « +1 ». Quatre étapes, aucune ne court-circuite les autres.</p>
 
 <style scoped>
-.flux-row { display: flex; align-items: stretch; border-radius: 10px; overflow: hidden; margin-bottom: 0.45rem; }
-.flux-num { color: white; font-weight: bold; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; min-width: 3.2rem; padding: 0.6rem 0.8rem; }
-.flux-body { flex: 1; padding: 0.7rem 1.1rem; display: flex; align-items: center; }
+.flux-row { display: flex; align-items: stretch; border-radius: 8px; overflow: hidden; margin-bottom: 0.3rem; }
+.flux-num { color: white; font-weight: bold; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; min-width: 2.8rem; padding: 0.3rem 0.7rem; }
+.flux-body { flex: 1; padding: 0.4rem 1rem; display: flex; align-items: center; }
 </style>
 
 <div style="margin-top: 0.4rem;">
