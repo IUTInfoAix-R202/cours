@@ -2025,16 +2025,16 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
 
 ![Workflow : SceneBuilder ↔ fichier.fxml versionné Git, IDE/VSCode ↔ Controller.java, liens fx:controller et @FXML entre les deux](assets/kroki/cm3-workflow-scenebuilder.svg)
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
-<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">🔄 Aller-retour fluide</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">Modifier un FXML à la main, le rouvrir dans SceneBuilder : tout est préservé.</div>
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🔄 Aller-retour fluide</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Modifier un FXML à la main, le rouvrir dans SceneBuilder : tout est préservé.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">🎯 Skip View</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">SceneBuilder peut générer le squelette du contrôleur via <em>View → Show Sample Controller Skeleton</em>.</div>
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🎯 Skip View</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">SceneBuilder peut générer le squelette du contrôleur via <em>View → Show Sample Controller Skeleton</em>.</div>
 </div>
 
 </div>
