@@ -325,24 +325,24 @@ barre.getChildren().addAll(ok, cancel); // ← oups, ordre inversé
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
 
 <div style="background: #4a90d9; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📄 Vue → FXML</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Un fichier <code>.fxml</code> décrit la <b>structure</b> : composants, conteneurs, layout.</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">📄 Vue → FXML</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Un fichier <code>.fxml</code> décrit la <b>structure</b> : composants, conteneurs, layout.</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 Style → CSS</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Un fichier <code>.css</code> décrit l'<b>apparence</b> : couleurs, polices, espacements.</div>
+<div style="background: #e67e22; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 Style → CSS</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Un fichier <code>.css</code> décrit l'<b>apparence</b> : couleurs, polices, espacements.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ Logique → Java</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Une classe Java « contrôleur » contient le <b>comportement</b> et orchestre les interactions.</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ Logique → Java</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Une classe Java « contrôleur » contient le <b>comportement</b> et orchestre les interactions.</div>
 </div>
 
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1rem 1.5rem; border-radius: 10px; margin-top: 1.2rem; font-size: 1.4rem; text-align: center; line-height: 1.55;">
-✨ Trois fichiers, trois responsabilités, trois personnes <em>(designer, intégrateur, dev)</em> peuvent travailler en parallèle.
+✨ Trois fichiers, trois responsabilités, trois acteurs qui peuvent travailler en parallèle.
 </div>
 
 ---
