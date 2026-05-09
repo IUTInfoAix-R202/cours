@@ -537,7 +537,7 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
 
 <svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 1000px; display: block; margin: 0 auto;">
   <defs>
-    <marker id="arrow-mvc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <marker id="arrow-mvc" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#2c3e50"/>
     </marker>
   </defs>
@@ -575,8 +575,8 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
   <text x="715" y="98" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">③ appel métier</text>
 
   <!-- Arrow 4 : Modèle → Vue (curve, bindings) -->
-  <path d="M 820 215 C 820 305, 250 305, 250 220" stroke="#2c3e50" stroke-width="3" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow-mvc)"/>
-  <text x="535" y="290" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">④ propriétés observables → bindings (auto)</text>
+  <text x="535" y="248" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">④ propriétés observables → bindings (auto)</text>
+  <path d="M 820 215 C 820 330, 250 330, 250 215" stroke="#2c3e50" stroke-width="3" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow-mvc)"/>
 </svg>
 
 <div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; line-height: 1.55;">
