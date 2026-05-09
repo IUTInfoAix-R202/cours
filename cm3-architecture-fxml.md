@@ -2045,6 +2045,12 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour créer un composant <b>autonome</b> (ex: une barre de statut), on utilise <code>fx:root</code> au lieu d'un type concret.</p>
 
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+</style>
+
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 BarreStatut.fxml</div>
+
 ```xml
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Label?>
@@ -2055,21 +2061,21 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
 </fx:root>
 ```
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem;">
 
-<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">🔧 fx:root</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">Désigne la racine sans la créer. Attendu en injection.</div>
+<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold;">🔧 fx:root</div>
+<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;">Désigne la racine sans la créer. Attendu en injection.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">📍 type</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">Le type de la racine pour la validation et l'auto-complétion.</div>
+<div style="background: #27ae60; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold;">📍 type</div>
+<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;">Le type de la racine pour la validation et l'auto-complétion.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">⚙️ Pas de fx:controller</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">Le contrôleur ET la racine sont injectés depuis Java.</div>
+<div style="background: #8e44ad; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold;">⚙️ Pas de fx:controller</div>
+<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;">Le contrôleur ET la racine sont injectés depuis Java.</div>
 </div>
 
 </div>
