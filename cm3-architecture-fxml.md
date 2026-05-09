@@ -2125,10 +2125,17 @@ La classe <b>EST</b> le composant : <code>new BarreStatut()</code> donne directe
 
 ## Utiliser le composant comme n'importe quel autre
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Une fois la classe <code>BarreStatut</code> écrite, elle s'instancie comme n'importe quel composant JavaFX.</p>
 
-<div>
-<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">En Java</div>
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
+.uc-col { display: flex; flex-direction: column; }
+</style>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+
+<div class="uc-col">
+<div style="background: #1a5276; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">☕ En Java</div>
 
 ```java
 BarreStatut statut = new BarreStatut();
@@ -2142,8 +2149,8 @@ VBox root = new VBox(
 
 </div>
 
-<div>
-<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">En FXML</div>
+<div class="uc-col">
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 En FXML</div>
 
 ```xml
 <?import fr.iut.composants.BarreStatut?>
@@ -2159,7 +2166,7 @@ VBox root = new VBox(
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 👉 C'est le pattern de l'<b>exercice 5 du TP3</b> (<code>BarreStatut</code>) : un composant qu'on peut poser n'importe où.
 </div>
 
