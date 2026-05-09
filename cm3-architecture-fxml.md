@@ -150,6 +150,8 @@ Aujourd'hui : <b>séparer</b> ce que l'interface affiche de ce qu'elle fait, et 
 
 # Partie 1 - 🤔 Le problème
 
+**Les limites du tout-en-Java**
+
 ---
 
 ## TP1 + TP2 : tout est en Java
