@@ -892,7 +892,7 @@ Le contrôleur n'a pas de <code>if</code>, pas de calcul. Juste : <em>« j'écou
 
 ## Encapsulation du modèle
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour que le modèle reste vraiment indépendant de la vue, il expose une <b>API publique</b> bien dessinée.</p>
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour que le modèle reste indépendant de la vue, il expose une <b>API publique contrôlée</b> : lectures observables et méthodes métier, pas de setter générique.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -902,8 +902,6 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 
 ```java
 public class Compteur {
-  // ✗ Champ privé, mutable de l'extérieur via setValeur()...
-  // private int valeur;
 
   // ✓ Propriété observable, lecture publique, écriture contrôlée
   private final IntegerProperty valeur = new SimpleIntegerProperty(0);
