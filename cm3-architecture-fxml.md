@@ -571,6 +571,8 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
 
 ## Le compteur en MVC : trois fichiers
 
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Reprenons le compteur du CM2 et répartissons-le selon les trois rôles : un fichier par responsabilité.</p>
+
 <style scoped>
 section pre { font-size: 0.7rem !important; line-height: 1.3 !important; margin: 0 !important; flex: 1; }
 .mvc-col { display: flex; flex-direction: column; }
@@ -606,17 +608,13 @@ public class Compteur {
 <div style="background: #4a90d9; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">🖼️ Vue (compteur.fxml)</div>
 
 ```xml
-<VBox alignment="CENTER"
-      spacing="10"
-      xmlns:fx=
-        "http://javafx.com/fxml"
-      fx:controller=
-        "CompteurController">
+<VBox 
+  xmlns:fx="http://javafx.com/fxml"
+  fx:controller="CompteurController">
   <Label fx:id="message"
          styleClass="valeur"/>
-  <Button text="+1"
-          onAction=
-            "#incrementer"/>
+  <Button text="Incrémenter"
+          onAction="#incrementer"/>
 </VBox>
 ```
 
@@ -627,15 +625,14 @@ public class Compteur {
 
 ```java
 public class CompteurController {
-  private final Compteur compteur
-    = new Compteur();
+  Compteur compteur = new Compteur();
 
   @FXML private Label message;
 
   @FXML void initialize() {
     message.textProperty().bind(
       compteur.valeurProperty()
-              .asString());
+      .asString());
   }
 
   @FXML void incrementer() {
@@ -648,7 +645,7 @@ public class CompteurController {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.55rem 1.1rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.2rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.55rem 1.1rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Aucun des trois fichiers ne « connaît » les détails des autres : ils communiquent par <b>contrats</b> (interface property, fx:id, méthode @FXML).
 </div>
 
@@ -658,7 +655,7 @@ Aucun des trois fichiers ne « connaît » les détails des autres : ils communi
 
 ![Chaîne de création : Application → FXMLLoader → Controller / Vue / Modèle](assets/kroki/cm3-mvc-creation.svg)
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.25rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 La <b>chaîne de création</b> : l'<code>Application</code> demande au <code>FXMLLoader</code>, qui instancie le contrôleur et la vue, et seul le contrôleur connaît le modèle.
 </div>
 
