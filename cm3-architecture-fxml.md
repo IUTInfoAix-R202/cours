@@ -95,7 +95,7 @@ Les <b>propriétés observables</b> et les <b>bindings</b> (<code>bind()</code>,
 <div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 10px;">
 <div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🧠 Affordance</div>
 <div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
-<b>disableProperty().bind(...)</b> rend l'interface auto-explicative. Le bouton sait quand il peut être cliqué.
+La <b>mise à jour automatique de l'apparence</b> de l'IHM (par exemple via <code>disableProperty().bind(...)</code>) rend l'interface <b>auto-explicative</b>.
 </div>
 </div>
 <div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 10px;">
