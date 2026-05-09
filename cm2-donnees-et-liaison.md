@@ -393,7 +393,7 @@ Vous pratiquerez cette transformation dans les exercices 2 à 5 du TP2.
 
 <!-- _class: lead -->
 
-# Partie 2 - ⚡ Propriétés JavaFX
+# Partie 2 - 🏗️ Propriétés JavaFX
 
 ---
 

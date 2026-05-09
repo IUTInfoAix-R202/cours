@@ -87,7 +87,7 @@ TP4 + TP5
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 1.5rem;">
 <div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">⚡ Propriétés observables</div>
+<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🏗️ Propriétés observables</div>
 <div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
 <b>IntegerProperty</b>, <b>StringProperty</b>, ... encapsulent une valeur et notifient les <b>InvalidationListener</b> et <b>ChangeListener</b>.
 </div>
