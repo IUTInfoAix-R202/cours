@@ -191,6 +191,8 @@ Tout fonctionne, mais une <b>seule classe</b> mélange déjà 4 préoccupations 
 
 ## Quatre préoccupations dans le même fichier
 
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Ce compteur de 20 lignes mélange déjà quatre préoccupations distinctes qui devraient pouvoir évoluer indépendamment.</p>
+
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
 
 <div style="background: #e8a838; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
