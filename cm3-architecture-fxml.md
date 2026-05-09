@@ -374,6 +374,7 @@ section pre { font-size: 0.65rem !important; line-height: 1.35 !important; margi
 </div>
 
 ```xml
+<!-- FXML : on déclare la structure -->
 <VBox>
   <Label fx:id="label" text="0" styleClass="compteur"/>
   <Button text="Incrémenter" onAction="#incrementer"/>
@@ -411,8 +412,7 @@ public class CompteurApp extends Application {
     });
 
     VBox root = new VBox(10, label, bt);
-    root.setAlignment(Pos.CENTER);
-    root.setPadding(new Insets(20));
+
     stage.setScene(new Scene(root, 300, 200));
     stage.show();
   }
@@ -421,13 +421,13 @@ public class CompteurApp extends Application {
 
 </div>
 
+<div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+
 <div>
 <div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">Après — compteur.fxml (~10 lignes)</div>
 
 ```xml
-<!-- compteur.fxml -->
-<VBox alignment="CENTER" spacing="10"
-      fx:controller="CompteurController"
+<VBox fx:controller="CompteurController"
       xmlns:fx="http://javafx.com/fxml">
   <Label fx:id="label" text="0"
          styleClass="compteur"/>
@@ -436,13 +436,15 @@ public class CompteurApp extends Application {
 </VBox>
 ```
 
-<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem; margin-top: 0.4rem;">Après — CompteurController.java (~6 lignes)</div>
+</div>
+
+<div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">Après — CompteurController.java (~6 lignes)</div>
 
 ```java
 public class CompteurController {
   @FXML private Label label;
-  @FXML
-  void incrementer() {
+  @FXML void incrementer() {
     int v = Integer.parseInt(label.getText());
     label.setText(String.valueOf(v + 1));
   }
@@ -453,8 +455,10 @@ public class CompteurController {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.5rem 1rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.15rem; text-align: center;">
-La <b>structure</b> est dans le FXML (lisible, éditable graphiquement). Le <b>comportement</b> reste en Java (testable, débuggable).
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.5rem 1rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
+La <b>structure</b> est dans le FXML. Le <b>comportement</b> reste en Java.
 </div>
 
 ---
