@@ -2383,11 +2383,14 @@ public class AppController {
 
 ## Récapitulatif des outils FXML
 
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Tous les mécanismes FXML vus dans cette partie, en une seule planche de référence.</p>
+
 <style scoped>
-section table { font-size: 0.85rem !important; width: 100%; border-collapse: collapse; }
-section th { background: #1a5276 !important; color: white !important; padding: 0.35rem 0.7rem !important; text-align: left !important; }
-section td { padding: 0.3rem 0.7rem !important; border-bottom: 1px solid #e0e0e0 !important; }
+section table { font-size: 1rem !important; width: 100%; border-collapse: collapse; }
+section th { background: #1a5276 !important; color: white !important; padding: 0.45rem 0.8rem !important; text-align: left !important; font-size: 1.15rem !important; }
+section td { padding: 0.4rem 0.8rem !important; border-bottom: 1px solid #e0e0e0 !important; }
 section tr:nth-child(even) td { background: #f4f6f8 !important; }
+section table code { font-size: 0.92rem !important; }
 </style>
 
 | Mécanisme | Rôle | Exemple |
