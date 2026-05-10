@@ -1259,7 +1259,7 @@ section pre { font-size: 0.65rem !important; line-height: 1.4 !important; margin
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">📦 Nom complet</div>
-<div style="font-size: 1.3rem; line-height: 1.45;">Toujours le <b>nom pleinement qualifié</b> de la classe (avec le package). FXML n'a pas de <code>import</code> Java.</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Toujours le <b>nom pleinement qualifié</b> de la classe (avec le package). Les <code>&lt;?import?&gt;</code> du FXML ne s'appliquent qu'aux balises de composants, pas à <code>fx:controller</code>.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
