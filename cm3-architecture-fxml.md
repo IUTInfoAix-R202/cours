@@ -1668,12 +1668,13 @@ La <b>structure</b> reste dans le FXML, la <b>présentation</b> dans le CSS. Le 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">FXML supporte l'i18n nativement via la syntaxe <code>%clé</code> et un <code>ResourceBundle</code>.</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+section pre { font-size: 0.65rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
+.i18n-col { display: flex; flex-direction: column; }
 </style>
 
-<div style="display: grid; grid-template-columns: 2fr 3fr; gap: 0.7rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 2fr 3fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
-<div>
+<div class="i18n-col">
 <div style="background: #e8a838; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🇫🇷 messages_fr.properties</div>
 
 ```properties
@@ -1692,7 +1693,7 @@ title=Login
 
 </div>
 
-<div>
+<div class="i18n-col">
 <div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 login.fxml</div>
 
 ```xml
