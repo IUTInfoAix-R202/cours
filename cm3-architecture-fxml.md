@@ -1273,7 +1273,7 @@ section pre { font-size: 0.9rem !important; line-height: 1.4 !important; margin:
 
 ## Récupération automatique avec @FXML 
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Quand on annote un champ avec <code>@FXML</code>, <code>FXMLLoader</code> cherche le nœud dont l'<code>fx:id</code> correspond au nom du champ et l'<b>assigne</b> à ce champ.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Quand on annote une donnée membre avec <code>@FXML</code>, <code>FXMLLoader</code> cherche le nœud dont l'<code>fx:id</code> correspond au nom la donnée membre et l'<b>assigne</b>.</p>
 
 <style scoped>
 section pre { font-size: 0.55rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
@@ -1286,13 +1286,13 @@ section pre { font-size: 0.55rem !important; line-height: 1.35 !important; margi
 <div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 compteur.fxml</div>
 
 ```xml
-<VBox xmlns:fx=
-        "http://javafx.com/fxml"
-      fx:controller=
-        "CompteurController">
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="CompteurController">
+
   <Label fx:id="message"/>
-  <Button fx:id="bouton"
-          text="OK"/>
+
+  <Button fx:id="bouton" text="OK"/>
+
 </VBox>
 ```
 
@@ -1304,14 +1304,12 @@ section pre { font-size: 0.55rem !important; line-height: 1.35 !important; margi
 ```java
 public class CompteurController {
 
-  @FXML
-  private Label message;
+  @FXML private Label message;
 
-  @FXML
-  private Button bouton;
+  @FXML private Button bouton;
 
-  // Injecté automatiquement
-  // au chargement du FXML
+  // Les objets FXML sont "injectés" automatiquement
+  // au moment de l'appel à FXMLLoader.load
 }
 ```
 
