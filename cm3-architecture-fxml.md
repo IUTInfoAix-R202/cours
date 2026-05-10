@@ -1671,7 +1671,7 @@ La <b>structure</b> reste dans le FXML, la <b>présentation</b> dans le CSS. Le 
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
 </style>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 2fr 3fr; gap: 0.7rem; margin-top: 0.4rem;">
 
 <div>
 <div style="background: #e8a838; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🇫🇷 messages_fr.properties</div>
