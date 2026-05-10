@@ -2594,25 +2594,29 @@ Une UI cohérente, c'est une UI où l'utilisateur n'a pas besoin de <b>réappren
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🎨 CSS centralisé</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Un seul <code>theme.css</code> pour toute l'app. Changer la couleur primaire = une ligne, un déploiement.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.35rem;">🎨 CSS centralisé</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Un seul <code>theme.css</code> pour toute l'app. Changer la couleur primaire = une ligne, un déploiement.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🧱 Composants réutilisables</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Une <code>BarreBoutonsForm</code> avec <code>[Annuler] [OK]</code> dans l'ordre standard, utilisée partout via <code>&lt;BarreBoutonsForm/&gt;</code>.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.35rem;">🧱 Composants réutilisables</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Une <code>BarreBoutonsForm</code> avec <code>[Annuler] [OK]</code> dans l'ordre standard, utilisée partout via <code>&lt;BarreBoutonsForm/&gt;</code>.</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">📄 Vues stéréotypées</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Tous les formulaires partagent le même squelette FXML : titre, champs, barre de boutons, statut.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.35rem;">📄 Vues stéréotypées</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Tous les formulaires partagent le même squelette FXML : titre, champs, barre de boutons, statut.</div>
 </div>
 
 <div style="background: #e8a838; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🔍 Revue facile</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Un nouveau composant qui s'éloigne du standard est immédiatement repérable dans les FXML - il « jure ».</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.35rem;">🔍 Revue facile</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Un nouveau composant qui s'éloigne du standard est immédiatement repérable dans les FXML - il « jure ».</div>
 </div>
 
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+La cohérence n'est plus une discipline à imposer : elle devient le <b>chemin par défaut</b>.
 </div>
 
 ---
