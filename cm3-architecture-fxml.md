@@ -2490,10 +2490,10 @@ Règle simple : <b>fx:root</b> si le composant a vocation à être instancié pl
 
 ## 🧠 Heuristique #4 — Consistency and standards
 
-<div style="background: #27ae60; color: white; padding: 1.2rem 1.6rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; line-height: 1.5; text-align: center;">
-« <em>Users should not have to wonder whether different words, situations, or actions mean the same thing. Follow platform and industry conventions.</em> »
-<div style="margin-top: 0.5rem; font-size: 1.2rem; opacity: 0.9;">- Jakob Nielsen, 1994</div>
-</div>
+<p style="font-size:1.5rem; font-style: italic; background: #f5f5f5; padding: 0.9rem 1.3rem; border-left: 4px solid #8e44ad; border-radius: 6px; margin-top: 0.5rem;">
+« Les utilisateurs ne devraient pas avoir à se demander si différents mots, situations ou actions signifient la même chose. Respectez les conventions de la plateforme et de l'industrie. »<br/>
+<span style="font-size: 1.1rem; color: #666; font-style: normal;">Jakob Nielsen, <i>10 Usability Heuristics</i> (1994)</span>
+</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.6rem; align-items: stretch;">
 
@@ -2507,6 +2507,10 @@ Règle simple : <b>fx:root</b> si le composant a vocation à être instancié pl
 <div style="font-size: 1.4rem; line-height: 1.4;"><kbd>Ctrl+S</kbd> sauvegarde, <kbd>Ctrl+Z</kbd> annule. Une croix en haut à droite ferme. On respecte les conventions de la plateforme.</div>
 </div>
 
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
+Une UI cohérente, c'est une UI où l'utilisateur n'a pas besoin de <b>réapprendre</b> à chaque écran.
 </div>
 
 ---
