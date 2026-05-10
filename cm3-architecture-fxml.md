@@ -1240,7 +1240,7 @@ public class CompteurApp extends Application {
 
 ## fx:id — nommer un nœud
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>fx:id</code> donne un nom unique à un nœud du FXML pour pouvoir le manipuler depuis Java.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 1.5rem 0;">L'attribut <code>fx:id</code> donne un nom unique à un nœud du FXML pour pouvoir le manipuler depuis Java.</p>
 
 <style scoped>
 section pre { font-size: 0.9rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -1255,16 +1255,16 @@ section pre { font-size: 0.9rem !important; line-height: 1.4 !important; margin:
 </VBox>
 ```
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem; align-items: stretch;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 1.5rem; align-items: stretch;">
 
 <div style="background: #e8a838; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🎯 Pas tous les nœuds</div>
-<div style="font-size: 1.3rem; line-height: 1.45;">Inutile de nommer le <code>VBox</code> racine si vous ne le manipulez pas. Nommez seulement ce que le contrôleur doit toucher.</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">🎯 Pas tous les nœuds</div>
+<div style="font-size: 1.5rem; line-height: 1.45;">Inutile de nommer le <code>VBox</code> racine si vous ne le manipulez pas. Nommez seulement ce que le contrôleur doit toucher.</div>
 </div>
 
 <div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">⚠️ Ne pas confondre avec id</div>
-<div style="font-size: 1.3rem; line-height: 1.45;"><code>fx:id</code> = nom Java pour <code>@FXML</code>.<br/><code>id</code> = sélecteur CSS pour styliser. <em>Détails plus loin.</em></div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">⚠️ Ne pas confondre avec id</div>
+<div style="font-size: 1.5rem; line-height: 1.45;"><code>fx:id</code> = nom Java pour <code>@FXML</code>.<br/><code>id</code> = sélecteur CSS pour styliser. <em>Détails plus loin.</em></div>
 </div>
 
 </div>
