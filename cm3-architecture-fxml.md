@@ -2999,7 +2999,9 @@ section table code { font-size: 0.7rem !important; padding: 1px 4px !important; 
 <div style="font-size: 1.2rem; line-height: 1.5;">
 <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" style="color: #f3d5ff;">MVC</a> chez Smalltalk-80, <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter" style="color: #f3d5ff;">MVP</a>, <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel" style="color: #f3d5ff;">MVVM</a><br/>
 <a href="https://www.nngroup.com/articles/ten-usability-heuristics/" style="color: #f3d5ff;">10 heuristiques de Nielsen</a><br/>
-<a href="https://martinfowler.com/eaaDev/uiArchs.html" style="color: #f3d5ff;">UI Architectures (Fowler)</a> <em>(CM4)</em>
+<a href="https://martinfowler.com/eaaDev/uiArchs.html" style="color: #f3d5ff;">UI Architectures (Fowler)</a> <em>(CM4)</em><br/>
+🧬 <a href="https://atomicdesign.bradfrost.com/" style="color: #f3d5ff;">Atomic Design (Brad Frost)</a> - 5 niveaux pour structurer un design system<br/>
+🚪 <a href="https://en.wikipedia.org/wiki/The_Design_of_Everyday_Things" style="color: #f3d5ff;">D. Norman, <em>The Design of Everyday Things</em></a> - la référence sur l'affordance
 </div>
 </div>
 
