@@ -1774,51 +1774,49 @@ Lisez la <b>première ligne</b> de l'erreur : le numéro de ligne dans le FXML e
 
 ---
 
-## Exemple complet : FormulaireConnexion (TP3 ex3)
+## FormulaireConnexion (TP3 ex3) - la vue
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Un <code>GridPane</code> qui aligne 3 lignes : email, mot de passe, bouton de validation.</p>
 
 <style scoped>
-section pre { font-size: 0.65rem !important; line-height: 1.3 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
-.fc-col { display: flex; flex-direction: column; }
+section pre { font-size: 0.85rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
 </style>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.3rem; align-items: stretch;">
-
-<div class="fc-col">
-<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.2rem;">📄 formulaire.fxml</div>
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 formulaire.fxml</div>
 
 ```xml
 <GridPane hgap="10" vgap="10"
-   fx:controller=
-     "FormulaireConnexionController"
-   stylesheets="@formulaire.css"
-   xmlns:fx="http://javafx.com/fxml">
+          fx:controller="FormulaireConnexionController"
+          stylesheets="@formulaire.css"
+          xmlns:fx="http://javafx.com/fxml">
 
-  <Label text="Email"
-    GridPane.rowIndex="0"
-    GridPane.columnIndex="0"/>
-  <TextField fx:id="email"
-    GridPane.rowIndex="0"
-    GridPane.columnIndex="1"/>
+  <Label text="Email"               GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+  <TextField fx:id="email"          GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
-  <Label text="Mot de passe"
-    GridPane.rowIndex="1"
-    GridPane.columnIndex="0"/>
-  <PasswordField fx:id="motDePasse"
-    GridPane.rowIndex="1"
-    GridPane.columnIndex="1"/>
+  <Label text="Mot de passe"        GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+  <PasswordField fx:id="motDePasse" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
-  <Button fx:id="valider" text="Valider"
-    onAction="#valider"
-    GridPane.rowIndex="2"
-    GridPane.columnIndex="1"/>
+  <Button fx:id="valider" text="Valider" onAction="#valider"
+          GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
 </GridPane>
 ```
 
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+Aucune logique, aucun comportement. Juste la structure : <b>qui est où</b>, et <b>comment c'est aligné</b>.
 </div>
 
-<div class="fc-col">
-<div style="background: #27ae60; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.2rem;">🎮 FormulaireConnexionController.java</div>
+---
+
+## FormulaireConnexion (TP3 ex3) - le contrôleur
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Trois <code>@FXML</code>, un binding d'affordance et une action métier - rien d'autre.</p>
+
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+</style>
+
+<div style="background: #27ae60; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🎮 FormulaireConnexionController.java</div>
 
 ```java
 public class FormulaireConnexionController {
@@ -1829,28 +1827,20 @@ public class FormulaireConnexionController {
 
   @FXML
   void initialize() {
-    // Affordance : bouton désactivé tant que
-    // les champs ne sont pas remplis (CM2)
+    // Affordance : bouton désactivé tant que les champs ne sont pas remplis (CM2)
     valider.disableProperty().bind(
-      email.textProperty().isEmpty()
-        .or(motDePasse.textProperty().isEmpty())
-    );
+        email.textProperty().isEmpty().or(motDePasse.textProperty().isEmpty()));
   }
 
   @FXML
   void valider() {
-    System.out.println(
-      "Connexion : " + email.getText());
+    System.out.println("Connexion : " + email.getText());
   }
 }
 ```
 
-</div>
-
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-👉 22 lignes XML pour 5 composants : lisible et déclaratif. <em>Mais aussi long à taper à la main...</em>
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+22 lignes XML + 18 lignes Java pour un formulaire complet. Lisible et déclaratif - <em>mais aussi long à taper à la main...</em>
 </div>
 
 ---
