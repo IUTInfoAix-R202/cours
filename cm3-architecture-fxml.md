@@ -1016,63 +1016,6 @@ section pre { font-size: 0.5rem !important; line-height: 1.35 !important; margin
 
 ---
 
-## XML → Java : la traduction
-
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Le <code>FXMLLoader</code> traduit chaque balise en appel constructeur, chaque attribut en appel à un setter.</p>
-
-<style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
-.tr-col { display: flex; flex-direction: column; }
-</style>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
-
-<div class="tr-col">
-<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 FXML</div>
-
-```xml
-<BorderPane prefHeight="80" prefWidth="250">
-  <top>
-    <Label text="Titre"
-           textFill="#0022cc"/>
-  </top>
-  <center>
-    <Button fx:id="btn"
-            text="OK"
-            onAction="#valider"/>
-  </center>
-</BorderPane>
-```
-
-</div>
-
-<div class="tr-col">
-<div style="background: #1a5276; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">☕ Java équivalent</div>
-
-```java
-BorderPane root = new BorderPane();
-root.setPrefHeight(80);
-root.setPrefWidth(250);
-
-Label titre = new Label("Titre");
-titre.setTextFill(Color.web("#0022cc"));
-root.setTop(titre);
-
-Button btn = new Button("OK");
-btn.setOnAction(this::valider);
-root.setCenter(btn);
-```
-
-</div>
-
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-Chaque <b>élément XML</b> = un appel <code>new ClasseJavaFX()</code>. Chaque <b>attribut</b> = un appel à un <code>setXxx(...)</code>.
-</div>
-
----
-
 ## Ce qui doit (et ne doit pas) être en FXML
 
 <p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">FXML est un langage de description, pas de programmation. Quelques règles simples pour ne pas dériver.</p>
@@ -1177,18 +1120,75 @@ Une fois chargé, ce graphe est <b>indistinguable</b> d'un graphe créé par <co
 
 <div style="background: #e8a838; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">📦 Élément enfant d'un conteneur</div>
-<div style="font-size: 1.5rem; line-height: 1.45;">Une balise placée à l'intérieur d'un conteneur (<code>VBox</code>, <code>HBox</code>, <code>Pane</code>...) est ajoutée à ses enfants :<br/><code>&lt;Label&gt;</code> dans <code>&lt;VBox&gt;</code> → <code>vbox.getChildren().add(label)</code>.</div>
+<div style="font-size: 1.5rem; line-height: 1.45;">Une balise placée à l'intérieur d'un conteneur (<code>VBox</code>, <code>HBox</code>, <code>Pane</code>...) est ajoutée à ses enfants : <code>&lt;Label&gt;</code> dans <code>&lt;VBox&gt;</code> → <code>vbox.getChildren().add(label)</code>.</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">🏷️ Zone nommée d'un conteneur</div>
-<div style="font-size: 1.5rem; line-height: 1.45;">Quand un conteneur a plusieurs zones distinctes (le <code>BorderPane</code> a un haut, un centre, un bas...), on entoure l'enfant d'une balise au nom de la zone : <code>&lt;top&gt;</code> → <code>setTop(...)</code>.</div>
+<div style="font-size: 1.5rem; line-height: 1.45;">Quand un conteneur a plusieurs zones distinctes (par exemple <code>BorderPane</code>), on entoure l'enfant d'une balise au nom de la zone : <code>&lt;top&gt;</code> → <code>setTop(...)</code>.</div>
 </div>
 
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 👉 Si vous savez écrire le code Java équivalent, vous savez écrire le FXML.
+</div>
+
+---
+
+## XML → Java : la traduction
+
+<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Le <code>FXMLLoader</code> traduit chaque balise en appel constructeur, chaque attribut en appel à un setter.</p>
+
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
+.tr-col { display: flex; flex-direction: column; }
+</style>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+
+<div class="tr-col">
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 FXML</div>
+
+```xml
+<BorderPane prefHeight="80" prefWidth="250">
+  <top>
+    <Label text="Titre"
+           textFill="#0022cc"/>
+  </top>
+  <center>
+    <Button fx:id="btn"
+            text="OK"
+            onAction="#valider"/>
+  </center>
+</BorderPane>
+```
+
+</div>
+
+<div class="tr-col">
+<div style="background: #1a5276; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">☕ Java équivalent</div>
+
+```java
+BorderPane root = new BorderPane();
+root.setPrefHeight(80);
+root.setPrefWidth(250);
+
+Label titre = new Label("Titre");
+titre.setTextFill(Color.web("#0022cc"));
+root.setTop(titre);
+
+Button btn = new Button("OK");
+btn.setOnAction(this::valider);
+root.setCenter(btn);
+```
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+Chaque <b>élément XML</b> = un appel <code>new ClasseJavaFX()</code>. Chaque <b>attribut</b> = un appel à un <code>setXxx(...)</code>.
 </div>
 
 ---
