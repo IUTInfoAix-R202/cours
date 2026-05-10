@@ -2897,19 +2897,19 @@ Ces conventions sont gravées dans la mémoire musculaire de vos utilisateurs. L
 
 <div style="background: #1a5276; color: white; padding: 1.4rem 1.2rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 2.5rem; margin-bottom: 0.4rem;">🏗️</div>
-<div style="font-weight: bold; font-size: 1.4rem; margin-bottom: 0.5rem;">Architecture</div>
+<div style="font-weight: bold; font-size: 1.7rem; margin-bottom: 0.5rem;">Architecture</div>
 <div style="font-size: 1.3rem; line-height: 1.5; opacity: 0.95;">Pattern <strong>MVC</strong>, vue déclarative <strong>FXML</strong>, composants réutilisables (<code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">fx:root</code>, <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">fx:include</code>).</div>
 </div>
 
 <div style="background: #e8a838; color: white; padding: 1.4rem 1.2rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 2.5rem; margin-bottom: 0.4rem;">⚡</div>
-<div style="font-weight: bold; font-size: 1.4rem; margin-bottom: 0.5rem;">Événements</div>
+<div style="font-weight: bold; font-size: 1.7rem; margin-bottom: 0.5rem;">Événements</div>
 <div style="font-size: 1.3rem; line-height: 1.5; opacity: 0.95;">Câblage déclaratif via <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">onAction="#méthode"</code>, hook <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">initialize()</code> après chargement.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1.4rem 1.2rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 2.5rem; margin-bottom: 0.4rem;">🧠</div>
-<div style="font-weight: bold; font-size: 1.4rem; margin-bottom: 0.5rem;">Ergonomie</div>
+<div style="font-weight: bold; font-size: 1.7rem; margin-bottom: 0.5rem;">Ergonomie</div>
 <div style="font-size: 1.3rem; line-height: 1.5; opacity: 0.95;">Heuristique #4 de Nielsen : cohérence et standards renforcés par mutualisation FXML + CSS.</div>
 </div>
 
