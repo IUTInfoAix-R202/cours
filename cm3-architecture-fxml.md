@@ -2926,16 +2926,16 @@ Ces conventions sont gravées dans la mémoire musculaire de vos utilisateurs. L
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.4rem 0;">Chaque exercice du TP3 met en pratique des concepts introduits dans ce CM.</p>
 
 <style scoped>
-section table { font-size: 1rem !important; width: 100%; border-collapse: collapse; }
-section th { background: #1a5276 !important; color: white !important; padding: 0.45rem 0.8rem !important; text-align: left !important; font-size: 1.15rem !important; }
-section td { padding: 0.4rem 0.8rem !important; border-bottom: 1px solid #e0e0e0 !important; font-size: 1rem !important; }
+section table { font-size: 0.85rem !important; width: 100%; border-collapse: collapse; }
+section th { background: #1a5276 !important; color: white !important; padding: 0.3rem 0.7rem !important; text-align: left !important; font-size: 0.95rem !important; }
+section td { padding: 0.25rem 0.7rem !important; border-bottom: 1px solid #e0e0e0 !important; font-size: 0.85rem !important; }
 section tr:nth-child(even) td { background: #f4f6f8 !important; }
-section table code { font-size: 0.92rem !important; padding: 1px 4px !important; }
+section table code { font-size: 0.78rem !important; padding: 1px 4px !important; }
 </style>
 
-| Exercice | Classe | Concepts |
+| # | Classe | Concepts mis en pratique |
 |---|---|---|
-| 1 | `PremiereVueFXML` | Premier chargement FXML, `FXMLLoader.load()` sans contrôleur |
+| 1 | `PremiereVueFXML` | Chargement FXML basique, `FXMLLoader.load()` sans contrôleur |
 | 2 | `CompteurFXML` + `CompteurController` | `@FXML`, `fx:id`, `fx:controller`, `onAction` |
 | 3 | `FormulaireConnexionFXML` | Form FXML + CSS + GridPane + validation (pont CM2 affordance) |
 | 4 | `MiseEnPageFXML` | Layout complet en FXML (pont TP1 mise en page procédurale) |
