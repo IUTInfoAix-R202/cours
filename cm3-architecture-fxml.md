@@ -1607,7 +1607,7 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">🔖 fx:id</div>
 <div style="font-size: 1.4rem; line-height: 1.4; margin-bottom: 0.6rem;">Lien entre le FXML et le <b>Java</b> : nom utilisé pour récupérer le nœud côté contrôleur.</div>
 <div style="font-size: 1.05rem; opacity: 0.85; margin-bottom: 0.2rem;">📄 FXML</div>
-<pre style="background: rgba(0,0,0,0.35) !important; color: #fff !important; padding: 0.45rem 0.7rem !important; border-radius: 4px; font-size: 1.05rem !important; margin: 0 0 0.5rem 0 !important; line-height: 1.4 !important;">&lt;Label fx:id="message"/&gt;</pre>
+<pre style="background: rgba(0,0,0,0.35) !important; color: #fff !important; padding: 0.45rem 0.7rem !important; border-radius: 4px; font-size: 1.05rem !important; margin: 0 0 1rem 0 !important; line-height: 1.4 !important;">&lt;Label fx:id="message"/&gt;</pre>
 <div style="font-size: 1.05rem; opacity: 0.85; margin-bottom: 0.2rem;">🎮 Controller</div>
 <pre style="background: rgba(0,0,0,0.35) !important; color: #fff !important; padding: 0.45rem 0.7rem !important; border-radius: 4px; font-size: 1.05rem !important; margin: 0 !important; line-height: 1.4 !important;">@FXML private Label message;</pre>
 </div>
@@ -1616,7 +1616,7 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">🎨 id</div>
 <div style="font-size: 1.4rem; line-height: 1.4; margin-bottom: 0.6rem;">Lien entre le FXML et le <b>CSS</b> : sélecteur unique pour appliquer un style.</div>
 <div style="font-size: 1.05rem; opacity: 0.9; margin-bottom: 0.2rem;">📄 FXML</div>
-<pre style="background: rgba(0,0,0,0.35) !important; color: #fff !important; padding: 0.45rem 0.7rem !important; border-radius: 4px; font-size: 1.05rem !important; margin: 0 0 0.5rem 0 !important; line-height: 1.4 !important;">&lt;Label id="message"/&gt;</pre>
+<pre style="background: rgba(0,0,0,0.35) !important; color: #fff !important; padding: 0.45rem 0.7rem !important; border-radius: 4px; font-size: 1.05rem !important; margin: 0 0 1rem 0 !important; line-height: 1.4 !important;">&lt;Label id="message"/&gt;</pre>
 <div style="font-size: 1.05rem; opacity: 0.9; margin-bottom: 0.2rem;">🎨 CSS</div>
 <pre style="background: rgba(0,0,0,0.35) !important; color: #fff !important; padding: 0.45rem 0.7rem !important; border-radius: 4px; font-size: 1.05rem !important; margin: 0 !important; line-height: 1.4 !important;">#message { -fx-font-size: 24px; }</pre>
 </div>
