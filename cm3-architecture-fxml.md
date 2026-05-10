@@ -1597,24 +1597,29 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 
 ---
 
-## id vs fx:id — ne pas confondre
+## fx:id (Java) vs id (CSS)
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Deux attributs au nom voisin mais aux rôles totalement différents : à ne jamais confondre.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Deux attributs au nom voisin mais qui servent à des choses <b>complètement différentes</b>.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🔖 fx:id</div>
-<div style="font-size: 1.4rem; line-height: 1.4;">Identifiant pour <b>l'injection Java</b> via <code>@FXML</code>.<br/>Attribut interne au moteur FXML.</div>
-<pre style="background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 4px; font-size: 0.9rem; margin: 0.5rem 0 0 0; line-height: 1.4;">&lt;Label fx:id="message"/&gt;
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">🔖 fx:id</div>
+<div style="font-size: 1.4rem; line-height: 1.4; margin-bottom: 0.6rem;">Lien entre le FXML et le <b>Java</b> : nom utilisé pour récupérer le nœud côté contrôleur.</div>
+<pre style="background: rgba(0,0,0,0.3); padding: 0.6rem 0.8rem; border-radius: 5px; font-size: 1rem; margin: 0; line-height: 1.45;"><span style="opacity: 0.7;">📄 FXML</span>
+&lt;Label fx:id="message"/&gt;
+
+<span style="opacity: 0.7;">🎮 Controller</span>
 @FXML private Label message;</pre>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 id</div>
-<div style="font-size: 1.4rem; line-height: 1.4;">Sélecteur <b>CSS</b> pour cibler le composant dans une feuille de style.</div>
-<pre style="background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 4px; font-size: 0.9rem; margin: 0.5rem 0 0 0; line-height: 1.4;">&lt;Label id="message"/&gt;
-/* CSS */
+<div style="background: #e8a838; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">🎨 id</div>
+<div style="font-size: 1.4rem; line-height: 1.4; margin-bottom: 0.6rem;">Lien entre le FXML et le <b>CSS</b> : sélecteur unique pour appliquer un style.</div>
+<pre style="background: rgba(0,0,0,0.3); padding: 0.6rem 0.8rem; border-radius: 5px; font-size: 1rem; margin: 0; line-height: 1.45;"><span style="opacity: 0.7;">📄 FXML</span>
+&lt;Label id="message"/&gt;
+
+<span style="opacity: 0.7;">🎨 CSS</span>
 #message { -fx-font-size: 24px; }</pre>
 </div>
 
