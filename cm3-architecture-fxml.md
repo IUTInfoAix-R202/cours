@@ -2945,13 +2945,13 @@ section table code { font-size: 0.7rem !important; padding: 1px 4px !important; 
 
 ---
 
-## Teaser CM4 - MVVM, persistance et synthèse
+## Cap sur le CM4
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.8rem 0;">Dans le <strong>CM4</strong>, on combine <strong>MVC</strong> (CM3) et <strong>bindings</strong> (CM2) pour aboutir à <strong>MVVM</strong>.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.6rem;">
 
-<div style="background: #c0392b; color: white; padding: 1.2rem 1.3rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem;">📍 Aujourd'hui (CM3)</div>
 <div style="font-size: 1.2rem; line-height: 1.45; margin-bottom: 0.7rem;">Le contrôleur <strong>connaît</strong> la vue (champs <code>@FXML</code>) et le modèle (référence directe).</div>
 <div style="background: rgba(0,0,0,0.25); padding: 0.55rem 0.75rem; border-radius: 6px; font-family: monospace; font-size: 0.92rem; line-height: 1.5;">@FXML Label message;<br/>Compteur compteur;<br/><br/>void initialize() {<br/>&nbsp;&nbsp;message.textProperty().bind(<br/>&nbsp;&nbsp;&nbsp;&nbsp;compteur.valeurProperty()...);<br/>}</div>
@@ -2966,7 +2966,7 @@ section table code { font-size: 0.7rem !important; padding: 1px 4px !important; 
 </div>
 
 <div style="display: flex; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.9rem;">
-<div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">🏗️ MVVM</div>
+<div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">🔄 Bindings systématiques</div>
 <div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">💉 Injection (Guice)</div>
 <div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">💾 JDBC / JPA</div>
 <div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">🐳 Docker</div>
