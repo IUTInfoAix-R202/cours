@@ -1167,7 +1167,7 @@ Une fois chargé, ce graphe est <b>indistinguable</b> d'un graphe créé par <co
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">🌳 Élément racine</div>
-<div style="font-size: 1.5rem; line-height: 1.45;">Une classe avec constructeur sans argument : <code>VBox</code>, <code>BorderPane</code>, <code>AnchorPane</code>.</div>
+<div style="font-size: 1.5rem; line-height: 1.45;">Une classe avec un constructeur par défaut : <code>VBox</code>, <code>BorderPane</code>, <code>AnchorPane</code>.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
@@ -1176,13 +1176,13 @@ Une fois chargé, ce graphe est <b>indistinguable</b> d'un graphe créé par <co
 </div>
 
 <div style="background: #e8a838; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">📦 Élément imbriqué</div>
-<div style="font-size: 1.5rem; line-height: 1.45;">Un <code>add()</code> sur la collection enfants : <code>&lt;Label&gt;</code> dans <code>&lt;VBox&gt;</code> → <code>vbox.getChildren().add(label)</code>.</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">📦 Élément enfant d'un conteneur</div>
+<div style="font-size: 1.5rem; line-height: 1.45;">Une balise placée à l'intérieur d'un conteneur (<code>VBox</code>, <code>HBox</code>, <code>Pane</code>...) est ajoutée à ses enfants :<br/><code>&lt;Label&gt;</code> dans <code>&lt;VBox&gt;</code> → <code>vbox.getChildren().add(label)</code>.</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">🏷️ Sous-élément nommé</div>
-<div style="font-size: 1.5rem; line-height: 1.45;">Pour <code>BorderPane</code> : <code>&lt;top&gt;</code>, <code>&lt;center&gt;</code>… → <code>setTop(...)</code>, <code>setCenter(...)</code>.</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">🏷️ Zone nommée d'un conteneur</div>
+<div style="font-size: 1.5rem; line-height: 1.45;">Quand un conteneur a plusieurs zones distinctes (le <code>BorderPane</code> a un haut, un centre, un bas...), on entoure l'enfant d'une balise au nom de la zone : <code>&lt;top&gt;</code> → <code>setTop(...)</code>.</div>
 </div>
 
 </div>
