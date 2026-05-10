@@ -1271,7 +1271,7 @@ section pre { font-size: 0.9rem !important; line-height: 1.4 !important; margin:
 
 ---
 
-## @FXML — l'injection automatique
+## Récupération automatique avec @FXML 
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'annotation <code>@FXML</code> dit à <code>FXMLLoader</code> : « <em>injecte le nœud nommé X dans le champ portant le même nom</em> ».</p>
 
@@ -1325,7 +1325,7 @@ La règle : <b>même nom dans le FXML et dans le Java</b>. Le <code>FXMLLoader</
 
 ---
 
-## fx:controller — déclarer le contrôleur
+## Déclarer le contrôleur (fx:controller)
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>fx:controller</code> sur l'élément racine indique quelle classe Java doit recevoir les injections.</p>
 
@@ -1362,7 +1362,7 @@ Pour passer un argument au contrôleur (ex : un modèle), il faut le créer manu
 
 ---
 
-## onAction — câbler un événement
+## Câbler un événement (onAction)
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>onAction="#méthode"</code> dit à JavaFX : « <em>quand ce bouton est cliqué, appelle <code>méthode()</code> du contrôleur</em> ».</p>
 
@@ -1420,7 +1420,7 @@ public class CompteurController {
 
 ---
 
-## initialize() — le hook après chargement
+## Le hook après chargement (initialize())
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Après injection des nœuds, <code>FXMLLoader</code> cherche une méthode <code>initialize()</code> dans le contrôleur et l'appelle.</p>
 
@@ -2082,7 +2082,7 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 
 ---
 
-## fx:root — la classe associée
+## La classe associée (fx:root)
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Le composant est sa propre classe : il se charge lui-même son FXML dans son constructeur.</p>
 
@@ -2206,7 +2206,7 @@ Règle simple : <b>fx:root</b> si le composant a vocation à être instancié pl
 
 ---
 
-## fx:include — composer des vues
+## Composer des vues (fx:include)
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour assembler une grande vue à partir de plus petites, on utilise <code>fx:include</code>.</p>
 
