@@ -2812,36 +2812,36 @@ Idéal pour un <b>theme switcher</b> (clair/sombre) : on remplace la feuille au 
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Six conventions de plateforme à internaliser dès le TP3 : elles font partie du contrat utilisateur.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6rem; margin-top: 0.4rem; align-items: stretch;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem; align-items: stretch;">
 
-<div style="background: #1a5276; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">🔘 Position des boutons</div>
-<div style="font-size: 1.1rem; line-height: 1.4;"><code>[Annuler]</code>  <code>[OK]</code> - Annuler à gauche, OK à droite (macOS/Windows moderne).</div>
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🔘 Position des boutons</div>
+<div style="font-size: 1.3rem; line-height: 1.45;"><code>[Annuler]</code>  <code>[OK]</code> - Annuler à gauche, OK à droite (macOS/Windows moderne).</div>
 </div>
 
-<div style="background: #27ae60; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">⌨️ Raccourcis</div>
-<div style="font-size: 1.1rem; line-height: 1.4;"><kbd>Enter</kbd> = bouton primaire (OK), <kbd>Esc</kbd> = bouton secondaire (Annuler).</div>
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">⌨️ Raccourcis</div>
+<div style="font-size: 1.3rem; line-height: 1.45;"><kbd>Enter</kbd> = bouton primaire (OK), <kbd>Esc</kbd> = bouton secondaire (Annuler).</div>
 </div>
 
-<div style="background: #8e44ad; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">🏷️ Labels</div>
-<div style="font-size: 1.1rem; line-height: 1.4;">À gauche du champ associé, alignés à droite dans un <code>GridPane</code>.</div>
+<div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🏷️ Labels</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">À gauche du champ associé, alignés à droite dans un <code>GridPane</code>.</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">⚠️ Messages d'erreur</div>
-<div style="font-size: 1.1rem; line-height: 1.4;">Sous le champ concerné, en rouge, avec une icône claire.</div>
+<div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">⚠️ Messages d'erreur</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Sous le champ concerné, en rouge, avec une icône claire.</div>
 </div>
 
-<div style="background: #e8a838; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">⏳ Action longue</div>
-<div style="font-size: 1.1rem; line-height: 1.4;"><code>disable</code> du bouton + indicateur de progression visible.</div>
+<div style="background: #e8a838; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">⏳ Action longue</div>
+<div style="font-size: 1.3rem; line-height: 1.45;"><code>disable</code> du bouton + indicateur de progression visible.</div>
 </div>
 
-<div style="background: #00838f; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">🎯 Affordance</div>
-<div style="font-size: 1.1rem; line-height: 1.4;">Un bouton est toujours <code>disable</code> quand son action est invalide <em>(CM2)</em>.</div>
+<div style="background: #00838f; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎯 Affordance</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Un bouton est toujours <code>disable</code> quand son action est invalide <em>(CM2)</em>.</div>
 </div>
 
 </div>
