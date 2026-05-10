@@ -2261,40 +2261,6 @@ VBox root = new VBox(
 
 ---
 
-## fx:root vs fx:include — quand utiliser quoi ?
-
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Deux mécanismes de composition différents, pour deux usages différents.</p>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
-
-<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🧱 fx:root</div>
-<div style="font-size: 1.4rem; line-height: 1.4; margin-bottom: 0.5rem;"><b>Composant unitaire réutilisable</b> : on définit une <b>nouvelle classe</b> qu'on utilise comme un composant JavaFX.</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 5px; font-size: 1.15rem; line-height: 1.5;">
-✓ <code>BarreStatut</code>, <code>SelecteurDate</code>, <code>EditeurMontant</code>...<br/>
-✓ Utilisable depuis FXML <em>ou</em> depuis Java.<br/>
-✓ Encapsulation forte.
-</div>
-</div>
-
-<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🧩 fx:include</div>
-<div style="font-size: 1.4rem; line-height: 1.4; margin-bottom: 0.5rem;"><b>Assemblage de vues complètes</b> : on découpe une grande vue en plusieurs FXML qu'on recolle.</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 5px; font-size: 1.15rem; line-height: 1.5;">
-✓ <code>entete.fxml</code> + <code>contenu.fxml</code> + <code>pied.fxml</code>...<br/>
-✓ Découpage par zone fonctionnelle.<br/>
-✓ Communication via le contrôleur parent.
-</div>
-</div>
-
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-Règle simple : <b>fx:root</b> si le composant a vocation à être instancié plusieurs fois. <b>fx:include</b> si c'est un morceau d'une vue spécifique.
-</div>
-
----
-
 ## Composer des vues (fx:include)
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour assembler une grande vue à partir de plus petites, on utilise <code>fx:include</code>.</p>
@@ -2328,6 +2294,40 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Trois fichiers FXML, trois contrôleurs, une vue assemblée. Chaque sous-vue est testable et réutilisable.
+</div>
+
+---
+
+## fx:root vs fx:include — quand utiliser quoi ?
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Deux mécanismes de composition différents, pour deux usages différents.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🧱 fx:root</div>
+<div style="font-size: 1.4rem; line-height: 1.4; margin-bottom: 0.5rem;"><b>Composant unitaire réutilisable</b> : on définit une <b>nouvelle classe</b> qu'on utilise comme un composant JavaFX.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 5px; font-size: 1.15rem; line-height: 1.5;">
+✓ <code>BarreStatut</code>, <code>SelecteurDate</code>, <code>EditeurMontant</code>...<br/>
+✓ Utilisable depuis FXML <em>ou</em> depuis Java.<br/>
+✓ Encapsulation forte.
+</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🧩 fx:include</div>
+<div style="font-size: 1.4rem; line-height: 1.4; margin-bottom: 0.5rem;"><b>Assemblage de vues complètes</b> : on découpe une grande vue en plusieurs FXML qu'on recolle.</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 5px; font-size: 1.15rem; line-height: 1.5;">
+✓ <code>entete.fxml</code> + <code>contenu.fxml</code> + <code>pied.fxml</code>...<br/>
+✓ Découpage par zone fonctionnelle.<br/>
+✓ Communication via le contrôleur parent.
+</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+Règle simple : <b>fx:root</b> si le composant a vocation à être instancié plusieurs fois. <b>fx:include</b> si c'est un morceau d'une vue spécifique.
 </div>
 
 ---
