@@ -1240,7 +1240,7 @@ public class CompteurApp extends Application {
 
 ## Déclarer le contrôleur (fx:controller)
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>fx:controller</code> sur l'élément racine désigne la classe Java qui pilote cette vue (celle qui reçoit les champs annotés <code>@FXML</code>).</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>fx:controller</code> sur l'élément racine désigne la classe Java qui pilote cette vue (celle qui reçoit les nœuds FXML dans ses données membres annotées avec <code>@FXML</code>).</p>
 
 <style scoped>
 section pre { font-size: 0.65rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
