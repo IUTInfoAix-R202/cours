@@ -1965,7 +1965,7 @@ SceneBuilder produit le FXML que vous auriez tapé : la <b>vitesse</b> en plus, 
 
 ---
 
-## SceneBuilder — l'écran type
+## L'écran type de SceneBuilder
 
 <style scoped>
 section img[alt^="SceneBuilder"] { max-height: 450px; max-width: 100%; height: auto; width: auto; display: block; margin: 0.3rem auto; }
