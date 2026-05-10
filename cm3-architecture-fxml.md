@@ -2766,10 +2766,10 @@ Le développeur ne <b>choisit pas une couleur</b> : il choisit un <b>rôle séma
 
 ## Une feuille CSS, plusieurs vues
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>stylesheets</code> peut aussi se poser au niveau de la <code>Scene</code>, pour appliquer un thème <b>global</b>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>stylesheets</code> peut se poser au niveau de la <code>Scene</code>, pour appliquer un thème <b>global</b>.</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+section pre { font-size: 0.55rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
 </style>
 
 <div style="background: #7f8c8d; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🚀 App.java</div>
@@ -2777,14 +2777,12 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 ```java
 public void start(Stage stage) throws IOException {
   Parent root = FXMLLoader.load(getClass().getResource("/fxml/main.fxml"));
-
   Scene scene = new Scene(root);
   // Toutes les vues sous root héritent de ces feuilles
   scene.getStylesheets().addAll(
       getClass().getResource("/css/theme.css").toExternalForm(),
       getClass().getResource("/css/composants.css").toExternalForm()
   );
-
   stage.setScene(scene);
   stage.show();
 }
@@ -2805,7 +2803,7 @@ public void start(Stage stage) throws IOException {
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-Idéal pour un <b>theme switcher</b> (clair/sombre) : on remplace la feuille au niveau <code>Scene</code> sans toucher aux FXML.
+Idéal pour un <b>theme switcher</b> (clair/sombre) : on remplace la feuille au niveau <code>Scene</code>.
 </div>
 
 ---
@@ -2814,22 +2812,39 @@ Idéal pour un <b>theme switcher</b> (clair/sombre) : on remplace la feuille au 
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Six conventions de plateforme à internaliser dès le TP3 : elles font partie du contrat utilisateur.</p>
 
-<style scoped>
-section table { font-size: 1.1rem !important; width: 100%; border-collapse: collapse; }
-section th { background: #27ae60 !important; color: white !important; padding: 0.5rem 0.9rem !important; text-align: left !important; font-size: 1.2rem !important; }
-section td { padding: 0.45rem 0.9rem !important; border-bottom: 1px solid #e0e0e0 !important; }
-section tr:nth-child(even) td { background: #f4f6f8 !important; }
-section table code { font-size: 1rem !important; }
-</style>
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6rem; margin-top: 0.4rem; align-items: stretch;">
 
-| Convention | Pratique attendue |
-|---|---|
-| 🔘 Position des boutons | `[ Annuler ]   [ OK ]` (Annuler à gauche, OK à droite - convention macOS/Windows moderne). |
-| ⌨️ Raccourcis | <kbd>Enter</kbd> = bouton primaire (OK), <kbd>Esc</kbd> = bouton secondaire (Annuler). |
-| 🏷️ Labels | Toujours à gauche du champ associé, alignés à droite dans un `GridPane`. |
-| ⚠️ Messages d'erreur | Sous le champ concerné, en rouge, avec une icône claire. |
-| ⏳ Action longue | Disable du bouton + indicateur de progression visible. |
-| 🎯 Affordance | Un bouton est toujours `disable` quand son action est invalide *(CM2)*. |
+<div style="background: #1a5276; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">🔘 Position des boutons</div>
+<div style="font-size: 1.1rem; line-height: 1.4;"><code>[Annuler]</code>  <code>[OK]</code> - Annuler à gauche, OK à droite (macOS/Windows moderne).</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">⌨️ Raccourcis</div>
+<div style="font-size: 1.1rem; line-height: 1.4;"><kbd>Enter</kbd> = bouton primaire (OK), <kbd>Esc</kbd> = bouton secondaire (Annuler).</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">🏷️ Labels</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">À gauche du champ associé, alignés à droite dans un <code>GridPane</code>.</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">⚠️ Messages d'erreur</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Sous le champ concerné, en rouge, avec une icône claire.</div>
+</div>
+
+<div style="background: #e8a838; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">⏳ Action longue</div>
+<div style="font-size: 1.1rem; line-height: 1.4;"><code>disable</code> du bouton + indicateur de progression visible.</div>
+</div>
+
+<div style="background: #00838f; color: white; padding: 0.7rem 0.9rem; border-radius: 10px;">
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">🎯 Affordance</div>
+<div style="font-size: 1.1rem; line-height: 1.4;">Un bouton est toujours <code>disable</code> quand son action est invalide <em>(CM2)</em>.</div>
+</div>
+
+</div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Ces conventions sont gravées dans la mémoire musculaire de vos utilisateurs. Les casser, c'est les ralentir.
