@@ -2710,7 +2710,7 @@ Tous matérialisent leurs règles dans du <b>code réutilisable</b> (CSS, compos
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">En JavaFX, le mécanisme central pour appliquer un design system est l'attribut <code>styleClass</code> couplé à un CSS d'app.</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
+section pre { font-size: 0.55rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
 .sc-col { display: flex; flex-direction: column; }
 </style>
 
@@ -2759,7 +2759,7 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-Le développeur ne <b>choisit pas une couleur</b> : il choisit un <b>rôle sémantique</b> (primaire, danger). Le design system résout en couleur.
+Le développeur ne <b>choisit pas une couleur</b> : il choisit un <b>rôle sémantique</b> (primaire, danger). Le design system traduit ce rôle en couleur concrète.
 </div>
 
 ---
