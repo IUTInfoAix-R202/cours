@@ -1421,7 +1421,7 @@ public class CompteurController {
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Après que <code>FXMLLoader</code> a rempli les données membres <code>@FXML</code>, il cherche une méthode <code>initialize()</code> dans le contrôleur et l'appelle.</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+section pre { font-size: 0.55rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
 </style>
 
 <div style="background: #27ae60; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🎮 CompteurController.java</div>
@@ -1430,14 +1430,11 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 public class CompteurController {
   @FXML private Label message;
   @FXML private ComboBox<String> langues;
-
   private final Compteur compteur = new Compteur();
 
-  @FXML
-  void initialize() {
+  @FXML void initialize() {
     // À ce stade, message et langues sont assignés.
     // C'est le bon moment pour binder, peupler, configurer.
-
     message.textProperty().bind(compteur.valeurProperty().asString());
     langues.getItems().addAll("fr", "en", "es");
     langues.setValue("fr");
