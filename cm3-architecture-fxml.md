@@ -1450,22 +1450,19 @@ public class CompteurController {
 
 ## Bindings inline avec `${}`
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">FXML supporte une syntaxe d'expression <code>${...}</code> pour binder directement dans le XML, sans passer par le contrôleur.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">FXML supporte une syntaxe d'expression <code>${...}</code> pour binder directement dans le XML, sans passer par la méthode <code>initialize()</code> du contrôleur.</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+section pre { font-size: 0.65rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
 </style>
 
 <div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 vue.fxml</div>
 
 ```xml
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="MaController">
-
   <!-- bind unidirectionnel sur la longueur du champ -->
   <Label text="${'Caractères saisis : ' + champ.length}"/>
-
   <TextField fx:id="champ"/>
-
   <!-- disable le bouton si le champ est vide -->
   <Button text="Valider" disable="${champ.text.isEmpty()}"/>
 
