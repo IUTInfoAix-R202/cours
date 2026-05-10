@@ -2076,10 +2076,10 @@ L'aperçu valide le <b>visuel</b> sans recompiler. Le <b>comportement</b>, lui, 
 
 ## Accéder au contrôleur depuis Java
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Deux usages : <b>passer des données au contrôleur</b> (un modèle, des services), ou <b>contrôler sa création</b> (pour un composant réutilisable, slide d'après).</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Deux usages : <b>passer des données au contrôleur</b> (un modèle, des services), ou <b>contrôler sa création</b> (pour un composant réutilisable par exemple).</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+section pre { font-size: 0.55rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
 </style>
 
 <div style="background: #7f8c8d; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🚀 App.java</div>
@@ -2088,16 +2088,12 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 public void start(Stage stage) throws IOException {
   // 1. Instancier un loader (méthode d'instance, pas statique)
   FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/compteur.fxml"));
-
   // 2. Charger le FXML
   Parent root = loader.load();
-
   // 3. Récupérer l'instance du contrôleur créée par FXMLLoader
   CompteurController controller = loader.getController();
-
   // 4. Lui passer ce qu'il faut (modèle, services...)
   controller.setCompteur(monCompteur);
-
   stage.setScene(new Scene(root));
   stage.show();
 }
