@@ -1993,8 +1993,8 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
 </div>
 
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🎯 Skip View</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">SceneBuilder peut générer le squelette du contrôleur via <em>View → Show Sample Controller Skeleton</em>.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🦴 Squelette du contrôleur</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">SceneBuilder génère le squelette de la classe Java associée via <em>View → Show Sample Controller Skeleton</em>.</div>
 </div>
 
 </div>
