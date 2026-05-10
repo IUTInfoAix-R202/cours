@@ -1318,7 +1318,7 @@ public class CompteurController {
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-La règle : <b>même nom dans le FXML et dans le Java</b>. Le <code>FXMLLoader</code> fait le câblage par réflexion.
+La règle : <b>même nom dans le FXML et dans le Java</b>. <code>FXMLLoader</code> fait la correspondance automatiquement, vous n'avez rien à câbler à la main.
 </div>
 
 ---
