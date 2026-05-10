@@ -2865,12 +2865,12 @@ Ces conventions sont gravées dans la mémoire musculaire de vos utilisateurs. L
 
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🔁 Modification globale</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Changer une convention = une PR sur un fichier. Pas 30 PR sur 30 vues.</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Changer une convention = un commit sur un fichier. Pas 30 commits sur 30 vues.</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">📚 Doc vivante</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Le code des composants <em>est</em> la documentation des standards. Pas de drift.</div>
+<div style="font-size: 1.3rem; line-height: 1.4;">Le code des composants <em>est</em> la documentation des standards. Pas de dérive.</div>
 </div>
 
 </div>
