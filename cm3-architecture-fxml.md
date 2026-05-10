@@ -1366,10 +1366,11 @@ La règle : <b>même nom dans le FXML et dans le Java</b>. <code>FXMLLoader</cod
 
 <style scoped>
 section pre { font-size: 0.7rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
+section code { font-size: 1em !important; }
 .act-col { display: flex; flex-direction: column; }
 </style>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin: 2.4rem 0; align-items: stretch;">
 
 <div class="act-col">
 <div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 FXML</div>
