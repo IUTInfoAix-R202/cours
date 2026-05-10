@@ -1967,61 +1967,11 @@ SceneBuilder produit le FXML que vous auriez tapé : la <b>vitesse</b> en plus, 
 
 ## SceneBuilder — l'écran type
 
-<svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 720px; display: block; margin: 0.4rem auto;">
-  <!-- Fond fenêtre -->
-  <rect x="0" y="0" width="700" height="350" fill="#ecf0f1" rx="8"/>
+<style scoped>
+section img[alt^="SceneBuilder"] { max-height: 480px; max-width: 100%; height: auto; width: auto; display: block; margin: 0.3rem auto; border: 1px solid #bdc3c7; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+</style>
 
-  <!-- Barre de menu -->
-  <rect x="0" y="0" width="700" height="22" fill="#34495e" rx="8"/>
-  <text x="10" y="15" font-family="sans-serif" font-size="10" fill="white">File  Edit  View  Insert  Modify  Arrange  Preview  Window  Help</text>
-
-  <!-- Panneau gauche : palette + hierarchy -->
-  <rect x="8" y="30" width="160" height="312" fill="white" stroke="#bdc3c7" rx="4"/>
-  <text x="14" y="45" font-family="sans-serif" font-size="11" font-weight="bold" fill="#2c3e50">Library</text>
-  <text x="14" y="62" font-family="sans-serif" font-size="9" fill="#7f8c8d">▸ Containers</text>
-  <text x="14" y="76" font-family="sans-serif" font-size="9" fill="#7f8c8d">▾ Controls</text>
-  <text x="22" y="89" font-family="sans-serif" font-size="9" fill="#34495e">  Button</text>
-  <text x="22" y="101" font-family="sans-serif" font-size="9" fill="#34495e">  Label</text>
-  <text x="22" y="113" font-family="sans-serif" font-size="9" fill="#34495e">  TextField</text>
-  <text x="22" y="125" font-family="sans-serif" font-size="9" fill="#34495e">  CheckBox</text>
-  <text x="22" y="137" font-family="sans-serif" font-size="9" fill="#34495e">  ComboBox</text>
-  <text x="14" y="155" font-family="sans-serif" font-size="9" fill="#7f8c8d">▸ Menus</text>
-  <text x="14" y="169" font-family="sans-serif" font-size="9" fill="#7f8c8d">▸ Misc</text>
-
-  <line x1="8" y1="195" x2="168" y2="195" stroke="#bdc3c7"/>
-  <text x="14" y="210" font-family="sans-serif" font-size="11" font-weight="bold" fill="#2c3e50">Hierarchy</text>
-  <text x="14" y="227" font-family="sans-serif" font-size="9" fill="#34495e">▾ VBox</text>
-  <text x="22" y="240" font-family="sans-serif" font-size="9" fill="#34495e">  Label "Compteur"</text>
-  <text x="22" y="252" font-family="sans-serif" font-size="9" fill="#34495e">  Button "OK"</text>
-
-  <!-- Zone centrale : preview -->
-  <rect x="178" y="30" width="320" height="312" fill="#fafafa" stroke="#bdc3c7" rx="4"/>
-  <text x="185" y="45" font-family="sans-serif" font-size="11" font-weight="bold" fill="#2c3e50">Content</text>
-  <!-- VBox preview -->
-  <rect x="248" y="100" width="180" height="160" fill="white" stroke="#27ae60" stroke-width="2" stroke-dasharray="4,2"/>
-  <text x="255" y="120" font-family="sans-serif" font-size="14" fill="#2c3e50">Compteur</text>
-  <rect x="285" y="170" width="100" height="32" fill="#3498db" rx="4"/>
-  <text x="318" y="190" font-family="sans-serif" font-size="12" fill="white">OK</text>
-
-  <!-- Panneau droit : inspector -->
-  <rect x="510" y="30" width="180" height="312" fill="white" stroke="#bdc3c7" rx="4"/>
-  <text x="516" y="45" font-family="sans-serif" font-size="11" font-weight="bold" fill="#2c3e50">Inspector</text>
-  <text x="516" y="62" font-family="sans-serif" font-size="9" fill="#7f8c8d">▾ Properties</text>
-  <text x="524" y="76" font-family="sans-serif" font-size="9" fill="#34495e">Text:</text>
-  <rect x="555" y="68" width="125" height="14" fill="#fafafa" stroke="#bdc3c7"/>
-  <text x="558" y="78" font-family="sans-serif" font-size="9" fill="#34495e">OK</text>
-  <text x="524" y="96" font-family="sans-serif" font-size="9" fill="#34495e">Font Size:</text>
-  <rect x="569" y="88" width="111" height="14" fill="#fafafa" stroke="#bdc3c7"/>
-  <text x="572" y="98" font-family="sans-serif" font-size="9" fill="#34495e">14</text>
-  <text x="516" y="120" font-family="sans-serif" font-size="9" fill="#7f8c8d">▾ Layout</text>
-  <text x="516" y="148" font-family="sans-serif" font-size="9" fill="#7f8c8d">▾ Code</text>
-  <text x="524" y="162" font-family="sans-serif" font-size="9" fill="#34495e">fx:id:</text>
-  <rect x="556" y="154" width="124" height="14" fill="#fafafa" stroke="#bdc3c7"/>
-  <text x="559" y="164" font-family="sans-serif" font-size="9" fill="#34495e">boutonOk</text>
-  <text x="524" y="182" font-family="sans-serif" font-size="9" fill="#34495e">On Action:</text>
-  <rect x="582" y="174" width="98" height="14" fill="#fafafa" stroke="#bdc3c7"/>
-  <text x="585" y="184" font-family="sans-serif" font-size="9" fill="#34495e">#valider</text>
-</svg>
+![SceneBuilder ouvert sur un FXML : panneau Library à gauche, Hierarchy en bas à gauche, Content au centre, Inspector à droite](assets/scenebuilder-screen.png)
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Library (composants disponibles), Hierarchy (structure de l'arbre), Content (rendu), Inspector (propriétés du nœud sélectionné).
