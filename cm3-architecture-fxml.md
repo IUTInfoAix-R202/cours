@@ -1280,7 +1280,7 @@ section pre { font-size: 0.55rem !important; line-height: 1.35 !important; margi
 .inj-col { display: flex; flex-direction: column; }
 </style>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin: 1.4rem 0; align-items: stretch;">
 
 <div class="inj-col">
 <div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 compteur.fxml</div>
@@ -1325,7 +1325,7 @@ La règle : <b>même nom dans le FXML et dans le Java</b>. <code>FXMLLoader</cod
 
 ## Déclarer le contrôleur (fx:controller)
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>fx:controller</code> sur l'élément racine indique quelle classe Java doit recevoir les injections.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>fx:controller</code> sur l'élément racine désigne la classe Java qui pilote cette vue (celle qui reçoit les champs annotés <code>@FXML</code>).</p>
 
 <style scoped>
 section pre { font-size: 0.9rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
