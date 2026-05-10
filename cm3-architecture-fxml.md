@@ -1021,7 +1021,7 @@ section pre { font-size: 0.5rem !important; line-height: 1.35 !important; margin
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Les déclarations en tête de fichier FXML : pas de magie, juste du XML structuré.</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+section pre { font-size: 0.65rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
 </style>
 
 <div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 vue.fxml</div>
@@ -1544,6 +1544,88 @@ Le constructeur s'exécute <b>avant</b> que les <code>@FXML</code> ne soient inj
 
 ---
 
+## Brancher une feuille CSS
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>stylesheets</code> sur l'élément racine du FXML applique une feuille de style à tout le sous-arbre.</p>
+
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
+.css-col { display: flex; flex-direction: column; }
+</style>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+
+<div class="css-col">
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 compteur.fxml</div>
+
+```xml
+<VBox stylesheets="@compteur.css"
+      xmlns:fx=
+        "http://javafx.com/fxml">
+  <Label id="titre"
+         text="Compteur"/>
+  <Label fx:id="message"
+         styleClass="valeur"/>
+</VBox>
+```
+
+</div>
+
+<div class="css-col">
+<div style="background: #e8a838; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🎨 compteur.css</div>
+
+```css
+#titre {
+  -fx-font-size: 14px;
+  -fx-text-fill: gray;
+}
+
+.valeur {
+  -fx-font-size: 36px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #4a90d9;
+}
+```
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<code>id</code> = sélecteur unique <code>#nom</code>. <code>styleClass</code> = sélecteur de classe <code>.nom</code>, réutilisable.
+</div>
+
+---
+
+## id vs fx:id — ne pas confondre
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Deux attributs au nom voisin mais aux rôles totalement différents : à ne jamais confondre.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🔖 fx:id</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Identifiant pour <b>l'injection Java</b> via <code>@FXML</code>.<br/>Attribut interne au moteur FXML.</div>
+<pre style="background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 4px; font-size: 0.9rem; margin: 0.5rem 0 0 0; line-height: 1.4;">&lt;Label fx:id="message"/&gt;
+@FXML private Label message;</pre>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 id</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Sélecteur <b>CSS</b> pour cibler le composant dans une feuille de style.</div>
+<pre style="background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 4px; font-size: 0.9rem; margin: 0.5rem 0 0 0; line-height: 1.4;">&lt;Label id="message"/&gt;
+/* CSS */
+#message { -fx-font-size: 24px; }</pre>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+On peut mettre les deux : <code>&lt;Label fx:id="message" id="message"/&gt;</code> - utile quand le nom Java sert aussi de sélecteur CSS.
+</div>
+
+---
+
 ## Internationalisation avec ResourceBundle
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">FXML supporte l'i18n nativement via la syntaxe <code>%clé</code> et un <code>ResourceBundle</code>.</p>
@@ -1600,88 +1682,6 @@ loader.setResources(bundle);
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Aucune ligne Java à modifier pour traduire l'app. Le FXML reste neutre, le bundle change selon la <code>Locale</code>.
-</div>
-
----
-
-## id vs fx:id — ne pas confondre
-
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Deux attributs au nom voisin mais aux rôles totalement différents : à ne jamais confondre.</p>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
-
-<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🔖 fx:id</div>
-<div style="font-size: 1.4rem; line-height: 1.4;">Identifiant pour <b>l'injection Java</b> via <code>@FXML</code>.<br/>Attribut interne au moteur FXML.</div>
-<pre style="background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 4px; font-size: 0.9rem; margin: 0.5rem 0 0 0; line-height: 1.4;">&lt;Label fx:id="message"/&gt;
-@FXML private Label message;</pre>
-</div>
-
-<div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 id</div>
-<div style="font-size: 1.4rem; line-height: 1.4;">Sélecteur <b>CSS</b> pour cibler le composant dans une feuille de style.</div>
-<pre style="background: rgba(0,0,0,0.25); padding: 0.5rem 0.7rem; border-radius: 4px; font-size: 0.9rem; margin: 0.5rem 0 0 0; line-height: 1.4;">&lt;Label id="message"/&gt;
-/* CSS */
-#message { -fx-font-size: 24px; }</pre>
-</div>
-
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-On peut mettre les deux : <code>&lt;Label fx:id="message" id="message"/&gt;</code> - utile quand le nom Java sert aussi de sélecteur CSS.
-</div>
-
----
-
-## Brancher une feuille CSS
-
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>stylesheets</code> sur l'élément racine du FXML applique une feuille de style à tout le sous-arbre.</p>
-
-<style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
-.css-col { display: flex; flex-direction: column; }
-</style>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
-
-<div class="css-col">
-<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 compteur.fxml</div>
-
-```xml
-<VBox stylesheets="@compteur.css"
-      xmlns:fx=
-        "http://javafx.com/fxml">
-  <Label id="titre"
-         text="Compteur"/>
-  <Label fx:id="message"
-         styleClass="valeur"/>
-</VBox>
-```
-
-</div>
-
-<div class="css-col">
-<div style="background: #e8a838; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🎨 compteur.css</div>
-
-```css
-#titre {
-  -fx-font-size: 14px;
-  -fx-text-fill: gray;
-}
-
-.valeur {
-  -fx-font-size: 36px;
-  -fx-font-weight: bold;
-  -fx-text-fill: #4a90d9;
-}
-```
-
-</div>
-
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-<code>id</code> = sélecteur unique <code>#nom</code>. <code>styleClass</code> = sélecteur de classe <code>.nom</code>, réutilisable.
 </div>
 
 ---
