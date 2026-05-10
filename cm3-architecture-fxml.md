@@ -1166,23 +1166,23 @@ Une fois chargé, ce graphe est <b>indistinguable</b> d'un graphe créé par <co
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🌳 Élément racine</div>
-<div style="font-size: 1.3rem; line-height: 1.45;">Une classe avec constructeur sans argument : <code>VBox</code>, <code>BorderPane</code>, <code>AnchorPane</code>.</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">🌳 Élément racine</div>
+<div style="font-size: 1.5rem; line-height: 1.45;">Une classe avec constructeur sans argument : <code>VBox</code>, <code>BorderPane</code>, <code>AnchorPane</code>.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">⚙️ Attribut sur l'élément</div>
-<div style="font-size: 1.3rem; line-height: 1.45;">Un setter standard : <code>text="X"</code> → <code>setText("X")</code>, <code>spacing="10"</code> → <code>setSpacing(10)</code>.</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">⚙️ Attribut sur l'élément</div>
+<div style="font-size: 1.5rem; line-height: 1.45;">Un setter standard : <code>text="X"</code> → <code>setText("X")</code>, <code>spacing="10"</code> → <code>setSpacing(10)</code>.</div>
 </div>
 
 <div style="background: #e8a838; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">📦 Élément imbriqué</div>
-<div style="font-size: 1.3rem; line-height: 1.45;">Un <code>add()</code> sur la collection enfants : <code>&lt;Label&gt;</code> dans <code>&lt;VBox&gt;</code> → <code>vbox.getChildren().add(label)</code>.</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">📦 Élément imbriqué</div>
+<div style="font-size: 1.5rem; line-height: 1.45;">Un <code>add()</code> sur la collection enfants : <code>&lt;Label&gt;</code> dans <code>&lt;VBox&gt;</code> → <code>vbox.getChildren().add(label)</code>.</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🏷️ Sous-élément nommé</div>
-<div style="font-size: 1.3rem; line-height: 1.45;">Pour <code>BorderPane</code> : <code>&lt;top&gt;</code>, <code>&lt;center&gt;</code>… → <code>setTop(...)</code>, <code>setCenter(...)</code>.</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">🏷️ Sous-élément nommé</div>
+<div style="font-size: 1.5rem; line-height: 1.45;">Pour <code>BorderPane</code> : <code>&lt;top&gt;</code>, <code>&lt;center&gt;</code>… → <code>setTop(...)</code>, <code>setCenter(...)</code>.</div>
 </div>
 
 </div>
