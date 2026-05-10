@@ -2138,7 +2138,7 @@ public void start(Stage stage) throws IOException {
 
 ---
 
-## 🏗️ Composants réutilisables avec fx:root
+## Composant réutilisable (fx:root) - le FXML
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour créer un composant <b>autonome</b> (ex: une barre de statut), on utilise <code>fx:root</code> au lieu d'un type concret.</p>
 
@@ -2179,7 +2179,7 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 
 ---
 
-## La classe associée (fx:root)
+## Composant réutilisable (fx:root) - la classe Java
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Le composant est sa propre classe : il se charge lui-même son FXML dans son constructeur.</p>
 
