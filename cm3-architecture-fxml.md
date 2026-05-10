@@ -1257,7 +1257,7 @@ section pre { font-size: 0.9rem !important; line-height: 1.4 !important; margin:
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem; align-items: stretch;">
 
-<div style="background: #4a90d9; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="background: #e8a838; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">⚠️ Pas tous les nœuds</div>
 <div style="font-size: 1.3rem; line-height: 1.45;">Inutile de nommer le <code>VBox</code> racine si vous ne le manipulez pas. Nommez seulement ce que le contrôleur doit toucher.</div>
 </div>
