@@ -1992,19 +1992,19 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
   <rect x="770" y="20" width="300" height="70" rx="14" fill="#27ae60"/>
   <text x="920" y="50" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">💻 IDE / VSCode</text>
   <text x="920" y="76" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">l'enseignant écrit le contrôleur</text>
-  <rect x="40" y="180" width="280" height="100" rx="14" fill="#4a90d9"/>
-  <text x="180" y="220" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">🎨 SceneBuilder</text>
-  <text x="180" y="248" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">édite la structure visuelle</text>
+  <rect x="10" y="180" width="280" height="100" rx="14" fill="#4a90d9"/>
+  <text x="150" y="220" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">🎨 SceneBuilder</text>
+  <text x="150" y="248" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">édite la structure visuelle</text>
   <rect x="430" y="180" width="240" height="100" rx="14" fill="#1a5276"/>
   <text x="550" y="220" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">📄 fichier.fxml</text>
   <text x="550" y="248" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">(versionné Git)</text>
   <rect x="780" y="180" width="280" height="100" rx="14" fill="#27ae60"/>
   <text x="920" y="220" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">☕ Controller.java</text>
   <text x="920" y="248" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">le comportement Java</text>
-  <line x1="320" y1="225" x2="430" y2="225" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-wf)"/>
-  <line x1="430" y1="240" x2="320" y2="240" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-wf)"/>
-  <rect x="332" y="194" width="106" height="22" rx="4" fill="#ecf0f1" stroke="#bdc3c7"/>
-  <text x="385" y="210" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">sauvegarde</text>
+  <line x1="290" y1="225" x2="430" y2="225" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-wf)"/>
+  <line x1="430" y1="240" x2="290" y2="240" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-wf)"/>
+  <rect x="307" y="194" width="106" height="22" rx="4" fill="#ecf0f1" stroke="#bdc3c7"/>
+  <text x="360" y="210" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">sauvegarde</text>
   <line x1="920" y1="90" x2="920" y2="180" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-wf)"/>
   <rect x="888" y="123" width="64" height="22" rx="4" fill="#ecf0f1" stroke="#bdc3c7"/>
   <text x="920" y="139" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">édition</text>
