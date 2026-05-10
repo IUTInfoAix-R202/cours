@@ -1238,7 +1238,7 @@ public class CompteurApp extends Application {
 
 ---
 
-## fx:id — nommer un nœud
+## Nommer un nœud (fx:id)
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 1.5rem 0;">L'attribut <code>fx:id</code> donne un nom unique à un nœud du FXML pour pouvoir le manipuler depuis Java.</p>
 
