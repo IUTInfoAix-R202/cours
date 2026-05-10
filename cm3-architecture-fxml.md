@@ -1989,9 +1989,9 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#2c3e50"/>
     </marker>
   </defs>
-  <rect x="700" y="20" width="300" height="70" rx="14" fill="#27ae60"/>
-  <text x="850" y="50" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">💻 IDE / VSCode</text>
-  <text x="850" y="76" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">l'enseignant écrit le contrôleur</text>
+  <rect x="770" y="20" width="300" height="70" rx="14" fill="#27ae60"/>
+  <text x="920" y="50" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">💻 IDE / VSCode</text>
+  <text x="920" y="76" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">l'enseignant écrit le contrôleur</text>
   <rect x="40" y="180" width="280" height="100" rx="14" fill="#4a90d9"/>
   <text x="180" y="220" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">🎨 SceneBuilder</text>
   <text x="180" y="248" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">édite la structure visuelle</text>
@@ -2005,9 +2005,9 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
   <line x1="430" y1="240" x2="320" y2="240" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-wf)"/>
   <rect x="332" y="194" width="106" height="22" rx="4" fill="#ecf0f1" stroke="#bdc3c7"/>
   <text x="385" y="210" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">sauvegarde</text>
-  <line x1="850" y1="90" x2="900" y2="180" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-wf)"/>
-  <rect x="845" y="118" width="76" height="22" rx="4" fill="#ecf0f1" stroke="#bdc3c7"/>
-  <text x="883" y="134" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">édition</text>
+  <line x1="920" y1="90" x2="920" y2="180" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-wf)"/>
+  <rect x="888" y="123" width="64" height="22" rx="4" fill="#ecf0f1" stroke="#bdc3c7"/>
+  <text x="920" y="139" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">édition</text>
   <line x1="670" y1="220" x2="780" y2="220" stroke="#2c3e50" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-wf)"/>
   <line x1="780" y1="240" x2="670" y2="240" stroke="#2c3e50" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-wf)"/>
   <text x="725" y="206" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2c3e50">fx:controller</text>
