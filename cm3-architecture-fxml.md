@@ -1416,7 +1416,7 @@ public class CompteurController {
 
 ---
 
-## Le hook après chargement (initialize())
+## Configurer la vue (initialize())
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Après que <code>FXMLLoader</code> a rempli les données membres <code>@FXML</code>, il cherche une méthode <code>initialize()</code> dans le contrôleur et l'appelle.</p>
 
@@ -1435,7 +1435,7 @@ public class CompteurController {
 
   @FXML
   void initialize() {
-    // À ce stade, message et langues sont injectés.
+    // À ce stade, message et langues sont assignés.
     // C'est le bon moment pour binder, peupler, configurer.
 
     message.textProperty().bind(compteur.valeurProperty().asString());
