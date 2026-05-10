@@ -1699,18 +1699,17 @@ title=Login
 ```xml
 <VBox xmlns:fx="...">
   <Label text="%title"/>
-  <HBox>
-    <Button text="%btn.cancel"/>
-    <Button text="%btn.ok"/>
-  </HBox>
+  <Button text="%btn.cancel"/>
+  <Button text="%btn.ok"/>
 </VBox>
 ```
 
 <div style="background: #7f8c8d; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem; margin-top: 0.4rem;">🚀 App.java</div>
 
 ```java
+// Locale système : fr_FR, en_US, ...
 ResourceBundle bundle = ResourceBundle
-    .getBundle("messages", Locale.FRENCH);
+    .getBundle("messages");
 loader.setResources(bundle);
 ```
 
@@ -1719,7 +1718,7 @@ loader.setResources(bundle);
 </div>
 
 <div style="background: rgba(74,144,217,0.15); padding: 0.5rem 1rem; border-radius: 6px; margin-top: 0.4rem; font-size: 1.2rem; text-align: center; color: #2c3e50;">
-🔍 <code>Locale.FRENCH</code> → Java cherche <code>messages_fr.properties</code> <span style="opacity: 0.75;">(convention : <code>baseName_langue.properties</code>, fallback sur <code>messages.properties</code>)</span>.
+🔍 Si la locale système est <code>fr_FR</code>, Java cherche <code>messages_fr.properties</code> <span style="opacity: 0.75;">(convention : <code>baseName_langue.properties</code>, fallback sur <code>messages.properties</code>)</span>.
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
