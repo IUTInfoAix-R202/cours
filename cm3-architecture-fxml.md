@@ -1991,16 +1991,16 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
   </defs>
   <rect x="770" y="20" width="300" height="70" rx="14" fill="#27ae60"/>
   <text x="920" y="50" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">💻 IDE / VSCode</text>
-  <text x="920" y="76" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">l'enseignant écrit le contrôleur</text>
+  <text x="920" y="76" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">édite le code</text>
   <rect x="10" y="180" width="280" height="100" rx="14" fill="#4a90d9"/>
   <text x="150" y="220" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">🎨 SceneBuilder</text>
   <text x="150" y="248" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">édite la structure visuelle</text>
   <rect x="430" y="180" width="240" height="100" rx="14" fill="#1a5276"/>
   <text x="550" y="220" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">📄 fichier.fxml</text>
-  <text x="550" y="248" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">(versionné Git)</text>
+  <text x="550" y="248" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">description de la structure</text>
   <rect x="780" y="180" width="280" height="100" rx="14" fill="#27ae60"/>
   <text x="920" y="220" text-anchor="middle" fill="white" font-family="sans-serif" font-size="20" font-weight="bold">☕ Controller.java</text>
-  <text x="920" y="248" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">le comportement Java</text>
+  <text x="920" y="248" text-anchor="middle" fill="white" font-family="sans-serif" font-size="15">décrit le comportement</text>
   <line x1="290" y1="225" x2="430" y2="225" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-wf)"/>
   <line x1="430" y1="240" x2="290" y2="240" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow-wf)"/>
   <rect x="307" y="194" width="106" height="22" rx="4" fill="#ecf0f1" stroke="#bdc3c7"/>
@@ -2037,25 +2037,29 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">👁️ View → Preview in Window</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Lance une fenêtre simulant le rendu réel : layout, taille, redimensionnement à la souris.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.35rem;">👁️ View → Preview in Window</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Lance une fenêtre simulant le rendu réel : layout, taille, redimensionnement à la souris.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🎨 Preview → Scene Style</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Bascule entre le thème <em>Modena</em> (par défaut), <em>Caspian</em> (héritage) et le CSS personnalisé attaché.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.35rem;">🎨 Preview → Scene Style</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Bascule entre le thème <em>Modena</em> (par défaut), <em>Caspian</em> (héritage) et le CSS personnalisé attaché.</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🌐 Preview → Internationalization</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Charge un <code>ResourceBundle</code> et affiche immédiatement la vue traduite, sans relancer.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.35rem;">🌐 Preview → Internationalization</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Charge un <code>ResourceBundle</code> et affiche immédiatement la vue traduite, sans relancer.</div>
 </div>
 
 <div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">⚠️ Preview ≠ exécution</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Les bindings et handlers ne sont <b>pas</b> exécutés. Pour tester le comportement, lancer la vraie app.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.35rem;">⚠️ Preview ≠ exécution</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Les bindings et handlers ne sont <b>pas</b> exécutés. Pour tester le comportement, lancer la vraie app.</div>
 </div>
 
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+L'aperçu valide le <b>visuel</b> sans recompiler. Le <b>comportement</b>, lui, ne se vérifie qu'à l'exécution.
 </div>
 
 ---
