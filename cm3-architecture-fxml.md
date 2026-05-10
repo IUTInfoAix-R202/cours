@@ -1959,6 +1959,10 @@ Une vue déclarative, c'est aussi une vue <b>éditable autrement qu'à la main</
 
 </div>
 
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+SceneBuilder produit le FXML que vous auriez tapé : la <b>vitesse</b> en plus, le <b>contrôle</b> préservé.
+</div>
+
 ---
 
 ## SceneBuilder — l'écran type
