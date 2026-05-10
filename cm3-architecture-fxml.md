@@ -1490,7 +1490,7 @@ section pre { font-size: 0.65rem !important; line-height: 1.35 !important; margi
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">De l'appel <code>FXMLLoader.load()</code> à l'affichage : qui crée quoi, et dans quel ordre.</p>
 
 <style scoped>
-section img[alt^="Cycle de vie"] { max-height: 460px; max-width: 100%; height: auto; width: auto; display: block; margin: 0.2rem auto; }
+section img[alt^="Cycle de vie"] { width: 100%; max-height: 480px; height: auto; display: block; margin: 0.2rem auto; }
 </style>
 
 ![Cycle de vie du chargement FXML : load() → new Controller() → assignation des @FXML → initialize() → retour à l'Application](assets/kroki/cm3-fxml-cycle-vie.svg)
