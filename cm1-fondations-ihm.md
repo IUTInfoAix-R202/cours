@@ -713,7 +713,7 @@ table { font-size: 0.9rem; }
 table { font-size: 0.85rem; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">En termes techniques, cette métaphore se traduit par un <strong>arbre d'objets</strong> :</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">En termes techniques, cette métaphore se traduit par un <strong>arbre d'objets</strong> :</p>
 
 <div style="display: flex; flex-direction: column; align-items: center; gap: 0.4rem; margin: 0.8rem 0;">
 
@@ -803,7 +803,7 @@ public class HelloWorld extends Application {
 
 ## 🏗️ Comment ça démarre ?
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Le <strong>point d'entrée</strong> d'une application JavaFX :</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Le <strong>point d'entrée</strong> d'une application JavaFX :</p>
 
 ```java
 public class HelloWorld extends Application {
@@ -832,7 +832,7 @@ public class HelloWorld extends Application {
 
 ## 🏗️ Le cycle de vie d'une application
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;"><code>launch()</code> déclenche un cycle de vie géré <strong>entièrement par JavaFX</strong> :</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;"><code>launch()</code> déclenche un cycle de vie géré <strong>entièrement par JavaFX</strong> :</p>
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin: 4rem 0; gap: 0.3rem;">
 <div style="background: #b0bec5; color: #333; padding: 0.8rem 1rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold; text-align: center;">Constructeur</div>
@@ -914,7 +914,7 @@ Le **graphe de scène** (scene graph) est la structure de données centrale de J
 
 ## 🏗️ Trois familles de nœuds
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Trois rôles fondamentaux structurent tout le graphe de scène : <strong>organiser</strong>, <strong>interagir</strong>, <strong>dessiner</strong>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Trois rôles fondamentaux structurent tout le graphe de scène : <strong>organiser</strong>, <strong>interagir</strong>, <strong>dessiner</strong>.</p>
 
 <div style="display: flex; gap: 1.2rem; margin-top: 0.6rem;">
 <div style="flex: 1; background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px;">
@@ -1186,7 +1186,7 @@ Comment découper cette maquette en conteneurs de haut niveau ?
 
 ## 🧠 Principes de perception visuelle (Gestalt)
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">La <b>Gestalt</b> est un courant de psychologie de la perception (Allemagne, 1920). Il décrit comment l'œil humain <b>organise spontanément</b> ce qu'il voit.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">La <b>Gestalt</b> est un courant de psychologie de la perception (Allemagne, 1920). Il décrit comment l'œil humain <b>organise spontanément</b> ce qu'il voit.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;  margin: 4rem 0;">
 <div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
@@ -1216,7 +1216,7 @@ Ces principes ne sont pas JavaFX-spécifiques : ils s'appliquent à <b>toute</b>
 
 ## 🧠 Gestalt appliquée aux conteneurs JavaFX
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Chaque principe Gestalt guide directement le <strong>choix du conteneur</strong> :</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Chaque principe Gestalt guide directement le <strong>choix du conteneur</strong> :</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 4rem 0;">
 
@@ -1295,7 +1295,7 @@ L'utilisateur peut cliquer **n'importe où**, **à n'importe quel moment**. Le p
 
 ## ⚡ Le pattern Observer
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Le modèle événementiel repose sur une idée simple : <strong>« quand quelque chose se passe, préviens-moi »</strong>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Le modèle événementiel repose sur une idée simple : <strong>« quand quelque chose se passe, préviens-moi »</strong>.</p>
 
 <div style="display: flex; gap: 1rem; margin: 3rem 0; align-items: center;">
 <div style="background: #e74c3c; color: white; padding: 1.2rem; border-radius: 12px; text-align: center; flex: 1;">
@@ -1791,7 +1791,7 @@ Le code qui <b>fonctionne</b> ne suffit pas. Une bonne IHM est une interface qui
 
 ## Pour aller plus loin
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quelques pistes pour approfondir avant le CM2 et pendant le TP1.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Quelques pistes pour approfondir avant le CM2 et pendant le TP1.</p>
 
 <div style="display: flex; gap: 1.2rem; margin-top: 0.6rem; align-items: stretch;">
 <div style="flex: 1; display: flex; flex-direction: column; gap: 1rem;">

@@ -158,7 +158,7 @@ Aujourd'hui : combiner <b>MVC + bindings</b> pour aller vers <b>MVVM</b>, ajoute
 
 ## MVC en pratique : le contrôleur reste la zone grise
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Au CM3, on a découpé en M, V, C. Mais le <b>contrôleur</b> finit par mélanger plusieurs responsabilités quand l'écran se complexifie.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Au CM3, on a découpé en M, V, C. Mais le <b>contrôleur</b> finit par mélanger plusieurs responsabilités quand l'écran se complexifie.</p>
 
 ```java
 public class FormulaireController {
@@ -218,7 +218,7 @@ public class FormulaireController {
 
 ## La pyramide des tests
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Plus un test est <b>haut</b> dans la pyramide, plus il coûte cher à écrire et à exécuter. L'objectif : maximiser la base.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Plus un test est <b>haut</b> dans la pyramide, plus il coûte cher à écrire et à exécuter. L'objectif : maximiser la base.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 0.9rem; align-items: center; margin-top: 0.4rem;">
 
@@ -267,7 +267,7 @@ public class FormulaireController {
 
 ## L'idée de MVVM : interposer un ViewModel
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">On insère une couche entre la vue et le modèle : le <b>ViewModel</b>. Il porte l'<b>état UI</b> sous forme de propriétés observables.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">On insère une couche entre la vue et le modèle : le <b>ViewModel</b>. Il porte l'<b>état UI</b> sous forme de propriétés observables.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.4rem;">
 
@@ -291,7 +291,7 @@ public class FormulaireController {
 
 ## Origine et adoption de MVVM
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVVM est plus jeune que MVC, et né d'une nécessité industrielle.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">MVVM est plus jeune que MVC, et né d'une nécessité industrielle.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 3fr; gap: 0.5rem 0.9rem; align-items: center; margin-top: 0.4rem;">
 
@@ -358,7 +358,7 @@ public class FormulaireController {
 
 ## 🏗️ Le pattern Modèle-Vue-ViewModel
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Trois rôles, dont deux que vous connaissez et un nouveau venu.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Trois rôles, dont deux que vous connaissez et un nouveau venu.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
 
@@ -632,7 +632,7 @@ Tape dans le champ → le VM met à jour le modèle → l'affichage suit. Trois 
 
 ## Listes : ObservableList et data binding
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour exposer une <b>collection</b> qui se met à jour automatiquement dans une <code>TableView</code> ou <code>ListView</code>, on utilise une <code>ObservableList</code>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour exposer une <b>collection</b> qui se met à jour automatiquement dans une <code>TableView</code> ou <code>ListView</code>, on utilise une <code>ObservableList</code>.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
 
@@ -689,7 +689,7 @@ public void capturer(Pokemon p) {
 
 ## Plusieurs vues, un seul ViewModel
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Bénéfice clé : un même ViewModel peut alimenter <b>plusieurs vues</b> simultanément.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Bénéfice clé : un même ViewModel peut alimenter <b>plusieurs vues</b> simultanément.</p>
 
 ```java
 // Une vue formulaire pour saisir
@@ -721,7 +721,7 @@ compteur.textProperty().bind(
 
 ## Commandes : modéliser les actions
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour les actions (boutons), on expose des <b>méthodes</b> sur le VM. Pattern « Command ».</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour les actions (boutons), on expose des <b>méthodes</b> sur le VM. Pattern « Command ».</p>
 
 ```java
 public class FormulaireConnexionViewModel {
@@ -788,7 +788,7 @@ Plus aucun <code>if</code>, plus aucune logique. Juste : <em>« je connecte les 
 
 ## Validation côté ViewModel
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Le VM est l'endroit naturel pour valider les saisies : il a accès aux propriétés et expose des indicateurs d'erreur.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Le VM est l'endroit naturel pour valider les saisies : il a accès aux propriétés et expose des indicateurs d'erreur.</p>
 
 ```java
 public class FormulaireViewModel {
@@ -844,7 +844,7 @@ Ces patterns partagent tous la même intention : <b>séparer la logique d'affich
 
 ## Gérer les erreurs dans une commande
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Une commande VM peut échouer (réseau, BDD, validation). On expose l'état via une propriété, jamais via une exception qui remonte à l'UI.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Une commande VM peut échouer (réseau, BDD, validation). On expose l'état via une propriété, jamais via une exception qui remonte à l'UI.</p>
 
 ```java
 public class FormulaireConnexionViewModel {
@@ -946,7 +946,7 @@ La vue se contente de bind <code>statut</code> dans un Label et <code>enCours</c
 
 ## 💉 Le problème : `new` partout
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Au CM3, le contrôleur instancie son modèle avec <code>new</code>. C'est simple, mais ça crée un graphe d'objets fragiles.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Au CM3, le contrôleur instancie son modèle avec <code>new</code>. C'est simple, mais ça crée un graphe d'objets fragiles.</p>
 
 ```java
 public class FormulaireConnexionController {
@@ -968,7 +968,7 @@ public class FormulaireConnexionController {
 
 ## L'inversion de contrôle (IoC)
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Idée fondatrice : un objet ne doit pas <b>créer</b> ses dépendances. Il doit les <b>recevoir</b>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Idée fondatrice : un objet ne doit pas <b>créer</b> ses dépendances. Il doit les <b>recevoir</b>.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
 
@@ -1009,7 +1009,7 @@ Le terme « inversion » : c'est le <b>responsable de la composition</b> qui cha
 
 ## Composition root : qui assemble tout ?
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Sans framework, on instancie « à la main » au démarrage de l'app.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Sans framework, on instancie « à la main » au démarrage de l'app.</p>
 
 ```java
 public class App extends Application {
@@ -1039,7 +1039,7 @@ public class App extends Application {
 
 ## Guice : un container DI léger
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;"><b>Google Guice</b> automatise la composition. On déclare les dépendances avec <code>@Inject</code> et un <b>Module</b> qui dit comment les résoudre.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;"><b>Google Guice</b> automatise la composition. On déclare les dépendances avec <code>@Inject</code> et un <b>Module</b> qui dit comment les résoudre.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem;">
 
@@ -1221,7 +1221,7 @@ class FormulaireViewModelTest {
 
 ## Guice et JavaFX : intégration FXMLLoader
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour que les contrôleurs FXML soient instanciés <b>par Guice</b>, on configure un <code>controllerFactory</code>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour que les contrôleurs FXML soient instanciés <b>par Guice</b>, on configure un <code>controllerFactory</code>.</p>
 
 ```java
 public void start(Stage stage) throws IOException {
@@ -1275,7 +1275,7 @@ public class ServiceAuthImpl implements ServiceAuth { ... }
 
 ## Provider : injection paresseuse
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour différer la création d'une dépendance (ou en créer plusieurs instances à la demande), on injecte un <code>Provider&lt;T&gt;</code>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour différer la création d'une dépendance (ou en créer plusieurs instances à la demande), on injecte un <code>Provider&lt;T&gt;</code>.</p>
 
 ```java
 public class GestionnaireFenetres {
@@ -1308,7 +1308,7 @@ public class GestionnaireFenetres {
 
 ## @Named : résoudre les ambiguïtés
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Quand plusieurs implémentations d'une même interface coexistent, on les distingue par un nom.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Quand plusieurs implémentations d'une même interface coexistent, on les distingue par un nom.</p>
 
 ```java
 public class AppModule extends AbstractModule {
@@ -1410,7 +1410,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 ## 💾 Pourquoi persister ?
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Jusqu'à présent, l'état de votre app meurt avec le processus. La <b>persistance</b> = stocker l'état au-delà du process Java.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Jusqu'à présent, l'état de votre app meurt avec le processus. La <b>persistance</b> = stocker l'état au-delà du process Java.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem;">
 
@@ -1439,7 +1439,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 ## Trois niveaux d'abstraction Java
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Java propose plusieurs paliers entre votre code et le SQL brut.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Java propose plusieurs paliers entre votre code et le SQL brut.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem;">
 
@@ -1548,7 +1548,7 @@ ps.setString(1, login);
 
 ## Le pattern DAO (Data Access Object)
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">On encapsule l'accès aux données dans une <b>classe dédiée</b> par entité.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">On encapsule l'accès aux données dans une <b>classe dédiée</b> par entité.</p>
 
 ```java
 public class UtilisateurDao {
@@ -1638,7 +1638,7 @@ public void save(Utilisateur u) throws SQLException {
 
 ## Transactions : commit ou rollback
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Une transaction = plusieurs ordres SQL qui réussissent <b>ensemble</b> ou <b>échouent ensemble</b>. Atomicité indispensable pour les opérations critiques.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Une transaction = plusieurs ordres SQL qui réussissent <b>ensemble</b> ou <b>échouent ensemble</b>. Atomicité indispensable pour les opérations critiques.</p>
 
 ```java
 public void transferer(long depuis, long vers, BigDecimal montant) throws SQLException {
@@ -1664,7 +1664,7 @@ public void transferer(long depuis, long vers, BigDecimal montant) throws SQLExc
 
 ## Connection pool : ne pas ouvrir/fermer 1000 fois
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Ouvrir une connexion JDBC coûte ~50-200 ms. Pour une app interactive : on en garde un <b>pool</b> prêt à l'emploi.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Ouvrir une connexion JDBC coûte ~50-200 ms. Pour une app interactive : on en garde un <b>pool</b> prêt à l'emploi.</p>
 
 ```java
 // HikariCP : le standard de fait, ultra rapide
@@ -1689,7 +1689,7 @@ DataSource ds = new HikariDataSource(config);
 
 ## Au-delà de JDBC : ouvertures
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">JDBC est la fondation. Quand vos applications grandissent, des couches supplémentaires deviennent utiles.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">JDBC est la fondation. Quand vos applications grandissent, des couches supplémentaires deviennent utiles.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
 
@@ -1723,7 +1723,7 @@ Mais quel que soit l'outil, sous le capot c'est toujours <b>JDBC</b>.
 
 ## 🐳 Docker pour la BDD locale
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Plus besoin d'installer PostgreSQL sur sa machine. Un container = une BDD jetable.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Plus besoin d'installer PostgreSQL sur sa machine. Un container = une BDD jetable.</p>
 
 ```yaml
 # docker-compose.yml
@@ -1851,7 +1851,7 @@ Six couches, six responsabilités, six niveaux de testabilité. C'est l'architec
 
 ## Heuristique #9 — Récupérer après l'erreur
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Quand l'erreur arrive malgré tout, l'utilisateur doit pouvoir <b>comprendre</b> et <b>réparer</b>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Quand l'erreur arrive malgré tout, l'utilisateur doit pouvoir <b>comprendre</b> et <b>réparer</b>.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
 
@@ -1875,7 +1875,7 @@ Six couches, six responsabilités, six niveaux de testabilité. C'est l'architec
 
 ## Validation à plusieurs niveaux
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">La défense contre les erreurs se joue à <b>chaque couche</b> de l'architecture. Plus tôt on attrape, mieux c'est.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">La défense contre les erreurs se joue à <b>chaque couche</b> de l'architecture. Plus tôt on attrape, mieux c'est.</p>
 
 <div style="display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 0.9rem; align-items: center; margin-top: 0.4rem;">
 
@@ -1904,7 +1904,7 @@ Six couches, six responsabilités, six niveaux de testabilité. C'est l'architec
 
 ## Annuler : la sortie de secours
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Heuristique #3 (<em>User control and freedom</em>) : l'utilisateur fait une erreur, il doit pouvoir <b>revenir en arrière</b>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Heuristique #3 (<em>User control and freedom</em>) : l'utilisateur fait une erreur, il doit pouvoir <b>revenir en arrière</b>.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
 
@@ -1934,7 +1934,7 @@ Six couches, six responsabilités, six niveaux de testabilité. C'est l'architec
 
 ## L'architecture aide à prévenir
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">MVVM + DI + persistance n'est pas qu'un confort développeur : c'est aussi un garde-fou contre les bugs visibles par l'utilisateur.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">MVVM + DI + persistance n'est pas qu'un confort développeur : c'est aussi un garde-fou contre les bugs visibles par l'utilisateur.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
 
@@ -2069,7 +2069,7 @@ Le code applicatif <b>raccourcit</b>. Le code d'<b>infrastructure</b> grandit, m
 
 ## Les 3 piliers consolidés
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Au terme du module, les trois piliers sont chacun appuyés sur un corpus solide.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.8rem 0;">Au terme du module, les trois piliers sont chacun appuyés sur un corpus solide.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin: 3.8rem 0;">
 
@@ -2139,7 +2139,7 @@ section table code { font-size: 0.74rem !important; padding: 1px 4px !important;
 
 ## Le workflow professionnel acquis
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Au-delà de JavaFX, ce module vous a fait pratiquer un <b>flux de travail</b> standard de l'industrie.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Au-delà de JavaFX, ce module vous a fait pratiquer un <b>flux de travail</b> standard de l'industrie.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
 
@@ -2173,7 +2173,7 @@ section table code { font-size: 0.74rem !important; padding: 1px 4px !important;
 
 ## Vers la SAÉ chauve-souris
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Tout ce que vous avez appris s'applique directement à la SAÉ 2.01.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Tout ce que vous avez appris s'applique directement à la SAÉ 2.01.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
 
@@ -2235,7 +2235,7 @@ section tr:nth-child(even) td { background: #f4f6f8 !important; }
 
 ## Et après ce module ?
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">R2.02 ouvre la voie vers la suite du BUT et au-delà.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">R2.02 ouvre la voie vers la suite du BUT et au-delà.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
 
@@ -2265,7 +2265,7 @@ section tr:nth-child(even) td { background: #f4f6f8 !important; }
 
 ## Pour aller plus loin
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quatre directions pour approfondir au-delà du module.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Quatre directions pour approfondir au-delà du module.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.6rem;">
 

@@ -160,7 +160,7 @@ Aujourd'hui : <b>séparer</b> ce que l'interface affiche de ce qu'elle fait, et 
 section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Jusqu'à présent, layout, styles, comportement et événements cohabitent dans la même classe Java.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Jusqu'à présent, layout, styles, comportement et événements cohabitent dans la même classe Java.</p>
 
 ```java
 public class CompteurApp extends Application {
@@ -193,7 +193,7 @@ Tout fonctionne, mais une <b>seule classe</b> mélange déjà 4 préoccupations 
 
 ## Quatre préoccupations dans le même fichier
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Ce compteur de 20 lignes mélange déjà quatre préoccupations distinctes qui devraient pouvoir évoluer indépendamment.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Ce compteur de 20 lignes mélange déjà quatre préoccupations distinctes qui devraient pouvoir évoluer indépendamment.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
 
@@ -227,7 +227,7 @@ Tout fonctionne, mais une <b>seule classe</b> mélange déjà 4 préoccupations 
 
 ## Symptômes au-delà de 100 lignes
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Une fois ces préoccupations entremêlées, voici les douleurs concrètes qui apparaissent dès quelques centaines de lignes.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Une fois ces préoccupations entremêlées, voici les douleurs concrètes qui apparaissent dès quelques centaines de lignes.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.7rem;">
 
@@ -265,7 +265,7 @@ Tout fonctionne, mais une <b>seule classe</b> mélange déjà 4 préoccupations 
 section pre { font-size: 0.55rem !important; line-height: 1.35 !important; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Sans séparation, la même structure se réécrit dans chaque fenêtre. Imaginez une app à 12 écrans avec une barre de boutons commune.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Sans séparation, la même structure se réécrit dans chaque fenêtre. Imaginez une app à 12 écrans avec une barre de boutons commune.</p>
 
 ```java
 // FenetreA.java
@@ -293,7 +293,7 @@ barre.getChildren().addAll(ok, cancel); // ← oups, ordre inversé
 
 ## Trois acteurs, trois compétences
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">La séparation reflète aussi la <b>division du travail</b> dans une vraie équipe produit.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">La séparation reflète aussi la <b>division du travail</b> dans une vraie équipe produit.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin: 2.4rem 0;">
 
@@ -326,7 +326,7 @@ barre.getChildren().addAll(ok, cancel); // ← oups, ordre inversé
 section { hyphens: auto; -webkit-hyphens: auto; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Le principe de <b>séparation des préoccupations</b> (Edsger Dijkstra, 1974) : chaque fichier ne traite que d'<b>un</b> sujet.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Le principe de <b>séparation des préoccupations</b> (Edsger Dijkstra, 1974) : chaque fichier ne traite que d'<b>un</b> sujet.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin: 2.5rem 0;">
 
@@ -359,7 +359,7 @@ section { hyphens: auto; -webkit-hyphens: auto; }
 section pre { font-size: 0.65rem !important; line-height: 1.35 !important; margin: 0.4rem 0 !important; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Le passage à FXML, c'est aussi le passage d'un style impératif à un style déclaratif.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Le passage à FXML, c'est aussi le passage d'un style impératif à un style déclaratif.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0.4rem 0 0.8rem 0;">
 
@@ -475,7 +475,7 @@ La <b>structure</b> est dans le FXML. Le <b>comportement</b> reste en Java.
 
 ## 🏗️ Une histoire vieille de 50 ans
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC est l'un des plus anciens patterns architecturaux encore en usage actif.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">MVC est l'un des plus anciens patterns architecturaux encore en usage actif.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 3fr; gap: 0.3rem 0.7rem; margin-top: 0.4rem; font-size: 1.5rem;">
 
@@ -504,7 +504,7 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
 
 ## 🏗️ Le pattern Modèle-Vue-Contrôleur
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC organise l'application en trois rôles bien distincts. Chacun a son fichier, son langage, sa testabilité.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">MVC organise l'application en trois rôles bien distincts. Chacun a son fichier, son langage, sa testabilité.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
 
@@ -533,7 +533,7 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
 
 ## Qui parle à qui ?
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Suivons l'information : du clic utilisateur jusqu'à la mise à jour automatique de la vue.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Suivons l'information : du clic utilisateur jusqu'à la mise à jour automatique de la vue.</p>
 
 <svg viewBox="5 80 900 260" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="width: 100%; display: block; margin: 0 auto;">
   <defs>
@@ -571,7 +571,7 @@ Un pattern qui résiste 50 ans à toutes les modes <b>répond à un besoin fonda
 
 ## Le compteur en MVC : trois fichiers
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Reprenons le compteur du CM2 et répartissons-le selon les trois rôles : un fichier par responsabilité.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Reprenons le compteur du CM2 et répartissons-le selon les trois rôles : un fichier par responsabilité.</p>
 
 <style scoped>
 section pre { font-size: 0.7rem !important; line-height: 1.3 !important; margin: 0 !important; flex: 1; }
@@ -653,7 +653,7 @@ Aucun des trois fichiers ne « connaît » les détails des autres : ils communi
 
 ## Qui crée qui ?
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Le <code>FXMLLoader</code> est le grand chef d'orchestre : il instancie tout le monde au démarrage.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Le <code>FXMLLoader</code> est le grand chef d'orchestre : il instancie tout le monde au démarrage.</p>
 
 <svg viewBox="0 0 1100 380" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="width: 100%; display: block; margin: 0 auto;">
   <defs>
@@ -699,7 +699,7 @@ La <b>chaîne de création</b> : l'<code>Application</code> demande au <code>FXM
 
 ## Le flux d'une interaction
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Suivons un clic utilisateur sur le bouton « Incrémenter ». Quatre étapes, aucune ne court-circuite les autres.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Suivons un clic utilisateur sur le bouton « Incrémenter ». Quatre étapes, aucune ne court-circuite les autres.</p>
 
 <style scoped>
 .flux-row { display: flex; align-items: stretch; border-radius: 8px; overflow: hidden; margin-bottom: 0.3rem; }
@@ -739,7 +739,7 @@ Le contrôleur ne touche <b>jamais</b> au <code>Label</code>. C'est le binding q
 
 ## Pourquoi cette séparation paie
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quatre bénéfices concrets dès que l'application grandit : tests, équipe, évolution.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Quatre bénéfices concrets dès que l'application grandit : tests, équipe, évolution.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem;">
 
@@ -773,7 +773,7 @@ Le contrôleur ne touche <b>jamais</b> au <code>Label</code>. C'est le binding q
 
 ## Anti-pattern : le « fat controller »
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quand le contrôleur grossit jusqu'à devenir une décharge, c'est qu'on n'a pas vraiment de modèle.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Quand le contrôleur grossit jusqu'à devenir une décharge, c'est qu'on n'a pas vraiment de modèle.</p>
 
 <style scoped>
 section pre { font-size: 0.78rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
@@ -829,7 +829,7 @@ Si vous trouvez un <code>if</code> dans un <code>@FXML void ...()</code>, demand
 
 ## Le contrôleur reste mince
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Sa mission : <b>traduire</b> les événements UI en appels au modèle, et <b>connecter</b> le modèle à la vue.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Sa mission : <b>traduire</b> les événements UI en appels au modèle, et <b>connecter</b> le modèle à la vue.</p>
 
 <style scoped>
 section pre { font-size: 0.55rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -863,7 +863,7 @@ Le contrôleur n'a pas de <code>if</code>, pas de calcul. Juste : <em>« j'écou
 
 ## Lien avec le CM1 — le pattern Observer
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC s'appuie sur le <b>pattern Observer</b> que vous connaissez déjà : la vue observe le modèle.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">MVC s'appuie sur le <b>pattern Observer</b> que vous connaissez déjà : la vue observe le modèle.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
@@ -892,7 +892,7 @@ Le contrôleur n'a pas de <code>if</code>, pas de calcul. Juste : <em>« j'écou
 
 ## Encapsulation du modèle
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour que le modèle reste indépendant de la vue, il expose une <b>API publique contrôlée</b> : lectures observables et méthodes métier, pas de setter générique.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour que le modèle reste indépendant de la vue, il expose une <b>API publique contrôlée</b> : lectures observables et méthodes métier, pas de setter générique.</p>
 
 <style scoped>
 section pre { font-size: 0.55rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -923,7 +923,7 @@ Le contrôleur appelle <code>incrementer()</code>, pas <code>setValeur(getValeur
 
 ## Variantes de MVC
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">MVC a engendré de nombreuses variantes selon le degré de découplage souhaité.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">MVC a engendré de nombreuses variantes selon le degré de découplage souhaité.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin: 2.4rem 0; align-items: stretch;">
 
@@ -976,7 +976,7 @@ JavaFX + FXML implémente nativement <b>MVC</b>. Avec les bindings, on glissera 
 
 ## 📄 Qu'est-ce qu'un fichier FXML ?
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Un fichier FXML est un fichier XML qui décrit la structure d'une vue JavaFX.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Un fichier FXML est un fichier XML qui décrit la structure d'une vue JavaFX.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem;">
 
@@ -1018,7 +1018,7 @@ section pre { font-size: 0.5rem !important; line-height: 1.35 !important; margin
 
 ## Ce qui doit (et ne doit pas) être en FXML
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">FXML est un langage de description, pas de programmation. Quelques règles simples pour ne pas dériver.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">FXML est un langage de description, pas de programmation. Quelques règles simples pour ne pas dériver.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
@@ -1054,7 +1054,7 @@ Si vous hésitez, posez-vous la question : <em>« est-ce que ça change pendant 
 
 ## L'arbre de scène généré
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Le FXML produit un graphe de scène <b>identique</b> à celui qu'on aurait obtenu en code procédural.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Le FXML produit un graphe de scène <b>identique</b> à celui qu'on aurait obtenu en code procédural.</p>
 
 <style scoped>
 section pre { font-size: 0.8rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
@@ -1104,7 +1104,7 @@ Une fois chargé, ce graphe est <b>indistinguable</b> d'un graphe créé par <co
 
 ## Le mapping est mécanique
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Quatre règles de traduction qui couvrent tous les cas de figure du FXML.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Quatre règles de traduction qui couvrent tous les cas de figure du FXML.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
@@ -1138,7 +1138,7 @@ Une fois chargé, ce graphe est <b>indistinguable</b> d'un graphe créé par <co
 
 ## XML → Java : la traduction
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Le <code>FXMLLoader</code> traduit chaque balise en appel constructeur, chaque attribut en appel à un setter.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Le <code>FXMLLoader</code> traduit chaque balise en appel constructeur, chaque attribut en appel à un setter.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
@@ -1195,7 +1195,7 @@ Chaque <b>élément XML</b> = un appel <code>new ClasseJavaFX()</code>. Chaque <
 
 ## Charger un FXML depuis Java
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Trois lignes dans <code>start()</code> suffisent à transformer un FXML en fenêtre affichée.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Trois lignes dans <code>start()</code> suffisent à transformer un FXML en fenêtre affichée.</p>
 
 <style scoped>
 section pre { font-size: 0.65rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -1220,18 +1220,18 @@ public class CompteurApp extends Application {
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem;">
 
 <div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
-<div style="font-size: 1.6rem; font-weight: bold;">📂 Localisation</div>
-<div style="font-size: 1.4rem; margin-top: 0.3rem; line-height: 1.4;"><code>getResource()</code> cherche dans <code>src/main/resources</code> par défaut.</div>
+<div style="font-size: 1.5rem; font-weight: bold;">📂 Localisation</div>
+<div style="font-size: 1.3rem; margin-top: 0.3rem; line-height: 1.4;"><code>getResource()</code> cherche dans <code>src/main/resources</code> par défaut.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
-<div style="font-size: 1.6rem; font-weight: bold;">🔧 Chargement</div>
-<div style="font-size: 1.4rem; margin-top: 0.3rem; line-height: 1.4;"><code>FXMLLoader.load()</code> retourne la racine du graphe.</div>
+<div style="font-size: 1.5rem; font-weight: bold;">🔧 Chargement</div>
+<div style="font-size: 1.3rem; margin-top: 0.3rem; line-height: 1.4;"><code>FXMLLoader.load()</code> retourne la racine du graphe.</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
-<div style="font-size: 1.6rem; font-weight: bold;">🎬 Affichage</div>
-<div style="font-size: 1.4rem; margin-top: 0.3rem; line-height: 1.4;">On met la racine dans une <code>Scene</code>, on l'attache au <code>Stage</code>.</div>
+<div style="font-size: 1.5rem; font-weight: bold;">🎬 Affichage</div>
+<div style="font-size: 1.3rem; margin-top: 0.3rem; line-height: 1.4;">On met la racine dans une <code>Scene</code>, on l'attache au <code>Stage</code>.</div>
 </div>
 
 </div>
@@ -1240,7 +1240,7 @@ public class CompteurApp extends Application {
 
 ## fx:id — nommer un nœud
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'attribut <code>fx:id</code> donne un nom unique à un nœud du FXML pour pouvoir le manipuler depuis Java.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>fx:id</code> donne un nom unique à un nœud du FXML pour pouvoir le manipuler depuis Java.</p>
 
 <style scoped>
 section pre { font-size: 0.9rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -1273,7 +1273,7 @@ section pre { font-size: 0.9rem !important; line-height: 1.4 !important; margin:
 
 ## @FXML — l'injection automatique
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'annotation <code>@FXML</code> dit à <code>FXMLLoader</code> : « <em>injecte le nœud nommé X dans le champ portant le même nom</em> ».</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'annotation <code>@FXML</code> dit à <code>FXMLLoader</code> : « <em>injecte le nœud nommé X dans le champ portant le même nom</em> ».</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
@@ -1327,7 +1327,7 @@ La règle : <b>même nom dans le FXML et dans le Java</b>. Le <code>FXMLLoader</
 
 ## fx:controller — déclarer le contrôleur
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'attribut <code>fx:controller</code> sur l'élément racine indique quelle classe Java doit recevoir les injections.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>fx:controller</code> sur l'élément racine indique quelle classe Java doit recevoir les injections.</p>
 
 <style scoped>
 section pre { font-size: 0.9rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -1364,7 +1364,7 @@ Pour passer un argument au contrôleur (ex : un modèle), il faut le créer manu
 
 ## onAction — câbler un événement
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'attribut <code>onAction="#méthode"</code> dit à JavaFX : « <em>quand ce bouton est cliqué, appelle <code>méthode()</code> du contrôleur</em> ».</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>onAction="#méthode"</code> dit à JavaFX : « <em>quand ce bouton est cliqué, appelle <code>méthode()</code> du contrôleur</em> ».</p>
 
 <style scoped>
 section pre { font-size: 0.9rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
@@ -1422,7 +1422,7 @@ public class CompteurController {
 
 ## initialize() — le hook après chargement
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Après injection des nœuds, <code>FXMLLoader</code> cherche une méthode <code>initialize()</code> dans le contrôleur et l'appelle.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Après injection des nœuds, <code>FXMLLoader</code> cherche une méthode <code>initialize()</code> dans le contrôleur et l'appelle.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -1457,7 +1457,7 @@ public class CompteurController {
 
 ## Cycle de vie complet
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">De l'appel <code>FXMLLoader.load()</code> à l'affichage : qui crée quoi, et dans quel ordre.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">De l'appel <code>FXMLLoader.load()</code> à l'affichage : qui crée quoi, et dans quel ordre.</p>
 
 ![Cycle de vie du chargement FXML : load() → parse → new Controller() → injection @FXML → initialize() → retour à l'Application](assets/kroki/cm3-fxml-cycle-vie.svg)
 
@@ -1469,7 +1469,7 @@ Le constructeur du contrôleur s'exécute <b>avant</b> l'injection ; <code>initi
 
 ## Bindings inline avec `${}`
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">FXML supporte une syntaxe d'expression <code>${...}</code> pour binder directement dans le XML, sans passer par le contrôleur.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">FXML supporte une syntaxe d'expression <code>${...}</code> pour binder directement dans le XML, sans passer par le contrôleur.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -1509,7 +1509,7 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 
 ## Internationalisation avec ResourceBundle
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">FXML supporte l'i18n nativement via la syntaxe <code>%clé</code> et un <code>ResourceBundle</code>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">FXML supporte l'i18n nativement via la syntaxe <code>%clé</code> et un <code>ResourceBundle</code>.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -1569,7 +1569,7 @@ Aucune ligne Java à modifier pour traduire l'app. Le FXML reste neutre, le bund
 
 ## id vs fx:id — ne pas confondre
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Deux attributs au nom voisin mais aux rôles totalement différents : à ne jamais confondre.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Deux attributs au nom voisin mais aux rôles totalement différents : à ne jamais confondre.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
@@ -1598,7 +1598,7 @@ On peut mettre les deux : <code>&lt;Label fx:id="message" id="message"/&gt;</cod
 
 ## Brancher une feuille CSS
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'attribut <code>stylesheets</code> sur l'élément racine du FXML applique une feuille de style à tout le sous-arbre.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>stylesheets</code> sur l'élément racine du FXML applique une feuille de style à tout le sous-arbre.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
@@ -1651,7 +1651,7 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 
 ## Accéder au contrôleur depuis Java
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour passer un modèle au contrôleur, on l'instancie soi-même au lieu d'utiliser <code>FXMLLoader.load()</code> statique.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour passer un modèle au contrôleur, on l'instancie soi-même au lieu d'utiliser <code>FXMLLoader.load()</code> statique.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -1686,7 +1686,7 @@ Le contrôleur déclaré dans <code>fx:controller</code> est instancié <b>autom
 
 ## Variante : injecter un contrôleur custom
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Si le contrôleur n'a pas de constructeur sans argument, on l'instancie avant le chargement avec <code>setController()</code>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Si le contrôleur n'a pas de constructeur sans argument, on l'instancie avant le chargement avec <code>setController()</code>.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -1719,7 +1719,7 @@ Au CM4, on verra un mécanisme plus propre via injection de dépendances <em>(Gu
 
 ## Le namespace FXML
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Les déclarations en tête de fichier FXML : pas de magie, juste du XML structuré.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Les déclarations en tête de fichier FXML : pas de magie, juste du XML structuré.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -1762,7 +1762,7 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 
 ## Erreurs courantes et messages
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Quatre erreurs récurrentes au début, et le message d'erreur qui les caractérise.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Quatre erreurs récurrentes au début, et le message d'erreur qui les caractérise.</p>
 
 <style scoped>
 section table { font-size: 1rem !important; width: 100%; border-collapse: collapse; }
@@ -1868,7 +1868,7 @@ public class FormulaireConnexionController {
 
 ## 🧪 Bénéfice concret : la testabilité
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Avec MVC + FXML, on peut tester chaque couche isolément.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Avec MVC + FXML, on peut tester chaque couche isolément.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 6px !important; }
@@ -1927,7 +1927,7 @@ Plus la frontière modèle/contrôleur est nette, plus le test du modèle couvre
 
 ## 🎨 SceneBuilder — l'éditeur graphique
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">SceneBuilder est un outil WYSIWYG qui édite des fichiers FXML par glisser-déposer.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">SceneBuilder est un outil WYSIWYG qui édite des fichiers FXML par glisser-déposer.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
@@ -2021,7 +2021,7 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
 
 ## Workflow SceneBuilder ↔ IDE
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">SceneBuilder n'est pas un IDE complet : on l'utilise <b>en aller-retour</b> avec son éditeur de code habituel.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">SceneBuilder n'est pas un IDE complet : on l'utilise <b>en aller-retour</b> avec son éditeur de code habituel.</p>
 
 ![Workflow : SceneBuilder ↔ fichier.fxml versionné Git, IDE/VSCode ↔ Controller.java, liens fx:controller et @FXML entre les deux](assets/kroki/cm3-workflow-scenebuilder.svg)
 
@@ -2043,7 +2043,7 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
 
 ## 🏗️ Composants réutilisables avec fx:root
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour créer un composant <b>autonome</b> (ex: une barre de statut), on utilise <code>fx:root</code> au lieu d'un type concret.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour créer un composant <b>autonome</b> (ex: une barre de statut), on utilise <code>fx:root</code> au lieu d'un type concret.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -2084,7 +2084,7 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 
 ## fx:root — la classe associée
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Le composant est sa propre classe : il se charge lui-même son FXML dans son constructeur.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Le composant est sa propre classe : il se charge lui-même son FXML dans son constructeur.</p>
 
 <style scoped>
 section pre { font-size: 0.8rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -2125,7 +2125,7 @@ La classe <b>EST</b> le composant : <code>new BarreStatut()</code> donne directe
 
 ## Utiliser le composant comme n'importe quel autre
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Une fois la classe <code>BarreStatut</code> écrite, elle s'instancie comme n'importe quel composant JavaFX.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Une fois la classe <code>BarreStatut</code> écrite, elle s'instancie comme n'importe quel composant JavaFX.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
@@ -2174,7 +2174,7 @@ VBox root = new VBox(
 
 ## fx:root vs fx:include — quand utiliser quoi ?
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Deux mécanismes de composition différents, pour deux usages différents.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Deux mécanismes de composition différents, pour deux usages différents.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
@@ -2208,7 +2208,7 @@ Règle simple : <b>fx:root</b> si le composant a vocation à être instancié pl
 
 ## fx:include — composer des vues
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Pour assembler une grande vue à partir de plus petites, on utilise <code>fx:include</code>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour assembler une grande vue à partir de plus petites, on utilise <code>fx:include</code>.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -2245,7 +2245,7 @@ Trois fichiers FXML, trois contrôleurs, une vue assemblée. Chaque sous-vue est
 
 ## Communiquer entre contrôleurs inclus
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Avec <code>fx:include fx:id="entete"</code>, FXML injecte un champ <code>enteteController</code> dans le contrôleur parent.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Avec <code>fx:include fx:id="entete"</code>, FXML injecte un champ <code>enteteController</code> dans le contrôleur parent.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -2353,7 +2353,7 @@ public class AppController {
 
 ## Aperçu en direct dans SceneBuilder
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">SceneBuilder propose un mode <b>Preview</b> qui rend la vue à l'identique de l'exécution.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">SceneBuilder propose un mode <b>Preview</b> qui rend la vue à l'identique de l'exécution.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
@@ -2383,7 +2383,7 @@ public class AppController {
 
 ## Récapitulatif des outils FXML
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Tous les mécanismes FXML vus dans cette partie, en une seule planche de référence.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Tous les mécanismes FXML vus dans cette partie, en une seule planche de référence.</p>
 
 <style scoped>
 section table { font-size: 1rem !important; width: 100%; border-collapse: collapse; }
@@ -2443,7 +2443,7 @@ section table code { font-size: 0.92rem !important; }
 
 ## Anti-pattern : la disparate
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Trois écrans, trois variations du même bouton : l'utilisateur doit deviner à chaque fois.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Trois écrans, trois variations du même bouton : l'utilisateur doit deviner à chaque fois.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
@@ -2475,7 +2475,7 @@ section table code { font-size: 0.92rem !important; }
 
 ## FXML + CSS : la cohérence à grande échelle
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Mutualiser les styles et les composants empêche mécaniquement la disparate.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Mutualiser les styles et les composants empêche mécaniquement la disparate.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
@@ -2505,7 +2505,7 @@ section table code { font-size: 0.92rem !important; }
 
 ## Le concept de Design System
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Un <b>design system</b> est une bibliothèque vivante de composants, de couleurs, de typographies et de règles d'usage, partagée par toute une organisation.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Un <b>design system</b> est une bibliothèque vivante de composants, de couleurs, de typographies et de règles d'usage, partagée par toute une organisation.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
@@ -2539,7 +2539,7 @@ Heuristique #4 « <em>cohérence et standards</em> » à l'échelle d'une organi
 
 ## Quelques design systems célèbres
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Quatre exemples emblématiques pour situer le concept dans le paysage industriel.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Quatre exemples emblématiques pour situer le concept dans le paysage industriel.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
@@ -2573,7 +2573,7 @@ Tous matérialisent leurs règles dans du <b>code réutilisable</b> (CSS, compos
 
 ## Mutualiser via styleClass
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">En JavaFX, le mécanisme central pour appliquer un design system est l'attribut <code>styleClass</code> couplé à un CSS d'app.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">En JavaFX, le mécanisme central pour appliquer un design system est l'attribut <code>styleClass</code> couplé à un CSS d'app.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
@@ -2632,7 +2632,7 @@ Le développeur ne <b>choisit pas une couleur</b> : il choisit un <b>rôle séma
 
 ## Une feuille CSS, plusieurs vues
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'attribut <code>stylesheets</code> peut aussi se poser au niveau de la <code>Scene</code>, pour appliquer un thème <b>global</b>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'attribut <code>stylesheets</code> peut aussi se poser au niveau de la <code>Scene</code>, pour appliquer un thème <b>global</b>.</p>
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
@@ -2678,7 +2678,7 @@ Idéal pour un <b>theme switcher</b> (clair/sombre) : on remplace la feuille au 
 
 ## Standards JavaFX qu'il faut respecter
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">Six conventions de plateforme à internaliser dès le TP3 : elles font partie du contrat utilisateur.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Six conventions de plateforme à internaliser dès le TP3 : elles font partie du contrat utilisateur.</p>
 
 <style scoped>
 section table { font-size: 1.1rem !important; width: 100%; border-collapse: collapse; }
@@ -2705,7 +2705,7 @@ Ces conventions sont gravées dans la mémoire musculaire de vos utilisateurs. L
 
 ## La cohérence, garde-fou architectural
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.5rem 0;">L'architecture MVC + FXML rend la cohérence <b>plus facile à respecter qu'à enfreindre</b>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'architecture MVC + FXML rend la cohérence <b>plus facile à respecter qu'à enfreindre</b>.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
@@ -2742,7 +2742,7 @@ Ces conventions sont gravées dans la mémoire musculaire de vos utilisateurs. L
 
 ## Les 3 piliers revisités
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Le CM3 a enrichi les trois piliers du module avec une <b>nouvelle dimension architecturale</b>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.8rem 0;">Le CM3 a enrichi les trois piliers du module avec une <b>nouvelle dimension architecturale</b>.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin: 3.8rem 0;">
 
@@ -2774,7 +2774,7 @@ Ces conventions sont gravées dans la mémoire musculaire de vos utilisateurs. L
 
 ## Lien avec le TP3 - tableau exercices et concepts
 
-<p style="font-size: 1.5rem; margin: 0.2rem 0 0.4rem 0;">Chaque exercice du TP3 met en pratique des concepts introduits dans ce CM.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.4rem 0;">Chaque exercice du TP3 met en pratique des concepts introduits dans ce CM.</p>
 
 <style scoped>
 section table { font-size: 1rem !important; width: 100%; border-collapse: collapse; }
@@ -2798,7 +2798,7 @@ section table code { font-size: 0.92rem !important; padding: 1px 4px !important;
 
 ## Teaser CM4 - MVVM, persistance et synthèse
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Dans le <strong>CM4</strong>, on combine <strong>MVC</strong> (CM3) et <strong>bindings</strong> (CM2) pour aboutir à <strong>MVVM</strong>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.8rem 0;">Dans le <strong>CM4</strong>, on combine <strong>MVC</strong> (CM3) et <strong>bindings</strong> (CM2) pour aboutir à <strong>MVVM</strong>.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.6rem;">
 
@@ -2832,7 +2832,7 @@ section table code { font-size: 0.92rem !important; padding: 1px 4px !important;
 
 ## Pour aller plus loin
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quelques pistes pour approfondir FXML et MVC, du tutoriel officiel à la lecture du code Eclipse.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Quelques pistes pour approfondir FXML et MVC, du tutoriel officiel à la lecture du code Eclipse.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem; align-items: stretch;">
 

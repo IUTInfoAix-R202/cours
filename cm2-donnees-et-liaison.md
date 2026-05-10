@@ -972,7 +972,7 @@ private void incrementerScore() {
 pre { font-size: 0.82rem; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Après <code>cible.bind(source)</code>, la valeur de la cible est en permanence égale à celle de la source : toute modification de la source se propage instantanément vers la cible.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.8rem 0;">Après <code>cible.bind(source)</code>, la valeur de la cible est en permanence égale à celle de la source : toute modification de la source se propage instantanément vers la cible.</p>
 
 <div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem; margin: 0.6rem 0 1rem 0;">
 <div style="display: flex; justify-content: center; align-items: center; gap: 1.2rem;">
@@ -1110,7 +1110,7 @@ System.out.println(cercle.getRadius()); // 80 - le cercle a suivi
 pre { font-size: 0.75rem; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Problème : <code>TextField.textProperty()</code> est une <code>StringProperty</code>, mais <code>Slider.valueProperty()</code> est une <code>DoubleProperty</code>. Un <strong>convertisseur</strong> fait le pont.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.8rem 0;">Problème : <code>TextField.textProperty()</code> est une <code>StringProperty</code>, mais <code>Slider.valueProperty()</code> est une <code>DoubleProperty</code>. Un <strong>convertisseur</strong> fait le pont.</p>
 
 ```java
 // Ne compile pas : types incompatibles
@@ -1150,7 +1150,7 @@ pre { font-size: 0.75rem; }
 h2 { view-transition-name: titre-api; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Pour qu'un résultat se recalcule automatiquement quand <code>a</code> ou <code>b</code> change, on construit un <code>DoubleBinding</code> qui déclare <strong>explicitement ses dépendances</strong>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Pour qu'un résultat se recalcule automatiquement quand <code>a</code> ou <code>b</code> change, on construit un <code>DoubleBinding</code> qui déclare <strong>explicitement ses dépendances</strong>.</p>
 
 ```java
 IntegerProperty a = new SimpleIntegerProperty(3);
@@ -1180,7 +1180,7 @@ pre { font-size: 0.75rem; }
 h2 { view-transition-name: titre-api; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">La classe <code>Bindings</code> expose des <strong>méthodes statiques</strong> qui composent les opérations et déduisent seules les dépendances.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">La classe <code>Bindings</code> expose des <strong>méthodes statiques</strong> qui composent les opérations et déduisent seules les dépendances.</p>
 
 <div style="display: flex; justify-content: center; gap: 0.8rem; margin: 0.6rem 0 1rem 0;">
 <div style="background: #6c3483; color: white; padding: 0.6rem 1.3rem; border-radius: 10px; font-family: monospace; font-size: 1.15rem; font-weight: bold;">Bindings.multiply()</div>
@@ -1214,7 +1214,7 @@ pre { font-size: 0.75rem; }
 h2 { view-transition-name: titre-api; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Les propriétés numériques exposent une <strong>API fluente</strong> qui compose les expressions et déduit les dépendances toute seule.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Les propriétés numériques exposent une <strong>API fluente</strong> qui compose les expressions et déduit les dépendances toute seule.</p>
 
 <div style="display: flex; justify-content: center; gap: 0.8rem; margin: 0.6rem 0 1rem 0;">
 <div style="background: #1a5276; color: white; padding: 0.6rem 1.3rem; border-radius: 10px; font-family: monospace; font-size: 1.15rem; font-weight: bold;">multiply()</div>
@@ -1251,7 +1251,7 @@ h2 { view-transition-name: titre-aire-triangle; }
 .hidden { visibility: hidden; }
 </style>
 
-<p class="intro-aire" style="font-size: 1.5rem; margin: 0.3rem 0 0.4rem 0;">Dans <code>AireTriangle.java</code>, l'aire se recalcule automatiquement à partir des 6 coordonnées - aucun <code>setArea()</code> manuel.</p>
+<p class="intro-aire" style="font-size: 1.5rem; margin: -0.5rem 0 0.4rem 0;">Dans <code>AireTriangle.java</code>, l'aire se recalcule automatiquement à partir des 6 coordonnées - aucun <code>setArea()</code> manuel.</p>
 
 <div class="formule-aire" style="background: #f4f6f8; border-left: 5px solid #2980b9; padding: 0.3rem 0 0.1rem 0; border-radius: 6px; margin: 0.5rem 0; text-align: center; font-size: 0.75em;">
 
@@ -1286,7 +1286,7 @@ h2 { view-transition-name: titre-aire-triangle; }
 .formule-aire { view-transition-name: formule-aire-triangle; }
 </style>
 
-<p class="intro-aire" style="font-size: 1.5rem; margin: 0.3rem 0 0.4rem 0;">Dans <code>AireTriangle.java</code>, l'aire se recalcule automatiquement à partir des 6 coordonnées - aucun <code>setArea()</code> manuel.</p>
+<p class="intro-aire" style="font-size: 1.5rem; margin: -0.5rem 0 0.4rem 0;">Dans <code>AireTriangle.java</code>, l'aire se recalcule automatiquement à partir des 6 coordonnées - aucun <code>setArea()</code> manuel.</p>
 
 <div class="formule-aire" style="background: #f4f6f8; border-left: 5px solid #2980b9; padding: 0.3rem 0 0.1rem 0; border-radius: 6px; margin: 0.5rem 0; text-align: center; font-size: 0.75em;">
 
@@ -1321,7 +1321,7 @@ pre { font-size: 0.75rem; }
 .hidden { visibility: hidden; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;"><code>Bindings.concat()</code> assemble des <strong>littéraux</strong> et des <strong>valeurs observables</strong> en une <code>StringExpression</code> toujours synchronisée.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;"><code>Bindings.concat()</code> assemble des <strong>littéraux</strong> et des <strong>valeurs observables</strong> en une <code>StringExpression</code> toujours synchronisée.</p>
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 0.6rem; margin: 1rem 0;">
 <div style="background: #1a5276; color: white; padding: 0.8rem 1.2rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold;">"P1(", x1, ",", y1, ") P2(", x2, ",", y2, ") => aire = ", area ...</div>
@@ -1356,7 +1356,7 @@ label.textProperty().bind(texte);
 pre { font-size: 0.75rem; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;"><code>Bindings.concat()</code> assemble des <strong>littéraux</strong> et des <strong>valeurs observables</strong> en une <code>StringExpression</code> toujours synchronisée.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;"><code>Bindings.concat()</code> assemble des <strong>littéraux</strong> et des <strong>valeurs observables</strong> en une <code>StringExpression</code> toujours synchronisée.</p>
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 0.6rem; margin: 1rem 0;">
 <div style="background: #1a5276; color: white; padding: 0.8rem 1.2rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold;">"P1(", x1, ",", y1, ") P2(", x2, ",", y2, ") => aire = ", area ...</div>
@@ -1387,7 +1387,7 @@ label.textProperty().bind(texte);
 pre { font-size: 0.75rem; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">L'expression <strong>conditionnelle observable</strong> : l'équivalent du <code>? :</code> ternaire, mais qui se recalcule automatiquement quand la condition change.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">L'expression <strong>conditionnelle observable</strong> : l'équivalent du <code>? :</code> ternaire, mais qui se recalcule automatiquement quand la condition change.</p>
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 0.6rem; margin: 1rem 0;">
 <div style="background: #e8a838; color: white; padding: 0.8rem 1.2rem; border-radius: 10px; font-family: monospace; font-size: 1.1rem; font-weight: bold;">when(condition)</div>
@@ -1472,7 +1472,7 @@ h2 { view-transition-name: titre-low-level; }
 .hidden { visibility: hidden; }
 </style>
 
-<p class="intro-low" style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quand la logique dépasse ce que l'API fluente peut exprimer (parcours de <code>String</code>, regex, appel externe), on descend au <strong>bas niveau</strong> avec une classe anonyme.</p>
+<p class="intro-low" style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Quand la logique dépasse ce que l'API fluente peut exprimer (parcours de <code>String</code>, regex, appel externe), on descend au <strong>bas niveau</strong> avec une classe anonyme.</p>
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin: 7rem 0;">
 <div style="background: #c0392b; color: white; padding: 1.2rem 1.8rem; border-radius: 12px; font-size: 1.3rem; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15);"><strong>❌ API fluente</strong><br/><span style="font-size: 1rem; opacity: 0.9;">parfois trop limitée</span></div>
@@ -1496,7 +1496,7 @@ h2 { view-transition-name: titre-low-level; }
 .intro-low { view-transition-name: intro-low-level; }
 </style>
 
-<p class="intro-low" style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quand la logique dépasse ce que l'API fluente peut exprimer (parcours de <code>String</code>, regex, appel externe), on descend au <strong>bas niveau</strong> avec une classe anonyme.</p>
+<p class="intro-low" style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Quand la logique dépasse ce que l'API fluente peut exprimer (parcours de <code>String</code>, regex, appel externe), on descend au <strong>bas niveau</strong> avec une classe anonyme.</p>
 
 ```java
 BooleanBinding motDePasseInvalide = new BooleanBinding() {
@@ -1526,7 +1526,7 @@ okBtn.disableProperty().bind(motDePasseInvalide);
 pre { font-size: 0.75rem; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Dans <code>FormulaireConnexion.java</code>, <strong>aucun EventHandler</strong> ne modifie les états <code>disabled</code> ou <code>editable</code> : ils se déduisent automatiquement des données saisies.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Dans <code>FormulaireConnexion.java</code>, <strong>aucun EventHandler</strong> ne modifie les états <code>disabled</code> ou <code>editable</code> : ils se déduisent automatiquement des données saisies.</p>
 
 ```java
 // Le champ pwd n'est éditable que si userId >= 6 chars
@@ -1553,7 +1553,7 @@ cancelBtn.disableProperty().bind(
 pre { font-size: 0.9rem; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">La technique ne se limite pas aux <code>BooleanProperty</code> : <strong>toute propriété observable</strong> peut piloter l'interface.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">La technique ne se limite pas aux <code>BooleanProperty</code> : <strong>toute propriété observable</strong> peut piloter l'interface.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.9rem; margin: 2rem 0;">
 
@@ -1585,7 +1585,7 @@ pre { font-size: 0.9rem; }
 
 ## 🏗️ Source unique de vérité
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">La donnée vit à <strong>un seul endroit</strong>. Tous les éléments qui l'affichent <em>dépendent</em> de cette source - ils ne peuvent pas diverger.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.8rem 0;">La donnée vit à <strong>un seul endroit</strong>. Tous les éléments qui l'affichent <em>dépendent</em> de cette source - ils ne peuvent pas diverger.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 3.6rem 0;">
 
@@ -1627,7 +1627,7 @@ pre { font-size: 0.9rem; }
 pre { font-size: 0.78rem; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Vous avez vécu les deux versions : la <strong>Palette</strong> du TP1 et la <strong>PaletteReactive</strong> du TP2.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Vous avez vécu les deux versions : la <strong>Palette</strong> du TP1 et la <strong>PaletteReactive</strong> du TP2.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3.6rem 0;">
 
@@ -1676,7 +1676,7 @@ total.textProperty().bind(
 
 ## Taxonomie des contrôles JavaFX
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Deux grandes familles, distinguées par leur <strong>rôle</strong> dans l'interaction avec l'utilisateur.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Deux grandes familles, distinguées par leur <strong>rôle</strong> dans l'interaction avec l'utilisateur.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.8rem;">
 
@@ -1717,7 +1717,7 @@ total.textProperty().bind(
 pre { font-size: 0.75rem; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Les contrôles d'<strong>affichage</strong> sont des <em>cibles</em> naturelles pour <code>bind()</code> - leur rôle est de refléter une donnée.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Les contrôles d'<strong>affichage</strong> sont des <em>cibles</em> naturelles pour <code>bind()</code> - leur rôle est de refléter une donnée.</p>
 
 ```java
 Label label = new Label();
@@ -1742,7 +1742,7 @@ barre.progressProperty().bind(slider.valueProperty().divide(100));
 pre { font-size: 0.75rem; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Les contrôles <strong>interactifs</strong> sont des <em>sources</em> : ils exposent ce que saisit l'utilisateur sous forme de propriétés observables.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Les contrôles <strong>interactifs</strong> sont des <em>sources</em> : ils exposent ce que saisit l'utilisateur sous forme de propriétés observables.</p>
 
 ```java
 TextField champ = new TextField();
@@ -1766,7 +1766,7 @@ champ.textProperty().addListener(
 
 ## 🧠 Affordance - Don Norman
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;"><strong>Affordance</strong> (Don Norman, <em>The Design of Everyday Things</em>, 1988) : les propriétés perceptibles d'un objet qui <strong>suggèrent</strong> son usage sans nécessiter d'explication. Une poignée de porte <em>appelle</em> à être tournée ; un bouton en relief <em>appelle</em> à être appuyé.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;"><strong>Affordance</strong> (Don Norman, <em>The Design of Everyday Things</em>, 1988) : les propriétés perceptibles d'un objet qui <strong>suggèrent</strong> son usage sans nécessiter d'explication. Une poignée de porte <em>appelle</em> à être tournée ; un bouton en relief <em>appelle</em> à être appuyé.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6rem; margin-top: 0.8rem;">
 
@@ -1814,7 +1814,7 @@ champ.textProperty().addListener(
 pre { font-size: 0.82rem; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Dans <code>FormulaireConnexion.java</code> (<strong>TP2, ex. 6</strong>), l'affordance est <em>calculée</em> à partir de l'état des données, jamais codée à la main.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Dans <code>FormulaireConnexion.java</code> (<strong>TP2, ex. 6</strong>), l'affordance est <em>calculée</em> à partir de l'état des données, jamais codée à la main.</p>
 
 ```java
 // Le bouton OK est grisé tant que le mot de passe est invalide
@@ -1834,7 +1834,7 @@ pwd.editableProperty().bind(
 
 ## L'affordance rend l'interface auto-explicative
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Le même formulaire de connexion, deux expériences radicalement différentes.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.8rem 0;">Le même formulaire de connexion, deux expériences radicalement différentes.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.6rem;">
 
@@ -2427,7 +2427,7 @@ stage.setOnCloseRequest(<br/>
 
 ## Les 3 piliers revisités
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Le CM2 a enrichi les trois piliers du module avec des outils concrets, utilisables dès le TP2.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.8rem 0;">Le CM2 a enrichi les trois piliers du module avec des outils concrets, utilisables dès le TP2.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin: 3.8rem 0;">
 
@@ -2467,7 +2467,7 @@ section tr:nth-child(even) td { background: #f4f6f8 !important; }
 section table code { font-size: 0.72rem !important; padding: 1px 4px !important; }
 </style>
 
-<p style="font-size: 1.5rem; margin: 0.2rem 0 0.4rem 0;">Chaque exercice du TP2 met en pratique des concepts introduits dans ce CM.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.4rem 0;">Chaque exercice du TP2 met en pratique des concepts introduits dans ce CM.</p>
 
 | Exercice | Classe | Concepts |
 |---|---|---|
@@ -2484,7 +2484,7 @@ section table code { font-size: 0.72rem !important; padding: 1px 4px !important;
 
 ## Teaser CM3 - Architecture des IHM et FXML
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.8rem 0;">Dans le <strong>CM3</strong>, vous apprendrez à <strong>séparer</strong> la vue du comportement : un bond architectural majeur.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.8rem 0;">Dans le <strong>CM3</strong>, vous apprendrez à <strong>séparer</strong> la vue du comportement : un bond architectural majeur.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.6rem;">
 
@@ -2518,7 +2518,7 @@ section table code { font-size: 0.72rem !important; padding: 1px 4px !important;
 
 ## Pour aller plus loin
 
-<p style="font-size: 1.5rem; margin: 0.3rem 0 0.6rem 0;">Quelques pistes pour approfondir les propriétés et les bindings, du tutoriel officiel au code source OpenJFX.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Quelques pistes pour approfondir les propriétés et les bindings, du tutoriel officiel au code source OpenJFX.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
 
