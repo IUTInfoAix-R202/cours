@@ -1489,10 +1489,10 @@ section pre { font-size: 0.65rem !important; line-height: 1.35 !important; margi
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">De l'appel <code>FXMLLoader.load()</code> à l'affichage : qui crée quoi, et dans quel ordre.</p>
 
-![Cycle de vie du chargement FXML : load() → parse → new Controller() → injection @FXML → initialize() → retour à l'Application](assets/kroki/cm3-fxml-cycle-vie.svg)
+![Cycle de vie du chargement FXML : load() → parse → new Controller() → assignation des @FXML → initialize() → retour à l'Application](assets/kroki/cm3-fxml-cycle-vie.svg)
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-Le constructeur du contrôleur s'exécute <b>avant</b> l'injection ; <code>initialize()</code> <b>après</b>. C'est le seul ordre fiable.
+Le constructeur du contrôleur s'exécute <b>avant</b> que les <code>@FXML</code> ne soient remplis ; <code>initialize()</code> <b>après</b>. C'est le seul ordre fiable.
 </div>
 
 ---

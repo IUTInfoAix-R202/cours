@@ -6,10 +6,10 @@ sequenceDiagram
     App->>FL: load(compteur.fxml)
     FL->>FX: parse XML
     FL->>C: new CompteurController()
-    Note over C: constructeur exécuté<br/>champs @FXML = null
+    Note over C: constructeur exécuté<br/>données membres @FXML = null
     FL->>FX: instancie les nœuds
-    FL->>C: injection @FXML
-    Note over C: champs @FXML = nœuds
+    FL->>C: assigne les nœuds aux @FXML
+    Note over C: données membres @FXML = nœuds
     FL->>C: initialize()
     Note over C: bindings, peuplement
     FL-->>App: retourne la racine
