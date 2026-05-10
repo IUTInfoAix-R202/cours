@@ -1665,7 +1665,7 @@ La <b>structure</b> reste dans le FXML, la <b>présentation</b> dans le CSS. Le 
 
 ## Internationalisation avec ResourceBundle
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">FXML supporte l'i18n nativement via la syntaxe <code>%clé</code> et un <code>ResourceBundle</code>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">FXML supporte l'i18n nativement via les <code>ResourceBundle</code> et la syntaxe <code>%clé</code>.</p>
 
 <style scoped>
 section pre { font-size: 0.65rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
@@ -1718,7 +1718,11 @@ loader.setResources(bundle);
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: rgba(74,144,217,0.15); padding: 0.5rem 1rem; border-radius: 6px; margin-top: 0.4rem; font-size: 1.2rem; text-align: center; color: #2c3e50;">
+🔍 <code>Locale.FRENCH</code> → Java cherche <code>messages_fr.properties</code> <span style="opacity: 0.75;">(convention : <code>baseName_langue.properties</code>, fallback sur <code>messages.properties</code>)</span>.
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Aucune ligne Java à modifier pour traduire l'app. Le FXML reste neutre, le bundle change selon la <code>Locale</code>.
 </div>
 
