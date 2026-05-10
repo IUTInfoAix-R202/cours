@@ -1386,10 +1386,7 @@ section pre { font-size: 0.7rem !important; line-height: 1.4 !important; margin:
 
 ```java
 public class CompteurController {
-  @FXML
-  void incrementer() {
-    // ...
-  }
+  @FXML void incrementer() { /* ... */ }
 }
 ```
 
@@ -1400,18 +1397,18 @@ public class CompteurController {
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem;">
 
 <div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold;">🔖 Annotation @FXML</div>
-<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;">Obligatoire si la méthode n'est pas <code>public</code>.</div>
+<div style="font-size: 1.6rem; font-weight: bold;">🔖 Annotation @FXML</div>
+<div style="font-size: 1.4rem; margin-top: 0.3rem; line-height: 1.4;">Obligatoire si la méthode n'est pas <code>public</code>.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold;">📨 Signature</div>
-<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;"><code>void m()</code> ou <code>void m(ActionEvent)</code>, au choix.</div>
+<div style="font-size: 1.6rem; font-weight: bold;">📨 Signature</div>
+<div style="font-size: 1.4rem; margin-top: 0.3rem; line-height: 1.4;"><code>void m()</code> ou <code>void m(ActionEvent)</code>, au choix.</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold;">⚡ Autres événements</div>
-<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;"><code>onMouseClicked</code>, <code>onKeyPressed</code>...</div>
+<div style="font-size: 1.6rem; font-weight: bold;">⚡ Autres événements</div>
+<div style="font-size: 1.4rem; margin-top: 0.3rem; line-height: 1.4;"><code>onMouseClicked</code>, <code>onKeyPressed</code>...</div>
 </div>
 
 </div>
