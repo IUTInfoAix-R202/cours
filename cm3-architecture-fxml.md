@@ -2300,14 +2300,13 @@ Trois fichiers FXML, trois contrôleurs, une vue assemblée. Chaque sous-vue est
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Avec <code>fx:include fx:id="entete"</code>, FXML injecte un champ <code>enteteController</code> dans le contrôleur parent.</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+section pre { font-size: 0.55rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
 </style>
 
 <div style="background: #27ae60; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🎮 AppController.java</div>
 
 ```java
 public class AppController {
-
   // Convention : <fxId>Controller pour accéder au sous-controller
   @FXML private EnteteController enteteController;
   @FXML private ContenuController contenuController;
@@ -2318,8 +2317,7 @@ public class AppController {
     enteteController.setUtilisateur(monUtilisateur);
 
     // Ou les abonner les uns aux autres via leurs propriétés
-    contenuController.titreProperty()
-        .bind(enteteController.titreCourantProperty());
+    contenuController.titreProperty().bind(enteteController.titreCourantProperty());
   }
 }
 ```
@@ -2333,7 +2331,7 @@ Le contrôleur parent <b>orchestre</b>. Les enfants ne se connaissent pas - ils 
 ## Application composée (fx:include) - exemple TP3 ex6
 
 <style scoped>
-section pre { font-size: 0.7rem !important; line-height: 1.3 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
+section pre { font-size: 0.55rem !important; line-height: 1.3 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
 .app-col { display: flex; flex-direction: column; }
 </style>
 
@@ -2343,20 +2341,15 @@ section pre { font-size: 0.7rem !important; line-height: 1.3 !important; margin:
 <div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.2rem;">📄 app.fxml - la coquille</div>
 
 ```xml
-<BorderPane
-   fx:controller="AppController"
+<BorderPane fx:controller="AppController"
    xmlns:fx="http://javafx.com/fxml">
 
   <top>
-    <fx:include
-      source="entete.fxml"
-      fx:id="entete"/>
+    <fx:include source="entete.fxml" fx:id="entete"/>
   </top>
 
   <center>
-    <fx:include
-      source="liste.fxml"
-      fx:id="liste"/>
+    <fx:include source="liste.fxml" fx:id="liste"/>
   </center>
 
   <bottom>
@@ -2375,10 +2368,8 @@ section pre { font-size: 0.7rem !important; line-height: 1.3 !important; margin:
 public class AppController {
   // Sous-controllers via convention
   // <fxId>Controller
-  @FXML private EnteteController
-                   enteteController;
-  @FXML private ListeController
-                   listeController;
+  @FXML private EnteteController enteteController;
+  @FXML private ListeController listeController;
 
   // Composant fx:root réutilisable
   @FXML private BarreStatut statut;
@@ -2439,28 +2430,47 @@ Règle simple : <b>fx:root</b> si le composant a vocation à être instancié pl
 
 ## Récapitulatif des outils FXML
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Tous les mécanismes FXML vus dans cette partie, en une seule planche de référence.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Les mécanismes FXML vus, regroupés par rôle.</p>
 
-<style scoped>
-section table { font-size: 1rem !important; width: 100%; border-collapse: collapse; }
-section th { background: #1a5276 !important; color: white !important; padding: 0.45rem 0.8rem !important; text-align: left !important; font-size: 1.15rem !important; }
-section td { padding: 0.4rem 0.8rem !important; border-bottom: 1px solid #e0e0e0 !important; }
-section tr:nth-child(even) td { background: #f4f6f8 !important; }
-section table code { font-size: 0.92rem !important; }
-</style>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
-| Mécanisme | Rôle | Exemple |
-|---|---|---|
-| `fx:id` | Nommer un nœud pour injection Java | `<Label fx:id="message"/>` |
-| `id` | Sélecteur CSS unique | `<Label id="titre"/>` |
-| `styleClass` | Sélecteur CSS de classe | `<Label styleClass="valeur"/>` |
-| `@FXML` | Marquer un champ ou méthode injectable | `@FXML private Label message;` |
-| `fx:controller` | Désigner le contrôleur de la vue | `<VBox fx:controller="fr.univ_amu.iut.MonController">` |
-| `onAction="#méthode"` | Câbler une action sur une méthode | `<Button onAction="#valider"/>` |
-| `initialize()` | Code après injection | `@FXML void initialize()` |
-| `fx:root` | Racine externe (composant réutilisable) | `<fx:root type="javafx.scene.layout.HBox">` |
-| `fx:include` | Inclure un autre FXML | `<fx:include source="entete.fxml" fx:id="entete"/>` |
-| `loader.getController()` | Accéder au contrôleur | `controller.setModele(...)` |
+<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🏷️ Identification</div>
+<div style="font-size: 1.1rem; line-height: 1.55;">
+<code>fx:id</code> - nom Java pour <code>@FXML</code><br/>
+<code>id</code> - sélecteur CSS unique<br/>
+<code>styleClass</code> - sélecteur CSS de classe
+</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🔌 Câblage FXML ↔ Java</div>
+<div style="font-size: 1.1rem; line-height: 1.55;">
+<code>fx:controller</code> - désigne la classe contrôleur<br/>
+<code>@FXML</code> - marque champ ou méthode à câbler<br/>
+<code>onAction="#m"</code> - événement → méthode<br/>
+<code>initialize()</code> - hook après chargement
+</div>
+</div>
+
+<div style="background: #e8a838; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🧩 Composition</div>
+<div style="font-size: 1.1rem; line-height: 1.55;">
+<code>fx:root</code> - composant réutilisable (nouvelle classe)<br/>
+<code>fx:include</code> - assembler des sous-vues
+</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ API Java de FXMLLoader</div>
+<div style="font-size: 1.1rem; line-height: 1.55;">
+<code>loader.getController()</code> - récupérer l'instance créée<br/>
+<code>loader.setController(...)</code> - fournir une instance<br/>
+<code>loader.setRoot(...)</code> - fournir la racine
+</div>
+</div>
+
+</div>
 
 ---
 
