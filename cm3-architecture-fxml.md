@@ -2436,7 +2436,7 @@ Règle simple : <b>fx:root</b> si le composant a vocation à être instancié pl
 
 <div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🏷️ Identification</div>
-<div style="font-size: 1.1rem; line-height: 1.55;">
+<div style="font-size: 1.3rem; line-height: 1.55;">
 <code>fx:id</code> - nom Java pour <code>@FXML</code><br/>
 <code>id</code> - sélecteur CSS unique<br/>
 <code>styleClass</code> - sélecteur CSS de classe
@@ -2445,7 +2445,7 @@ Règle simple : <b>fx:root</b> si le composant a vocation à être instancié pl
 
 <div style="background: #27ae60; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🔌 Câblage FXML ↔ Java</div>
-<div style="font-size: 1.1rem; line-height: 1.55;">
+<div style="font-size: 1.3rem; line-height: 1.55;">
 <code>fx:controller</code> - désigne la classe contrôleur<br/>
 <code>@FXML</code> - marque champ ou méthode à câbler<br/>
 <code>onAction="#m"</code> - événement → méthode<br/>
@@ -2455,7 +2455,7 @@ Règle simple : <b>fx:root</b> si le composant a vocation à être instancié pl
 
 <div style="background: #e8a838; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🧩 Composition</div>
-<div style="font-size: 1.1rem; line-height: 1.55;">
+<div style="font-size: 1.3rem; line-height: 1.55;">
 <code>fx:root</code> - composant réutilisable (nouvelle classe)<br/>
 <code>fx:include</code> - assembler des sous-vues
 </div>
@@ -2463,7 +2463,7 @@ Règle simple : <b>fx:root</b> si le composant a vocation à être instancié pl
 
 <div style="background: #8e44ad; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ API Java de FXMLLoader</div>
-<div style="font-size: 1.1rem; line-height: 1.55;">
+<div style="font-size: 1.3rem; line-height: 1.55;">
 <code>loader.getController()</code> - récupérer l'instance créée<br/>
 <code>loader.setController(...)</code> - fournir une instance<br/>
 <code>loader.setRoot(...)</code> - fournir la racine
