@@ -2980,7 +2980,7 @@ section table code { font-size: 0.7rem !important; padding: 1px 4px !important; 
 
 ## Pour aller plus loin
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Quelques pistes pour approfondir FXML et MVC, du tutoriel officiel à la lecture du code Eclipse.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Quelques pistes pour approfondir FXML et MVC, du tutoriel officiel à la lecture du code source OpenJFX.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem; align-items: stretch;">
 
@@ -3006,7 +3006,8 @@ section table code { font-size: 0.7rem !important; padding: 1px 4px !important; 
 <div style="background: #e67e22; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🔍 Pour les curieux</div>
 <div style="font-size: 1.2rem; line-height: 1.5;">
-Source OpenJFX de <a href="https://github.com/openjdk/jfx/blob/master/modules/javafx.fxml/src/main/java/javafx/fxml/FXMLLoader.java" style="color: #ffe0c0;"><code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px; color: #ffe0c0;">FXMLLoader</code></a> : observez la logique de réflexion qui injecte les <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">@FXML</code> et appelle <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">initialize()</code>.
+Source de <a href="https://github.com/openjdk/jfx/blob/master/modules/javafx.fxml/src/main/java/javafx/fxml/FXMLLoader.java" style="color: #ffe0c0;"><code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px; color: #ffe0c0;">FXMLLoader</code></a> : observez le mécanisme qui remplit automatiquement les <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">@FXML</code> et appelle <code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px;">initialize()</code>.<br/><br/>
+<a href="https://github.com/openjdk/jfx/blob/master/modules/javafx.controls/src/main/resources/com/sun/javafx/scene/control/skin/modena/modena.css" style="color: #ffe0c0;"><code style="background: rgba(0,0,0,0.2); padding: 1px 5px; border-radius: 3px; color: #ffe0c0;">modena.css</code></a> : la feuille de style par défaut de JavaFX, lisible et inspirante pour vos propres thèmes.
 </div>
 </div>
 
