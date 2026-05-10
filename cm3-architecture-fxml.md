@@ -1668,30 +1668,11 @@ La <b>structure</b> reste dans le FXML, la <b>présentation</b> dans le CSS. Le 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">FXML supporte l'i18n nativement via les <code>ResourceBundle</code> et la syntaxe <code>%clé</code>.</p>
 
 <style scoped>
-section pre { font-size: 0.65rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
+section pre { font-size: 0.55rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
 .i18n-col { display: flex; flex-direction: column; }
 </style>
 
-<div style="display: grid; grid-template-columns: 2fr 3fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
-
-<div class="i18n-col">
-<div style="background: #e8a838; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🇫🇷 messages_fr.properties</div>
-
-```properties
-btn.ok=Valider
-btn.cancel=Annuler
-title=Connexion
-```
-
-<div style="background: #e8a838; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem; margin-top: 0.4rem;">🇬🇧 messages_en.properties</div>
-
-```properties
-btn.ok=OK
-btn.cancel=Cancel
-title=Login
-```
-
-</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
 <div class="i18n-col">
 <div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 login.fxml</div>
@@ -1704,7 +1685,18 @@ title=Login
 </VBox>
 ```
 
-<div style="background: #7f8c8d; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem; margin-top: 0.4rem;">🚀 App.java</div>
+<div style="background: #e8a838; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem; margin-top: 0.4rem;">🇫🇷 messages_fr.properties</div>
+
+```properties
+btn.ok=Valider
+btn.cancel=Annuler
+title=Connexion
+```
+
+</div>
+
+<div class="i18n-col">
+<div style="background: #7f8c8d; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🚀 App.java</div>
 
 ```java
 // Locale système : fr_FR, en_US, ...
@@ -1713,16 +1705,24 @@ ResourceBundle bundle = ResourceBundle
 loader.setResources(bundle);
 ```
 
-</div>
+<div style="background: #e8a838; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem; margin-top: 0.4rem;">🇬🇧 messages_en.properties</div>
+
+```properties
+btn.ok=OK
+btn.cancel=Cancel
+title=Login
+```
 
 </div>
 
-<div style="background: rgba(74,144,217,0.15); padding: 0.5rem 1rem; border-radius: 6px; margin-top: 0.4rem; font-size: 1.2rem; text-align: center; color: #2c3e50;">
+</div>
+
+<div style="background: rgba(74,144,217,0.15); padding: 0.5rem 1rem; border-radius: 6px; margin-top: 0.4rem; font-size: 1.1rem; text-align: center; color: #2c3e50;">
 🔍 Si la locale système est <code>fr_FR</code>, Java cherche <code>messages_fr.properties</code> <span style="opacity: 0.75;">(convention : <code>baseName_langue.properties</code>, fallback sur <code>messages.properties</code>)</span>.
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-Aucune ligne Java à modifier pour traduire l'app. Le FXML reste neutre, le bundle change selon la <code>Locale</code>.
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.4rem; text-align: center;">
+Aucune ligne Java à modifier pour traduire. Le FXML reste neutre, le bundle change selon la <code>Locale</code>.
 </div>
 
 ---
