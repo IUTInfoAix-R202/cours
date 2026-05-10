@@ -1779,9 +1779,12 @@ Lisez la <b>première ligne</b> de l'erreur : le numéro de ligne dans le FXML e
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Un <code>GridPane</code> qui aligne 3 lignes : email, mot de passe, bouton de validation.</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+section pre { font-size: 0.7rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
 </style>
 
+<div style="display: grid; grid-template-columns: 3fr 2fr; gap: 0.9rem; margin-top: 0.4rem; align-items: stretch;">
+
+<div>
 <div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 formulaire.fxml</div>
 
 ```xml
@@ -1789,18 +1792,30 @@ section pre { font-size: 0.85rem !important; line-height: 1.4 !important; margin
           fx:controller="FormulaireConnexionController"
           stylesheets="@formulaire.css"
           xmlns:fx="http://javafx.com/fxml">
-
   <Label text="Email"               GridPane.rowIndex="0" GridPane.columnIndex="0"/>
   <TextField fx:id="email"          GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-
   <Label text="Mot de passe"        GridPane.rowIndex="1" GridPane.columnIndex="0"/>
   <PasswordField fx:id="motDePasse" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-
   <Button fx:id="valider" text="Valider" onAction="#valider"
-          GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-
+                                    GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 </GridPane>
 ```
+
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+<div style="font-size: 1rem; color: #7f8c8d; margin-bottom: 0.4rem;">🖼️ rendu</div>
+<div style="background: white; border: 1px solid #d0d0d0; border-radius: 6px; padding: 1.2rem 1.4rem; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: grid; grid-template-columns: auto auto; gap: 0.7rem 0.8rem; align-items: center; font-family: 'Segoe UI', sans-serif; font-size: 0.95rem; color: #2c3e50;">
+  <div>Email</div>
+  <input type="text" style="font-family: inherit; font-size: 0.95rem; padding: 0.2rem 0.4rem; border: 1px solid #b0b0b0; border-radius: 3px; background: white; width: 150px;"/>
+  <div>Mot de passe</div>
+  <input type="password" style="font-family: inherit; font-size: 0.95rem; padding: 0.2rem 0.4rem; border: 1px solid #b0b0b0; border-radius: 3px; background: white; width: 150px;"/>
+  <div></div>
+  <button style="font-family: inherit; font-size: 0.95rem; padding: 0.3rem 0.8rem; background: linear-gradient(#fafafa, #e0e0e0); border: 1px solid #b0b0b0; border-radius: 3px; color: #2c3e50; cursor: pointer; justify-self: start;">Valider</button>
+</div>
+</div>
+
+</div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Aucune logique, aucun comportement. Juste la structure : <b>qui est où</b>, et <b>comment c'est aligné</b>.
@@ -1813,31 +1828,63 @@ Aucune logique, aucun comportement. Juste la structure : <b>qui est où</b>, et 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Trois <code>@FXML</code>, un binding d'affordance et une action métier - rien d'autre.</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+section pre { font-size: 0.7rem !important; line-height: 1.4 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
 </style>
 
+<div style="display: grid; grid-template-columns: 3fr 2fr; gap: 0.9rem; margin-top: 0.4rem; align-items: stretch;">
+
+<div>
 <div style="background: #27ae60; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🎮 FormulaireConnexionController.java</div>
 
 ```java
 public class FormulaireConnexionController {
-
   @FXML private TextField email;
   @FXML private PasswordField motDePasse;
   @FXML private Button valider;
 
-  @FXML
-  void initialize() {
+  @FXML void initialize() {
     // Affordance : bouton désactivé tant que les champs ne sont pas remplis (CM2)
     valider.disableProperty().bind(
         email.textProperty().isEmpty().or(motDePasse.textProperty().isEmpty()));
   }
 
-  @FXML
-  void valider() {
+  @FXML void valider() {
     System.out.println("Connexion : " + email.getText());
   }
 }
 ```
+
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 0.7rem; align-items: center; justify-content: center;">
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<div style="font-size: 0.95rem; color: #7f8c8d; margin-bottom: 0.25rem;">champs vides → bouton désactivé</div>
+<div style="background: white; border: 1px solid #d0d0d0; border-radius: 6px; padding: 0.7rem 0.9rem; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: grid; grid-template-columns: auto auto; gap: 0.4rem 0.6rem; align-items: center; font-family: 'Segoe UI', sans-serif; font-size: 0.85rem; color: #2c3e50;">
+  <div>Email</div>
+  <input type="text" style="font-family: inherit; font-size: 0.85rem; padding: 0.15rem 0.3rem; border: 1px solid #b0b0b0; border-radius: 3px; background: white; width: 130px;"/>
+  <div>Mot de passe</div>
+  <input type="password" style="font-family: inherit; font-size: 0.85rem; padding: 0.15rem 0.3rem; border: 1px solid #b0b0b0; border-radius: 3px; background: white; width: 130px;"/>
+  <div></div>
+  <button style="font-family: inherit; font-size: 0.85rem; padding: 0.2rem 0.7rem; background: linear-gradient(#fafafa, #e0e0e0); border: 1px solid #d0d0d0; border-radius: 3px; color: #b0b0b0; cursor: not-allowed; opacity: 0.6; justify-self: start;">Valider</button>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<div style="font-size: 0.95rem; color: #27ae60; margin-bottom: 0.25rem;">champs remplis → bouton activé</div>
+<div style="background: white; border: 1px solid #d0d0d0; border-radius: 6px; padding: 0.7rem 0.9rem; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: grid; grid-template-columns: auto auto; gap: 0.4rem 0.6rem; align-items: center; font-family: 'Segoe UI', sans-serif; font-size: 0.85rem; color: #2c3e50;">
+  <div>Email</div>
+  <input type="text" value="alice@iut.fr" style="font-family: inherit; font-size: 0.85rem; padding: 0.15rem 0.3rem; border: 1px solid #b0b0b0; border-radius: 3px; background: white; width: 130px;"/>
+  <div>Mot de passe</div>
+  <input type="password" value="azerty123" style="font-family: inherit; font-size: 0.85rem; padding: 0.15rem 0.3rem; border: 1px solid #b0b0b0; border-radius: 3px; background: white; width: 130px;"/>
+  <div></div>
+  <button style="font-family: inherit; font-size: 0.85rem; padding: 0.2rem 0.7rem; background: linear-gradient(#fafafa, #e0e0e0); border: 1px solid #b0b0b0; border-radius: 3px; color: #2c3e50; cursor: pointer; justify-self: start;">Valider</button>
+</div>
+</div>
+
+</div>
+
+</div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 22 lignes XML + 18 lignes Java pour un formulaire complet. Lisible et déclaratif - <em>mais aussi long à taper à la main...</em>
