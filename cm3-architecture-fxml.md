@@ -2969,7 +2969,6 @@ section table code { font-size: 0.7rem !important; padding: 1px 4px !important; 
 <div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">🔄 Bindings systématiques</div>
 <div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">💉 Injection (Guice)</div>
 <div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">💾 JDBC / JPA</div>
-<div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">🐳 Docker</div>
 <div style="background: #1a5276; color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">🎓 Synthèse</div>
 </div>
 
