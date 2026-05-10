@@ -1702,6 +1702,7 @@ title=Connexion
 // Locale système : fr_FR, en_US, ...
 ResourceBundle bundle = ResourceBundle
     .getBundle("messages");
+
 loader.setResources(bundle);
 ```
 
@@ -1718,7 +1719,7 @@ title=Login
 </div>
 
 <div style="background: rgba(74,144,217,0.15); padding: 0.5rem 1rem; border-radius: 6px; margin-top: 0.4rem; font-size: 1.1rem; text-align: center; color: #2c3e50;">
-🔍 Si la locale système est <code>fr_FR</code>, Java cherche <code>messages_fr.properties</code> <span style="opacity: 0.75;">(convention : <code>baseName_langue.properties</code>, fallback sur <code>messages.properties</code>)</span>.
+🔍 Si la locale système est <code>fr_FR</code>, Java cherche <code>messages_fr.properties</code> <span style="opacity: 0.75;">(convention : <code>baseName_langue.properties</code>)</span>.
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.4rem; text-align: center;">
