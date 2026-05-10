@@ -1273,10 +1273,10 @@ section pre { font-size: 0.9rem !important; line-height: 1.4 !important; margin:
 
 ## Récupération automatique avec @FXML 
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'annotation <code>@FXML</code> dit à <code>FXMLLoader</code> : « <em>injecte le nœud nommé X dans le champ portant le même nom</em> ».</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Quand on annote un champ avec <code>@FXML</code>, <code>FXMLLoader</code> cherche le nœud dont l'<code>fx:id</code> correspond au nom du champ et l'<b>assigne</b> à ce champ.</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
+section pre { font-size: 0.55rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
 .inj-col { display: flex; flex-direction: column; }
 </style>
 
