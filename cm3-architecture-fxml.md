@@ -2212,7 +2212,7 @@ La classe <b>EST</b> le composant : <code>new BarreStatut()</code> donne directe
 
 ---
 
-## Un composant comme n'importe quel autre
+## Composant réutilisable (fx:root) - utilisation
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Côté <b>Java</b> comme côté <b>FXML</b>, <code>BarreStatut</code> se manipule sans rien savoir de son contenu interne.</p>
 
@@ -2261,7 +2261,7 @@ VBox root = new VBox(
 
 ---
 
-## Composer des vues (fx:include)
+## Application composée (fx:include) - le FXML
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour assembler une grande vue à partir de plus petites, on utilise <code>fx:include</code>.</p>
 
@@ -2295,7 +2295,7 @@ Trois fichiers FXML, trois contrôleurs, une vue assemblée. Chaque sous-vue est
 
 ---
 
-## Communiquer entre contrôleurs inclus
+## Application composée (fx:include) - les contrôleurs
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Avec <code>fx:include fx:id="entete"</code>, FXML injecte un champ <code>enteteController</code> dans le contrôleur parent.</p>
 
@@ -2330,7 +2330,7 @@ Le contrôleur parent <b>orchestre</b>. Les enfants ne se connaissent pas - ils 
 
 ---
 
-## Exemple d'application composée (TP3 ex6)
+## Application composée (fx:include) - exemple TP3 ex6
 
 <style scoped>
 section pre { font-size: 0.7rem !important; line-height: 1.3 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
