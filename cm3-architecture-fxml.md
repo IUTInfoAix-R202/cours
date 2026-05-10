@@ -1905,7 +1905,7 @@ public class FormulaireConnexionController {
 
 <div style="background: #e8a838; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 Cohérence</div>
-<div style="font-size: 1.3rem; line-height: 1.45;">Une feuille CSS centralise le style, un composant <code>fx:root</code> centralise une UI. Mutualiser empêche la disparate <em>(Partie 6)</em>.</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Une feuille CSS centralise le style, un composant <code>fx:root</code> centralise une UI. Mutualiser empêche l'incohérence <em>(Partie 6)</em>.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
@@ -2510,12 +2510,12 @@ Règle simple : <b>fx:root</b> si le composant a vocation à être instancié pl
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
-Une UI cohérente, c'est une UI où l'utilisateur n'a pas besoin de <b>réapprendre</b> à chaque écran.
+Une UI cohérente, c'est une UI où l'utilisateur n'a pas besoin de <b>réapprendre</b> et se <b>questionner</b> à chaque écran.
 </div>
 
 ---
 
-## Anti-pattern : la disparate
+## Anti-pattern : l'incohérence
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Trois écrans, trois variations du même bouton : l'utilisateur doit deviner à chaque fois.</p>
 
@@ -2542,14 +2542,14 @@ Une UI cohérente, c'est une UI où l'utilisateur n'a pas besoin de <b>réappren
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-💡 La disparate force l'utilisateur à <b>réapprendre</b> à chaque écran. La cohérence le laisse se concentrer sur sa tâche.
+💡 L'incohérence force l'utilisateur à <b>réapprendre</b> à chaque écran. La cohérence le laisse se concentrer sur sa tâche.
 </div>
 
 ---
 
 ## FXML + CSS : la cohérence à grande échelle
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Mutualiser les styles et les composants empêche mécaniquement la disparate.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Mutualiser les styles et les composants empêche mécaniquement l'incohérence.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
