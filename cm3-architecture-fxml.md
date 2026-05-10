@@ -1016,6 +1016,49 @@ section pre { font-size: 0.5rem !important; line-height: 1.35 !important; margin
 
 ---
 
+## Le namespace FXML
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Les déclarations en tête de fichier FXML : pas de magie, juste du XML structuré.</p>
+
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+</style>
+
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 vue.fxml</div>
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="fr.univ_amu.iut.exemple.MonController">
+  <Label fx:id="message"/>
+</VBox>
+```
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold;">📦 Imports</div>
+<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;">Les <code>&lt;?import ...?&gt;</code> permettent d'écrire <code>&lt;Label&gt;</code> au lieu du nom complet.</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold;">🔧 xmlns:fx</div>
+<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;">Active les attributs <code>fx:id</code>, <code>fx:controller</code>, <code>fx:include</code>...</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold;">⚠️ Ne pas modifier</div>
+<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;">SceneBuilder s'appuie sur ces déclarations. Les altérer casse l'outil.</div>
+</div>
+
+</div>
+
+---
+
 ## Ce qui doit (et ne doit pas) être en FXML
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">FXML est un langage de description, pas de programmation. Quelques règles simples pour ne pas dériver.</p>
@@ -1496,7 +1539,7 @@ section img[alt^="Cycle de vie"] { width: 100%; max-height: 480px; height: auto;
 ![Cycle de vie du chargement FXML : load() → new Controller() → assignation des @FXML → initialize() → retour à l'Application](assets/kroki/cm3-fxml-cycle-vie.svg)
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-Le constructeur du contrôleur s'exécute <b>avant</b> que les <code>@FXML</code> ne soient remplis ; <code>initialize()</code> <b>après</b>. C'est le seul ordre fiable.
+Le constructeur s'exécute <b>avant</b> que les <code>@FXML</code> ne soient injectés ; <code>initialize()</code> juste <b>après</b>.
 </div>
 
 ---
@@ -1707,49 +1750,6 @@ public void start(Stage stage) throws IOException {
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Au CM4, on verra un mécanisme plus propre via injection de dépendances <em>(Guice)</em>.
-</div>
-
----
-
-## Le namespace FXML
-
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Les déclarations en tête de fichier FXML : pas de magie, juste du XML structuré.</p>
-
-<style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
-</style>
-
-<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 vue.fxml</div>
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="fr.univ_amu.iut.exemple.MonController">
-  <Label fx:id="message"/>
-</VBox>
-```
-
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem;">
-
-<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold;">📦 Imports</div>
-<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;">Les <code>&lt;?import ...?&gt;</code> permettent d'écrire <code>&lt;Label&gt;</code> au lieu du nom complet.</div>
-</div>
-
-<div style="background: #27ae60; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold;">🔧 xmlns:fx</div>
-<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;">Active les attributs <code>fx:id</code>, <code>fx:controller</code>, <code>fx:include</code>...</div>
-</div>
-
-<div style="background: #c0392b; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold;">⚠️ Ne pas modifier</div>
-<div style="font-size: 1.2rem; margin-top: 0.3rem; line-height: 1.4;">SceneBuilder s'appuie sur ces déclarations. Les altérer casse l'outil.</div>
-</div>
-
 </div>
 
 ---
