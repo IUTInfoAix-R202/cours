@@ -2661,24 +2661,40 @@ Heuristique #4 « <em>cohérence et standards</em> » à l'échelle d'une organi
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
-<div style="background: #4285f4; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="background: #4285f4; color: white; padding: 0.9rem 1.1rem; border-radius: 10px; display: flex; flex-direction: column;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🟦 Material Design (Google)</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Lancé en 2014 pour Android. Métaphore du papier et de l'encre. Largement adopté hors Google.<br/><a href="https://m3.material.io/" style="color: #d0e0ff;">m3.material.io</a></div>
+<div style="font-size: 1.2rem; line-height: 1.4; flex: 1;">Lancé en 2014 pour Android. Métaphore du papier et de l'encre.<br/><a href="https://m3.material.io/" style="color: #d0e0ff;">m3.material.io</a></div>
+<div style="background: white; border-radius: 6px; padding: 0.6rem; margin-top: 0.5rem; display: flex; gap: 0.5rem; align-items: center; justify-content: center;">
+  <button style="font-family: 'Roboto', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.45rem 1.1rem; background: #6750a4; color: white; border: none; border-radius: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.25); cursor: pointer;">Continuer</button>
+  <button style="font-family: 'Roboto', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.45rem 1.1rem; background: #e8def8; color: #6750a4; border: none; border-radius: 18px; cursor: pointer;">Annuler</button>
+</div>
 </div>
 
-<div style="background: #1d1d1f; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="background: #1d1d1f; color: white; padding: 0.9rem 1.1rem; border-radius: 10px; display: flex; flex-direction: column;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">⚪ Apple HIG</div>
-<div style="font-size: 1.3rem; line-height: 1.4;"><em>Human Interface Guidelines</em>, depuis 1987. Référence pour macOS, iOS, watchOS, visionOS.<br/><a href="https://developer.apple.com/design/human-interface-guidelines/" style="color: #d0e0ff;">developer.apple.com/design</a></div>
+<div style="font-size: 1.2rem; line-height: 1.4; flex: 1;"><em>Human Interface Guidelines</em>, depuis 1987. Référence macOS, iOS, watchOS, visionOS.<br/><a href="https://developer.apple.com/design/human-interface-guidelines/" style="color: #d0e0ff;">developer.apple.com/design</a></div>
+<div style="background: #f2f2f7; border-radius: 6px; padding: 0.6rem; margin-top: 0.5rem; display: flex; gap: 0.5rem; align-items: center; justify-content: center;">
+  <button style="font-family: -apple-system, 'SF Pro', sans-serif; font-size: 0.9rem; font-weight: 600; padding: 0.45rem 1.3rem; background: #007aff; color: white; border: none; border-radius: 10px; cursor: pointer;">Continuer</button>
+  <button style="font-family: -apple-system, 'SF Pro', sans-serif; font-size: 0.9rem; font-weight: 600; padding: 0.45rem 1.3rem; background: #e5e5ea; color: #007aff; border: none; border-radius: 10px; cursor: pointer;">Annuler</button>
+</div>
 </div>
 
-<div style="background: #2557a7; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="background: #2557a7; color: white; padding: 0.9rem 1.1rem; border-radius: 10px; display: flex; flex-direction: column;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🟦 Fluent (Microsoft)</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Successeur de Metro. Cohérence Windows, Office, Teams, Xbox.<br/><a href="https://fluent2.microsoft.design/" style="color: #d0e0ff;">fluent2.microsoft.design</a></div>
+<div style="font-size: 1.2rem; line-height: 1.4; flex: 1;">Successeur de Metro. Cohérence Windows, Office, Teams, Xbox.<br/><a href="https://fluent2.microsoft.design/" style="color: #d0e0ff;">fluent2.microsoft.design</a></div>
+<div style="background: #faf9f8; border-radius: 6px; padding: 0.6rem; margin-top: 0.5rem; display: flex; gap: 0.5rem; align-items: center; justify-content: center;">
+  <button style="font-family: 'Segoe UI', sans-serif; font-size: 0.9rem; padding: 0.4rem 1rem; background: #0078d4; color: white; border: 1px solid #005a9e; border-radius: 2px; cursor: pointer;">Continuer</button>
+  <button style="font-family: 'Segoe UI', sans-serif; font-size: 0.9rem; padding: 0.4rem 1rem; background: white; color: #323130; border: 1px solid #8a8886; border-radius: 2px; cursor: pointer;">Annuler</button>
+</div>
 </div>
 
-<div style="background: #0079bf; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="background: #000091; color: white; padding: 0.9rem 1.1rem; border-radius: 10px; display: flex; flex-direction: column;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🇫🇷 DSFR (État français)</div>
-<div style="font-size: 1.3rem; line-height: 1.4;"><em>Design System de l'État français</em>. Tous les sites <code>.gouv.fr</code> partagent les mêmes composants.<br/><a href="https://www.systeme-de-design.gouv.fr/" style="color: #d0e0ff;">systeme-de-design.gouv.fr</a></div>
+<div style="font-size: 1.2rem; line-height: 1.4; flex: 1;"><em>Design System de l'État français</em>. Tous les sites <code>.gouv.fr</code>.<br/><a href="https://www.systeme-de-design.gouv.fr/" style="color: #d0e0ff;">systeme-de-design.gouv.fr</a></div>
+<div style="background: white; border-radius: 6px; padding: 0.6rem; margin-top: 0.5rem; display: flex; gap: 0.5rem; align-items: center; justify-content: center;">
+  <button style="font-family: 'Marianne', sans-serif; font-size: 0.9rem; font-weight: 500; padding: 0.45rem 1.1rem; background: #000091; color: white; border: none; border-radius: 0; cursor: pointer;">Continuer</button>
+  <button style="font-family: 'Marianne', sans-serif; font-size: 0.9rem; font-weight: 500; padding: 0.45rem 1.1rem; background: white; color: #000091; border: 1px solid #000091; border-radius: 0; cursor: pointer;">Annuler</button>
+</div>
 </div>
 
 </div>
