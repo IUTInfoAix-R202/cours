@@ -1968,12 +1968,12 @@ SceneBuilder produit le FXML que vous auriez tapé : la <b>vitesse</b> en plus, 
 ## SceneBuilder — l'écran type
 
 <style scoped>
-section img[alt^="SceneBuilder"] { max-height: 480px; max-width: 100%; height: auto; width: auto; display: block; margin: 0.3rem auto; border: 1px solid #bdc3c7; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+section img[alt^="SceneBuilder"] { max-height: 450px; max-width: 100%; height: auto; width: auto; display: block; margin: 0.3rem auto; }
 </style>
 
 ![SceneBuilder ouvert sur un FXML : panneau Library à gauche, Hierarchy en bas à gauche, Content au centre, Inspector à droite](assets/scenebuilder-screen.png)
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 0.7rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Library (composants disponibles), Hierarchy (structure de l'arbre), Content (rendu), Inspector (propriétés du nœud sélectionné).
 </div>
 
