@@ -1566,6 +1566,8 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
          text="Compteur"/>
   <Label fx:id="message"
          styleClass="valeur"/>
+  <Button text="+1"
+          onAction="#incrementer"/>
 </VBox>
 ```
 
