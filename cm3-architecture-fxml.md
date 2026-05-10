@@ -2856,26 +2856,26 @@ Ces conventions sont gravées dans la mémoire musculaire de vos utilisateurs. L
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">L'architecture MVC + FXML rend la cohérence <b>plus facile à respecter qu'à enfreindre</b>.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.9rem; margin-top: 0.7rem; align-items: stretch;">
 
-<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🧱 Hub central</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Un seul composant <code>BarreBoutonsForm</code> = un seul endroit où l'ordre est défini.</div>
+<div style="background: #1a5276; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.45rem;">🧱 Hub central</div>
+<div style="font-size: 1.5rem; line-height: 1.45;">Un seul composant <code>BarreBoutonsForm</code> = un seul endroit où l'ordre est défini.</div>
 </div>
 
-<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🔁 Modification globale</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Changer une convention = un commit sur un fichier. Pas 30 commits sur 30 vues.</div>
+<div style="background: #27ae60; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.45rem;">🔁 Modification globale</div>
+<div style="font-size: 1.5rem; line-height: 1.45;">Changer une convention = un commit sur un fichier. Pas 30 commits sur 30 vues.</div>
 </div>
 
-<div style="background: #8e44ad; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">📚 Doc vivante</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Le code des composants <em>est</em> la documentation des standards. Pas de dérive.</div>
+<div style="background: #8e44ad; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.45rem;">📚 Doc vivante</div>
+<div style="font-size: 1.5rem; line-height: 1.45;">Le code des composants <em>est</em> la documentation des standards. Pas de dérive.</div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.7rem; font-size: 1.5rem; text-align: center;">
 💡 Un dev qui veut faire « son » bouton Annuler doit consciemment <b>contourner</b> le composant standard. Ça limite les dérives.
 </div>
 
