@@ -1983,7 +1983,7 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">SceneBuilder n'est pas un IDE complet : on l'utilise <b>en aller-retour</b> avec son éditeur de code habituel.</p>
 
-<svg viewBox="0 0 1100 360" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="width: 100%; display: block; margin: 0.3rem auto;">
+<svg viewBox="0 10 1100 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="width: 100%; display: block; margin: 0.3rem auto;">
   <defs>
     <marker id="arrow-wf" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#2c3e50"/>
