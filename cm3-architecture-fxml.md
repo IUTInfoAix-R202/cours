@@ -1258,19 +1258,19 @@ section pre { font-size: 0.65rem !important; line-height: 1.4 !important; margin
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem; align-items: stretch;">
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">📦 Nom complet</div>
-<div style="font-size: 1.3rem; line-height: 1.45;">Toujours le <b>nom pleinement qualifié</b> de la classe (avec le package). Les <code>&lt;?import?&gt;</code> du FXML ne s'appliquent qu'aux balises de composants, pas à <code>fx:controller</code>.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.35rem;">📦 Nom complet</div>
+<div style="font-size: 1.4rem; line-height: 1.45;">Toujours le <b>nom pleinement qualifié</b> de la classe (avec le package).</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">⚙️ Constructeur sans args</div>
-<div style="font-size: 1.3rem; line-height: 1.45;"><code>FXMLLoader</code> instancie automatiquement le contrôleur via <code>new CompteurController()</code>.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.35rem;">⚙️ Constructeur sans args</div>
+<div style="font-size: 1.4rem; line-height: 1.45;"><code>FXMLLoader</code> instancie le contrôleur en appelant son constructeur par défaut.</div>
 </div>
 
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-Pour passer un argument au contrôleur (ex : un modèle), il faut le créer manuellement - voir la slide <em>« Accéder au contrôleur »</em>.
+Sans <code>fx:controller</code>, le FXML décrit une vue mais ne peut rien connecter au code Java.
 </div>
 
 ---
