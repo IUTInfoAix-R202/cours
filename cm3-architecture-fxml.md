@@ -2017,13 +2017,13 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🔄 Aller-retour fluide</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">Modifier un FXML à la main, le rouvrir dans SceneBuilder : tout est préservé.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.35rem;">🔄 Aller-retour fluide</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">Modifier un FXML à la main, le rouvrir dans SceneBuilder : tout est préservé.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.35rem;">🦴 Squelette du contrôleur</div>
-<div style="font-size: 1.3rem; line-height: 1.4;">SceneBuilder génère le squelette de la classe Java associée via <em>View → Show Sample Controller Skeleton</em>.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.35rem;">🦴 Squelette du contrôleur</div>
+<div style="font-size: 1.4rem; line-height: 1.4;">SceneBuilder génère le squelette de la classe Java associée via <em>View → Show Sample Controller Skeleton</em>.</div>
 </div>
 
 </div>
@@ -2052,7 +2052,7 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
 </div>
 
 <div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.35rem;">⚠️ Preview ≠ exécution</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.35rem;">⚠️ Preview n'est pas l'exécution</div>
 <div style="font-size: 1.4rem; line-height: 1.4;">Les bindings et handlers ne sont <b>pas</b> exécutés. Pour tester le comportement, lancer la vraie app.</div>
 </div>
 
