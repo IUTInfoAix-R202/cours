@@ -1769,7 +1769,7 @@ Aucune ligne Java à modifier pour traduire. Le FXML reste neutre, le bundle cha
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-Lisez attentivement la <b>première ligne</b> de la stack trace : le numéro de ligne dans le FXML est en général précis.
+Lisez la <b>première ligne</b> de l'erreur : le numéro de ligne dans le FXML est en général précis.
 </div>
 
 ---
@@ -1850,56 +1850,36 @@ public class FormulaireConnexionController {
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-👉 Layout en FXML (déclaratif), affordance via binding (CM2), comportement en Java (testable).
+👉 22 lignes XML pour 5 composants : lisible et déclaratif. <em>Mais aussi long à taper à la main...</em>
 </div>
 
 ---
 
-## 🧪 Bénéfice concret : la testabilité
+## 🎁 Trois bénéfices à retenir
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Avec MVC + FXML, on peut tester chaque couche isolément.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Ce que MVC + FXML apporte à la fin de la Partie 3, et ce que ça ouvre pour la suite.</p>
 
-<style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 6px !important; }
-</style>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📊 Test du modèle</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 Testabilité</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Le modèle se teste en <b>JUnit pur</b>, sans JavaFX, sans TestFX. La vue se teste via TestFX. Chaque couche est isolable.</div>
+</div>
 
-```java
-@Test
-void incrementeAjouteUn() {
-  Compteur c = new Compteur();
-  c.incrementer();
-  assertEquals(1, c.getValeur());
-}
-```
-
-<div style="font-size: 1.3rem; line-height: 1.4; margin-top: 0.5rem;">Pas de JavaFX, pas de TestFX. JUnit pur.</div>
+<div style="background: #e8a838; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 Cohérence</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Une feuille CSS centralise le style, un composant <code>fx:root</code> centralise une UI. Mutualiser empêche la disparate <em>(Partie 6)</em>.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🖼️ Test de la vue (TestFX)</div>
-
-```java
-@Test
-void clicIncremente(FxRobot robot) {
-  robot.clickOn("#bouton");
-  Label l = robot.lookup("#message")
-                 .queryAs(Label.class);
-  assertEquals("1", l.getText());
-}
-```
-
-<div style="font-size: 1.3rem; line-height: 1.4; margin-top: 0.5rem;">Test fonctionnel via interactions UI.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🛠️ Outillage</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Le FXML est lisible <b>par des outils</b>, pas seulement par des humains. Un éditeur graphique peut le manipuler à la souris... <em>(Partie 4 →)</em></div>
 </div>
 
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-Plus la frontière modèle/contrôleur est nette, plus le test du modèle couvre la logique <b>sans toucher à JavaFX</b>.
+Une vue déclarative, c'est aussi une vue <b>éditable autrement qu'à la main</b>. Direction SceneBuilder.
 </div>
 
 ---
