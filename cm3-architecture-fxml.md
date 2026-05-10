@@ -2105,15 +2105,15 @@ Le contrôleur déclaré dans <code>fx:controller</code> est instancié <b>autom
 
 ---
 
-## Variante : injecter un contrôleur custom
+## Créer le contrôleur soi-même (setController)
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Si le contrôleur n'a pas de constructeur sans argument, on l'instancie soi-même avant le chargement avec <code>setController()</code>.</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
+section pre { font-size: 0.55rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; }
 </style>
 
-<div style="background: #7f8c8d; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">🚀 App.java</div>
+<div style="background: #7f8c8d; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.2rem;">🚀 App.java</div>
 
 ```java
 public void start(Stage stage) throws IOException {
@@ -2128,7 +2128,7 @@ public void start(Stage stage) throws IOException {
 }
 ```
 
-<div style="background: #c0392b; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.5rem;">
+<div style="background: #c0392b; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.3rem;">
 ⚠️ Si vous appelez <code>setController()</code>, <b>retirer l'attribut <code>fx:controller</code></b> du FXML (sinon erreur d'initialisation).
 </div>
 
