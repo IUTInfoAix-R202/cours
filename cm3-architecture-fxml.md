@@ -2472,6 +2472,10 @@ Règle simple : <b>fx:root</b> si le composant a vocation à être instancié pl
 
 </div>
 
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<b>Identifier</b>, <b>câbler</b>, <b>composer</b>, <b>contrôler</b> : 4 verbes qui résument tout FXML.
+</div>
+
 ---
 
 <!-- _class: lead -->
