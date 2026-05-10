@@ -1730,22 +1730,43 @@ Aucune ligne Java à modifier pour traduire. Le FXML reste neutre, le bundle cha
 
 ## Erreurs courantes et messages
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Quatre erreurs récurrentes au début, et le message d'erreur qui les caractérise.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Quatre erreurs récurrentes au début, et le message qui les caractérise.</p>
 
-<style scoped>
-section table { font-size: 1rem !important; width: 100%; border-collapse: collapse; }
-section th { background: #c0392b !important; color: white !important; padding: 0.45rem 0.8rem !important; text-align: left !important; font-size: 1.15rem !important; }
-section td { padding: 0.4rem 0.8rem !important; border-bottom: 1px solid #e0e0e0 !important; vertical-align: top; }
-section tr:nth-child(even) td { background: #f4f6f8 !important; }
-section table code { font-size: 0.92rem !important; }
-</style>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.4rem;">
 
-| Symptôme | Cause | Diagnostic |
-|---|---|---|
-| `LoadException: Class not found` | Faute de frappe dans `fx:controller`, ou package oublié. | Le nom doit être pleinement qualifié : `fr.iut.MonController`. |
-| `NullPointerException` sur un champ `@FXML` | Manipuler le champ dans le **constructeur** au lieu de `initialize()`. | Les `@FXML` ne sont injectés qu'<em>après</em> le constructeur. |
-| `LoadException: Method not found` | La méthode citée dans `onAction="#m"` n'existe pas, n'est pas `@FXML`, ou a une mauvaise signature. | Doit être `void m()` ou `void m(ActionEvent)`. |
-| `LoadException: ID is already defined` | Deux nœuds avec le même `fx:id` dans le même FXML. | Renommer pour garantir l'unicité. |
+<div style="border-radius: 8px; overflow: hidden; border: 1px solid #c0392b;">
+<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; font-family: monospace; font-size: 1.05rem; font-weight: bold;">⚠️ LoadException: Class not found</div>
+<div style="background: rgba(192,57,43,0.06); padding: 0.5rem 0.9rem; font-size: 1.15rem; line-height: 1.45;">
+<b>Cause</b> : faute de frappe dans <code>fx:controller</code> ou package oublié.<br/>
+<b>Fix</b> : nom pleinement qualifié, ex <code>fr.iut.MonController</code>.
+</div>
+</div>
+
+<div style="border-radius: 8px; overflow: hidden; border: 1px solid #c0392b;">
+<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; font-family: monospace; font-size: 1.05rem; font-weight: bold;">⚠️ NullPointerException sur @FXML</div>
+<div style="background: rgba(192,57,43,0.06); padding: 0.5rem 0.9rem; font-size: 1.15rem; line-height: 1.45;">
+<b>Cause</b> : on manipule une donnée membre <code>@FXML</code> dans le <b>constructeur</b>.<br/>
+<b>Fix</b> : déplacer le code dans <code>initialize()</code>.
+</div>
+</div>
+
+<div style="border-radius: 8px; overflow: hidden; border: 1px solid #c0392b;">
+<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; font-family: monospace; font-size: 1.05rem; font-weight: bold;">⚠️ LoadException: Method not found</div>
+<div style="background: rgba(192,57,43,0.06); padding: 0.5rem 0.9rem; font-size: 1.15rem; line-height: 1.45;">
+<b>Cause</b> : la méthode citée dans <code>onAction="#m"</code> est absente, mal signée ou pas <code>@FXML</code>.<br/>
+<b>Fix</b> : <code>void m()</code> ou <code>void m(ActionEvent)</code>, annotée <code>@FXML</code>.
+</div>
+</div>
+
+<div style="border-radius: 8px; overflow: hidden; border: 1px solid #c0392b;">
+<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; font-family: monospace; font-size: 1.05rem; font-weight: bold;">⚠️ LoadException: ID is already defined</div>
+<div style="background: rgba(192,57,43,0.06); padding: 0.5rem 0.9rem; font-size: 1.15rem; line-height: 1.45;">
+<b>Cause</b> : deux nœuds avec le même <code>fx:id</code> dans le même FXML.<br/>
+<b>Fix</b> : renommer pour garantir l'unicité.
+</div>
+</div>
+
+</div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Lisez attentivement la <b>première ligne</b> de la stack trace : le numéro de ligne dans le FXML est en général précis.
