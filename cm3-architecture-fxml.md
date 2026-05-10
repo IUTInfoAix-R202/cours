@@ -2517,25 +2517,65 @@ Une UI cohérente, c'est une UI où l'utilisateur n'a pas besoin de <b>réappren
 
 ## Anti-pattern : l'incohérence
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Trois écrans, trois variations du même bouton : l'utilisateur doit deviner à chaque fois.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Trois écrans, trois variations du même bouton : l'utilisateur doit deviner à chaque fois la position et il se questionne sur les raisons des différences observées.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
 
 <div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">✗ Sur 3 écrans</div>
-<div style="font-size: 1.4rem; line-height: 1.5;">
-• Écran A : <code>[ Annuler ]</code> à gauche, gris<br/>
-• Écran B : <code>[ Cancel ]</code> à droite, rouge<br/>
-• Écran C : <code>[ × Fermer ]</code> en haut, bleu
+<div style="font-size: 1.3rem; line-height: 1.5;">
+• Écran A : <code>Annuler</code>, gris, à gauche<br/>
+• Écran B : <code>Cancel</code>, rouge, à droite<br/>
+• Écran C : <code>× Fermer</code>, bleu, en haut
+</div>
+<div style="background: white; border-radius: 6px; padding: 0.7rem; margin-top: 0.6rem; display: flex; flex-direction: column; gap: 0.45rem; font-family: 'Segoe UI', sans-serif;">
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <span style="color: #7f8c8d; font-size: 0.95rem; min-width: 1.5rem;">A</span>
+    <button style="font-family: inherit; font-size: 0.95rem; padding: 0.2rem 0.7rem; background: linear-gradient(#fafafa, #d0d0d0); border: 1px solid #999; border-radius: 3px; color: #2c3e50;">Annuler</button>
+    <span style="flex: 1;"></span>
+    <span style="color: #bbb; font-size: 0.85rem;">contenu</span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <span style="color: #7f8c8d; font-size: 0.95rem; min-width: 1.5rem;">B</span>
+    <span style="color: #bbb; font-size: 0.85rem;">contenu</span>
+    <span style="flex: 1;"></span>
+    <button style="font-family: inherit; font-size: 0.95rem; padding: 0.2rem 0.7rem; background: #e74c3c; border: 1px solid #c0392b; border-radius: 3px; color: white;">Cancel</button>
+  </div>
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <span style="color: #7f8c8d; font-size: 0.95rem; min-width: 1.5rem;">C</span>
+    <button style="font-family: inherit; font-size: 0.95rem; padding: 0.2rem 0.7rem; background: #3498db; border: 1px solid #2980b9; border-radius: 3px; color: white;">× Fermer</button>
+    <span style="flex: 1;"></span>
+    <span style="color: #bbb; font-size: 0.85rem;">contenu</span>
+  </div>
 </div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">✓ Sur 3 écrans</div>
-<div style="font-size: 1.4rem; line-height: 1.5;">
-• Toujours <code>[ Annuler ]</code><br/>
+<div style="font-size: 1.3rem; line-height: 1.5;">
+• Toujours <code>Annuler</code><br/>
 • Toujours en bas à droite<br/>
 • Toujours la même couleur
+</div>
+<div style="background: white; border-radius: 6px; padding: 0.7rem; margin-top: 0.6rem; display: flex; flex-direction: column; gap: 0.45rem; font-family: 'Segoe UI', sans-serif;">
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <span style="color: #7f8c8d; font-size: 0.95rem; min-width: 1.5rem;">A</span>
+    <span style="color: #bbb; font-size: 0.85rem;">contenu</span>
+    <span style="flex: 1;"></span>
+    <button style="font-family: inherit; font-size: 0.95rem; padding: 0.2rem 0.7rem; background: linear-gradient(#fafafa, #e0e0e0); border: 1px solid #b0b0b0; border-radius: 3px; color: #2c3e50;">Annuler</button>
+  </div>
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <span style="color: #7f8c8d; font-size: 0.95rem; min-width: 1.5rem;">B</span>
+    <span style="color: #bbb; font-size: 0.85rem;">contenu</span>
+    <span style="flex: 1;"></span>
+    <button style="font-family: inherit; font-size: 0.95rem; padding: 0.2rem 0.7rem; background: linear-gradient(#fafafa, #e0e0e0); border: 1px solid #b0b0b0; border-radius: 3px; color: #2c3e50;">Annuler</button>
+  </div>
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <span style="color: #7f8c8d; font-size: 0.95rem; min-width: 1.5rem;">C</span>
+    <span style="color: #bbb; font-size: 0.85rem;">contenu</span>
+    <span style="flex: 1;"></span>
+    <button style="font-family: inherit; font-size: 0.95rem; padding: 0.2rem 0.7rem; background: linear-gradient(#fafafa, #e0e0e0); border: 1px solid #b0b0b0; border-radius: 3px; color: #2c3e50;">Annuler</button>
+  </div>
 </div>
 </div>
 
