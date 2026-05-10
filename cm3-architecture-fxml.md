@@ -2034,7 +2034,7 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">SceneBuilder propose un mode <b>Preview</b> qui rend la vue à l'identique de l'exécution.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 1.2rem; align-items: stretch;">
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.35rem;">👁️ View → Preview in Window</div>
@@ -2058,7 +2058,7 @@ Library (composants disponibles), Hierarchy (structure de l'arbre), Content (ren
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 1.2rem; font-size: 1.5rem; text-align: center;">
 L'aperçu valide le <b>visuel</b> sans recompiler. Le <b>comportement</b>, lui, ne se vérifie qu'à l'exécution.
 </div>
 
