@@ -2212,12 +2212,12 @@ La classe <b>EST</b> le composant : <code>new BarreStatut()</code> donne directe
 
 ---
 
-## Utiliser le composant comme n'importe quel autre
+## Un composant comme n'importe quel autre
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Une fois la classe <code>BarreStatut</code> écrite, elle s'instancie comme n'importe quel composant JavaFX.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Côté <b>Java</b> comme côté <b>FXML</b>, <code>BarreStatut</code> se manipule sans rien savoir de son contenu interne.</p>
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
+section pre { font-size: 0.65rem !important; line-height: 1.35 !important; margin: 0 !important; border-radius: 0 0 6px 6px !important; flex: 1; }
 .uc-col { display: flex; flex-direction: column; }
 </style>
 
