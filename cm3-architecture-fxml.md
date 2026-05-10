@@ -1607,7 +1607,7 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">🔖 fx:id</div>
 <div style="font-size: 1.4rem; line-height: 1.4; margin-bottom: 0.6rem;">Lien entre le FXML et le <b>Java</b> : nom utilisé pour récupérer le nœud côté contrôleur.</div>
 <div style="font-size: 1.05rem; opacity: 0.85; margin-bottom: 0.2rem;">📄 FXML</div>
-<pre style="background: rgba(0,0,0,0.35) !important; color: #fff !important; padding: 0.45rem 0.7rem !important; border-radius: 4px; font-size: 1.05rem !important; margin: 0 0 1rem 0 !important; line-height: 1.4 !important;">&lt;Label fx:id="message"/&gt;</pre>
+<pre style="background: rgba(0,0,0,0.35) !important; color: #fff !important; padding: 0.45rem 0.7rem !important; border-radius: 4px; font-size: 1.05rem !important; margin: 0 0 2rem 0 !important; line-height: 1.4 !important;">&lt;Label fx:id="message"/&gt;</pre>
 <div style="font-size: 1.05rem; opacity: 0.85; margin-bottom: 0.2rem;">🎮 Controller</div>
 <pre style="background: rgba(0,0,0,0.35) !important; color: #fff !important; padding: 0.45rem 0.7rem !important; border-radius: 4px; font-size: 1.05rem !important; margin: 0 !important; line-height: 1.4 !important;">@FXML private Label message;</pre>
 </div>
@@ -1616,7 +1616,7 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 <div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.35rem;">🎨 id</div>
 <div style="font-size: 1.4rem; line-height: 1.4; margin-bottom: 0.6rem;">Lien entre le FXML et le <b>CSS</b> : sélecteur unique pour appliquer un style.</div>
 <div style="font-size: 1.05rem; opacity: 0.9; margin-bottom: 0.2rem;">📄 FXML</div>
-<pre style="background: rgba(0,0,0,0.35) !important; color: #fff !important; padding: 0.45rem 0.7rem !important; border-radius: 4px; font-size: 1.05rem !important; margin: 0 0 1rem 0 !important; line-height: 1.4 !important;">&lt;Label id="message"/&gt;</pre>
+<pre style="background: rgba(0,0,0,0.35) !important; color: #fff !important; padding: 0.45rem 0.7rem !important; border-radius: 4px; font-size: 1.05rem !important; margin: 0 0 2rem 0 !important; line-height: 1.4 !important;">&lt;Label id="message"/&gt;</pre>
 <div style="font-size: 1.05rem; opacity: 0.9; margin-bottom: 0.2rem;">🎨 CSS</div>
 <pre style="background: rgba(0,0,0,0.35) !important; color: #fff !important; padding: 0.45rem 0.7rem !important; border-radius: 4px; font-size: 1.05rem !important; margin: 0 !important; line-height: 1.4 !important;">#message { -fx-font-size: 24px; }</pre>
 </div>
@@ -1624,7 +1624,39 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-On peut mettre les deux : <code>&lt;Label fx:id="message" id="message"/&gt;</code> - utile quand le nom Java sert aussi de sélecteur CSS.
+On peut mettre les deux attributs avec la même valeur : <code>&lt;Label fx:id="message" id="message"/&gt;</code>. C'est parfois utile à la lisibilité quand le nom Java sert aussi de sélecteur CSS.
+</div>
+
+---
+
+## L'impact du CSS sur l'interface
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Le même FXML rendu sans et avec la feuille de style. Le code Java ne change pas, seul l'aspect évolue.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem; align-items: stretch;">
+
+<div style="background: #ecf0f1; color: #2c3e50; border: 2px solid #bdc3c7; border-radius: 10px; padding: 0.9rem 1.1rem;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.6rem; color: #7f8c8d;">🔘 Sans CSS <span style="font-size: 1.1rem; font-weight: normal;">(style par défaut Modena)</span></div>
+<div style="background: white; border: 1px solid #d0d0d0; border-radius: 6px; padding: 1.5rem 1.2rem; display: flex; flex-direction: column; align-items: center; gap: 0.7rem; min-height: 180px; justify-content: center;">
+  <div style="font-family: 'Segoe UI', sans-serif; font-size: 1.1rem; color: #2c3e50;">Compteur</div>
+  <div style="font-family: 'Segoe UI', sans-serif; font-size: 1.1rem; color: #2c3e50;">0</div>
+  <button style="font-family: 'Segoe UI', sans-serif; font-size: 0.95rem; padding: 0.3rem 0.8rem; background: linear-gradient(#fafafa, #e0e0e0); border: 1px solid #b0b0b0; border-radius: 3px; color: #2c3e50; cursor: pointer;">+1</button>
+</div>
+</div>
+
+<div style="background: #1a5276; color: white; border-radius: 10px; padding: 0.9rem 1.1rem;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.6rem;">🎨 Avec compteur.css</div>
+<div style="background: white; border: 1px solid #d0d0d0; border-radius: 6px; padding: 1.5rem 1.2rem; display: flex; flex-direction: column; align-items: center; gap: 0.7rem; min-height: 180px; justify-content: center;">
+  <div style="font-family: 'Segoe UI', sans-serif; font-size: 0.95rem; color: gray;">Compteur</div>
+  <div style="font-family: 'Segoe UI', sans-serif; font-size: 2.6rem; font-weight: bold; color: #4a90d9; line-height: 1;">0</div>
+  <button style="font-family: 'Segoe UI', sans-serif; font-size: 0.95rem; padding: 0.3rem 0.8rem; background: linear-gradient(#fafafa, #e0e0e0); border: 1px solid #b0b0b0; border-radius: 3px; color: #2c3e50; cursor: pointer;">+1</button>
+</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+La <b>structure</b> reste dans le FXML, la <b>présentation</b> dans le CSS. Le contrôleur n'est concerné par <b>aucun</b> des deux.
 </div>
 
 ---
