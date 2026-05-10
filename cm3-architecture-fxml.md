@@ -1732,35 +1732,35 @@ Aucune ligne Java à modifier pour traduire. Le FXML reste neutre, le bundle cha
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Quatre erreurs récurrentes au début, et le message qui les caractérise.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
 
 <div style="border-radius: 8px; overflow: hidden; border: 1px solid #c0392b;">
-<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; font-family: monospace; font-size: 1.05rem; font-weight: bold;">⚠️ LoadException: Class not found</div>
-<div style="background: rgba(192,57,43,0.06); padding: 0.5rem 0.9rem; font-size: 1.15rem; line-height: 1.45;">
+<div style="background: #c0392b; color: white; padding: 0.55rem 1rem; font-family: monospace; font-size: 1.2rem; font-weight: bold;">⚠️ LoadException: Class not found</div>
+<div style="background: rgba(192,57,43,0.06); padding: 0.75rem 1.1rem; font-size: 1.35rem; line-height: 1.55;">
 <b>Cause</b> : faute de frappe dans <code>fx:controller</code> ou package oublié.<br/>
-<b>Fix</b> : nom pleinement qualifié, ex <code>fr.iut.MonController</code>.
+<b>Fix</b> : nom pleinement qualifié, ex <code>fr.univ_amu.iut.MonController</code>.
 </div>
 </div>
 
 <div style="border-radius: 8px; overflow: hidden; border: 1px solid #c0392b;">
-<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; font-family: monospace; font-size: 1.05rem; font-weight: bold;">⚠️ NullPointerException sur @FXML</div>
-<div style="background: rgba(192,57,43,0.06); padding: 0.5rem 0.9rem; font-size: 1.15rem; line-height: 1.45;">
+<div style="background: #c0392b; color: white; padding: 0.55rem 1rem; font-family: monospace; font-size: 1.2rem; font-weight: bold;">⚠️ NullPointerException sur @FXML</div>
+<div style="background: rgba(192,57,43,0.06); padding: 0.75rem 1.1rem; font-size: 1.35rem; line-height: 1.55;">
 <b>Cause</b> : on manipule une donnée membre <code>@FXML</code> dans le <b>constructeur</b>.<br/>
 <b>Fix</b> : déplacer le code dans <code>initialize()</code>.
 </div>
 </div>
 
 <div style="border-radius: 8px; overflow: hidden; border: 1px solid #c0392b;">
-<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; font-family: monospace; font-size: 1.05rem; font-weight: bold;">⚠️ LoadException: Method not found</div>
-<div style="background: rgba(192,57,43,0.06); padding: 0.5rem 0.9rem; font-size: 1.15rem; line-height: 1.45;">
+<div style="background: #c0392b; color: white; padding: 0.55rem 1rem; font-family: monospace; font-size: 1.2rem; font-weight: bold;">⚠️ LoadException: Method not found</div>
+<div style="background: rgba(192,57,43,0.06); padding: 0.75rem 1.1rem; font-size: 1.35rem; line-height: 1.55;">
 <b>Cause</b> : la méthode citée dans <code>onAction="#m"</code> est absente, mal signée ou pas <code>@FXML</code>.<br/>
 <b>Fix</b> : <code>void m()</code> ou <code>void m(ActionEvent)</code>, annotée <code>@FXML</code>.
 </div>
 </div>
 
 <div style="border-radius: 8px; overflow: hidden; border: 1px solid #c0392b;">
-<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; font-family: monospace; font-size: 1.05rem; font-weight: bold;">⚠️ LoadException: ID is already defined</div>
-<div style="background: rgba(192,57,43,0.06); padding: 0.5rem 0.9rem; font-size: 1.15rem; line-height: 1.45;">
+<div style="background: #c0392b; color: white; padding: 0.55rem 1rem; font-family: monospace; font-size: 1.2rem; font-weight: bold;">⚠️ LoadException: ID is already defined</div>
+<div style="background: rgba(192,57,43,0.06); padding: 0.75rem 1.1rem; font-size: 1.35rem; line-height: 1.55;">
 <b>Cause</b> : deux nœuds avec le même <code>fx:id</code> dans le même FXML.<br/>
 <b>Fix</b> : renommer pour garantir l'unicité.
 </div>
@@ -2250,7 +2250,7 @@ VBox root = new VBox(
 <div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.3rem;">📄 En FXML</div>
 
 ```xml
-<?import fr.iut.composants.BarreStatut?>
+<?import fr.univ_amu.iut.composants.BarreStatut?>
 
 <VBox xmlns:fx="http://javafx.com/fxml">
   <!-- contenu principal -->
@@ -2317,7 +2317,7 @@ section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margi
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fr.iut.AppController">
+            fx:controller="fr.univ_amu.iut.AppController">
 
   <top>
     <fx:include source="entete.fxml" fx:id="entete"/>
@@ -2466,7 +2466,7 @@ section table code { font-size: 0.92rem !important; }
 | `id` | Sélecteur CSS unique | `<Label id="titre"/>` |
 | `styleClass` | Sélecteur CSS de classe | `<Label styleClass="valeur"/>` |
 | `@FXML` | Marquer un champ ou méthode injectable | `@FXML private Label message;` |
-| `fx:controller` | Désigner le contrôleur de la vue | `<VBox fx:controller="fr.iut.MonController">` |
+| `fx:controller` | Désigner le contrôleur de la vue | `<VBox fx:controller="fr.univ_amu.iut.MonController">` |
 | `onAction="#méthode"` | Câbler une action sur une méthode | `<Button onAction="#valider"/>` |
 | `initialize()` | Code après injection | `@FXML void initialize()` |
 | `fx:root` | Racine externe (composant réutilisable) | `<fx:root type="javafx.scene.layout.HBox">` |
