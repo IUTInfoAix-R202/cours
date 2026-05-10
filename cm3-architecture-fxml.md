@@ -121,7 +121,7 @@ Aujourd'hui : <b>séparer</b> ce que l'interface affiche de ce qu'elle fait, et 
 <div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Concevoir</div>
 <div style="font-size: 1.5rem; line-height: 1.5;">Une architecture <b>MVC</b> où la vue est écrite en <b>FXML</b>, le contrôleur reste mince, et les composants se réutilisent (<code>fx:root</code>, <code>fx:include</code>).</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Parties 2 + 3 + 4</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Parties 2 + 3 + 4 + 5</div>
 </div>
 
 <div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
@@ -133,7 +133,7 @@ Aujourd'hui : <b>séparer</b> ce que l'interface affiche de ce qu'elle fait, et 
 <div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🧠 Garantir</div>
 <div style="font-size: 1.5rem; line-height: 1.5;">La <b>cohérence et le respect des standards</b> (Nielsen #4) en mutualisant FXML et CSS.</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 5</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 6</div>
 </div>
 
 </div>
