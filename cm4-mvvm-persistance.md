@@ -946,6 +946,38 @@ La vue se contente de bind <code>statut</code> dans un Label et <code>enCours</c
 
 ---
 
+## Pourquoi la DI, et pourquoi maintenant ?
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Vous avez déjà croisé <code>@Inject</code> en Partie 2. Vous le retrouverez en Partie 4. C'est le <b>même pattern</b> qui ressurgit : celui qui rend chaque couche testable.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem; align-items: stretch;">
+
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🏗️ Côté MVVM (Partie 2)</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">
+Le <b>contrôleur</b> <code>@Inject</code>e son <b>ViewModel</b>.<br/>
+Le <b>ViewModel</b> <code>@Inject</code>e ses <b>services</b>.<br/>
+<em>→ chaque ViewModel se teste avec des services mockés, sans monter JavaFX.</em>
+</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">💾 Côté Persistance (Partie 4)</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">
+Le <b>ViewModel</b> <code>@Inject</code>e ses <b>DAO</b>.<br/>
+Le <b>DAO</b> <code>@Inject</code>e son <b>DataSource</b>.<br/>
+<em>→ chaque DAO se teste avec une BDD en mémoire, sans toucher la prod.</em>
+</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+La DI est le <b>ciment</b> qui rend chaque couche testable <b>indépendamment</b> des autres. C'est ce qu'on va outiller avec <b>Guice</b>.
+</div>
+
+---
+
 ## 💉 Le problème : `new` partout
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Au CM3, le contrôleur instancie son modèle avec <code>new</code>. C'est simple, mais ça crée un graphe d'objets fragiles.</p>
