@@ -2102,11 +2102,11 @@ Le code applicatif <b>raccourcit</b>. Le code d'<b>infrastructure</b> grandit, m
 ## Lien avec le TP4 - exercices et concepts
 
 <style scoped>
-section table { font-size: 0.78rem !important; width: 100%; border-collapse: collapse; }
-section th { background: #1a5276 !important; color: white !important; padding: 0.3rem 0.6rem !important; text-align: left !important; font-size: 0.85rem !important; }
-section td { padding: 0.25rem 0.6rem !important; border-bottom: 1px solid #e0e0e0 !important; font-size: 0.78rem !important; }
+section table { font-size: 0.9rem !important; width: 100%; border-collapse: collapse; }
+section th { background: #1a5276 !important; color: white !important; padding: 0.4rem 0.8rem !important; text-align: left !important; font-size: 0.95rem !important; }
+section td { padding: 0.35rem 0.8rem !important; border-bottom: 1px solid #e0e0e0 !important; font-size: 0.9rem !important; }
 section tr:nth-child(even) td { background: #f4f6f8 !important; }
-section table code { font-size: 0.74rem !important; padding: 1px 4px !important; }
+section table code { font-size: 0.85rem !important; padding: 1px 4px !important; }
 </style>
 
 | Exercice | Classe | Concepts |
@@ -2120,11 +2120,11 @@ section table code { font-size: 0.74rem !important; padding: 1px 4px !important;
 ## Lien avec le TP5 - exercices et concepts
 
 <style scoped>
-section table { font-size: 0.78rem !important; width: 100%; border-collapse: collapse; }
-section th { background: #1a5276 !important; color: white !important; padding: 0.3rem 0.6rem !important; text-align: left !important; font-size: 0.85rem !important; }
-section td { padding: 0.25rem 0.6rem !important; border-bottom: 1px solid #e0e0e0 !important; font-size: 0.78rem !important; }
+section table { font-size: 0.9rem !important; width: 100%; border-collapse: collapse; }
+section th { background: #1a5276 !important; color: white !important; padding: 0.4rem 0.8rem !important; text-align: left !important; font-size: 0.95rem !important; }
+section td { padding: 0.35rem 0.8rem !important; border-bottom: 1px solid #e0e0e0 !important; font-size: 0.9rem !important; }
 section tr:nth-child(even) td { background: #f4f6f8 !important; }
-section table code { font-size: 0.74rem !important; padding: 1px 4px !important; }
+section table code { font-size: 0.85rem !important; padding: 1px 4px !important; }
 </style>
 
 | Exercice | Concepts |
