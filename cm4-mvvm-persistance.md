@@ -101,7 +101,7 @@ La vue déclarative, <code>@FXML</code>, <code>fx:controller</code>, <code>onAct
 <div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 10px;">
 <div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🧠 Cohérence</div>
 <div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
-Heuristique #4 de Nielsen. Mutualiser FXML+CSS, créer un <b>design system</b>, prévenir la disparate.
+Heuristique #4 de Nielsen. Mutualiser FXML+CSS, créer un <b>design system</b>, prévenir l'incohérence.
 </div>
 </div>
 </div>
@@ -136,7 +136,7 @@ Aujourd'hui : combiner <b>MVC + bindings</b> pour aller vers <b>MVVM</b>, ajoute
 
 <div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🧠 Prévenir</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Les erreurs utilisateur (Nielsen #5) en concevant des interfaces <b>tolérantes</b> et bien <b>récupérables</b>.</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Les erreurs utilisateur (Nielsen #5) et permettre de bien <b>récupérer</b> quand elles surviennent (Nielsen #9), avec des interfaces tolérantes.</div>
 <div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 5</div>
 </div>
 
