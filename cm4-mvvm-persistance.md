@@ -399,12 +399,13 @@ public class FormulaireController {
 
 <style scoped>
 section pre { font-size: 0.7rem !important; line-height: 1.3 !important; }
+section code { font-size: 1em !important; }
 </style>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.3rem;">
 
 <div>
-<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">MVC : le controller manipule la vue</div>
+<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.5rem;">MVC : le controller manipule la vue</div>
 
 ```java
 public class CompteurController {
@@ -425,7 +426,7 @@ public class CompteurController {
 </div>
 
 <div>
-<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">MVVM : le controller bind, le VM porte l'état</div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.5rem;">MVVM : le controller bind, le VM porte l'état</div>
 
 ```java
 public class CompteurController {
@@ -505,7 +506,7 @@ void messageRefleteLaValeurDuCompteur() {
 }
 ```
 
-<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.4rem; text-align: center;">
+<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 ✨ Pas de TestFX, pas de <code>Application.launch()</code>, pas de mock framework. Du JUnit pur, instantané.
 </div>
 
@@ -544,6 +545,7 @@ Quatre dossiers, quatre responsabilités. Chaque test cible un dossier précis s
 
 <style scoped>
 section pre { font-size: 0.7rem !important; line-height: 1.3 !important; }
+section code { font-size: 1em !important; }
 </style>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.3rem;">
@@ -960,7 +962,7 @@ public class FormulaireConnexionController {
 }
 ```
 
-<div style="background: #c0392b; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.35rem;">
+<div style="background: #c0392b; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.5rem;">
 🔥 Pour <b>tester</b> ce contrôleur sans appeler le vrai serveur, il faudrait modifier <code>ServiceAuthImpl</code> ou faire des hacks de réflexion. Trop tard, le couplage est gravé.
 </div>
 
@@ -1031,7 +1033,7 @@ public class App extends Application {
 }
 ```
 
-<div style="background: #c0392b; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.25rem;">
+<div style="background: #c0392b; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem;">
 ⚠️ Quand l'app a 30 contrôleurs et 50 services, ce <code>start()</code> devient un cauchemar de 200 lignes.
 </div>
 
@@ -1079,7 +1081,7 @@ public class AppModule extends AbstractModule {
 
 </div>
 
-<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.35rem; text-align: center;">
+<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 ✨ Au démarrage : <code>Injector inj = Guice.createInjector(new AppModule());</code> et tout est câblé.
 </div>
 
@@ -1089,6 +1091,7 @@ public class AppModule extends AbstractModule {
 
 <style scoped>
 section pre { font-size: 0.78rem !important; line-height: 1.35 !important; }
+section code { font-size: 1em !important; }
 </style>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6rem; margin-top: 0.3rem;">
@@ -1213,7 +1216,7 @@ class FormulaireViewModelTest {
 }
 ```
 
-<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.4rem; font-size: 1.35rem; text-align: center;">
+<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 ✨ Le VM ne sait <b>pas</b> qu'il est testé. Il reçoit son <code>ServiceAuth</code>, point.
 </div>
 
@@ -1511,7 +1514,7 @@ try (Connection conn = DriverManager.getConnection(url, user, pwd);
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
 
 <div>
-<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">✗ Concaténation : injection SQL</div>
+<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.5rem;">✗ Concaténation : injection SQL</div>
 
 ```java
 String sql = "SELECT * FROM users "
@@ -1525,7 +1528,7 @@ String sql = "SELECT * FROM users "
 </div>
 
 <div>
-<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">✓ PreparedStatement : sécurisé</div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.5rem;">✓ PreparedStatement : sécurisé</div>
 
 ```java
 String sql = "SELECT * FROM users "
@@ -1656,7 +1659,7 @@ public void transferer(long depuis, long vers, BigDecimal montant) throws SQLExc
 }
 ```
 
-<div style="background: #c0392b; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.35rem; text-align: center;">
+<div style="background: #c0392b; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 🔥 Sans transaction : un crash entre <code>débit</code> et <code>crédit</code> = de l'argent perdu. <b>Inacceptable.</b>
 </div>
 
@@ -1996,6 +1999,7 @@ Chaque CM construit sur le précédent. Un compteur en CM4 utilise tout : Stage,
 
 <style scoped>
 section pre { font-size: 0.65rem !important; line-height: 1.3 !important; }
+section code { font-size: 1em !important; }
 </style>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.3rem;">
@@ -2199,7 +2203,7 @@ section table code { font-size: 0.85rem !important; padding: 1px 4px !important;
 
 </div>
 
-<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.4rem; text-align: center;">
+<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 🎯 Vous avez désormais <b>tous les outils</b> pour livrer une application professionnelle.
 </div>
 
