@@ -130,7 +130,7 @@ Aujourd'hui : combiner <b>MVC + bindings</b> pour aller vers <b>MVVM</b>, ajoute
 
 <div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
 <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">💾 Persister</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Un modèle métier en base relationnelle avec <b>JDBC</b> (Connection, PreparedStatement, ResultSet, transactions), et lancer la BDD localement avec <b>Docker</b>.</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Un modèle métier en base relationnelle avec <b>JDBC</b> (Connection, PreparedStatement, ResultSet, transactions), et lancer la BDD localement avec <b>SQLite</b>.</div>
 <div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 4</div>
 </div>
 
@@ -1439,7 +1439,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 # Partie 4 - 💾 Persistance
 
-**JDBC, JPA, Docker**
+**JDBC, SQLite**
 
 ---
 
@@ -1467,7 +1467,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
-👉 Pour la SAÉ et le TP5 : <b>BDD relationnelle</b> (PostgreSQL via Docker).
+👉 Pour la SAÉ et le TP5 : <b>BDD relationnelle</b> embarquée (SQLite).
 </div>
 
 ---
@@ -1704,7 +1704,7 @@ public void transferer(long depuis, long vers, BigDecimal montant) throws SQLExc
 ```java
 // HikariCP : le standard de fait, ultra rapide
 HikariConfig config = new HikariConfig();
-config.setJdbcUrl("jdbc:postgresql://localhost:5432/chauves_souris");
+config.setJdbcUrl("jdbc:sqlite:chauves_souris.db");
 config.setUsername("app");
 config.setPassword("changeme");
 config.setMaximumPoolSize(10);
@@ -1756,57 +1756,55 @@ Mais quel que soit l'outil, sous le capot c'est toujours <b>JDBC</b>.
 
 ---
 
-## 🐳 Docker pour la BDD locale
+## 🗄️ SQLite pour la BDD locale
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Plus besoin d'installer PostgreSQL sur sa machine. Un container = une BDD jetable.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pas de serveur à installer, pas de configuration. Un fichier <code>.db</code> sur le disque suffit.</p>
 
-```yaml
-# docker-compose.yml
-services:
-  db:
-    image: postgres:17
-    environment:
-      POSTGRES_DB: chauves_souris
-      POSTGRES_USER: app
-      POSTGRES_PASSWORD: changeme
-    ports:
-      - "5432:5432"
-    volumes:
-      - db-data:/var/lib/postgresql/data
-
-volumes:
-  db-data:
+```xml
+<!-- pom.xml : le driver JDBC SQLite -->
+<dependency>
+  <groupId>org.xerial</groupId>
+  <artifactId>sqlite-jdbc</artifactId>
+  <version>3.46.1.0</version>
+</dependency>
 ```
 
-```bash
-docker compose up -d   # démarre la BDD en arrière-plan
-docker compose down    # arrête (les données restent dans le volume)
+```java
+// URL JDBC : le chemin du fichier (créé à la première connexion si absent)
+String url = "jdbc:sqlite:chauves_souris.db";
+
+// Ou en mémoire pour les tests :
+String urlTest = "jdbc:sqlite::memory:";
+
+try (Connection conn = DriverManager.getConnection(url)) {
+    // ...
+}
 ```
 
 ---
 
-## Pourquoi Docker pour la BDD
+## Pourquoi SQLite pour la BDD
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🚀 Démarrage en 5 secondes</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Pas d'installation système, pas de configuration. <code>docker compose up</code> et voilà.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🚀 Zéro installation</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Une dépendance Maven et c'est fini. Pas de service à lancer, pas de port à ouvrir.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">📋 Reproductible</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Tous les étudiants ont la même version de PostgreSQL, la même config, les mêmes credentials.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📦 Embarqué dans l'app</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Le moteur SQL vit dans la JVM. La BDD = un fichier portable que vous pouvez copier, versionner, archiver.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🧹 Jetable</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Tout casser ? <code>docker compose down -v</code>. La machine hôte reste propre.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 Tests gratuits</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Mode <code>:memory:</code> : BDD jetable créée à chaque test, isolée, rapide. Idéal pour la pyramide de tests.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">💼 Standard industriel</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Toutes les équipes modernes utilisent Docker pour leurs dépendances de dev.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎯 Parfait pour la SAÉ</div>
+<div style="font-size: 1.5rem; line-height: 1.5;">Mono-utilisateur, capteurs locaux, BDD embarquée : SQLite couvre tout le besoin de la SAÉ et du TP5.</div>
 </div>
 
 </div>
@@ -1815,7 +1813,7 @@ docker compose down    # arrête (les données restent dans le volume)
 
 ## L'architecture complète
 
-![Architecture MVVM + DI + Persistance : Vue → Controller → ViewModel → Service → DAO → JPA/JDBC → BDD Docker](assets/kroki/cm4-architecture-complete.svg)
+![Architecture MVVM + DI + Persistance : Vue → Controller → ViewModel → Service → DAO → JPA/JDBC → BDD SQLite](assets/kroki/cm4-architecture-complete.svg)
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Six couches, six responsabilités, six niveaux de testabilité. C'est l'architecture cible de la SAÉ chauve-souris.
@@ -2165,7 +2163,7 @@ section table code { font-size: 0.85rem !important; padding: 1px 4px !important;
 
 | Exercice | Concepts |
 |---|---|
-| 1 | Démarrer PostgreSQL via Docker Compose, première connexion JDBC |
+| 1 | Première connexion JDBC à une BDD SQLite locale |
 | 2 | `PreparedStatement`, `ResultSet`, mapping manuel objet ↔ ligne |
 | 3 | Pattern DAO : `UtilisateurDao` injecté dans le ViewModel |
 | 4 | Transactions : `setAutoCommit(false)`, `commit()`, `rollback()` |
@@ -2215,7 +2213,7 @@ section table code { font-size: 0.85rem !important; padding: 1px 4px !important;
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
 <div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">📊 Modèle</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Espèce, capteur, observation, identification. Classes JPA persistées en PostgreSQL.</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Espèce, capteur, observation, identification. Tables persistées en SQLite via JDBC.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
@@ -2230,7 +2228,7 @@ section table code { font-size: 0.85rem !important; padding: 1px 4px !important;
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
 <div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">💉 Module Guice</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Composition root unique, modules de test pour la CI, BDD jetable Docker.</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Composition root unique, modules de test pour la CI, BDD SQLite jetable (mode :memory: pour les tests).</div>
 </div>
 
 </div>
@@ -2358,7 +2356,7 @@ h2 { text-align: center; }
 <div style="background: linear-gradient(135deg, #1a5276 0%, #8e44ad 100%); color: white; padding: 2.5rem 2rem; border-radius: 16px; margin: 1.5rem auto 0 auto; max-width: 900px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
 
 <div style="font-size: 2.2rem; font-weight: bold; margin-bottom: 0.4rem;">TP4 - MVVM &nbsp; + &nbsp; TP5 - Persistance</div>
-<div style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 1.8rem;">Synthèse du module : MVVM + Guice + JDBC + JPA + Docker</div>
+<div style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 1.8rem;">Synthèse du module : MVVM + Guice + JDBC + SQLite</div>
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 1.8rem;">
 <div style="background: rgba(255,255,255,0.18); padding: 0.8rem 1.1rem; border-radius: 10px; text-align: center; font-size: 1rem; min-width: 200px;">
@@ -2372,7 +2370,7 @@ h2 { text-align: center; }
 </div>
 </div>
 
-<code style="background: rgba(0,0,0,0.35); color: #2ecc71; padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1.3rem; font-weight: bold; font-family: monospace; display: inline-block;">docker compose up -d &amp;&amp; ./mvnw javafx:run</code>
+<code style="background: rgba(0,0,0,0.35); color: #2ecc71; padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1.3rem; font-weight: bold; font-family: monospace; display: inline-block;">./mvnw javafx:run</code>
 
 <div style="margin-top: 1.8rem; font-size: 1.25rem; line-height: 1.5;">
 💡 Activez les tests un par un.<br/>
