@@ -259,7 +259,7 @@ public class FormulaireController {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 🎯 <b>MVVM permet de basculer la logique d'affichage du haut vers la base de la pyramide.</b>
 </div>
 
@@ -283,7 +283,7 @@ public class FormulaireController {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 👉 Le ViewModel ne sait <b>rien</b> de JavaFX (pas de <code>Label</code>, pas de <code>Button</code>). Il manipule juste des <code>StringProperty</code>, <code>BooleanProperty</code>...
 </div>
 
@@ -312,7 +312,7 @@ public class FormulaireController {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.25rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 👉 MVVM = MVC + propriétés observables systématiques. C'est notre <b>CM2 + CM3</b> arrivés à maturité.
 </div>
 
@@ -448,7 +448,7 @@ public class CompteurController {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Le contrôleur MVVM est une <b>colle</b> : 80% des lignes deviennent des bindings vers le VM.
 </div>
 
@@ -480,7 +480,7 @@ public class CompteurViewModel {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Aucun import JavaFX UI (pas de <code>Label</code>, pas de <code>Button</code>). Juste <code>javafx.beans.property</code> et <code>javafx.beans.binding</code>.
 </div>
 
@@ -509,7 +509,7 @@ void messageRefleteLaValeurDuCompteur() {
 ✨ Pas de TestFX, pas de <code>Application.launch()</code>, pas de mock framework. Du JUnit pur, instantané.
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 👉 C'est <b>le</b> bénéfice qui vend MVVM : la logique d'affichage devient <b>testable comme du code métier</b>.
 </div>
 
@@ -534,7 +534,7 @@ src/main/java/fr/iut/exempleapp/
 └── ...
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Quatre dossiers, quatre responsabilités. Chaque test cible un dossier précis sans toucher aux autres.
 </div>
 
@@ -624,7 +624,7 @@ public class MessageController {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.55rem 1.1rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.2rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.55rem 1.1rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.5rem; text-align: center;">
 Tape dans le champ → le VM met à jour le modèle → l'affichage suit. Trois fichiers Java, un FXML.
 </div>
 
@@ -681,7 +681,7 @@ public void capturer(Pokemon p) {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.25rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 👉 <code>ObservableList</code> est à <code>List</code> ce que <code>StringProperty</code> est à <code>String</code> : une version observable qui notifie ses changements.
 </div>
 
@@ -780,7 +780,7 @@ public class FormulaireConnexionController {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Plus aucun <code>if</code>, plus aucune logique. Juste : <em>« je connecte les fils ».</em>
 </div>
 
@@ -813,7 +813,7 @@ public class FormulaireViewModel {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.25rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 👉 La vue se contente de <code>label.textProperty().bind(vm.erreurEmailProperty())</code>. Aucun <code>if</code> côté UI.
 </div>
 
@@ -836,7 +836,7 @@ section tr:nth-child(even) td { background: #f4f6f8 !important; }
 | **Flux / Redux** | Total | État central immuable, dispatch d'actions, vue pure | React, Vuex |
 | **MVVM-C** (Coordinator) | Fort + navigation découplée | Coordinator pilote la composition de VM | Grosses apps iOS / mobiles |
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.25rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Ces patterns partagent tous la même intention : <b>séparer la logique d'affichage de la logique métier</b>. MVVM est le plus naturel pour JavaFX.
 </div>
 
@@ -867,7 +867,7 @@ public class FormulaireConnexionViewModel {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.25rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 La vue se contente de bind <code>statut</code> dans un Label et <code>enCours</code> sur un spinner. Aucun <code>try/catch</code> côté UI.
 </div>
 
@@ -928,7 +928,7 @@ La vue se contente de bind <code>statut</code> dans un Label et <code>enCours</c
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.4rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 👉 Règle : si l'écran a <b>plus de 3-4 champs interactifs</b>, MVVM gagne. En dessous, MVC suffit.
 </div>
 
@@ -1001,7 +1001,7 @@ class A {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.25rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 Le terme « inversion » : c'est le <b>responsable de la composition</b> qui change de bord, pas la classe consommatrice.
 </div>
 
@@ -1150,7 +1150,7 @@ public class A {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.25rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 👉 Préférer l'injection par <b>constructeur</b>. Pas le choix avec FXML : injection par <b>champ</b>.
 </div>
 
@@ -1182,7 +1182,7 @@ public class AppModule extends AbstractModule {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Toute la composition de l'app est dans <b>un fichier</b>. Y compris pour le test, où on bascule sur un module dédié.
 </div>
 
@@ -1237,7 +1237,7 @@ public void start(Stage stage) throws IOException {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 👉 Une seule ligne (<code>setControllerFactory</code>) et tous les contrôleurs FXML reçoivent leurs <code>@Inject</code>.
 </div>
 
@@ -1267,7 +1267,7 @@ bind(ServiceAuth.class).to(ServiceAuthImpl.class).in(Singleton.class);
 public class ServiceAuthImpl implements ServiceAuth { ... }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 🎯 Règle simple : <b>singleton</b> pour les services, <b>default</b> pour les états (VM, controller).
 </div>
 
@@ -1332,7 +1332,7 @@ public class CompteController {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.25rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.5rem; text-align: center;">
 Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type-safety.
 </div>
 
@@ -1392,7 +1392,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.4rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 👉 Pour la <b>SAÉ chauve-souris</b> : DI <b>obligatoire</b>. Plusieurs sources de données, tests requis, équipe de plusieurs développeurs.
 </div>
 
@@ -1431,7 +1431,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 👉 Pour la SAÉ et le TP5 : <b>BDD relationnelle</b> (PostgreSQL via Docker).
 </div>
 
@@ -1460,7 +1460,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 👉 Au TP5 on reste sur <b>JDBC</b> : c'est la fondation que toutes les couches au-dessus utilisent en interne.
 </div>
 
@@ -1470,7 +1470,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 ![Cycle JDBC : DriverManager.getConnection → prepareStatement → executeQuery/Update → ResultSet → close, avec try-with-resources qui ferme tout](assets/kroki/cm4-jdbc-cycle.svg)
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Trois ressources à fermer : <code>Connection</code>, <code>PreparedStatement</code>, <code>ResultSet</code>. Le <b>try-with-resources</b> les ferme dans l'ordre inverse, automatiquement.
 </div>
 
@@ -1500,7 +1500,7 @@ try (Connection conn = DriverManager.getConnection(url, user, pwd);
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.25rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 <b>Try-with-resources</b> : <code>Connection</code>, <code>PreparedStatement</code>, <code>ResultSet</code> sont fermés automatiquement (même en cas d'exception).
 </div>
 
@@ -1540,7 +1540,7 @@ ps.setString(1, login);
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.4rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 🔒 <b>Règle absolue</b> : ne JAMAIS concaténer de paramètres dans une requête SQL. Toujours <code>PreparedStatement</code>.
 </div>
 
@@ -1567,7 +1567,7 @@ public class UtilisateurDao {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Le ViewModel n'écrit jamais de SQL. Il délègue à un DAO injecté. <b>Substituable</b> en test.
 </div>
 
@@ -1599,7 +1599,7 @@ public List<Utilisateur> findActifs() throws SQLException {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 <code>executeQuery()</code> renvoie un <b>curseur</b> (<code>ResultSet</code>) qu'on parcourt avec <code>rs.next()</code>. Mapping ligne → objet à la main.
 </div>
 
@@ -1630,7 +1630,7 @@ public void save(Utilisateur u) throws SQLException {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 <code>executeUpdate()</code> renvoie le <b>nombre de lignes</b> affectées. Combiné avec <code>RETURN_GENERATED_KEYS</code> pour récupérer l'id.
 </div>
 
@@ -1681,7 +1681,7 @@ DataSource ds = new HikariDataSource(config);
 // connection.close() = la rendre au pool (pas de vraie fermeture)
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 👉 Toujours travailler avec une <code>DataSource</code>, jamais avec un <code>DriverManager.getConnection()</code> direct en production.
 </div>
 
@@ -1715,7 +1715,7 @@ DataSource ds = new HikariDataSource(config);
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 Mais quel que soit l'outil, sous le capot c'est toujours <b>JDBC</b>.
 </div>
 
@@ -1782,7 +1782,7 @@ docker compose down    # arrête (les données restent dans le volume)
 
 ![Architecture MVVM + DI + Persistance : Vue → Controller → ViewModel → Service → DAO → JPA/JDBC → BDD Docker](assets/kroki/cm4-architecture-complete.svg)
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Six couches, six responsabilités, six niveaux de testabilité. C'est l'architecture cible de la SAÉ chauve-souris.
 </div>
 
@@ -1867,7 +1867,7 @@ Six couches, six responsabilités, six niveaux de testabilité. C'est l'architec
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.4rem; line-height: 1.55; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; line-height: 1.55; text-align: center;">
 👉 Trois critères : <b>en langage humain</b>, <b>identifie le problème</b>, <b>suggère une solution</b>.
 </div>
 
@@ -1896,7 +1896,7 @@ Six couches, six responsabilités, six niveaux de testabilité. C'est l'architec
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 👉 Toujours mettre une contrainte BDD <b>en plus</b> de la validation côté code. La BDD ne se laissera jamais avoir.
 </div>
 
@@ -1986,7 +1986,7 @@ section tr:nth-child(even) td { background: #f4f6f8 !important; }
 | **CM3** | MVC, FXML déclaratif, composants | onAction déclaratif, initialize() | Cohérence et standards (#4) |
 | **CM4** | MVVM, DI, persistance | Commandes ViewModel | Prévention (#5) et récupération (#9) des erreurs |
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Chaque CM construit sur le précédent. Un compteur en CM4 utilise tout : Stage, propriétés, FXML, MVVM, DI, persistance.
 </div>
 
@@ -2061,7 +2061,7 @@ class Ctrl {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.55rem 1.1rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.2rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.55rem 1.1rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.5rem; text-align: center;">
 Le code applicatif <b>raccourcit</b>. Le code d'<b>infrastructure</b> grandit, mais devient générique et réutilisable.
 </div>
 
@@ -2165,7 +2165,7 @@ section table code { font-size: 0.74rem !important; padding: 1px 4px !important;
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.25rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 👉 Ce workflow est <b>évalué formellement en R2.03</b> (Qualité de développement), mais vous l'avez déjà internalisé via les TPs.
 </div>
 
@@ -2227,7 +2227,7 @@ section tr:nth-child(even) td { background: #f4f6f8 !important; }
 | **DAO** | CM4 | `UtilisateurDao` injecté |
 | **Composition Root** | CM4 | `start()` + `Guice.createInjector(...)` |
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.3rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 🎓 Vocabulaire transférable à n'importe quel framework UI moderne.
 </div>
 
