@@ -35,11 +35,11 @@ section {
 
 <div style="display: flex; gap: 0.8rem;">
 <div style="background: #4a90d9; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
-<div style="font-size: 1.8rem; font-weight: bold;">CM1 ✅</div>
+<div style="font-size: 1.8rem; font-weight: bold;">CM1 ✓</div>
 <div style="margin-top: 0.3rem;">Fondations IHM + JavaFX</div>
 </div>
 <div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
-<div style="font-size: 1.8rem; font-weight: bold;">CM2 ✅</div>
+<div style="font-size: 1.8rem; font-weight: bold;">CM2 ✓</div>
 <div style="margin-top: 0.3rem;">Propriétés et bindings</div>
 </div>
 <div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center; box-shadow: 0 4px 12px rgba(39,174,96,0.4);">
@@ -61,10 +61,10 @@ section {
 
 <div style="display: flex; gap: 0.8rem;">
 <div style="background: #d0e2f3; color: #2c5f8a; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
-TP1 ✅
+TP1 ✓
 </div>
 <div style="background: #fae5c0; color: #8a6a1f; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
-TP2 ✅
+TP2 ✓
 </div>
 <div style="background: #c8e6c9; color: #1b5e20; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
 TP3
