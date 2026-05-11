@@ -238,7 +238,7 @@ Tout fonctionne, mais une <b>seule classe</b> mélange déjà 4 préoccupations 
 
 <div style="background: #d35400; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
 <div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.4rem;">🎨 Outils designer impossibles</div>
-<div style="font-size: 1.2rem; line-height: 1.45;">Aucun outil graphique ne peut éditer du Java. Le designer doit devenir développeur — ou le développeur, designer.</div>
+<div style="font-size: 1.2rem; line-height: 1.45;">Aucun outil graphique ne peut éditer du Java. Le designer doit devenir développeur - ou le développeur, designer.</div>
 </div>
 
 <div style="background: #b03020; color: white; padding: 1.1rem 1.3rem; border-radius: 10px;">
@@ -861,7 +861,7 @@ Le contrôleur n'a pas de <code>if</code>, pas de calcul. Juste : <em>« j'écou
 
 ---
 
-## Lien avec le CM1 — le pattern Observer
+## Lien avec le CM1 - le pattern Observer
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">MVC s'appuie sur le <b>pattern Observer</b> que vous connaissez déjà : la vue observe le modèle.</p>
 
@@ -1931,7 +1931,7 @@ Une vue déclarative, c'est aussi une vue <b>éditable autrement qu'à la main</
 
 ---
 
-## 🎨 SceneBuilder — l'éditeur graphique
+## 🎨 SceneBuilder - l'éditeur graphique
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">SceneBuilder est un outil WYSIWYG qui édite des fichiers FXML par glisser-déposer.</p>
 
@@ -2394,7 +2394,7 @@ public class AppController {
 
 ---
 
-## fx:root vs fx:include — quand utiliser quoi ?
+## fx:root vs fx:include - quand utiliser quoi ?
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Deux mécanismes de composition différents, pour deux usages différents.</p>
 
@@ -2488,7 +2488,7 @@ Règle simple : <b>fx:root</b> si le composant a vocation à être instancié pl
 
 ---
 
-## 🧠 Heuristique #4 — Consistency and standards
+## 🧠 Heuristique #4 - Consistency and standards
 
 <p style="font-size:1.5rem; font-style: italic; background: #f5f5f5; padding: 0.9rem 1.3rem; border-left: 4px solid #8e44ad; border-radius: 6px; margin-top: 0.5rem;">
 « Les utilisateurs ne devraient pas avoir à se demander si différents mots, situations ou actions signifient la même chose. Respectez les conventions de la plateforme et de l'industrie. »<br/>

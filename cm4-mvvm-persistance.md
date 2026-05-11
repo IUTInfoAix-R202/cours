@@ -1798,11 +1798,11 @@ Six couches, six responsabilités, six niveaux de testabilité. C'est l'architec
 
 ---
 
-## 🧠 Heuristique #5 — Error prevention
+## 🧠 Heuristique #5 - Error prevention
 
 <div style="background: #27ae60; color: white; padding: 1.5rem 2rem; border-radius: 12px; margin-top: 1rem; font-size: 1.5rem; line-height: 1.5; text-align: center;">
 « <em>Even better than good error messages is a careful design which prevents a problem from occurring in the first place.</em> »
-<div style="margin-top: 0.6rem; font-size: 1.1rem; opacity: 0.9;">— Jakob Nielsen, 1994</div>
+<div style="margin-top: 0.6rem; font-size: 1.1rem; opacity: 0.9;"> -  Jakob Nielsen, 1994</div>
 </div>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.9rem;">
@@ -1827,7 +1827,7 @@ Six couches, six responsabilités, six niveaux de testabilité. C'est l'architec
 
 <div style="background: #4a90d9; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
 <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🎯 Affordance (CM2)</div>
-<div style="font-size: 1.1rem; line-height: 1.5;"><code>btn.disableProperty().bind(...)</code> — l'utilisateur ne <b>peut pas</b> cliquer sur un bouton dont l'action serait invalide.</div>
+<div style="font-size: 1.1rem; line-height: 1.5;"><code>btn.disableProperty().bind(...)</code> - l'utilisateur ne <b>peut pas</b> cliquer sur un bouton dont l'action serait invalide.</div>
 </div>
 
 <div style="background: #4a90d9; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
@@ -1849,7 +1849,7 @@ Six couches, six responsabilités, six niveaux de testabilité. C'est l'architec
 
 ---
 
-## Heuristique #9 — Récupérer après l'erreur
+## Heuristique #9 - Récupérer après l'erreur
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Quand l'erreur arrive malgré tout, l'utilisateur doit pouvoir <b>comprendre</b> et <b>réparer</b>.</p>
 
@@ -2272,18 +2272,18 @@ section tr:nth-child(even) td { background: #f4f6f8 !important; }
 <div style="background: #1a5276; color: white; padding: 1.1rem 1.2rem; border-radius: 12px;">
 <div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.5rem;">📚 Livres</div>
 <div style="font-size: 1rem; line-height: 1.55;">
-<b>Patterns of Enterprise Application Architecture</b> — Martin Fowler<br/>
-<b>Clean Architecture</b> — Robert C. Martin<br/>
-<b>Domain-Driven Design</b> — Eric Evans
+<b>Patterns of Enterprise Application Architecture</b> - Martin Fowler<br/>
+<b>Clean Architecture</b> - Robert C. Martin<br/>
+<b>Domain-Driven Design</b> - Eric Evans
 </div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 1.1rem 1.2rem; border-radius: 12px;">
 <div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.5rem;">🛠️ Frameworks alternatifs</div>
 <div style="font-size: 1rem; line-height: 1.55;">
-<a href="https://github.com/AdamBien/afterburner.fx" style="color: #f3d5ff;">afterburner.fx</a> — DI minimal pour JavaFX<br/>
-<a href="https://www.jfoenix.com/" style="color: #f3d5ff;">JFoenix</a> — composants Material Design<br/>
-<a href="https://gluonhq.com/products/javafx/" style="color: #f3d5ff;">Gluon Mobile</a> — JavaFX sur iOS/Android
+<a href="https://github.com/AdamBien/afterburner.fx" style="color: #f3d5ff;">afterburner.fx</a> - DI minimal pour JavaFX<br/>
+<a href="https://www.jfoenix.com/" style="color: #f3d5ff;">JFoenix</a> - composants Material Design<br/>
+<a href="https://gluonhq.com/products/javafx/" style="color: #f3d5ff;">Gluon Mobile</a> - JavaFX sur iOS/Android
 </div>
 </div>
 
@@ -2291,17 +2291,17 @@ section tr:nth-child(even) td { background: #f4f6f8 !important; }
 <div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.5rem;">🎬 Vidéos</div>
 <div style="font-size: 1rem; line-height: 1.55;">
 <a href="https://www.youtube.com/playlist?list=PL4h6ypqTi3RR_bhBk6PtLfD83YkaJXXxw" style="color: #c0e8c0;">JavaFX Software</a> par Almas Baim<br/>
-<a href="https://devoxx.com/" style="color: #c0e8c0;">Devoxx France</a> — talks JavaFX et architecture<br/>
-<a href="https://www.youtube.com/@CleanCoders" style="color: #c0e8c0;">Clean Coders</a> — Robert Martin
+<a href="https://devoxx.com/" style="color: #c0e8c0;">Devoxx France</a> - talks JavaFX et architecture<br/>
+<a href="https://www.youtube.com/@CleanCoders" style="color: #c0e8c0;">Clean Coders</a> - Robert Martin
 </div>
 </div>
 
 <div style="background: #e67e22; color: white; padding: 1.1rem 1.2rem; border-radius: 12px;">
 <div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.5rem;">🌐 Communautés</div>
 <div style="font-size: 1rem; line-height: 1.55;">
-<a href="https://foojay.io/" style="color: #ffe0c0;">foojay.io</a> — actu Java<br/>
-<a href="https://discord.gg/javafx" style="color: #ffe0c0;">Discord JavaFX</a> — entraide<br/>
-<a href="https://stackoverflow.com/questions/tagged/javafx" style="color: #ffe0c0;">StackOverflow</a> — tag JavaFX
+<a href="https://foojay.io/" style="color: #ffe0c0;">foojay.io</a> - actu Java<br/>
+<a href="https://discord.gg/javafx" style="color: #ffe0c0;">Discord JavaFX</a> - entraide<br/>
+<a href="https://stackoverflow.com/questions/tagged/javafx" style="color: #ffe0c0;">StackOverflow</a> - tag JavaFX
 </div>
 </div>
 
@@ -2363,5 +2363,5 @@ IUT d'Aix-Marseille - Département Informatique
 </div>
 
 <div style="margin-top: 2rem; background: #2c3e50; color: white; padding: 1rem 2rem; border-radius: 12px; font-size: 1.5rem;">
-🎓 Fin du module R2.02 — bonne continuation, et bon courage pour la <strong>SAÉ 2.01</strong> !
+🎓 Fin du module R2.02 - bonne continuation, et bon courage pour la <strong>SAÉ 2.01</strong> !
 </div>
