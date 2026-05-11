@@ -35,15 +35,15 @@ section {
 
 <div style="display: flex; gap: 0.8rem;">
 <div style="background: #4a90d9; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
-<div style="font-size: 1.8rem; font-weight: bold;">CM1 ✅</div>
+<div style="font-size: 1.8rem; font-weight: bold;">CM1 ✓</div>
 <div style="margin-top: 0.3rem;">Fondations IHM + JavaFX</div>
 </div>
 <div style="background: #e8a838; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
-<div style="font-size: 1.8rem; font-weight: bold;">CM2 ✅</div>
+<div style="font-size: 1.8rem; font-weight: bold;">CM2 ✓</div>
 <div style="margin-top: 0.3rem;">Propriétés et bindings</div>
 </div>
 <div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center;">
-<div style="font-size: 1.8rem; font-weight: bold;">CM3 ✅</div>
+<div style="font-size: 1.8rem; font-weight: bold;">CM3 ✓</div>
 <div style="margin-top: 0.3rem;">Architecture et FXML</div>
 </div>
 <div style="background: #8e44ad; color: white; padding: 1.2rem; border-radius: 12px 12px 0 0; flex: 1; text-align: center; box-shadow: 0 4px 12px rgba(142,68,173,0.4);">
@@ -61,13 +61,13 @@ section {
 
 <div style="display: flex; gap: 0.8rem;">
 <div style="background: #d0e2f3; color: #2c5f8a; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
-TP1 ✅
+TP1 ✓
 </div>
 <div style="background: #fae5c0; color: #8a6a1f; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
-TP2 ✅
+TP2 ✓
 </div>
 <div style="background: #c8e6c9; color: #1b5e20; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
-TP3 ✅
+TP3 ✓
 </div>
 <div style="background: #e1bee7; color: #5c2473; padding: 0.8rem; border-radius: 0 0 12px 12px; flex: 1; text-align: center; font-weight: bold;">
 TP4 + TP5
@@ -878,22 +878,22 @@ La vue se contente de bind <code>statut</code> dans un Label et <code>enCours</c
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
 
 <div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">❌ ViewModel qui importe javafx.scene</div>
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✗ ViewModel qui importe javafx.scene</div>
 <div style="font-size: 1.1rem; line-height: 1.45;">Si vous voyez <code>import javafx.scene.control.Alert;</code> dans un VM, vous avez fui la séparation. Les alerts sont un détail de la vue.</div>
 </div>
 
 <div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">❌ Controller qui contient de la logique</div>
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Controller qui contient de la logique</div>
 <div style="font-size: 1.1rem; line-height: 1.45;">Si <code>@FXML void valider()</code> contient autre chose que <code>vm.valider()</code>, c'est une fuite. Déplacer vers le VM.</div>
 </div>
 
 <div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">❌ ViewModel qui hérite de Property</div>
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✗ ViewModel qui hérite de Property</div>
 <div style="font-size: 1.1rem; line-height: 1.45;">Le VM <em>contient</em> des propriétés, il n'<em>est</em> pas une propriété. Composition, pas héritage.</div>
 </div>
 
 <div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">❌ Modèle anémique</div>
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Modèle anémique</div>
 <div style="font-size: 1.1rem; line-height: 1.45;">Si le modèle n'est qu'un POJO sans logique, c'est que la logique a fui dans le VM. Réagencer.</div>
 </div>
 
@@ -906,7 +906,7 @@ La vue se contente de bind <code>statut</code> dans un Label et <code>enCours</c
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
 
 <div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✅ Ce qu'on gagne</div>
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✓ Ce qu'on gagne</div>
 <ul style="font-size: 1.1rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
 <li>Tests JUnit pur sur la logique d'affichage</li>
 <li>Plusieurs vues sur un même VM</li>
@@ -973,7 +973,7 @@ public class FormulaireConnexionController {
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
 
 <div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">❌ Ancien réflexe</div>
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Ancien réflexe</div>
 
 ```java
 class A {
@@ -986,7 +986,7 @@ class A {
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✅ Avec IoC</div>
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✓ Avec IoC</div>
 
 ```java
 class A {
@@ -1371,7 +1371,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
 
 <div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">✅ DI gagne quand</div>
+<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">✓ DI gagne quand</div>
 <ul style="font-size: 1.1rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
 <li>Tu as plus de 5 services différents</li>
 <li>Tu veux tester sans BDD ni réseau</li>
@@ -1511,7 +1511,7 @@ try (Connection conn = DriverManager.getConnection(url, user, pwd);
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
 
 <div>
-<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">❌ Concaténation : injection SQL</div>
+<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">✗ Concaténation : injection SQL</div>
 
 ```java
 String sql = "SELECT * FROM users "
@@ -1525,7 +1525,7 @@ String sql = "SELECT * FROM users "
 </div>
 
 <div>
-<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">✅ PreparedStatement : sécurisé</div>
+<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.1rem;">✓ PreparedStatement : sécurisé</div>
 
 ```java
 String sql = "SELECT * FROM users "
@@ -1856,12 +1856,12 @@ Six couches, six responsabilités, six niveaux de testabilité. C'est l'architec
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
 
 <div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">❌ Mauvais message</div>
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Mauvais message</div>
 <div style="font-size: 1.1rem; line-height: 1.5;"><em>« Erreur 0x4F-A2 »</em><br/><em>« java.sql.SQLException: ORA-00942 »</em><br/><em>« Une erreur s'est produite »</em></div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✅ Bon message</div>
+<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✓ Bon message</div>
 <div style="font-size: 1.1rem; line-height: 1.5;"><em>« Le serveur de la base de données ne répond pas. Vérifiez votre connexion ou réessayez dans quelques secondes. »</em></div>
 </div>
 
