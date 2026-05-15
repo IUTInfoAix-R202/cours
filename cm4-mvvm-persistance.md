@@ -1450,18 +1450,18 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem;">
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📁 Fichiers</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">CSV, JSON, XML. Simple, pas de serveur. Mauvaise pour la concurrence et les requêtes.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📁 Fichiers</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">CSV, JSON, XML. Simple, pas de serveur. Mauvaise pour la concurrence et les requêtes.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🗄️ BDD relationnelle</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">PostgreSQL, MySQL, SQLite. Standard, requêtes SQL, transactions, intégrité.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🗄️ BDD relationnelle</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">PostgreSQL, MySQL, SQLite. Standard, requêtes SQL, transactions, intégrité.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📊 NoSQL / clés-valeurs</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">MongoDB, Redis, Elasticsearch. Pour des cas spécifiques (cache, plein texte, gros volumes).</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📊 NoSQL / clés-valeurs</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">MongoDB, Redis, Elasticsearch. Pour des cas spécifiques (cache, plein texte, gros volumes).</div>
 </div>
 
 </div>
@@ -1476,27 +1476,27 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Java propose plusieurs paliers entre votre code et le SQL brut.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem; align-items: stretch;">
 
 <div style="background: #c0392b; color: white; padding: 1rem 1.1rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(192,57,43,0.4);">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ JDBC (bas niveau)</div>
-<div style="font-size: 1.05rem; line-height: 1.5;"><code>Connection</code>, <code>PreparedStatement</code>, <code>ResultSet</code>. SQL écrit à la main. <b>Le focus du TP5.</b></div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ JDBC</div>
+<div style="font-size: 1.3rem; line-height: 1.5;"><b>Bas niveau</b>. Vous écrivez le SQL, vous gérez les connexions.<br/><em>Le focus du TP5.</em></div>
 </div>
 
 <div style="background: #7f8c8d; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🔧 Helpers (intermédiaire)</div>
-<div style="font-size: 1.05rem; line-height: 1.5;"><b>JDBI</b>, <b>jOOQ</b>, <b>MyBatis</b>. Aide au mapping ResultSet → objet, sans cacher le SQL. <em>Aller plus loin.</em></div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🔧 Helpers</div>
+<div style="font-size: 1.3rem; line-height: 1.5;"><b>Intermédiaire</b>. Vous gardez le SQL, le mapping résultat → objet est automatisé.</div>
 </div>
 
 <div style="background: #7f8c8d; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📐 ORM (haut niveau)</div>
-<div style="font-size: 1.05rem; line-height: 1.5;"><b>Hibernate / JPA</b>. Mapping automatique objet ↔ table. <em>Aller plus loin (R3.xx).</em></div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📐 ORM</div>
+<div style="font-size: 1.3rem; line-height: 1.5;"><b>Haut niveau</b>. Le SQL est invisible, vous manipulez des objets annotés.</div>
 </div>
 
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
-👉 Au TP5 on reste sur <b>JDBC</b> : c'est la fondation que toutes les couches au-dessus utilisent en interne.
+👉 Au TP5 on reste sur <b>JDBC</b> : la fondation que toutes les couches au-dessus utilisent en interne. Les outils concrets sont listés en fin de partie.
 </div>
 
 ---
@@ -1515,8 +1515,9 @@ Trois ressources à fermer : <code>Connection</code>, <code>PreparedStatement</c
 
 ```java
 String sql = "SELECT id, nom FROM utilisateur WHERE actif = ?";
+String url = "jdbc:sqlite:chauves_souris.db";
 
-try (Connection conn = DriverManager.getConnection(url, user, pwd);
+try (Connection conn = DriverManager.getConnection(url);
      PreparedStatement ps = conn.prepareStatement(sql)) {
 
   ps.setBoolean(1, true);
@@ -1705,9 +1706,9 @@ public void transferer(long depuis, long vers, BigDecimal montant) throws SQLExc
 // HikariCP : le standard de fait, ultra rapide
 HikariConfig config = new HikariConfig();
 config.setJdbcUrl("jdbc:sqlite:chauves_souris.db");
-config.setUsername("app");
-config.setPassword("changeme");
 config.setMaximumPoolSize(10);
+// (PostgreSQL/MySQL : setUsername + setPassword en plus.
+//  SQLite est sans auth, le fichier suffit.)
 
 DataSource ds = new HikariDataSource(config);
 
@@ -1729,29 +1730,29 @@ DataSource ds = new HikariDataSource(config);
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🔧 Helpers (jOOQ, JDBI, MyBatis)</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Vous gardez le SQL, mais le mapping ResultSet → objet est automatisé. Compromis pragmatique.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🔧 Helpers (jOOQ, JDBI, MyBatis)</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Vous gardez le SQL, mais le mapping ResultSet → objet est automatisé. Compromis pragmatique.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">📐 ORM (Hibernate / JPA)</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Annotations sur les classes, le SQL devient invisible. Apprentissage long, traité dans la suite du BUT.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📐 ORM (Hibernate / JPA)</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Annotations sur les classes, le SQL devient invisible. Apprentissage long, traité dans la suite du BUT.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🌐 NoSQL (MongoDB, Redis)</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Pour des modèles non-relationnels, du cache rapide ou du gros volume. Spécifique à certains besoins.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🌐 NoSQL (MongoDB, Redis)</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Pour des modèles non-relationnels, du cache rapide ou du gros volume. Spécifique à certains besoins.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🚀 Frameworks complets</div>
-<div style="font-size: 1.1rem; line-height: 1.45;"><b>Spring Data</b>, <b>Quarkus</b>, <b>Micronaut</b>... combinent DI + persistance + REST. Standard du backend Java moderne.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🚀 Frameworks complets</div>
+<div style="font-size: 1.3rem; line-height: 1.45;"><b>Spring Data</b>, <b>Quarkus</b>, <b>Micronaut</b>... combinent DI + persistance + REST. Standard du backend Java moderne.</div>
 </div>
 
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
-Mais quel que soit l'outil, sous le capot c'est toujours <b>JDBC</b>.
+Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQL emprunte un chemin parallèle (drivers dédiés).
 </div>
 
 ---
@@ -1813,7 +1814,7 @@ try (Connection conn = DriverManager.getConnection(url)) {
 
 ## L'architecture complète
 
-![Architecture MVVM + DI + Persistance : Vue → Controller → ViewModel → Service → DAO → JPA/JDBC → BDD SQLite](assets/kroki/cm4-architecture-complete.svg)
+![Architecture MVVM + DI + Persistance : Vue → Controller → ViewModel → Service → DAO → JDBC → BDD SQLite](assets/kroki/cm4-architecture-complete.svg)
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Six couches, six responsabilités, six niveaux de testabilité. C'est l'architecture cible de la SAÉ chauve-souris.

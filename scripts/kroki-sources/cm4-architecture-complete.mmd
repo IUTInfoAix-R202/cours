@@ -5,14 +5,14 @@ graph TB
     S[⚙️ Service<br/>logique métier]
     DAO[💾 DAO<br/>UtilisateurDao]
     JDBC[🔌 JDBC<br/>Connection / PreparedStatement]
-    DB[(🐳 PostgreSQL<br/>Docker)]
+    DB[(🗄️ SQLite<br/>fichier .db)]
 
     V -->|"bind"| C
     C -->|"@Inject"| VM
     VM -->|"@Inject"| S
     S -->|"@Inject"| DAO
     DAO -->|"DataSource"| JDBC
-    JDBC -->|"TCP/IP"| DB
+    JDBC -->|"fichier local"| DB
 
     style V fill:#4a90d9,color:#fff
     style C fill:#27ae60,color:#fff
