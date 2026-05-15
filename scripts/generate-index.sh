@@ -43,8 +43,8 @@ ROW
 CM_ROWS=$(
   cm_row 1 "Fondations de l'IHM et première immersion JavaFX" "comprendre" "Comprendre" "cm1-fondations-ihm" ""
   cm_row 2 "Propriétés, bindings et contrôles"                 "appliquer"  "Appliquer"  "cm2-donnees-et-liaison" ""
-  cm_row 3 "Architecture des IHM et FXML"                      "analyser"   "Analyser"   "cm3-architecture-ihm" "🔄 En cours"
-  cm_row 4 "MVVM, persistance et synthèse"                     "creer"      "Créer"      "cm4-synthese" "⏳ À venir"
+  cm_row 3 "Architecture des IHM et FXML"                      "analyser"   "Analyser"   "cm3-architecture-fxml" "🔄 En cours"
+  cm_row 4 "MVVM, persistance et synthèse"                     "creer"      "Créer"      "cm4-mvvm-persistance" "⏳ À venir"
 )
 
 cat > _site/index.html <<HTMLEOF
