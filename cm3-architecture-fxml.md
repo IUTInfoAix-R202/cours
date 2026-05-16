@@ -2256,7 +2256,7 @@ VBox root = new VBox(
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-👉 C'est le pattern de l'<b>exercice 5 du TP3</b> (<code>BarreStatut</code>) : un composant qu'on peut poser n'importe où.
+👉 C'est exactement le pattern de l'<b>exercice 5 du TP3</b> appliqué à <code>SiteCarte</code> (carte de site VigieChiro avec badge de fraîcheur) : un composant qu'on peut poser n'importe où.
 </div>
 
 ---
@@ -2389,7 +2389,7 @@ public class AppController {
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-👉 Trois sous-vues, un contrôleur orchestrateur, un composant <code>fx:root</code>. C'est le pattern complet du <b>TP3 exercice 6</b>.
+👉 Deux <code>fx:include</code> + un composant <code>fx:root</code>, orchestrés par le parent. C'est ce pattern qu'applique le <b>TP3 exercice 6</b> (<code>VueAccueil</code>) en assemblant en-tête + liste de <code>SiteCarte</code>.
 </div>
 
 ---
@@ -2923,7 +2923,7 @@ Ces conventions sont gravées dans la mémoire musculaire de vos utilisateurs. L
 
 ## Lien avec le TP3 - tableau exercices et concepts
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.4rem 0;">Chaque exercice du TP3 met en pratique des concepts introduits dans ce CM.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.4rem 0;">Chaque exercice du TP3 met en pratique des concepts introduits dans ce CM. Les exercices 3 à 7 sont thématisés sur des écrans de la <strong>SAÉ 2.01</strong> (VigieChiro PR Companion).</p>
 
 <style scoped>
 section table { font-size: 0.7rem !important; width: 100%; border-collapse: collapse; }
@@ -2933,15 +2933,15 @@ section tr:nth-child(even) td { background: #f4f6f8 !important; }
 section table code { font-size: 0.7rem !important; padding: 1px 4px !important; }
 </style>
 
-| # | Classe | Concepts mis en pratique |
-|---|---|---|
-| 1 | `PremiereVueFXML` | Chargement FXML basique, `FXMLLoader.load()` sans contrôleur |
-| 2 | `CompteurFXML` + `CompteurController` | `@FXML`, `fx:id`, `fx:controller`, `onAction` |
-| 3 | `FormulaireConnexionFXML` | Form FXML + CSS + GridPane + validation (pont CM2 affordance) |
-| 4 | `MiseEnPageFXML` | Layout complet en FXML (pont TP1 mise en page procédurale) |
-| 5 | `BarreStatut` | Composant réutilisable via `fx:root` + `setRoot/setController` |
-| 6 | `ApplicationComposee` | `fx:include`, communication via `<fxId>Controller` |
-| 7 | `OthelloController` | Capstone MVC : modèle métier + vue FXML + contrôleur |
+| # | Classe | Concepts mis en pratique | Lien SAÉ |
+|---|---|---|---|
+| 1 | `PremiereVueFXML` | Chargement FXML basique, `FXMLLoader.load()` sans contrôleur | — |
+| 2 | `CompteurFXML` + `CompteurController` | `@FXML`, `fx:id`, `fx:controller`, `onAction`, `initialize()` | — |
+| 3 | `FormulaireConnexionFXML` | Form FXML + CSS + GridPane + validation par bindings (pont CM2 affordance) | gabarit du formulaire « + Nouveau site » (P1) |
+| 4 | `CoquilleAccueil` | BorderPane + MenuBar + footer entièrement en FXML (pont TP1 ex4 procédural) | **M-Sites** : coquille principale |
+| 5 | `SiteCarte` | Composant réutilisable via `fx:root` + `setRoot/setController` + propriétés JavaBeans + classes CSS dynamiques | carte de site avec badge fraîcheur |
+| 6 | `VueAccueil` | `fx:include` + injection auto des sous-contrôleurs `<fxId>Controller` + communication via parent | **M-Sites assemblé** : en-tête + liste |
+| 7 | `QualificationController` + `NuitVerification` | **Capstone MVC** : modèle métier + vue FXML (TableView + SplitPane) + contrôleur, bindings bidirectionnels | parcours **P3** « Vérifier l'enregistrement » |
 
 ---
 
@@ -3030,7 +3030,7 @@ h2 { text-align: center; }
 <div style="background: linear-gradient(135deg, #1a5276 0%, #27ae60 100%); color: white; padding: 2.5rem 2rem; border-radius: 16px; margin: 1.5rem auto 0 auto; max-width: 900px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
 
 <div style="font-size: 2.2rem; font-weight: bold; margin-bottom: 0.4rem;">TP3 - FXML</div>
-<div style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 1.8rem;">7 exercices progressifs + bonus SceneBuilder</div>
+<div style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 1.8rem;">7 exercices progressifs (thématisés SAÉ) + 2 bonus</div>
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 1.8rem;">
 <div style="background: rgba(255,255,255,0.18); padding: 0.8rem 1.1rem; border-radius: 10px; text-align: center; font-size: 1rem; min-width: 200px;">
@@ -3039,8 +3039,9 @@ h2 { text-align: center; }
 </div>
 <div style="font-size: 1.8rem;">→</div>
 <div style="background: rgba(255,255,255,0.18); padding: 0.8rem 1.1rem; border-radius: 10px; text-align: center; font-size: 1rem; min-width: 200px;">
-<div style="opacity: 0.8; font-size: 0.9rem;">Exercice 7</div>
-<div style="font-weight: bold; font-family: monospace;">Othello (capstone MVC)</div>
+<div style="opacity: 0.8; font-size: 0.9rem;">Exercice 7 (capstone MVC)</div>
+<div style="font-weight: bold; font-family: monospace;">QualificationController</div>
+<div style="opacity: 0.85; font-size: 0.85rem;">parcours SAÉ P3</div>
 </div>
 </div>
 
