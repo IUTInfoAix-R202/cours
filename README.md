@@ -16,10 +16,10 @@ Ce dépôt contient les supports des 4 cours magistraux du module R2.02 (BUT Inf
 
 | CM | Titre | Prépare | Bloom |
 |---|---|---|---|
-| [CM1](cm1-fondations-ihm.md) | Fondations de l'IHM et première immersion JavaFX | TP1 - Bases JavaFX | Comprendre |
-| [CM2](cm2-donnees-et-liaison.md) | Propriétés, bindings et contrôles | TP2 - Properties & bindings | Appliquer |
-| [CM3](cm3-architecture-fxml.md) | Architecture des IHM et FXML | TP3 - FXML | Analyser |
-| [CM4](cm4-mvvm-persistance.md) | MVVM, persistance et synthèse | TP4 + TP5 | Créer / Évaluer |
+| [CM1](https://iutinfoaix-r202.github.io/cours/cm1-fondations-ihm.html) | Fondations de l'IHM et première immersion JavaFX | TP1 - Bases JavaFX | Comprendre |
+| [CM2](https://iutinfoaix-r202.github.io/cours/cm2-donnees-et-liaison.html) | Propriétés, bindings et contrôles | TP2 - Properties & bindings | Appliquer |
+| [CM3](https://iutinfoaix-r202.github.io/cours/cm3-architecture-fxml.html) | Architecture des IHM et FXML | TP3 - FXML | Analyser |
+| [CM4](https://iutinfoaix-r202.github.io/cours/cm4-mvvm-persistance.html) | MVVM, persistance et synthèse | TP4 + TP5 | Créer / Évaluer |
 
 ### Fil rouge
 
