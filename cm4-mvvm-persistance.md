@@ -2398,5 +2398,5 @@ IUT d'Aix-Marseille - Département Informatique
 </div>
 
 <div style="margin-top: 2rem; background: #2c3e50; color: white; padding: 1rem 2rem; border-radius: 12px; font-size: 1.5rem;">
-🎓 Fin du module R2.02 - bonne continuation, et bon courage pour la <strong>SAÉ 2.01</strong> !
+🎓 Fin du module R2.02 — <strong>Bon Qourage pour l'examen</strong>, et bonne continuation pour la <strong>SAÉ 2.01</strong> !
 </div>
