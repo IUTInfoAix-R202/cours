@@ -3074,3 +3074,7 @@ IUT d'Aix-Marseille - Département Informatique
 <div style="margin-top: 2rem; background: #2c3e50; color: white; padding: 1rem 2rem; border-radius: 12px; font-size: 1.5rem;">
 🎯 Prochain rendez-vous : <strong>CM4 - MVVM, persistance et synthèse</strong>
 </div>
+
+<div style="margin-top: 1.8rem; text-align: center; font-size: 2rem; letter-spacing: 0.5rem; opacity: 0.85;">
+🌮 🐐 🧀 🍕
+</div>
