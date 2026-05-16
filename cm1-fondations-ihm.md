@@ -1843,9 +1843,13 @@ IUT d'Aix-Marseille - Département Informatique
 </div>
 
 <div style="margin-top: 2rem; background: #2c3e50; color: white; padding: 1rem 2rem; border-radius: 12px; font-size: 1.5rem;">
-<b>🎯 Dès maintenant</b> : lancez <code>./mvnw javafx:run</code> dans votre Codespace, ouvrez la fenêtre, ajoutez un <code>Button</code> et écoutez son <code>setOnAction</code>. Plus tôt vos doigts connaissent ces gestes, plus tôt l'IHM rentre.
+<b>🍣 Dès maintenant</b> : lancez <code>./mvnw javafx:run</code> dans votre Codespace, ouvrez la fenêtre, ajoutez un <code>Button</code> et écoutez son <code>setOnAction</code>. Plus tôt vos doigts connaissent ces gestes, plus tôt l'IHM rentre.
 </div>
 
 <div style="margin-top: 1.2rem; background: #fff8e1; border-left: 4px solid #e8a838; padding: 0.9rem 1rem; border-radius: 6px; font-size: 1rem;">
 🛠️ <b>Une bonne IHM ne se voit pas, elle disparaît derrière la tâche.</b> Ce CM1 a posé le socle - <em>Stage</em>, <em>Scene</em>, hiérarchie de <em>Nodes</em>, événements. Le TP1 va transformer ces idées en vraies fenêtres avec de vrais clics. On n'aiguise pas sa scie le jour où on doit couper la planche ; on l'aiguise la veille.
+</div>
+
+<div style="margin-top: 1.8rem; text-align: center; font-size: 2rem; letter-spacing: 0.5rem; opacity: 0.85;">
+🥟
 </div>
