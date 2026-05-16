@@ -18,7 +18,7 @@ section {
 }
 </style>
 
-# Propriétés, bindings et contrôles
+# 🚩 Propriétés, bindings et contrôles 🚩
 
 **R2.02 - Développement d'applications avec IHM**
 

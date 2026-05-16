@@ -18,7 +18,7 @@ section {
 }
 </style>
 
-# Architecture des IHM et FXML
+# 1️⃣ Architecture des IHM et FXML 1️⃣
 
 **R2.02 - Développement d'applications avec IHM**
 

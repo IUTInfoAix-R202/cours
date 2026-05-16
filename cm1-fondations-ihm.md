@@ -18,7 +18,7 @@ section {
 }
 </style>
 
-# Fondations de l'IHM et première immersion JavaFX
+# 💣 Fondations de l'IHM et première immersion JavaFX 💣
 
 **R2.02 - Développement d'applications avec IHM**
 

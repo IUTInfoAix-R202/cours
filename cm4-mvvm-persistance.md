@@ -18,7 +18,7 @@ section {
 }
 </style>
 
-# MVVM, persistance et synthèse
+# 💥 MVVM, persistance et synthèse 💥
 
 **R2.02 - Développement d'applications avec IHM**
 
