@@ -1109,7 +1109,7 @@ void messageRefleteLaValeurDuCompteur() {
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.7rem; font-size: 1.45rem; text-align: center;">
-👉 C'est <b>la promesse</b> clef du MVVM : la logique d'affichage est <b>testable comme du code métier</b>.
+👉 C'est <b>la promesse</b> clé du MVVM : la logique d'affichage est <b>testable comme du code métier</b>.
 </div>
 
 ---
