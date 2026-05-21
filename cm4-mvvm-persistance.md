@@ -2134,21 +2134,24 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Jusqu'à présent, l'état de votre app meurt avec le processus. La <b>persistance</b> = stocker l'état au-delà du process Java.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 1.2rem;">
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📁 Fichiers</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">CSV, JSON, XML. Simple, pas de serveur. Mauvaise pour la concurrence et les requêtes.</div>
+<div style="background: #1a5276; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3.2rem; line-height: 1;">📁</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">Fichiers</div>
+<div style="font-size: 1.35rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;">CSV, JSON, XML. Simple, pas de serveur. Mauvaise pour la concurrence et les requêtes.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🗄️ BDD relationnelle</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">PostgreSQL, MySQL, SQLite. Standard, requêtes SQL, transactions, intégrité.</div>
+<div style="background: #1a5276; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3.2rem; line-height: 1;">🗄️</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">BDD relationnelle</div>
+<div style="font-size: 1.35rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;">PostgreSQL, MySQL, SQLite. Standard, requêtes SQL, transactions, intégrité.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📊 NoSQL / clés-valeurs</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">MongoDB, Redis, Elasticsearch. Pour des cas spécifiques (cache, plein texte, gros volumes).</div>
+<div style="background: #1a5276; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3.2rem; line-height: 1;">📊</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">NoSQL / clés-valeurs</div>
+<div style="font-size: 1.35rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;">MongoDB, Redis, Elasticsearch. Pour des cas spécifiques (cache, plein texte, gros volumes).</div>
 </div>
 
 </div>
@@ -2163,27 +2166,67 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Java propose plusieurs paliers entre votre code et le SQL brut.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem; align-items: stretch;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 1.2rem; align-items: stretch;">
 
-<div style="background: #8c3a2f; color: white; padding: 1rem 1.1rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(192,57,43,0.4);">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ JDBC</div>
-<div style="font-size: 1.3rem; line-height: 1.5;"><b>Bas niveau</b>. Vous écrivez le SQL, vous gérez les connexions.<br/><em>Le focus du TP5.</em></div>
+<div style="background: #8c3a2f; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(140,58,47,0.4);">
+<div style="font-size: 3.2rem; line-height: 1;">⚙️</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">JDBC</div>
+<div style="font-size: 1.35rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;"><b>Bas niveau</b>. Vous écrivez le SQL, vous gérez les connexions.<br/><em>Le focus du TP5.</em></div>
 </div>
 
-<div style="background: #7f8c8d; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🔧 Helpers</div>
-<div style="font-size: 1.3rem; line-height: 1.5;"><b>Intermédiaire</b>. Vous gardez le SQL, le mapping résultat → objet est automatisé.</div>
+<div style="background: #7f8c8d; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3.2rem; line-height: 1;">🔧</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">Helpers</div>
+<div style="font-size: 1.35rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;"><b>Intermédiaire</b>. Vous gardez le SQL, le mapping résultat → objet est automatisé.</div>
 </div>
 
-<div style="background: #7f8c8d; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📐 ORM</div>
-<div style="font-size: 1.3rem; line-height: 1.5;"><b>Haut niveau</b>. Le SQL est invisible, vous manipulez des objets annotés.</div>
+<div style="background: #7f8c8d; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3.2rem; line-height: 1;">📐</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">ORM</div>
+<div style="font-size: 1.35rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;"><b>Haut niveau</b>. Le SQL est invisible, vous manipulez des objets annotés.</div>
 </div>
 
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 👉 Au TP5 on reste sur <b>JDBC</b> : la fondation que toutes les couches au-dessus utilisent en interne. Les outils concrets sont listés en fin de partie.
+</div>
+
+---
+
+## JDBC : objectifs et architecture
+
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.5rem 0;"><b>Java DataBase Connectivity</b> : API standard pour accéder aux SGBD relationnels. <b>Accès homogène</b>, <b>simple</b>, <b>indépendant</b> du SGBD cible.</p>
+
+<div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.2rem; margin-top: 0.7rem; align-items: stretch;">
+
+<div style="background: white; border: 2px solid #1a5276; border-radius: 12px; padding: 0.9rem 1.2rem; display: flex; flex-direction: column; gap: 0.25rem;">
+<div style="font-size: 1.35rem; font-weight: bold; color: #1a5276; margin-bottom: 0.35rem;">🏗️ Architecture en couches</div>
+<div style="background: #34495e; color: white; padding: 0.45rem 0.9rem; border-radius: 8px; text-align: center; font-size: 1.15rem;">Votre application Java</div>
+<div style="text-align: center; color: #888; font-size: 1.1rem; line-height: 1;">↕</div>
+<div style="background: #1a5276; color: white; padding: 0.45rem 0.9rem; border-radius: 8px; text-align: center; font-size: 1.15rem;"><b>API JDBC</b> (<code>java.sql</code>)</div>
+<div style="text-align: center; color: #888; font-size: 1.1rem; line-height: 1;">↕</div>
+<div style="background: #1a5276; color: white; padding: 0.45rem 0.9rem; border-radius: 8px; text-align: center; font-size: 1.15rem;"><b>Driver Manager</b></div>
+<div style="text-align: center; color: #888; font-size: 1.1rem; line-height: 1;">↕</div>
+<div style="background: #1a5276; color: white; padding: 0.45rem 0.9rem; border-radius: 8px; text-align: center; font-size: 1.15rem;"><b>Driver</b> spécifique (SQLite, MySQL…)</div>
+<div style="text-align: center; color: #888; font-size: 1.1rem; line-height: 1;">↕</div>
+<div style="background: #27ae60; color: white; padding: 0.45rem 0.9rem; border-radius: 8px; text-align: center; font-size: 1.15rem;">🗄️ SGBD</div>
+</div>
+
+<div style="background: white; border: 2px solid #1a5276; border-radius: 12px; padding: 0.9rem 1.2rem; display: flex; flex-direction: column;">
+<div style="font-size: 1.35rem; font-weight: bold; color: #1a5276; margin-bottom: 0.4rem;">🧩 Interfaces principales</div>
+<div style="font-size: 1.15rem; line-height: 1.6;">
+<code>Connection</code> : la session BDD<br/>
+<code>Statement</code> : ordre SQL simple<br/>
+<code>PreparedStatement</code> : ordre paramétré<br/>
+<code>ResultSet</code> : tuples renvoyés par <code>SELECT</code><br/>
+<code>DataSource</code> : fournit des <code>Connection</code>
+</div>
+<div style="background: #2c3e50; color: white; padding: 0.6rem 0.9rem; border-radius: 8px; margin-top: auto; font-size: 1.05rem; line-height: 1.45;">
+💡 Changer de SGBD = changer le <b>Driver</b>, pas le code applicatif.
+</div>
+</div>
+
 </div>
 
 ---
@@ -2199,6 +2242,10 @@ Trois ressources à fermer : <code>Connection</code>, <code>PreparedStatement</c
 ---
 
 ## JDBC : le canon de base
+
+<style scoped>
+section pre { font-size: 0.75rem !important; line-height: 1.35 !important; }
+</style>
 
 ```java
 String sql = "SELECT id, nom FROM utilisateur WHERE actif = ?";
@@ -2231,10 +2278,16 @@ try (Connection conn = DriverManager.getConnection(url);
 
 ## PreparedStatement : sécurité avant tout
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; }
+section .code-col { display: flex; flex-direction: column; }
+section .code-col pre { flex: 1; margin-top: 0 !important; }
+</style>
 
-<div>
-<div style="background: #8c3a2f; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.5rem;">✗ Concaténation : injection SQL</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem; align-items: stretch;">
+
+<div class="code-col">
+<div style="background: #8c3a2f; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.4rem;">✗ Concaténation : injection SQL</div>
 
 ```java
 String sql = "SELECT * FROM users "
@@ -2247,8 +2300,8 @@ String sql = "SELECT * FROM users "
 
 </div>
 
-<div>
-<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.5rem;">✓ PreparedStatement : sécurisé</div>
+<div class="code-col">
+<div style="background: #27ae60; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.4rem;">✓ PreparedStatement : sécurisé</div>
 
 ```java
 String sql = "SELECT * FROM users "
@@ -2271,11 +2324,14 @@ ps.setString(1, login);
 
 ## Le pattern DAO (Data Access Object)
 
+<style scoped>
+section pre { font-size: 0.8rem !important; line-height: 1.35 !important; }
+</style>
+
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">On encapsule l'accès aux données dans une <b>classe dédiée</b> par entité.</p>
 
 ```java
 public class UtilisateurDao {
-
   private final DataSource ds;
 
   @Inject
