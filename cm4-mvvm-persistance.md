@@ -1427,7 +1427,7 @@ Plus aucun <code>if</code>, plus aucune logique. Juste : <em>« je connecte les 
 ## Validation côté ViewModel
 
 <style scoped>
-section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.6rem !important; line-height: 1.35 !important; }
 </style>
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Le VM est l'endroit naturel pour valider les saisies : il a accès aux propriétés et expose des indicateurs d'erreur.</p>
@@ -1441,8 +1441,7 @@ public class FormulaireViewModel {
   public FormulaireViewModel() {
     emailValide = Bindings.createBooleanBinding(
         () -> email.get().matches("^[^@]+@[^@]+\\.[a-z]{2,}$"),
-        email); // Règle de validation reactive
-    
+        email); // Règle de validation réactive
     erreurEmail.bind(Bindings.when(emailValide.or(email.isEmpty()))
         .then("").otherwise("Format invalide. Exemple : prenom.nom@univ-amu.fr")); // Message d'erreur dérivé
   }
@@ -1452,7 +1451,7 @@ public class FormulaireViewModel {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
 👉 La vue se contente de se lier : <code>label.textProperty().bind(vm.erreurEmailProperty())</code>.
 </div>
 
