@@ -1116,6 +1116,12 @@ void messageRefleteLaValeurDuCompteur() {
 
 ## Anatomie d'un projet MVVM
 
+<style scoped>
+section pre { font-size: 0.6rem !important; line-height: 1.35 !important; }
+</style>
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Un dossier par couche, organisé par <b>feature</b>. Chaque couche reste testable sans toucher aux autres.</p>
+
 ```
 src/main/java/fr/iut/exempleapp/
 ├── App.java                      # bootstrap JavaFX + injection
@@ -1133,8 +1139,8 @@ src/main/java/fr/iut/exempleapp/
 └── ...
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-Quatre dossiers, quatre responsabilités. Chaque test cible un dossier précis sans toucher aux autres.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
+Quatre dossiers, quatre responsabilités. Chaque test cible un dossier sans toucher aux autres.
 </div>
 
 ---
