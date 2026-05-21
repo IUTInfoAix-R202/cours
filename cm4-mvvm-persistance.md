@@ -1952,10 +1952,11 @@ public void start(Stage stage) throws IOException {
 ## Les scopes Guice
 
 <style scoped>
-section table { font-size: 0.92rem !important; width: 100%; border-collapse: collapse; }
-section th { background: #8e44ad !important; color: white !important; padding: 0.35rem 0.7rem !important; text-align: left !important; }
-section td { padding: 0.3rem 0.7rem !important; border-bottom: 1px solid #e0e0e0 !important; }
+section table { font-size: 0.7rem !important; width: 100%; border-collapse: collapse; line-height: 1.35 !important; }
+section th { background: #8e44ad !important; color: white !important; padding: 0.3rem 0.6rem !important; text-align: left !important; }
+section td { padding: 0.25rem 0.6rem !important; border-bottom: 1px solid #e0e0e0 !important; }
 section tr:nth-child(even) td { background: #f4f6f8 !important; }
+section pre { font-size: 0.7rem !important; line-height: 1.35 !important; }
 </style>
 
 | Scope | Effet | Cas d'usage |
