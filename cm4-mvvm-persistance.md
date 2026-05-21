@@ -413,24 +413,43 @@ Personas <a href="https://iutinfoaix-s201.github.io/brief/Analyse%20et%20concept
 
 ## 🎓 Évaluation - R2.02 + R2.03 conjoints
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.4rem;">
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">Deux temps d'évaluation, qui comptent <b>à la fois pour R2.02</b> (IHM, JavaFX, MVVM) <b>et pour R2.03</b> (qualité, tests, hygiène Git).</p>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.55rem; font-weight: bold; margin-bottom: 0.4rem;">📦 Phase 1 - Code livré</div>
-<div style="font-size: 1.25rem; line-height: 1.55;">Dépôt Git évalué <b>simultanément</b> pour R2.02 (IHM JavaFX, FXML, MVVM) et R2.03 (qualité, tests, hygiène Git, PR/review).</div>
-<div style="font-size: 1.15rem; line-height: 1.5; margin-top: 0.5rem; opacity: 0.95;">Code métier + JDBC + IHM JavaFX + tests TestFX + README clair.</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.2rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; display: flex; flex-direction: column;">
+
+<div style="display: flex; align-items: center; gap: 1.2rem;">
+<div style="font-size: 3.2rem; line-height: 1; flex-shrink: 0;">📦</div>
+<div style="font-size: 1.7rem; font-weight: bold;">Phase 1 - Code livré</div>
 </div>
 
-<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.55rem; font-weight: bold; margin-bottom: 0.4rem;">🎤 Phase 2 - Soutenance</div>
-<div style="font-size: 1.25rem; line-height: 1.55;"><b>10 min</b> d'oral par équipe + démo en direct sur le jeu de données fourni. <b>Chacun prend la parole</b> et sera interrogé individuellement.</div>
-<div style="font-size: 1.15rem; line-height: 1.5; margin-top: 0.5rem; opacity: 0.95;">Samuel Busson présent : son avis pèse autant que la note technique.</div>
-</div>
+<div style="font-size: 1.25rem; line-height: 1.55; margin-top: 1rem;">Dépôt Git évalué <b>simultanément</b> pour R2.02 (IHM JavaFX, FXML, MVVM) et R2.03 (qualité, tests, hygiène Git, PR/review).</div>
+<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.7rem; opacity: 0.95;">Code métier, JDBC, IHM JavaFX, tests TestFX et README clair. L'intégration continue doit être verte.</div>
 
 </div>
 
-<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.4rem; text-align: center;">
-🤖 Assistant IA (Copilot / Claude / ChatGPT) <b>autorisé</b>, à condition de <b>défendre votre code</b> en soutenance. Les questions individuelles porteront notamment sur ce point.
+<div style="background: #8e44ad; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; display: flex; flex-direction: column;">
+
+<div style="display: flex; align-items: center; gap: 1.2rem;">
+<div style="font-size: 3.2rem; line-height: 1; flex-shrink: 0;">🎤</div>
+<div style="font-size: 1.7rem; font-weight: bold;">Phase 2 - Soutenance</div>
+</div>
+
+<div style="font-size: 1.25rem; line-height: 1.55; margin-top: 1rem;"><b>10 min</b> d'oral par équipe + diaporama + démo en direct sur le jeu de données fourni.</div>
+<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.7rem; opacity: 0.95;"><b>Chacun prend la parole</b> et sera interrogé individuellement sur les apprentissages critiques.</div>
+
+</div>
+
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem 1.4rem; border-radius: 12px; margin-top: 1.4rem; display: flex; align-items: center; gap: 1.1rem;">
+<div style="font-size: 2.8rem; line-height: 1; flex-shrink: 0;">🤖</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">
+<div><b>Assistant IA</b> (Copilot / Claude Code / ChatGPT Codex) <b>autorisé sous 2 conditions</b> :</div>
+<div style="margin-top: 0.4rem;">① <b>Maîtriser votre code</b> - interrogation individuelle en soutenance.</div>
+<div>② <b>Citer explicitement et exhaustivement</b> les apports de l'IA dans le README.</div>
+</div>
 </div>
 
 ---
