@@ -1025,6 +1025,8 @@ public class CompteurController {
 public class CompteurController {
   @Inject CompteurViewModel vm;
 
+  // FXML standard ne sait pas appeler vm.xxx(),
+  // le contrôleur garde donc les handlers d'action.
   @FXML void incrementer() {
     vm.incrementerCommand();
   }
@@ -1048,18 +1050,19 @@ public class CompteurController {
 
 ## Le ViewModel : une classe Java pure
 
+<style scoped>
+section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
+</style>
+
 ```java
 public class CompteurViewModel {
-
   private final Compteur compteur;
 
-  // Propriété UI exposée à la vue
-  private final StringProperty message = new SimpleStringProperty("Compteur à 0");
+  private final StringProperty message = new SimpleStringProperty("Compteur à 0"); // Propriété UI exposée à la vue
 
   public CompteurViewModel(Compteur compteur) {
     this.compteur = compteur;
-    // bind interne : la propriété UI dépend de la propriété métier
-    message.bind(Bindings.concat("Compteur à ", compteur.valeurProperty()));
+    message.bind(Bindings.concat("Compteur à ", compteur.valeurProperty())); // la propriété UI dépend de la propriété métier
   }
 
   public StringProperty messageProperty() {
@@ -1072,8 +1075,8 @@ public class CompteurViewModel {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-Aucun import JavaFX UI (pas de <code>Label</code>, pas de <code>Button</code>). Juste <code>javafx.beans.property</code> et <code>javafx.beans.binding</code>.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
+Aucun import de composant JavaFX (pas de <code>Label</code>, pas de <code>Button</code>).
 </div>
 
 ---
