@@ -848,28 +848,46 @@ public class FormulaireController {
 
 ## Pourquoi maintenant et pas plus tôt ?
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">4 conditions étaient nécessaires pour aborder MVVM. Aujourd'hui elles sont toutes réunies.</p>
 
-<div style="background: #4a90d9; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">📚 Outils déjà acquis</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Propriétés (<b>CM2</b>) + bindings (<b>CM2</b>) + FXML (<b>CM3</b>) sont les briques. MVVM les <b>oriente</b> en pattern.</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
+
+<div style="background: #4a90d9; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; align-items: center; gap: 1rem;">
+<div style="font-size: 2.6rem; line-height: 1; flex-shrink: 0;">📚</div>
+<div style="font-size: 1.5rem; font-weight: bold;">Outils déjà acquis</div>
+</div>
+<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.6rem;">Propriétés (<b>CM2</b>) + bindings (<b>CM2</b>) + FXML (<b>CM3</b>) sont les briques. MVVM les <b>oriente</b> en pattern.</div>
 </div>
 
-<div style="background: #4a90d9; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 Maturité testabilité</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Vous savez écrire des tests JUnit. MVVM permet de tester <b>la logique d'affichage</b> sans monter d'UI.</div>
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; align-items: center; gap: 1rem;">
+<div style="font-size: 2.6rem; line-height: 1; flex-shrink: 0;">🧪</div>
+<div style="font-size: 1.5rem; font-weight: bold;">Maturité testabilité</div>
+</div>
+<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.6rem;">Vous savez écrire des tests JUnit. MVVM permet de tester <b>la logique d'affichage</b> sans monter d'UI.</div>
 </div>
 
-<div style="background: #4a90d9; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🎯 Apps qui grossissent</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Un compteur n'a pas besoin de MVVM. La <b>SAÉ chauve-souris</b> avec ses filtres, exports, validations : oui.</div>
+<div style="background: #e8a838; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; align-items: center; gap: 1rem;">
+<div style="font-size: 2.6rem; line-height: 1; flex-shrink: 0;">📈</div>
+<div style="font-size: 1.5rem; font-weight: bold;">Apps qui grossissent</div>
+</div>
+<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.6rem;">Un compteur n'a pas besoin de MVVM. La <b>SAÉ chauve-souris</b> avec ses filtres, exports, validations : oui.</div>
 </div>
 
-<div style="background: #4a90d9; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">💼 Standard industriel</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Quasiment toutes les UI modernes utilisent une variante de MVVM. C'est <b>la</b> compétence d'employabilité.</div>
+<div style="background: #8e44ad; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; align-items: center; gap: 1rem;">
+<div style="font-size: 2.6rem; line-height: 1; flex-shrink: 0;">💼</div>
+<div style="font-size: 1.5rem; font-weight: bold;">Standard industriel</div>
+</div>
+<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.6rem;">Quasiment toutes les UI modernes utilisent une variante de MVVM. C'est <b>la</b> compétence d'employabilité.</div>
 </div>
 
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 10px; margin-top: 1.2rem; font-size: 1.5rem; text-align: center;">
+💡 MVVM n'invente rien : il <b>structure</b> ce que vous savez déjà. Pré-requis tous validés, c'est <b>le moment</b>.
 </div>
 
 ---
