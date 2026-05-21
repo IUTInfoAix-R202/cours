@@ -211,49 +211,50 @@ Personas <a href="https://iutinfoaix-s201.github.io/brief/Analyse%20et%20concept
 
 <p style="font-size: 1.45rem; margin: -0.5rem 0 0.7rem 0;">4 parcours utilisateurs enchaînés - c'est votre <b>scénario de démo</b> en soutenance.</p>
 
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; margin: 0.6rem 0 0.8rem 0;">
+<div style="display: grid; grid-template-columns: 1fr 3rem 1fr 3rem 1fr 3rem 1fr; gap: 0.9rem 0.3rem; align-items: stretch; margin: 1.2rem 0 0 0;">
 
-<div style="background: #1e8449; color: white; padding: 0.9rem 0.6rem; border-radius: 10px; text-align: center; flex: 1;">
-<div style="font-size: 2rem;">🌐</div>
-<div style="font-size: 1.4rem; font-weight: bold;">P1</div>
-<div style="font-size: 1.1rem;">Déclarer un site</div>
+<div style="background: #1e8449; color: white; padding: 1.4rem 0.8rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 3.4rem; line-height: 1;">🌐</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-top: 0.7rem;">P1</div>
+<div style="font-size: 1.15rem; margin-top: 0.3rem;">Déclarer un site</div>
 </div>
 
-<div style="font-size: 2.2rem; color: #1e8449; font-weight: bold;">→</div>
+<div style="text-align: center; font-size: 3rem; color: #1e8449; font-weight: bold; align-self: center;">→</div>
 
-<div style="background: #1e8449; color: white; padding: 0.9rem 0.6rem; border-radius: 10px; text-align: center; flex: 1;">
-<div style="font-size: 2rem;">📥</div>
-<div style="font-size: 1.4rem; font-weight: bold;">P2</div>
-<div style="font-size: 1.1rem;">Importer une nuit</div>
+<div style="background: #1e8449; color: white; padding: 1.4rem 0.8rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 3.4rem; line-height: 1;">📥</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-top: 0.7rem;">P2</div>
+<div style="font-size: 1.15rem; margin-top: 0.3rem;">Importer une nuit</div>
 </div>
 
-<div style="font-size: 2.2rem; color: #1e8449; font-weight: bold;">→</div>
+<div style="text-align: center; font-size: 3rem; color: #1e8449; font-weight: bold; align-self: center;">→</div>
 
-<div style="background: #1e8449; color: white; padding: 0.9rem 0.6rem; border-radius: 10px; text-align: center; flex: 1;">
-<div style="font-size: 2rem;">🎧</div>
-<div style="font-size: 1.4rem; font-weight: bold;">P3</div>
-<div style="font-size: 1.1rem;">Vérifier par échantillon</div>
+<div style="background: #1e8449; color: white; padding: 1.4rem 0.8rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 3.4rem; line-height: 1;">🎧</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-top: 0.7rem;">P3</div>
+<div style="font-size: 1.15rem; margin-top: 0.3rem;">Vérifier par échantillon</div>
 </div>
 
-<div style="font-size: 2.2rem; color: #1e8449; font-weight: bold;">→</div>
+<div style="text-align: center; font-size: 3rem; color: #1e8449; font-weight: bold; align-self: center;">→</div>
 
-<div style="background: #1e8449; color: white; padding: 0.9rem 0.6rem; border-radius: 10px; text-align: center; flex: 1;">
-<div style="font-size: 2rem;">📦</div>
-<div style="font-size: 1.4rem; font-weight: bold;">P4</div>
-<div style="font-size: 1.1rem;">Préparer le lot</div>
+<div style="background: #1e8449; color: white; padding: 1.4rem 0.8rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 3.4rem; line-height: 1;">📦</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-top: 0.7rem;">P4</div>
+<div style="font-size: 1.15rem; margin-top: 0.3rem;">Préparer le lot</div>
 </div>
 
+<div style="background: #d5f5e3; padding: 0.8rem; border-radius: 8px; font-size: 1.15rem; line-height: 1.45;">N° carré + codes des points d'écoute.</div>
+<div></div>
+<div style="background: #d5f5e3; padding: 0.8rem; border-radius: 8px; font-size: 1.15rem; line-height: 1.45;">Copie protégée + rename + transformation ×10.</div>
+<div></div>
+<div style="background: #d5f5e3; padding: 0.8rem; border-radius: 8px; font-size: 1.15rem; line-height: 1.45;">Sound check + verdict OK / Douteux / À jeter.</div>
+<div></div>
+<div style="background: #d5f5e3; padding: 0.8rem; border-radius: 8px; font-size: 1.15rem; line-height: 1.45;">Vérif cohérence + ouverture dossier + marquage déposé.</div>
+
 </div>
 
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: 0.4rem;">
-<div style="background: #d5f5e3; padding: 0.55rem; border-radius: 6px; font-size: 1.05rem; line-height: 1.4;">N° carré + codes des points d'écoute.</div>
-<div style="background: #d5f5e3; padding: 0.55rem; border-radius: 6px; font-size: 1.05rem; line-height: 1.4;">Copie protégée + rename + transformation ×10.</div>
-<div style="background: #d5f5e3; padding: 0.55rem; border-radius: 6px; font-size: 1.05rem; line-height: 1.4;">Sound check + verdict OK / Douteux / À jeter.</div>
-<div style="background: #d5f5e3; padding: 0.55rem; border-radius: 6px; font-size: 1.05rem; line-height: 1.4;">Vérif cohérence + ouverture dossier + marquage déposé.</div>
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.8rem 1.2rem; border-radius: 8px; margin-top: 0.7rem; font-size: 1.45rem; text-align: center;">
-👉 Si vous livrez cette chaîne <b>de bout-en-bout</b>, le MVP est atteint - peu importe le reste.
+<div style="background: #2c3e50; color: white; padding: 1rem 1.4rem; border-radius: 10px; margin-top: 1.3rem; font-size: 1.45rem; text-align: center;">
+👉 Si vous livrez cette chaîne <b>de bout-en-bout</b>, le MVP est atteint.
 </div>
 
 ---
