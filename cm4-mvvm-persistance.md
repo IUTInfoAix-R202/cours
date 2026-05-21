@@ -764,48 +764,28 @@ public class FormulaireController {
 
 ## La pyramide des tests
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Plus un test est <b>haut</b> dans la pyramide, plus il coûte cher à écrire et à exécuter. L'objectif : maximiser la base.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Plus un test est <b>haut</b> dans la pyramide, plus il coûte cher à écrire et à exécuter. L'objectif : maximiser la base pour pouvoir lancer les tests le plus souvent possible.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 2fr; gap: 0.9rem; align-items: center; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1.3fr; column-gap: 1.5rem; row-gap: 0.5rem; margin: 4.2rem 0;">
 
-<div>
-
-<svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 220px;">
-  <polygon points="110,15 200,180 20,180" fill="none" stroke="#2c3e50" stroke-width="2"/>
-  <line x1="65" y1="100" x2="155" y2="100" stroke="#2c3e50" stroke-width="2"/>
-  <line x1="40" y1="150" x2="180" y2="150" stroke="#2c3e50" stroke-width="2"/>
-
-  <rect x="80" y="30" width="60" height="48" fill="#c0392b" opacity="0.85"/>
-  <text x="110" y="58" font-family="sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">E2E</text>
-
-  <rect x="55" y="105" width="110" height="40" fill="#e8a838" opacity="0.85"/>
-  <text x="110" y="130" font-family="sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Intégration / TestFX</text>
-
-  <rect x="25" y="155" width="170" height="22" fill="#27ae60" opacity="0.85"/>
-  <text x="110" y="170" font-family="sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Unitaires (JUnit)</text>
-</svg>
-
+<div style="background: #e74c3c; color: #fff; padding: 0.8rem; width: 45%; margin: 0 auto; text-align: center; border-radius: 6px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">E2E <span style="opacity: 0.85; margin-left: 0.3rem;">(peu)</span></div>
+<div style="background: #fdecea; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #e74c3c; font-size: 1.15rem; display: flex; align-items: center;">
+<span><b>E2E</b> : lance toute l'app, simule clavier/souris. Lent (10-30 s/test), fragile.</span>
 </div>
 
-<div>
-
-<div style="background: #c0392b; color: white; padding: 0.6rem 0.9rem; border-radius: 8px; margin-bottom: 0.4rem;">
-<b>E2E (rouge)</b> : lance toute l'app, simule clavier/souris. Lent (10-30 s/test), fragile.
+<div style="background: #e8a838; color: #fff; padding: 0.8rem; width: 65%; margin: 0 auto; text-align: center; border-radius: 6px; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Intégration / TestFX <span style="opacity: 0.85; margin-left: 0.3rem;">(moyen)</span></div>
+<div style="background: #f9f5e8; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #e8a838; font-size: 1.15rem; display: flex; align-items: center;">
+<span><b>Intégration / TestFX</b> : monte une partie de l'UI. Moyennement coûteux (1-3 s).</span>
 </div>
 
-<div style="background: #e8a838; color: white; padding: 0.6rem 0.9rem; border-radius: 8px; margin-bottom: 0.4rem;">
-<b>Intégration / TestFX (orange)</b> : monte une partie de l'UI. Moyennement coûteux (1-3 s).
-</div>
-
-<div style="background: #27ae60; color: white; padding: 0.6rem 0.9rem; border-radius: 8px;">
-<b>Unitaires (vert)</b> : JUnit pur sur classes Java. Ultra rapide (&lt; 50 ms), 100% fiables.
+<div style="background: #27ae60; color: #fff; padding: 0.8rem; width: 90%; margin: 0 auto; text-align: center; border-radius: 6px; font-size: 1.4rem; font-weight: bold; box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.25); display: flex; align-items: center; justify-content: center; box-sizing: border-box;">Unitaires (JUnit) <span style="opacity: 0.9; margin-left: 0.3rem;">(la base, beaucoup)</span></div>
+<div style="background: #e8f6ec; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid #27ae60; font-size: 1.15rem; display: flex; align-items: center;">
+<span><b>Unitaires (JUnit)</b> : JUnit pur sur classes Java. Ultra rapide (&lt; 50 ms), 100% fiables.</span>
 </div>
 
 </div>
 
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 12px; margin-top: 1rem; font-size: 1.5rem; text-align: center;">
 🎯 <b>MVVM permet de basculer la logique d'affichage du haut vers la base de la pyramide.</b>
 </div>
 
