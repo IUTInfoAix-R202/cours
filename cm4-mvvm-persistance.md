@@ -1666,9 +1666,9 @@ public class FormulaireConnexionController {
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Idée fondatrice : un objet ne doit pas <b>créer</b> ses dépendances. Il doit les <b>recevoir</b>.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.4rem;">
 
-<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="background: #8c3a2f; color: white; padding: 1.2rem 1.3rem; border-radius: 12px; display: flex; flex-direction: column;">
 <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Ancien réflexe</div>
 
 ```java
@@ -1678,10 +1678,10 @@ class A {
 }
 ```
 
-<div style="font-size: 1.1rem; line-height: 1.45; margin-top: 0.4rem;">A est <b>responsable</b> de la création de B. Couplage à l'implémentation.</div>
+<div style="font-size: 1.1rem; line-height: 1.45; margin-top: auto;">A est <b>responsable</b> de la création de B. Couplage à l'implémentation.</div>
 </div>
 
-<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.3rem; border-radius: 12px; display: flex; flex-direction: column;">
 <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✓ Avec IoC</div>
 
 ```java
@@ -1692,13 +1692,13 @@ class A {
 }
 ```
 
-<div style="font-size: 1.1rem; line-height: 1.45; margin-top: 0.4rem;">A déclare ce dont il a <b>besoin</b>. Quelqu'un d'autre choisit l'implémentation.</div>
+<div style="font-size: 1.1rem; line-height: 1.45; margin-top: auto;">A déclare ce dont il a <b>besoin</b>. Quelqu'un d'autre choisit l'implémentation.</div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
-Le terme « inversion » : c'est le <b>responsable de la composition</b> qui change de bord, pas la classe consommatrice.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
+« Inversion » du <b>contrôle de la création</b> : ce n'est plus A qui crée son B, mais un assembleur externe qui lui donne.
 </div>
 
 ---
