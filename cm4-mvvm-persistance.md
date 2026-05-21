@@ -1518,31 +1518,43 @@ La vue se contente de bind <code>statut</code> dans un Label et <code>enCours</c
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Trois couches et trois rôles à respecter si l'on ne veut pas perdre tous les avantages de la séparation.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
 
-<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">✗ ViewModel qui importe javafx.scene</div>
-<div style="font-size: 1.3rem; line-height: 1.45;">Si vous voyez <code>import javafx.scene.control.Alert;</code> dans un VM, vous avez fui la séparation. Les alerts sont un détail de la vue.</div>
+<div style="background: #8c3a2f; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; align-items: center; gap: 1rem;">
+<div style="font-size: 2.4rem; line-height: 1; flex-shrink: 0;">⚠️</div>
+<div style="font-size: 1.45rem; font-weight: bold;">ViewModel qui importe javafx.scene</div>
+</div>
+<div style="font-size: 1.25rem; line-height: 1.5; margin-top: 0.6rem;">Si vous voyez <code>import javafx.scene.control.Alert;</code> dans un VM, vous avez fui la séparation. Les alerts sont un détail de la vue.</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Controller qui contient de la logique</div>
-<div style="font-size: 1.3rem; line-height: 1.45;">Si <code>@FXML void valider()</code> contient autre chose que <code>vm.valider()</code>, c'est une fuite. Déplacer vers le VM.</div>
+<div style="background: #8c3a2f; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; align-items: center; gap: 1rem;">
+<div style="font-size: 2.4rem; line-height: 1; flex-shrink: 0;">⚠️</div>
+<div style="font-size: 1.45rem; font-weight: bold;">Controller qui contient de la logique</div>
+</div>
+<div style="font-size: 1.25rem; line-height: 1.5; margin-top: 0.6rem;">Si <code>@FXML void valider()</code> contient autre chose que <code>vm.valider()</code>, c'est une fuite. Déplacer vers le VM.</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">✗ ViewModel qui hérite de Property</div>
-<div style="font-size: 1.3rem; line-height: 1.45;">Le VM <em>contient</em> des propriétés, il n'<em>est</em> pas une propriété. Composition, pas héritage.</div>
+<div style="background: #8c3a2f; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; align-items: center; gap: 1rem;">
+<div style="font-size: 2.4rem; line-height: 1; flex-shrink: 0;">⚠️</div>
+<div style="font-size: 1.45rem; font-weight: bold;">ViewModel qui hérite de Property</div>
+</div>
+<div style="font-size: 1.25rem; line-height: 1.5; margin-top: 0.6rem;">Le VM <em>contient</em> des propriétés, il n'<em>est</em> pas une propriété. Composition, pas héritage.</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Modèle anémique</div>
-<div style="font-size: 1.3rem; line-height: 1.45;">Si le modèle n'est qu'un POJO sans logique, c'est que la logique a fui dans le VM. Réagencer.</div>
+<div style="background: #8c3a2f; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; align-items: center; gap: 1rem;">
+<div style="font-size: 2.4rem; line-height: 1; flex-shrink: 0;">⚠️</div>
+<div style="font-size: 1.45rem; font-weight: bold;">Modèle anémique</div>
+</div>
+<div style="font-size: 1.25rem; line-height: 1.5; margin-top: 0.6rem;">Si le modèle n'est qu'un POJO sans logique, c'est que la logique a fui dans le VM. Réagencer.</div>
 </div>
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 1.4rem; font-size: 1.5rem; text-align: center;">
-Comme tous les patterns architecturaux, si l'on respecte pas leur principe de séparation, on perd tout l'intéret.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 1.2rem; font-size: 1.5rem; text-align: center;">
+Comme tous les patterns architecturaux, si l'on ne respecte pas leur principe de séparation, on perd tout l'intérêt.
 </div>
 
 
