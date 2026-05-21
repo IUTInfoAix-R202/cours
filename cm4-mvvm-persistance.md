@@ -1508,7 +1508,7 @@ public class FormulaireConnexionViewModel {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
 La vue se contente de bind <code>statut</code> dans un Label et <code>enCours</code> sur un spinner.
 </div>
 
