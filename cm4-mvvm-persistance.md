@@ -1393,36 +1393,32 @@ public class FormulaireConnexionViewModel {
 ---
 
 ## Le contrôleur "léger" côté MVVM : un câblage
+
 <style scoped>
-section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.65rem !important; line-height: 1.35 !important; }
 </style>
 
 ```java
 public class FormulaireConnexionController {
-
   @Inject FormulaireConnexionViewModel vm;
-
   @FXML private TextField email;
   @FXML private PasswordField motDePasse;
   @FXML private Button valider;
   @FXML private Label statut;
 
-  @FXML
-  void initialize() {
+  @FXML void initialize() {
     email.textProperty().bindBidirectional(vm.emailProperty());
     motDePasse.textProperty().bindBidirectional(vm.motDePasseProperty());
     statut.textProperty().bind(vm.statutProperty());
     valider.disableProperty().bind(vm.validableProperty().not());
   }
-
-  @FXML
-  void valider() {
+  @FXML void valider() {
     vm.connecterCommand();
   }
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
 Plus aucun <code>if</code>, plus aucune logique. Juste : <em>« je connecte les fils ».</em>
 </div>
 
