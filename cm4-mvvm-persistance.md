@@ -2231,52 +2231,130 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 ---
 
-## Le cycle de vie d'une connexion JDBC
+## Le scénario en 7 étapes
 
-![Cycle JDBC : DriverManager.getConnection → prepareStatement → executeQuery/Update → ResultSet → close, avec try-with-resources qui ferme tout](assets/kroki/cm4-jdbc-cycle.svg)
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.5rem 0;">Tout accès aux données via JDBC suit le même scénario. Les étapes 1 et 2 sont <b>automatiques depuis JDBC 4.0</b> : on commence en pratique à l'étape 3.</p>
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-Trois ressources à fermer : <code>Connection</code>, <code>PreparedStatement</code>, <code>ResultSet</code>. Le <b>try-with-resources</b> les ferme dans l'ordre inverse, automatiquement.
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem; margin-top: 1rem;">
+
+<div style="background: #7f8c8d; color: white; padding: 0.7rem 0.8rem; border-radius: 10px;">
+<div style="font-size: 1.05rem; opacity: 0.85;">Étape 1</div>
+<div style="font-size: 1.15rem; font-weight: bold; margin-top: 0.2rem;">Importer l'API</div>
+<div style="font-size: 0.95rem; opacity: 0.9; margin-top: 0.2rem;"><code>import java.sql.*</code></div>
+</div>
+
+<div style="background: #7f8c8d; color: white; padding: 0.7rem 0.8rem; border-radius: 10px;">
+<div style="font-size: 1.05rem; opacity: 0.85;">Étape 2</div>
+<div style="font-size: 1.15rem; font-weight: bold; margin-top: 0.2rem;">Enregistrer le pilote</div>
+<div style="font-size: 0.95rem; opacity: 0.9; margin-top: 0.2rem;"><em>auto depuis JDBC 4.0</em></div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.7rem 0.8rem; border-radius: 10px;">
+<div style="font-size: 1.05rem; opacity: 0.85;">Étape 3</div>
+<div style="font-size: 1.15rem; font-weight: bold; margin-top: 0.2rem;">Connexion</div>
+<div style="font-size: 0.95rem; opacity: 0.9; margin-top: 0.2rem;"><code>DriverManager.getConnection()</code></div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.7rem 0.8rem; border-radius: 10px;">
+<div style="font-size: 1.05rem; opacity: 0.85;">Étape 4</div>
+<div style="font-size: 1.15rem; font-weight: bold; margin-top: 0.2rem;">Préparer l'instruction</div>
+<div style="font-size: 0.95rem; opacity: 0.9; margin-top: 0.2rem;"><code>prepareStatement(sql)</code></div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.7rem 0.8rem; border-radius: 10px;">
+<div style="font-size: 1.05rem; opacity: 0.85;">Étape 5</div>
+<div style="font-size: 1.15rem; font-weight: bold; margin-top: 0.2rem;">Exécuter</div>
+<div style="font-size: 0.95rem; opacity: 0.9; margin-top: 0.2rem;"><code>executeQuery / Update()</code></div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.7rem 0.8rem; border-radius: 10px;">
+<div style="font-size: 1.05rem; opacity: 0.85;">Étape 6</div>
+<div style="font-size: 1.15rem; font-weight: bold; margin-top: 0.2rem;">Traiter les résultats</div>
+<div style="font-size: 0.95rem; opacity: 0.9; margin-top: 0.2rem;"><code>ResultSet.next() / getXXX()</code></div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.7rem 0.8rem; border-radius: 10px;">
+<div style="font-size: 1.05rem; opacity: 0.85;">Étape 7</div>
+<div style="font-size: 1.15rem; font-weight: bold; margin-top: 0.2rem;">Libérer les ressources</div>
+<div style="font-size: 0.95rem; opacity: 0.9; margin-top: 0.2rem;">try-with-resources</div>
+</div>
+
+<div style="background: #8c3a2f; color: white; padding: 0.7rem 0.8rem; border-radius: 10px;">
+<div style="font-size: 1.05rem; opacity: 0.85;">+</div>
+<div style="font-size: 1.15rem; font-weight: bold; margin-top: 0.2rem;">Gérer les exceptions</div>
+<div style="font-size: 0.95rem; opacity: 0.9; margin-top: 0.2rem;"><code>SQLException</code> à chaque étape</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 1rem; font-size: 1.45rem; text-align: center;">
+👉 Les slides suivantes détaillent les <b>étapes 3 à 7</b> à travers un canon <code>SELECT</code> complet.
 </div>
 
 ---
 
-## JDBC : le canon de base
+## Canon JDBC : un SELECT complet
 
 <style scoped>
-section pre { font-size: 0.75rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.75rem !important; line-height: 1.4 !important; }
 </style>
 
 ```java
 String sql = "SELECT id, nom FROM utilisateur WHERE actif = ?";
 String url = "jdbc:sqlite:chauves_souris.db";
 
-try (Connection conn = DriverManager.getConnection(url);
-     PreparedStatement ps = conn.prepareStatement(sql)) {
+try (Connection conn = DriverManager.getConnection(url);        // ⑶ Connection
+     PreparedStatement ps = conn.prepareStatement(sql)) {        // ⑷ Instruction
 
-  ps.setBoolean(1, true);
+  ps.setBoolean(1, true);                                        // ⑷ Paramètre
 
-  try (ResultSet rs = ps.executeQuery()) {
+  try (ResultSet rs = ps.executeQuery()) {                       // ⑸ Exécution
     List<Utilisateur> liste = new ArrayList<>();
-    while (rs.next()) {
+    while (rs.next()) {                                          // ⑹ Parcours
       Utilisateur u = new Utilisateur(
-          rs.getInt("id"),
-          rs.getString("nom")
-      );
+          rs.getInt("id"),                                       // ⑹ getXXX
+          rs.getString("nom"));
       liste.add(u);
     }
     return liste;
   }
-}
+}                                                                 // ⑺ Fermeture auto
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-<b>Try-with-resources</b> : <code>Connection</code>, <code>PreparedStatement</code>, <code>ResultSet</code> sont fermés automatiquement (même en cas d'exception).
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.5rem; font-size: 1.45rem; text-align: center;">
+Toutes les étapes 3 à 7 sont là. On les décompose maintenant une par une.
 </div>
 
 ---
 
-## PreparedStatement : sécurité avant tout
+## Étape 3 : la Connection
+
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; }
+</style>
+
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.5rem 0;">Une <code>Connection</code> représente une <b>session</b> ouverte avec le SGBD. On l'obtient via le <code>DriverManager</code> à partir d'une URL JDBC.</p>
+
+```java
+String url = "jdbc:sqlite:chauves_souris.db";
+// Format général : jdbc:<sgbd>:<location>[?options]
+// Exemples :
+//   jdbc:sqlite::memory:                  ← en mémoire (tests)
+//   jdbc:postgresql://localhost:5432/db   ← serveur distant
+//   jdbc:mysql://srv/db?useSSL=true       ← avec options
+
+try (Connection conn = DriverManager.getConnection(url)) {
+  // ... la connexion est ouverte ici ...
+}  // fermée automatiquement à la sortie du bloc
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.5rem; font-size: 1.4rem; text-align: center;">
+💡 L'URL JDBC encode le SGBD, l'emplacement et les options. <b>Changer de SGBD = changer l'URL.</b>
+</div>
+
+---
+
+## Étape 4 : Statement ou PreparedStatement ?
 
 <style scoped>
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; }
@@ -2287,104 +2365,246 @@ section .code-col pre { flex: 1; margin-top: 0 !important; }
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem; align-items: stretch;">
 
 <div class="code-col">
-<div style="background: #8c3a2f; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.4rem;">✗ Concaténation : injection SQL</div>
+<div style="background: #8c3a2f; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.3rem;">✗ Statement + concaténation</div>
 
 ```java
-String sql = "SELECT * FROM users "
-   + "WHERE login = '" + login + "'";
+Statement st = conn.createStatement();
+ResultSet rs = st.executeQuery(
+  "SELECT * FROM users "
+  + "WHERE login = '" + login + "'");
 
 // Si login = "' OR '1'='1"
 // → renvoie TOUS les utilisateurs.
-// → faille de sécurité critique.
+// → faille critique (injection SQL).
 ```
 
 </div>
 
 <div class="code-col">
-<div style="background: #27ae60; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.4rem;">✓ PreparedStatement : sécurisé</div>
+<div style="background: #27ae60; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.3rem;">✓ PreparedStatement paramétré</div>
 
 ```java
-String sql = "SELECT * FROM users "
-           + "WHERE login = ?";
-PreparedStatement ps =
-    conn.prepareStatement(sql);
+PreparedStatement ps = conn.prepareStatement(
+  "SELECT * FROM users WHERE login = ?");
 ps.setString(1, login);
+ResultSet rs = ps.executeQuery();
+
 // Le driver échappe correctement.
+// Bonus : requête pré-compilée
+// → plus rapide si réutilisée.
 ```
 
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
-🔒 <b>Règle absolue</b> : ne JAMAIS concaténer de paramètres dans une requête SQL. Toujours <code>PreparedStatement</code>.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.45rem; text-align: center;">
+🔒 <b>Règle absolue</b> : jamais de concaténation de paramètres. Toujours <code>PreparedStatement</code> avec <code>?</code> + <code>setXXX()</code>.
 </div>
 
 ---
 
-## Le pattern DAO (Data Access Object)
+## Étape 5 : Exécuter la requête
 
 <style scoped>
-section pre { font-size: 0.8rem !important; line-height: 1.35 !important; }
+section table { font-size: 1rem !important; width: 100%; border-collapse: collapse; line-height: 1.4 !important; }
+section th { background: #1a5276 !important; color: white !important; padding: 0.4rem 0.7rem !important; text-align: left !important; }
+section td { padding: 0.35rem 0.7rem !important; border-bottom: 1px solid #e0e0e0 !important; vertical-align: top; }
+section tr:nth-child(even) td { background: #f4f6f8 !important; }
 </style>
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">On encapsule l'accès aux données dans une <b>classe dédiée</b> par entité.</p>
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">Le <code>PreparedStatement</code> propose trois méthodes d'exécution selon le type d'ordre SQL.</p>
 
-```java
-public class UtilisateurDao {
-  private final DataSource ds;
+| Méthode | Pour quel SQL ? | Renvoie |
+|---|---|---|
+| `executeQuery()` | `SELECT` (lecture) | un `ResultSet` avec les tuples |
+| `executeUpdate()` | `INSERT` / `UPDATE` / `DELETE` / `CREATE TABLE` | un `int` : nombre de lignes affectées |
+| `execute()` | Tout type (rare) | un `boolean` : `true` si c'est un `ResultSet` |
 
-  @Inject
-  public UtilisateurDao(DataSource ds) {
-    this.ds = ds;
-  }
-
-  public List<Utilisateur> findActifs() { /* SQL */ }
-  public Optional<Utilisateur> findById(int id) { /* SQL */ }
-  public void save(Utilisateur u) { /* INSERT ou UPDATE */ }
-  public void delete(int id) { /* DELETE */ }
-}
-```
-
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-Le ViewModel n'écrit jamais de SQL. Il délègue à un DAO injecté. <b>Substituable</b> en test.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.45rem; text-align: center;">
+👉 En pratique : <code>executeQuery</code> pour lire, <code>executeUpdate</code> pour modifier. Le mauvais choix lève une <code>SQLException</code>.
 </div>
 
 ---
 
-## Lecture : SELECT et ResultSet
+## Étape 6 : Parcourir le ResultSet
+
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; }
+</style>
+
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.5rem 0;">Un <code>ResultSet</code> est un <b>curseur</b> sur les lignes renvoyées par <code>SELECT</code>. On avance ligne par ligne avec <code>rs.next()</code>, on lit colonne par colonne avec <code>rs.getXXX()</code>.</p>
 
 ```java
-public List<Utilisateur> findActifs() throws SQLException {
-  String sql = "SELECT id, nom, email FROM utilisateur WHERE actif = ?";
-
-  try (Connection conn = ds.getConnection();
-       PreparedStatement ps = conn.prepareStatement(sql)) {
-
-    ps.setBoolean(1, true);
-
-    try (ResultSet rs = ps.executeQuery()) {
-      List<Utilisateur> liste = new ArrayList<>();
-      while (rs.next()) {
-        liste.add(new Utilisateur(
-            rs.getLong("id"),
-            rs.getString("nom"),
-            rs.getString("email")
-        ));
-      }
-      return liste;
-    }
+try (ResultSet rs = ps.executeQuery()) {
+  while (rs.next()) {              // avance d'une ligne, false quand fin
+    int    id  = rs.getInt("id");          // par nom de colonne
+    String nom = rs.getString(2);          // ou par index (1-based)
+    boolean a  = rs.getBoolean("actif");
+    // ... mapping vers un objet Java
   }
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-<code>executeQuery()</code> renvoie un <b>curseur</b> (<code>ResultSet</code>) qu'on parcourt avec <code>rs.next()</code>. Mapping ligne → objet à la main.
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.7rem;">
+
+<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.2rem; font-weight: bold;">📌 Par nom (recommandé)</div>
+<div style="font-size: 1.1rem; margin-top: 0.3rem;">Lisible, résistant au changement d'ordre des colonnes dans le SELECT.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
+<div style="font-size: 1.2rem; font-weight: bold;">⚡ Par index (rapide)</div>
+<div style="font-size: 1.1rem; margin-top: 0.3rem;">Légèrement plus rapide. Index <b>1-based</b> (pas 0). Plus fragile.</div>
+</div>
+
 </div>
 
 ---
 
-## Modification : INSERT, UPDATE, DELETE
+## Correspondance types Java ↔ SQL
+
+<style scoped>
+section table { font-size: 0.95rem !important; width: 100%; border-collapse: collapse; line-height: 1.35 !important; }
+section th { background: #1a5276 !important; color: white !important; padding: 0.35rem 0.7rem !important; text-align: left !important; }
+section td { padding: 0.3rem 0.7rem !important; border-bottom: 1px solid #e0e0e0 !important; }
+section tr:nth-child(even) td { background: #f4f6f8 !important; }
+</style>
+
+<p style="font-size: 1.4rem; margin: -0.5rem 0 0.5rem 0;">JDBC traduit automatiquement entre les types SQL du SGBD et les types Java. <code>getXXX</code> et <code>setXXX</code> font la conversion.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+
+<div>
+
+| Type SQL | Type Java | Méthode |
+|---|---|---|
+| `VARCHAR`, `CHAR`, `TEXT` | `String` | `getString` |
+| `INTEGER` | `int` | `getInt` |
+| `BIGINT` | `long` | `getLong` |
+| `BOOLEAN`, `BIT` | `boolean` | `getBoolean` |
+| `REAL`, `FLOAT` | `float` / `double` | `getDouble` |
+| `NUMERIC`, `DECIMAL` | `BigDecimal` | `getBigDecimal` |
+
+</div>
+
+<div>
+
+| Type SQL | Type Java | Méthode |
+|---|---|---|
+| `DATE` | `java.sql.Date` | `getDate` |
+| `TIME` | `java.sql.Time` | `getTime` |
+| `TIMESTAMP` | `java.sql.Timestamp` | `getTimestamp` |
+| `BLOB`, `BINARY` | `byte[]` | `getBytes` |
+| `CLOB` | `String` | `getString` |
+
+<div style="background: #2c3e50; color: white; padding: 0.5rem 0.8rem; border-radius: 8px; margin-top: 0.7rem; font-size: 1rem; line-height: 1.4;">
+💡 Si la conversion est impossible, le driver lève une <code>SQLException</code>.
+</div>
+
+</div>
+
+</div>
+
+---
+
+## Gestion des valeurs NULL : le piège
+
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; }
+</style>
+
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.5rem 0;">Comment reconnaître un <code>NULL</code> SQL côté Java ? La convention dépend du <b>type</b> retourné.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.3rem;">🟢 Types objets</div>
+<div style="font-size: 1.1rem; line-height: 1.5;"><code>getString()</code>, <code>getDate()</code>, <code>getObject()</code>, <code>getBigDecimal()</code>… retournent une <b>référence <code>null</code></b>. Pas d'ambiguïté.</div>
+</div>
+
+<div style="background: #8c3a2f; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.3rem;">⚠️ Types primitifs</div>
+<div style="font-size: 1.1rem; line-height: 1.5;"><code>getInt()</code>, <code>getLong()</code>, <code>getDouble()</code> renvoient <b><code>0</code></b> pour <code>NULL</code>. <code>getBoolean()</code> renvoie <b><code>false</code></b>. Impossible de distinguer <code>NULL</code> de zéro !</div>
+</div>
+
+</div>
+
+```java
+int age = rs.getInt("age");        // 0 si NULL OU si age vaut 0 ?
+if (rs.wasNull()) {                // seule façon de lever le doute
+  // C'était bien un NULL en BDD
+}
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.45rem; text-align: center;">
+👉 Pour les nombres : <code>rs.wasNull()</code> APRÈS la lecture pour distinguer 0 et NULL.
+</div>
+
+---
+
+## Étape 7 : libérer les ressources
+
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; }
+section .code-col { display: flex; flex-direction: column; }
+section .code-col pre { flex: 1; margin-top: 0 !important; }
+</style>
+
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.5rem 0;">Une <code>Connection</code> ouverte = un coût et un verrou. Il faut <b>impérativement</b> la fermer, même en cas d'erreur. Le <b>try-with-resources</b> rend ça automatique.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem; align-items: stretch;">
+
+<div class="code-col">
+<div style="background: #8c3a2f; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.3rem;">✗ try/finally manuel</div>
+
+```java
+Connection conn = null;
+PreparedStatement ps = null;
+try {
+  conn = ds.getConnection();
+  ps = conn.prepareStatement(sql);
+  // ...
+} finally {
+  if (ps != null) ps.close();
+  if (conn != null) conn.close();
+  // verbeux, et facile à oublier
+}
+```
+
+</div>
+
+<div class="code-col">
+<div style="background: #27ae60; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.3rem;">✓ try-with-resources</div>
+
+```java
+try (Connection conn = ds.getConnection();
+     PreparedStatement ps =
+         conn.prepareStatement(sql)) {
+  // ...
+}
+// ps puis conn fermés automatiquement,
+// dans l'ordre inverse, même en cas
+// d'exception.
+```
+
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.45rem; text-align: center;">
+💡 La fermeture d'un <code>Statement</code> ferme automatiquement les <code>ResultSet</code> associés. Mais on emboîte un 2e <code>try</code> pour aussi gérer les exceptions du parcours.
+</div>
+
+---
+
+## INSERT, UPDATE, DELETE : `executeUpdate`
+
+<style scoped>
+section pre { font-size: 0.75rem !important; line-height: 1.35 !important; }
+</style>
+
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.5rem 0;">Même scénario que <code>SELECT</code>, sauf que l'étape 5 utilise <code>executeUpdate()</code> et il n'y a plus de <code>ResultSet</code> à parcourir.</p>
 
 ```java
 public void save(Utilisateur u) throws SQLException {
@@ -2399,23 +2619,24 @@ public void save(Utilisateur u) throws SQLException {
 
     int lignesAffectees = ps.executeUpdate();   // ← pas executeQuery !
 
-    // Récupérer l'id auto-généré
-    try (ResultSet keys = ps.getGeneratedKeys()) {
-      if (keys.next()) {
-        u.setId(keys.getLong(1));
-      }
+    try (ResultSet keys = ps.getGeneratedKeys()) {   // récupérer l'id auto
+      if (keys.next()) u.setId(keys.getLong(1));
     }
   }
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-<code>executeUpdate()</code> renvoie le <b>nombre de lignes</b> affectées. Combiné avec <code>RETURN_GENERATED_KEYS</code> pour récupérer l'id.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.5rem; font-size: 1.45rem; text-align: center;">
+<code>executeUpdate()</code> renvoie le nombre de lignes affectées. <code>RETURN_GENERATED_KEYS</code> pour récupérer l'id auto-généré (clé primaire).
 </div>
 
 ---
 
 ## Transactions : commit ou rollback
+
+<style scoped>
+section pre { font-size: 0.8rem !important; line-height: 1.35 !important; }
+</style>
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Une transaction = plusieurs ordres SQL qui réussissent <b>ensemble</b> ou <b>échouent ensemble</b>. Atomicité indispensable pour les opérations critiques.</p>
 
@@ -2435,74 +2656,19 @@ public void transferer(long depuis, long vers, BigDecimal montant) throws SQLExc
 }
 ```
 
-<div style="background: #8c3a2f; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #8c3a2f; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.45rem; text-align: center;">
 🔥 Sans transaction : un crash entre <code>débit</code> et <code>crédit</code> = de l'argent perdu. <b>Inacceptable.</b>
-</div>
-
----
-
-## Connection pool : ne pas ouvrir/fermer 1000 fois
-
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Ouvrir une connexion JDBC coûte ~50-200 ms. Pour une app interactive : on en garde un <b>pool</b> prêt à l'emploi.</p>
-
-```java
-// HikariCP : le standard de fait, ultra rapide
-HikariConfig config = new HikariConfig();
-config.setJdbcUrl("jdbc:sqlite:chauves_souris.db");
-config.setMaximumPoolSize(10);
-// (PostgreSQL/MySQL : setUsername + setPassword en plus.
-//  SQLite est sans auth, le fichier suffit.)
-
-DataSource ds = new HikariDataSource(config);
-
-// Les DAOs reçoivent ds via Guice
-// ds.getConnection() = prendre une connexion du pool (instantané)
-// connection.close() = la rendre au pool (pas de vraie fermeture)
-```
-
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-👉 Toujours travailler avec une <code>DataSource</code>, jamais avec un <code>DriverManager.getConnection()</code> direct en production.
-</div>
-
----
-
-## Au-delà de JDBC : ouvertures
-
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">JDBC est la fondation. Quand vos applications grandissent, des couches supplémentaires deviennent utiles.</p>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
-
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🔧 Helpers (jOOQ, JDBI, MyBatis)</div>
-<div style="font-size: 1.3rem; line-height: 1.45;">Vous gardez le SQL, mais le mapping ResultSet → objet est automatisé. Compromis pragmatique.</div>
-</div>
-
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📐 ORM (Hibernate / JPA)</div>
-<div style="font-size: 1.3rem; line-height: 1.45;">Annotations sur les classes, le SQL devient invisible. Apprentissage long, traité dans la suite du BUT.</div>
-</div>
-
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🌐 NoSQL (MongoDB, Redis)</div>
-<div style="font-size: 1.3rem; line-height: 1.45;">Pour des modèles non-relationnels, du cache rapide ou du gros volume. Spécifique à certains besoins.</div>
-</div>
-
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🚀 Frameworks complets</div>
-<div style="font-size: 1.3rem; line-height: 1.45;"><b>Spring Data</b>, <b>Quarkus</b>, <b>Micronaut</b>... combinent DI + persistance + REST. Standard du backend Java moderne.</div>
-</div>
-
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
-Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQL emprunte un chemin parallèle (drivers dédiés).
 </div>
 
 ---
 
 ## 🗄️ SQLite pour la BDD locale
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pas de serveur à installer, pas de configuration. Un fichier <code>.db</code> sur le disque suffit.</p>
+<style scoped>
+section pre { font-size: 0.8rem !important; line-height: 1.35 !important; }
+</style>
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Le SGBD utilisé en TP5 et pour la SAÉ. Pas de serveur à installer, pas de configuration : un fichier <code>.db</code> sur le disque suffit.</p>
 
 ```xml
 <!-- pom.xml : le driver JDBC SQLite -->
@@ -2527,40 +2693,162 @@ try (Connection conn = DriverManager.getConnection(url)) {
 
 ---
 
-## Pourquoi SQLite pour la BDD
+## Pourquoi SQLite pour le TP et la SAÉ
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🚀 Zéro installation</div>
-<div style="font-size: 1.5rem; line-height: 1.5;">Une dépendance Maven et c'est fini. Pas de service à lancer, pas de port à ouvrir.</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Une dépendance Maven et c'est fini. Pas de service à lancer, pas de port à ouvrir.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📦 Embarqué dans l'app</div>
-<div style="font-size: 1.5rem; line-height: 1.5;">Le moteur SQL vit dans la JVM. La BDD = un fichier portable que vous pouvez copier, versionner, archiver.</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Le moteur SQL vit dans la JVM. La BDD = un fichier portable que vous pouvez copier, versionner, archiver.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 Tests gratuits</div>
-<div style="font-size: 1.5rem; line-height: 1.5;">Mode <code>:memory:</code> : BDD jetable créée à chaque test, isolée, rapide. Idéal pour la pyramide de tests.</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Mode <code>:memory:</code> : BDD jetable créée à chaque test, isolée, rapide. Idéal pour la pyramide de tests.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎯 Parfait pour la SAÉ</div>
-<div style="font-size: 1.5rem; line-height: 1.5;">Mono-utilisateur, capteurs locaux, BDD embarquée : SQLite couvre tout le besoin de la SAÉ et du TP5.</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Mono-utilisateur, capteurs locaux, BDD embarquée : SQLite couvre tout le besoin de la SAÉ et du TP5.</div>
 </div>
 
 </div>
 
 ---
 
+## Le pattern DAO : encapsuler l'accès aux données
+
+<style scoped>
+section pre { font-size: 0.8rem !important; line-height: 1.35 !important; }
+</style>
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Écrire du SQL au milieu d'un ViewModel = retour aux antipatterns du CM3. On encapsule l'accès aux données dans une <b>classe dédiée par entité</b> : le <b>DAO</b> (Data Access Object).</p>
+
+```java
+public class UtilisateurDao {
+  private final DataSource ds;
+
+  @Inject
+  public UtilisateurDao(DataSource ds) {
+    this.ds = ds;
+  }
+
+  public List<Utilisateur> findActifs() { /* SELECT ... */ }
+  public Optional<Utilisateur> findById(long id) { /* SELECT ... */ }
+  public void save(Utilisateur u) { /* INSERT ou UPDATE */ }
+  public void delete(long id) { /* DELETE */ }
+}
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.45rem; text-align: center;">
+👉 Le ViewModel ne voit jamais de SQL. Il <code>@Inject</code> son DAO et appelle des méthodes métier. <b>Substituable en test</b> par un fake DAO en mémoire.
+</div>
+
+---
+
+## Connection pool : ne pas ouvrir/fermer 1000 fois
+
+<style scoped>
+section pre { font-size: 0.8rem !important; line-height: 1.35 !important; }
+</style>
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Ouvrir une <code>Connection</code> JDBC coûte ~50-200 ms (poignée de main TCP, auth, init session). Pour une app interactive, on garde un <b>pool</b> de connexions prêtes à l'emploi.</p>
+
+```java
+// HikariCP : le standard de fait, ultra rapide
+HikariConfig config = new HikariConfig();
+config.setJdbcUrl("jdbc:sqlite:chauves_souris.db");
+config.setMaximumPoolSize(10);
+// (PostgreSQL/MySQL : setUsername + setPassword en plus.
+//  SQLite est sans auth, le fichier suffit.)
+
+DataSource ds = new HikariDataSource(config);
+
+// Les DAOs reçoivent ds via Guice
+// ds.getConnection() = prendre une connexion du pool (instantané)
+// connection.close() = la rendre au pool (pas de vraie fermeture)
+```
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.45rem; text-align: center;">
+👉 Toujours travailler avec une <code>DataSource</code>, jamais avec un <code>DriverManager.getConnection()</code> direct en production.
+</div>
+
+---
+
 ## L'architecture complète
 
-![Architecture MVVM + DI + Persistance : Vue → Controller → ViewModel → Service → DAO → JDBC → BDD SQLite](assets/kroki/cm4-architecture-complete.svg)
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">Toutes les couches du CM4 emboîtées : chaque flèche signale une dépendance unidirectionnelle (haut → bas), chaque couche reste testable indépendamment.</p>
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-Six couches, six responsabilités, six niveaux de testabilité. C'est l'architecture cible de la SAÉ chauve-souris.
+<div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.2rem; margin-top: 0.8rem; align-items: start;">
+
+<div style="display: flex; flex-direction: column; gap: 0.15rem;">
+
+<div style="background: #4a90d9; color: white; padding: 0.55rem 0.9rem; border-radius: 8px; font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center;"><span><b>🖼️ Vue</b> (FXML + Controller léger)</span><span style="opacity: 0.8; font-size: 0.95rem;">JavaFX</span></div>
+<div style="text-align: center; color: #888; font-size: 1rem; line-height: 1;">↓ bind</div>
+<div style="background: #8e44ad; color: white; padding: 0.55rem 0.9rem; border-radius: 8px; font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center;"><span><b>🎯 ViewModel</b> (Properties + commandes)</span><span style="opacity: 0.8; font-size: 0.95rem;">MVVM</span></div>
+<div style="text-align: center; color: #888; font-size: 1rem; line-height: 1;">↓ @Inject</div>
+<div style="background: #1a5276; color: white; padding: 0.55rem 0.9rem; border-radius: 8px; font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center;"><span><b>📦 DAO</b> (1 classe par entité)</span><span style="opacity: 0.8; font-size: 0.95rem;">Pattern</span></div>
+<div style="text-align: center; color: #888; font-size: 1rem; line-height: 1;">↓ ds.getConnection()</div>
+<div style="background: #7f8c8d; color: white; padding: 0.55rem 0.9rem; border-radius: 8px; font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center;"><span><b>🔌 DataSource</b> (pool HikariCP)</span><span style="opacity: 0.8; font-size: 0.95rem;">Pool</span></div>
+<div style="text-align: center; color: #888; font-size: 1rem; line-height: 1;">↓ API standard</div>
+<div style="background: #34495e; color: white; padding: 0.55rem 0.9rem; border-radius: 8px; font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center;"><span><b>⚙️ JDBC</b> (<code>java.sql</code>)</span><span style="opacity: 0.8; font-size: 0.95rem;">API</span></div>
+<div style="text-align: center; color: #888; font-size: 1rem; line-height: 1;">↓ driver</div>
+<div style="background: #27ae60; color: white; padding: 0.55rem 0.9rem; border-radius: 8px; font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center;"><span><b>🗄️ SQLite</b> (fichier <code>.db</code>)</span><span style="opacity: 0.8; font-size: 0.95rem;">SGBD</span></div>
+
+</div>
+
+<div style="background: white; border: 2px solid #1a5276; border-radius: 12px; padding: 0.9rem 1.1rem;">
+<div style="font-size: 1.3rem; font-weight: bold; color: #1a5276; margin-bottom: 0.4rem;">🧪 Testabilité par couche</div>
+<div style="font-size: 1.05rem; line-height: 1.5;">
+<b>Vue</b> : TestFX (rare)<br/>
+<b>ViewModel</b> : JUnit + DAO mocké<br/>
+<b>DAO</b> : JUnit + SQLite en mémoire<br/>
+<b>JDBC, DataSource, SGBD</b> : déjà testés par leurs éditeurs
+</div>
+<div style="background: #2c3e50; color: white; padding: 0.6rem 0.9rem; border-radius: 8px; margin-top: 0.7rem; font-size: 1.05rem; line-height: 1.45;">
+💡 <b>Guice</b> injecte les bons composants en prod comme en test : la même architecture, juste un module différent.
+</div>
+</div>
+
+</div>
+
+---
+
+## Au-delà de JDBC : ouvertures
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">JDBC est la <b>fondation</b>. Quand vos applications grandissent, des couches supplémentaires deviennent utiles.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🔧 Helpers (jOOQ, JDBI, MyBatis)</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Vous gardez le SQL, mais le mapping ResultSet → objet est automatisé. Compromis pragmatique.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📐 ORM (Hibernate / JPA)</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Annotations sur les classes, le SQL devient invisible. Apprentissage long, traité dans la suite du BUT.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🌐 NoSQL (MongoDB, Redis)</div>
+<div style="font-size: 1.3rem; line-height: 1.5;">Pour des modèles non-relationnels, du cache rapide ou du gros volume. Spécifique à certains besoins.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🚀 Frameworks complets</div>
+<div style="font-size: 1.3rem; line-height: 1.5;"><b>Spring Data</b>, <b>Quarkus</b>, <b>Micronaut</b>… combinent DI + persistance + REST. Standard du backend Java moderne.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.45rem; text-align: center;">
+Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQL emprunte un chemin parallèle (drivers dédiés).
 </div>
 
 ---
