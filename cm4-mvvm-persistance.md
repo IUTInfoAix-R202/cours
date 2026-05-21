@@ -1737,16 +1737,19 @@ public class App extends Application {
 ---
 
 ## Guice : un container DI léger
+
 <style scoped>
-section pre { font-size: 0.6rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.75rem !important; line-height: 1.35 !important; }
+section .code-col { display: flex; flex-direction: column; }
+section .code-col pre { flex: 1; margin-top: 0 !important; }
 </style>
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;"><b>Google Guice</b> automatise la composition. On déclare les dépendances avec <code>@Inject</code> et un <b>Module</b> qui dit comment les résoudre.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem; align-items: stretch;">
 
-<div>
-<div style="background: #8e44ad; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.05rem;">Le consommateur</div>
+<div class="code-col">
+<div style="background: #8e44ad; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.2rem;">Le consommateur</div>
 
 ```java
 public class FormulaireController {
@@ -1762,8 +1765,8 @@ public class FormulaireController {
 
 </div>
 
-<div>
-<div style="background: #8e44ad; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.05rem;">Le module Guice</div>
+<div class="code-col">
+<div style="background: #8e44ad; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.2rem;">Le module Guice</div>
 
 ```java
 public class AppModule extends AbstractModule {
@@ -1780,7 +1783,7 @@ public class AppModule extends AbstractModule {
 
 </div>
 
-<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
 ✨ Au démarrage : <code>Injector inj = Guice.createInjector(new AppModule());</code> et tout est câblé.
 </div>
 
