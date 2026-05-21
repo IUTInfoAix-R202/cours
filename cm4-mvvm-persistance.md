@@ -1792,14 +1792,16 @@ public class AppModule extends AbstractModule {
 ## Les trois styles d'injection
 
 <style scoped>
-section pre { font-size: 0.7rem !important; line-height: 1.35 !important; }
-section code { font-size: 1em !important; }
+section pre { font-size: 0.75rem !important; line-height: 1.35 !important; }
+section .code-col { display: flex; flex-direction: column; }
+section .code-col pre { flex: 1; margin-top: 0 !important; }
+section .code-col .descr { padding-top: 0.5rem; }
 </style>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6rem; margin-top: 0.3rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem; align-items: stretch;">
 
-<div>
-<div style="background: #1a5276; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">Constructeur (recommandé)</div>
+<div class="code-col">
+<div style="background: #1a5276; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.2rem;">Constructeur (recommandé)</div>
 
 ```java
 public class A {
@@ -1812,12 +1814,12 @@ public class A {
 }
 ```
 
-<div style="font-size: 0.95rem; margin-top: 0.3rem; opacity: 0.85;">Champs <code>final</code>, classe immutable.</div>
+<div class="descr" style="font-size: 1rem; opacity: 0.95;">Champs <code>final</code>, classe immutable.</div>
 
 </div>
 
-<div>
-<div style="background: #1a5276; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">Champ (FXML, frameworks)</div>
+<div class="code-col">
+<div style="background: #1a5276; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.2rem;">Champ (FXML, frameworks)</div>
 
 ```java
 public class A {
@@ -1825,18 +1827,17 @@ public class A {
   @Inject
   private B b;
 
-  // utilisé par les contrôleurs
-  // FXML qui ont un constructeur
-  // sans args
+  // utilisé par les
+  // contrôleurs FXML
 }
 ```
 
-<div style="font-size: 0.95rem; margin-top: 0.3rem; opacity: 0.85;">Pratique avec FXMLLoader.</div>
+<div class="descr" style="font-size: 1rem; opacity: 0.95;">Pratique avec FXMLLoader.</div>
 
 </div>
 
-<div>
-<div style="background: #1a5276; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">Méthode (rare)</div>
+<div class="code-col">
+<div style="background: #1a5276; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.2rem;">Méthode (rare)</div>
 
 ```java
 public class A {
@@ -1849,13 +1850,13 @@ public class A {
 }
 ```
 
-<div style="font-size: 0.95rem; margin-top: 0.3rem; opacity: 0.85;">Cas particuliers, déconseillé.</div>
+<div class="descr" style="font-size: 1rem; opacity: 0.95;">Cas particuliers, déconseillé.</div>
 
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
 👉 Préférer l'injection par <b>constructeur</b>. Pas le choix avec FXML : injection par <b>champ</b>.
 </div>
 
