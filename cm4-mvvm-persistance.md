@@ -998,7 +998,7 @@ section code { font-size: 1em !important; }
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.3rem;">
 
 <div>
-<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.5rem;">MVC : le controller manipule la vue</div>
+<div style="background: #8c3a2f; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.4rem;">MVC : le contrôleur manipule la vue</div>
 
 ```java
 public class CompteurController {
@@ -1019,31 +1019,29 @@ public class CompteurController {
 </div>
 
 <div>
-<div style="background: #27ae60; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.5rem;">MVVM : le controller bind, le VM porte l'état</div>
+<div style="background: #27ae60; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.4rem;">MVVM : contrôleur de vue léger</div>
 
 ```java
 public class CompteurController {
   @Inject CompteurViewModel vm;
-  @FXML private Label message;
-
-  @FXML void initialize() {
-    message.textProperty().bind(vm.messageProperty());
-  }
 
   @FXML void incrementer() {
     vm.incrementerCommand();
   }
 }
-// CompteurViewModel : StringProperty messageProperty,
-// méthode incrementerCommand() => testable sans UI.
+// FXML : <Label text="${vm.message}"/>
+//
+// Tout le travail vit dans CompteurViewModel :
+// StringProperty messageProperty, incrementerCommand()
+// => testable sans aucune UI.
 ```
 
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-Le contrôleur MVVM est une <b>colle</b> : 80% des lignes deviennent des bindings vers le VM.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.7rem; font-size: 1.4rem; text-align: center;">
+💡 Idéalement, le contrôleur de vue ne porte que les <b>actions</b>. Les bindings triviaux vont en <b>FXML</b> (<code>text="${vm.message}"</code>) ; toute la logique vit dans le <b>ViewModel</b>.
 </div>
 
 ---
