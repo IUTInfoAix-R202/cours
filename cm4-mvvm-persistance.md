@@ -699,6 +699,10 @@ Aujourd'hui : combiner <b>MVC + bindings</b> pour aller vers <b>MVVM</b>, ajoute
 
 ## MVC en pratique : le contrôleur reste la zone grise
 
+<style scoped>
+section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
+</style>
+
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Au CM3, on a découpé en M, V, C. Mais le <b>contrôleur</b> finit par mélanger plusieurs responsabilités quand l'écran se complexifie.</p>
 
 ```java
@@ -707,7 +711,7 @@ public class FormulaireController {
   @FXML private PasswordField motDePasse;
   @FXML private Button valider;
   @FXML private Label statut;
-
+  
   private final ServiceAuth auth = new ServiceAuthImpl();   // ❌ couplage dur
   private final HistoriqueConnexion historique = new HistoriqueConnexionDB(); // ❌ idem
 
@@ -721,9 +725,7 @@ public class FormulaireController {
     if (ok) {
       historique.enregistrer(email.getText(), LocalDateTime.now());     // ❌ effet de bord
       statut.setText("Bienvenue " + email.getText().split("@")[0]);     // ❌ UI + logique
-    } else {
-      statut.setText("Échec : email ou mot de passe incorrect.");
-    }
+    } 
   }
 }
 ```
