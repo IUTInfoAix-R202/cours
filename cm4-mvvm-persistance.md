@@ -456,31 +456,45 @@ Personas <a href="https://iutinfoaix-s201.github.io/brief/Analyse%20et%20concept
 
 ## 🚀 Vos prochaines étapes
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.3rem;">
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">4 actions concrètes à mener pendant la phase d'amorçage avant le démarrage exclusif du <b>01/06</b>.</p>
 
-<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">1. 📖 Lire le brief en entier</div>
-<div style="font-size: 1.2rem; line-height: 1.5;">Présentation, contraintes techniques, expression du besoin, et surtout le <b>dossier d'analyse</b> (personas, parcours, story mapping, périmètre MVP, maquettes).</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; align-items: center; gap: 1rem;">
+<div style="font-size: 2.6rem; line-height: 1; flex-shrink: 0;">📖</div>
+<div style="font-size: 1.5rem; font-weight: bold;">1. Lire le brief en entier</div>
+</div>
+<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.6rem;">Présentation, contraintes techniques, expression du besoin, et surtout le <b>dossier d'analyse</b> (personas, parcours, story mapping, périmètre MVP, maquettes).</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">2. 👥 Constituer l'équipe</div>
-<div style="font-size: 1.2rem; line-height: 1.5;">Équipes formées par l'équipe pédagogique. Chacun contribue <b>techniquement</b> : pas de répartition « code / rédac / présentation ».</div>
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; align-items: center; gap: 1rem;">
+<div style="font-size: 2.6rem; line-height: 1; flex-shrink: 0;">👥</div>
+<div style="font-size: 1.5rem; font-weight: bold;">2. Découvrir votre équipe</div>
+</div>
+<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.6rem;">Annoncée par les enseignants. Chacun contribue <b>techniquement</b> : pas de répartition « code / rédac / présentation ». Rappelez-vous qu'il est <b>difficile de faire mentir GitHub</b>.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">3. ✅ Accepter le lien Classroom</div>
-<div style="font-size: 1.2rem; line-height: 1.5;">Un dépôt sera créé dans <code>IUTInfoAix-S201-2026</code>. C'est dans ce dépôt <b>et nulle part ailleurs</b> que vous travaillerez.</div>
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; align-items: center; gap: 1rem;">
+<div style="font-size: 2.6rem; line-height: 1; flex-shrink: 0;">✅</div>
+<div style="font-size: 1.5rem; font-weight: bold;">3. Accepter le lien Classroom</div>
+</div>
+<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.6rem;">Un dépôt sera créé dans <code>IUTInfoAix-S201-2026</code>. C'est dans ce dépôt <b>et nulle part ailleurs</b> que vous travaillerez en équipe en appliquant le GitHub Flow.</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">4. 📥 Télécharger le full dataset</div>
-<div style="font-size: 1.2rem; line-height: 1.5;">Lien Filesender <b>expire le 15/06/2026</b>. Récupérez l'archive ~4,2 Go <b>dès le sprint 0</b>.</div>
+<div style="background: #8c3a2f; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; align-items: center; gap: 1rem;">
+<div style="font-size: 2.6rem; line-height: 1; flex-shrink: 0;">📥</div>
+<div style="font-size: 1.5rem; font-weight: bold;">4. Télécharger le full dataset</div>
+</div>
+<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.6rem;">Lien Filesender <b>expire le 15/06/2026</b>. Récupérez l'archive ~4,2 Go <b>dès le sprint 0</b>.</div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.95rem 1.2rem; border-radius: 10px; margin-top: 1rem; font-size: 1.55rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 1rem 1.4rem; border-radius: 12px; margin-top: 1.4rem; font-size: 1.55rem; text-align: center;">
 📘 Brief complet en ligne : <a href="https://iutinfoaix-s201.github.io/brief/" style="color: #f1c40f;"><b>iutinfoaix-s201.github.io/brief</b></a>
 </div>
 
