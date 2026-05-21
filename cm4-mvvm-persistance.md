@@ -936,10 +936,54 @@ public class FormulaireController {
 
 ## Qui parle à qui ?
 
-![Flux MVVM : Utilisateur agit sur Vue, qui s'auto-bind au ViewModel ; le ViewModel appelle le Modèle et expose des propriétés que la Vue observe](assets/kroki/cm4-mvvm-flux.svg)
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Le <b>ViewModel</b> orchestre la conversation : il expose des propriétés à la Vue, et appelle le Modèle pour la logique métier.</p>
 
-<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; line-height: 1.55;">
-<b>Direction des flèches :</b> la <b>Vue</b> se bind au <b>ViewModel</b> (read-only à l'affichage, bidirectionnel sur les saisies). Le <b>ViewModel</b> appelle le <b>Modèle</b> et observe ses changements via propriétés.
+<div style="display: grid; grid-template-columns: auto auto 1fr auto 1fr auto 1fr; align-items: stretch; margin-top: 2rem;">
+
+<div style="background: #7f8c8d; color: white; padding: 1rem 0.9rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+<div style="font-size: 2.6rem; line-height: 1;">👤</div>
+<div style="font-weight: bold; font-size: 1.2rem; margin-top: 0.4rem;">Utilisateur</div>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 0.9rem;">
+<div style="font-size: 1.05rem; color: #555;">clic / saisie</div>
+<div style="font-size: 2.4rem; color: #4a90d9; line-height: 1; margin-top: 0.15rem;">→</div>
+</div>
+
+<div style="background: #4a90d9; color: white; padding: 1.2rem 0.9rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+<div style="font-size: 3rem; line-height: 1;">🖼️</div>
+<div style="font-weight: bold; font-size: 1.5rem; margin-top: 0.5rem;">Vue</div>
+<div style="font-size: 1rem; opacity: 0.9; margin-top: 0.3rem;">FXML + Controller mince</div>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 0.6rem;">
+<div style="font-size: 1rem; color: #555;">bind / bindBidirectional</div>
+<div style="font-size: 1.8rem; color: #8e44ad; line-height: 1; margin: 0.1rem 0;">⇄</div>
+<div style="font-size: 1rem; color: #555;">propriétés UI</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 1.2rem 0.9rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+<div style="font-size: 3rem; line-height: 1;">🎯</div>
+<div style="font-weight: bold; font-size: 1.5rem; margin-top: 0.5rem;">ViewModel</div>
+<div style="font-size: 1rem; opacity: 0.9; margin-top: 0.3rem;">propriétés + commandes</div>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 0.6rem;">
+<div style="font-size: 1rem; color: #555;">appelle métier</div>
+<div style="font-size: 1.8rem; color: #1a5276; line-height: 1; margin: 0.1rem 0;">⇄</div>
+<div style="font-size: 1rem; color: #555;">propriétés observables</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 0.9rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+<div style="font-size: 3rem; line-height: 1;">📊</div>
+<div style="font-weight: bold; font-size: 1.5rem; margin-top: 0.5rem;">Modèle</div>
+<div style="font-size: 1rem; opacity: 0.9; margin-top: 0.3rem;">logique pure</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 1rem 1.4rem; border-radius: 12px; margin-top: 2rem; font-size: 1.45rem; text-align: center;">
+👉 Règle d'or : chaque couche ne connaît que celle du dessous. <b>Vue → ViewModel → Modèle</b>, jamais l'inverse.
 </div>
 
 ---
