@@ -1267,48 +1267,52 @@ Tape dans le champ → le VM met à jour le modèle → l'affichage suit. Trois 
 
 ## Listes : ObservableList et data binding
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour exposer une <b>collection</b> qui se met à jour automatiquement dans une <code>TableView</code> ou <code>ListView</code>, on utilise une <code>ObservableList</code>.</p>
+<style scoped>
+section pre { font-size: 0.8rem !important; line-height: 1.35 !important; }
+section .code-col { display: flex; flex-direction: column; }
+section .code-col pre { flex: 1; margin-top: 0 !important; }
+</style>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
+<p style="font-size: 1.4rem; margin: -0.5rem 0 0.5rem 0;">Pour exposer une <b>collection</b> qui se met à jour automatiquement dans une <code>TableView</code> on utilise une <code>ObservableList</code>.</p>
 
-<div>
-<div style="background: #8e44ad; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">PokemonViewModel</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem; align-items: stretch;">
+
+<div class="code-col">
+<div style="background: #8e44ad; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.2rem;">🎯 PokemonViewModel</div>
 
 ```java
-private final ObservableList<Pokemon>
-    pokemons = FXCollections
-                 .observableArrayList();
+private final ObservableList<Pokemon> pokemons
+            = FXCollections.observableArrayList();
 
 public PokemonViewModel(PokemonService s) {
   pokemons.setAll(s.tousLesPokemons());
 }
 
-public ObservableList<Pokemon>
-    pokemonsProperty() {
+public ObservableList<Pokemon> pokemonsProperty() {
   return pokemons;
 }
 
 public void capturer(Pokemon p) {
-  pokemons.add(p);
-  // la TableView se met à jour seule
+  pokemons.add(p); // la TableView se met à jour seule
 }
 ```
 
 </div>
 
-<div>
-<div style="background: #4a90d9; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">Controller</div>
+<div class="code-col">
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.2rem;">🖼️ Controleur léger</div>
 
 ```java
-@Inject PokemonViewModel vm;
+public class PokemonViewController {
+  @Inject PokemonViewModel vm;
 
-@FXML private TableView<Pokemon> table;
+  @FXML private TableView<Pokemon> table;
 
-@FXML void initialize() {
-  table.setItems(vm.pokemonsProperty());
-  // toute modif de la liste côté VM
-  // se reflète automatiquement
-  // dans la TableView
+  @FXML void initialize() {
+    table.setItems(vm.pokemonsProperty());
+    // toute modif de la liste côté VM
+    // se reflète automatiquement dans la TableView
+  }
 }
 ```
 
@@ -1316,15 +1320,15 @@ public void capturer(Pokemon p) {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-👉 <code>ObservableList</code> est à <code>List</code> ce que <code>StringProperty</code> est à <code>String</code> : une version observable qui notifie ses changements.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.4rem; text-align: center;">
+👉 <code>ObservableList</code> est à <code>List</code> ce que <code>StringProperty</code> est à <code>String</code> : une version observable.
 </div>
 
 ---
 
 ## Plusieurs vues, un seul ViewModel
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Bénéfice clé : un même ViewModel peut alimenter <b>plusieurs vues</b> simultanément.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">En plus de la testabilité, l'autre bénéfice clé est qu'un même ViewModel peut alimenter <b>plusieurs vues</b> simultanément.</p>
 
 ```java
 // Une vue formulaire pour saisir
@@ -1341,13 +1345,13 @@ compteur.textProperty().bind(
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem;">
 
 <div style="background: #8e44ad; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">🔁 Réactivité naturelle</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">Une modif côté formulaire propage instantanément vers preview ET compteur.</div>
+<div style="font-size: 1.5rem; font-weight: bold;">🔁 Réactivité naturelle</div>
+<div style="font-size: 1.3rem; margin-top: 0.2rem;">Une modification côté formulaire se propage instantanément vers la preview ET le compteur.</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">🧪 Test unique</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">Un seul test sur le VM couvre les 3 vues. Pas de duplication.</div>
+<div style="font-size: 1.5rem; font-weight: bold;">🧪 Test unique</div>
+<div style="font-size: 1.3rem; margin-top: 0.2rem;">Un seul test sur le VM couvre toutes les vues. Pas de duplication.</div>
 </div>
 
 </div>
@@ -1355,12 +1359,14 @@ compteur.textProperty().bind(
 ---
 
 ## Commandes : modéliser les actions
+<style scoped>
+section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
+</style>
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour les actions (boutons), on expose des <b>méthodes</b> sur le VM. Pattern « Command ».</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour les actions (boutons), on expose des <b>méthodes</b> sur le ViewModel. Pattern « Command ».</p>
 
 ```java
 public class FormulaireConnexionViewModel {
-
   private final ServiceAuth auth;
 
   // Propriétés UI : champs et état
@@ -1388,7 +1394,10 @@ public class FormulaireConnexionViewModel {
 
 ---
 
-## Le contrôleur côté MVVM : un câblage
+## Le contrôleur "léger" côté MVVM : un câblage
+<style scoped>
+section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
+</style>
 
 ```java
 public class FormulaireConnexionController {
@@ -1423,6 +1432,10 @@ Plus aucun <code>if</code>, plus aucune logique. Juste : <em>« je connecte les 
 
 ## Validation côté ViewModel
 
+<style scoped>
+section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
+</style>
+
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Le VM est l'endroit naturel pour valider les saisies : il a accès aux propriétés et expose des indicateurs d'erreur.</p>
 
 ```java
@@ -1432,15 +1445,14 @@ public class FormulaireViewModel {
   private final BooleanBinding emailValide;
 
   public FormulaireViewModel() {
-    // Règle de validation reactive
     emailValide = Bindings.createBooleanBinding(
         () -> email.get().matches("^[^@]+@[^@]+\\.[a-z]{2,}$"),
         email
-    );
-    // Message d'erreur dérivé
+    ); // Règle de validation reactive
+    
     erreurEmail.bind(Bindings.when(emailValide.or(email.isEmpty()))
         .then("")
-        .otherwise("Format invalide. Exemple : prenom.nom@univ-amu.fr"));
+        .otherwise("Format invalide. Exemple : prenom.nom@univ-amu.fr")); // Message d'erreur dérivé
   }
 
   public ReadOnlyStringProperty erreurEmailProperty() { return erreurEmail; }
