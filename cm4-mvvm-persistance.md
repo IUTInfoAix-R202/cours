@@ -1145,45 +1145,45 @@ Quatre dossiers, quatre responsabilités. Chaque test cible un dossier sans touc
 
 ---
 
-## Exemple concret : MessageView (TP4 ex1)
+## Exemple : MessageView (1/2) - Modèle et ViewModel
 
 <style scoped>
-section pre { font-size: 0.7rem !important; line-height: 1.3 !important; }
-section code { font-size: 1em !important; }
+section pre { font-size: 0.6rem !important; line-height: 1.35 !important; }
+section .code-col { display: flex; flex-direction: column; }
+section .code-col pre { flex: 1; margin-top: 0 !important; }
 </style>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.3rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem; align-items: stretch;">
 
-<div>
-<div style="background: #1a5276; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">📊 Message (Modèle)</div>
+<div class="code-col">
+<div style="background: #1a5276; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.2rem;">📊 Message (Modèle)</div>
 
 ```java
 public class Message {
   private String texte = "";
-
   public String getTexte() {
     return texte;
   }
-
   public void setTexte(String t) {
     this.texte = t;
   }
 }
 ```
 
-<div style="background: #8e44ad; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem; margin-top: 0.4rem;">🎯 MessageViewModel</div>
+</div>
+
+<div class="code-col">
+<div style="background: #8e44ad; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.2rem;">🎯 MessageViewModel</div>
 
 ```java
 public class MessageViewModel {
   private final Message message;
-  private final StringProperty texte
-    = new SimpleStringProperty();
+  private final StringProperty texte = new SimpleStringProperty();
 
   public MessageViewModel(Message m) {
     this.message = m;
     texte.set(m.getTexte());
-    texte.addListener((o, a, n)
-        -> m.setTexte(n));
+    texte.addListener((o, a, n) -> m.setTexte(n));
   }
 
   public StringProperty texteProperty() {
@@ -1194,35 +1194,64 @@ public class MessageViewModel {
 
 </div>
 
-<div>
-<div style="background: #4a90d9; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">🖼️ MessageView (Controller)</div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
+💡 La logique de présentation vit dans le ViewModel, <b>sans aucune dépendance JavaFX UI</b>. Testable directement avec JUnit.
+</div>
+
+---
+
+## Exemple : MessageView (2/2) - Vue (Controller + FXML)
+
+<style scoped>
+section pre { font-size: 0.8rem !important; line-height: 1.35 !important; }
+section .code-col { display: flex; flex-direction: column; }
+section .code-col pre { flex: 1; margin-top: 0 !important; }
+</style>
+
+<div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 1rem; margin-top: 0.5rem; align-items: stretch;">
+
+<div class="code-col">
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.2rem;">🖼️ MessageController</div>
 
 ```java
 public class MessageController {
-  @Inject MessageViewModel vm;
+  @Inject private MessageViewModel vm;
 
   @FXML private TextField champ;
-  @FXML private Label affichage;
+
+  // Expose le VM pour les bindings FXML ${controller.vm.xxx}
+  public MessageViewModel getVm() { return vm; }
 
   @FXML void initialize() {
-    // Bidirectionnel : saisie sync vers VM
-    champ.textProperty()
-         .bindBidirectional(vm.texteProperty());
-    // Lecture seule : affichage suit VM
-    affichage.textProperty()
-             .bind(vm.texteProperty());
+    // Bidirectionnel : pas de syntaxe FXML, reste en Java
+    champ.textProperty().bindBidirectional(vm.texteProperty());
   }
 }
 ```
 
-<div style="background: #4a90d9; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem; margin-top: 0.4rem;">📄 message.fxml</div>
+</div>
+
+<div class="code-col">
+<div style="background: #4a90d9; color: white; padding: 0.5rem 0.9rem; border-radius: 8px 8px 0 0; font-weight: bold; font-size: 1.2rem;">📄 message.fxml</div>
 
 ```xml
-<VBox fx:controller=
-   "fr.iut.MessageController"
-   xmlns:fx="http://javafx.com/fxml">
-  <TextField fx:id="champ"/>
-  <Label fx:id="affichage"/>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" style="-fx-padding: 20;"
+      fx:controller="fr.iut.MessageController"
+      xmlns:fx="http://javafx.com/fxml">
+
+  <Label text="Saisie :"/>
+  <TextField fx:id="champ"
+             promptText="Tapez ici..."/>
+
+  <Label text="Aperçu :"/>
+  <!-- Binding 1-way exprime directement en FXML -->
+  <Label text="${controller.vm.texte}"
+         style="-fx-font-weight: bold;"/>
 </VBox>
 ```
 
@@ -1230,7 +1259,7 @@ public class MessageController {
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.55rem 1.1rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
 Tape dans le champ → le VM met à jour le modèle → l'affichage suit. Trois fichiers Java, un FXML.
 </div>
 
