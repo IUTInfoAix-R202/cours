@@ -1606,11 +1606,11 @@ Comme tous les patterns architecturaux, si l'on ne respecte pas leur principe de
 
 ## Pourquoi l'Injection de dépendances, et pourquoi maintenant ?
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Vous avez déjà croisé <code>@Inject</code> en Partie 2. Vous le retrouverez en Partie 4. C'est le <b>même pattern</b> qui ressurgit : celui qui rend chaque couche testable indépendemment.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Vous avez déjà croisé <code>@Inject</code> en Partie 2. Vous le retrouverez en Partie 4. C'est le <b>même pattern</b> qui ressurgit : celui qui rend chaque couche testable indépendamment.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 2.5rem 0; align-items: stretch;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2.5rem 0; align-items: stretch;">
 
-<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🏗️ Côté MVVM (Partie 2)</div>
 <div style="font-size: 1.3rem; line-height: 1.5;">
 Le <b>contrôleur</b> <code>@Inject</code> son <b>ViewModel</b>.<br/>
@@ -1619,7 +1619,7 @@ Le <b>ViewModel</b> <code>@Inject</code> ses <b>services</b>.<br/>
 </div>
 </div>
 
-<div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">💾 Côté Persistance (Partie 4)</div>
 <div style="font-size: 1.3rem; line-height: 1.5;">
 Le <b>ViewModel</b> <code>@Inject</code> ses <b>DAO</b>.<br/>
@@ -1630,7 +1630,7 @@ Le <b>DAO</b> <code>@Inject</code> son <b>DataSource</b>.<br/>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
 L'Injection de dépendances (DI) est le <b>ciment</b> qui rend chaque couche testable <b>indépendamment</b> des autres. C'est ce qu'on va faire avec <b>Guice</b>.
 </div>
 
