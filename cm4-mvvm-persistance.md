@@ -362,49 +362,51 @@ Personas <a href="https://iutinfoaix-s201.github.io/brief/Analyse%20et%20concept
 
 <div style="background: #8c3a2f; color: white; padding: 1.2rem 1.4rem; border-radius: 12px; margin-top: 1.4rem; display: flex; align-items: center; gap: 1.1rem;">
 <div style="font-size: 2.8rem; line-height: 1; flex-shrink: 0;">⚠️</div>
-<div style="font-size: 1.4rem; line-height: 1.5;">Lien <b>Filesender RENATER expire le 15/06/2026</b>. Téléchargez le dataset <b>dès le démarrage</b> de la SAE.</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Lien <b>Filesender RENATER expire le 15/06/2026</b>. Téléchargez le dataset <b>dès le début</b> de la SAE.</div>
 </div>
 
 ---
 
 ## 📅 Calendrier 2026
 
-<div style="display: grid; grid-template-columns: 1.35fr 0.75fr; gap: 1rem;">
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">3 phases du 22 mai au 18 juin 2026, dont seulement <b>13 jours ouvrés</b> de travail exclusif sur la SAE.</p>
 
-<div>
+<div style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.2rem;">
 
-<style scoped>
-section table { font-size: 1.1rem !important; }
-section th, section td { padding: 0.35rem 0.6rem !important; }
-</style>
+<div style="background: #b7950b; color: white; padding: 1rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="font-size: 1.5rem; font-weight: bold;">🟡 Phase 1 - Amorçage</div>
+<div style="font-size: 1.35rem; font-weight: bold; opacity: 0.95;">22/05 → 31/05</div>
+</div>
+<div style="margin-top: 0.5rem; font-size: 1.2rem; line-height: 1.55;">
+<b>22/05</b> : présentation du brief (aujourd'hui) • <b>22/05 → 31/05</b> : lecture du brief, formation des équipes par les enseignants des SAÉ 2.01 et 2.03, réception des composants du PR
+</div>
+</div>
 
-| Date | Étape |
-|---|---|
-| **22/05/2026** | Présentation du brief (aujourd'hui) |
-| 22/05 → 31/05 | Amorçage : lecture du brief, formation des équipes, assemblage du PR |
-| **01/06/2026** | Démarrage du travail exclusif sur la SAE |
-| 01/06 → 09/06 | Sprint 1 - chaîne fil rouge MUST |
-| 10/06 → 17/06 | Sprint 2 - finition + SHOULD opportunistes |
-| **18/06/2026 matin** | Code freeze + diaporama déposé |
-| 18/06 après-midi | Test individuel R2.02 / R2.03 |
-| **18/06** | Soutenance + démo (Samuel Busson présent) |
+<div style="background: #8c3a2f; color: white; padding: 1rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="font-size: 1.5rem; font-weight: bold;">🔴 Phase 2 - Travail exclusif (13 jours)</div>
+<div style="font-size: 1.35rem; font-weight: bold; opacity: 0.95;">01/06 → 17/06</div>
+</div>
+<div style="margin-top: 0.5rem; font-size: 1.2rem; line-height: 1.55;">
+<b>01/06 → 09/06</b> : Sprint 1 - chaîne fil rouge MUST • <b>10/06 → 17/06</b> : Sprint 2 - finition + SHOULD opportunistes • <b>en parallèle</b> : assemblage du PR (par les équipes si possible)
+</div>
+</div>
+
+<div style="background: #1e8449; color: white; padding: 1rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="font-size: 1.5rem; font-weight: bold;">🟢 Phase 3 - Livraison + soutenance</div>
+<div style="font-size: 1.35rem; font-weight: bold; opacity: 0.95;">18/06/2026</div>
+</div>
+<div style="margin-top: 0.5rem; font-size: 1.2rem; line-height: 1.55;">
+<b>Avant 8h</b> : code freeze + diaporama déposé • <b>8h - 10h</b> : test individuel R2.02 / R2.03 • <b>10h - 12h et 13h - 18h</b> : soutenances + démos
+</div>
+</div>
 
 </div>
 
-<div>
-
-<div style="background: #c0392b; color: white; padding: 1rem; border-radius: 10px;">
-<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.2rem;">⏱️ Phase exclusive</div>
-<div style="font-size: 2.4rem; font-weight: bold;">13 jours</div>
-<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.3rem;">ouvrés pour livrer le MVP.</div>
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.8rem 1rem; border-radius: 8px; margin-top: 0.8rem; font-size: 1.2rem; line-height: 1.5;">
-C'est <b>court</b>. La chaîne fil rouge est une cible <b>idéale exigeante</b>, pas une obligation absolue.
-</div>
-
-</div>
-
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 10px; margin-top: 1.2rem; font-size: 1.35rem; text-align: center;">
+👉 <b>13 jours c'est court.</b> La chaîne fil rouge est une cible <b>idéale exigeante</b>, pas une obligation absolue.
 </div>
 
 ---
