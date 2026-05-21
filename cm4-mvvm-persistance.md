@@ -508,8 +508,32 @@ Personas <a href="https://iutinfoaix-s201.github.io/brief/Analyse%20et%20concept
 
 ## *MVVM, persistance et synthèse*
 
-<div style="margin-top: 1.5rem; font-size: 1.4rem; color: #555; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.55;">
-Vous y trouverez les <b>fondations techniques</b> qui vous serviront directement à construire le <em>VigieChiro PR Companion</em> : architecture MVVM testable, injection de dépendances, persistance JDBC sur SQLite, prévention des erreurs utilisateur.
+<div style="margin: 1.3rem auto 0 auto; font-size: 1.4rem; color: #555; max-width: 900px; line-height: 1.55;">
+Les <b>4 fondations techniques</b> qui vous serviront directement à construire le <em>VigieChiro PR Companion</em> :
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 900px; margin: 1.2rem auto 0 auto;">
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 0.8rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 2.8rem; line-height: 1;">🏗️</div>
+<div style="font-size: 1.2rem; font-weight: bold; margin-top: 0.5rem;">Architecture MVVM</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 0.8rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 2.8rem; line-height: 1;">💉</div>
+<div style="font-size: 1.2rem; font-weight: bold; margin-top: 0.5rem;">Injection de dépendances</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 0.8rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 2.8rem; line-height: 1;">💾</div>
+<div style="font-size: 1.2rem; font-weight: bold; margin-top: 0.5rem;">JDBC + SQLite</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 0.8rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 2.8rem; line-height: 1;">🧠</div>
+<div style="font-size: 1.2rem; font-weight: bold; margin-top: 0.5rem;">Prévention des erreurs</div>
+</div>
+
 </div>
 
 ---
