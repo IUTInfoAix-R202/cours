@@ -259,36 +259,40 @@ Personas <a href="https://iutinfoaix-s201.github.io/brief/Analyse%20et%20concept
 
 ---
 
-## 📊 Périmètre MoSCoW - 50 stories, ~130 ★
+## 📊 Périmètre projet - priorisation MoSCoW
 
-<p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">Le story mapping est arbitré selon <a href="https://fr.wikipedia.org/wiki/M%C3%A9thode_MoSCoW">MoSCoW</a> : seul le MUST est non-négociable. Vous avez <b>13 jours ouvrés</b> de dév exclusif.</p>
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">Le <b>cahier des charges fonctionnel</b> a été arbitré selon la méthode <a href="https://fr.wikipedia.org/wiki/M%C3%A9thode_MoSCoW">MoSCoW</a> : chaque fonctionnalité reçoit une priorité explicite. Vous avez <b>13 jours ouvrés</b> de dév exclusif. Le MUST est non-négociable.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.6rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1rem; margin-top: 1.2rem;">
 
-<div style="background: #1e8449; color: white; padding: 0.9rem; border-radius: 10px;">
-<div style="font-size: 1.55rem; font-weight: bold;">✅ MUST</div>
-<div style="font-size: 1.15rem; margin-top: 0.4rem; line-height: 1.45;">Chaîne fil rouge P1→P4 + socle BD (E0). <b>~25 stories, ~59 ★</b>. Sans cela, pas de MVP.</div>
+<div style="background: #1e8449; color: white; padding: 1.4rem 1rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 3rem; line-height: 1;">✅</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.6rem;">MUST</div>
+<div style="font-size: 1.2rem; margin-top: 0.7rem; line-height: 1.5; text-align: left;">Chaîne fil rouge P1→P4 + base de données. Sans cela, <b>pas de prototype livrable</b>.</div>
 </div>
 
-<div style="background: #e67e22; color: white; padding: 0.9rem; border-radius: 10px;">
-<div style="font-size: 1.55rem; font-weight: bold;">🟠 SHOULD</div>
-<div style="font-size: 1.15rem; margin-top: 0.4rem; line-height: 1.45;">Navigation tabulaire, diagnostic matériel, validation Tadarida (filet de sécurité), annotations météo.</div>
+<div style="background: #e67e22; color: white; padding: 1.4rem 1rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 3rem; line-height: 1;">🟠</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.6rem;">SHOULD</div>
+<div style="font-size: 1.2rem; margin-top: 0.7rem; line-height: 1.5; text-align: left;">Navigation tabulaire, diagnostic matériel, validation Tadarida (filet de sécurité), annotations météo.</div>
 </div>
 
-<div style="background: #7f8c8d; color: white; padding: 0.9rem; border-radius: 10px;">
-<div style="font-size: 1.55rem; font-weight: bold;">⚪ COULD</div>
-<div style="font-size: 1.15rem; margin-top: 0.4rem; line-height: 1.45;">Re-rattachement rétroactif, regroupement de nuits, bibliothèque de sons, stats globales.</div>
+<div style="background: #7f8c8d; color: white; padding: 1.4rem 1rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 3rem; line-height: 1;">⚪</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.6rem;">COULD</div>
+<div style="font-size: 1.2rem; margin-top: 0.7rem; line-height: 1.5; text-align: left;">Re-rattachement rétroactif, regroupement de nuits, bibliothèque de sons, stats globales.</div>
 </div>
 
-<div style="background: #34495e; color: white; padding: 0.9rem; border-radius: 10px;">
-<div style="font-size: 1.55rem; font-weight: bold;">⛔ WON'T</div>
-<div style="font-size: 1.15rem; margin-top: 0.4rem; line-height: 1.45;">API Vigie-Chiro, multi-utilisateur, cloud, classification automatique, web/mobile.</div>
+<div style="background: #34495e; color: white; padding: 1.4rem 1rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 3rem; line-height: 1;">⛔</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.6rem;">WON'T</div>
+<div style="font-size: 1.2rem; margin-top: 0.7rem; line-height: 1.5; text-align: left;">API Vigie-Chiro, multi-utilisateur, cloud, classification automatique, web/mobile.</div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 8px; margin-top: 0.9rem; font-size: 1.4rem; text-align: center;">
-🎯 Une <b>démo convaincante bout-en-bout</b> + un <b>plan d'action explicite</b> sur ce qui reste pèsent autant qu'un MUST 100 % livré.
+<div style="background: #2c3e50; color: white; padding: 1rem 1.4rem; border-radius: 10px; margin-top: 1.4rem; font-size: 1.4rem; text-align: center;">
+🎯 Une <b>démo convaincante bout-en-bout</b> + un <b>plan d'action explicite</b> sur ce qui reste pèsent autant qu'un MUST 100 % livré sans plus.
 </div>
 
 ---
