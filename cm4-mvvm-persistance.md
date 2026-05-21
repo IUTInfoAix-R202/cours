@@ -65,35 +65,35 @@ Le possesseur du PR doit <b>vérifier la qualité</b>, <b>renommer</b>, <b>trans
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Aujourd'hui, le possesseur du PR enchaîne <b>4 outils différents</b> par nuit traitée. Une demi-journée de manipulations répétitives par carte SD.</p>
 
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin-top: 0.8rem;">
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; margin: 3.4rem 0;">
 
-<div style="background: #c0392b; color: white; padding: 1rem 0.8rem; border-radius: 10px; text-align: center;">
-<div style="font-size: 2.2rem;">📁</div>
-<div style="font-size: 1.35rem; font-weight: bold; margin-top: 0.3rem;">Explorateur</div>
+<div style="background: #8c3a2f; color: white; padding: 1.6rem 1rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 3.8rem; line-height: 1;">📁</div>
+<div style="font-size: 1.35rem; font-weight: bold; margin-top: 0.9rem;">Explorateur</div>
 <div style="font-size: 1.1rem; opacity: 0.9; margin-top: 0.3rem;">Copier depuis la SD</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1rem 0.8rem; border-radius: 10px; text-align: center;">
-<div style="font-size: 2.2rem;">✏️</div>
-<div style="font-size: 1.35rem; font-weight: bold; margin-top: 0.3rem;">LupasRename</div>
+<div style="background: #8c3a2f; color: white; padding: 1.6rem 1rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 3.8rem; line-height: 1;">✏️</div>
+<div style="font-size: 1.35rem; font-weight: bold; margin-top: 0.9rem;">LupasRename</div>
 <div style="font-size: 1.1rem; opacity: 0.9; margin-top: 0.3rem;">Renommer les WAV</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1rem 0.8rem; border-radius: 10px; text-align: center;">
-<div style="font-size: 2.2rem;">🎵</div>
-<div style="font-size: 1.35rem; font-weight: bold; margin-top: 0.3rem;">Kaléidoscope</div>
+<div style="background: #8c3a2f; color: white; padding: 1.6rem 1rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 3.8rem; line-height: 1;">🎵</div>
+<div style="font-size: 1.35rem; font-weight: bold; margin-top: 0.9rem;">Kaléidoscope</div>
 <div style="font-size: 1.1rem; opacity: 0.9; margin-top: 0.3rem;">Découper + ralentir ×10</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1rem 0.8rem; border-radius: 10px; text-align: center;">
-<div style="font-size: 2.2rem;">🌐</div>
-<div style="font-size: 1.35rem; font-weight: bold; margin-top: 0.3rem;">Vigie-Chiro web</div>
+<div style="background: #8c3a2f; color: white; padding: 1.6rem 1rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 3.8rem; line-height: 1;">🌐</div>
+<div style="font-size: 1.35rem; font-weight: bold; margin-top: 0.9rem;">Vigie-Chiro web</div>
 <div style="font-size: 1.1rem; opacity: 0.9; margin-top: 0.3rem;">Déposer + valider</div>
 </div>
 
 </div>
 
-<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px; margin-top: 1.2rem; font-size: 1.55rem; text-align: center;">
+<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px; margin-top: 1.6rem; font-size: 1.55rem; text-align: center;">
 🎯 Votre mission : <b>fusionner tout cela dans une seule application JavaFX</b> qui tient sur un poste hors ligne.
 </div>
 
