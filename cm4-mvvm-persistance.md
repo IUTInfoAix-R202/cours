@@ -1460,21 +1460,21 @@ public class FormulaireViewModel {
 ## Variantes : MVP et le reste de la famille
 
 <style scoped>
-section table { font-size: 0.92rem !important; width: 100%; border-collapse: collapse; }
-section th { background: #1a5276 !important; color: white !important; padding: 0.35rem 0.7rem !important; text-align: left !important; }
-section td { padding: 0.3rem 0.7rem !important; border-bottom: 1px solid #e0e0e0 !important; vertical-align: top; }
+section table { font-size: 0.8rem !important; width: 100%; border-collapse: collapse; line-height: 1.35 !important; }
+section th { background: #1a5276 !important; color: white !important; padding: 0.3rem 0.6rem !important; text-align: left !important; }
+section td { padding: 0.25rem 0.6rem !important; border-bottom: 1px solid #e0e0e0 !important; vertical-align: top; }
 section tr:nth-child(even) td { background: #f4f6f8 !important; }
 </style>
 
-| Pattern | Découplage Vue↔Modèle | Mécanisme | Cas d'usage |
+| Pattern | Découplage | Mécanisme | Cas d'usage |
 |---|---|---|---|
-| **MVC classique** | Faible (Vue connaît Modèle) | Vue observe Modèle | Petites apps, prototypes |
-| **MVP** (Presenter) | Fort | Vue ↔ Presenter ↔ Modèle, Presenter manipule Vue via interface | Apps Java Swing, GWT |
-| **MVVM** | Très fort | Vue se bind à ViewModel, ViewModel ne connaît pas Vue | JavaFX, WPF, Vue, Knockout |
-| **Flux / Redux** | Total | État central immuable, dispatch d'actions, vue pure | React, Vuex |
-| **MVVM-C** (Coordinator) | Fort + navigation découplée | Coordinator pilote la composition de VM | Grosses apps iOS / mobiles |
+| **MVC classique** | Faible | Vue observe Modèle directement | Petites apps, prototypes |
+| **MVP** (Presenter) | Fort | Presenter manipule Vue via interface | Java Swing, GWT |
+| **MVVM** | Très fort | Vue se bind au ViewModel, qui ignore la Vue | JavaFX, WPF, Vue, Knockout |
+| **Flux / Redux** | Total | État central immuable + actions dispatch | React, Vuex / Pinia |
+| **MVVM-C** (Coordinator) | Fort + navigation | Coordinator pilote la composition de VM | Grosses apps iOS / mobile |
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
 Ces patterns partagent tous la même intention : <b>séparer la logique d'affichage de la logique métier</b>. MVVM est le plus naturel pour JavaFX.
 </div>
 
