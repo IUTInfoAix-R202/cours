@@ -168,32 +168,34 @@ Samuel vient en personne nous présenter son <b>contexte de recherche</b>, le te
 
 ## 👥 Trois personas - trois profils utilisateur
 
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.8rem 0;">Pour incarner les utilisateurs cibles, le brief définit <b>3 personas</b>. Ils diffèrent par leur volume de travail, leurs compétences techniques et leurs attentes. <b>Votre IHM doit servir les trois.</b></p>
+
 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin-top: 0.4rem;">
 
-<div style="background: white; border: 3px solid #1a5276; border-radius: 12px; padding: 0.8rem; text-align: center;">
-<img src="assets/sae201/persona-marie.webp" style="width: 140px; height: 140px; object-fit: cover; border-radius: 12px;" alt="Marie">
+<div style="background: white; border: 3px solid #1a5276; border-radius: 12px; padding: 0.8rem; text-align: center; display: flex; flex-direction: column;">
+<img src="assets/sae201/persona-marie.webp" style="width: 140px; height: 140px; object-fit: cover; border-radius: 12px; margin: 0 auto;" alt="Marie">
 <div style="font-size: 1.4rem; font-weight: bold; color: #1a5276; margin-top: 0.4rem;">Marie, 58 ans</div>
 <div style="font-size: 1.1rem; color: #555; margin-top: 0.2rem;">Naturaliste retraitée bénévole, Lozère</div>
-<div style="background: #ecf0f1; padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem; font-size: 1.05rem; text-align: left; line-height: 1.4;">
-2-3 carrés/saison. Traite ses nuits le matin avec un café. <b>Veut un seul outil</b>, libellés en français, rien qui se perde.
+<div style="background: #ecf0f1; padding: 0.5rem; border-radius: 6px; margin-top: auto; font-size: 1.05rem; text-align: left; line-height: 1.4;">
+Bénévole et amateur, elle fait 2-3 carrés/saison. Traite ses nuits le matin avec un café. <b>Veut un outil simple</b>, libellés en français, rien qui se perde.
 </div>
 </div>
 
-<div style="background: white; border: 3px solid #c0392b; border-radius: 12px; padding: 0.8rem; text-align: center;">
-<img src="assets/sae201/persona-karim.webp" style="width: 140px; height: 140px; object-fit: cover; border-radius: 12px;" alt="Karim">
+<div style="background: white; border: 3px solid #c0392b; border-radius: 12px; padding: 0.8rem; text-align: center; display: flex; flex-direction: column;">
+<img src="assets/sae201/persona-karim.webp" style="width: 140px; height: 140px; object-fit: cover; border-radius: 12px; margin: 0 auto;" alt="Karim">
 <div style="font-size: 1.4rem; font-weight: bold; color: #c0392b; margin-top: 0.4rem;">Karim, 32 ans</div>
 <div style="font-size: 1.1rem; color: #555; margin-top: 0.2rem;">Chargé d'études faune, bureau d'études, Lyon</div>
-<div style="background: #ecf0f1; padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem; font-size: 1.05rem; text-align: left; line-height: 1.4;">
+<div style="background: #ecf0f1; padding: 0.5rem; border-radius: 6px; margin-top: auto; font-size: 1.05rem; text-align: left; line-height: 1.4;">
 5 chantiers en parallèle, dizaines de nuits/mois. <b>Veut aller vite</b> : import groupé, tags chantier, traçabilité pour les rapports.
 </div>
 </div>
 
-<div style="background: white; border: 3px solid #8e44ad; border-radius: 12px; padding: 0.8rem; text-align: center;">
-<img src="assets/sae201/persona-samuel.webp" style="width: 140px; height: 140px; object-fit: cover; border-radius: 12px;" alt="Samuel">
+<div style="background: white; border: 3px solid #8e44ad; border-radius: 12px; padding: 0.8rem; text-align: center; display: flex; flex-direction: column;">
+<img src="assets/sae201/persona-samuel.webp" style="width: 140px; height: 140px; object-fit: cover; border-radius: 12px; margin: 0 auto;" alt="Samuel">
 <div style="font-size: 1.4rem; font-weight: bold; color: #8e44ad; margin-top: 0.4rem;">Samuel</div>
 <div style="font-size: 1.1rem; color: #555; margin-top: 0.2rem;">Doctorant écologue, CEREMA Aix</div>
-<div style="background: #ecf0f1; padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem; font-size: 1.05rem; text-align: left; line-height: 1.4;">
-Volumes très lourds, exigences scientifiques. <b>Veut un outil partageable</b> et durable pour la communauté acoustique.
+<div style="background: #ecf0f1; padding: 0.5rem; border-radius: 6px; margin-top: auto; font-size: 1.05rem; text-align: left; line-height: 1.4;">
+Volumes très lourds, exigences scientifiques. <b>Veut un outil partageable</b> et durable pour la communauté des chiroptérophiles.
 </div>
 </div>
 
