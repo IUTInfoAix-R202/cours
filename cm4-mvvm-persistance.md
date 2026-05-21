@@ -645,37 +645,45 @@ Aujourd'hui : combiner <b>MVC + bindings</b> pour aller vers <b>MVVM</b>, ajoute
 
 ---
 
-## À la fin de ce CM, vous saurez...
+## À la fin du CM4, vous saurez...
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
 
-<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🏗️ Concevoir</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Une architecture <b>MVVM</b> avec un <b>ViewModel</b> qui expose des propriétés observables et reste testable sans JavaFX.</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 2</div>
+<div style="background: #1a5276; color: white; padding: 1rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="font-size: 1.8rem; font-weight: bold;">🏗️ Concevoir</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem;">Partie 2</div>
+</div>
+<div style="font-size: 1.25rem; line-height: 1.5; margin-top: 0.5rem;">Une architecture <b>MVVM</b> avec un <b>ViewModel</b> qui expose des propriétés observables et reste testable sans JavaFX.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">💉 Injecter</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Les dépendances avec <b>Guice 7</b> : <code>@Inject</code>, <code>Module</code>, scopes, alternative au <code>new</code> en cascade.</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 3</div>
+<div style="background: #1a5276; color: white; padding: 1rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="font-size: 1.8rem; font-weight: bold;">💉 Injecter</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem;">Partie 3</div>
+</div>
+<div style="font-size: 1.25rem; line-height: 1.5; margin-top: 0.5rem;">Les dépendances avec <b>Guice 7</b> : <code>@Inject</code>, <code>Module</code>, scopes, alternative au <code>new</code> en cascade.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">💾 Persister</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Un modèle métier en base relationnelle avec <b>JDBC</b> (Connection, PreparedStatement, ResultSet, transactions), et lancer la BDD localement avec <b>SQLite</b>.</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 4</div>
+<div style="background: #1a5276; color: white; padding: 1rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="font-size: 1.8rem; font-weight: bold;">💾 Persister</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem;">Partie 4</div>
+</div>
+<div style="font-size: 1.25rem; line-height: 1.5; margin-top: 0.5rem;">Un modèle métier en base relationnelle avec <b>JDBC</b> (Connection, PreparedStatement, ResultSet, transactions), et lancer la BDD localement avec <b>SQLite</b>.</div>
 </div>
 
-<div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">🧠 Prévenir</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Les erreurs utilisateur (Nielsen #5) et permettre de bien <b>récupérer</b> quand elles surviennent (Nielsen #9), avec des interfaces tolérantes.</div>
-<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem; margin-top: 0.7rem; display: inline-block;">Partie 5</div>
+<div style="background: #27ae60; color: white; padding: 1rem 1.3rem; border-radius: 12px;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="font-size: 1.8rem; font-weight: bold;">🧠 Prévenir</div>
+<div style="background: rgba(0,0,0,0.25); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 1rem;">Partie 5</div>
+</div>
+<div style="font-size: 1.25rem; line-height: 1.5; margin-top: 0.5rem;">Les erreurs utilisateur (Nielsen #5) et permettre de bien <b>récupérer</b> quand elles surviennent (Nielsen #9), avec des interfaces tolérantes.</div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.4rem; border-radius: 12px; margin-top: 0.9rem; font-size: 1.4rem; text-align: center;">
 <em>Niveau Bloom : Créer / Évaluer</em> - TP4 et TP5 vous demandent d'<b>assembler</b> et de <b>juger</b> les choix d'architecture.
 </div>
 
