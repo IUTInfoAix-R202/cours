@@ -8,6 +8,441 @@ lang: fr
 
 <!-- _class: lead -->
 <!-- _paginate: false -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+<style scoped>
+section {
+  background-image: url('assets/logo-amu.png');
+  background-repeat: no-repeat;
+  background-position: bottom 40px center;
+  background-size: 320px;
+}
+</style>
+
+# 🦇 Présentation de la SAE 2.01
+
+## **VigieChiro PR Companion**
+
+**SAÉ commune R2.02 + R2.03 - Printemps 2026**
+
+<div style="margin-top: 1.5rem; font-size: 1.3rem; color: #555;">
+Avant d'attaquer le CM4, faisons connaissance avec le projet qui va vous mobiliser tout le mois de juin.
+</div>
+
+---
+
+## 🦇 VigieChiro - le contexte
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;"><a href="https://www.vigienature.fr/fr/chauves-souris">VigieChiro</a> est un programme de <b>sciences participatives</b> porté par le <b>Muséum national d'Histoire naturelle</b>. Des bénévoles posent des enregistreurs ultrasons sur le terrain pour suivre l'évolution des chauves-souris en France.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.9rem; margin-top: 0.8rem;">
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.4rem;">🎤 Le Passive Recorder</div>
+<div style="font-size: 1.25rem; line-height: 1.5;">Boîtier <b>open-hardware Teensy</b>, posé seul sur un point d'écoute toute la nuit. Bande <b>8-120 kHz</b>, 384 kHz d'échantillonnage.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.4rem;">💾 Une nuit de capture</div>
+<div style="font-size: 1.25rem; line-height: 1.5;"><b>Plusieurs milliers de WAV</b>, un journal technique <code>LogPR*.txt</code>, un journal climat <code>THLog.csv</code>. Jusqu'à <b>40 Go</b> par enregistreur.</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 Pipeline Tadarida</div>
+<div style="font-size: 1.25rem; line-height: 1.5;">Un classificateur du MNHN identifie les <b>espèces</b> (<em>Pipistrellus pipistrellus</em>, <em>Nyctalus leisleri</em>…) à partir des WAV transformés.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.2rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem; text-align: center;">
+Le possesseur du PR doit <b>vérifier la qualité</b>, <b>renommer</b>, <b>transformer</b>, <b>déposer</b> sur Vigie-Chiro, puis <b>valider</b> les classifications Tadarida.
+</div>
+
+---
+
+## 😩 La chaîne actuelle : 4 outils, beaucoup de friction
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Aujourd'hui, le possesseur du PR enchaîne <b>4 outils différents</b> par nuit traitée. Une demi-journée de manipulations répétitives par carte SD.</p>
+
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin-top: 0.8rem;">
+
+<div style="background: #c0392b; color: white; padding: 1rem 0.8rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 2.2rem;">📁</div>
+<div style="font-size: 1.35rem; font-weight: bold; margin-top: 0.3rem;">Explorateur</div>
+<div style="font-size: 1.1rem; opacity: 0.9; margin-top: 0.3rem;">Copier depuis la SD</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1rem 0.8rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 2.2rem;">✏️</div>
+<div style="font-size: 1.35rem; font-weight: bold; margin-top: 0.3rem;">LupasRename</div>
+<div style="font-size: 1.1rem; opacity: 0.9; margin-top: 0.3rem;">Renommer les WAV</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1rem 0.8rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 2.2rem;">🎵</div>
+<div style="font-size: 1.35rem; font-weight: bold; margin-top: 0.3rem;">Kaléidoscope</div>
+<div style="font-size: 1.1rem; opacity: 0.9; margin-top: 0.3rem;">Découper + ralentir ×10</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 1rem 0.8rem; border-radius: 10px; text-align: center;">
+<div style="font-size: 2.2rem;">🌐</div>
+<div style="font-size: 1.35rem; font-weight: bold; margin-top: 0.3rem;">Vigie-Chiro web</div>
+<div style="font-size: 1.1rem; opacity: 0.9; margin-top: 0.3rem;">Déposer + valider</div>
+</div>
+
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px; margin-top: 1.2rem; font-size: 1.55rem; text-align: center;">
+🎯 Votre mission : <b>fusionner tout cela dans une seule application JavaFX</b> qui tient sur un poste hors ligne.
+</div>
+
+---
+
+## 🎯 Le projet : *VigieChiro PR Companion*
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Une application <b>JavaFX</b>, locale, qui enchaîne toute la chaîne nocturne dans un outil unique - depuis la carte SD jusqu'au dépôt sur Vigie-Chiro.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.6rem;">
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.55rem; font-weight: bold; margin-bottom: 0.4rem;">📥 Cible MVP (MUST)</div>
+<div style="font-size: 1.3rem; line-height: 1.55;">La <b>chaîne fil rouge</b> : déclarer un site, importer une nuit, vérifier l'enregistrement par échantillonnage, préparer un lot prêt à déposer.</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.55rem; font-weight: bold; margin-bottom: 0.4rem;">🎁 Filet de sécurité (SHOULD)</div>
+<div style="font-size: 1.3rem; line-height: 1.55;"><b>Valider les résultats Tadarida</b> : écouter chaque observation avec sonogramme + spectrogramme, valider ou corriger la classification automatique.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 1rem; font-size: 1.45rem; text-align: center;">
+L'application doit <b>fonctionner hors-ligne</b>, être <b>portable</b> Windows / Linux / macOS, et respecter les normes d'<b>accessibilité</b> (contraste, taille, raccourcis clavier).
+</div>
+
+---
+
+## 👨‍🔬 Le client réel : Samuel Busson (CEREMA)
+
+<div style="display: grid; grid-template-columns: 1fr 1.7fr; gap: 1.2rem; align-items: center;">
+
+<div style="text-align: center;">
+<img src="assets/sae201/persona-samuel.webp" style="max-width: 92%; border-radius: 12px;" alt="Illustration symbolique du sujet de thèse de Samuel : un lampadaire LED, des chauves-souris et des papillons">
+<div style="margin-top: 0.5rem; font-size: 1.2rem; font-weight: bold;">Doctorant écologue, CEREMA Aix</div>
+</div>
+
+<div>
+
+<p style="font-size: 1.35rem; line-height: 1.55;">Samuel travaille au <b><a href="https://www.cerema.fr/">CEREMA</a></b>. Sa thèse porte sur l'<b>effet de l'éclairage public LED</b> sur l'activité acoustique des chiroptères.</p>
+
+<p style="font-size: 1.35rem; line-height: 1.55;">Sa précédente campagne (Seine-et-Marne) a généré <b>plus de 560 000 contacts</b> chiroptères, pré-traités avec des scripts R/Bash maison <em>impossibles à transmettre</em>. Pour ses prochaines campagnes, il bascule sur le <b>PR Teensy</b> et a besoin d'un outil propre que la communauté pourra reprendre.</p>
+
+<div style="background: #c0392b; color: white; padding: 0.8rem 1.1rem; border-radius: 10px; margin-top: 0.7rem; font-size: 1.4rem; text-align: center;">
+🎯 Samuel sera <b>présent à votre soutenance</b> le 18/06. Son avis pèse <b>autant que la note technique</b>.
+</div>
+
+</div>
+
+</div>
+
+---
+
+## 👥 Trois personas - trois profils utilisateur
+
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin-top: 0.4rem;">
+
+<div style="background: white; border: 3px solid #1a5276; border-radius: 12px; padding: 0.8rem; text-align: center;">
+<img src="assets/sae201/persona-marie.webp" style="width: 140px; height: 140px; object-fit: cover; border-radius: 12px;" alt="Marie">
+<div style="font-size: 1.4rem; font-weight: bold; color: #1a5276; margin-top: 0.4rem;">Marie, 58 ans</div>
+<div style="font-size: 1.1rem; color: #555; margin-top: 0.2rem;">Naturaliste retraitée bénévole, Lozère</div>
+<div style="background: #ecf0f1; padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem; font-size: 1.05rem; text-align: left; line-height: 1.4;">
+2-3 carrés/saison. Traite ses nuits le matin avec un café. <b>Veut un seul outil</b>, libellés en français, rien qui se perde.
+</div>
+</div>
+
+<div style="background: white; border: 3px solid #c0392b; border-radius: 12px; padding: 0.8rem; text-align: center;">
+<img src="assets/sae201/persona-karim.webp" style="width: 140px; height: 140px; object-fit: cover; border-radius: 12px;" alt="Karim">
+<div style="font-size: 1.4rem; font-weight: bold; color: #c0392b; margin-top: 0.4rem;">Karim, 32 ans</div>
+<div style="font-size: 1.1rem; color: #555; margin-top: 0.2rem;">Chargé d'études faune, bureau d'études, Lyon</div>
+<div style="background: #ecf0f1; padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem; font-size: 1.05rem; text-align: left; line-height: 1.4;">
+5 chantiers en parallèle, dizaines de nuits/mois. <b>Veut aller vite</b> : import groupé, tags chantier, traçabilité pour les rapports.
+</div>
+</div>
+
+<div style="background: white; border: 3px solid #8e44ad; border-radius: 12px; padding: 0.8rem; text-align: center;">
+<img src="assets/sae201/persona-samuel.webp" style="width: 140px; height: 140px; object-fit: cover; border-radius: 12px;" alt="Samuel">
+<div style="font-size: 1.4rem; font-weight: bold; color: #8e44ad; margin-top: 0.4rem;">Samuel</div>
+<div style="font-size: 1.1rem; color: #555; margin-top: 0.2rem;">Doctorant écologue, CEREMA Aix</div>
+<div style="background: #ecf0f1; padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem; font-size: 1.05rem; text-align: left; line-height: 1.4;">
+Volumes très lourds, exigences scientifiques. <b>Veut un outil partageable</b> et durable pour la communauté acoustique.
+</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.8rem; font-size: 1.4rem; text-align: center;">
+Personas <a href="https://iutinfoaix-s201.github.io/brief/Analyse%20et%20conception/Personas/">fichés en détail dans le brief</a> : besoins, frustrations, attentes.
+</div>
+
+---
+
+## 🚂 La chaîne fil rouge MUST (P1 → P4)
+
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.7rem 0;">4 parcours utilisateurs enchaînés - c'est votre <b>scénario de démo</b> en soutenance.</p>
+
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; margin: 0.6rem 0 0.8rem 0;">
+
+<div style="background: #1e8449; color: white; padding: 0.9rem 0.6rem; border-radius: 10px; text-align: center; flex: 1;">
+<div style="font-size: 2rem;">🌐</div>
+<div style="font-size: 1.4rem; font-weight: bold;">P1</div>
+<div style="font-size: 1.1rem;">Déclarer un site</div>
+</div>
+
+<div style="font-size: 2.2rem; color: #1e8449; font-weight: bold;">→</div>
+
+<div style="background: #1e8449; color: white; padding: 0.9rem 0.6rem; border-radius: 10px; text-align: center; flex: 1;">
+<div style="font-size: 2rem;">📥</div>
+<div style="font-size: 1.4rem; font-weight: bold;">P2</div>
+<div style="font-size: 1.1rem;">Importer une nuit</div>
+</div>
+
+<div style="font-size: 2.2rem; color: #1e8449; font-weight: bold;">→</div>
+
+<div style="background: #1e8449; color: white; padding: 0.9rem 0.6rem; border-radius: 10px; text-align: center; flex: 1;">
+<div style="font-size: 2rem;">🎧</div>
+<div style="font-size: 1.4rem; font-weight: bold;">P3</div>
+<div style="font-size: 1.1rem;">Vérifier par échantillon</div>
+</div>
+
+<div style="font-size: 2.2rem; color: #1e8449; font-weight: bold;">→</div>
+
+<div style="background: #1e8449; color: white; padding: 0.9rem 0.6rem; border-radius: 10px; text-align: center; flex: 1;">
+<div style="font-size: 2rem;">📦</div>
+<div style="font-size: 1.4rem; font-weight: bold;">P4</div>
+<div style="font-size: 1.1rem;">Préparer le lot</div>
+</div>
+
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: 0.4rem;">
+<div style="background: #d5f5e3; padding: 0.55rem; border-radius: 6px; font-size: 1.05rem; line-height: 1.4;">N° carré + codes des points d'écoute.</div>
+<div style="background: #d5f5e3; padding: 0.55rem; border-radius: 6px; font-size: 1.05rem; line-height: 1.4;">Copie protégée + rename + transformation ×10.</div>
+<div style="background: #d5f5e3; padding: 0.55rem; border-radius: 6px; font-size: 1.05rem; line-height: 1.4;">Sound check + verdict OK / Douteux / À jeter.</div>
+<div style="background: #d5f5e3; padding: 0.55rem; border-radius: 6px; font-size: 1.05rem; line-height: 1.4;">Vérif cohérence + ouverture dossier + marquage déposé.</div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.2rem; border-radius: 8px; margin-top: 0.7rem; font-size: 1.45rem; text-align: center;">
+👉 Si vous livrez cette chaîne <b>de bout-en-bout</b>, le MVP est atteint - peu importe le reste.
+</div>
+
+---
+
+## 📊 Périmètre MoSCoW - 50 stories, ~130 ★
+
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">Le story mapping est arbitré selon <a href="https://fr.wikipedia.org/wiki/M%C3%A9thode_MoSCoW">MoSCoW</a> : seul le MUST est non-négociable. Vous avez <b>13 jours ouvrés</b> de dév exclusif.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.6rem; margin-top: 0.4rem;">
+
+<div style="background: #1e8449; color: white; padding: 0.9rem; border-radius: 10px;">
+<div style="font-size: 1.55rem; font-weight: bold;">✅ MUST</div>
+<div style="font-size: 1.15rem; margin-top: 0.4rem; line-height: 1.45;">Chaîne fil rouge P1→P4 + socle BD (E0). <b>~25 stories, ~59 ★</b>. Sans cela, pas de MVP.</div>
+</div>
+
+<div style="background: #e67e22; color: white; padding: 0.9rem; border-radius: 10px;">
+<div style="font-size: 1.55rem; font-weight: bold;">🟠 SHOULD</div>
+<div style="font-size: 1.15rem; margin-top: 0.4rem; line-height: 1.45;">Navigation tabulaire, diagnostic matériel, validation Tadarida (filet de sécurité), annotations météo.</div>
+</div>
+
+<div style="background: #7f8c8d; color: white; padding: 0.9rem; border-radius: 10px;">
+<div style="font-size: 1.55rem; font-weight: bold;">⚪ COULD</div>
+<div style="font-size: 1.15rem; margin-top: 0.4rem; line-height: 1.45;">Re-rattachement rétroactif, regroupement de nuits, bibliothèque de sons, stats globales.</div>
+</div>
+
+<div style="background: #34495e; color: white; padding: 0.9rem; border-radius: 10px;">
+<div style="font-size: 1.55rem; font-weight: bold;">⛔ WON'T</div>
+<div style="font-size: 1.15rem; margin-top: 0.4rem; line-height: 1.45;">API Vigie-Chiro, multi-utilisateur, cloud, classification automatique, web/mobile.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 8px; margin-top: 0.9rem; font-size: 1.4rem; text-align: center;">
+🎯 Une <b>démo convaincante bout-en-bout</b> + un <b>plan d'action explicite</b> sur ce qui reste pèsent autant qu'un MUST 100 % livré.
+</div>
+
+---
+
+## ⚙️ Stack technique imposée + composant fourni
+
+<div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 1rem;">
+
+<div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+<div style="background: #1a5276; color: white; padding: 0.7rem; border-radius: 8px; text-align: center; font-size: 1.2rem;"><b>Java 25</b></div>
+<div style="background: #1a5276; color: white; padding: 0.7rem; border-radius: 8px; text-align: center; font-size: 1.2rem;"><b>JavaFX 25 + FXML</b></div>
+<div style="background: #1a5276; color: white; padding: 0.7rem; border-radius: 8px; text-align: center; font-size: 1.2rem;"><b>JDBC + SQLite</b></div>
+<div style="background: #1a5276; color: white; padding: 0.7rem; border-radius: 8px; text-align: center; font-size: 1.2rem;"><b>Maven Wrapper</b></div>
+<div style="background: #1a5276; color: white; padding: 0.7rem; border-radius: 8px; text-align: center; font-size: 1.2rem;"><b>JUnit 5 + AssertJ + TestFX</b></div>
+<div style="background: #1a5276; color: white; padding: 0.7rem; border-radius: 8px; text-align: center; font-size: 1.2rem;"><b>Spotless + GitHub Actions</b></div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 0.8rem 1rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.3rem;">
+🎁 Le dépôt Classroom n'est <b>pas vide</b> : app JavaFX qui démarre, Maven prêt, CI verte, Spotless en pre-commit, README de démarrage.
+</div>
+
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎵 Composant audio fourni</div>
+<div style="font-size: 1.2rem; line-height: 1.5;">Un composant JavaFX qui prend un WAV en entrée et affiche le <b>sonogramme + spectrogramme</b> avec cursor de lecture synchronisé et zoom temps/fréquence.</div>
+<div style="font-size: 1.15rem; line-height: 1.5; margin-top: 0.6rem; opacity: 0.95;">Vous l'<b>intégrez</b>, vous ne le réimplémentez pas (pas de FFT à coder).</div>
+</div>
+
+</div>
+
+---
+
+## 📦 Données fournies - une vraie session de capture
+
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">PR n° <b>1925492</b>, nuit du <b>22-23 avril 2026</b>, point fixe en zone Z1 du carré 640380. Deux variantes pour deux usages.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+
+<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.55rem; font-weight: bold; margin-bottom: 0.2rem;">🟢 Sample versionné dans le dépôt</div>
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.4rem;">~518 Mo</div>
+<div style="font-size: 1.2rem; line-height: 1.5;">191 WAV redécoupés, 473 observations, tous les taxa principaux. Dispo immédiatement après <code>git clone</code>. Suffit pour développer et faire tourner la CI.</div>
+</div>
+
+<div style="background: #2980b9; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.55rem; font-weight: bold; margin-bottom: 0.2rem;">🔵 Full dataset à télécharger</div>
+<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.4rem;">~4,2 Go zip / ~11 Go décompressé</div>
+<div style="font-size: 1.2rem; line-height: 1.5;">1572 WAV bruts + 2109 WAV redécoupés + 4031 observations. Indispensable pour valider les <b>objectifs de volumétrie</b>.</div>
+</div>
+
+</div>
+
+<div style="background: #c0392b; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.45rem; text-align: center;">
+⚠️ Lien <b>Filesender RENATER expire le 15/06/2026</b> - téléchargez le full dataset <b>dès le démarrage</b> de la SAE.
+</div>
+
+---
+
+## 📅 Calendrier 2026
+
+<div style="display: grid; grid-template-columns: 1.35fr 0.75fr; gap: 1rem;">
+
+<div>
+
+<style scoped>
+section table { font-size: 1.1rem !important; }
+section th, section td { padding: 0.35rem 0.6rem !important; }
+</style>
+
+| Date | Étape |
+|---|---|
+| **22/05/2026** | Présentation du brief (aujourd'hui) |
+| 22/05 → 31/05 | Amorçage : lecture du brief, formation des équipes, assemblage du PR |
+| **01/06/2026** | Démarrage du travail exclusif sur la SAE |
+| 01/06 → 09/06 | Sprint 1 - chaîne fil rouge MUST |
+| 10/06 → 17/06 | Sprint 2 - finition + SHOULD opportunistes |
+| **18/06/2026 matin** | Code freeze + diaporama déposé |
+| 18/06 après-midi | Test individuel R2.02 / R2.03 |
+| **18/06** | Soutenance + démo (Samuel Busson présent) |
+
+</div>
+
+<div>
+
+<div style="background: #c0392b; color: white; padding: 1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.2rem;">⏱️ Phase exclusive</div>
+<div style="font-size: 2.4rem; font-weight: bold;">13 jours</div>
+<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.3rem;">ouvrés pour livrer le MVP.</div>
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1rem; border-radius: 8px; margin-top: 0.8rem; font-size: 1.2rem; line-height: 1.5;">
+C'est <b>court</b>. La chaîne fil rouge est une cible <b>idéale exigeante</b>, pas une obligation absolue.
+</div>
+
+</div>
+
+</div>
+
+---
+
+## 🎓 Évaluation - R2.02 + R2.03 conjoints
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.4rem;">
+
+<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.55rem; font-weight: bold; margin-bottom: 0.4rem;">📦 Phase 1 - Code livré</div>
+<div style="font-size: 1.25rem; line-height: 1.55;">Dépôt Git évalué <b>simultanément</b> pour R2.02 (IHM JavaFX, FXML, MVVM) et R2.03 (qualité, tests, hygiène Git, PR/review).</div>
+<div style="font-size: 1.15rem; line-height: 1.5; margin-top: 0.5rem; opacity: 0.95;">Code métier + JDBC + IHM JavaFX + tests TestFX + README clair.</div>
+</div>
+
+<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="font-size: 1.55rem; font-weight: bold; margin-bottom: 0.4rem;">🎤 Phase 2 - Soutenance</div>
+<div style="font-size: 1.25rem; line-height: 1.55;"><b>10 min</b> d'oral par équipe + démo en direct sur le jeu de données fourni. <b>Chacun prend la parole</b> et sera interrogé individuellement.</div>
+<div style="font-size: 1.15rem; line-height: 1.5; margin-top: 0.5rem; opacity: 0.95;">Samuel Busson présent : son avis pèse autant que la note technique.</div>
+</div>
+
+</div>
+
+<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.4rem; text-align: center;">
+🤖 Assistant IA (Copilot / Claude / ChatGPT) <b>autorisé</b>, à condition de <b>défendre votre code</b> en soutenance. Les questions individuelles porteront notamment sur ce point.
+</div>
+
+---
+
+## 🚀 Vos prochaines étapes
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.3rem;">
+
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">1. 📖 Lire le brief en entier</div>
+<div style="font-size: 1.2rem; line-height: 1.5;">Présentation, contraintes techniques, expression du besoin, et surtout le <b>dossier d'analyse</b> (personas, parcours, story mapping, périmètre MVP, maquettes).</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">2. 👥 Constituer l'équipe</div>
+<div style="font-size: 1.2rem; line-height: 1.5;">Équipes formées par l'équipe pédagogique. Chacun contribue <b>techniquement</b> : pas de répartition « code / rédac / présentation ».</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">3. ✅ Accepter le lien Classroom</div>
+<div style="font-size: 1.2rem; line-height: 1.5;">Un dépôt sera créé dans <code>IUTInfoAix-S201-2026</code>. C'est dans ce dépôt <b>et nulle part ailleurs</b> que vous travaillerez.</div>
+</div>
+
+<div style="background: #c0392b; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
+<div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 0.3rem;">4. 📥 Télécharger le full dataset</div>
+<div style="font-size: 1.2rem; line-height: 1.5;">Lien Filesender <b>expire le 15/06/2026</b>. Récupérez l'archive ~4,2 Go <b>dès le sprint 0</b>.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.95rem 1.2rem; border-radius: 10px; margin-top: 1rem; font-size: 1.55rem; text-align: center;">
+📘 Brief complet en ligne : <a href="https://iutinfoaix-s201.github.io/brief/" style="color: #f1c40f;"><b>iutinfoaix-s201.github.io/brief</b></a>
+</div>
+
+---
+
+<!-- _class: lead -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+# 📚 Et maintenant, place au CM4
+
+## *MVVM, persistance et synthèse*
+
+<div style="margin-top: 1.5rem; font-size: 1.4rem; color: #555; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.55;">
+Vous y trouverez les <b>fondations techniques</b> qui vous serviront directement à construire le <em>VigieChiro PR Companion</em> : architecture MVVM testable, injection de dépendances, persistance JDBC sur SQLite, prévention des erreurs utilisateur.
+</div>
+
+---
+
+<!-- _class: lead -->
+<!-- _paginate: false -->
 
 <style scoped>
 section {
