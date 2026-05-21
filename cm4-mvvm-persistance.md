@@ -1638,6 +1638,10 @@ L'Injection de dépendances (DI) est le <b>ciment</b> qui rend chaque couche tes
 
 ## 💉 Le problème : `new` partout
 
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; }
+</style>
+
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Au CM3, le contrôleur instancie son modèle avec <code>new</code>. C'est simple, mais ça crée un graphe d'objets fragiles.</p>
 
 ```java
@@ -1652,7 +1656,7 @@ public class FormulaireConnexionController {
 }
 ```
 
-<div style="background: #c0392b; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.5rem;">
+<div style="background: #8c3a2f; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem;">
 🔥 Pour <b>tester</b> ce contrôleur sans appeler le vrai serveur, il faudrait modifier <code>ServiceAuthImpl</code> ou faire des hacks de réflexion. Trop tard, le couplage est gravé.
 </div>
 
