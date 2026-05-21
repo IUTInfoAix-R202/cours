@@ -906,26 +906,29 @@ public class FormulaireController {
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">Trois rôles, dont deux que vous connaissez et un nouveau venu.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 1.2rem;">
 
-<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📊 Modèle</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Données et logique métier <b>pure</b>. Aucune référence à JavaFX ni à l'UI. <em>Comme en MVC.</em></div>
+<div style="background: #1a5276; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3.2rem; line-height: 1;">📊</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">Modèle</div>
+<div style="font-size: 1.35rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;">Données et logique métier <b>pure</b>. Aucune référence à JavaFX ni à l'UI. <em>Comme en MVC.</em></div>
 </div>
 
-<div style="background: #8e44ad; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎯 ViewModel</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">État UI sous forme de <b>propriétés observables</b>. Logique de présentation. Ne connaît pas la vue.</div>
+<div style="background: #8e44ad; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3.2rem; line-height: 1;">🎯</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">ViewModel</div>
+<div style="font-size: 1.35rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;">État UI sous forme de <b>propriétés observables</b>. Logique de présentation. Ne connaît pas la vue.</div>
 </div>
 
-<div style="background: #4a90d9; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🖼️ Vue</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">FXML + un contrôleur très <b>mince</b> qui se contente de bind la vue au ViewModel.</div>
+<div style="background: #4a90d9; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3.2rem; line-height: 1;">🖼️</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">Vue</div>
+<div style="font-size: 1.35rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;">FXML + un contrôleur très <b>mince</b> qui se contente de bind la vue au ViewModel.</div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 1rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 1rem 1.4rem; border-radius: 12px; margin-top: 1.2rem; font-size: 1.5rem; text-align: center;">
 💡 Le ViewModel est <b>la couche testable</b> qui contient toute la logique de l'écran <b>sans avoir besoin de fenêtre</b>.
 </div>
 
