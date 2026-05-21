@@ -734,26 +734,29 @@ public class FormulaireController {
 
 ## Trois douleurs concrètes
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 1.2rem;">
 
-<div style="background: #c0392b; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">😵 Tests difficiles</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Pour tester la logique de validation, il faut monter une <code>Application</code> JavaFX, charger le FXML, simuler les saisies. Lent, fragile.</div>
+<div style="background: #8c3a2f; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3.2rem; line-height: 1;">😵</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">Tests difficiles</div>
+<div style="font-size: 1.2rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;">Pour tester la logique de validation, il faut monter une <code>Application</code> JavaFX, charger le FXML, simuler les saisies. Lent, fragile.</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🔗 Couplage fort</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Le contrôleur instancie <code>ServiceAuthImpl</code> directement. Impossible de le remplacer par un mock pour tester, ou par une autre implémentation en prod.</div>
+<div style="background: #8c3a2f; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3.2rem; line-height: 1;">🔗</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">Couplage fort</div>
+<div style="font-size: 1.2rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;">Le contrôleur instancie <code>ServiceAuthImpl</code> directement. Impossible de le remplacer par un mock pour tester, ou par une autre implémentation en prod.</div>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1.1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">📐 Logique éparpillée</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">L'état « connexion en cours », les messages, le formatage du nom : tout vit dans des branches <code>if</code> du contrôleur. Pas réutilisable.</div>
+<div style="background: #8c3a2f; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3.2rem; line-height: 1;">📐</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">Logique éparpillée</div>
+<div style="font-size: 1.2rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;">L'état « connexion en cours », les messages, le formatage du nom : tout vit dans des branches <code>if</code> du contrôleur. Pas réutilisable.</div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 1rem 1.4rem; border-radius: 12px; margin-top: 1.2rem; font-size: 1.5rem; text-align: center;">
 💡 Le contrôleur est devenu un <b>fat controller</b> : il fait trop de choses, donc rien ne peut être testé ni réutilisé en isolation.
 </div>
 
