@@ -299,29 +299,39 @@ Personas <a href="https://iutinfoaix-s201.github.io/brief/Analyse%20et%20concept
 
 ## ⚙️ Stack technique imposée + composant fourni
 
-<div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 1rem;">
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">Vous démarrez sur une base <b>déjà câblée</b> : pas de scaffolding à faire vous-même, vous vous concentrez sur la chaîne métier.</p>
 
-<div>
+<div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.5rem; margin-top: 1.2rem;">
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-<div style="background: #1a5276; color: white; padding: 0.7rem; border-radius: 8px; text-align: center; font-size: 1.2rem;"><b>Java 25</b></div>
-<div style="background: #1a5276; color: white; padding: 0.7rem; border-radius: 8px; text-align: center; font-size: 1.2rem;"><b>JavaFX 25 + FXML</b></div>
-<div style="background: #1a5276; color: white; padding: 0.7rem; border-radius: 8px; text-align: center; font-size: 1.2rem;"><b>JDBC + SQLite</b></div>
-<div style="background: #1a5276; color: white; padding: 0.7rem; border-radius: 8px; text-align: center; font-size: 1.2rem;"><b>Maven Wrapper</b></div>
-<div style="background: #1a5276; color: white; padding: 0.7rem; border-radius: 8px; text-align: center; font-size: 1.2rem;"><b>JUnit 5 + AssertJ + TestFX</b></div>
-<div style="background: #1a5276; color: white; padding: 0.7rem; border-radius: 8px; text-align: center; font-size: 1.2rem;"><b>Spotless + GitHub Actions</b></div>
+<div style="display: flex; flex-direction: column;">
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+<div style="background: #1a5276; color: white; padding: 1rem; border-radius: 10px; text-align: center; font-size: 1.35rem;"><b>Java 25</b></div>
+<div style="background: #1a5276; color: white; padding: 1rem; border-radius: 10px; text-align: center; font-size: 1.35rem;"><b>JavaFX 25 + FXML</b></div>
+<div style="background: #1a5276; color: white; padding: 1rem; border-radius: 10px; text-align: center; font-size: 1.35rem;"><b>JDBC + SQLite</b></div>
+<div style="background: #1a5276; color: white; padding: 1rem; border-radius: 10px; text-align: center; font-size: 1.35rem;"><b>Maven Wrapper</b></div>
+<div style="background: #1a5276; color: white; padding: 1rem; border-radius: 10px; text-align: center; font-size: 1.35rem;"><b>JUnit 5 + AssertJ + TestFX</b></div>
+<div style="background: #1a5276; color: white; padding: 1rem; border-radius: 10px; text-align: center; font-size: 1.35rem;"><b>Spotless + GitHub Actions</b></div>
 </div>
 
-<div style="background: #27ae60; color: white; padding: 0.8rem 1rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.3rem;">
-🎁 Le dépôt Classroom n'est <b>pas vide</b> : app JavaFX qui démarre, Maven prêt, CI verte, Spotless en pre-commit, README de démarrage.
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.4rem; border-radius: 12px; margin-top: 1.2rem; display: flex; align-items: center; gap: 1.1rem;">
+<div style="font-size: 3rem; line-height: 1; flex-shrink: 0;">🎁</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Le dépôt Classroom n'est <b>pas vide</b> : app JavaFX qui démarre, Maven prêt, CI verte, Spotless en pre-commit, README de démarrage.</div>
 </div>
 
 </div>
 
-<div style="background: #8e44ad; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎵 Composant audio fourni</div>
-<div style="font-size: 1.2rem; line-height: 1.5;">Un composant JavaFX qui prend un WAV en entrée et affiche le <b>sonogramme + spectrogramme</b> avec cursor de lecture synchronisé et zoom temps/fréquence.</div>
-<div style="font-size: 1.15rem; line-height: 1.5; margin-top: 0.6rem; opacity: 0.95;">Vous l'<b>intégrez</b>, vous ne le réimplémentez pas (pas de FFT à coder).</div>
+<div style="background: #8e44ad; color: white; padding: 1.6rem 1.5rem; border-radius: 12px; display: flex; flex-direction: column;">
+
+<div style="display: flex; align-items: center; gap: 1.2rem;">
+<div style="font-size: 4rem; line-height: 1; flex-shrink: 0;">🔊</div>
+<div style="font-size: 1.7rem; font-weight: bold;">Composant audio fourni</div>
+</div>
+
+<div style="font-size: 1.4rem; line-height: 1.55; margin-top: 1rem;">Un composant JavaFX qui prend un WAV en entrée et affiche le <b>sonogramme</b> et le <b>spectrogramme</b> avec curseur de lecture synchronisé et zoom temps/fréquence.</div>
+
+<div style="font-size: 1.4rem; line-height: 1.5; margin-top: 0.8rem; opacity: 0.95;">Vous l'<b>intégrez</b> dans votre IHM, vous ne le réimplémentez pas (malheureusement pour les plus matheux, vous n'aurez pas de FFT à coder).</div>
+
 </div>
 
 </div>
