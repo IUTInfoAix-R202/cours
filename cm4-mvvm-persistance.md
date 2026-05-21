@@ -20,7 +20,7 @@ section {
 }
 </style>
 
-# 🦇 Présentation de la SAE 2.01
+# 🦇 Présentation de la SAÉ 2.01
 
 ## **VigieChiro PR Companion**
 
@@ -32,25 +32,25 @@ Avant d'attaquer le CM4, faisons connaissance avec le projet qui va vous mobilis
 
 ---
 
-## 🦇 VigieChiro - le contexte
+## 🦇 VigieChiro Point Fixe - le contexte
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;"><a href="https://www.vigienature.fr/fr/chauves-souris">VigieChiro</a> est un programme de <b>sciences participatives</b> porté par le <b>Muséum national d'Histoire naturelle</b>. Des bénévoles posent des enregistreurs ultrasons sur le terrain pour suivre l'évolution des chauves-souris en France.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;"><a href="https://www.vigienature.fr/fr/chauves-souris">VigieChiro</a> est un programme de <b>sciences participatives</b> porté par le <b>Muséum National d'Histoire Naturelle</b> (MNHN). Des écologues/bénévoles posent des enregistreurs ultrasons sur le terrain pour suivre les populations de chauves-souris dans toute la France avec un protocole rigoureux.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.9rem; margin-top: 0.8rem;">
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.4rem;">🎤 Le Passive Recorder</div>
-<div style="font-size: 1.25rem; line-height: 1.5;">Boîtier <b>open-hardware Teensy</b>, posé seul sur un point d'écoute toute la nuit. Bande <b>8-120 kHz</b>, 384 kHz d'échantillonnage.</div>
+<div style="font-size: 1.25rem; line-height: 1.5;">Boîtier <b>open-hardware</b> basé sur la carte Teensy, posé seul sur un point d'écoute toute la nuit. Bande <b>8-120 kHz</b>, 384 kHz d'échantillonnage.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.4rem;">💾 Une nuit de capture</div>
-<div style="font-size: 1.25rem; line-height: 1.5;"><b>Plusieurs milliers de WAV</b>, un journal technique <code>LogPR*.txt</code>, un journal climat <code>THLog.csv</code>. Jusqu'à <b>40 Go</b> par enregistreur.</div>
+<div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.4rem;">💾 Enregistrements</div>
+<div style="font-size: 1.25rem; line-height: 1.5;"><b>Plusieurs milliers de fichiers sonores</b>, un journal technique, un journal climat. Jusqu'à <b>40 Go</b> par enregistreur.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 Pipeline Tadarida</div>
-<div style="font-size: 1.25rem; line-height: 1.5;">Un classificateur du MNHN identifie les <b>espèces</b> (<em>Pipistrellus pipistrellus</em>, <em>Nyctalus leisleri</em>…) à partir des WAV transformés.</div>
+<div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 Tadarida</div>
+<div style="font-size: 1.25rem; line-height: 1.5;">Un classificateur du MNHN identifie de manière asynchrone les <b>espèces</b> (<em>Pipistrellus pipistrellus</em>, <em>Nyctalus leisleri</em>…) à partir des fichiers sons transformés.</div>
 </div>
 
 </div>
@@ -303,7 +303,7 @@ Personas <a href="https://iutinfoaix-s201.github.io/brief/Analyse%20et%20concept
 
 ---
 
-## 📦 Données fournies - une vraie session de capture
+## 📦 Données fournies - une vraie nuit d'enregistrement
 
 <p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">PR n° <b>1925492</b>, nuit du <b>22-23 avril 2026</b>, point fixe en zone Z1 du carré 640380. Deux variantes pour deux usages.</p>
 
