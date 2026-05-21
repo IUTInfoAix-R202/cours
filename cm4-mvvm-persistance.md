@@ -795,21 +795,23 @@ public class FormulaireController {
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">On insère une couche entre la vue et le modèle : le <b>ViewModel</b>. Il porte l'<b>état UI</b> sous forme de propriétés observables.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.2rem;">
 
-<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📍 MVC (CM3)</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Vue ↔ <b>Contrôleur</b> ↔ Modèle.<br/>Le contrôleur connaît la vue (champs <code>@FXML</code>) ET le modèle.</div>
+<div style="background: #8c3a2f; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3rem; line-height: 1;">📍</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">MVC (CM3)</div>
+<div style="font-size: 1.5rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;">Vue ↔ <b>Contrôleur</b> ↔ Modèle.<br/>Le contrôleur connaît la vue ET le modèle. Il doit parler aux deux tout en ayant une responsabilité forte sur le comportement de la vue.</div>
 </div>
 
-<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🎯 MVVM (CM4)</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Vue ↔ <b>ViewModel</b> ↔ Modèle.<br/>Le ViewModel expose des propriétés. La vue s'y bind. Personne ne « connaît » personne.</div>
+<div style="background: #8e44ad; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3rem; line-height: 1;">🎯</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">MVVM (CM4)</div>
+<div style="font-size: 1.5rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;">Vue ↔ <b>ViewModel</b> ↔ Modèle.<br/>La vue se bind aux propriétés du ViewModel (qui ignore la vue). Le ViewModel utilise le Modèle (qui ignore le ViewModel).</div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 1.2rem; font-size: 1.5rem; text-align: center;">
 👉 Le ViewModel ne sait <b>rien</b> de JavaFX (pas de <code>Label</code>, pas de <code>Button</code>). Il manipule juste des <code>StringProperty</code>, <code>BooleanProperty</code>...
 </div>
 
