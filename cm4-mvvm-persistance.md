@@ -1705,7 +1705,7 @@ class A {
 
 ## Composition root : qui assemble tout ?
 <style scoped>
-section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.55rem !important; line-height: 1.35 !important; }
 </style>
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Sans framework, on instancie « à la main » au démarrage de l'app.</p>
@@ -1730,8 +1730,8 @@ public class App extends Application {
 }
 ```
 
-<div style="background: #c0392b; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem;">
-⚠️ Quand l'application a 30 contrôleurs et 50 services, cette méthode <code>start()</code> devient un cauchemar de 200 lignes qui ne sont que du cablage.
+<div style="background: #8c3a2f; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem;">
+⚠️ Quand l'application a 30 contrôleurs et 50 services, cette méthode <code>start()</code> devient un cauchemar de 200 lignes qui ne sont que du câblage.
 </div>
 
 ---
