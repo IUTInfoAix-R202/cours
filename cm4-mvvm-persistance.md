@@ -299,7 +299,7 @@ Personas <a href="https://iutinfoaix-s201.github.io/brief/Analyse%20et%20concept
 
 ## ⚙️ Stack technique imposée + composant fourni
 
-<p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">Vous démarrez sur une base <b>déjà câblée</b> : pas de scaffolding à faire vous-même, vous vous concentrez sur la chaîne métier.</p>
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">Vous démarrez sur une base <b>déjà câblée</b> : pas de scaffolding à faire vous-même, vous vous concentrez sur la chaîne métier et votre code.</p>
 
 <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.5rem; margin-top: 1.2rem;">
 
@@ -338,28 +338,31 @@ Personas <a href="https://iutinfoaix-s201.github.io/brief/Analyse%20et%20concept
 
 ---
 
-## 📦 Données fournies - une vraie nuit d'enregistrement
+## 📦 Données fournies : une vraie nuit d'enregistrement
 
 <p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">PR n° <b>1925492</b>, nuit du <b>22-23 avril 2026</b>, point fixe en zone Z1 du carré 640380. Deux variantes pour deux usages.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.2rem;">
 
-<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.55rem; font-weight: bold; margin-bottom: 0.2rem;">🟢 Sample versionné dans le dépôt</div>
-<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.4rem;">~518 Mo</div>
-<div style="font-size: 1.2rem; line-height: 1.5;">191 WAV redécoupés, 473 observations, tous les taxa principaux. Dispo immédiatement après <code>git clone</code>. Suffit pour développer et faire tourner la CI.</div>
+<div style="background: #27ae60; color: white; padding: 1.3rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 2.8rem; line-height: 1;">📦</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">Sample versionné dans le dépôt</div>
+<div style="font-size: 1.4rem; font-weight: bold; margin-top: 0.4rem; opacity: 0.95;">~518 Mo</div>
+<div style="font-size: 1.25rem; line-height: 1.55; margin-top: 0.8rem; text-align: left;">191 WAV redécoupés, 473 observations, tous les taxa principaux. Disponibles immédiatement après <code>git clone</code>. Suffit pour développer et faire tourner la CI.</div>
 </div>
 
-<div style="background: #2980b9; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.55rem; font-weight: bold; margin-bottom: 0.2rem;">🔵 Full dataset à télécharger</div>
-<div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.4rem;">~4,2 Go zip / ~11 Go décompressé</div>
-<div style="font-size: 1.2rem; line-height: 1.5;">1572 WAV bruts + 2109 WAV redécoupés + 4031 observations. Indispensable pour valider les <b>objectifs de volumétrie</b>.</div>
+<div style="background: #2980b9; color: white; padding: 1.3rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 2.8rem; line-height: 1;">📥</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">Full dataset à télécharger</div>
+<div style="font-size: 1.4rem; font-weight: bold; margin-top: 0.4rem; opacity: 0.95;">~4,2 Go zip / ~11 Go décompressé</div>
+<div style="font-size: 1.25rem; line-height: 1.55; margin-top: 0.8rem; text-align: left;">1572 WAV bruts + 2109 WAV redécoupés + 4031 observations. Indispensable pour valider les <b>objectifs de volumétrie</b>.</div>
 </div>
 
 </div>
 
-<div style="background: #c0392b; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.9rem; font-size: 1.45rem; text-align: center;">
-⚠️ Lien <b>Filesender RENATER expire le 15/06/2026</b> - téléchargez le full dataset <b>dès le démarrage</b> de la SAE.
+<div style="background: #8c3a2f; color: white; padding: 1.2rem 1.4rem; border-radius: 12px; margin-top: 1.4rem; display: flex; align-items: center; gap: 1.1rem;">
+<div style="font-size: 2.8rem; line-height: 1; flex-shrink: 0;">⚠️</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Lien <b>Filesender RENATER expire le 15/06/2026</b>. Téléchargez le full dataset <b>dès le démarrage</b> de la SAE.</div>
 </div>
 
 ---
