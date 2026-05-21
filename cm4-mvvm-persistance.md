@@ -1083,6 +1083,10 @@ Aucun import de composant JavaFX (pas de <code>Label</code>, pas de <code>Button
 
 ## Test du ViewModel : zéro UI, zéro mock
 
+<style scoped>
+section pre { font-size: 0.65rem !important; line-height: 1.35 !important; }
+</style>
+
 ```java
 @Test
 void messageRefleteLaValeurDuCompteur() {
@@ -1090,22 +1094,22 @@ void messageRefleteLaValeurDuCompteur() {
   CompteurViewModel vm = new CompteurViewModel(compteur);
 
   assertEquals("Compteur à 0", vm.messageProperty().get());
-
+  
   vm.incrementerCommand();
   assertEquals("Compteur à 1", vm.messageProperty().get());
-
+  
   vm.incrementerCommand();
   vm.incrementerCommand();
   assertEquals("Compteur à 3", vm.messageProperty().get());
 }
 ```
 
-<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-✨ Pas de TestFX, pas de <code>Application.launch()</code>, pas de mock framework. Du JUnit pur, instantané.
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.45rem; text-align: center;">
+✨ Pas de TestFX, pas de <code>Application.launch()</code>, pas de mock. Du JUnit pur et instantané.
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
-👉 C'est <b>le</b> bénéfice qui vend MVVM : la logique d'affichage devient <b>testable comme du code métier</b>.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.7rem; font-size: 1.45rem; text-align: center;">
+👉 C'est <b>la promesse</b> clef du MVVM : la logique d'affichage est <b>testable comme du code métier</b>.
 </div>
 
 ---
