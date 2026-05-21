@@ -201,7 +201,7 @@ Volumes très lourds, exigences scientifiques. <b>Veut un outil partageable</b> 
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.8rem; font-size: 1.4rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.4rem; text-align: center;">
 Personas <a href="https://iutinfoaix-s201.github.io/brief/Analyse%20et%20conception/Personas/">fichés en détail dans le brief</a> : besoins, frustrations, attentes.
 </div>
 
@@ -1863,10 +1863,12 @@ public class A {
 ---
 
 ## Le module : configuration centralisée
+
 <style scoped>
-section pre { font-size: 0.6rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.75rem !important; line-height: 1.35 !important; }
 </style>
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">La question est maintenant de savoir où se fait la configuration de quelle classe concrète utiliser. Avec Guice, cela se fait grace aux modules.</p>
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">La question est maintenant de savoir où se fait la configuration de quelle classe concrète utiliser. Avec Guice, cela se fait grâce aux modules.</p>
 
 ```java
 public class AppModule extends AbstractModule {
@@ -1886,8 +1888,8 @@ public class AppModule extends AbstractModule {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-Toute la composition de l'application est dans <b>un et un seul fichier</b>. Pour le test, où on bascule sur un module dédié et on régle tous les problèmes en une fois.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
+Toute la composition de l'application est dans <b>un et un seul fichier</b>. Pour le test, on bascule sur un module dédié et on règle tous les problèmes en une fois.
 </div>
 
 ---
@@ -1941,7 +1943,7 @@ public void start(Stage stage) throws IOException {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 👉 Une seule ligne (<code>setControllerFactory</code>) et tous les contrôleurs FXML reçoivent leurs <code>@Inject</code>.
 </div>
 
@@ -1971,7 +1973,7 @@ bind(ServiceAuth.class).to(ServiceAuthImpl.class).in(Singleton.class);
 public class ServiceAuthImpl implements ServiceAuth { ... }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 🎯 Règle simple : <b>singleton</b> pour les services, <b>default</b> pour les états (VM, controller).
 </div>
 
@@ -2036,7 +2038,7 @@ public class CompteController {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.3rem; font-size: 1.5rem; text-align: center;">
 Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type-safety.
 </div>
 
@@ -2084,7 +2086,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 </ul>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="background: #8c3a2f; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
 <div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">⚠️ DI est superflu quand</div>
 <ul style="font-size: 1.1rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
 <li>Tu fais un POC ou un prototype</li>
@@ -2096,7 +2098,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 👉 Pour la <b>SAÉ chauve-souris</b> : DI <b>obligatoire</b>. Plusieurs sources de données, tests requis, équipe de plusieurs développeurs.
 </div>
 
@@ -2135,7 +2137,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 👉 Pour la SAÉ et le TP5 : <b>BDD relationnelle</b> embarquée (SQLite).
 </div>
 
@@ -2147,7 +2149,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.4rem; align-items: stretch;">
 
-<div style="background: #c0392b; color: white; padding: 1rem 1.1rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(192,57,43,0.4);">
+<div style="background: #8c3a2f; color: white; padding: 1rem 1.1rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(192,57,43,0.4);">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">⚙️ JDBC</div>
 <div style="font-size: 1.3rem; line-height: 1.5;"><b>Bas niveau</b>. Vous écrivez le SQL, vous gérez les connexions.<br/><em>Le focus du TP5.</em></div>
 </div>
@@ -2164,7 +2166,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 👉 Au TP5 on reste sur <b>JDBC</b> : la fondation que toutes les couches au-dessus utilisent en interne. Les outils concrets sont listés en fin de partie.
 </div>
 
@@ -2174,7 +2176,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 ![Cycle JDBC : DriverManager.getConnection → prepareStatement → executeQuery/Update → ResultSet → close, avec try-with-resources qui ferme tout](assets/kroki/cm4-jdbc-cycle.svg)
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Trois ressources à fermer : <code>Connection</code>, <code>PreparedStatement</code>, <code>ResultSet</code>. Le <b>try-with-resources</b> les ferme dans l'ordre inverse, automatiquement.
 </div>
 
@@ -2205,7 +2207,7 @@ try (Connection conn = DriverManager.getConnection(url);
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 <b>Try-with-resources</b> : <code>Connection</code>, <code>PreparedStatement</code>, <code>ResultSet</code> sont fermés automatiquement (même en cas d'exception).
 </div>
 
@@ -2216,7 +2218,7 @@ try (Connection conn = DriverManager.getConnection(url);
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.3rem;">
 
 <div>
-<div style="background: #c0392b; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.5rem;">✗ Concaténation : injection SQL</div>
+<div style="background: #8c3a2f; color: white; padding: 0.4rem 0.8rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1.5rem;">✗ Concaténation : injection SQL</div>
 
 ```java
 String sql = "SELECT * FROM users "
@@ -2245,7 +2247,7 @@ ps.setString(1, login);
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 🔒 <b>Règle absolue</b> : ne JAMAIS concaténer de paramètres dans une requête SQL. Toujours <code>PreparedStatement</code>.
 </div>
 
@@ -2272,7 +2274,7 @@ public class UtilisateurDao {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Le ViewModel n'écrit jamais de SQL. Il délègue à un DAO injecté. <b>Substituable</b> en test.
 </div>
 
@@ -2304,7 +2306,7 @@ public List<Utilisateur> findActifs() throws SQLException {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 <code>executeQuery()</code> renvoie un <b>curseur</b> (<code>ResultSet</code>) qu'on parcourt avec <code>rs.next()</code>. Mapping ligne → objet à la main.
 </div>
 
@@ -2335,7 +2337,7 @@ public void save(Utilisateur u) throws SQLException {
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 <code>executeUpdate()</code> renvoie le <b>nombre de lignes</b> affectées. Combiné avec <code>RETURN_GENERATED_KEYS</code> pour récupérer l'id.
 </div>
 
@@ -2361,7 +2363,7 @@ public void transferer(long depuis, long vers, BigDecimal montant) throws SQLExc
 }
 ```
 
-<div style="background: #c0392b; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #8c3a2f; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 🔥 Sans transaction : un crash entre <code>débit</code> et <code>crédit</code> = de l'argent perdu. <b>Inacceptable.</b>
 </div>
 
@@ -2386,7 +2388,7 @@ DataSource ds = new HikariDataSource(config);
 // connection.close() = la rendre au pool (pas de vraie fermeture)
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 👉 Toujours travailler avec une <code>DataSource</code>, jamais avec un <code>DriverManager.getConnection()</code> direct en production.
 </div>
 
@@ -2420,7 +2422,7 @@ DataSource ds = new HikariDataSource(config);
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQL emprunte un chemin parallèle (drivers dédiés).
 </div>
 
@@ -2485,7 +2487,7 @@ try (Connection conn = DriverManager.getConnection(url)) {
 
 ![Architecture MVVM + DI + Persistance : Vue → Controller → ViewModel → Service → DAO → JDBC → BDD SQLite](assets/kroki/cm4-architecture-complete.svg)
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 Six couches, six responsabilités, six niveaux de testabilité. C'est l'architecture cible de la SAÉ chauve-souris.
 </div>
 
@@ -2558,7 +2560,7 @@ Six couches, six responsabilités, six niveaux de testabilité. C'est l'architec
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
 
-<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="background: #8c3a2f; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
 <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Mauvais message</div>
 <div style="font-size: 1.1rem; line-height: 1.5;"><em>« Erreur 0x4F-A2 »</em><br/><em>« java.sql.SQLException: ORA-00942 »</em><br/><em>« Une erreur s'est produite »</em></div>
 </div>
@@ -2570,7 +2572,7 @@ Six couches, six responsabilités, six niveaux de testabilité. C'est l'architec
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; line-height: 1.55; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.5rem; line-height: 1.55; text-align: center;">
 👉 Trois critères : <b>en langage humain</b>, <b>identifie le problème</b>, <b>suggère une solution</b>.
 </div>
 
@@ -2591,7 +2593,7 @@ Six couches, six responsabilités, six niveaux de testabilité. C'est l'architec
 <div style="background: #1a5276; color: white; padding: 0.5rem 0.8rem; border-radius: 6px; font-weight: bold; font-size: 1rem; text-align: center;">Modèle</div>
 <div style="background: rgba(26,82,118,0.1); padding: 0.5rem 0.9rem; border-radius: 6px; font-size: 1.05rem;">Invariants au constructeur : interdit de créer un objet en état illégal. Lève des exceptions.</div>
 
-<div style="background: #c0392b; color: white; padding: 0.5rem 0.8rem; border-radius: 6px; font-weight: bold; font-size: 1rem; text-align: center;">DAO</div>
+<div style="background: #8c3a2f; color: white; padding: 0.5rem 0.8rem; border-radius: 6px; font-weight: bold; font-size: 1rem; text-align: center;">DAO</div>
 <div style="background: rgba(192,57,43,0.1); padding: 0.5rem 0.9rem; border-radius: 6px; font-size: 1.05rem;">Vérifications avant écriture : unicité, références. Limite l'aller-retour avec la BDD.</div>
 
 <div style="background: #27ae60; color: white; padding: 0.5rem 0.8rem; border-radius: 6px; font-weight: bold; font-size: 1rem; text-align: center;">BDD</div>
@@ -2599,7 +2601,7 @@ Six couches, six responsabilités, six niveaux de testabilité. C'est l'architec
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 👉 Toujours mettre une contrainte BDD <b>en plus</b> de la validation côté code. La BDD ne se laissera jamais avoir.
 </div>
 
@@ -2689,7 +2691,7 @@ section tr:nth-child(even) td { background: #f4f6f8 !important; }
 | **CM3** | MVC, FXML déclaratif, composants | onAction déclaratif, initialize() | Cohérence et standards (#4) |
 | **CM4** | MVVM, DI, persistance | Commandes ViewModel | Prévention (#5) et récupération (#9) des erreurs |
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Chaque CM construit sur le précédent. Un compteur en CM4 utilise tout : Stage, propriétés, FXML, MVVM, DI, persistance.
 </div>
 
@@ -2869,7 +2871,7 @@ section table code { font-size: 0.85rem !important; padding: 1px 4px !important;
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 👉 Ce workflow est <b>évalué formellement en R2.03</b> (Qualité de développement), mais vous l'avez déjà internalisé via les TPs.
 </div>
 
@@ -2931,7 +2933,7 @@ section tr:nth-child(even) td { background: #f4f6f8 !important; }
 | **DAO** | CM4 | `UtilisateurDao` injecté |
 | **Composition Root** | CM4 | `start()` + `Guice.createInjector(...)` |
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
 🎓 Vocabulaire transférable à n'importe quel framework UI moderne.
 </div>
 
