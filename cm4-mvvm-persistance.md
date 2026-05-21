@@ -1328,30 +1328,32 @@ public class PokemonViewController {
 
 ## Plusieurs vues, un seul ViewModel
 
+<style scoped>
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; }
+</style>
+
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">En plus de la testabilité, l'autre bénéfice clé est qu'un même ViewModel peut alimenter <b>plusieurs vues</b> simultanément.</p>
 
 ```java
 // Une vue formulaire pour saisir
 champ.textProperty().bindBidirectional(vm.texteProperty());
-
 // Une autre vue, en bas de l'écran, pour afficher en temps réel
 preview.textProperty().bind(vm.texteProperty());
-
 // Un compteur de caractères, ailleurs
 compteur.textProperty().bind(
     Bindings.concat(vm.texteProperty().length(), " caractères"));
 ```
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.5rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
 
-<div style="background: #8e44ad; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 12px;">
 <div style="font-size: 1.5rem; font-weight: bold;">🔁 Réactivité naturelle</div>
-<div style="font-size: 1.3rem; margin-top: 0.2rem;">Une modification côté formulaire se propage instantanément vers la preview ET le compteur.</div>
+<div style="font-size: 1.3rem; line-height: 1.5; margin-top: 0.4rem;">Une modification côté formulaire se propage instantanément vers la preview ET le compteur.</div>
 </div>
 
-<div style="background: #8e44ad; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
+<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 12px;">
 <div style="font-size: 1.5rem; font-weight: bold;">🧪 Test unique</div>
-<div style="font-size: 1.3rem; margin-top: 0.2rem;">Un seul test sur le VM couvre toutes les vues. Pas de duplication.</div>
+<div style="font-size: 1.3rem; line-height: 1.5; margin-top: 0.4rem;">Un seul test sur le VM couvre toutes les vues. Pas de duplication.</div>
 </div>
 
 </div>
@@ -1447,12 +1449,10 @@ public class FormulaireViewModel {
   public FormulaireViewModel() {
     emailValide = Bindings.createBooleanBinding(
         () -> email.get().matches("^[^@]+@[^@]+\\.[a-z]{2,}$"),
-        email
-    ); // Règle de validation reactive
+        email); // Règle de validation reactive
     
     erreurEmail.bind(Bindings.when(emailValide.or(email.isEmpty()))
-        .then("")
-        .otherwise("Format invalide. Exemple : prenom.nom@univ-amu.fr")); // Message d'erreur dérivé
+        .then("").otherwise("Format invalide. Exemple : prenom.nom@univ-amu.fr")); // Message d'erreur dérivé
   }
 
   public ReadOnlyStringProperty erreurEmailProperty() { return erreurEmail; }
@@ -1461,7 +1461,7 @@ public class FormulaireViewModel {
 ```
 
 <div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-👉 La vue se contente de <code>label.textProperty().bind(vm.erreurEmailProperty())</code>. Aucun <code>if</code> côté UI.
+👉 La vue se contente de se lier : <code>label.textProperty().bind(vm.erreurEmailProperty())</code>.
 </div>
 
 ---
@@ -1490,6 +1490,9 @@ Ces patterns partagent tous la même intention : <b>séparer la logique d'affich
 ---
 
 ## Gérer les erreurs dans une commande
+<style scoped>
+section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
+</style>
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Une commande VM peut échouer (réseau, BDD, validation). On expose l'état via une propriété, jamais via une exception qui remonte à l'UI.</p>
 
@@ -1515,46 +1518,53 @@ public class FormulaireConnexionViewModel {
 ```
 
 <div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-La vue se contente de bind <code>statut</code> dans un Label et <code>enCours</code> sur un spinner. Aucun <code>try/catch</code> côté UI.
+La vue se contente de bind <code>statut</code> dans un Label et <code>enCours</code> sur un spinner.
 </div>
 
 ---
 
 ## Anti-patterns MVVM à éviter
 
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Trois couches et trois rôles à respecter si l'on ne veut pas perdre tous les avantages de la séparation.</p>
+
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
 
 <div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✗ ViewModel qui importe javafx.scene</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Si vous voyez <code>import javafx.scene.control.Alert;</code> dans un VM, vous avez fui la séparation. Les alerts sont un détail de la vue.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">✗ ViewModel qui importe javafx.scene</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Si vous voyez <code>import javafx.scene.control.Alert;</code> dans un VM, vous avez fui la séparation. Les alerts sont un détail de la vue.</div>
 </div>
 
 <div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Controller qui contient de la logique</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Si <code>@FXML void valider()</code> contient autre chose que <code>vm.valider()</code>, c'est une fuite. Déplacer vers le VM.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Controller qui contient de la logique</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Si <code>@FXML void valider()</code> contient autre chose que <code>vm.valider()</code>, c'est une fuite. Déplacer vers le VM.</div>
 </div>
 
 <div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✗ ViewModel qui hérite de Property</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Le VM <em>contient</em> des propriétés, il n'<em>est</em> pas une propriété. Composition, pas héritage.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">✗ ViewModel qui hérite de Property</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Le VM <em>contient</em> des propriétés, il n'<em>est</em> pas une propriété. Composition, pas héritage.</div>
 </div>
 
 <div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Modèle anémique</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Si le modèle n'est qu'un POJO sans logique, c'est que la logique a fui dans le VM. Réagencer.</div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Modèle anémique</div>
+<div style="font-size: 1.3rem; line-height: 1.45;">Si le modèle n'est qu'un POJO sans logique, c'est que la logique a fui dans le VM. Réagencer.</div>
+</div>
 </div>
 
+<div style="background: #2c3e50; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; margin-top: 1.4rem; font-size: 1.5rem; text-align: center;">
+Comme tous les patterns architecturaux, si l'on respecte pas leur principe de séparation, on perd tout l'intéret.
 </div>
+
 
 ---
 
 ## Bilan MVVM en une slide
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Comme toujours en informatique, le choix d'une solution est une question d'arbitrage.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin: 2.4rem 0;">
 
 <div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✓ Ce qu'on gagne</div>
-<ul style="font-size: 1.1rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">✓ Ce qu'on gagne</div>
+<ul style="font-size: 1.5rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
 <li>Tests JUnit pur sur la logique d'affichage</li>
 <li>Plusieurs vues sur un même VM</li>
 <li>Bindings comme colle, pas de <code>if</code> manuel</li>
@@ -1564,12 +1574,12 @@ La vue se contente de bind <code>statut</code> dans un Label et <code>enCours</c
 </div>
 
 <div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">⚠️ Ce que ça coûte</div>
-<ul style="font-size: 1.1rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">⚠️ Ce que ça coûte</div>
+<ul style="font-size: 1.5rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
 <li>Une couche de plus à comprendre</li>
-<li>Plus verbose pour un compteur trivial</li>
+<li>Plus verbeux pour un compteur simple</li>
 <li>Bindings parfois subtils (lifecycle, weak refs)</li>
-<li>Nécessite de la discipline pour ne pas tricher</li>
+<li>Nécessite de la discipline pour ne pas commencer à tricher</li>
 </ul>
 </div>
 
@@ -1591,26 +1601,26 @@ La vue se contente de bind <code>statut</code> dans un Label et <code>enCours</c
 
 ---
 
-## Pourquoi la DI, et pourquoi maintenant ?
+## Pourquoi l'Injection de dépendances, et pourquoi maintenant ?
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Vous avez déjà croisé <code>@Inject</code> en Partie 2. Vous le retrouverez en Partie 4. C'est le <b>même pattern</b> qui ressurgit : celui qui rend chaque couche testable.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Vous avez déjà croisé <code>@Inject</code> en Partie 2. Vous le retrouverez en Partie 4. C'est le <b>même pattern</b> qui ressurgit : celui qui rend chaque couche testable indépendemment.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem; align-items: stretch;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 2.5rem 0; align-items: stretch;">
 
 <div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🏗️ Côté MVVM (Partie 2)</div>
 <div style="font-size: 1.3rem; line-height: 1.5;">
-Le <b>contrôleur</b> <code>@Inject</code>e son <b>ViewModel</b>.<br/>
-Le <b>ViewModel</b> <code>@Inject</code>e ses <b>services</b>.<br/>
-<em>→ chaque ViewModel se teste avec des services mockés, sans monter JavaFX.</em>
+Le <b>contrôleur</b> <code>@Inject</code> son <b>ViewModel</b>.<br/>
+Le <b>ViewModel</b> <code>@Inject</code> ses <b>services</b>.<br/>
+<em>→ chaque ViewModel se teste avec des services mockés, sans utiliser JavaFX.</em>
 </div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">💾 Côté Persistance (Partie 4)</div>
 <div style="font-size: 1.3rem; line-height: 1.5;">
-Le <b>ViewModel</b> <code>@Inject</code>e ses <b>DAO</b>.<br/>
-Le <b>DAO</b> <code>@Inject</code>e son <b>DataSource</b>.<br/>
+Le <b>ViewModel</b> <code>@Inject</code> ses <b>DAO</b>.<br/>
+Le <b>DAO</b> <code>@Inject</code> son <b>DataSource</b>.<br/>
 <em>→ chaque DAO se teste avec une BDD en mémoire, sans toucher la prod.</em>
 </div>
 </div>
@@ -1618,7 +1628,7 @@ Le <b>DAO</b> <code>@Inject</code>e son <b>DataSource</b>.<br/>
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
-La DI est le <b>ciment</b> qui rend chaque couche testable <b>indépendamment</b> des autres. C'est ce qu'on va outiller avec <b>Guice</b>.
+L'Injection de dépendances (DI) est le <b>ciment</b> qui rend chaque couche testable <b>indépendamment</b> des autres. C'est ce qu'on va faire avec <b>Guice</b>.
 </div>
 
 ---
@@ -1687,6 +1697,9 @@ Le terme « inversion » : c'est le <b>responsable de la composition</b> qui cha
 ---
 
 ## Composition root : qui assemble tout ?
+<style scoped>
+section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
+</style>
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Sans framework, on instancie « à la main » au démarrage de l'app.</p>
 
@@ -1711,12 +1724,15 @@ public class App extends Application {
 ```
 
 <div style="background: #c0392b; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem;">
-⚠️ Quand l'app a 30 contrôleurs et 50 services, ce <code>start()</code> devient un cauchemar de 200 lignes.
+⚠️ Quand l'application a 30 contrôleurs et 50 services, cette méthode <code>start()</code> devient un cauchemar de 200 lignes qui ne sont que du cablage.
 </div>
 
 ---
 
 ## Guice : un container DI léger
+<style scoped>
+section pre { font-size: 0.6rem !important; line-height: 1.35 !important; }
+</style>
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;"><b>Google Guice</b> automatise la composition. On déclare les dépendances avec <code>@Inject</code> et un <b>Module</b> qui dit comment les résoudre.</p>
 
@@ -1727,7 +1743,6 @@ public class App extends Application {
 
 ```java
 public class FormulaireController {
-
   @Inject
   private FormulaireViewModel vm;
 
@@ -1767,7 +1782,7 @@ public class AppModule extends AbstractModule {
 ## Les trois styles d'injection
 
 <style scoped>
-section pre { font-size: 0.78rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.7rem !important; line-height: 1.35 !important; }
 section code { font-size: 1em !important; }
 </style>
 
@@ -1837,20 +1852,18 @@ public class A {
 ---
 
 ## Le module : configuration centralisée
+<style scoped>
+section pre { font-size: 0.6rem !important; line-height: 1.35 !important; }
+</style>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">La question est maintenant de savoir où se fait la configuration de quelle classe concrète utiliser. Avec Guice, cela se fait grace aux modules.</p>
 
 ```java
 public class AppModule extends AbstractModule {
-
   @Override
   protected void configure() {
-    // Lier une interface à une implémentation
-    bind(ServiceAuth.class).to(ServiceAuthImpl.class);
-
-    // Lier un type à une instance déjà construite
-    bind(HttpClient.class).toInstance(HttpClient.newHttpClient());
-
-    // Avec scope explicite : une seule instance partagée
-    bind(HistoriqueConnexion.class).in(Singleton.class);
+    bind(ServiceAuth.class).to(ServiceAuthImpl.class); // Lier une interface à une implémentation
+    bind(HttpClient.class).toInstance(HttpClient.newHttpClient()); // Lier un type à une instance déjà construite
+    bind(HistoriqueConnexion.class).in(Singleton.class); // Avec scope explicite : une seule instance partagée
   }
 
   // Provider pour les cas où la création nécessite du code
@@ -1863,16 +1876,17 @@ public class AppModule extends AbstractModule {
 ```
 
 <div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-Toute la composition de l'app est dans <b>un fichier</b>. Y compris pour le test, où on bascule sur un module dédié.
+Toute la composition de l'application est dans <b>un et un seul fichier</b>. Pour le test, où on bascule sur un module dédié et on régle tous les problèmes en une fois.
 </div>
 
 ---
 
 ## Tests : un module qui injecte des mocks
-
+<style scoped>
+section pre { font-size: 0.6rem !important; line-height: 1.35 !important; }
+</style>
 ```java
 class FormulaireViewModelTest {
-
   @Test
   void connecterAffecteLeStatut() {
     Injector test = Guice.createInjector(new AbstractModule() {
@@ -1887,14 +1901,13 @@ class FormulaireViewModelTest {
     vm.emailProperty().set("test@univ-amu.fr");
     vm.motDePasseProperty().set("xyz");
     vm.connecterCommand();
-
     assertEquals("Bienvenue !", vm.statutProperty().get());
   }
 }
 ```
 
 <div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-✨ Le VM ne sait <b>pas</b> qu'il est testé. Il reçoit son <code>ServiceAuth</code>, point.
+✨ Le VM ne sait <b>pas</b> qu'il est testé. Il reçoit un <code>ServiceAuth</code> et l'utilise.
 </div>
 
 ---
