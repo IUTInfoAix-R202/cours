@@ -617,28 +617,29 @@ TP4 + TP5
 
 ## Rappel CM3 - Ce que vous savez déjà
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 1.5rem;">
-<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🏗️ MVC</div>
-<div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
-<b>Modèle</b> métier, <b>Vue</b> en FXML, <b>Contrôleur</b> qui orchestre. Trois fichiers, trois responsabilités.
-</div>
-</div>
-<div style="background: #1a5276; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">📄 FXML</div>
-<div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
-La vue déclarative, <code>@FXML</code>, <code>fx:controller</code>, <code>onAction</code>, <code>fx:include</code>. Édition possible via SceneBuilder.
-</div>
-</div>
-<div style="background: #27ae60; color: white; padding: 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.7rem; margin-bottom: 0.5rem; font-weight: bold;">🧠 Cohérence</div>
-<div style="margin-top: 0.5rem; font-size: 1.5rem; opacity: 0.9;">
-Heuristique #4 de Nielsen. Mutualiser FXML+CSS, créer un <b>design system</b>, prévenir l'incohérence.
-</div>
-</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3.2rem; line-height: 1;">🏗️</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">MVC</div>
+<div style="font-size: 1.35rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;"><b>Modèle</b> métier, <b>Vue</b> en FXML, <b>Contrôleur</b> qui orchestre. Trois fichiers, trois responsabilités.</div>
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 1.2rem 2rem; border-radius: 10px; margin-top: 1.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #1a5276; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3.2rem; line-height: 1;">📄</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">FXML</div>
+<div style="font-size: 1.35rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;">La vue déclarative, <code>@FXML</code>, <code>fx:controller</code>, <code>onAction</code>, <code>fx:include</code>. Édition possible via SceneBuilder.</div>
+</div>
+
+<div style="background: #27ae60; color: white; padding: 1.6rem 1.4rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column;">
+<div style="font-size: 3.2rem; line-height: 1;">🧠</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.7rem;">Cohérence</div>
+<div style="font-size: 1.35rem; line-height: 1.55; margin-top: 0.8rem; text-align: left; opacity: 0.95;">Heuristique #4 de Nielsen. Mutualiser FXML+CSS, créer un <b>design system</b>, prévenir l'incohérence.</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 1rem 1.4rem; border-radius: 12px; margin-top: 1.5rem; font-size: 1.5rem; text-align: center;">
 Aujourd'hui : combiner <b>MVC + bindings</b> pour aller vers <b>MVVM</b>, ajouter la <b>persistance</b>, et faire la <b>synthèse</b> du module.
 </div>
 
