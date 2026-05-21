@@ -338,7 +338,7 @@ Personas <a href="https://iutinfoaix-s201.github.io/brief/Analyse%20et%20concept
 
 ---
 
-## 📦 Données fournies : une vraie nuit d'enregistrement
+## 📦 Données fournies : nuit d'enregistrement du 22-23 avril 2026
 
 <p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">PR n° <b>1925492</b>, nuit du <b>22-23 avril 2026</b>, point fixe en zone Z1 du carré 640380. Deux variantes pour deux usages.</p>
 
