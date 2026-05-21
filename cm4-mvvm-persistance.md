@@ -1982,6 +1982,10 @@ public class ServiceAuthImpl implements ServiceAuth { ... }
 
 ## Provider : injection paresseuse
 
+<style scoped>
+section pre { font-size: 0.7rem !important; line-height: 1.35 !important; }
+</style>
+
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour différer la création d'une dépendance (ou en créer plusieurs instances à la demande), on injecte un <code>Provider&lt;T&gt;</code>.</p>
 
 ```java
@@ -1997,16 +2001,16 @@ public class GestionnaireFenetres {
 }
 ```
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
 
-<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">🐢 Lazy</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">L'objet n'est créé qu'au premier <code>get()</code>. Utile pour des services coûteux.</div>
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.4rem; font-weight: bold;">🐢 Lazy</div>
+<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.4rem;">L'objet n'est créé qu'au premier <code>get()</code>. Utile pour des services coûteux.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 0.85rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold;">🔄 Multi-instance</div>
-<div style="font-size: 1.05rem; margin-top: 0.2rem;">Sans scope <code>@Singleton</code>, chaque <code>get()</code> renvoie une nouvelle instance.</div>
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.4rem; font-weight: bold;">🔄 Multi-instance</div>
+<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.4rem;">Sans scope <code>@Singleton</code>, chaque <code>get()</code> renvoie une nouvelle instance.</div>
 </div>
 
 </div>
@@ -2014,6 +2018,9 @@ public class GestionnaireFenetres {
 ---
 
 ## @Named : résoudre les ambiguïtés
+<style scoped>
+section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
+</style>
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Quand plusieurs implémentations d'une même interface coexistent, on les distingue par un nom.</p>
 
@@ -2047,52 +2054,60 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 
 ## Avantages concrets de l'injection
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Au-delà du pattern, voici ce que la DI <b>change concrètement</b> au quotidien.</p>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 Mocks faciles</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Un module de test bind les interfaces sur des mocks Mockito ou des fakes. Aucun code applicatif modifié.</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 Mocks faciles</div>
+<div style="font-size: 1.4rem; line-height: 1.45;">Un module de test bind les interfaces sur des mocks Mockito ou des fakes. Aucun code applicatif modifié.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🔄 Implémentations interchangeables</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Bind vers <code>ServiceAuthLDAP</code> ou <code>ServiceAuthMock</code> selon l'environnement. Une ligne dans le module.</div>
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">🔄 Implémentations interchangeables</div>
+<div style="font-size: 1.4rem; line-height: 1.45;">Bind vers <code>ServiceAuthLDAP</code> ou <code>ServiceAuthMock</code> selon l'environnement. Une ligne dans le module.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">📐 Cycle de vie maîtrisé</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Singleton géré par Guice. Pas de double instanciation accidentelle.</div>
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">📐 Cycle de vie maîtrisé</div>
+<div style="font-size: 1.4rem; line-height: 1.45;">Singleton géré par Guice. Pas de double instanciation accidentelle.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">📦 Composition lisible</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Le module devient <b>la documentation</b> de l'architecture : on lit le câblage en un fichier.</div>
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">📦 Composition lisible</div>
+<div style="font-size: 1.4rem; line-height: 1.45;">Le module devient <b>la documentation</b> de l'architecture : on lit le câblage en un fichier.</div>
 </div>
 
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 1rem; font-size: 1.5rem; text-align: center;">
+💡 Le fil rouge des 4 bénéfices : <b>chaque couche reste testable et remplaçable</b> sans toucher au code applicatif.
 </div>
 
 ---
 
 ## Quand utiliser DI (et quand ne pas)
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">La DI n'est pas une fin en soi : c'est un outil qui s'adapte à la <b>taille du projet</b> et à ses <b>besoins de test</b>.</p>
 
-<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">✓ DI gagne quand</div>
-<ul style="font-size: 1.1rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
-<li>Tu as plus de 5 services différents</li>
-<li>Tu veux tester sans BDD ni réseau</li>
-<li>Tu as plusieurs implémentations d'une même interface</li>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
+
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">✓ DI gagne quand</div>
+<ul style="font-size: 1.5rem; line-height: 1.55; margin: 0; padding-left: 1.2rem;">
+<li>Vous avez plus de 5 services différents</li>
+<li>Vous voulez tester sans BDD ni réseau</li>
+<li>Vous avez plusieurs implémentations d'une même interface</li>
 <li>Le cycle de vie est complexe</li>
 </ul>
 </div>
 
-<div style="background: #8c3a2f; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">⚠️ DI est superflu quand</div>
-<ul style="font-size: 1.1rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
-<li>Tu fais un POC ou un prototype</li>
+<div style="background: #8c3a2f; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">⚠️ DI est superflu quand</div>
+<ul style="font-size: 1.5rem; line-height: 1.55; margin: 0; padding-left: 1.2rem;">
+<li>Vous faites un POC ou un prototype</li>
 <li>2 classes, pas de I/O</li>
-<li>Tu n'as <em>aucune</em> intention de tester</li>
+<li>Vous n'avez <em>aucune</em> intention de tester</li>
 <li>L'apprentissage du framework dépasse le bénéfice</li>
 </ul>
 </div>
