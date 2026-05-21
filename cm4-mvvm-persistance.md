@@ -138,14 +138,30 @@ L'application doit <b>fonctionner hors-ligne</b>, être <b>portable</b> Windows 
 
 <p style="font-size: 1.35rem; line-height: 1.55;">Samuel travaille au <b><a href="https://www.cerema.fr/">CEREMA</a></b>. Sa thèse porte sur l'<b>effet de l'éclairage public LED</b> sur l'activité acoustique des chiroptères.</p>
 
-<p style="font-size: 1.35rem; line-height: 1.55;">Sa précédente campagne (Seine-et-Marne) a généré <b>plus de 560 000 contacts</b> chiroptères, pré-traités avec des scripts R/Bash maison <em>impossibles à transmettre</em>. Pour ses prochaines campagnes, il bascule sur le <b>PR Teensy</b> et a besoin d'un outil propre que la communauté pourra reprendre.</p>
+<p style="font-size: 1.35rem; line-height: 1.55;">Sa précédente campagne a généré <b>plus de 560 000 contacts</b> chiroptères, pré-traités avec des scripts R/Bash maison <em>impossibles à transmettre</em>. Pour ses prochaines campagnes, il bascule sur le <b>PR Teensy</b> et a besoin d'un outil propre que la communauté pourra reprendre.</p>
 
-<div style="background: #c0392b; color: white; padding: 0.8rem 1.1rem; border-radius: 10px; margin-top: 0.7rem; font-size: 1.4rem; text-align: center;">
-🎯 Samuel sera <b>présent à votre soutenance</b> le 18/06. Son avis pèse <b>autant que la note technique</b>.
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.4rem; text-align: center;">
+🎯 Samuel est votre client. Vous devez <b>comprendre son besoin</b> avant de commencer à travailler.
 </div>
 
 </div>
 
+</div>
+
+---
+
+<!-- _class: lead -->
+<!-- _header: "" -->
+<!-- _footer: "" -->
+
+# 🎤 La parole à Samuel
+
+<div style="margin-top: 1.2rem; font-size: 1.5rem; color: #555; max-width: 820px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+Samuel vient en personne nous présenter son <b>contexte de recherche</b>, le terrain qu'il observe, et ce qu'il attend de vous.
+</div>
+
+<div style="margin-top: 2rem; font-size: 1.3rem; color: #1a5276; font-weight: bold;">
+🎧 À vous de l'écouter, prendre des notes, et lui poser vos questions.
 </div>
 
 ---
