@@ -1361,8 +1361,9 @@ compteur.textProperty().bind(
 ---
 
 ## Commandes : modéliser les actions
+
 <style scoped>
-section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.65rem !important; line-height: 1.35 !important; }
 </style>
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Pour les actions (boutons), on expose des <b>méthodes</b> sur le ViewModel. Pattern « Command ».</p>
@@ -1370,29 +1371,24 @@ section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
 ```java
 public class FormulaireConnexionViewModel {
   private final ServiceAuth auth;
-
-  // Propriétés UI : champs et état
-  private final StringProperty email = new SimpleStringProperty("");
-  private final StringProperty motDePasse = new SimpleStringProperty("");
-  private final StringProperty statut = new SimpleStringProperty("");
-  private final BooleanProperty validable = new SimpleBooleanProperty(false);
-
+  // 4 propriétés UI : email, motDePasse, statut, validable
+  // (3 StringProperty + 1 BooleanProperty)
   public FormulaireConnexionViewModel(ServiceAuth auth) {
     this.auth = auth;
     validable.bind(email.isNotEmpty().and(motDePasse.isNotEmpty()));
   }
-
-  // Commande : action déclenchée par la vue
+  // Pattern Command : méthode publique sans paramètre
   public void connecterCommand() {
     statut.set("Connexion en cours...");
     boolean ok = auth.connecter(email.get(), motDePasse.get());
     statut.set(ok ? "Bienvenue !" : "Échec : vérifiez vos identifiants.");
   }
-
-  public StringProperty emailProperty() { return email; }
-  // ...
 }
 ```
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.9rem; font-size: 1.5rem; text-align: center;">
+💡 Pattern <b>Command</b> : actions exposées comme méthodes publiques sur le VM.
+</div>
 
 ---
 
