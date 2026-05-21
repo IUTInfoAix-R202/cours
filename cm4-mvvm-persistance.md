@@ -1563,9 +1563,9 @@ Comme tous les patterns architecturaux, si l'on ne respecte pas leur principe de
 ## Bilan MVVM en une slide
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Comme toujours en informatique, le choix d'une solution est une question d'arbitrage.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin: 2.4rem 0;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2.4rem 0;">
 
-<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">✓ Ce qu'on gagne</div>
 <ul style="font-size: 1.5rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
 <li>Tests JUnit pur sur la logique d'affichage</li>
@@ -1576,7 +1576,7 @@ Comme tous les patterns architecturaux, si l'on ne respecte pas leur principe de
 </ul>
 </div>
 
-<div style="background: #c0392b; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
+<div style="background: #8c3a2f; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">⚠️ Ce que ça coûte</div>
 <ul style="font-size: 1.5rem; line-height: 1.5; margin: 0; padding-left: 1.2rem;">
 <li>Une couche de plus à comprendre</li>
@@ -1588,7 +1588,7 @@ Comme tous les patterns architecturaux, si l'on ne respecte pas leur principe de
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
 👉 Règle : si l'écran a <b>plus de 3-4 champs interactifs</b>, MVVM gagne. En dessous, MVC suffit.
 </div>
 
