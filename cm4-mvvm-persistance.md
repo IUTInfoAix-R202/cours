@@ -99,25 +99,27 @@ Le possesseur du PR doit <b>vérifier la qualité</b>, <b>renommer</b>, <b>trans
 
 ---
 
-## 🎯 Le projet : *VigieChiro PR Companion*
+## 📥 Le projet : *VigieChiro PR Companion*
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Une application <b>JavaFX</b>, locale, qui enchaîne toute la chaîne nocturne dans un outil unique - depuis la carte SD jusqu'au dépôt sur Vigie-Chiro.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Une application <b>JavaFX</b>, locale, qui enchaîne toute la chaîne nocturne dans un outil unique (depuis la carte SD jusqu'au dépôt sur Vigie-Chiro).</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.6rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.4rem;">
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.55rem; font-weight: bold; margin-bottom: 0.4rem;">📥 Cible MVP (MUST)</div>
-<div style="font-size: 1.3rem; line-height: 1.55;">La <b>chaîne fil rouge</b> : déclarer un site, importer une nuit, vérifier l'enregistrement par échantillonnage, préparer un lot prêt à déposer.</div>
+<div style="background: #1a5276; color: white; padding: 1.8rem 1.5rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 4rem; line-height: 1;">🎯</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.9rem;">Cible MVP (MUST)</div>
+<div style="font-size: 1.3rem; line-height: 1.55; margin-top: 0.9rem; text-align: left;">La <b>chaîne fil rouge</b> : déclarer un site, importer une nuit, vérifier l'enregistrement par échantillonnage, préparer un lot prêt à déposer.</div>
 </div>
 
-<div style="background: #8e44ad; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.55rem; font-weight: bold; margin-bottom: 0.4rem;">🎁 Filet de sécurité (SHOULD)</div>
-<div style="font-size: 1.3rem; line-height: 1.55;"><b>Valider les résultats Tadarida</b> : écouter chaque observation avec sonogramme + spectrogramme, valider ou corriger la classification automatique.</div>
+<div style="background: #8e44ad; color: white; padding: 1.8rem 1.5rem; border-radius: 12px; text-align: center;">
+<div style="font-size: 4rem; line-height: 1;">🎁</div>
+<div style="font-size: 1.7rem; font-weight: bold; margin-top: 0.9rem;">Filet de sécurité (SHOULD)</div>
+<div style="font-size: 1.3rem; line-height: 1.55; margin-top: 0.9rem; text-align: left;"><b>Valider les résultats Tadarida</b> : écouter chaque observation avec sonogramme + spectrogramme, valider ou corriger la classification automatique.</div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.2rem; border-radius: 10px; margin-top: 1rem; font-size: 1.45rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 1rem 1.4rem; border-radius: 10px; margin-top: 1.6rem; font-size: 1.45rem; text-align: center;">
 L'application doit <b>fonctionner hors-ligne</b>, être <b>portable</b> Windows / Linux / macOS, et respecter les normes d'<b>accessibilité</b> (contraste, taille, raccourcis clavier).
 </div>
 
