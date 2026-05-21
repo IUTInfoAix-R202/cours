@@ -821,26 +821,26 @@ public class FormulaireController {
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.6rem 0;">MVVM est plus jeune que MVC, et né d'une nécessité industrielle.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 3fr; gap: 0.5rem 0.9rem; align-items: center; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 0.7fr 4fr; column-gap: 0.15rem; row-gap: 0.6rem; align-items: stretch; margin-top: 0.9rem;">
 
-<div style="background: #8e44ad; color: white; padding: 0.7rem 1rem; border-radius: 8px; text-align: center; font-weight: bold;">2005</div>
-<div style="background: rgba(142,68,173,0.12); padding: 0.6rem 1rem; border-radius: 8px;">John Gossman (Microsoft) formalise <b>MVVM</b> pour <b>WPF</b>. L'idée : tirer parti du data binding XAML.</div>
+<div style="background: #8e44ad; color: white; padding: 0.6rem; border-radius: 10px 0 0 10px; text-align: center; font-weight: bold; font-size: 1.6rem; display: flex; align-items: center; justify-content: center;">2005</div>
+<div style="background: rgba(142,68,173,0.12); padding: 0.7rem 1.1rem; border-radius: 0 10px 10px 0; font-size: 1.3rem; line-height: 1.5; display: flex; align-items: center;"><span>John Gossman (Microsoft) formalise <b>MVVM</b> pour <b>WPF</b>. L'idée : tirer parti du data binding XAML.</span></div>
 
-<div style="background: #8e44ad; color: white; padding: 0.7rem 1rem; border-radius: 8px; text-align: center; font-weight: bold;">2010</div>
-<div style="background: rgba(142,68,173,0.12); padding: 0.6rem 1rem; border-radius: 8px;"><b>Knockout.js</b> popularise MVVM côté web. Le pattern devient mainstream pour les SPA.</div>
+<div style="background: #8e44ad; color: white; padding: 0.6rem; border-radius: 10px 0 0 10px; text-align: center; font-weight: bold; font-size: 1.6rem; display: flex; align-items: center; justify-content: center;">2010</div>
+<div style="background: rgba(142,68,173,0.12); padding: 0.7rem 1.1rem; border-radius: 0 10px 10px 0; font-size: 1.3rem; line-height: 1.5; display: flex; align-items: center;"><span><b>Knockout.js</b> popularise MVVM côté web. Le pattern devient mainstream pour les SPA.</span></div>
 
-<div style="background: #8e44ad; color: white; padding: 0.7rem 1rem; border-radius: 8px; text-align: center; font-weight: bold;">2014</div>
-<div style="background: rgba(142,68,173,0.12); padding: 0.6rem 1rem; border-radius: 8px;"><b>Vue.js</b> et <b>Angular</b> intègrent MVVM par défaut. Le binding réactif devient une attente standard.</div>
+<div style="background: #8e44ad; color: white; padding: 0.6rem; border-radius: 10px 0 0 10px; text-align: center; font-weight: bold; font-size: 1.6rem; display: flex; align-items: center; justify-content: center;">2014</div>
+<div style="background: rgba(142,68,173,0.12); padding: 0.7rem 1.1rem; border-radius: 0 10px 10px 0; font-size: 1.3rem; line-height: 1.5; display: flex; align-items: center;"><span><b>Vue.js</b> et <b>Angular</b> intègrent MVVM par défaut. Le binding réactif devient une attente standard.</span></div>
 
-<div style="background: #8e44ad; color: white; padding: 0.7rem 1rem; border-radius: 8px; text-align: center; font-weight: bold;">2018</div>
-<div style="background: rgba(142,68,173,0.12); padding: 0.6rem 1rem; border-radius: 8px;"><b>React Hooks</b> apportent un équivalent fonctionnel : <code>useState</code> joue le rôle de <code>Property</code>.</div>
+<div style="background: #8e44ad; color: white; padding: 0.6rem; border-radius: 10px 0 0 10px; text-align: center; font-weight: bold; font-size: 1.6rem; display: flex; align-items: center; justify-content: center;">2019</div>
+<div style="background: rgba(142,68,173,0.12); padding: 0.7rem 1.1rem; border-radius: 0 10px 10px 0; font-size: 1.3rem; line-height: 1.5; display: flex; align-items: center;"><span><b>React Hooks</b> apportent un équivalent fonctionnel : <code>useState</code> joue le rôle de <code>Property</code>.</span></div>
 
-<div style="background: #27ae60; color: white; padding: 0.7rem 1rem; border-radius: 8px; text-align: center; font-weight: bold;">2026</div>
-<div style="background: rgba(39,174,96,0.15); padding: 0.6rem 1rem; border-radius: 8px;"><b>JavaFX</b> a tous les ingrédients pour MVVM : propriétés, bindings, FXML. Il suffit d'<b>introduire le ViewModel</b>.</div>
+<div style="background: #27ae60; color: white; padding: 0.6rem; border-radius: 10px 0 0 10px; text-align: center; font-weight: bold; font-size: 1.6rem; display: flex; align-items: center; justify-content: center;">2026</div>
+<div style="background: rgba(39,174,96,0.15); padding: 0.7rem 1.1rem; border-radius: 0 10px 10px 0; font-size: 1.3rem; line-height: 1.5; display: flex; align-items: center;"><span><b>JavaFX</b> a tous les ingrédients pour MVVM : propriétés, bindings, FXML. Il suffit d'<b>introduire le ViewModel</b>.</span></div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 10px; margin-top: 0.8rem; font-size: 1.4rem; text-align: center;">
 👉 MVVM = MVC + propriétés observables systématiques. C'est notre <b>CM2 + CM3</b> arrivés à maturité.
 </div>
 
