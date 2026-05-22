@@ -2506,21 +2506,21 @@ section tr:nth-child(even) td { background: #f4f6f8 !important; }
 ## Gestion des valeurs NULL : le piège
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.85rem !important; line-height: 1.35 !important; margin-top: 1rem !important; }
 </style>
 
-<p style="font-size: 1.45rem; margin: -0.5rem 0 0.5rem 0;">Comment reconnaître un <code>NULL</code> SQL côté Java ? La convention dépend du <b>type</b> retourné.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Comment reconnaître un <code>NULL</code> SQL côté Java ? La convention dépend du <b>type</b> retourné.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
 
-<div style="background: #1a5276; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.3rem;">🟢 Types objets</div>
-<div style="font-size: 1.1rem; line-height: 1.5;"><code>getString()</code>, <code>getDate()</code>, <code>getObject()</code>, <code>getBigDecimal()</code>… retournent une <b>référence <code>null</code></b>. Pas d'ambiguïté.</div>
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">🟢 Types objets</div>
+<div style="font-size: 1.4rem; line-height: 1.55;"><code>getString()</code>, <code>getDate()</code>, <code>getObject()</code>, <code>getBigDecimal()</code>… retournent une <b>référence <code>null</code></b>. Pas d'ambiguïté.</div>
 </div>
 
-<div style="background: #8c3a2f; color: white; padding: 0.9rem 1.1rem; border-radius: 10px;">
-<div style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.3rem;">⚠️ Types primitifs</div>
-<div style="font-size: 1.1rem; line-height: 1.5;"><code>getInt()</code>, <code>getLong()</code>, <code>getDouble()</code> renvoient <b><code>0</code></b> pour <code>NULL</code>. <code>getBoolean()</code> renvoie <b><code>false</code></b>. Impossible de distinguer <code>NULL</code> de zéro !</div>
+<div style="background: #8c3a2f; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">⚠️ Types primitifs</div>
+<div style="font-size: 1.4rem; line-height: 1.55;"><code>getInt()</code>, <code>getLong()</code>, <code>getDouble()</code> renvoient <b><code>0</code></b> pour <code>NULL</code>. <code>getBoolean()</code> renvoie <b><code>false</code></b>. Impossible de distinguer <code>NULL</code> de zéro !</div>
 </div>
 
 </div>
@@ -2532,7 +2532,7 @@ if (rs.wasNull()) {                // seule façon de lever le doute
 }
 ```
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.45rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 👉 Pour les nombres : <code>rs.wasNull()</code> APRÈS la lecture pour distinguer 0 et NULL.
 </div>
 
@@ -2541,12 +2541,12 @@ if (rs.wasNull()) {                // seule façon de lever le doute
 ## Étape 7 : libérer les ressources
 
 <style scoped>
-section pre { font-size: 0.85rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.7rem !important; line-height: 1.35 !important; }
 section .code-col { display: flex; flex-direction: column; }
 section .code-col pre { flex: 1; margin-top: 0 !important; }
 </style>
 
-<p style="font-size: 1.45rem; margin: -0.5rem 0 0.5rem 0;">Une <code>Connection</code> ouverte = un coût et un verrou. Il faut <b>impérativement</b> la fermer, même en cas d'erreur. Le <b>try-with-resources</b> rend ça automatique.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Une <code>Connection</code> ouverte = un coût et un verrou. Il faut <b>impérativement</b> la fermer, même en cas d'erreur. Le <b>try-with-resources</b> rend ça automatique.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem; align-items: stretch;">
 
@@ -2563,7 +2563,6 @@ try {
 } finally {
   if (ps != null) ps.close();
   if (conn != null) conn.close();
-  // verbeux, et facile à oublier
 }
 ```
 
@@ -2587,7 +2586,7 @@ try (Connection conn = ds.getConnection();
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.45rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
 💡 La fermeture d'un <code>Statement</code> ferme automatiquement les <code>ResultSet</code> associés. Mais on emboîte un 2e <code>try</code> pour aussi gérer les exceptions du parcours.
 </div>
 
