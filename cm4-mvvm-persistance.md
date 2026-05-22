@@ -2957,24 +2957,24 @@ Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQ
 
 ## Validation à plusieurs niveaux
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">La défense contre les erreurs se joue à <b>chaque couche</b> de l'architecture. Plus tôt on attrape, mieux c'est.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">La défense contre les erreurs se joue à <b>chaque couche</b> de l'architecture. Plus tôt on attrape l'erreur, mieux c'est pour l'utilisateur et le système.</p>
 
-<div style="display: grid; grid-template-columns: auto 1fr; gap: 0.5rem 1rem; align-items: center; margin-top: 0.7rem;">
+<div style="display: grid; grid-template-columns: auto 1fr; gap: 0.7rem 1.2rem; align-items: center; margin-top: 1rem;">
 
-<div style="background: #4a90d9; color: white; padding: 0.6rem 1rem; border-radius: 8px; font-weight: bold; font-size: 1.2rem; text-align: center;">UI</div>
-<div style="background: rgba(74,144,217,0.12); padding: 0.6rem 1rem; border-radius: 8px; font-size: 1.2rem;"><code>TextFormatter</code>, <code>ComboBox</code>, validation côté champ. Empêche les saisies absurdes.</div>
+<div style="background: #4a90d9; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; font-weight: bold; font-size: 1.4rem; text-align: center;">UI</div>
+<div style="background: rgba(74,144,217,0.12); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 1.35rem;"><code>TextFormatter</code>, <code>ComboBox</code>, validation côté champ. Empêche les saisies absurdes.</div>
 
-<div style="background: #8e44ad; color: white; padding: 0.6rem 1rem; border-radius: 8px; font-weight: bold; font-size: 1.2rem; text-align: center;">VM</div>
-<div style="background: rgba(142,68,173,0.12); padding: 0.6rem 1rem; border-radius: 8px; font-size: 1.2rem;">Validation métier : email valide, dates cohérentes, montants positifs. Messages utilisateur.</div>
+<div style="background: #8e44ad; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; font-weight: bold; font-size: 1.4rem; text-align: center;">VM</div>
+<div style="background: rgba(142,68,173,0.12); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 1.35rem;">Validation métier : email valide, dates cohérentes, montants positifs. Messages utilisateur.</div>
 
-<div style="background: #1a5276; color: white; padding: 0.6rem 1rem; border-radius: 8px; font-weight: bold; font-size: 1.2rem; text-align: center;">Modèle</div>
-<div style="background: rgba(26,82,118,0.12); padding: 0.6rem 1rem; border-radius: 8px; font-size: 1.2rem;">Invariants au constructeur : interdit de créer un objet en état illégal. Lève des exceptions.</div>
+<div style="background: #1a5276; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; font-weight: bold; font-size: 1.4rem; text-align: center;">Modèle</div>
+<div style="background: rgba(26,82,118,0.12); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 1.35rem;">Invariants au constructeur : interdit de créer un objet en état illégal. Lève des exceptions.</div>
 
-<div style="background: #8c3a2f; color: white; padding: 0.6rem 1rem; border-radius: 8px; font-weight: bold; font-size: 1.2rem; text-align: center;">DAO</div>
-<div style="background: rgba(140,58,47,0.12); padding: 0.6rem 1rem; border-radius: 8px; font-size: 1.2rem;">Vérifications avant écriture : unicité, références. Limite l'aller-retour avec la BDD.</div>
+<div style="background: #8c3a2f; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; font-weight: bold; font-size: 1.4rem; text-align: center;">DAO</div>
+<div style="background: rgba(140,58,47,0.12); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 1.35rem;">Vérifications avant écriture : unicité, références. Limite l'aller-retour avec la BDD.</div>
 
-<div style="background: #27ae60; color: white; padding: 0.6rem 1rem; border-radius: 8px; font-weight: bold; font-size: 1.2rem; text-align: center;">BDD</div>
-<div style="background: rgba(39,174,96,0.12); padding: 0.6rem 1rem; border-radius: 8px; font-size: 1.2rem;">Contraintes <code>NOT NULL</code>, <code>CHECK</code>, <code>UNIQUE</code>, clés étrangères. Garde-fou ultime.</div>
+<div style="background: #27ae60; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; font-weight: bold; font-size: 1.4rem; text-align: center;">BDD</div>
+<div style="background: rgba(39,174,96,0.12); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 1.35rem;">Contraintes <code>NOT NULL</code>, <code>CHECK</code>, <code>UNIQUE</code>, clés étrangères. Garde-fou ultime.</div>
 
 </div>
 
@@ -2988,26 +2988,26 @@ Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQ
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Heuristique #3 (<em>User control and freedom</em>) : l'utilisateur fait une erreur, il doit pouvoir <b>revenir en arrière</b>.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">↩️ Undo / Redo</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Pattern Memento ou Command stack. Tout VM a une <code>undoStack</code>. <kbd>Ctrl+Z</kbd> standard.</div>
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">↩️ Undo / Redo</div>
+<div style="font-size: 1.25rem; line-height: 1.5;">Pattern Memento ou Command stack. Tout VM a une <code>undoStack</code>. <kbd>Ctrl+Z</kbd> standard.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🚪 Bouton Cancel</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Toute boîte de dialogue a un bouton « Annuler ». <kbd>Esc</kbd> le déclenche.</div>
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🚪 Bouton Cancel</div>
+<div style="font-size: 1.25rem; line-height: 1.5;">Toute boîte de dialogue a un bouton « Annuler ». <kbd>Esc</kbd> le déclenche.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">💾 Brouillons sauvegardés</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Si l'app crashe, l'utilisateur retrouve sa saisie au redémarrage. JPA + autosave dans VM.</div>
+<div style="background: #e8a838; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">💾 Brouillons sauvegardés</div>
+<div style="font-size: 1.25rem; line-height: 1.5;">Si l'app crashe, l'utilisateur retrouve sa saisie au redémarrage. Persistance + autosave dans le VM.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🗑️ Corbeille au lieu de delete</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Suppression « molle » (flag <code>actif=false</code>) plutôt que <code>DELETE</code>. Récupération possible.</div>
+<div style="background: #8e44ad; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🗑️ Corbeille au lieu de delete</div>
+<div style="font-size: 1.25rem; line-height: 1.5;">Suppression « molle » (flag <code>actif=false</code>) plutôt que <code>DELETE</code>. Récupération possible.</div>
 </div>
 
 </div>
