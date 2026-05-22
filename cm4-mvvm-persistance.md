@@ -2760,9 +2760,7 @@ config.setJdbcUrl("jdbc:sqlite:chauves_souris.db");
 config.setMaximumPoolSize(10);
 // (PostgreSQL/MySQL : setUsername + setPassword en plus.
 //  SQLite est sans auth, le fichier suffit.)
-
 DataSource ds = new HikariDataSource(config);
-
 // Les DAOs reçoivent ds via Guice
 // ds.getConnection() = prendre une connexion du pool (instantané)
 // connection.close() = la rendre au pool (pas de vraie fermeture)
@@ -2778,33 +2776,33 @@ DataSource ds = new HikariDataSource(config);
 
 <p style="font-size: 1.45rem; margin: -0.5rem 0 0.6rem 0;">Toutes les couches du CM4 emboîtées : chaque flèche signale une dépendance unidirectionnelle (haut → bas), chaque couche reste testable indépendamment.</p>
 
-<div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.2rem; margin-top: 0.8rem; align-items: start;">
+<div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.2rem; margin-top: 0.8rem; align-items: stretch;">
 
 <div style="display: flex; flex-direction: column; gap: 0.15rem;">
 
-<div style="background: #4a90d9; color: white; padding: 0.55rem 0.9rem; border-radius: 8px; font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center;"><span><b>🖼️ Vue</b> (FXML + Controller léger)</span><span style="opacity: 0.8; font-size: 0.95rem;">JavaFX</span></div>
-<div style="text-align: center; color: #888; font-size: 1rem; line-height: 1;">↓ bind</div>
-<div style="background: #8e44ad; color: white; padding: 0.55rem 0.9rem; border-radius: 8px; font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center;"><span><b>🎯 ViewModel</b> (Properties + commandes)</span><span style="opacity: 0.8; font-size: 0.95rem;">MVVM</span></div>
-<div style="text-align: center; color: #888; font-size: 1rem; line-height: 1;">↓ @Inject</div>
-<div style="background: #1a5276; color: white; padding: 0.55rem 0.9rem; border-radius: 8px; font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center;"><span><b>📦 DAO</b> (1 classe par entité)</span><span style="opacity: 0.8; font-size: 0.95rem;">Pattern</span></div>
-<div style="text-align: center; color: #888; font-size: 1rem; line-height: 1;">↓ ds.getConnection()</div>
-<div style="background: #7f8c8d; color: white; padding: 0.55rem 0.9rem; border-radius: 8px; font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center;"><span><b>🔌 DataSource</b> (pool HikariCP)</span><span style="opacity: 0.8; font-size: 0.95rem;">Pool</span></div>
-<div style="text-align: center; color: #888; font-size: 1rem; line-height: 1;">↓ API standard</div>
-<div style="background: #34495e; color: white; padding: 0.55rem 0.9rem; border-radius: 8px; font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center;"><span><b>⚙️ JDBC</b> (<code>java.sql</code>)</span><span style="opacity: 0.8; font-size: 0.95rem;">API</span></div>
-<div style="text-align: center; color: #888; font-size: 1rem; line-height: 1;">↓ driver</div>
-<div style="background: #27ae60; color: white; padding: 0.55rem 0.9rem; border-radius: 8px; font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center;"><span><b>🗄️ SQLite</b> (fichier <code>.db</code>)</span><span style="opacity: 0.8; font-size: 0.95rem;">SGBD</span></div>
+<div style="background: #4a90d9; color: white; padding: 0.75rem 1rem; border-radius: 8px; font-size: 1.3rem; display: flex; justify-content: space-between; align-items: center;"><span><b>🖼️ Vue</b> (FXML + Controller léger)</span><span style="opacity: 0.8; font-size: 1.05rem;">JavaFX</span></div>
+<div style="text-align: center; color: #888; font-size: 1.15rem; line-height: 1;">↓ bind</div>
+<div style="background: #8e44ad; color: white; padding: 0.75rem 1rem; border-radius: 8px; font-size: 1.3rem; display: flex; justify-content: space-between; align-items: center;"><span><b>🎯 ViewModel</b> (Properties + commandes)</span><span style="opacity: 0.8; font-size: 1.05rem;">MVVM</span></div>
+<div style="text-align: center; color: #888; font-size: 1.15rem; line-height: 1;">↓ @Inject</div>
+<div style="background: #1a5276; color: white; padding: 0.75rem 1rem; border-radius: 8px; font-size: 1.3rem; display: flex; justify-content: space-between; align-items: center;"><span><b>📦 DAO</b> (1 classe par entité)</span><span style="opacity: 0.8; font-size: 1.05rem;">Pattern</span></div>
+<div style="text-align: center; color: #888; font-size: 1.15rem; line-height: 1;">↓ ds.getConnection()</div>
+<div style="background: #7f8c8d; color: white; padding: 0.75rem 1rem; border-radius: 8px; font-size: 1.3rem; display: flex; justify-content: space-between; align-items: center;"><span><b>🔌 DataSource</b> (pool HikariCP)</span><span style="opacity: 0.8; font-size: 1.05rem;">Pool</span></div>
+<div style="text-align: center; color: #888; font-size: 1.15rem; line-height: 1;">↓ API standard</div>
+<div style="background: #34495e; color: white; padding: 0.75rem 1rem; border-radius: 8px; font-size: 1.3rem; display: flex; justify-content: space-between; align-items: center;"><span><b>⚙️ JDBC</b> (<code>java.sql</code>)</span><span style="opacity: 0.8; font-size: 1.05rem;">API</span></div>
+<div style="text-align: center; color: #888; font-size: 1.15rem; line-height: 1;">↓ driver</div>
+<div style="background: #27ae60; color: white; padding: 0.75rem 1rem; border-radius: 8px; font-size: 1.3rem; display: flex; justify-content: space-between; align-items: center;"><span><b>🗄️ SQLite</b> (fichier <code>.db</code>)</span><span style="opacity: 0.8; font-size: 1.05rem;">SGBD</span></div>
 
 </div>
 
-<div style="background: white; border: 2px solid #1a5276; border-radius: 12px; padding: 0.9rem 1.1rem;">
-<div style="font-size: 1.3rem; font-weight: bold; color: #1a5276; margin-bottom: 0.4rem;">🧪 Testabilité par couche</div>
-<div style="font-size: 1.05rem; line-height: 1.5;">
+<div style="background: white; border: 2px solid #1a5276; border-radius: 12px; padding: 0.9rem 1.1rem; display: flex; flex-direction: column; height: 100%; box-sizing: border-box;">
+<div style="font-size: 1.5rem; font-weight: bold; color: #1a5276; margin-bottom: 0.5rem;">🧪 Testabilité par couche</div>
+<div style="font-size: 1.2rem; line-height: 1.6;">
 <b>Vue</b> : TestFX (rare)<br/>
 <b>ViewModel</b> : JUnit + DAO mocké<br/>
 <b>DAO</b> : JUnit + SQLite en mémoire<br/>
 <b>JDBC, DataSource, SGBD</b> : déjà testés par leurs éditeurs
 </div>
-<div style="background: #2c3e50; color: white; padding: 0.6rem 0.9rem; border-radius: 8px; margin-top: 0.7rem; font-size: 1.05rem; line-height: 1.45;">
+<div style="background: #2c3e50; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; margin-top: auto; font-size: 1.2rem; line-height: 1.5;">
 💡 <b>Guice</b> injecte les bons composants en prod comme en test : la même architecture, juste un module différent.
 </div>
 </div>
