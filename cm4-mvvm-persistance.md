@@ -2303,7 +2303,7 @@ section pre { font-size: 0.75rem !important; line-height: 1.4 !important; }
 String sql = "SELECT id, nom FROM utilisateur WHERE actif = ?";
 String url = "jdbc:sqlite:chauves_souris.db";
 
-try (Connection conn = DriverManager.getConnection(url);        // ⑶ Connection
+try (Connection conn = DriverManager.getConnection(url);         // ⑶ Connection
      PreparedStatement ps = conn.prepareStatement(sql)) {        // ⑷ Instruction
 
   ps.setBoolean(1, true);                                        // ⑷ Paramètre
@@ -2320,11 +2320,6 @@ try (Connection conn = DriverManager.getConnection(url);        // ⑶ Connectio
   }
 }                                                                 // ⑺ Fermeture auto
 ```
-
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.5rem; font-size: 1.45rem; text-align: center;">
-Toutes les étapes 3 à 7 sont là. On les décompose maintenant une par une.
-</div>
-
 ---
 
 ## Étape 3 : la Connection
@@ -2433,7 +2428,7 @@ section tr:nth-child(even) td { background: #f4f6f8 !important; }
 section pre { font-size: 0.85rem !important; line-height: 1.35 !important; }
 </style>
 
-<p style="font-size: 1.45rem; margin: -0.5rem 0 0.5rem 0;">Un <code>ResultSet</code> est un <b>curseur</b> sur les lignes renvoyées par <code>SELECT</code>. On avance ligne par ligne avec <code>rs.next()</code>, on lit colonne par colonne avec <code>rs.getXXX()</code>.</p>
+<p style="font-size: 1.45rem; margin: -0.5rem 0 0.5rem 0;">Un <code>ResultSet</code> est un <b>itérateur</b> sur les lignes renvoyées par <code>SELECT</code>. On avance ligne par ligne avec <code>rs.next()</code>, on lit colonne par colonne avec <code>rs.getXXX()</code>.</p>
 
 ```java
 try (ResultSet rs = ps.executeQuery()) {
@@ -2441,7 +2436,7 @@ try (ResultSet rs = ps.executeQuery()) {
     int    id  = rs.getInt("id");          // par nom de colonne
     String nom = rs.getString(2);          // ou par index (1-based)
     boolean a  = rs.getBoolean("actif");
-    // ... mapping vers un objet Java
+    // ... transformation en un objet Java
   }
 }
 ```
@@ -2449,13 +2444,13 @@ try (ResultSet rs = ps.executeQuery()) {
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.7rem;">
 
 <div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
-<div style="font-size: 1.2rem; font-weight: bold;">📌 Par nom (recommandé)</div>
-<div style="font-size: 1.1rem; margin-top: 0.3rem;">Lisible, résistant au changement d'ordre des colonnes dans le SELECT.</div>
+<div style="font-size: 1.5rem; font-weight: bold;">📌 Par nom (recommandé)</div>
+<div style="font-size: 1.3rem; margin-top: 0.3rem;">Lisible, résistant au changement d'ordre des colonnes dans le SELECT.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 0.8rem 1rem; border-radius: 10px;">
-<div style="font-size: 1.2rem; font-weight: bold;">⚡ Par index (rapide)</div>
-<div style="font-size: 1.1rem; margin-top: 0.3rem;">Légèrement plus rapide. Index <b>1-based</b> (pas 0). Plus fragile.</div>
+<div style="font-size: 1.5rem; font-weight: bold;">⚡ Par index (rapide)</div>
+<div style="font-size: 1.3rem; margin-top: 0.3rem;">Légèrement plus rapide. Index <b>1-based</b> (pas 0). Plus fragile.</div>
 </div>
 
 </div>
@@ -2465,45 +2460,45 @@ try (ResultSet rs = ps.executeQuery()) {
 ## Correspondance types Java ↔ SQL
 
 <style scoped>
-section table { font-size: 0.95rem !important; width: 100%; border-collapse: collapse; line-height: 1.35 !important; }
-section th { background: #1a5276 !important; color: white !important; padding: 0.35rem 0.7rem !important; text-align: left !important; }
-section td { padding: 0.3rem 0.7rem !important; border-bottom: 1px solid #e0e0e0 !important; }
+section table { font-size: 0.85rem !important; width: 100%; border-collapse: collapse; line-height: 1.35 !important; }
+section th { background: #1a5276 !important; color: white !important; padding: 0.3rem 0.6rem !important; text-align: left !important; }
+section td { padding: 0.25rem 0.6rem !important; border-bottom: 1px solid #e0e0e0 !important; }
 section tr:nth-child(even) td { background: #f4f6f8 !important; }
 </style>
 
-<p style="font-size: 1.4rem; margin: -0.5rem 0 0.5rem 0;">JDBC traduit automatiquement entre les types SQL du SGBD et les types Java. <code>getXXX</code> et <code>setXXX</code> font la conversion.</p>
+<p style="font-size: 1.4rem; margin: -0.5rem 0 0.5rem 0;">JDBC traduit automatiquement entre types SQL et types Java. La méthode est presque toujours <code>get</code> + nom du type Java (<code>getString</code>, <code>getInt</code>, <code>getDate</code>…).</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.6rem;">
 
 <div>
 
-| Type SQL | Type Java | Méthode |
-|---|---|---|
-| `VARCHAR`, `CHAR`, `TEXT` | `String` | `getString` |
-| `INTEGER` | `int` | `getInt` |
-| `BIGINT` | `long` | `getLong` |
-| `BOOLEAN`, `BIT` | `boolean` | `getBoolean` |
-| `REAL`, `FLOAT` | `float` / `double` | `getDouble` |
-| `NUMERIC`, `DECIMAL` | `BigDecimal` | `getBigDecimal` |
+| Type SQL | Type Java |
+|---|---|
+| `VARCHAR`, `CHAR`, `TEXT` | `String` |
+| `INTEGER` | `int` |
+| `BIGINT` | `long` |
+| `BOOLEAN`, `BIT` | `boolean` |
+| `REAL`, `FLOAT` | `float` / `double` |
+| `NUMERIC`, `DECIMAL` | `BigDecimal` |
 
 </div>
 
 <div>
 
-| Type SQL | Type Java | Méthode |
-|---|---|---|
-| `DATE` | `java.sql.Date` | `getDate` |
-| `TIME` | `java.sql.Time` | `getTime` |
-| `TIMESTAMP` | `java.sql.Timestamp` | `getTimestamp` |
-| `BLOB`, `BINARY` | `byte[]` | `getBytes` |
-| `CLOB` | `String` | `getString` |
+| Type SQL | Type Java |
+|---|---|
+| `DATE` | `java.sql.Date` |
+| `TIME` | `java.sql.Time` |
+| `TIMESTAMP` | `java.sql.Timestamp` |
+| `BLOB`, `BINARY` | `byte[]` *(getBytes)* |
+| `CLOB` | `String` |
 
-<div style="background: #2c3e50; color: white; padding: 0.5rem 0.8rem; border-radius: 8px; margin-top: 0.7rem; font-size: 1rem; line-height: 1.4;">
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.7rem 1rem; border-radius: 8px; margin-top: 0.9rem; font-size: 1.5rem; line-height: 1.45;">
 💡 Si la conversion est impossible, le driver lève une <code>SQLException</code>.
-</div>
-
-</div>
-
 </div>
 
 ---
