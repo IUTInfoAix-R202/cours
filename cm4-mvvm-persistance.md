@@ -2595,7 +2595,7 @@ try (Connection conn = ds.getConnection();
 ## INSERT, UPDATE, DELETE : `executeUpdate`
 
 <style scoped>
-section pre { font-size: 0.75rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.65rem !important; line-height: 1.35 !important; }
 </style>
 
 <p style="font-size: 1.45rem; margin: -0.5rem 0 0.5rem 0;">Même scénario que <code>SELECT</code>, sauf que l'étape 5 utilise <code>executeUpdate()</code> et il n'y a plus de <code>ResultSet</code> à parcourir.</p>
@@ -2619,11 +2619,6 @@ public void save(Utilisateur u) throws SQLException {
   }
 }
 ```
-
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.5rem; font-size: 1.45rem; text-align: center;">
-<code>executeUpdate()</code> renvoie le nombre de lignes affectées. <code>RETURN_GENERATED_KEYS</code> pour récupérer l'id auto-généré (clé primaire).
-</div>
-
 ---
 
 ## Transactions : commit ou rollback
@@ -2659,7 +2654,7 @@ public void transferer(long depuis, long vers, BigDecimal montant) throws SQLExc
 ## 🗄️ SQLite pour la BDD locale
 
 <style scoped>
-section pre { font-size: 0.8rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.6rem !important; line-height: 1.35 !important; }
 </style>
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Le SGBD utilisé en TP5 et pour la SAÉ. Pas de serveur à installer, pas de configuration : un fichier <code>.db</code> sur le disque suffit.</p>
@@ -2687,30 +2682,36 @@ try (Connection conn = DriverManager.getConnection(url)) {
 
 ---
 
-## Pourquoi SQLite pour le TP et la SAÉ
+## Pourquoi SQLite et pas Oracle ?
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Les gros SGBD (Oracle, PostgreSQL, MySQL) brillent en multi-utilisateur, gros volumes, haute concurrence. <b>Pour une app de bureau mono-utilisateur</b>, SQLite gagne systématiquement.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
 
-<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🚀 Zéro installation</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Une dépendance Maven et c'est fini. Pas de service à lancer, pas de port à ouvrir.</div>
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">🚀 Zéro installation</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Une dépendance Maven et c'est fini. Pas de service à lancer, pas de port à ouvrir.</div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">📦 Embarqué dans l'app</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Le moteur SQL vit dans la JVM. La BDD = un fichier portable que vous pouvez copier, versionner, archiver.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">📦 Embarqué dans l'app</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Le moteur SQL vit dans la JVM. La BDD = un fichier portable.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 Tests gratuits</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Mode <code>:memory:</code> : BDD jetable créée à chaque test, isolée, rapide. Idéal pour la pyramide de tests.</div>
+<div style="background: #8e44ad; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 Tests gratuits</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Mode <code>:memory:</code> : BDD jetable créée à chaque test. Parfait pour les tests unitaires.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🎯 Parfait pour la SAÉ</div>
-<div style="font-size: 1.3rem; line-height: 1.5;">Mono-utilisateur, capteurs locaux, BDD embarquée : SQLite couvre tout le besoin de la SAÉ et du TP5.</div>
+<div style="background: #e8a838; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">🎯 Parfait pour la SAÉ</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Mono-utilisateur, capteurs locaux, BDD embarquée : SQLite couvre le besoin de la SAÉ.</div>
 </div>
 
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 1rem; font-size: 1.45rem; text-align: center;">
+👉 SQLite : SGBD le plus déployé au monde (Android, iOS, navigateurs, avions…). Pas un jouet, un choix d'ingénieur.
 </div>
 
 ---
@@ -2718,7 +2719,7 @@ try (Connection conn = DriverManager.getConnection(url)) {
 ## Le pattern DAO : encapsuler l'accès aux données
 
 <style scoped>
-section pre { font-size: 0.8rem !important; line-height: 1.35 !important; }
+section pre { font-size: 0.7rem !important; line-height: 1.35 !important; }
 </style>
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Écrire du SQL au milieu d'un ViewModel = retour aux antipatterns du CM3. On encapsule l'accès aux données dans une <b>classe dédiée par entité</b> : le <b>DAO</b> (Data Access Object).</p>
@@ -2727,8 +2728,7 @@ section pre { font-size: 0.8rem !important; line-height: 1.35 !important; }
 public class UtilisateurDao {
   private final DataSource ds;
 
-  @Inject
-  public UtilisateurDao(DataSource ds) {
+  @Inject public UtilisateurDao(DataSource ds) {
     this.ds = ds;
   }
 
