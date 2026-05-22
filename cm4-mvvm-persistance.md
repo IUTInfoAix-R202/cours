@@ -2813,11 +2813,11 @@ DataSource ds = new HikariDataSource(config);
 
 ## Au-delà de JDBC : ouvertures
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">JDBC est la <b>fondation</b>. Quand vos applications grandissent, des couches supplémentaires deviennent utiles.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">JDBC est la <b>fondation</b>. Quand vos applications grandissent, des couches supplémentaires deviennent généralement utiles.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.8rem;">
 
-<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🔧 Helpers (jOOQ, JDBI, MyBatis)</div>
 <div style="font-size: 1.3rem; line-height: 1.5;">Vous gardez le SQL, mais le mapping ResultSet → objet est automatisé. Compromis pragmatique.</div>
 </div>
@@ -2827,20 +2827,20 @@ DataSource ds = new HikariDataSource(config);
 <div style="font-size: 1.3rem; line-height: 1.5;">Annotations sur les classes, le SQL devient invisible. Apprentissage long, traité dans la suite du BUT.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="background: #e8a838; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🌐 NoSQL (MongoDB, Redis)</div>
 <div style="font-size: 1.3rem; line-height: 1.5;">Pour des modèles non-relationnels, du cache rapide ou du gros volume. Spécifique à certains besoins.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="background: #8e44ad; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🚀 Frameworks complets</div>
 <div style="font-size: 1.3rem; line-height: 1.5;"><b>Spring Data</b>, <b>Quarkus</b>, <b>Micronaut</b>… combinent DI + persistance + REST. Standard du backend Java moderne.</div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.45rem; text-align: center;">
-Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQL emprunte un chemin parallèle (drivers dédiés).
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
+Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQL emprunte un chemin parallèle.
 </div>
 
 ---
