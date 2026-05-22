@@ -2855,76 +2855,101 @@ Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQ
 
 ---
 
-## 🧠 Heuristique #5 - Error prevention
+## 🧠 Heuristique #5 - Prévention des erreurs
 
 <div style="background: #27ae60; color: white; padding: 1.5rem 2rem; border-radius: 12px; margin-top: 1rem; font-size: 1.5rem; line-height: 1.5; text-align: center;">
 « <em>Even better than good error messages is a careful design which prevents a problem from occurring in the first place.</em> »
 <div style="margin-top: 0.6rem; font-size: 1.1rem; opacity: 0.9;"> -  Jakob Nielsen, 1994</div>
 </div>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.9rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🛡️ Constraint by design</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Empêcher l'erreur d'arriver plutôt que la traiter après coup. Désactiver, restreindre, valider à la saisie.</div>
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px; display: flex; gap: 1rem; align-items: flex-start;">
+<div style="font-size: 3.2rem; line-height: 1; flex-shrink: 0;">🛡️</div>
+<div>
+<div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.4rem;">Contraint par design</div>
+<div style="font-size: 1.15rem; line-height: 1.5;"><b>Dans la vie</b> : glissière de sécurité en montagne (empêche la chute) plutôt qu'un simple panneau « attention au ravin » en bas.</div>
+<div style="font-size: 1.15rem; line-height: 1.5; margin-top: 0.4rem;"><b>En IHM</b> : bouton désactivé, masque de saisie, dates grisées dans un calendrier, valeurs par défaut sensées.</div>
+</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">⚠️ Confirm before destruction</div>
-<div style="font-size: 1.1rem; line-height: 1.45;">Pour les actions destructrices (supprimer, écraser), demander confirmation explicite avec <em>« Êtes-vous sûr ? »</em>.</div>
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px; display: flex; gap: 1rem; align-items: flex-start;">
+<div style="font-size: 3.2rem; line-height: 1; flex-shrink: 0;">⚠️</div>
+<div>
+<div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.4rem;">Confirmer les actions destructives</div>
+<div style="font-size: 1.15rem; line-height: 1.5;"><b>Dans la vie</b> : démarrer une voiture demande clé + frein + embrayage. Pas un geste involontaire.</div>
+<div style="font-size: 1.15rem; line-height: 1.5; margin-top: 0.4rem;"><b>En IHM</b> : modale « Êtes-vous sûr ? » avant <code>DELETE</code>, écrasement, envoi définitif. Le bouton « Annuler » doit être séléctionné par défaut.</div>
+</div>
 </div>
 
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 1rem; font-size: 1.4rem; text-align: center;">
+👉 Côté JavaFX, ces principes se traduisent par <code>disableProperty</code>, <code>TextFormatter</code>, <code>ComboBox</code>, <code>Alert</code>… → slide suivante.
 </div>
 
 ---
 
 ## En pratique avec les outils du module
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem;">
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">JavaFX fournit quatre outils complémentaires pour appliquer l'heuristique #5 sans réinventer la roue.</p>
 
-<div style="background: #4a90d9; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🎯 Affordance (CM2)</div>
-<div style="font-size: 1.1rem; line-height: 1.5;"><code>btn.disableProperty().bind(...)</code> - l'utilisateur ne <b>peut pas</b> cliquer sur un bouton dont l'action serait invalide.</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+
+<div style="background: #27ae60; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">🎯 Affordance (CM2)</div>
+<div style="font-size: 1.4rem; line-height: 1.5;"><code>btn.disableProperty().bind(…)</code> - l'utilisateur ne <b>peut pas</b> cliquer sur un bouton dont l'action serait invalide.</div>
 </div>
 
-<div style="background: #4a90d9; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📝 Validation à la saisie</div>
-<div style="font-size: 1.1rem; line-height: 1.5;"><code>TextFormatter</code> + masque numérique : impossible de taper des lettres dans un champ « âge ».</div>
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">📝 Validation à la saisie</div>
+<div style="font-size: 1.4rem; line-height: 1.5;"><code>TextFormatter</code> + masque numérique : impossible de taper des lettres dans un champ « âge ».</div>
 </div>
 
-<div style="background: #4a90d9; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📋 Listes restreintes</div>
-<div style="font-size: 1.1rem; line-height: 1.5;"><code>ComboBox</code> avec valeurs prédéfinies plutôt que <code>TextField</code> libre. L'utilisateur ne peut pas se tromper.</div>
+<div style="background: #e8a838; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">📋 Listes restreintes</div>
+<div style="font-size: 1.4rem; line-height: 1.5;"><code>ComboBox</code> avec valeurs prédéfinies plutôt que <code>TextField</code> libre. L'utilisateur ne peut pas se tromper.</div>
 </div>
 
-<div style="background: #4a90d9; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">⏱️ Confirmations explicites</div>
-<div style="font-size: 1.1rem; line-height: 1.5;"><code>Alert.AlertType.CONFIRMATION</code> avant tout <code>DELETE</code>. Bouton « Annuler » par défaut.</div>
+<div style="background: #8e44ad; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">⏱️ Confirmations explicites</div>
+<div style="font-size: 1.4rem; line-height: 1.5;"><code>Alert.AlertType.CONFIRMATION</code> avant tout <code>DELETE</code>. Bouton « Annuler » par défaut.</div>
 </div>
 
 </div>
 
 ---
 
-## Heuristique #9 - Récupérer après l'erreur
+## 🧠 Heuristique #9 - Récupérer après l'erreur
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Quand l'erreur arrive malgré tout, l'utilisateur doit pouvoir <b>comprendre</b> et <b>réparer</b>.</p>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
-
-<div style="background: #8c3a2f; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✗ Mauvais message</div>
-<div style="font-size: 1.1rem; line-height: 1.5;"><em>« Erreur 0x4F-A2 »</em><br/><em>« java.sql.SQLException: ORA-00942 »</em><br/><em>« Une erreur s'est produite »</em></div>
+<div style="background: #27ae60; color: white; padding: 1.5rem 2rem; border-radius: 12px; margin-top: 1rem; font-size: 1.5rem; line-height: 1.5; text-align: center;">
+« <em>Error messages should be expressed in plain language (no error codes), precisely indicate the problem, and constructively suggest a solution.</em> »
+<div style="margin-top: 0.6rem; font-size: 1.1rem; opacity: 0.9;"> -  Jakob Nielsen, 1994</div>
 </div>
 
-<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">✓ Bon message</div>
-<div style="font-size: 1.1rem; line-height: 1.5;"><em>« Le serveur de la base de données ne répond pas. Vérifiez votre connexion ou réessayez dans quelques secondes. »</em></div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px; display: flex; gap: 1rem; align-items: flex-start;">
+<div style="font-size: 3.2rem; line-height: 1; flex-shrink: 0;">📝</div>
+<div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">Parler humain, pas machine</div>
+<div style="font-size: 1.4rem; line-height: 1.5;"><b>Dans la vie</b> : un panneau « Sens interdit » est clair. Pas un code à 4 chiffres.</div>
+<div style="font-size: 1.4rem; line-height: 1.5; margin-top: 0.4rem;"><b>En IHM</b> : pas <code>ORA-00942</code> ni <code>Erreur 0x4F-A2</code>. Dire <em>« Le serveur ne répond pas »</em>.</div>
+</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px; display: flex; gap: 1rem; align-items: flex-start;">
+<div style="font-size: 3.2rem; line-height: 1; flex-shrink: 0;">🛠️</div>
+<div>
+<div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.4rem;">Suggérer la sortie</div>
+<div style="font-size: 1.15rem; line-height: 1.5;"><b>Dans la vie</b> : « Travaux - déviation à droite » est utile. Pas juste « Route fermée ».</div>
+<div style="font-size: 1.15rem; line-height: 1.5; margin-top: 0.4rem;"><b>En IHM</b> : <em>« Réessayez dans quelques secondes »</em>, <em>« Vérifiez votre connexion »</em>, <em>« Aucun résultat - essayez ces suggestions »</em>.</div>
+</div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.5rem; line-height: 1.55; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 1rem; font-size: 1.4rem; text-align: center;">
 👉 Trois critères : <b>en langage humain</b>, <b>identifie le problème</b>, <b>suggère une solution</b>.
 </div>
 
