@@ -2700,7 +2700,7 @@ try (Connection conn = DriverManager.getConnection(url)) {
 
 <div style="background: #8e44ad; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
 <div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 Tests gratuits</div>
-<div style="font-size: 1.4rem; line-height: 1.5;">Mode <code>:memory:</code> : BDD jetable créée à chaque test. Parfait pour les tests unitaires.</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Mode <code>memory</code> : BDD jetable créée à chaque test. Parfait pour les tests unitaires.</div>
 </div>
 
 <div style="background: #e8a838; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
@@ -3254,7 +3254,7 @@ section table code { font-size: 0.85rem !important; padding: 1px 4px !important;
 
 <div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
 <div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">💉 Module Guice</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Composition root unique, modules de test pour la CI, BDD SQLite jetable (mode :memory: pour les tests).</div>
+<div style="font-size: 1.15rem; line-height: 1.5;">Composition root unique, modules de test pour la CI, BDD SQLite jetable (mode memory pour les tests).</div>
 </div>
 
 </div>
