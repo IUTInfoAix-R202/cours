@@ -2933,23 +2933,23 @@ Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQ
 <div style="font-size: 3.2rem; line-height: 1; flex-shrink: 0;">📝</div>
 <div>
 <div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">Parler humain, pas machine</div>
-<div style="font-size: 1.4rem; line-height: 1.5;"><b>Dans la vie</b> : un panneau « Sens interdit » est clair. Pas un code à 4 chiffres.</div>
-<div style="font-size: 1.4rem; line-height: 1.5; margin-top: 0.4rem;"><b>En IHM</b> : pas <code>ORA-00942</code> ni <code>Erreur 0x4F-A2</code>. Dire <em>« Le serveur ne répond pas »</em>.</div>
+<div style="font-size: 1.4rem; line-height: 1.5;"><b>Dans la vie</b> : un panneau « Sens interdit » est clair. Pas un code barre ni un QR-Code.</div>
+<div style="font-size: 1.4rem; line-height: 1.5; margin-top: 0.4rem;"><b>En IHM</b> : pas <code>ORA-00942</code> ni <code>Erreur 0x4F-A2</code>. Dire simplement <em>« Le serveur ne répond pas »</em>.</div>
 </div>
 </div>
 
 <div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px; display: flex; gap: 1rem; align-items: flex-start;">
 <div style="font-size: 3.2rem; line-height: 1; flex-shrink: 0;">🛠️</div>
 <div>
-<div style="font-size: 1.45rem; font-weight: bold; margin-bottom: 0.4rem;">Suggérer la sortie</div>
-<div style="font-size: 1.15rem; line-height: 1.5;"><b>Dans la vie</b> : « Travaux - déviation à droite » est utile. Pas juste « Route fermée ».</div>
-<div style="font-size: 1.15rem; line-height: 1.5; margin-top: 0.4rem;"><b>En IHM</b> : <em>« Réessayez dans quelques secondes »</em>, <em>« Vérifiez votre connexion »</em>, <em>« Aucun résultat - essayez ces suggestions »</em>.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">Suggérer la sortie</div>
+<div style="font-size: 1.4rem; line-height: 1.5;"><b>Dans la vie</b> : « Travaux - déviation à droite » est utile. Pas juste « Route fermée ».</div>
+<div style="font-size: 1.4rem; line-height: 1.5; margin-top: 0.4rem;"><b>En IHM</b> : <em>« Réessayez dans quelques secondes »</em>, <em>« Vérifiez votre connexion »</em>, <em>« Aucun résultat - essayez ces suggestions »</em>.</div>
 </div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 1rem; font-size: 1.4rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 1rem; font-size: 1.5rem; text-align: center;">
 👉 Trois critères : <b>en langage humain</b>, <b>identifie le problème</b>, <b>suggère une solution</b>.
 </div>
 
@@ -2959,26 +2959,26 @@ Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQ
 
 <p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">La défense contre les erreurs se joue à <b>chaque couche</b> de l'architecture. Plus tôt on attrape, mieux c'est.</p>
 
-<div style="display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 0.9rem; align-items: center; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: auto 1fr; gap: 0.5rem 1rem; align-items: center; margin-top: 0.7rem;">
 
-<div style="background: #4a90d9; color: white; padding: 0.5rem 0.8rem; border-radius: 6px; font-weight: bold; font-size: 1rem; text-align: center;">UI</div>
-<div style="background: rgba(74,144,217,0.1); padding: 0.5rem 0.9rem; border-radius: 6px; font-size: 1.05rem;"><code>TextFormatter</code>, <code>ComboBox</code>, validation côté champ. Empêche les saisies absurdes.</div>
+<div style="background: #4a90d9; color: white; padding: 0.6rem 1rem; border-radius: 8px; font-weight: bold; font-size: 1.2rem; text-align: center;">UI</div>
+<div style="background: rgba(74,144,217,0.12); padding: 0.6rem 1rem; border-radius: 8px; font-size: 1.2rem;"><code>TextFormatter</code>, <code>ComboBox</code>, validation côté champ. Empêche les saisies absurdes.</div>
 
-<div style="background: #8e44ad; color: white; padding: 0.5rem 0.8rem; border-radius: 6px; font-weight: bold; font-size: 1rem; text-align: center;">VM</div>
-<div style="background: rgba(142,68,173,0.1); padding: 0.5rem 0.9rem; border-radius: 6px; font-size: 1.05rem;">Validation métier : email valide, dates cohérentes, montants positifs. Messages utilisateur.</div>
+<div style="background: #8e44ad; color: white; padding: 0.6rem 1rem; border-radius: 8px; font-weight: bold; font-size: 1.2rem; text-align: center;">VM</div>
+<div style="background: rgba(142,68,173,0.12); padding: 0.6rem 1rem; border-radius: 8px; font-size: 1.2rem;">Validation métier : email valide, dates cohérentes, montants positifs. Messages utilisateur.</div>
 
-<div style="background: #1a5276; color: white; padding: 0.5rem 0.8rem; border-radius: 6px; font-weight: bold; font-size: 1rem; text-align: center;">Modèle</div>
-<div style="background: rgba(26,82,118,0.1); padding: 0.5rem 0.9rem; border-radius: 6px; font-size: 1.05rem;">Invariants au constructeur : interdit de créer un objet en état illégal. Lève des exceptions.</div>
+<div style="background: #1a5276; color: white; padding: 0.6rem 1rem; border-radius: 8px; font-weight: bold; font-size: 1.2rem; text-align: center;">Modèle</div>
+<div style="background: rgba(26,82,118,0.12); padding: 0.6rem 1rem; border-radius: 8px; font-size: 1.2rem;">Invariants au constructeur : interdit de créer un objet en état illégal. Lève des exceptions.</div>
 
-<div style="background: #8c3a2f; color: white; padding: 0.5rem 0.8rem; border-radius: 6px; font-weight: bold; font-size: 1rem; text-align: center;">DAO</div>
-<div style="background: rgba(192,57,43,0.1); padding: 0.5rem 0.9rem; border-radius: 6px; font-size: 1.05rem;">Vérifications avant écriture : unicité, références. Limite l'aller-retour avec la BDD.</div>
+<div style="background: #8c3a2f; color: white; padding: 0.6rem 1rem; border-radius: 8px; font-weight: bold; font-size: 1.2rem; text-align: center;">DAO</div>
+<div style="background: rgba(140,58,47,0.12); padding: 0.6rem 1rem; border-radius: 8px; font-size: 1.2rem;">Vérifications avant écriture : unicité, références. Limite l'aller-retour avec la BDD.</div>
 
-<div style="background: #27ae60; color: white; padding: 0.5rem 0.8rem; border-radius: 6px; font-weight: bold; font-size: 1rem; text-align: center;">BDD</div>
-<div style="background: rgba(39,174,96,0.1); padding: 0.5rem 0.9rem; border-radius: 6px; font-size: 1.05rem;">Contraintes <code>NOT NULL</code>, <code>CHECK</code>, <code>UNIQUE</code>, clés étrangères. Garde-fou ultime.</div>
+<div style="background: #27ae60; color: white; padding: 0.6rem 1rem; border-radius: 8px; font-weight: bold; font-size: 1.2rem; text-align: center;">BDD</div>
+<div style="background: rgba(39,174,96,0.12); padding: 0.6rem 1rem; border-radius: 8px; font-size: 1.2rem;">Contraintes <code>NOT NULL</code>, <code>CHECK</code>, <code>UNIQUE</code>, clés étrangères. Garde-fou ultime.</div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
 👉 Toujours mettre une contrainte BDD <b>en plus</b> de la validation côté code. La BDD ne se laissera jamais avoir.
 </div>
 
