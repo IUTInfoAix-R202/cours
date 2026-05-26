@@ -873,7 +873,7 @@ public class FormulaireController {
 <div style="font-size: 2.6rem; line-height: 1; flex-shrink: 0;">📈</div>
 <div style="font-size: 1.5rem; font-weight: bold;">Apps qui grossissent</div>
 </div>
-<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.6rem;">Un compteur n'a pas besoin de MVVM. La <b>SAÉ chauve-souris</b> avec ses filtres, exports, validations : oui.</div>
+<div style="font-size: 1.2rem; line-height: 1.5; margin-top: 0.6rem;">Un compteur n'a pas besoin de MVVM. Le <b>VigieChiro PR Companion</b> avec ses filtres, exports, validations : oui.</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
@@ -2115,7 +2115,7 @@ Alternative : annotations custom (<code>@EmailNotifier</code>) pour plus de type
 </div>
 
 <div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
-👉 Pour la <b>SAÉ chauve-souris</b> : DI <b>obligatoire</b>. Plusieurs sources de données, tests requis, équipe de plusieurs développeurs.
+👉 Pour le <b>VigieChiro PR Companion</b> : DI <b>obligatoire</b>. Plusieurs sources de données, tests requis, équipe de plusieurs développeurs.
 </div>
 
 ---
@@ -2984,30 +2984,65 @@ Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQ
 
 ---
 
+## 🧠 Heuristique #3 - Contrôle utilisateur et liberté
+
+<div style="background: #27ae60; color: white; padding: 1.5rem 2rem; border-radius: 12px; margin-top: 1rem; font-size: 1.5rem; line-height: 1.5; text-align: center;">
+« <em>Users often choose system functions by mistake and will need a clearly marked « emergency exit » to leave the unwanted state. Support undo and redo.</em> »
+<div style="margin-top: 0.6rem; font-size: 1.1rem; opacity: 0.9;"> -  Jakob Nielsen, 1994</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px; display: flex; gap: 1rem; align-items: flex-start;">
+<div style="font-size: 3.2rem; line-height: 1; flex-shrink: 0;">🚪</div>
+<div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">Une sortie de secours visible</div>
+<div style="font-size: 1.3rem; line-height: 1.5;"><b>Dans la vie</b> : tout ascenseur, tout métro affiche un bouton d'arrêt d'urgence. Visible, accessible, non ambigu.</div>
+<div style="font-size: 1.3rem; line-height: 1.5; margin-top: 0.4rem;"><b>En IHM</b> : un bouton « Annuler » sur chaque boîte de dialogue, <kbd>Esc</kbd> qui le déclenche, une croix de fermeture toujours en haut.</div>
+</div>
+</div>
+
+<div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px; display: flex; gap: 1rem; align-items: flex-start;">
+<div style="font-size: 3.2rem; line-height: 1; flex-shrink: 0;">↩️</div>
+<div>
+<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">Le droit à l'erreur</div>
+<div style="font-size: 1.3rem; line-height: 1.5;"><b>Dans la vie</b> : un brouillon de lettre, un crayon avec une gomme. On revient en arrière sans tout recommencer.</div>
+<div style="font-size: 1.3rem; line-height: 1.5; margin-top: 0.4rem;"><b>En IHM</b> : <kbd>Ctrl+Z</kbd>, brouillons auto-sauvegardés, corbeille plutôt que suppression définitive.</div>
+</div>
+</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 1rem; font-size: 1.5rem; text-align: center;">
+👉 L'utilisateur doit toujours garder <b>le contrôle</b> et la possibilité de <b>revenir en arrière</b>. → slide suivante.
+</div>
+
+---
+
 ## Annuler : la sortie de secours
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Heuristique #3 (<em>User control and freedom</em>) : l'utilisateur fait une erreur, il doit pouvoir <b>revenir en arrière</b>.</p>
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Mise en œuvre concrète : quatre patterns standards pour offrir le contrôle et la liberté à l'utilisateur.</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
 
 <div style="background: #1a5276; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">↩️ Undo / Redo</div>
-<div style="font-size: 1.25rem; line-height: 1.5;">Pattern Memento ou Command stack. Tout VM a une <code>undoStack</code>. <kbd>Ctrl+Z</kbd> standard.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">↩️ Undo / Redo</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Pattern Memento ou Command stack. Tout VM a une <code>undoStack</code>. <kbd>Ctrl+Z</kbd> standard.</div>
 </div>
 
 <div style="background: #27ae60; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🚪 Bouton Cancel</div>
-<div style="font-size: 1.25rem; line-height: 1.5;">Toute boîte de dialogue a un bouton « Annuler ». <kbd>Esc</kbd> le déclenche.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">🚪 Bouton Cancel</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Toute boîte de dialogue a un bouton « Annuler ». <kbd>Esc</kbd> le déclenche.</div>
 </div>
 
 <div style="background: #e8a838; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">💾 Brouillons sauvegardés</div>
-<div style="font-size: 1.25rem; line-height: 1.5;">Si l'app crashe, l'utilisateur retrouve sa saisie au redémarrage. Persistance + autosave dans le VM.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">💾 Brouillons sauvegardés</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Si l'app crashe, l'utilisateur retrouve sa saisie au redémarrage. Persistance + autosave dans le VM.</div>
 </div>
 
 <div style="background: #8e44ad; color: white; padding: 1.2rem 1.3rem; border-radius: 12px;">
-<div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.4rem;">🗑️ Corbeille au lieu de delete</div>
-<div style="font-size: 1.25rem; line-height: 1.5;">Suppression « molle » (flag <code>actif=false</code>) plutôt que <code>DELETE</code>. Récupération possible.</div>
+<div style="font-size: 1.6rem; font-weight: bold; margin-bottom: 0.4rem;">🗑️ Corbeille au lieu de delete</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Suppression « molle » (flag <code>actif=false</code>) plutôt que <code>DELETE</code>. Récupération possible.</div>
 </div>
 
 </div>
@@ -3016,28 +3051,28 @@ Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQ
 
 ## L'architecture aide à prévenir
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">MVVM + DI + persistance n'est pas qu'un confort développeur : c'est aussi un garde-fou contre les bugs visibles par l'utilisateur.</p>
+<p style="font-size: 1.55rem; margin: -0.5rem 0 0.8rem 0;">MVVM + DI + persistance n'est pas qu'un confort développeur : c'est aussi un garde-fou contre les bugs visibles par l'utilisateur.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.2rem;">
 
-<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 Tests = bugs prévenus</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Le ViewModel testable JUnit attrape 90% des bugs de logique <b>avant</b> qu'ils touchent l'utilisateur.</div>
+<div style="background: #27ae60; color: white; padding: 1.5rem 1.6rem; border-radius: 14px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.6rem;">🧪 Tests = bugs prévenus</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Le ViewModel testable JUnit attrape 90% des bugs de logique <b>avant</b> qu'ils touchent l'utilisateur.</div>
 </div>
 
-<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🔌 DI = remplacements faciles</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Mode dégradé en cas de panne BDD : on bascule sur un cache local via une autre liaison Guice.</div>
+<div style="background: #1a5276; color: white; padding: 1.5rem 1.6rem; border-radius: 14px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.6rem;">🔌 DI = remplacements faciles</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Mode dégradé en cas de panne BDD : on bascule sur un cache local via une autre liaison Guice.</div>
 </div>
 
-<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">📊 Modèle solide</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Logique métier dans le modèle, contraintes en BDD : impossible de créer un état illégal.</div>
+<div style="background: #e8a838; color: white; padding: 1.5rem 1.6rem; border-radius: 14px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.6rem;">📊 Modèle solide</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Logique métier dans le modèle, contraintes en BDD : impossible de créer un état illégal.</div>
 </div>
 
-<div style="background: #27ae60; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.4rem;">🔄 Transactions = atomicité</div>
-<div style="font-size: 1.1rem; line-height: 1.5;">Une opération réussit complètement ou est annulée. Pas d'état corrompu en cas d'échec partiel.</div>
+<div style="background: #8e44ad; color: white; padding: 1.5rem 1.6rem; border-radius: 14px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.6rem;">🔄 Transactions = atomicité</div>
+<div style="font-size: 1.4rem; line-height: 1.5;">Une opération réussit complètement ou est annulée. Pas d'état corrompu en cas d'échec partiel.</div>
 </div>
 
 </div>
@@ -3055,9 +3090,9 @@ Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQ
 ## Ce que vous avez appris en 4 CM
 
 <style scoped>
-section table { font-size: 0.85rem !important; width: 100%; border-collapse: collapse; }
-section th { background: #1a5276 !important; color: white !important; padding: 0.35rem 0.7rem !important; text-align: left !important; }
-section td { padding: 0.3rem 0.7rem !important; border-bottom: 1px solid #e0e0e0 !important; vertical-align: top; }
+section table { font-size: 0.78rem !important; width: 100%; border-collapse: collapse; line-height: 1.35 !important; }
+section th { background: #1a5276 !important; color: white !important; padding: 0.3rem 0.6rem !important; text-align: left !important; }
+section td { padding: 0.25rem 0.6rem !important; border-bottom: 1px solid #e0e0e0 !important; vertical-align: top; }
 section tr:nth-child(even) td { background: #f4f6f8 !important; }
 </style>
 
@@ -3070,82 +3105,6 @@ section tr:nth-child(even) td { background: #f4f6f8 !important; }
 
 <div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
 Chaque CM construit sur le précédent. Un compteur en CM4 utilise tout : Stage, propriétés, FXML, MVVM, DI, persistance.
-</div>
-
----
-
-## Évolution du même compteur en 4 CM
-
-<style scoped>
-section pre { font-size: 0.65rem !important; line-height: 1.3 !important; }
-section code { font-size: 1em !important; }
-</style>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.3rem;">
-
-<div>
-<div style="background: #4a90d9; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">CM1 : tout en Java</div>
-
-```java
-Label l = new Label("0");
-Button b = new Button("+1");
-b.setOnAction(e -> l.setText(
-   String.valueOf(
-     parseInt(l.getText())+1)));
-```
-
-<div style="background: #1a5276; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem; margin-top: 0.4rem;">CM2 : avec propriétés</div>
-
-```java
-Compteur c = new Compteur();
-Label l = new Label();
-l.textProperty().bind(
-  c.valeurProperty().asString());
-Button b = new Button("+1");
-b.setOnAction(e -> c.incrementer());
-```
-
-</div>
-
-<div>
-<div style="background: #27ae60; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem;">CM3 : MVC + FXML</div>
-
-```xml
-<Label fx:id="l"/>
-<Button onAction="#inc"/>
-```
-
-```java
-class Ctrl {
-  Compteur c = new Compteur();
-  @FXML Label l;
-  @FXML void initialize() {
-    l.textProperty().bind(...); }
-  @FXML void inc() { c.incrementer(); }
-}
-```
-
-<div style="background: #8e44ad; color: white; padding: 0.4rem 0.7rem; border-radius: 6px 6px 0 0; font-weight: bold; font-size: 1rem; margin-top: 0.4rem;">CM4 : MVVM + DI + JPA</div>
-
-```java
-class Ctrl {
-  @Inject CompteurVM vm;
-  @FXML Label l;
-  @FXML void initialize() {
-    l.textProperty().bind(vm.messageProperty());
-  }
-  @FXML void inc() { vm.incrementer(); }
-}
-// vm appelle Service qui appelle DAO
-// → Compteur sauvegardé en BDD.
-```
-
-</div>
-
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.55rem 1.1rem; border-radius: 8px; margin-top: 0.3rem; font-size: 1.5rem; text-align: center;">
-Le code applicatif <b>raccourcit</b>. Le code d'<b>infrastructure</b> grandit, mais devient générique et réutilisable.
 </div>
 
 ---
@@ -3222,96 +3181,68 @@ section table code { font-size: 0.85rem !important; padding: 1px 4px !important;
 
 ## Le workflow professionnel acquis
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Au-delà de JavaFX, ce module vous a fait pratiquer un <b>flux de travail</b> standard de l'industrie.</p>
+<p style="font-size: 1.55rem; margin: -0.5rem 0 0.8rem 0;">Au-delà de JavaFX, ce module vous a fait pratiquer un <b>flux de travail</b> standard de l'industrie.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🌳 Branches Git</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Une branche par fonctionnalité (<code>git checkout -b exerciceN</code>). Pas de commit direct sur <code>main</code>.</div>
+<div style="background: #1a5276; color: white; padding: 1.4rem 1.5rem; border-radius: 14px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.5rem;">🌳 Branches Git</div>
+<div style="font-size: 1.35rem; line-height: 1.5;">Une branche par fonctionnalité (<code>git checkout -b exerciceN</code>). Pas de commit direct sur <code>main</code>.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🔀 Pull Requests</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Chaque feature passe par une PR avec description claire. Discussion, review, validation.</div>
+<div style="background: #27ae60; color: white; padding: 1.4rem 1.5rem; border-radius: 14px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.5rem;">🔀 Pull Requests</div>
+<div style="font-size: 1.35rem; line-height: 1.5;">Chaque feature passe par une PR avec description claire. Discussion, review, validation.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🤖 Review automatisée</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Copilot suggère, GitHub Actions valide les tests, l'autograding note. Feedback en quelques secondes.</div>
+<div style="background: #e8a838; color: white; padding: 1.4rem 1.5rem; border-radius: 14px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.5rem;">🤖 Review automatisée</div>
+<div style="font-size: 1.35rem; line-height: 1.5;">Copilot suggère, GitHub Actions valide les tests, l'autograding note. Feedback en quelques secondes.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🧪 TDD baby steps</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Activer un test, le voir échouer, écrire le code, le voir passer. Le rythme du dev pro.</div>
+<div style="background: #8e44ad; color: white; padding: 1.4rem 1.5rem; border-radius: 14px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.5rem;">🧪 TDD baby steps</div>
+<div style="font-size: 1.35rem; line-height: 1.5;">Activer un test, le voir échouer, écrire le code, le voir passer. Le rythme du dev pro.</div>
 </div>
 
 </div>
 
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.5rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 1rem; font-size: 1.5rem; text-align: center;">
 👉 Ce workflow est <b>évalué formellement en R2.03</b> (Qualité de développement), mais vous l'avez déjà internalisé via les TPs.
 </div>
 
 ---
 
-## Vers la SAÉ chauve-souris
+## Vers le VigieChiro PR Companion
 
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">Tout ce que vous avez appris s'applique directement à la SAÉ 2.01.</p>
+<p style="font-size: 1.55rem; margin: -0.5rem 0 0.8rem 0;">Tout ce que vous avez appris s'applique directement à la SAÉ 2.01.</p>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.4rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem;">
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">📊 Modèle</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Espèce, capteur, observation, identification. Tables persistées en SQLite via JDBC.</div>
+<div style="background: #1a5276; color: white; padding: 1.4rem 1.5rem; border-radius: 14px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.5rem;">📊 Modèle</div>
+<div style="font-size: 1.35rem; line-height: 1.5;">Espèce, capteur, observation, identification. Tables persistées en SQLite via JDBC.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🎯 ViewModels</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Filtres dynamiques, exports CSV, statistiques. Testables sans UI.</div>
+<div style="background: #8e44ad; color: white; padding: 1.4rem 1.5rem; border-radius: 14px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.5rem;">🎯 ViewModels</div>
+<div style="font-size: 1.35rem; line-height: 1.5;">Filtres dynamiques, exports CSV, statistiques. Testables sans UI.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">🖼️ Vues FXML</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Tableau d'observations, formulaires, dashboards. SceneBuilder pour le design.</div>
+<div style="background: #e8a838; color: white; padding: 1.4rem 1.5rem; border-radius: 14px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.5rem;">🖼️ Vues FXML</div>
+<div style="font-size: 1.35rem; line-height: 1.5;">Tableau d'observations, formulaires, dashboards. SceneBuilder pour le design.</div>
 </div>
 
-<div style="background: #1a5276; color: white; padding: 1rem 1.2rem; border-radius: 10px;">
-<div style="font-size: 1.35rem; font-weight: bold; margin-bottom: 0.4rem;">💉 Module Guice</div>
-<div style="font-size: 1.15rem; line-height: 1.5;">Composition root unique, modules de test pour la CI, BDD SQLite jetable (mode memory pour les tests).</div>
+<div style="background: #27ae60; color: white; padding: 1.4rem 1.5rem; border-radius: 14px;">
+<div style="font-size: 1.7rem; font-weight: bold; margin-bottom: 0.5rem;">💉 Module Guice</div>
+<div style="font-size: 1.35rem; line-height: 1.5;">Composition root unique, modules de test pour la CI, BDD SQLite jetable (mode memory pour les tests).</div>
 </div>
 
 </div>
 
-<div style="background: #27ae60; color: white; padding: 0.85rem 1.2rem; border-radius: 10px; margin-top: 0.6rem; font-size: 1.5rem; text-align: center;">
+<div style="background: #27ae60; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 1rem; font-size: 1.5rem; text-align: center;">
 🎯 Vous avez désormais <b>tous les outils</b> pour livrer une application professionnelle.
-</div>
-
----
-
-## Les design patterns rencontrés en 4 CM
-
-<style scoped>
-section table { font-size: 0.92rem !important; width: 100%; border-collapse: collapse; }
-section th { background: #1a5276 !important; color: white !important; padding: 0.35rem 0.7rem !important; text-align: left !important; }
-section td { padding: 0.3rem 0.7rem !important; border-bottom: 1px solid #e0e0e0 !important; }
-section tr:nth-child(even) td { background: #f4f6f8 !important; }
-</style>
-
-| Pattern | Vu en | Forme JavaFX |
-|---|---|---|
-| **Observer** | CM1 | `EventHandler`, `addListener()` |
-| **Composite** | CM1 | Graphe de scène (Node/Parent récursif) |
-| **Property / Observable** | CM2 | `IntegerProperty`, `bind()` |
-| **Strategy** | CM2 | `Bindings.when().then().otherwise()` |
-| **MVC** | CM3 | `@FXML`, `fx:controller` |
-| **Composite View** | CM3 | `fx:include`, `fx:root` |
-| **MVVM** | CM4 | ViewModel + propriétés |
-| **Dependency Injection** | CM4 | Guice `@Inject`, `Module` |
-| **DAO** | CM4 | `UtilisateurDao` injecté |
-| **Composition Root** | CM4 | `start()` + `Guice.createInjector(...)` |
-
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.4rem; font-size: 1.5rem; text-align: center;">
-🎓 Vocabulaire transférable à n'importe quel framework UI moderne.
 </div>
 
 ---
