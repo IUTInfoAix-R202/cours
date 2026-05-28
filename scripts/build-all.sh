@@ -17,7 +17,7 @@ cd "$(dirname "$0")/.."
 
 echo "=== 1. HTML slides ==="
 mkdir -p _site
-for f in cm*.md; do
+for f in cm*.md presentation-*.md; do
   [ -f "$f" ] || continue
   name="${f%.md}"
   echo "  $f -> _site/${name}.html"
@@ -27,7 +27,7 @@ done
 echo ""
 echo "=== 2. PDF slides ==="
 npx playwright install --with-deps chromium
-for f in cm*.md; do
+for f in cm*.md presentation-*.md; do
   [ -f "$f" ] || continue
   name="${f%.md}"
   echo "  $f -> _site/${name}.pdf"

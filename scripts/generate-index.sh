@@ -47,6 +47,22 @@ CM_ROWS=$(
   cm_row 4 "MVVM, persistance et synthèse"                     "creer"      "Créer"      "cm4-mvvm-persistance" "⏳ À venir"
 )
 
+sae_row() {
+  local slug="presentation-sae-2.01"
+  [ -f "${slug}.md" ] || return 0
+  cat <<ROW
+                <tr>
+                  <td>SAÉ</td>
+                  <td>Présentation du brief - VigieChiro PR Companion</td>
+                  <td><span class="badge brief">Brief</span></td>
+                  <td><a href="${slug}.html">📺 HTML</a></td>
+                  <td><a href="${slug}.pdf">📄 PDF</a></td>
+                </tr>
+ROW
+}
+
+SAE_ROW=$(sae_row)
+
 cat > _site/index.html <<HTMLEOF
 <!DOCTYPE html>
 <html lang="fr">
@@ -68,6 +84,7 @@ cat > _site/index.html <<HTMLEOF
     .appliquer { background: #f39c12; }
     .analyser { background: #e74c3c; }
     .creer { background: #8e44ad; }
+    .brief { background: #8c3a2f; }
     em { color: #888; font-style: italic; }
     footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; font-size: 0.85rem; color: #888; }
   </style>
@@ -82,6 +99,7 @@ cat > _site/index.html <<HTMLEOF
     </thead>
     <tbody>
 ${CM_ROWS}
+${SAE_ROW}
     </tbody>
   </table>
 

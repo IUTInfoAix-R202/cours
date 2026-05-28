@@ -35,7 +35,7 @@ jobs:
       - name: Build HTML slides
         run: |
           mkdir -p _site
-          for f in cm*.md; do
+          for f in cm*.md presentation-*.md; do
             [ -f "$f" ] || continue
             name="${f%.md}"
             echo "Building $f → _site/${name}.html"
@@ -45,7 +45,7 @@ jobs:
       - name: Build PDF slides
         run: |
           npx playwright install --with-deps chromium
-          for f in cm*.md; do
+          for f in cm*.md presentation-*.md; do
             [ -f "$f" ] || continue
             name="${f%.md}"
             echo "Building $f → _site/${name}.pdf"

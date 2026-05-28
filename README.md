@@ -21,6 +21,8 @@ Ce dépôt contient les supports des 4 cours magistraux du module R2.02 (BUT Inf
 | [CM3](https://iutinfoaix-r202.github.io/cours/cm3-architecture-fxml.html) | Architecture des IHM et FXML | TP3 - FXML | Analyser |
 | [CM4](https://iutinfoaix-r202.github.io/cours/cm4-mvvm-persistance.html) | MVVM, persistance et synthèse | TP4 + TP5 | Créer / Évaluer |
 
+> 🦇 **Présentation du brief SAÉ 2.01** (*VigieChiro PR Companion*), présentée en amont du CM4 : [slides en ligne](https://iutinfoaix-r202.github.io/cours/presentation-sae-2.01.html) · [PDF](https://iutinfoaix-r202.github.io/cours/presentation-sae-2.01.pdf) · [source](presentation-sae-2.01.md).
+
 ### Fil rouge
 
 Trois thèmes traversent l'ensemble des CM :
@@ -64,6 +66,8 @@ Le rendu utilise un **container Kroki local** (`docker-compose.yml`) plutôt que
 
 Les compétences acquises dans les CM et TP servent à construire l'**interface d'extraction et manipulation de données** pour des capteurs de détection et identification de chauves-souris (SAÉ 2.01). Chaque CM fait le lien explicite avec cette application fil rouge.
 
+La **présentation du brief** distribuée aux étudiants est disponible sous forme de slides : [*VigieChiro PR Companion*](https://iutinfoaix-r202.github.io/cours/presentation-sae-2.01.html) (source : [`presentation-sae-2.01.md`](presentation-sae-2.01.md)). Le brief complet en ligne reste sur [iutinfoaix-s201.github.io/brief](https://iutinfoaix-s201.github.io/brief/).
+
 ## Organisation du dépôt
 
 ```
@@ -72,6 +76,7 @@ cours/
 ├── cm2-donnees-et-liaison.md  # CM2 (publié)
 ├── cm3-architecture-fxml.md   # CM3 (publié)
 ├── cm4-mvvm-persistance.md    # CM4 (publié)
+├── presentation-sae-2.01.md   # Brief SAÉ 2.01 - VigieChiro PR Companion (publié)
 ├── docker-compose.yml         # stack Kroki locale (mermaid + plantuml)
 ├── assets/
 │   ├── *.svg, *.png           # images et diagrammes maison
@@ -83,7 +88,7 @@ cours/
     └── kroki-sources/         # sources des diagrammes (.mmd, .puml)
 ```
 
-Les 4 CM sont publiés. Consulter le [syllabus](https://github.com/IUTInfoAix-R202/syllabus) pour le statut courant des TP correspondants.
+Les 4 CM et la présentation du brief SAÉ 2.01 sont publiés. Consulter le [syllabus](https://github.com/IUTInfoAix-R202/syllabus) pour le statut courant des TP correspondants.
 
 ## Licence et attributions
 
