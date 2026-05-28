@@ -1457,29 +1457,6 @@ public class FormulaireViewModel {
 
 ---
 
-## Variantes : MVP et le reste de la famille
-
-<style scoped>
-section table { font-size: 0.8rem !important; width: 100%; border-collapse: collapse; line-height: 1.35 !important; }
-section th { background: #1a5276 !important; color: white !important; padding: 0.3rem 0.6rem !important; text-align: left !important; }
-section td { padding: 0.25rem 0.6rem !important; border-bottom: 1px solid #e0e0e0 !important; vertical-align: top; }
-section tr:nth-child(even) td { background: #f4f6f8 !important; }
-</style>
-
-| Pattern | Découplage | Mécanisme | Cas d'usage |
-|---|---|---|---|
-| **MVC classique** | Faible | Vue observe Modèle directement | Petites apps, prototypes |
-| **MVP** (Presenter) | Fort | Presenter manipule Vue via interface | Java Swing, GWT |
-| **MVVM** | Très fort | Vue se bind au ViewModel, qui ignore la Vue | JavaFX, WPF, Vue, Knockout |
-| **Flux / Redux** | Total | État central immuable + actions dispatch | React, Vuex / Pinia |
-| **MVVM-C** (Coordinator) | Fort + navigation | Coordinator pilote la composition de VM | Grosses apps iOS / mobile |
-
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
-Ces patterns partagent tous la même intention : <b>séparer la logique d'affichage de la logique métier</b>. MVVM est le plus naturel pour JavaFX.
-</div>
-
----
-
 ## Gérer les erreurs dans une commande
 <style scoped>
 section pre { font-size: 0.5rem !important; line-height: 1.35 !important; }
@@ -1510,6 +1487,29 @@ public class FormulaireConnexionViewModel {
 
 <div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
 La vue se contente de bind <code>statut</code> dans un Label et <code>enCours</code> sur un spinner.
+</div>
+
+---
+
+## Variantes : MVP et le reste de la famille
+
+<style scoped>
+section table { font-size: 0.8rem !important; width: 100%; border-collapse: collapse; line-height: 1.35 !important; }
+section th { background: #1a5276 !important; color: white !important; padding: 0.3rem 0.6rem !important; text-align: left !important; }
+section td { padding: 0.25rem 0.6rem !important; border-bottom: 1px solid #e0e0e0 !important; vertical-align: top; }
+section tr:nth-child(even) td { background: #f4f6f8 !important; }
+</style>
+
+| Pattern | Découplage | Mécanisme | Cas d'usage |
+|---|---|---|---|
+| **MVC classique** | Faible | Vue observe Modèle directement | Petites apps, prototypes |
+| **MVP** (Presenter) | Fort | Presenter manipule Vue via interface | Java Swing, GWT |
+| **MVVM** | Très fort | Vue se bind au ViewModel, qui ignore la Vue | JavaFX, WPF, Vue, Knockout |
+| **Flux / Redux** | Total | État central immuable + actions dispatch | React, Vuex / Pinia |
+| **MVVM-C** (Coordinator) | Fort + navigation | Coordinator pilote la composition de VM | Grosses apps iOS / mobile |
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
+Ces patterns partagent tous la même intention : <b>séparer la logique d'affichage de la logique métier</b>. MVVM est le plus naturel pour JavaFX.
 </div>
 
 ---
@@ -2920,6 +2920,35 @@ Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQ
 
 ---
 
+## Validation à plusieurs niveaux
+
+<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">La défense contre les erreurs se joue à <b>chaque couche</b> de l'architecture. Plus tôt on attrape l'erreur, mieux c'est pour l'utilisateur et le système.</p>
+
+<div style="display: grid; grid-template-columns: auto 1fr; gap: 0.7rem 1.2rem; align-items: center; margin-top: 1rem;">
+
+<div style="background: #4a90d9; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; font-weight: bold; font-size: 1.4rem; text-align: center;">UI</div>
+<div style="background: rgba(74,144,217,0.12); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 1.35rem;"><code>TextFormatter</code>, <code>ComboBox</code>, validation côté champ. Empêche les saisies absurdes.</div>
+
+<div style="background: #8e44ad; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; font-weight: bold; font-size: 1.4rem; text-align: center;">VM</div>
+<div style="background: rgba(142,68,173,0.12); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 1.35rem;">Validation métier : email valide, dates cohérentes, montants positifs. Messages utilisateur.</div>
+
+<div style="background: #1a5276; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; font-weight: bold; font-size: 1.4rem; text-align: center;">Modèle</div>
+<div style="background: rgba(26,82,118,0.12); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 1.35rem;">Invariants au constructeur : interdit de créer un objet en état illégal. Lève des exceptions.</div>
+
+<div style="background: #8c3a2f; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; font-weight: bold; font-size: 1.4rem; text-align: center;">DAO</div>
+<div style="background: rgba(140,58,47,0.12); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 1.35rem;">Vérifications avant écriture : unicité, références. Limite l'aller-retour avec la BDD.</div>
+
+<div style="background: #27ae60; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; font-weight: bold; font-size: 1.4rem; text-align: center;">BDD</div>
+<div style="background: rgba(39,174,96,0.12); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 1.35rem;">Contraintes <code>NOT NULL</code>, <code>CHECK</code>, <code>UNIQUE</code>, clés étrangères. Garde-fou ultime.</div>
+
+</div>
+
+<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
+👉 Toujours mettre une contrainte BDD <b>en plus</b> de la validation côté code. La BDD ne se laissera jamais avoir.
+</div>
+
+---
+
 ## 🧠 Heuristique #9 - Récupérer après l'erreur
 
 <div style="background: #27ae60; color: white; padding: 1.5rem 2rem; border-radius: 12px; margin-top: 1rem; font-size: 1.5rem; line-height: 1.5; text-align: center;">
@@ -2951,35 +2980,6 @@ Côté relationnel, tous ces outils s'appuient au final sur <b>JDBC</b>. Le NoSQ
 
 <div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 1rem; font-size: 1.5rem; text-align: center;">
 👉 Trois critères : <b>en langage humain</b>, <b>identifie le problème</b>, <b>suggère une solution</b>.
-</div>
-
----
-
-## Validation à plusieurs niveaux
-
-<p style="font-size: 1.5rem; margin: -0.5rem 0 0.5rem 0;">La défense contre les erreurs se joue à <b>chaque couche</b> de l'architecture. Plus tôt on attrape l'erreur, mieux c'est pour l'utilisateur et le système.</p>
-
-<div style="display: grid; grid-template-columns: auto 1fr; gap: 0.7rem 1.2rem; align-items: center; margin-top: 1rem;">
-
-<div style="background: #4a90d9; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; font-weight: bold; font-size: 1.4rem; text-align: center;">UI</div>
-<div style="background: rgba(74,144,217,0.12); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 1.35rem;"><code>TextFormatter</code>, <code>ComboBox</code>, validation côté champ. Empêche les saisies absurdes.</div>
-
-<div style="background: #8e44ad; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; font-weight: bold; font-size: 1.4rem; text-align: center;">VM</div>
-<div style="background: rgba(142,68,173,0.12); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 1.35rem;">Validation métier : email valide, dates cohérentes, montants positifs. Messages utilisateur.</div>
-
-<div style="background: #1a5276; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; font-weight: bold; font-size: 1.4rem; text-align: center;">Modèle</div>
-<div style="background: rgba(26,82,118,0.12); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 1.35rem;">Invariants au constructeur : interdit de créer un objet en état illégal. Lève des exceptions.</div>
-
-<div style="background: #8c3a2f; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; font-weight: bold; font-size: 1.4rem; text-align: center;">DAO</div>
-<div style="background: rgba(140,58,47,0.12); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 1.35rem;">Vérifications avant écriture : unicité, références. Limite l'aller-retour avec la BDD.</div>
-
-<div style="background: #27ae60; color: white; padding: 0.8rem 1.1rem; border-radius: 8px; font-weight: bold; font-size: 1.4rem; text-align: center;">BDD</div>
-<div style="background: rgba(39,174,96,0.12); padding: 0.8rem 1.2rem; border-radius: 8px; font-size: 1.35rem;">Contraintes <code>NOT NULL</code>, <code>CHECK</code>, <code>UNIQUE</code>, clés étrangères. Garde-fou ultime.</div>
-
-</div>
-
-<div style="background: #2c3e50; color: white; padding: 0.9rem 1.4rem; border-radius: 12px; margin-top: 0.8rem; font-size: 1.5rem; text-align: center;">
-👉 Toujours mettre une contrainte BDD <b>en plus</b> de la validation côté code. La BDD ne se laissera jamais avoir.
 </div>
 
 ---
