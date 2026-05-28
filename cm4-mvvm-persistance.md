@@ -2238,6 +2238,10 @@ DataSource ds = new HikariDataSource(config);
 👉 Toujours travailler avec une <code>DataSource</code>, jamais avec un <code>DriverManager.getConnection()</code> direct en production.
 </div>
 
+<div style="background: #1a5276; color: white; padding: 0.7rem 1.4rem; border-radius: 12px; margin-top: 0.6rem; font-size: 1.3rem; text-align: center;">
+🛠️ Au <b>TP5</b>, on reste sur une <code>SQLiteDataSource</code> simple (mono-utilisateur, pas besoin de pool) : déjà une <code>DataSource</code> injectable. HikariCP est l'étape suivante quand l'application monte en charge.
+</div>
+
 ---
 
 ## L'architecture complète
