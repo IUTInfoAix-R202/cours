@@ -2648,11 +2648,14 @@ section table code { font-size: 0.85rem !important; padding: 1px 4px !important;
 
 | Exercice | Concepts |
 |---|---|
-| 1 | Première connexion JDBC à une BDD SQLite locale |
-| 2 | `PreparedStatement`, `ResultSet`, mapping manuel objet ↔ ligne |
-| 3 | Pattern DAO : `UtilisateurDao` injecté dans le ViewModel |
-| 4 | Transactions : `setAutoCommit(false)`, `commit()`, `rollback()` |
-| 5 | Capstone : application MVVM + Guice + JDBC + DataSource pool complète |
+| 1 | Première connexion **JDBC** à SQLite, lire un `ResultSet` |
+| 2 | Une `DataSource` partagée + création du **schéma** |
+| 3 | Premier **DAO** en lecture (`TaxonDao`) |
+| 4 | **CRUD** complet (`SiteDao`) : insert / update / delete |
+| 5 | **Relations et jointures** entre tables |
+| 6 | **Transactions** : tout ou rien (`commit` / `rollback`) |
+| 7 | Capstone : sites de suivi persistés (**MVVM + Guice + SQLite**) |
+| Bonus 8-13 | `RowMapper`, pool HikariCP, import CSV, `executeBatch`, DAO en interface, schéma idempotent |
 
 ---
 
