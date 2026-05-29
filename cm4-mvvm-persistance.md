@@ -2623,11 +2623,16 @@ section tr:nth-child(even) td { background: #f4f6f8 !important; }
 section table code { font-size: 0.85rem !important; padding: 1px 4px !important; }
 </style>
 
-| Exercice | Classe | Concepts |
+| Exercice | Classe(s) | Concepts |
 |---|---|---|
-| 1 | `MessageView` + `MessageViewModel` | Premier MVVM, bindBidirectional sur StringProperty |
-| 2 | `Pokemon` + `PokemonViewModel` + `PokemonService` | DI Guice, Service injecté, ListProperty |
-| 3 | `MemeGenerator` (capstone) | MVVM complet, plusieurs vues sur un VM, gestion d'images |
+| 1 | `MessageViewModel` | Premier MVVM : propriété + dérivée, `bindBidirectional` |
+| 2 | `CompteurViewModel` | Pattern **Command**, propriété d'affichage dérivée |
+| 3 | `FormulaireConnexionViewModel` | Validation réactive (`BooleanBinding`), commande + erreurs |
+| 4 | `ConnexionViewModel` + `AppModule` | DI Guice : `@Inject`, module, `controllerFactory` |
+| 5 | `PokemonViewModel` + `PokemonService` | `ObservableList` + `TableView`, service injecté |
+| 6 | `Exercice6Module` | Guice avancé : `@Singleton`, `@Named`, mocks (sans UI) |
+| 7 | `QualificationViewModel` *(capstone)* | MVVM + Guice + `ObservableList` : écran SAÉ P3 |
+| Bonus 8-9 | `MemeViewModel`, `NoteTerrainViewModel` | Canvas ; plusieurs vues, un seul ViewModel |
 
 ---
 
