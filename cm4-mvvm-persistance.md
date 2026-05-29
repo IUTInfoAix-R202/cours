@@ -2649,7 +2649,7 @@ section table code { font-size: 0.85rem !important; padding: 1px 4px !important;
 | Exercice | Concepts |
 |---|---|
 | 1 | Première connexion **JDBC** à SQLite, lire un `ResultSet` |
-| 2 | Une `DataSource` partagée + création du **schéma** |
+| 2 | Une `DataSource` SQLite + **schéma** et clés étrangères |
 | 3 | Premier **DAO** en lecture (`TaxonDao`) |
 | 4 | **CRUD** complet (`SiteDao`) : insert / update / delete |
 | 5 | **Relations et jointures** entre tables |
